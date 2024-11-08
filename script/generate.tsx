@@ -71,6 +71,12 @@ const main = async () => {
         onCopyLib({
             lib: "hook"
         }),
+        onCopyLib({
+            lib: "svg"
+        }),
+        onCopyLib({
+            lib: "img-placeholder"
+        }),
     ])
     let CODE = ALL_LIB.join("")
 
