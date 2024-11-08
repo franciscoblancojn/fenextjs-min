@@ -1,0 +1,32 @@
+{
+  "name": "fenextjs-min",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "bun script/generate.tsx"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "country-state-city-nextjs": "^9.1.0",
+    "fenextjs-nextjs-dependencies": "2.0.1",
+    "jwt-decode": "^4.0.0",
+    "typescript": "5.4.4",
+    "uselocalstoragenextjs": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.16",
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "npm-check-updates": "16.14.14",
+    "eslint": "8.56.0",
+    "prettier": "3.2.5",
+    "ts-loader": "9.5.1",
+    "tslib": "2.6.2",
+    "typescript": "5.3.3"
+  }
+}
