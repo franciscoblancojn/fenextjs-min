@@ -5615,7 +5615,7 @@ export const useModalLocalStorage = () => {
 };
 
 
-export const Move = ({ className = '' }: { className?: string }) => (
+export const SvgMove = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -5631,7 +5631,7 @@ export const Move = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Close = ({ className = '' }: { className?: string }) => (
+export const SvgClose = ({ className = '' }: { className?: string }) => (
     <>
         <svg
             className={`fenext_svg ${className}`}
@@ -5649,7 +5649,7 @@ export const Close = ({ className = '' }: { className?: string }) => (
 
 
 
-export const ShareArrow = ({ className = '' }: { className?: string }) => (
+export const SvgShareArrow = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 42.975 37.247"
@@ -5665,7 +5665,7 @@ export const ShareArrow = ({ className = '' }: { className?: string }) => (
 
 
 
-export const OnlyFans = ({ className = '' }: { className?: string }) => (
+export const SvgOnlyFans = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -5713,7 +5713,7 @@ export const OnlyFans = ({ className = '' }: { className?: string }) => (
 
 
 
-export const SVGNumberIncrease = ({
+export const SvgNumberIncrease = ({
     className = '',
 }: {
     className?: string;
@@ -5730,7 +5730,7 @@ export const SVGNumberIncrease = ({
         />
     </svg>
 );
-export const SVGNumberDecrease = ({
+export const SvgNumberDecrease = ({
     className = '',
 }: {
     className?: string;
@@ -5749,7 +5749,7 @@ export const SVGNumberDecrease = ({
 );
 
 
-export const Behance = ({ className = '' }: { className?: string }) => (
+export const SvgBehance = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -5765,7 +5765,7 @@ export const Behance = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Settings = ({ className = '' }: { className?: string }) => (
+export const SvgSettings = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -5780,7 +5780,7 @@ export const Settings = ({ className = '' }: { className?: string }) => (
 
 
 
-export const FrontIdentification = ({
+export const SvgFrontIdentification = ({
     className = '',
 }: {
     className?: string;
@@ -5893,7 +5893,7 @@ export const FrontIdentification = ({
 
 
 
-export const CreditCard = ({ className = '' }: { className?: string }) => (
+export const SvgCreditCard = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 62 42"
@@ -5931,7 +5931,7 @@ export const CreditCard = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Exclamation = ({ className = '' }: { className?: string }) => (
+export const SvgExclamation = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -5980,7 +5980,7 @@ export const Exclamation = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Payment = ({ className = '' }: { className?: string }) => (
+export const SvgPayment = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 62 42"
@@ -6017,7 +6017,7 @@ export const Payment = ({ className = '' }: { className?: string }) => (
 
 
 
-export const LaterIdentification = ({
+export const SvgLaterIdentification = ({
     className = '',
 }: {
     className?: string;
@@ -6100,7 +6100,7 @@ export const LaterIdentification = ({
 
 
 
-export const DinersClub = ({ className = '' }: { className?: string }) => (
+export const SvgDinersClub = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -6127,7 +6127,7 @@ export const DinersClub = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Spotify = ({ className = '' }: { className?: string }) => (
+export const SvgSpotify = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6143,7 +6143,7 @@ export const Spotify = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Paypal = ({ className = '' }: { className?: string }) => (
+export const SvgPaypal = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6159,7 +6159,7 @@ export const Paypal = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Instagram = ({ className = '' }: { className?: string }) => (
+export const SvgInstagram = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6175,7 +6175,7 @@ export const Instagram = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Cancel = ({ className = '' }: { className?: string }) => (
+export const SvgCancel = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -6192,7 +6192,7 @@ export const Cancel = ({ className = '' }: { className?: string }) => (
 
 
 
-export const FacebookF = ({ className = '' }: { className?: string }) => (
+export const SvgFacebookF = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6208,7 +6208,7 @@ export const FacebookF = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Visa = ({ className = '' }: { className?: string }) => (
+export const SvgVisa = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -6225,7 +6225,7 @@ export const Visa = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Jcb = ({ className = '' }: { className?: string }) => (
+export const SvgJcb = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -6298,7 +6298,7 @@ export const Jcb = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Camera = ({ className = '' }: { className?: string }) => (
+export const SvgCamera = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -6319,7 +6319,7 @@ export const Camera = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const Camera2 = ({ className = '' }: { className?: string }) => (
+export const SvgCamera2 = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -6332,7 +6332,7 @@ export const Camera2 = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const CameraChange = ({ className = '' }: { className?: string }) => (
+export const SvgCameraChange = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -6347,7 +6347,7 @@ export const CameraChange = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Edit = ({ className = '' }: { className?: string }) => (
+export const SvgEdit = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 38 38"
@@ -6374,7 +6374,7 @@ export const Edit = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Reddit = ({ className = '' }: { className?: string }) => (
+export const SvgReddit = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6390,7 +6390,7 @@ export const Reddit = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Business = ({ className = '' }: { className?: string }) => (
+export const SvgBusiness = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 52 52"
@@ -6447,7 +6447,7 @@ export const Business = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Facebook = ({ className = '' }: { className?: string }) => (
+export const SvgFacebook = ({ className = '' }: { className?: string }) => (
     <svg
         aria-hidden="true"
         focusable="false"
@@ -6465,7 +6465,7 @@ export const Facebook = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const FacebookBox = ({ className = '' }: { className?: string }) => (
+export const SvgFacebookBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 624 624"
@@ -6482,7 +6482,7 @@ export const FacebookBox = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Manyvids = ({ className = '' }: { className?: string }) => (
+export const SvgManyvids = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6504,7 +6504,7 @@ export const Manyvids = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Tiktok = ({ className = '' }: { className?: string }) => (
+export const SvgTiktok = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6520,7 +6520,7 @@ export const Tiktok = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Verified = ({ className = '' }: { className?: string }) => (
+export const SvgVerified = ({ className = '' }: { className?: string }) => (
     <svg
         data-name="Group 16147"
         xmlns="http://www.w3.org/2000/svg"
@@ -6545,7 +6545,7 @@ export const Verified = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Star = ({ className = '' }: { className?: string }) => (
+export const SvgStar = ({ className = '' }: { className?: string }) => (
     <>
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -6562,7 +6562,7 @@ export const Star = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Location = ({ className = '' }: { className?: string }) => (
+export const SvgLocation = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -6590,7 +6590,7 @@ export const Location = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Upload = ({ className = '' }: { className?: string }) => (
+export const SvgUpload = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -6602,7 +6602,7 @@ export const Upload = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const Upload2 = ({ className = '' }: { className?: string }) => (
+export const SvgUpload2 = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 76 76"
@@ -6620,7 +6620,7 @@ export const Upload2 = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Arrow = ({ className = '' }: { className?: string }) => (
+export const SvgArrow = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 452 258"
@@ -6635,7 +6635,7 @@ export const Arrow = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const ArrowSelect = ({ className = '' }: { className?: string }) => (
+export const SvgArrowSelect = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 36 20"
@@ -6651,7 +6651,7 @@ export const ArrowSelect = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Pinterest = ({ className = '' }: { className?: string }) => (
+export const SvgPinterest = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -6667,7 +6667,7 @@ export const Pinterest = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Clone = ({ className = '' }: { className?: string }) => (
+export const SvgClone = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -6682,7 +6682,7 @@ export const Clone = ({ className = '' }: { className?: string }) => (
 
 
 
-export const UnicornWithMoney = ({
+export const SvgUnicornWithMoney = ({
     className = '',
 }: {
     className?: string;
@@ -6887,7 +6887,7 @@ export const UnicornWithMoney = ({
 
 
 
-export const Reload = ({ className = '' }: { className?: string }) => (
+export const SvgReload = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -6902,7 +6902,7 @@ export const Reload = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Add = ({ className = '' }: { className?: string }) => (
+export const SvgAdd = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -6916,7 +6916,7 @@ export const Add = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const ListCheck = ({ className = '' }: { className?: string }) => (
+export const SvgListCheck = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -6951,7 +6951,7 @@ export const ListCheck = ({ className = '' }: { className?: string }) => (
 
 
 
-export const CardVisaElectron = ({
+export const SvgCardVisaElectron = ({
     className = '',
 }: {
     className?: string;
@@ -6986,7 +6986,7 @@ export const CardVisaElectron = ({
 );
 
 
-export const CardDinersClub = ({ className = '' }: { className?: string }) => (
+export const SvgCardDinersClub = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg fenext_svg_card_diners_club ${className}`}
         width="10000"
@@ -7019,7 +7019,7 @@ export const CardDinersClub = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const CardJCB = ({ className = '' }: { className?: string }) => (
+export const SvgCardJCB = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg fenext_svg_card_jcb ${className}`}
         width="10000"
@@ -7042,7 +7042,7 @@ export const CardJCB = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const CardVisa = ({ className = '' }: { className?: string }) => (
+export const SvgCardVisa = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg fenext_svg_card_visa ${className}`}
         width="10000"
@@ -7065,7 +7065,7 @@ export const CardVisa = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const CardAmericanExpress = ({
+export const SvgCardAmericanExpress = ({
     className = '',
 }: {
     className?: string;
@@ -7094,7 +7094,7 @@ export const CardAmericanExpress = ({
 );
 
 
-export const CardMasterCard = ({ className = '' }: { className?: string }) => (
+export const SvgCardMasterCard = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg fenext_svg_card_mastercard ${className}`}
         width="10000"
@@ -7125,7 +7125,7 @@ export const CardMasterCard = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const CardDiscover = ({ className = '' }: { className?: string }) => (
+export const SvgCardDiscover = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg fenext_svg_card_discover ${className}`}
         width="10000"
@@ -7150,7 +7150,7 @@ export const CardDiscover = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const CryingUnicorn = ({ className = '' }: { className?: string }) => (
+export const SvgCryingUnicorn = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -7326,7 +7326,7 @@ export const CryingUnicorn = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Pix = ({ className = '' }: { className?: string }) => (
+export const SvgPix = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7342,7 +7342,7 @@ export const Pix = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Twitch = ({ className = '' }: { className?: string }) => (
+export const SvgTwitch = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7358,7 +7358,7 @@ export const Twitch = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Color = ({ className = '' }: { className?: string }) => (
+export const SvgColor = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 50 50"
@@ -7374,7 +7374,7 @@ export const Color = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Bancolombia = ({ className = '' }: { className?: string }) => (
+export const SvgBancolombia = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7398,7 +7398,7 @@ export const Bancolombia = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Save = ({ className = '' }: { className?: string }) => (
+export const SvgSave = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -7412,7 +7412,7 @@ export const Save = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Zelle = ({ className = '' }: { className?: string }) => (
+export const SvgZelle = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7428,7 +7428,7 @@ export const Zelle = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Etsty = ({ className = '' }: { className?: string }) => (
+export const SvgEtsty = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7444,7 +7444,7 @@ export const Etsty = ({ className = '' }: { className?: string }) => (
 
 
 
-export const ImgAvatar = ({ className = '' }: { className?: string }) => (
+export const SvgImgAvatar = ({ className = '' }: { className?: string }) => (
     <svg
         aria-hidden="true"
         focusable="false"
@@ -7463,7 +7463,7 @@ export const ImgAvatar = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Amazon = ({ className = '' }: { className?: string }) => (
+export const SvgAmazon = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7477,7 +7477,7 @@ export const Amazon = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const Cams = ({ className = '' }: { className?: string }) => (
+export const SvgCams = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7500,7 +7500,7 @@ export const Cams = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Stremate = ({ className = '' }: { className?: string }) => (
+export const SvgStremate = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7524,7 +7524,7 @@ export const Stremate = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Desktop = ({ className = '' }: { className?: string }) => (
+export const SvgDesktop = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -7536,7 +7536,7 @@ export const Desktop = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const DesktopLayer = ({ className = '' }: { className?: string }) => (
+export const SvgDesktopLayer = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 576 512"
@@ -7564,7 +7564,7 @@ export const DesktopLayer = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Padlock = ({ className = '' }: { className?: string }) => (
+export const SvgPadlock = ({ className = '' }: { className?: string }) => (
     <svg
         data-name="Group 15802"
         xmlns="http://www.w3.org/2000/svg"
@@ -7594,7 +7594,7 @@ export const Padlock = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Eye = ({ className = '' }: { className?: string }) => (
+export const SvgEye = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 576 512"
@@ -7607,7 +7607,7 @@ export const Eye = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const EyeBar = ({ className = '' }: { className?: string }) => (
+export const SvgEyeBar = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 640 512"
@@ -7662,7 +7662,7 @@ export const SvgCopyBox = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Camsoda = ({ className = '' }: { className?: string }) => (
+export const SvgCamsoda = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7689,7 +7689,7 @@ export const Camsoda = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Dribbble = ({ className = '' }: { className?: string }) => (
+export const SvgDribbble = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7705,7 +7705,7 @@ export const Dribbble = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Stripe = ({ className = '' }: { className?: string }) => (
+export const SvgStripe = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7721,7 +7721,7 @@ export const Stripe = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Download = ({ className = '' }: { className?: string }) => (
+export const SvgDownload = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -7736,7 +7736,7 @@ export const Download = ({ className = '' }: { className?: string }) => (
 
 
 
-export const CheckSearch = ({ className = '' }: { className?: string }) => (
+export const SvgCheckSearch = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -7757,7 +7757,7 @@ export const CheckSearch = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Date = ({ className = '' }: { className?: string }) => (
+export const SvgDate = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
@@ -7773,7 +7773,7 @@ export const Date = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Bars = ({ className = '' }: { className?: string }) => (
+export const SvgBars = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -7788,7 +7788,7 @@ export const Bars = ({ className = '' }: { className?: string }) => (
 
 
 
-export const ArrowCollapse = ({ className = '' }: { className?: string }) => (
+export const SvgArrowCollapse = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
@@ -7803,7 +7803,7 @@ export const ArrowCollapse = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Clicks = ({ className = '' }: { className?: string }) => (
+export const SvgClicks = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 23.779 32.6"
@@ -7867,7 +7867,7 @@ export const Clicks = ({ className = '' }: { className?: string }) => (
 
 
 
-export const PaginationUp = ({ className = '' }: { className?: string }) => (
+export const SvgPaginationUp = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
@@ -7879,7 +7879,7 @@ export const PaginationUp = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const PaginationPre = ({ className = '' }: { className?: string }) => (
+export const SvgPaginationPre = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
@@ -7891,7 +7891,7 @@ export const PaginationPre = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const PaginationNext = ({ className = '' }: { className?: string }) => (
+export const SvgPaginationNext = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
@@ -7903,7 +7903,7 @@ export const PaginationNext = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const PaginationDown = ({ className = '' }: { className?: string }) => (
+export const SvgPaginationDown = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
@@ -7917,7 +7917,7 @@ export const PaginationDown = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Nequi = ({ className = '' }: { className?: string }) => (
+export const SvgNequi = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7952,7 +7952,7 @@ export const Nequi = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Stripachat = ({ className = '' }: { className?: string }) => (
+export const SvgStripachat = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7976,7 +7976,7 @@ export const Stripachat = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Snapchat = ({ className = '' }: { className?: string }) => (
+export const SvgSnapchat = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -7992,7 +7992,7 @@ export const Snapchat = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Plane = ({ className = '' }: { className?: string }) => (
+export const SvgPlane = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -8007,7 +8007,7 @@ export const Plane = ({ className = '' }: { className?: string }) => (
 
 
 
-export const SoundCloud = ({ className = '' }: { className?: string }) => (
+export const SvgSoundCloud = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8023,7 +8023,7 @@ export const SoundCloud = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Stack = ({ className = '' }: { className?: string }) => (
+export const SvgStack = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -8064,7 +8064,7 @@ export const Stack = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Qr = ({ className = '' }: { className?: string }) => (
+export const SvgQr = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 448 448"
@@ -8079,7 +8079,7 @@ export const Qr = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const MasterCard = ({ className = '' }: { className?: string }) => (
+export const SvgMasterCard = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 105 65"
@@ -8111,7 +8111,7 @@ export const MasterCard = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Border = ({ className = '' }: { className?: string }) => (
+export const SvgBorder = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -8126,7 +8126,7 @@ export const Border = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Bongacams = ({ className = '' }: { className?: string }) => (
+export const SvgBongacams = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 653 650"
@@ -8155,7 +8155,7 @@ export const Bongacams = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Fantime = ({ className = '' }: { className?: string }) => (
+export const SvgFantime = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8171,7 +8171,7 @@ export const Fantime = ({ className = '' }: { className?: string }) => (
 
 
 
-export const X = ({ className = '' }: { className?: string }) => (
+export const SvgX = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 22 20"
@@ -8185,7 +8185,7 @@ export const X = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const XBox = ({ className = '' }: { className?: string }) => (
+export const SvgXBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 624 624"
@@ -8208,7 +8208,7 @@ export const XBox = ({ className = '' }: { className?: string }) => (
 
 
 
-export const MercadoLibre = ({ className = '' }: { className?: string }) => (
+export const SvgMercadoLibre = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8250,7 +8250,7 @@ export const MercadoLibre = ({ className = '' }: { className?: string }) => (
 
 
 
-export const EarringWatch = ({ className = '' }: { className?: string }) => (
+export const SvgEarringWatch = ({ className = '' }: { className?: string }) => (
     <svg
         data-name="Group 16126"
         xmlns="http://www.w3.org/2000/svg"
@@ -8287,7 +8287,7 @@ export const EarringWatch = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Trash = ({ className = '' }: { className?: string }) => (
+export const SvgTrash = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 19.389 23.873"
@@ -8320,7 +8320,7 @@ export const Trash = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Google = ({ className = '' }: { className?: string }) => (
+export const SvgGoogle = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -8360,7 +8360,7 @@ export const Google = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Steam = ({ className = '' }: { className?: string }) => (
+export const SvgSteam = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8376,7 +8376,7 @@ export const Steam = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Video = ({ className = '' }: { className?: string }) => (
+export const SvgVideo = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 50 34"
@@ -8392,7 +8392,7 @@ export const Video = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Size = ({ className = '' }: { className?: string }) => (
+export const SvgSize = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 662 662"
@@ -8417,7 +8417,7 @@ export const Size = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Font = ({ className = '' }: { className?: string }) => (
+export const SvgFont = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -8479,7 +8479,7 @@ export const SvgTheme = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Check2 = ({ className = '' }: { className?: string }) => (
+export const SvgCheck2 = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 16 16"
@@ -8499,7 +8499,7 @@ export const Check2 = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Patreon = ({ className = '' }: { className?: string }) => (
+export const SvgPatreon = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8515,7 +8515,7 @@ export const Patreon = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Linkedin = ({ className = '' }: { className?: string }) => (
+export const SvgLinkedin = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 448 448"
@@ -8529,7 +8529,7 @@ export const Linkedin = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const LinkedinBox = ({ className = '' }: { className?: string }) => (
+export const SvgLinkedinBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 624 624"
@@ -8576,7 +8576,7 @@ export const SvgShare = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const NoConfirm = ({ className = '' }: { className?: string }) => (
+export const SvgNoConfirm = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 71 71"
@@ -8602,7 +8602,7 @@ export const NoConfirm = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Email = ({ className = '' }: { className?: string }) => (
+export const SvgEmail = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8616,7 +8616,7 @@ export const Email = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const EmailBox = ({ className = '' }: { className?: string }) => (
+export const SvgEmailBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 624 624"
@@ -8634,7 +8634,7 @@ export const EmailBox = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Youtube = ({ className = '' }: { className?: string }) => (
+export const SvgYoutube = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8650,7 +8650,7 @@ export const Youtube = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Daviplata = ({ className = '' }: { className?: string }) => (
+export const SvgDaviplata = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8682,7 +8682,7 @@ export const SvgImg = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const ArrowGoBack = ({ className = '' }: { className?: string }) => (
+export const SvgArrowGoBack = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 34 17"
@@ -8698,7 +8698,7 @@ export const ArrowGoBack = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Chaturbate = ({ className = '' }: { className?: string }) => (
+export const SvgChaturbate = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -8723,7 +8723,7 @@ export const Chaturbate = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Discover = ({ className = '' }: { className?: string }) => (
+export const SvgDiscover = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -8831,7 +8831,7 @@ export const Discover = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Unicorn = ({ className = '' }: { className?: string }) => (
+export const SvgUnicorn = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -8960,7 +8960,7 @@ export const Unicorn = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Movil = ({ className = '' }: { className?: string }) => (
+export const SvgMovil = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -8972,7 +8972,7 @@ export const Movil = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const MovilLayer = ({ className = '' }: { className?: string }) => (
+export const SvgMovilLayer = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 384 512"
@@ -8993,7 +8993,7 @@ export const MovilLayer = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Ebay = ({ className = '' }: { className?: string }) => (
+export const SvgEbay = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -9009,7 +9009,7 @@ export const Ebay = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Estadisticas = ({ className = '' }: { className?: string }) => (
+export const SvgEstadisticas = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -9040,7 +9040,7 @@ export const Estadisticas = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Wechat = ({ className = '' }: { className?: string }) => (
+export const SvgWechat = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -9056,7 +9056,7 @@ export const Wechat = ({ className = '' }: { className?: string }) => (
 
 
 
-export const ArrowNext = ({ className = '' }: { className?: string }) => (
+export const SvgArrowNext = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -9072,7 +9072,7 @@ export const ArrowNext = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Crown = ({ className = '' }: { className?: string }) => (
+export const SvgCrown = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -9088,7 +9088,7 @@ export const Crown = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Twitter = ({ className = '' }: { className?: string }) => (
+export const SvgTwitter = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -9102,7 +9102,7 @@ export const Twitter = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const TwitterBox = ({ className = '' }: { className?: string }) => (
+export const SvgTwitterBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 624 624"
@@ -9120,7 +9120,7 @@ export const TwitterBox = ({ className = '' }: { className?: string }) => (
 
 
 
-export const SaveCheck = ({ className = '' }: { className?: string }) => (
+export const SvgSaveCheck = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -9141,7 +9141,7 @@ export const SaveCheck = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Check = ({ className = '' }: { className?: string }) => (
+export const SvgCheck = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -9156,7 +9156,7 @@ export const Check = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Telegram = ({ className = '' }: { className?: string }) => (
+export const SvgTelegram = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -9172,7 +9172,7 @@ export const Telegram = ({ className = '' }: { className?: string }) => (
 
 
 
-export const UserAccount = ({ className = '' }: { className?: string }) => (
+export const SvgUserAccount = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 46 51"
@@ -9196,7 +9196,7 @@ export const UserAccount = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
-export const UserAccount2 = ({ className = '' }: { className?: string }) => (
+export const SvgUserAccount2 = ({ className = '' }: { className?: string }) => (
     <svg
         aria-hidden="true"
         focusable="false"
@@ -9215,7 +9215,7 @@ export const UserAccount2 = ({ className = '' }: { className?: string }) => (
         ></path>
     </svg>
 );
-export const UserAccount3 = ({ className = '' }: { className?: string }) => (
+export const SvgUserAccount3 = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 46 51"
@@ -9242,7 +9242,7 @@ export const UserAccount3 = ({ className = '' }: { className?: string }) => (
 
 
 
-export const ManageAddresses = ({ className = '' }: { className?: string }) => (
+export const SvgManageAddresses = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 46 46"
@@ -9266,7 +9266,7 @@ export const ManageAddresses = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Exit = ({ className = '' }: { className?: string }) => (
+export const SvgExit = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -9285,7 +9285,7 @@ export const Exit = ({ className = '' }: { className?: string }) => (
 
 
 
-export const ArrowPre = ({ className = '' }: { className?: string }) => (
+export const SvgArrowPre = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -9301,7 +9301,7 @@ export const ArrowPre = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Whatsapp = ({ className = '' }: { className?: string }) => (
+export const SvgWhatsapp = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
@@ -9314,7 +9314,7 @@ export const Whatsapp = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const WhatsappBox = ({ className = '' }: { className?: string }) => (
+export const SvgWhatsappBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 624 624"
@@ -9332,7 +9332,7 @@ export const WhatsappBox = ({ className = '' }: { className?: string }) => (
 
 
 
-export const Bolt = ({ className = '' }: { className?: string }) => (
+export const SvgBolt = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 385 513"
@@ -9347,7 +9347,7 @@ export const Bolt = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Brush = ({ className = '' }: { className?: string }) => (
+export const SvgBrush = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 38 50"
@@ -9368,7 +9368,7 @@ export const Brush = ({ className = '' }: { className?: string }) => (
 
 
 
-export const TableBox = ({ className = '' }: { className?: string }) => (
+export const SvgTableBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 24 24"
@@ -9386,7 +9386,7 @@ export const TableBox = ({ className = '' }: { className?: string }) => (
 
 
 
-export const TableList = ({ className = '' }: { className?: string }) => (
+export const SvgTableList = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 27 24"
@@ -9402,7 +9402,7 @@ export const TableList = ({ className = '' }: { className?: string }) => (
 
 
 
-export const SelectList = ({ className = '' }: { className?: string }) => (
+export const SvgSelectList = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 34 25"
@@ -9420,7 +9420,7 @@ export const SelectList = ({ className = '' }: { className?: string }) => (
 
 
 
-export const SelectNormal = ({ className = '' }: { className?: string }) => (
+export const SvgSelectNormal = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         xmlns="http://www.w3.org/2000/svg"
@@ -9435,7 +9435,7 @@ export const SelectNormal = ({ className = '' }: { className?: string }) => (
 
 
 
-export const SelectBox = ({ className = '' }: { className?: string }) => (
+export const SvgSelectBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 25 25"
@@ -9453,7 +9453,7 @@ export const SelectBox = ({ className = '' }: { className?: string }) => (
 
 
 
-export const SVGSearch = ({ className = '' }: { className?: string }) => (
+export const SvgSearch = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -9779,7 +9779,7 @@ export const SvgLoader = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const Cashapp = ({ className = '' }: { className?: string }) => (
+export const SvgCashapp = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 650 650"
