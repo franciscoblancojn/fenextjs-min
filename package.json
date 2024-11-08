@@ -13,8 +13,8 @@
     "country-state-city-nextjs": "^9.1.0",
     "fenextjs-nextjs-dependencies": "2.0.1",
     "jwt-decode": "^4.0.0",
-    "typescript": "5.4.4",
-    "uselocalstoragenextjs": "^2.0.2"
+    "uselocalstoragenextjs": "^2.0.2",
+    "firebase": "10.8.0"
   },
   "devDependencies": {
     "@types/node": "20.11.16",

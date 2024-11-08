@@ -1,5 +1,27 @@
 
         import { getRuteCountryImg } from "country-state-city-nextjs";
+        import firebase from "firebase/compat/app";
+        import "firebase/compat/auth";
+        import "firebase/storage";
+        import {
+            FirebaseStorage,
+            StorageReference,
+            getStorage,
+            uploadString,
+            ref as refStorage,
+            getDownloadURL,
+            deleteObject,
+            getBytes,
+        } from "firebase/storage";
+        import {
+            getDatabase,
+            ref as refDatabase,
+            child,
+            get,
+            set,
+            Database,
+            DatabaseReference,
+        } from "firebase/database";
     
 
 
@@ -2948,3 +2970,190 @@ export const _tValidate = (d: any, _t?: _TFunciton) => {
     }
     return d;
 };
+
+
+export interface FenextFirebaseConstructorProps {
+    config: FenextFirebaseConfigProps;
+}
+export class FenextFirebase {
+    private config: FenextFirebaseConfigProps;
+    private app: firebase.app.App;
+
+    public database: FenextFirebaseDataBase;
+
+    public storega: FenextFirebaseStorage;
+
+    constructor({ config }: FenextFirebaseConstructorProps) {
+        this.config = config;
+        this.app = this.getApp();
+
+        this.database = new FenextFirebaseDataBase({ app: this.app, config });
+
+        this.storega = new FenextFirebaseStorage({ app: this.app, config });
+    }
+
+    private getConfig() {
+        return this.config;
+    }
+
+    private getApp() {
+        return !firebase?.apps?.length
+            ? firebase.initializeApp(this.getConfig())
+            : firebase.app();
+    }
+}
+
+
+export interface onGetBase64Props {
+    dataType?: string;
+}
+
+export interface FenextFirebaseConfigProps {
+    apiKey: string;
+    authDomain: string;
+    projectId: string;
+    storageBucket: string;
+    messagingSenderId: string;
+    appId: string;
+    storageUrl: string;
+    databaseUrl: string;
+}
+
+
+export interface FenextFirebaseStorageConstructorProps {
+    app: firebase.app.App;
+    config: FenextFirebaseConfigProps;
+}
+export class FenextFirebaseStorage {
+    private config: FenextFirebaseConfigProps;
+    private app: firebase.app.App;
+
+    private storega: FirebaseStorage;
+    private ref?: StorageReference;
+
+    constructor({ config, app }: FenextFirebaseStorageConstructorProps) {
+        this.config = config;
+        this.app = app;
+        this.storega = this.getStorage();
+    }
+
+    private getStorage() {
+        return getStorage(this.app, this.config.storageUrl);
+    }
+
+    public Ref(path: string) {
+        this.ref = refStorage(this.storega, path);
+        return this;
+    }
+
+    public async onUploadBase64(base64: string) {
+        try {
+            if (!this.ref) {
+                throw new Error("Not Load Ref");
+            }
+            const snapshot = await uploadString(this.ref, base64, "data_url");
+
+            const url = await getDownloadURL(snapshot.ref);
+
+            return url;
+        } catch (error) {
+            return error;
+        }
+    }
+    public async onDelete() {
+        try {
+            if (!this.ref) {
+                throw new Error("Not Load Ref");
+            }
+            const snapshot = await deleteObject(this.ref);
+
+            return snapshot;
+        } catch (error) {
+            return error;
+        }
+    }
+    public async onGetBase64(props?: onGetBase64Props) {
+        const options: onGetBase64Props = {
+            dataType: `data:image/png;base64,`,
+            ...props,
+        };
+        try {
+            if (!this.ref) {
+                throw new Error("Not Load Ref");
+            }
+            const result = await getBytes(this.ref);
+
+            const base64 = options.dataType + parseBufferToBase64(result);
+
+            return base64;
+        } catch (error) {
+            return error;
+        }
+    }
+    public async onGetUrl() {
+        try {
+            if (!this.ref) {
+                throw new Error("Not Load Ref");
+            }
+
+            const url = await getDownloadURL(this.ref);
+
+            return url;
+        } catch (error) {
+            return error;
+        }
+    }
+}
+
+
+export interface FenextFirebaseDataBaseConstructorProps {
+    app: firebase.app.App;
+    config: FenextFirebaseConfigProps;
+}
+export class FenextFirebaseDataBase {
+    private config: FenextFirebaseConfigProps;
+    private app: firebase.app.App;
+
+    private database: Database;
+    private ref?: DatabaseReference;
+
+    constructor({ app, config }: FenextFirebaseDataBaseConstructorProps) {
+        this.config = config;
+        this.app = app;
+        this.database = this.getDatabase();
+    }
+    private getDatabase() {
+        return getDatabase(this.app, this.config.databaseUrl);
+    }
+
+    public Ref(path: string) {
+        this.ref = refDatabase(this.database, path);
+        return this;
+    }
+    public async onGet(query?: string) {
+        try {
+            if (!this.ref) {
+                throw new Error("Not Load Ref");
+            }
+
+            const data = await get(child(this.ref, query ?? "/"));
+
+            return await data.val();
+        } catch (error) {
+            return error;
+        }
+    }
+    public async onSet(value: any) {
+        try {
+            if (!this.ref) {
+                throw new Error("Not Load Ref");
+            }
+
+            const data = await set(this.ref, value);
+
+            return data;
+        } catch (error) {
+            return error;
+        }
+    }
+}

@@ -62,11 +62,16 @@ const main = async () => {
         onCopyLib({
             lib: "functions"
         }),
+        onCopyLib({
+            lib: "firebase"
+        }),
     ])
     let CODE = ALL_LIB.join("")
 
     const REPLACE = [
         /import\s+{[^}]*}\s+from\s+['"][^'"]*['"];[\r\n]*/g,
+        /import\s+.*\s+from\s+['"][^'"]*['"];\s*/g,
+        /^import\s+['"][^'"]*['"];\s*/gm,
         /^export \* from\s+['"][^'"]*['"];\s*$/gm
     ]
 
@@ -77,6 +82,28 @@ const main = async () => {
 
     const CODE_TOP = `
         import { getRuteCountryImg } from "country-state-city-nextjs";
+        import firebase from "firebase/compat/app";
+        import "firebase/compat/auth";
+        import "firebase/storage";
+        import {
+            FirebaseStorage,
+            StorageReference,
+            getStorage,
+            uploadString,
+            ref as refStorage,
+            getDownloadURL,
+            deleteObject,
+            getBytes,
+        } from "firebase/storage";
+        import {
+            getDatabase,
+            ref as refDatabase,
+            child,
+            get,
+            set,
+            Database,
+            DatabaseReference,
+        } from "firebase/database";
     `
 
     CODE = CODE_TOP + CODE
