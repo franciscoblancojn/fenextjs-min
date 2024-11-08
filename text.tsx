@@ -1,8 +1,30 @@
 
-        import React, { ReactNode,PropsWithChildren,CSSProperties,useMemo, useEffect, useState, useRef, useCallback } from "react";
+        import React, { 
+            ReactNode,
+            PropsWithChildren,
+            CSSProperties,
+            useMemo, 
+            useEffect, 
+            useState, 
+            useRef, 
+            useCallback,
+            createPortal 
+        } from "react";
         import { useRouter } from "next/router";
         import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
         import { jwtDecode } from "jwt-decode";
+        import { 
+            Autocomplete, 
+            AutocompleteProps,
+            LoadScript, 
+            LoadScriptProps,
+            GoogleMap,
+            GoogleMapProps,
+            MarkerClusterer,
+            Marker,
+            MarkerProps,
+            DirectionsRenderer,
+        } from "@react-google-maps/api";
         import {
             // countryProps as CountryProps,
             // stateProps as StateProps,
@@ -24828,10 +24850,112 @@ export const DesignTypography = ({
 };
 
 
-/**
- * Properties for the base DesignBox component.
- */
-export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
+export const parseDesignTypographyValueProps_to_CSSProperties = (
+    d: Partial<DesignTypographyValue>,
+): CSSProperties => {
+    return {
+        fontSize: `${d.fontSize}${d.fontSizeUnit}`,
+        textAlign: d.textAlign,
+        fontWeight: d.weight,
+        textTransform: d.transform,
+        fontStyle: d.style,
+        textDecoration: d.decoration,
+        lineHeight: `${d.lineHeight}${d.lineHeightUnit == "normal" ? "" : d.lineHeightUnit}`,
+        letterSpacing: `${d.letterSpacing}${d.letterSpacingUnit}`,
+        wordSpacing: `${d.wordSpacing}${d.wordSpacingUnit}`,
+        color: d.color,
+    };
+};
+
+
+export const ConstDesignTypographyFontSizeUnit = ["px", "em", "rem"] as const;
+export type DesignTypographyFontSizeUnit =
+    (typeof ConstDesignTypographyFontSizeUnit)[number];
+
+export const ConstDesignTypographyTextAlignUnit = [
+    "center",
+    "justify",
+    "left",
+    "right",
+] as const;
+export type DesignTypographyTextAlignUnit =
+    (typeof ConstDesignTypographyTextAlignUnit)[number];
+
+export const ConstDesignTypographyWeightUnit = [
+    100, 200, 300, 400, 500, 600, 700, 800, 900,
+] as const;
+export type DesignTypographyWeightUnit =
+    (typeof ConstDesignTypographyWeightUnit)[number];
+
+export const ConstDesignTypographyTransformUnit = [
+    "none",
+    "uppercase",
+    "lowercase",
+    "capitalize",
+] as const;
+export type DesignTypographyTransformUnit =
+    (typeof ConstDesignTypographyTransformUnit)[number];
+
+export const ConstDesignTypographyStyleUnit = [
+    "normal",
+    "italic",
+    "oblique",
+] as const;
+export type DesignTypographyStyleUnit =
+    (typeof ConstDesignTypographyStyleUnit)[number];
+
+export const ConstDesignTypographyDecorationUnit = [
+    "normal",
+    "underline",
+    "overline",
+    "line-through",
+] as const;
+export type DesignTypographyDecorationUnit =
+    (typeof ConstDesignTypographyDecorationUnit)[number];
+
+export const ConstDesignTypographyLineHeightUnit = [
+    "normal",
+    "px",
+    "em",
+    "rem",
+] as const;
+export type DesignTypographyLineHeightUnit =
+    (typeof ConstDesignTypographyLineHeightUnit)[number];
+
+export const ConstDesignTypographyLetterSpacingUnit = [
+    "px",
+    "em",
+    "rem",
+] as const;
+export type DesignTypographyLetterSpacingUnit =
+    (typeof ConstDesignTypographyLetterSpacingUnit)[number];
+
+export const ConstDesignTypographyWordSpacingUnit = [
+    "px",
+    "em",
+    "rem",
+] as const;
+export type DesignTypographyWordSpacingUnit =
+    (typeof ConstDesignTypographyWordSpacingUnit)[number];
+
+export interface DesignTypographyValue {
+    fontFamily: string;
+    fontSize: number;
+    textAlign: DesignTypographyTextAlignUnit;
+    color: string;
+    fontSizeUnit: DesignTypographyFontSizeUnit;
+    weight: DesignTypographyWeightUnit;
+    transform: DesignTypographyTransformUnit;
+    style: DesignTypographyStyleUnit;
+    decoration: DesignTypographyDecorationUnit;
+    lineHeight: number;
+    lineHeightUnit: DesignTypographyLineHeightUnit;
+    letterSpacing: number;
+    letterSpacingUnit: DesignTypographyLetterSpacingUnit;
+    wordSpacing: number;
+    wordSpacingUnit: DesignTypographyWordSpacingUnit;
+}
+
 
 export interface DesignBoxTextProps
     extends DesignBoxPaddingProps,
@@ -25185,6 +25309,58 @@ export const DesignBoxWidth = ({
 };
 
 
+export const parseDesignBoxValueProps_to_CSSProperties = (
+    d: Partial<DesignBoxValue>,
+): CSSProperties => {
+    return {
+        display: "grid",
+
+        background: `${d.background ?? "initial"}`,
+
+        paddingTop: `${d.paddingTop ?? 0}${d.paddingUnit ?? "px"}`,
+        paddingLeft: `${d.paddingLeft ?? 0}${d.paddingUnit ?? "px"}`,
+        paddingRight: `${d.paddingRight ?? 0}${d.paddingUnit ?? "px"}`,
+        paddingBottom: `${d.paddingBottom ?? 0}${d.paddingUnit ?? "px"}`,
+
+        marginTop: `${d.marginTop ?? 0}${d.marginUnit ?? "px"}`,
+        marginLeft: `${d.marginLeft ?? 0}${d.marginUnit ?? "px"}`,
+        marginRight: `${d.marginRight ?? 0}${d.marginUnit ?? "px"}`,
+        marginBottom: `${d.marginBottom ?? 0}${d.marginUnit ?? "px"}`,
+
+        borderTopWidth: `${d.borderTop ?? 0}${d.borderUnit ?? "px"}`,
+        borderLeftWidth: `${d.borderLeft ?? 0}${d.borderUnit ?? "px"}`,
+        borderRightWidth: `${d.borderRight ?? 0}${d.borderUnit ?? "px"}`,
+        borderBottomWidth: `${d.borderBottom ?? 0}${d.borderUnit ?? "px"}`,
+
+        borderTopStyle: `${d.borderTopStyle ?? "hidden"}`,
+        borderLeftStyle: `${d.borderLeftStyle ?? "hidden"}`,
+        borderRightStyle: `${d.borderRightStyle ?? "hidden"}`,
+        borderBottomStyle: `${d.borderBottomStyle ?? "hidden"}`,
+
+        borderTopLeftRadius: `${d.borderTopLeftRadius ?? 0}${d.borderUnitRadius ?? "px"}`,
+        borderTopRightRadius: `${d.borderTopRightRadius ?? 0}${d.borderUnitRadius ?? "px"}`,
+        borderBottomLeftRadius: `${d.borderBottomLeftRadius ?? 0}${d.borderUnitRadius ?? "px"}`,
+        borderBottomRightRadius: `${d.borderBottomRightRadius ?? 0}${d.borderUnitRadius ?? "px"}`,
+
+        borderColor: `${d.borderColor ?? "initial"}`,
+
+        width: `${d.widthUnit == "auto" ? "auto" : `${d.width ?? 0}${d.widthUnit ?? "px"}`}`,
+        minWidth: `${d.minWidthUnit == "auto" ? "auto" : `${d.minWidth ?? 0}${d.minWidthUnit ?? "px"}`}`,
+        maxWidth: `${d.maxWidthUnit == "auto" ? "auto" : `${d.maxWidth ?? 0}${d.maxWidthUnit ?? "px"}`}`,
+
+        height: `${d.heightUnit == "auto" ? "auto" : `${d.height ?? 0}${d.heightUnit ?? "px"}`}`,
+        minHeight: `${d.minHeightUnit == "auto" ? "auto" : `${d.minHeight ?? 0}${d.minHeightUnit ?? "px"}`}`,
+        maxHeight: `${d.maxHeightUnit == "auto" ? "auto" : `${d.maxHeight ?? 0}${d.maxHeightUnit ?? "px"}`}`,
+
+        justifyContent: `${d.justifyContent ?? "start"}`,
+        alignItems: `${d.alignItems ?? "start"}`,
+
+        rowGap: `${d.gapRow ?? 0}${d.gapUnit ?? "px"}`,
+        columnGap: `${d.gapColumn ?? 0}${d.gapUnit ?? "px"}`,
+    };
+};
+
+
 /**
  * Properties for the base DesignBoxBorderColor component.
  */
@@ -25331,6 +25507,156 @@ export const DesignBoxBorderStyle = ({
         </>
     );
 };
+
+
+export const ConstDesignBoxMarginUnit = ["px", "em", "rem"] as const;
+export type DesignBoxMarginUnit = (typeof ConstDesignBoxMarginUnit)[number];
+
+export const ConstDesignBoxPaddingUnit = ["px", "em", "rem"] as const;
+export type DesignBoxPaddingUnit = (typeof ConstDesignBoxPaddingUnit)[number];
+
+export const ConstDesignBoxBorderUnit = ["px", "em", "rem"] as const;
+export type DesignBoxBorderUnit = (typeof ConstDesignBoxBorderUnit)[number];
+
+export const ConstDesignBoxBorderRadiusUnit = ["px", "em", "rem"] as const;
+export type DesignBoxBorderRadiusUnit =
+    (typeof ConstDesignBoxBorderRadiusUnit)[number];
+
+export const ConstDesignBoxBorderStylesUnit = [
+    "dashed",
+    "dotted",
+    "double",
+    "groove",
+    "hidden",
+    "inset",
+    "none",
+    "outset",
+    "ridge",
+    "solid",
+] as const;
+export type DesignBoxBorderStylesUnit =
+    (typeof ConstDesignBoxBorderStylesUnit)[number];
+
+export const ConstDesignBoxWidthUnit = [
+    "px",
+    "em",
+    "rem",
+    "%",
+    "vw",
+    "dvw",
+    "auto",
+] as const;
+export type DesignBoxWidthUnit = (typeof ConstDesignBoxWidthUnit)[number];
+
+export const ConstDesignBoxHeightUnit = [
+    "px",
+    "em",
+    "rem",
+    "%",
+    "vw",
+    "dvw",
+    "auto",
+] as const;
+export type DesignBoxHeightUnit = (typeof ConstDesignBoxHeightUnit)[number];
+
+export const ConstDesignBoxJustifyContentUnit = [
+    "center",
+    "end",
+    "start",
+    "space-around",
+    "space-between",
+    "space-evenly",
+    "stretch",
+] as const;
+export type DesignBoxJustifyContentUnit =
+    (typeof ConstDesignBoxJustifyContentUnit)[number];
+
+export const ConstDesignBoxAlignItemsUnit = [
+    "baseline",
+    "normal",
+    "stretch",
+    "center",
+    "end",
+    "start",
+] as const;
+export type DesignBoxAlignItemsUnit =
+    (typeof ConstDesignBoxAlignItemsUnit)[number];
+
+export const ConstDesignBoxGapsUnit = ["px", "em", "rem"] as const;
+export type DesignBoxGapsUnit = (typeof ConstDesignBoxGapsUnit)[number];
+
+export interface DesignBoxValue {
+    background?: string;
+
+    marginTogether?: boolean;
+    marginTop?: number;
+    marginRight?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+    marginUnit?: DesignBoxMarginUnit;
+
+    paddingTogether?: boolean;
+    paddingTop?: number;
+    paddingRight?: number;
+    paddingBottom?: number;
+    paddingLeft?: number;
+    paddingUnit?: DesignBoxPaddingUnit;
+
+    borderTogether?: boolean;
+    borderTop?: number;
+    borderRight?: number;
+    borderBottom?: number;
+    borderLeft?: number;
+    borderUnit?: DesignBoxBorderUnit;
+
+    borderStyleTogether?: boolean;
+    borderTopStyle?: DesignBoxBorderStylesUnit;
+    borderRightStyle?: DesignBoxBorderStylesUnit;
+    borderBottomStyle: DesignBoxBorderStylesUnit;
+    borderLeftStyle?: DesignBoxBorderStylesUnit;
+
+    borderRadiusTogether?: boolean;
+    borderTopLeftRadius?: number;
+    borderTopRightRadius?: number;
+    borderBottomLeftRadius?: number;
+    borderBottomRightRadius?: number;
+    borderUnitRadius?: DesignBoxBorderRadiusUnit;
+
+    borderColor?: string;
+
+    width?: number;
+    widthUnit?: DesignBoxWidthUnit;
+    maxWidth?: number;
+    maxWidthUnit?: DesignBoxWidthUnit;
+    minWidth?: number;
+    minWidthUnit?: DesignBoxWidthUnit;
+
+    height?: number;
+    heightUnit?: DesignBoxHeightUnit;
+    maxHeight?: number;
+    maxHeightUnit?: DesignBoxHeightUnit;
+    minHeight?: number;
+    minHeightUnit?: DesignBoxHeightUnit;
+
+    justifyContent?: DesignBoxJustifyContentUnit;
+    alignItems?: DesignBoxAlignItemsUnit;
+
+    gapTogether?: boolean;
+    gapRow?: number;
+    gapColumn?: number;
+    gapUnit?: DesignBoxGapsUnit;
+}
+
+export type DesignBoxValueProps = Partial<DesignBoxValue>;
+
+export type useDataDesignBoxUseDataProps = Pick<
+    ReturnType<typeof useData<DesignBoxValueProps>>,
+    "setDataFunction" | "data" | "onChangeData"
+>;
+
+export interface DesignBoxUseDataProps
+    extends _TProps,
+        useDataDesignBoxUseDataProps {}
 
 
 /**
