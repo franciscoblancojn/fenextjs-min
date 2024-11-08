@@ -87,6 +87,7 @@ const main = async () => {
         /import\s+{[^}]*}\s+from\s+['"][^'"]*['"];[\r\n]*/g,
         /import\s+.*\s+from\s+['"][^'"]*['"];\s*/g,
         /^import\s+['"][^'"]*['"];\s*/gm,
+        /^import\s+[\w{}\s,]*\s+from\s+['"][^'"]*['"];\s*/gm,
         /^export \* from\s+['"][^'"]*['"];\s*$/gm
     ]
 
@@ -96,7 +97,7 @@ const main = async () => {
     }
 
     const CODE_TOP = `
-        import React, { useMemo, useEffect, useState, useRef, useCallback } from "react";
+        import React, { ReactNode,PropsWithChildren,CSSProperties,useMemo, useEffect, useState, useRef, useCallback } from "react";
         import { useRouter } from "next/router";
         import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
         import { jwtDecode } from "jwt-decode";

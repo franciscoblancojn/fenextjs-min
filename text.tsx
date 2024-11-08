@@ -1,5 +1,5 @@
 
-        import React, { useMemo, useEffect, useState, useRef, useCallback } from "react";
+        import React, { ReactNode,PropsWithChildren,CSSProperties,useMemo, useEffect, useState, useRef, useCallback } from "react";
         import { useRouter } from "next/router";
         import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
         import { jwtDecode } from "jwt-decode";
@@ -2038,7 +2038,7 @@ export class FenextjsValidatorClass<T = any> {
  *
  * @returns {FenextjsValidatorClass} - Una nueva instancia de la clase FenextjsValidatorClass que se utilizará para definir reglas de validación y validar datos.
  */
-export const FenextjsValidator = <T = any>(
+export const FenextjsValidator = <T = any,>(
     props?: FenextjsValidatorClassConstructorProps,
 ) => new FenextjsValidatorClass<T>(props);
 
@@ -5630,7 +5630,6 @@ export const SvgMove = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgClose = ({ className = '' }: { className?: string }) => (
     <>
         <svg
@@ -5648,7 +5647,6 @@ export const SvgClose = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgShareArrow = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -5662,7 +5660,6 @@ export const SvgShareArrow = ({ className = '' }: { className?: string }) => (
         ></path>
     </svg>
 );
-
 
 
 export const SvgOnlyFans = ({ className = '' }: { className?: string }) => (
@@ -5710,7 +5707,6 @@ export const SvgOnlyFans = ({ className = '' }: { className?: string }) => (
         </g>
     </svg>
 );
-
 
 
 export const SvgNumberIncrease = ({
@@ -5764,7 +5760,6 @@ export const SvgBehance = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgSettings = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -5777,7 +5772,6 @@ export const SvgSettings = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgFrontIdentification = ({
@@ -5892,7 +5886,6 @@ export const SvgFrontIdentification = ({
 );
 
 
-
 export const SvgCreditCard = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -5927,8 +5920,6 @@ export const SvgCreditCard = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
-
 
 
 export const SvgExclamation = ({ className = '' }: { className?: string }) => (
@@ -5979,7 +5970,6 @@ export const SvgExclamation = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgPayment = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6014,7 +6004,6 @@ export const SvgPayment = ({ className = '' }: { className?: string }) => (
         ></path>
     </svg>
 );
-
 
 
 export const SvgLaterIdentification = ({
@@ -6099,7 +6088,6 @@ export const SvgLaterIdentification = ({
 );
 
 
-
 export const SvgDinersClub = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -6126,7 +6114,6 @@ export const SvgDinersClub = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgSpotify = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6140,7 +6127,6 @@ export const SvgSpotify = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgPaypal = ({ className = '' }: { className?: string }) => (
@@ -6158,7 +6144,6 @@ export const SvgPaypal = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgInstagram = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6172,7 +6157,6 @@ export const SvgInstagram = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgCancel = ({ className = '' }: { className?: string }) => (
@@ -6191,7 +6175,6 @@ export const SvgCancel = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgFacebookF = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6205,7 +6188,6 @@ export const SvgFacebookF = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgVisa = ({ className = '' }: { className?: string }) => (
@@ -6222,7 +6204,6 @@ export const SvgVisa = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgJcb = ({ className = '' }: { className?: string }) => (
@@ -6297,7 +6278,6 @@ export const SvgJcb = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgCamera = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -6346,7 +6326,6 @@ export const SvgCameraChange = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgEdit = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6373,7 +6352,6 @@ export const SvgEdit = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgReddit = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6387,7 +6365,6 @@ export const SvgReddit = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgBusiness = ({ className = '' }: { className?: string }) => (
@@ -6443,8 +6420,6 @@ export const SvgBusiness = ({ className = '' }: { className?: string }) => (
         ></path>
     </svg>
 );
-
-
 
 
 export const SvgFacebook = ({ className = '' }: { className?: string }) => (
@@ -6503,7 +6478,6 @@ export const SvgManyvids = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgTiktok = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6517,7 +6491,6 @@ export const SvgTiktok = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgVerified = ({ className = '' }: { className?: string }) => (
@@ -6544,7 +6517,6 @@ export const SvgVerified = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgStar = ({ className = '' }: { className?: string }) => (
     <>
         <svg
@@ -6559,7 +6531,6 @@ export const SvgStar = ({ className = '' }: { className?: string }) => (
         </svg>
     </>
 );
-
 
 
 export const SvgLocation = ({ className = '' }: { className?: string }) => (
@@ -6619,7 +6590,6 @@ export const SvgUpload2 = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgArrow = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6650,7 +6620,6 @@ export const SvgArrowSelect = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgPinterest = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6666,7 +6635,6 @@ export const SvgPinterest = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgClone = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -6679,7 +6647,6 @@ export const SvgClone = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgUnicornWithMoney = ({
@@ -6886,7 +6853,6 @@ export const SvgUnicornWithMoney = ({
 );
 
 
-
 export const SvgReload = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -6899,7 +6865,6 @@ export const SvgReload = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgAdd = ({ className = '' }: { className?: string }) => (
@@ -6950,7 +6915,6 @@ export const SvgListCheck = ({ className = '' }: { className?: string }) => (
 
 
 
-
 export const SvgCardVisaElectron = ({
     className = '',
 }: {
@@ -6986,7 +6950,11 @@ export const SvgCardVisaElectron = ({
 );
 
 
-export const SvgCardDinersClub = ({ className = '' }: { className?: string }) => (
+export const SvgCardDinersClub = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         className={`fenext_svg fenext_svg_card_diners_club ${className}`}
         width="10000"
@@ -7094,7 +7062,11 @@ export const SvgCardAmericanExpress = ({
 );
 
 
-export const SvgCardMasterCard = ({ className = '' }: { className?: string }) => (
+export const SvgCardMasterCard = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         className={`fenext_svg fenext_svg_card_mastercard ${className}`}
         width="10000"
@@ -7150,7 +7122,11 @@ export const SvgCardDiscover = ({ className = '' }: { className?: string }) => (
 );
 
 
-export const SvgCryingUnicorn = ({ className = '' }: { className?: string }) => (
+export const SvgCryingUnicorn = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`fenext_svg ${className}`}
@@ -7325,7 +7301,6 @@ export const SvgCryingUnicorn = ({ className = '' }: { className?: string }) => 
 );
 
 
-
 export const SvgPix = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -7339,7 +7314,6 @@ export const SvgPix = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgTwitch = ({ className = '' }: { className?: string }) => (
@@ -7357,7 +7331,6 @@ export const SvgTwitch = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgColor = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -7371,7 +7344,6 @@ export const SvgColor = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgBancolombia = ({ className = '' }: { className?: string }) => (
@@ -7395,7 +7367,6 @@ export const SvgBancolombia = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgSave = ({ className = '' }: { className?: string }) => (
@@ -7427,7 +7398,6 @@ export const SvgZelle = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgEtsty = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -7441,7 +7411,6 @@ export const SvgEtsty = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgImgAvatar = ({ className = '' }: { className?: string }) => (
@@ -7477,6 +7446,7 @@ export const SvgAmazon = ({ className = '' }: { className?: string }) => (
     </svg>
 );
 
+
 export const SvgCams = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -7497,7 +7467,6 @@ export const SvgCams = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgStremate = ({ className = '' }: { className?: string }) => (
@@ -7521,7 +7490,6 @@ export const SvgStremate = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgDesktop = ({ className = '' }: { className?: string }) => (
@@ -7563,7 +7531,6 @@ export const SvgDesktopLayer = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgPadlock = ({ className = '' }: { className?: string }) => (
     <svg
         data-name="Group 15802"
@@ -7593,7 +7560,6 @@ export const SvgPadlock = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgEye = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -7619,8 +7585,6 @@ export const SvgEyeBar = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
-
 
 
 export const SvgCopy = ({ className = '' }: { className?: string }) => (
@@ -7688,7 +7652,6 @@ export const SvgCamsoda = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgDribbble = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -7702,7 +7665,6 @@ export const SvgDribbble = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgStripe = ({ className = '' }: { className?: string }) => (
@@ -7720,7 +7682,6 @@ export const SvgStripe = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgDownload = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -7733,7 +7694,6 @@ export const SvgDownload = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgCheckSearch = ({ className = '' }: { className?: string }) => (
@@ -7756,7 +7716,6 @@ export const SvgCheckSearch = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgDate = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -7770,7 +7729,6 @@ export const SvgDate = ({ className = '' }: { className?: string }) => (
         ></path>
     </svg>
 );
-
 
 
 export const SvgBars = ({ className = '' }: { className?: string }) => (
@@ -7787,8 +7745,11 @@ export const SvgBars = ({ className = '' }: { className?: string }) => (
 );
 
 
-
-export const SvgArrowCollapse = ({ className = '' }: { className?: string }) => (
+export const SvgArrowCollapse = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
@@ -7800,7 +7761,6 @@ export const SvgArrowCollapse = ({ className = '' }: { className?: string }) => 
         />
     </svg>
 );
-
 
 
 export const SvgClicks = ({ className = '' }: { className?: string }) => (
@@ -7866,7 +7826,6 @@ export const SvgClicks = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgPaginationUp = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -7879,7 +7838,11 @@ export const SvgPaginationUp = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-export const SvgPaginationPre = ({ className = '' }: { className?: string }) => (
+export const SvgPaginationPre = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
@@ -7891,7 +7854,11 @@ export const SvgPaginationPre = ({ className = '' }: { className?: string }) => 
         />
     </svg>
 );
-export const SvgPaginationNext = ({ className = '' }: { className?: string }) => (
+export const SvgPaginationNext = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"
@@ -7903,7 +7870,11 @@ export const SvgPaginationNext = ({ className = '' }: { className?: string }) =>
         />
     </svg>
 );
-export const SvgPaginationDown = ({ className = '' }: { className?: string }) => (
+export const SvgPaginationDown = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
@@ -7951,7 +7922,6 @@ export const SvgNequi = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgStripachat = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -7975,7 +7945,6 @@ export const SvgStripachat = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgSnapchat = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -7989,7 +7958,6 @@ export const SvgSnapchat = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgPlane = ({ className = '' }: { className?: string }) => (
@@ -8006,7 +7974,6 @@ export const SvgPlane = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgSoundCloud = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8020,7 +7987,6 @@ export const SvgSoundCloud = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgStack = ({ className = '' }: { className?: string }) => (
@@ -8061,7 +8027,6 @@ export const SvgStack = ({ className = '' }: { className?: string }) => (
         </g>
     </svg>
 );
-
 
 
 export const SvgQr = ({ className = '' }: { className?: string }) => (
@@ -8110,7 +8075,6 @@ export const SvgMasterCard = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgBorder = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8123,7 +8087,6 @@ export const SvgBorder = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgBongacams = ({ className = '' }: { className?: string }) => (
@@ -8154,7 +8117,6 @@ export const SvgBongacams = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgFantime = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8168,7 +8130,6 @@ export const SvgFantime = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgX = ({ className = '' }: { className?: string }) => (
@@ -8204,8 +8165,6 @@ export const SvgXBox = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
-
 
 
 export const SvgMercadoLibre = ({ className = '' }: { className?: string }) => (
@@ -8249,7 +8208,6 @@ export const SvgMercadoLibre = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgEarringWatch = ({ className = '' }: { className?: string }) => (
     <svg
         data-name="Group 16126"
@@ -8286,7 +8244,6 @@ export const SvgEarringWatch = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgTrash = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8317,7 +8274,6 @@ export const SvgTrash = ({ className = '' }: { className?: string }) => (
         </g>
     </svg>
 );
-
 
 
 export const SvgGoogle = ({ className = '' }: { className?: string }) => (
@@ -8375,7 +8331,6 @@ export const SvgSteam = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgVideo = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8389,7 +8344,6 @@ export const SvgVideo = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgSize = ({ className = '' }: { className?: string }) => (
@@ -8416,7 +8370,6 @@ export const SvgSize = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgFont = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8429,7 +8382,6 @@ export const SvgFont = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgTheme = ({ className = '' }: { className?: string }) => (
@@ -8498,7 +8450,6 @@ export const SvgCheck2 = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgPatreon = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8512,7 +8463,6 @@ export const SvgPatreon = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgLinkedin = ({ className = '' }: { className?: string }) => (
@@ -8546,7 +8496,6 @@ export const SvgLinkedinBox = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgLink = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8559,7 +8508,6 @@ export const SvgLink = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgShare = ({ className = '' }: { className?: string }) => (
@@ -8600,8 +8548,6 @@ export const SvgNoConfirm = ({ className = '' }: { className?: string }) => (
 );
 
 
-
-
 export const SvgEmail = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8633,7 +8579,6 @@ export const SvgEmailBox = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgYoutube = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8647,7 +8592,6 @@ export const SvgYoutube = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgDaviplata = ({ className = '' }: { className?: string }) => (
@@ -8664,7 +8608,6 @@ export const SvgDaviplata = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgImg = ({ className = '' }: { className?: string }) => (
@@ -8697,7 +8640,6 @@ export const SvgArrowGoBack = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgChaturbate = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8720,7 +8662,6 @@ export const SvgChaturbate = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgDiscover = ({ className = '' }: { className?: string }) => (
@@ -8828,7 +8769,6 @@ export const SvgDiscover = ({ className = '' }: { className?: string }) => (
         </g>
     </svg>
 );
-
 
 
 export const SvgUnicorn = ({ className = '' }: { className?: string }) => (
@@ -8959,7 +8899,6 @@ export const SvgUnicorn = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgMovil = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -8992,7 +8931,6 @@ export const SvgMovilLayer = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgEbay = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9006,7 +8944,6 @@ export const SvgEbay = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgEstadisticas = ({ className = '' }: { className?: string }) => (
@@ -9039,7 +8976,6 @@ export const SvgEstadisticas = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgWechat = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9053,7 +8989,6 @@ export const SvgWechat = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgArrowNext = ({ className = '' }: { className?: string }) => (
@@ -9070,8 +9005,6 @@ export const SvgArrowNext = ({ className = '' }: { className?: string }) => (
 );
 
 
-
-
 export const SvgCrown = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9084,8 +9017,6 @@ export const SvgCrown = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
-
 
 
 export const SvgTwitter = ({ className = '' }: { className?: string }) => (
@@ -9119,7 +9050,6 @@ export const SvgTwitterBox = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgSaveCheck = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -9140,7 +9070,6 @@ export const SvgSaveCheck = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgCheck = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9153,7 +9082,6 @@ export const SvgCheck = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgTelegram = ({ className = '' }: { className?: string }) => (
@@ -9169,7 +9097,6 @@ export const SvgTelegram = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgUserAccount = ({ className = '' }: { className?: string }) => (
@@ -9240,9 +9167,11 @@ export const SvgUserAccount3 = ({ className = '' }: { className?: string }) => (
 );
 
 
-
-
-export const SvgManageAddresses = ({ className = '' }: { className?: string }) => (
+export const SvgManageAddresses = ({
+    className = '',
+}: {
+    className?: string;
+}) => (
     <svg
         className={`fenext_svg ${className}`}
         viewBox="0 0 46 46"
@@ -9265,7 +9194,6 @@ export const SvgManageAddresses = ({ className = '' }: { className?: string }) =
 );
 
 
-
 export const SvgExit = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -9284,7 +9212,6 @@ export const SvgExit = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgArrowPre = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9297,8 +9224,6 @@ export const SvgArrowPre = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
-
 
 
 export const SvgWhatsapp = ({ className = '' }: { className?: string }) => (
@@ -9329,7 +9254,6 @@ export const SvgWhatsappBox = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgBolt = ({ className = '' }: { className?: string }) => (
@@ -9367,7 +9291,6 @@ export const SvgBrush = ({ className = '' }: { className?: string }) => (
 
 
 
-
 export const SvgTableBox = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9385,7 +9308,6 @@ export const SvgTableBox = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgTableList = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9399,7 +9321,6 @@ export const SvgTableList = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgSelectList = ({ className = '' }: { className?: string }) => (
@@ -9419,7 +9340,6 @@ export const SvgSelectList = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgSelectNormal = ({ className = '' }: { className?: string }) => (
     <svg
         className={`fenext_svg ${className}`}
@@ -9432,7 +9352,6 @@ export const SvgSelectNormal = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgSelectBox = ({ className = '' }: { className?: string }) => (
@@ -9452,7 +9371,6 @@ export const SvgSelectBox = ({ className = '' }: { className?: string }) => (
 );
 
 
-
 export const SvgSearch = ({ className = '' }: { className?: string }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -9465,7 +9383,6 @@ export const SvgSearch = ({ className = '' }: { className?: string }) => (
         />
     </svg>
 );
-
 
 
 export const SvgLoader = ({ className = '' }: { className?: string }) => (
@@ -9796,7 +9713,6 @@ export const SvgCashapp = ({ className = '' }: { className?: string }) => (
 
 
 
-
 export const FenextImgUserPlaceholder =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAS10lEQVR4Xu2d/XNU1R3GQYgSCbCBRBIETTAI1KCM71VRW606WttatVYt+G4d+/LntLVqR52qVX6oHdux7Yxoq3W09QUVhZIgoaEESTSRBIOCpZ+H7MoaNpvNZrO7557nzHznJrt3773nc85zv+f9TJvmYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAIVIDC9AveM+pYHDhw4bmBgYO7+/ftnDw0N1WMNBw8enIfVYbXAUZp8MXPmzE+xT2bNmtXHcW9dXd1AKpUa4jhYU1PzRdQQyxh5C6QMsPv7++f29fXNRxgnI4jzueUKbDHWgM3GjsNmYsekBXJIIsEOYPuxfdhubDu2GZG8iVh2NTQ0fFxfXz9UhihEewsLZIqSHk8xY+fOnU3Y6XiGi7jNaqwVW4DVYRlvUegTSDDDabF8xLETexMP82JTU9NWbHdtba2E5VBCAhZICWHqUsPDw8d2dXWdtHv37kv493LsDOwEbC5WU8Lbybt8gn0ooWB/QSR/b2lp2WmhlI6yBVIilvIYEgYe4you+W2sHVMR6vgS3SLfZT7lyz3YP7FnEMrfVq5cuasM9038LSyQEiRxd3f3CYhjDUWpm7jcuVgTpnpFuYPqKhLGBopej+JN3m9ubpaXcSiSgAVSJDj9jOJUzZYtW1ZQ+V7Hv9dgJ2GqdFc6DPAAW7H1VOTXr1q1akelHyjU+1sgRaacWqY2bdr0DbzG3VziPKyxyEtN1c9UqZc3eQFv8sv29vZ358yZIw/jMAECFsgEYGVOpUi1oLOz8wb+lzhWVonXGCsme/niXezhtra2Z5csWdJXRJSj/YkFMsGk3759u+obt/Oz27BlWClbpib4NAWf/jlndmCqlzzW2tqqli+HAghYIAVAypyCOBYijrv4/w5sKaaOvVCC+kg+wB5DJA8ikp5QHrySz2mBFEg/7TnuzRJHgb+sutPUGy9P8it7kvHTJqQ34PixmaIzVOfAc6zl8renPccU3aksl1Vv/lrFp6enR/00DnkIWCDjZA+acudQIb+R01QhV7EqCUEiuY14fWtwcLAcHZnBMrNA8iQdvePTN27ceAGn3Im1YUkpkirdT6WJ+h6aqjVw0mEMAhZInqzBG3Y5w9Lv45TTMI22TVI4lsicQfxu6+joODFJEStlXCyQMWj29vbOZ8DhrXz9dSypxZD5xO1qjR+j43NOKTNWUq5lgYyRkniPs/jqWmxhUhJ7jHgs4fObGTJzasLjWVT0LJAc2GjdWUTR4xa+SkqlPF/m0KDKVcT3elrrkv4ymLBILJAcyGgCvZSP12CxFDvU3Hsl8VZdyyGLgAUyKjvgPRbzNv0+Hy+KKKcoH7TQqnWNhu5HFO9xo2qBjELEW1R1D80C1JTYmIIq7GtomHCLlj1I7nxPS04D3uNKvo31LXoii0qscYvWkfxhD5KlFd6eKlbJg2j+eIwhRaQv0AosMUY+V5wtkDSVQ4cOTSdjqM9Dy/HEGtTfcxovCjf5pnOABZIGwbRZLeB2Nv/qLRpzaITDmRSzYudwOA9YIGkp4D2UITQuKam95oWKXk3bp8OjGubWF/rMU3aeBZJGS+VUK5HEWjnPzmB6QZwCD9dD7EFG8oXqH2SIr/FnrJXz0W/gVPqFMWVv5lAubA9CSpEZ5lLuPoU/Y+v7GCuf1sJjIXNhKrG2V1VpxwIhOcgMszio9UpHh2nTNBR+Pi8OHaMOFsiIB1FG0HikEFYoKUeGPSwQXhzR87BARjyIihJacd08RuSnyWEpRhXMKIcaq/kezhAjAtEbM/rydlZGVb6YDRcLpJrVW65nIyPojRl9ZhglkBq4lCsJqvY+9iBVmzQVfTAtMufNeFzm/jIT6lXpff+OaPJ//PkZeyPqGHWwByH5Wf38Mw7aC9BhhICEMWSBuNXmcG4gI0ggg1bHVzzqXrhE71XtQUYEotXPtTGmjg4ju+t+jGeNvpZugZAT2FZZxatuTLvIOoy8KCSQ6F8YFgg5gYygnZe2YdoM02GkPvYRO1Kp6Bl1sEBI/pqami/wIpv40xtejsihHx7ePwQQFkj6/ZhKpZQhvPPSSPGqGx6qk0UfLJAjAlErlvbyi32jyyEYbEYgLm7agxx5QZIhBmjNeo1PBiJ/bfYT//fgIaFEH+xB0lkgXQ/ZyL8xl73VvLuDvdXfgYf+jj5YIFlZgH37dvPvmxEXs+Q9X0Uge6JXRhqABZKVE+rr6/soZr3AR7HuJb6bJu8Nzc3NrqBbILnfkYsXL36Vb9TkG1snmRop3m5qatpi73GEgD3IqNyAQHrwIn/i49iKGbuI8/MIJFbvmfO9YIGMwkLl9DNE8mc+fisiL6K6xyvUwTbU1tZG33uenSUskBzvDQTyH7zIU3yl8VlJDxqxu426x3q8h7yIQxYBCyRHdlCTr96mfPUc9nHCc4xa7p4jvm/gPaIfvTs6rS2QMXL/kiVLeugse5Cv/4UldTLVXuL2OvFcT8tVbHWugt57FkgeTCtWrNhMUeshTtmKJW36qVrpNlO0+g3x/HdBuSXCkyyQPIlOkeMAmed5TnlE5fQE5Q+JvRN7gqLVy66Yj52yFsg4ub6xsbGfTPQEpz2JdSVEJNuJx++I19MUrZJex5pUklkgBeBrbW39kBaeB/TGxXYU8JNqPUVL+XwgcRCfR4iXKugOeQhMN53CCWzevHkR25Pdxy9+hLUW/suqOFPFKhUTn0QcD61cuTKGJuxJg7dAJogQkTQjkjv42VpsGRbCiozq/FNDw+OI47eI478TjHa0p1sgRSR9R0dH486dO6/jp/di2ratmrcr0zRijS17hA7QZ5ctW+ZZkxNIcwtkArCyT92+ffu8rq6uC/nsbuwCbGGRl5qqn6nTTz3jr6hY1dbW9jJ9O66QT5C2BTJBYNmnDw4OHrNp06Y2tgn4AZ//ENMuVdWwCY9mBapI9Xv6OZ6lqXobQ/k9xqqItLZAioA2+ifUSxqpl2iPddVNtJV0M1aJuonmke/EXsT+SJHqNYpU7iGfRBpbIJOAl8ObtOBNLudzeZTl6WJXOXZp0lwOFadelzAYOqKRuT14DU+bnWT6WiCTBDj65z09PcdTNzkJoVzEd9di2j1X20uXegddNdsOYJpDr0lezyOMVxHGLhenSpeoFkjpWH7lSr29vbModi3s6+s7nS/Ox9Zgi7AUpu3eitnRSuOn5C1U2VY/xkvYawhjE8LYY2GUPjEtkNIzPeqKeJV6xLJoYGBgJV8uxXRUhX4epiZibQGX2eUqkybyEJqrIVFoNLGE0YW9h3UgivdYXKHbLVNTm4AWyNTyPerq/f39sxHKHHbWnUcxrE5HTjoeU+uXvIqEoqBm2s8ZTbwPG2Ip0E8QRS/HQTyFt2ooc7r5diZgAiZgAiZgAiZgAiZgAiZgAiZgAiZgAiZgAiZgAkEScD9ImZPt0KFDo5mPlwaaJns4TJ8+/cu/y/zY0d5uvMSJFkwxER8eHp5LJ+DsgwcPqgNwTvqY4lq1dArWc1RHoHrNNYBRpk7BTA969voA6kXP9KRrwOHhTkNMf+uooev7Gcren+5I/JS/ZYN0JO7T32zA6R2iiknEUb+xQCYBkV5xCaIea0YQ7QhCI3g1lESTpzQ4sRZTD3lGDBoCLyGIey7LPE3GU+gok1gyx2zxZMQiwah3fQDT4MUuhNOJWLSVWi/WT+977FvLFZXSFsgEsSEKjatawCDE5QhCcz/OSItiAcc5mMZWZYaLTPDqkz5dItK4LXkPCUYrtXdgbyGYtxi7tQ37iKWMtKKiQwEELJACIGn8FIJoQBhnIAqNyj0TOxmbnxZFpQRRwNMfLo5JENoUR0v+vEER7EW8ylbtqOX1ePMjtEDy8EEY85nbsYQi1KWcJmGswjS3I1VIzqzCc1SX0SIOKoa9gW3QHBJWOtnDAnIDVfi8FX8kCyRHEiCMBoSxFGFo5RIJQ2tgNWCqYCclDBMRTcfVWln/wKtohfcOhOINdLJS2ALJgoEwUghjGcLQlFkJQxXuxqQoYox4qNIvUezAnqdi/1R7e3snRS9vAw0QCwQIBw4cmIEwWlnrSiuTXIWpNUoeI7Ygj/I+9gzFrj+wwFxXbABGxzd6gTA19oQtW7ZcTOVb4jgP07TYmNcsVl+LVkZ5iWLXwxS73om5fhKtQPAax+A1luM11pEZrkkXp6p5hcRyv8zV8qUdb9ezfNB6lg9SESy6EKVA6PGu27hx4xp6t39Cip+DqWXK4WgCqp9ocYgNeJMHVq9e/TZ1k6TutpUz/aMTCEWqRopU11Gk0iJvWnFE88Ed8hMY4Os36Wz8Nas0/lV7psQCLCqBdHd3N3V2dt5O4mr7AlXEq7mDr9ryoDocN2OqlzzN3iJRrNgYjUBYbHoxdY4fk8A3Y1pyx2HiBLQMkYauPIpIHkUk6nBMdIhCIGlx/IyUvAnTEBGHyRHQ/oaPI5IHki6SxDdnWhyTU8IYv25TMRWPfA98tVB3YkOiBaLEIxHvt+eYkvyrYuo6+N4F52rbG6VkEU6sQKiQL0zXOdQB6GJVybLMVy4kkayF883wTuTIg0QKhI1t6mmtUgfgrZgGGjpMHQEVt+6C93cYy6b5MIkKiRMInYC17Pqk8VRqynVr1dRnV+WhU7G74X4R/BPVdJ44gdBDfg495D8lwbSCehStdFOvgXHvoGkAp9P5ej8ikVgSExIlECqLSxHHz0kdTYMtx85OickIJYiIxrGdx9z8O9kFODEtW4kRCK5ds//uIpE0j8ODDkuQ44u4hObOXMsA0CuojyRiCE9iBELRSkPVv4t54GERObuEP2nhWusY75aIolYiBELRSptnqtVKMwAdKktA9ZFVpMctSegfCV4gFK1mU7S6kUS5ENM6VA6VJ6Ci1tUUtS4MvVUreIEgDrny72EnVj5f+AmyCLTQqnULRa2gO2mDFghvp3msVXUDiSKRBB2XBEpLDSXnsgDGZVTYg/XsQWcqvIc6Ar+JJXKYQwJE00QcriedgvUiwQoky3u4t7x6laS+qHa8yLVax7h6H3PsJwtWIFqmh2hdhiV93aoQ81X2M6vZXRV2rRYTXAhSIHiPWdQ9MiuRBAc9sgfW2KxTWdt4DSvJBDe6IUiB4LJVtlWPuVZUd6h+Alrk+xK8SHCduEEKhOKVVldfgXkwYvWLQ0+oPVLOwutroYygQnAC0Yrr9NJe4bpHUPlMD3sC6XYx6TcvpCcPTiCUZTW9UxvXJGIwXEiZZZLPmlKxWPusTPI6Zf15iALRPI8gW0TKmrLVdzPltaUIZFn1PdrYTxSUQDRbEDd9PtEJyk2HlCGm+FlTpN/ZSscpvk/JLh+UQGi9kpvWLk8uXpUsC5T1Qkq30/AiwXQaBiUQwKp5t6WsSeqblZKAhsKfwqxDbYkdRAhKIIBV+VVt6g7hEmikJBDM8KBgBEIv7LGUX9vJF55OG6449OR1pGOb0jOEaAQjELxHHUDlQYKp4IWQASrwjEq/FtIziHpkSAJRxU71j2CeuQKZL4RbSiBLEUgQJYFgMhtuWU27QXUyhZBbK/CMynOLSc8gWrJCE0gQb50KZLrQbjkPgaRCeOhgBML8ZnmQ40KA6mccl4A6fIMY2RuMQACq4lVw8wnGzSpxnlCTfuFVfeyDEQhA1eoxo+qJ+gELITCD9AxiJfiQBCJxHCqEvs+pegLHIJAg6pPBCIQk34dpE0mH8Alo//UgXnYhCeRDoH4aft5wDNLpuDcEEsEIJJVKbQHoNnuRELJV3mfUS+4D0nNjCDEJZjcgthzuYgX3X6ShtnBUk6+ef6x56RkXnu3Ki3Hrxc57L+ZeheaZQq6d65xCfldsfPXs+dLiYLqYrJectpB+r9DIVvK8ycAo+3P39vYex154p9DkK4GoX0TDFtT0K0+oSnzGIyojZJuedazMkYtB5rOxjqMzw+hrj3ev7HsWkga5RJ7vnvnOL0Qk+dI2+8WT61rZzDJpoDqHBDJUV1fX0dbW1lFfXz9c9gxUxA0LSZwiLhveT5jlNprFRP/PFel84ss+f/R5Y2XiiXiFQkR71PVqa2snK6DwEt9PbAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYAImYALVRuD/0IxwoVhhLoIAAAAASUVORK5CYII=";
 
@@ -9837,7 +9753,7 @@ export const Chat = ({
     empty = (
         <>
             <Text>There is not messages yet</Text>
-            <Telegram />
+            <SvgTelegram />
         </>
     ),
 
@@ -10525,11 +10441,11 @@ export const SwichViewTable = ({
     const ITEMS: SwichViewListBaseItemProps<SwichViewTableType>[] = [
         {
             id: "fenext-swich-view-table-box",
-            icon: <TableBox />,
+            icon: <SvgTableBox />,
         },
         {
             id: "fenext-swich-view-table-list",
-            icon: <TableList />,
+            icon: <SvgTableList />,
         },
     ];
     return (
@@ -10578,15 +10494,15 @@ export const SwichViewSelect = ({
     const ITEMS: SwichViewListBaseItemProps<SwichViewSelectType>[] = [
         {
             id: "fenext-swich-view-select-box",
-            icon: <SelectBox />,
+            icon: <SvgSelectBox />,
         },
         {
             id: "fenext-swich-view-select-list",
-            icon: <SelectList />,
+            icon: <SvgSelectList />,
         },
         {
             id: "fenext-swich-view-select-normal",
-            icon: <SelectNormal />,
+            icon: <SvgSelectNormal />,
         },
     ];
     return (
@@ -11081,7 +10997,7 @@ export const MediaPage = ({
                                         download={img.name ?? "download.png"}
                                         target="_blank"
                                     >
-                                        <Save />
+                                        <SvgSave />
                                     </a>
                                     <div
                                         className={`fenext-media-page-img-action fenext-media-page-img-delete`}
@@ -11089,7 +11005,7 @@ export const MediaPage = ({
                                             onDeleteImg?.(img);
                                         }}
                                     >
-                                        <Trash />
+                                        <SvgTrash />
                                     </div>
                                 </div>
                             </div>
@@ -11947,7 +11863,7 @@ export const Menu = ({
     items = [],
 
     defaultShowSubMenu = false,
-    iconArrow = <Arrow />,
+    iconArrow = <SvgArrow />,
     typeCollapse,
     ...props
 }: MenuProps) => {
@@ -12056,7 +11972,7 @@ export const ItemMenu = ({
     icon = <></>,
     subItems = [],
     defaultActive = false,
-    iconArrow = <Arrow />,
+    iconArrow = <SvgArrow />,
     nameNumber = 1,
     typeCollapse,
     isLink = true,
@@ -12308,13 +12224,13 @@ export const InputNumber = ({
                                     onClick={addValue(1)}
                                     className={`fenext-input-number-icon-arrow fenext-input-number-icon-increase`}
                                 >
-                                    <SVGNumberIncrease />
+                                    <SvgNumberIncrease />
                                 </span>
                                 <span
                                     onClick={addValue(-1)}
                                     className={`fenext-input-number-icon-arrow fenext-input-number-icon-decrease`}
                                 >
-                                    <SVGNumberDecrease />
+                                    <SvgNumberDecrease />
                                 </span>
                             </>
                         ) : (
@@ -12324,13 +12240,13 @@ export const InputNumber = ({
                                         onClick={addValue(1)}
                                         className={`fenext-input-number-icon-arrow-up`}
                                     >
-                                        <Arrow />
+                                        <SvgArrow />
                                     </span>
                                     <span
                                         onClick={addValue(-1)}
                                         className={`fenext-input-number-icon-arrow-down`}
                                     >
-                                        <Arrow />
+                                        <SvgArrow />
                                     </span>
                                 </div>
                             </>
@@ -13157,7 +13073,7 @@ export const InputCalendarMonth = ({
                             className={`fenext-input-calendar-btn`}
                             onClick={onPreMonth}
                         >
-                            <PaginationPre />
+                            <SvgPaginationPre />
                         </button>
                         <div className={`fenext-input-calendar-top-info`}>
                             {date?.onFormat({
@@ -13169,7 +13085,7 @@ export const InputCalendarMonth = ({
                             className={`fenext-input-calendar-btn`}
                             onClick={onNextMonth}
                         >
-                            <PaginationNext />
+                            <SvgPaginationNext />
                         </button>
                     </div>
                     <div className={`fenext-input-calendar-days`}>
@@ -13617,7 +13533,7 @@ export const InputUpload = ({
     btn = "Choose File",
     icon = (
         <>
-            <Upload2 />
+            <SvgUpload2 />
         </>
     ),
     text = "Drag and drop your file or template here.",
@@ -13729,7 +13645,7 @@ export const InputUpload = ({
                                         });
                                     }}
                                 >
-                                    <Close />
+                                    <SvgClose />
                                 </div>
                             )}
                         </div>
@@ -13791,14 +13707,6 @@ export const InputUpload = ({
 
 
 
-import React, {
-    ReactNode,
-    useCallback,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from "react";
 /**
  * Props for InputScannerQr component.
  */
@@ -13813,9 +13721,9 @@ export interface InputScannerQrProps {
 export const InputScannerQr = ({
     className = "",
     onChange,
-    buttonScannerContent = <Qr />,
-    buttonChangeCameraContent = <CameraChange />,
-    buttonToggleFlashContent = <Bolt />,
+    buttonScannerContent = <SvgQr />,
+    buttonChangeCameraContent = <SvgCameraChange />,
+    buttonToggleFlashContent = <SvgBolt />,
 }: InputScannerQrProps) => {
     const uuid = useMemo(() => generateRandomID(), []);
     const ref = useRef<HTMLVideoElement>(null);
@@ -14072,7 +13980,7 @@ export const InputSelectOption = <T = any,>({
     hidden = false,
     isBtn = false,
     data,
-    iconDelete = <Trash />,
+    iconDelete = <SvgTrash />,
     ...props
 }: InputSelectOptionProps<T>) => {
     const { _t } = use_T({ ...props });
@@ -14175,15 +14083,15 @@ export const InputSelectOption = <T = any,>({
 export const InputCardNumberIcons: {
     [id in Card_Enum]: ReactNode;
 } = {
-    AMEX: <CardAmericanExpress />,
-    DINERS: <CardDinersClub />,
-    DINERS_CARTE_BLANCHE: <CardDinersClub />,
-    DISCOVER: <CardDiscover />,
-    JCB: <CardJCB />,
-    MASTERCARD: <CardMasterCard />,
+    AMEX: <SvgCardAmericanExpress />,
+    DINERS: <SvgCardDinersClub />,
+    DINERS_CARTE_BLANCHE: <SvgCardDinersClub />,
+    DISCOVER: <SvgCardDiscover />,
+    JCB: <SvgCardJCB />,
+    MASTERCARD: <SvgCardMasterCard />,
     OTHER: <></>,
-    VISA: <CardVisa />,
-    VISA_ELECTRON: <CardVisaElectron />,
+    VISA: <SvgCardVisa />,
+    VISA_ELECTRON: <SvgCardVisaElectron />,
 };
 
 /**
@@ -14462,14 +14370,6 @@ export const InputSelectCity = ({
 };
 
 
-import React, {
-    ReactNode,
-    useCallback,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from "react";
 export type InputSelectTypeStyle =
     | "normal"
     | "normal-out"
@@ -14688,15 +14588,15 @@ export const InputSelect = <T = any,>({
     onChangeData,
     onChangeText,
     onChangeValidate,
-    icon = <Arrow />,
-    iconSearch = <SVGSearch />,
+    icon = <SvgArrow />,
+    iconSearch = <SvgSearch />,
     noResult,
     loaderOption,
     selected,
     create,
     onCreate,
     isSelectClearText = false,
-    iconCloseMovil = <Cancel />,
+    iconCloseMovil = <SvgCancel />,
     filterOptions = undefined,
     clearContent = "Clear",
     isSelectChangeText = true,
@@ -14718,7 +14618,7 @@ export const InputSelect = <T = any,>({
     validatorData,
     useTOption,
     forceShowOptionOnLoad = false,
-    iconDelete = <Trash />,
+    iconDelete = <SvgTrash />,
     ...props
 }: InputSelectProps<T>) => {
     const { _t } = use_T({ ...props });
@@ -15721,38 +15621,38 @@ export const InputRate = ({
                 <div
                     className={`fenext-input-rate-content-start ${classNameContentStar} `}
                 >
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
                 </div>
                 <div
                     className={`fenext-input-rate-content-start fenext-input-rate-content-start-active ${classNameContentStar} `}
                 >
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <Star
+                    <SvgStar
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
                 </div>
@@ -16123,7 +16023,7 @@ export const InputDate = ({
     min = undefined,
     max = undefined,
     onChange,
-    icon = <SVGDate />,
+    icon = <SvgDate />,
     iconPos = "left",
     validator,
     ...props
@@ -16578,7 +16478,7 @@ export const InputFileStatus = ({
     btn = "Choose File",
     icon = (
         <>
-            <Upload2 />
+            <SvgUpload2 />
         </>
     ),
     text = "Drag and drop your file or template here.",
@@ -16602,17 +16502,17 @@ export const InputFileStatus = ({
             APPROVED: {
                 title: "Approved!",
                 tag: "Accepted",
-                icon: <Check />,
+                icon: <SvgCheck />,
             },
             REFUSED: {
                 title: "Refused! go up again",
                 tag: "Denied",
-                icon: <Upload2 />,
+                icon: <SvgUpload2 />,
             },
             PENDING: {
                 title: "Pending",
                 tag: "Pending",
-                icon: <Upload2 />,
+                icon: <SvgUpload2 />,
             },
             ...contentByStatusProps,
         }),
@@ -16681,7 +16581,7 @@ export const InputFileStatus = ({
                                         });
                                     }}
                                 >
-                                    <Close />
+                                    <SvgClose />
                                 </div>
                             )}
                         </div>
@@ -17399,7 +17299,7 @@ export const InputGoogleAutocomplete = ({
                     </Autocomplete>
                 </div>
                 <span className={`fenext-input-google-autocomplete-close`}>
-                    <Close />
+                    <SvgClose />
                 </span>
             </div>
         </div>
@@ -17455,14 +17355,6 @@ export const InputSelectT = <T,>({
     );
 };
 
-
-import React, {
-    ReactNode,
-    useCallback,
-    useEffect,
-    useMemo,
-    useState,
-} from "react";
 
 /**
  * Interface that defines CSS class properties for a select-multiple input component.
@@ -17545,7 +17437,7 @@ export const InputSelectMultiple = <T = any,>({
     defaultValue = [],
     onChangeValidate,
     options = [],
-    iconDelete = <Trash />,
+    iconDelete = <SvgTrash />,
     typeSelectMultipleStyle = "normal",
     CustomOptionsSelected = undefined,
     validatorData,
@@ -17831,7 +17723,7 @@ export const InputRadio = <T = any,>({
     defaultValue = undefined,
     value = undefined,
     disabled = false,
-    icon = <Check />,
+    icon = <SvgCheck />,
 
     items = [],
     ...props
@@ -18032,7 +17924,7 @@ export const InputImg = ({
                                     onRemove?.();
                                 }}
                             >
-                                <Close />
+                                <SvgClose />
                             </div>
                         </div>
                     </>
@@ -18358,7 +18250,7 @@ export const InputPassword = ({
                 onClick={toggleTypePassword}
                 className={`fenext-input-password-icon ${classNameContentEye}`}
             >
-                {type == "password" ? <Eye /> : <EyeBar />}
+                {type == "password" ? <SvgEye /> : <SvgEyeBar />}
             </span>
         );
     }, [type]);
@@ -19091,7 +18983,7 @@ export const InputCheckbox = <VT = any, VF = any>({
     defaultValue = false,
     value = undefined,
     disabled = false,
-    icon = <Check />,
+    icon = <SvgCheck />,
     onValidateCheck = async () => {},
     optional = false,
     optionalText = "(optional)",
@@ -19484,8 +19376,8 @@ export const InputSearch = ({
     classNameSearchResult = "",
 
     placeholder = "Search",
-    icon = <SVGSearch />,
-    iconClear = <Close />,
+    icon = <SvgSearch />,
+    iconClear = <SvgClose />,
     loader = false,
 
     onSearch,
@@ -19682,7 +19574,7 @@ export const InputSearch = ({
                                             onDelete={onClickDeleteTabFilter(i)}
                                             onClick={onFocusClickSearch}
                                             type="multiple"
-                                            iconDelete={<Close />}
+                                            iconDelete={<SvgClose />}
                                             {...item}
                                             _t={_t}
                                         />
@@ -20360,7 +20252,7 @@ export const Notification = ({
             >
                 {_t(children)}
                 <div className="fenext-notification-close" onClick={reset}>
-                    <Close />
+                    <SvgClose />
                 </div>
             </div>
         </>
@@ -20690,13 +20582,13 @@ export const Slider = ({
                     onClick={onScrollToPre}
                     className={`fenext-slider-arrow fenext-slider-arrow-pre ${classNameArrows} ${classNameArrowPre}`}
                 >
-                    <PaginationPre />
+                    <SvgPaginationPre />
                 </div>
                 <div
                     onClick={onScrollToNext}
                     className={`fenext-slider-arrow fenext-slider-arrow-next ${classNameArrows} ${classNameArrowNext}`}
                 >
-                    <PaginationNext />
+                    <SvgPaginationNext />
                 </div>
             </div>
         </>
@@ -20915,12 +20807,12 @@ export const ImgSlider = ({
                     onSetStep={setStep}
                     btnNext={
                         <>
-                            <PaginationNext />
+                            <SvgPaginationNext />
                         </>
                     }
                     btnPrev={
                         <>
-                            <PaginationPre />
+                            <SvgPaginationPre />
                         </>
                     }
                     useDogs={true}
@@ -21043,10 +20935,10 @@ export const PaginationItemPage = ({
     classNameDown = "",
 
     icons = {
-        up: <PaginationUp />,
-        pre: <PaginationPre />,
-        next: <PaginationNext />,
-        down: <PaginationDown />,
+        up: <SvgPaginationUp />,
+        pre: <SvgPaginationPre />,
+        next: <SvgPaginationNext />,
+        down: <SvgPaginationDown />,
     },
 
     defaultPage = 0,
@@ -21994,7 +21886,7 @@ export interface AlertComponentProps extends _TProps, AlertInterface {
 export const Alert = ({
     className = "",
     message,
-    iconClose = <Close />,
+    iconClose = <SvgClose />,
     type,
     data,
     onClose,
@@ -22140,7 +22032,7 @@ export const Collapse = ({
     show = "checked",
     status = "none",
     onChange,
-    iconArrow = <Arrow />,
+    iconArrow = <SvgArrow />,
     rotateIcon = true,
     useActiveForShowChildren = false,
 }: CollapseProps) => {
@@ -23330,13 +23222,6 @@ export const PrintPage = <T,>({
 };
 
 
-import React, {
-    useCallback,
-    ReactNode,
-    useMemo,
-    useRef,
-    useState,
-} from "react";
 export interface StepsItemProps {
     /**
      * Item label.
@@ -23835,7 +23720,7 @@ export const Back = ({
     loader = false,
     disabled = false,
     onClick = undefined,
-    icon = <PaginationPre />,
+    icon = <SvgPaginationPre />,
     typeOnBack = "history",
     link = "",
     minLenght = 2,
@@ -24054,19 +23939,19 @@ export const Share = ({
     } = {
         whatsapp: {
             urlShare: "https://web.whatsapp.com/share?url=",
-            icon: <WhatsappBox />,
+            icon: <SvgWhatsappBox />,
         },
         facebook: {
             urlShare: "https://www.facebook.com/sharer/sharer.php?u=",
-            icon: <FacebookBox />,
+            icon: <SvgFacebookBox />,
         },
         x: {
             urlShare: "https://x.com/share?text=",
-            icon: <XBox />,
+            icon: <SvgXBox />,
         },
         email: {
             urlShare: "mailto:?body=",
-            icon: <EmailBox />,
+            icon: <SvgEmailBox />,
         },
         copy: {
             urlShare: "",
@@ -24768,7 +24653,7 @@ export const DesignTypography = ({
                     header={<>{_t(textTypography)}</>}
                     iconArrow={
                         <>
-                            <Edit />
+                            <SvgEdit />
                         </>
                     }
                     rotateIcon={false}
@@ -25090,7 +24975,7 @@ export const DesignBox = ({
                     header={<>{_t(textBox)}</>}
                     iconArrow={
                         <>
-                            <Edit />
+                            <SvgEdit />
                         </>
                     }
                     rotateIcon={false}
@@ -26351,7 +26236,7 @@ export const ScheduleDay = ({
                                             onDeleteData(i);
                                         }}
                                     >
-                                        <Close />
+                                        <SvgClose />
                                     </div>
                                 </div>
                             </>
@@ -26613,7 +26498,7 @@ export const ModalBase = ({
     children,
     useRender = false,
     name,
-    closeComponent = <Close />,
+    closeComponent = <SvgClose />,
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
 
