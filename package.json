@@ -10,11 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-google-maps/api": "2.19.3",
     "country-state-city-nextjs": "^9.1.0",
     "fenextjs-nextjs-dependencies": "2.0.1",
+    "firebase": "10.8.0",
     "jwt-decode": "^4.0.0",
-    "uselocalstoragenextjs": "^2.0.2",
-    "firebase": "10.8.0"
+    "qr-scanner": "1.4.2",
+    "uselocalstoragenextjs": "^2.0.2"
   },
   "devDependencies": {
     "@types/node": "20.11.16",

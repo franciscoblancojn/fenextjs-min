@@ -8,17 +8,18 @@
             useState, 
             useRef, 
             useCallback,
-            createPortal,
             SyntheticEvent,
             AnchorHTMLAttributes,
         } from "react";
+        import * as ReactDOM from "react-dom";
+        import { createPortal } from "react-dom";
         import Router,{ useRouter } from "next/router";
         import LinkNext, { LinkProps as LinkNextProps } from "next/link";
         import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
         import { jwtDecode } from "jwt-decode";
         import { 
-            Autocomplete, 
-            AutocompleteProps,
+            Autocomplete as GoogleAutocomplete, 
+            AutocompleteProps as GoogleAutocompleteProps,
             LoadScript, 
             LoadScriptProps,
             GoogleMap,
@@ -38,6 +39,7 @@
             getRuteCountryImg,
             getDataStates,
             getDataCitys,
+            getDataCitysByCountry,
         } from "country-state-city-nextjs";
         import firebase from "firebase/compat/app";
         import "firebase/compat/auth";
@@ -61,6 +63,7 @@
             Database,
             DatabaseReference,
         } from "firebase/database";
+        import QrScanner from "qr-scanner";
     
 
 
@@ -4234,9 +4237,9 @@ export const useNotification = ({ time = 2000 }: useNotificationProps) => {
         options?: NotificationOptions,
     ) => {
         onAction(props);
-        Notification.requestPermission().then((permission) => {
+        window.Notification.requestPermission().then((permission) => {
             if (permission == "granted") {
-                new Notification(props.message, options);
+                new window.Notification(props.message, options);
             }
         });
         setTimeout(() => {
@@ -14575,7 +14578,7 @@ export interface InputSelectBaseProps<T = any>
     /**
      * FenextjsValidatorClass used for input validation.
      */
-    validatorData?: FenextjsValidatorClass<T>;
+    validatorData?: FenextjsValidatorClass<T | undefined>;
     /**
      * forceShowOptionOnLoad
      */
@@ -15279,6 +15282,67 @@ export const InputSelect = <T = any,>({
 };
 
 
+export interface useSelectOptionsPosProps {
+    children?: ReactNode;
+    target?: HTMLElement | null | undefined;
+}
+
+export const useSelectOptionsPos = ({
+    children,
+    target,
+}: useSelectOptionsPosProps) => {
+    const [ref, setRef] = useState<HTMLElement | undefined>(undefined);
+
+    const onLoadRef = () => {
+        const ID = "fenext-select";
+        let ele = document.getElementById(ID);
+        if (!ele) {
+            ele = document.createElement("div");
+            ele.id = ID;
+            ele.classList.value = `
+                fenext-use-select-options-pos
+            `;
+            document.body.append(ele);
+        }
+        ele = document.getElementById(ID);
+        if (ele) {
+            setRef(ele);
+        }
+    };
+    useEffect(onLoadRef, []);
+
+    const onLoadPos = () => {
+        if (ref && target) {
+            const bounding = target.getBoundingClientRect();
+            ReactDOM.render(<>{children}</>, ref);
+
+            ref.style.setProperty("--element-width", `${target.offsetWidth}px`);
+            ref.style.setProperty("--element-top", `${bounding.top}px`);
+            ref.style.setProperty("--element-left", `${bounding.left}px`);
+            ref.style.setProperty("--element-bottom", `${bounding.bottom}px`);
+
+            ref.setAttribute(
+                "fenext-direction-pos",
+                bounding.top > window?.innerHeight - bounding.bottom
+                    ? "top"
+                    : "bottom",
+            );
+        }
+    };
+    const onLoadChildren = () => {
+        if (ref) {
+            ReactDOM.render(<>{children}</>, ref);
+        }
+    };
+
+    return {
+        ref,
+        onLoadPos,
+        onLoadChildren,
+    };
+};
+
+
 /**
  * Interface that defines base properties for a swich input swich.
  */
@@ -15364,6 +15428,310 @@ export const InputSelectTimeZone = ({
         </>
     );
 };
+
+
+export const TimeZoneList: TimeZoneProps[] = [
+    {
+        zone: "Dateline Standard Time",
+        time: "(GMT-12:00) International Date Line West",
+    },
+    {
+        zone: "Samoa Standard Time",
+        time: "(GMT-11:00) Midway Island, Samoa",
+    },
+    {
+        zone: "Hawaiian Standard Time",
+        time: "(GMT-10:00) Hawaii",
+    },
+    {
+        zone: "Alaskan Standard Time",
+        time: "(GMT-09:00) Alaska",
+    },
+    {
+        zone: "Pacific Standard Time",
+        time: "(GMT-08:00) Pacific Time (US and Canada)",
+    },
+    {
+        zone: "Mountain Standard Time",
+        time: "(GMT-07:00) Mountain Time (US and Canada)",
+    },
+    {
+        zone: "Mexico Standard Time 2",
+        time: "(GMT-07:00) Chihuahua, La Paz, Mazatlan",
+    },
+    {
+        zone: "U.S. Mountain Standard Time",
+        time: "(GMT-07:00) Arizona",
+    },
+    {
+        zone: "Central Standard Time",
+        time: "(GMT-06:00) Central Time (US and Canada)",
+    },
+    {
+        zone: "Canada Central Standard Time",
+        time: "(GMT-06:00) Saskatchewan",
+    },
+    {
+        zone: "Mexico Standard Time",
+        time: "(GMT-06:00) Guadalajara, Mexico City, Monterrey",
+    },
+    {
+        zone: "Central America Standard Time",
+        time: "(GMT-06:00) Central America",
+    },
+    {
+        zone: "Eastern Standard Time",
+        time: "(GMT-05:00) Eastern Time (US and Canada)",
+    },
+    {
+        zone: "U.S. Eastern Standard Time",
+        time: "(GMT-05:00) Indiana (East)",
+    },
+    {
+        zone: "S.A. Pacific Standard Time",
+        time: "(GMT-05:00) Bogota, Lima, Quito",
+    },
+    {
+        zone: "Atlantic Standard Time",
+        time: "(GMT-04:00) Atlantic Time (Canada)",
+    },
+    {
+        zone: "S.A. Western Standard Time",
+        time: "(GMT-04:00) Caracas, La Paz",
+    },
+    {
+        zone: "Pacific S.A. Standard Time",
+        time: "(GMT-04:00) Santiago",
+    },
+    {
+        zone: "Newfoundland and Labrador Standard Time",
+        time: "(GMT-03:30) Newfoundland and Labrador",
+    },
+    {
+        zone: "E. South America Standard Time",
+        time: "(GMT-03:00) Brasilia",
+    },
+    {
+        zone: "S.A. Eastern Standard Time",
+        time: "(GMT-03:00) Buenos Aires, Georgetown",
+    },
+    {
+        zone: "Greenland Standard Time",
+        time: "(GMT-03:00) Greenland",
+    },
+    {
+        zone: "Mid-Atlantic Standard Time",
+        time: "(GMT-02:00) Mid-Atlantic",
+    },
+    {
+        zone: "Azores Standard Time",
+        time: "(GMT-01:00) Azores",
+    },
+    {
+        zone: "Cape Verde Standard Time",
+        time: "(GMT-01:00) Cape Verde Islands",
+    },
+    {
+        zone: "GMT Standard Time",
+        time: "(GMT) Greenwich Mean Time: Dublin, Edinburgh, Lisbon, London",
+    },
+    {
+        zone: "Greenwich Standard Time",
+        time: "(GMT) Casablanca, Monrovia",
+    },
+    {
+        zone: "Central Europe Standard Time",
+        time: "(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague",
+    },
+    {
+        zone: "Central European Standard Time",
+        time: "(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb",
+    },
+    {
+        zone: "Romance Standard Time",
+        time: "(GMT+01:00) Brussels, Copenhagen, Madrid, Paris",
+    },
+    {
+        zone: "W. Europe Standard Time",
+        time: "(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+    },
+    {
+        zone: "W. Central Africa Standard Time",
+        time: "(GMT+01:00) West Central Africa",
+    },
+    {
+        zone: "E. Europe Standard Time",
+        time: "(GMT+02:00) Bucharest",
+    },
+    {
+        zone: "Egypt Standard Time",
+        time: "(GMT+02:00) Cairo",
+    },
+    {
+        zone: "FLE Standard Time",
+        time: "(GMT+02:00) Helsinki, Kiev, Riga, Sofia, Tallinn, Vilnius",
+    },
+    {
+        zone: "GTB Standard Time",
+        time: "(GMT+02:00) Athens, Istanbul, Minsk",
+    },
+    {
+        zone: "Israel Standard Time",
+        time: "(GMT+02:00) Jerusalem",
+    },
+    {
+        zone: "South Africa Standard Time",
+        time: "(GMT+02:00) Harare, Pretoria",
+    },
+    {
+        zone: "Russian Standard Time",
+        time: "(GMT+03:00) Moscow, St. Petersburg, Volgograd",
+    },
+    {
+        zone: "Arab Standard Time",
+        time: "(GMT+03:00) Kuwait, Riyadh",
+    },
+    {
+        zone: "E. Africa Standard Time",
+        time: "(GMT+03:00) Nairobi",
+    },
+    {
+        zone: "Arabic Standard Time",
+        time: "(GMT+03:00) Baghdad",
+    },
+    {
+        zone: "Iran Standard Time",
+        time: "(GMT+03:30) Tehran",
+    },
+    {
+        zone: "Arabian Standard Time",
+        time: "(GMT+04:00) Abu Dhabi, Muscat",
+    },
+    {
+        zone: "Caucasus Standard Time",
+        time: "(GMT+04:00) Baku, Tbilisi, Yerevan",
+    },
+    {
+        zone: "Transitional Islamic State of Afghanistan Standard Time",
+        time: "(GMT+04:30) Kabul",
+    },
+    {
+        zone: "Ekaterinburg Standard Time",
+        time: "(GMT+05:00) Ekaterinburg",
+    },
+    {
+        zone: "West Asia Standard Time",
+        time: "(GMT+05:00) Islamabad, Karachi, Tashkent",
+    },
+    {
+        zone: "India Standard Time",
+        time: "(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi",
+    },
+    {
+        zone: "Nepal Standard Time",
+        time: "(GMT+05:45) Kathmandu",
+    },
+    {
+        zone: "Central Asia Standard Time",
+        time: "(GMT+06:00) Astana, Dhaka",
+    },
+    {
+        zone: "Sri Lanka Standard Time",
+        time: "(GMT+06:00) Sri Jayawardenepura",
+    },
+    {
+        zone: "N. Central Asia Standard Time",
+        time: "(GMT+06:00) Almaty, Novosibirsk",
+    },
+    {
+        zone: "Myanmar Standard Time",
+        time: "(GMT+06:30) Yangon Rangoon",
+    },
+    {
+        zone: "S.E. Asia Standard Time",
+        time: "(GMT+07:00) Bangkok, Hanoi, Jakarta",
+    },
+    {
+        zone: "North Asia Standard Time",
+        time: "(GMT+07:00) Krasnoyarsk",
+    },
+    {
+        zone: "China Standard Time",
+        time: "(GMT+08:00) Beijing, Chongqing, Hong Kong SAR, Urumqi",
+    },
+    {
+        zone: "Singapore Standard Time",
+        time: "(GMT+08:00) Kuala Lumpur, Singapore",
+    },
+    {
+        zone: "Taipei Standard Time",
+        time: "(GMT+08:00) Taipei",
+    },
+    {
+        zone: "W. Australia Standard Time",
+        time: "(GMT+08:00) Perth",
+    },
+    {
+        zone: "North Asia East Standard Time",
+        time: "(GMT+08:00) Irkutsk, Ulaanbaatar",
+    },
+    {
+        zone: "Korea Standard Time",
+        time: "(GMT+09:00) Seoul",
+    },
+    {
+        zone: "Tokyo Standard Time",
+        time: "(GMT+09:00) Osaka, Sapporo, Tokyo",
+    },
+    {
+        zone: "Yakutsk Standard Time",
+        time: "(GMT+09:00) Yakutsk",
+    },
+    {
+        zone: "A.U.S. Central Standard Time",
+        time: "(GMT+09:30) Darwin",
+    },
+    {
+        zone: "Cen. Australia Standard Time",
+        time: "(GMT+09:30) Adelaide",
+    },
+    {
+        zone: "A.U.S. Eastern Standard Time",
+        time: "(GMT+10:00) Canberra, Melbourne, Sydney",
+    },
+    {
+        zone: "E. Australia Standard Time",
+        time: "(GMT+10:00) Brisbane",
+    },
+    {
+        zone: "Tasmania Standard Time",
+        time: "(GMT+10:00) Hobart",
+    },
+    {
+        zone: "Vladivostok Standard Time",
+        time: "(GMT+10:00) Vladivostok",
+    },
+    {
+        zone: "West Pacific Standard Time",
+        time: "(GMT+10:00) Guam, Port Moresby",
+    },
+    {
+        zone: "Central Pacific Standard Time",
+        time: "(GMT+11:00) Magadan, Solomon Islands, New Caledonia",
+    },
+    {
+        zone: "Fiji Islands Standard Time",
+        time: "(GMT+12:00) Fiji Islands, Kamchatka, Marshall Islands",
+    },
+    {
+        zone: "New Zealand Standard Time",
+        time: "(GMT+12:00) Auckland, Wellington",
+    },
+    {
+        zone: "Tonga Standard Time",
+        time: "(GMT+13:00) Nuku'alofa",
+    },
+];
 
 
 /**
@@ -17057,20 +17425,20 @@ export interface InputGoogleMapsBaseProps
     useLoadDirectionsWithMarker?: boolean;
     showDirectionsWaypoints?: boolean;
 
-    onBoundsChanged?: (data: google.maps.LatLngBounds | undefined) => void;
+    onBoundsChanged?: (data: LatLngBounds | undefined) => void;
 }
 
 /**
  * Properties for the class of the InputGoogleMaps component.
  */
-export interface InputGoogleMapsClassProps {}
+export interface InputGoogleMapsClassProps { }
 
 /**
  * Properties for the InputGoogleMaps component.
  */
 export interface InputGoogleMapsProps
     extends InputGoogleMapsBaseProps,
-        InputGoogleMapsClassProps {}
+    InputGoogleMapsClassProps { }
 
 export const InputGoogleMaps = ({
     mapContainerStyle = {
@@ -17088,15 +17456,22 @@ export const InputGoogleMaps = ({
     },
     ...props
 }: InputGoogleMapsProps) => {
+    // const google = eval("google")
     const [directionsResult, setDirectionsResult] = useState<
         google.maps.DirectionsResult | undefined
     >(undefined);
-    const [map, setMap] = useState<google.maps.Map | undefined>(undefined);
+    const [map, setMap] = useState<
+        google.maps.Map | undefined
+    >(undefined);
     const [centerMarker, setCenterMarker] =
         useState<GoogleMapProps["center"]>(undefined);
 
     const onGetBounds = () => {
-        const bounds = new google.maps.LatLngBounds();
+        const f_LatLngBounds = (google ?? {})?.maps?.LatLngBounds
+        if (!f_LatLngBounds) {
+            return undefined
+        }
+        const bounds = new f_LatLngBounds();
         markers?.forEach((e) => {
             bounds.extend(e.position);
         });
@@ -17107,7 +17482,7 @@ export const InputGoogleMaps = ({
             return;
         }
         const bounds = onGetBounds();
-        setCenterMarker(bounds.getCenter());
+        setCenterMarker(bounds?.getCenter?.());
     };
 
     const onLoadFitBounds = () => {
@@ -17115,14 +17490,23 @@ export const InputGoogleMaps = ({
             return;
         }
         const bounds = onGetBounds();
-        map?.fitBounds?.(bounds);
+        if (bounds) {
+            map?.fitBounds?.(bounds);
+        }
     };
 
     const onLoadDirectionsList = async () => {
         if (!(useLoadDirectionsWithMarker && markers && markers?.length > 0)) {
             return;
         }
-        const directionsService = new window.google.maps.DirectionsService();
+
+
+        const f_DirectionsService = (window)?.google?.maps?.DirectionsService
+
+        if (!f_DirectionsService) {
+            return undefined
+        }
+        const directionsService = new f_DirectionsService();
 
         const origin = markers[0];
         const destination = markers[markers.length - 1];
@@ -17199,7 +17583,7 @@ export const InputGoogleMaps = ({
  * Properties for the base InputGoogleAutocomplete component.
  */
 export interface InputGoogleAutocompleteBaseProps
-    extends Omit<AutocompleteProps, "children">,
+    extends Omit<GoogleAutocompleteProps, "children">,
         Omit<
             InputTextBaseProps,
             | "defaultValue"
@@ -17212,7 +17596,7 @@ export interface InputGoogleAutocompleteBaseProps
     /**
      * FenextjsValidatorClass used for input validation.
      */
-    validator?: FenextjsValidatorClass<AddressGoogle>;
+    validator?: FenextjsValidatorClass<AddressGoogle | undefined>;
 }
 
 /**
@@ -17303,7 +17687,7 @@ export const InputGoogleAutocomplete = ({
                 <div
                     className={`fenext-input-google-autocomplete-content-input`}
                 >
-                    <Autocomplete
+                    <GoogleAutocomplete
                         {...props}
                         onLoad={setAutocompleteValue}
                         onPlaceChanged={onPlaceChanged}
@@ -17323,7 +17707,7 @@ export const InputGoogleAutocomplete = ({
                                     : undefined)
                             }
                         />
-                    </Autocomplete>
+                    </GoogleAutocomplete>
                 </div>
                 <span className={`fenext-input-google-autocomplete-close`}>
                     <SvgClose />
@@ -17446,7 +17830,7 @@ export interface InputSelectMultipleBaseProps<T = any>
     /**
      * FenextjsValidatorClass used for input validation.
      */
-    validatorData?: FenextjsValidatorClass<T[]>;
+    validatorData?: FenextjsValidatorClass<(T | undefined)[]>;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.

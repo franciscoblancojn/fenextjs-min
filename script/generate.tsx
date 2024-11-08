@@ -106,17 +106,18 @@ const main = async () => {
             useState, 
             useRef, 
             useCallback,
-            createPortal,
             SyntheticEvent,
             AnchorHTMLAttributes,
         } from "react";
+        import * as ReactDOM from "react-dom";
+        import { createPortal } from "react-dom";
         import Router,{ useRouter } from "next/router";
         import LinkNext, { LinkProps as LinkNextProps } from "next/link";
         import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
         import { jwtDecode } from "jwt-decode";
         import { 
-            Autocomplete, 
-            AutocompleteProps,
+            Autocomplete as GoogleAutocomplete, 
+            AutocompleteProps as GoogleAutocompleteProps,
             LoadScript, 
             LoadScriptProps,
             GoogleMap,
@@ -136,6 +137,7 @@ const main = async () => {
             getRuteCountryImg,
             getDataStates,
             getDataCitys,
+            getDataCitysByCountry,
         } from "country-state-city-nextjs";
         import firebase from "firebase/compat/app";
         import "firebase/compat/auth";
@@ -159,6 +161,7 @@ const main = async () => {
             Database,
             DatabaseReference,
         } from "firebase/database";
+        import QrScanner from "qr-scanner";
     `
 
     CODE = CODE_TOP + CODE
