@@ -56,6 +56,9 @@ const main = async () => {
         onCopyLib({
             lib:"error"
         }),
+        onCopyLib({
+            lib:"validator"
+        }),
     ])
     let CODE = ALL_LIB.join("")
 
