@@ -1,9 +1,10 @@
 {
   "name": "fenextjs-min",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./cjs/index.js",
+  "module": "./cjs/index.js",
+  "types": "./cjs/index.d.ts",
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "echo 'esm'",
@@ -14,8 +15,20 @@
     "flb": "npm run generate && npm run format && npm run build",
     "generate": "bun script/generate.tsx"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoblancojn/fenextjs-min.git"
+  },
+  "keywords": [
+    "fenextjs",
+    "nextjs"
+  ],
+  "author": "franciscoblancojn",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscoblancojn/fenextjs-min/issues"
+  },
+  "homepage": "https://github.com/franciscoblancojn/fenextjs-min#readme",
   "dependencies": {
     "@react-google-maps/api": "2.19.3",
     "country-state-city-nextjs": "^9.1.0",
@@ -34,5 +47,9 @@
     "ts-loader": "9.5.1",
     "tslib": "2.6.2",
     "typescript": "5.3.3"
-  }
+  },
+  "files": [
+    "cjs",
+    "esm"
+  ]
 }
