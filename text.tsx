@@ -1,5 +1,17 @@
 
-        import { getRuteCountryImg } from "country-state-city-nextjs";
+        import React, { useMemo, useEffect, useState, useRef, useCallback } from "react";
+        import { useRouter } from "next/router";
+        import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
+        import { jwtDecode } from "jwt-decode";
+        import {
+            // countryProps as CountryProps,
+            // stateProps as StateProps,
+            // cityProps as CityProps,
+            getDataStatesByCountry,
+            getDataCitysByStateAndCountry,
+            getDataCountrys,
+            getRuteCountryImg,
+        } from "country-state-city-nextjs";
         import firebase from "firebase/compat/app";
         import "firebase/compat/auth";
         import "firebase/storage";
@@ -3157,3 +3169,2447 @@ export class FenextFirebaseDataBase {
         }
     }
 }
+
+
+export interface FenextjsDateFormatOptions extends Intl.DateTimeFormatOptions {
+    locales?: string | string[] | undefined;
+}
+export type FenextjsDateFormats = {
+    [id: string]: FenextjsDateFormatOptions;
+};
+export interface FenextjsDateProps {
+    defaultDate?: Date;
+    formats?: FenextjsDateFormats;
+    onCallback?: (date: Date) => void;
+}
+
+export type FenextjsDateValue = Date | number | string;
+
+export type FenextjsDateConstructor = FenextjsDateValue | FenextjsDateProps;
+
+export const FenextjsDateCompare = [
+    "Date",
+    "FullYear",
+    "Hours",
+    "Milliseconds",
+    "Minutes",
+    "Month",
+    "Seconds",
+] as const;
+
+export type FenextjsDateCompareType = (typeof FenextjsDateCompare)[number];
+
+export const FenextjsDateCompareSymbol = [
+    "==",
+    "!=",
+    ">",
+    ">=",
+    "<",
+    "<=",
+] as const;
+export type FenextjsDateCompareSymbolType =
+    (typeof FenextjsDateCompareSymbol)[number];
+
+export class FenextjsDate {
+    public date: Date;
+    private formats: FenextjsDateFormats = {};
+    private onCallback: undefined | ((date: Date) => void) = undefined;
+    private DateByMonth: Date[] = [];
+    private DateByCalendar: Date[] = [];
+
+    constructor(options?: FenextjsDateConstructor) {
+        const isDate =
+            options instanceof Date ||
+            typeof options == "number" ||
+            typeof options == "string";
+        let date: Date | undefined = undefined;
+        if (isDate) {
+            date = new Date(options ?? new Date());
+        } else {
+            date = options?.defaultDate ?? new Date();
+        }
+        this.date = date;
+        if (!isDate) {
+            this.formats = options?.formats ?? {};
+            this.onCallback = options?.onCallback;
+        }
+    }
+
+    setOnCallback(callback: (date: Date) => void) {
+        this.onCallback = callback;
+    }
+
+    addTime(time: number) {
+        this.date.setTime(this.date.getTime() + time);
+        this.onCallback?.(this.date);
+    }
+    addMilliseconds(milliseconds: number) {
+        this.date.setMilliseconds(this.date.getMilliseconds() + milliseconds);
+        this.onCallback?.(this.date);
+    }
+    addSeconds(seconds: number) {
+        this.date.setSeconds(this.date.getSeconds() + seconds);
+        this.onCallback?.(this.date);
+    }
+    addMinutes(minutes: number) {
+        this.date.setMinutes(this.date.getMinutes() + minutes);
+        this.onCallback?.(this.date);
+    }
+    addHours(hours: number) {
+        this.date.setHours(this.date.getHours() + hours);
+        this.onCallback?.(this.date);
+    }
+    addDate(date: number) {
+        this.date.setDate(this.date.getDate() + date);
+        this.onCallback?.(this.date);
+    }
+    addMonth(month: number) {
+        this.date.setMonth(this.date.getMonth() + month);
+        this.onCallback?.(this.date);
+    }
+    addYear(year: number) {
+        this.date.setFullYear(this.date.getFullYear() + year);
+        this.onCallback?.(this.date);
+    }
+
+    onFormat(options: FenextjsDateFormatOptions, date?: FenextjsDateValue) {
+        const formatter = new Intl.DateTimeFormat(options?.locales, options);
+        return formatter.format(new Date(date ?? this.date));
+    }
+    onFormatId(id: string, date?: FenextjsDateValue) {
+        return this.onFormat(this.formats?.[id] ?? {}, date ?? this.date);
+    }
+
+    getDateByMonth() {
+        return this.DateByMonth;
+    }
+    setDateByMonth(DateByMonth: Date[]) {
+        this.DateByMonth = DateByMonth;
+    }
+    onGenerateDateByMonth(date?: FenextjsDateValue) {
+        const DATE = new Date(date ?? this.date.getTime());
+        DATE.setDate(1);
+        const MONTH = DATE.getMonth();
+        const DateByMonth: Date[] = [];
+        while (DATE.getMonth() == MONTH) {
+            DateByMonth.push(new Date(DATE.getTime()));
+            DATE.setDate(DATE.getDate() + 1);
+        }
+        this.DateByMonth = DateByMonth;
+        return DateByMonth;
+    }
+    getDateByCalendar() {
+        return this.DateByCalendar;
+    }
+    setDateByCalendar(DateByCalendar: Date[]) {
+        this.DateByCalendar = DateByCalendar;
+    }
+    onGenerateDateByCalendar(date?: FenextjsDateValue) {
+        const D = new Date(date ?? this.date);
+
+        const DATE = new Date(D.getTime());
+        DATE.setDate(1);
+        while (DATE.getDay() != 0) {
+            DATE.setDate(DATE.getDate() - 1);
+        }
+
+        const DATEMAX = new Date(D.getTime());
+        DATEMAX.setMonth(DATEMAX.getMonth() + 1);
+        DATEMAX.setDate(1);
+        while (DATEMAX.getDay() != 6) {
+            DATEMAX.setDate(DATEMAX.getDate() + 1);
+        }
+
+        const DateByCalendar: Date[] = [];
+        while (DATE.getTime() != DATEMAX.getTime()) {
+            DateByCalendar.push(new Date(DATE.getTime()));
+            DATE.setDate(DATE.getDate() + 1);
+        }
+        const n = 7 - (DateByCalendar.length % 7);
+        for (let i = 0; i < n; i++) {
+            DateByCalendar.push(new Date(DATE.getTime()));
+            DATE.setDate(DATE.getDate() + 1);
+        }
+        this.DateByCalendar = DateByCalendar;
+        return DateByCalendar;
+    }
+    onValidateMinMax({
+        date,
+        max,
+        min,
+    }: {
+        min?: Date;
+        max?: Date;
+        date?: Date;
+    }) {
+        const d = date ?? this.date;
+        let sw = true;
+        if (min) {
+            sw &&= min <= d;
+        }
+        if (max) {
+            sw &&= max >= d;
+        }
+        return sw;
+    }
+    onCompareDate({
+        date,
+        dateCompare: dateCompareProps,
+        compare,
+    }: {
+        date?: Date;
+        dateCompare: Date;
+        compare: {
+            [id in FenextjsDateCompareType]?: boolean;
+        };
+    }) {
+        const d = new Date(date ?? this.date);
+        const dateCompare = new Date(dateCompareProps);
+
+        const compareValue: {
+            [id in FenextjsDateCompareSymbolType]: boolean;
+        } = {
+            "!=": true,
+            "<": true,
+            "<=": true,
+            "==": true,
+            ">": true,
+            ">=": true,
+        };
+
+        FenextjsDateCompare.forEach((e) => {
+            const compareKey = e as FenextjsDateCompareType;
+            if (compare[compareKey] !== true) {
+                const f = `set${compareKey}`;
+
+                d[f](0);
+                dateCompare[f](0);
+            }
+        });
+
+        FenextjsDateCompareSymbol.forEach((b) => {
+            const compareKeySymbol = b as FenextjsDateCompareSymbolType;
+            compareValue[compareKeySymbol] = eval(
+                `${d.getTime()} ${compareKeySymbol} ${dateCompare.getTime()}`,
+            );
+        });
+        return compareValue;
+    }
+}
+
+
+export interface useJsonStringProps<T = any, P = string> {
+    /**
+     * Default Value =
+     */
+    defaultValue?: T;
+    /**
+     * Value
+     */
+    value?: T;
+    /**
+     * onChange
+     */
+    onChange?: (data: T) => void;
+
+    /**
+     * Default Value
+     */
+    defaultValueJsonString?: P;
+    /**
+     * Value
+     */
+    valueJsonString?: P;
+    /**
+     * onChange
+     */
+    onChangeJsonString?: (data: P | undefined) => void;
+    /**
+     * parse
+     */
+    parseString_to_Json?: (data: P) => T | undefined;
+    /**
+     * parse
+     */
+    parseJson_to_String?: (data: T) => P | undefined;
+}
+
+export const useJsonString = <T = any, P = string>({
+    defaultValueJsonString,
+    onChangeJsonString,
+    parseJson_to_String,
+    parseString_to_Json,
+    valueJsonString,
+    defaultValue,
+    onChange,
+    value,
+}: useJsonStringProps<T, P>) => {
+    return useMemo(() => {
+        return {
+            value:
+                (valueJsonString && parseString_to_Json
+                    ? parseString_to_Json(valueJsonString)
+                    : value) ?? value,
+            defaultValue:
+                (defaultValueJsonString && parseString_to_Json
+                    ? parseString_to_Json(defaultValueJsonString)
+                    : defaultValue) ?? defaultValue,
+            onChange: (e: T) => {
+                onChange?.(e);
+                if (parseJson_to_String) {
+                    onChangeJsonString?.(parseJson_to_String(e));
+                }
+            },
+        };
+    }, [
+        defaultValueJsonString,
+        onChangeJsonString,
+        parseJson_to_String,
+        parseString_to_Json,
+        valueJsonString,
+        defaultValue,
+        onChange,
+        value,
+    ]);
+};
+
+
+export interface useDataValidatorProps<T> {
+    data: T;
+    validator?: FenextjsValidatorClass<T>;
+    autoOnValidate?: boolean;
+}
+
+export const useDataValidator = <T,>({
+    data,
+    validator,
+    autoOnValidate = true,
+}: useDataValidatorProps<T>) => {
+    const [isValidData, setIsValidData] = useState<
+        true | ErrorFenextjs | undefined
+    >(undefined);
+    const onValidateData = () => {
+        const v = validator?.onValidate?.(data) ?? true;
+        setIsValidData(v);
+    };
+    useEffect(() => {
+        if (autoOnValidate) {
+            onValidateData();
+        }
+    }, [data, validator]);
+
+    return {
+        isValidData,
+        onValidateData,
+    };
+};
+
+
+export interface useActionProps<T = any> {
+    name: string;
+    onActionExecute?: (d?: T) => void;
+    env_log?: {
+        onActionExecute?: boolean;
+        onAction?: boolean;
+    };
+}
+
+export const useAction = <T = any,>({
+    name,
+    onActionExecute,
+    env_log: env_log_boolean,
+}: useActionProps<T>) => {
+    const NAME_ACTION = `fenext-action-element-${name}`;
+    // const actionRef = useRef(onActionExecute);
+
+    const ACTION = (e: any) => {
+        const data = (e as any)?.detail;
+        if (env_log_boolean?.onActionExecute === true) {
+            env_log(data, {
+                name: `${NAME_ACTION}-onActionExecute`,
+            });
+        }
+        onActionExecute?.(data);
+    };
+
+    const onUnload = () => {
+        if (!(window && typeof window != "undefined")) {
+            return;
+        }
+        window.removeEventListener(NAME_ACTION, ACTION);
+    };
+
+    const onLoad = () => {
+        if (!(window && typeof window != "undefined")) {
+            setTimeout(onLoad, 500);
+            return;
+        }
+        if (onActionExecute) {
+            window.addEventListener(NAME_ACTION, ACTION);
+        }
+        return onUnload;
+    };
+
+    useEffect(onLoad, [onActionExecute]);
+
+    const onAction = (detail?: T) => {
+        if (env_log_boolean?.onAction === true) {
+            env_log(detail, {
+                name: `${NAME_ACTION}-onAction`,
+            });
+        }
+        window.dispatchEvent(
+            new CustomEvent(NAME_ACTION, {
+                bubbles: true,
+                detail,
+            }),
+        );
+    };
+
+    return {
+        onAction,
+    };
+};
+
+
+/**
+ * Interface to describe the properties of the useValidator hook.
+ * @template T - The type of the data to manage.
+ */
+export interface useValidatorProps<T> {
+    data: T; // The data to validate.
+    validator?: FenextjsValidatorClass<T>; // The validator instance to use for validation.
+}
+
+/**
+ * A custom hook to manage data state and changes.
+ *
+ * @template T - The type of the data to manage.
+ * @param {useValidatorProps<T>} options - The options for the hook.
+ * @param {T} options.data - The data to validate.
+ * @param {FenextjsValidatorClass<T>} options.validator - The validator instance to use for validation.
+ * @returns {Object} - An object with the validation results and original data.
+ * @returns {Object.error} -  ErrorFenextjs | true
+ * @returns {Object.isValid} - boolean
+ * @returns {Object.data} -  T
+ * @returns {Object.validator} -  FenextjsValidatorClass<T>
+ */
+export const useValidator = <T,>({ data, validator }: useValidatorProps<T>) => {
+    /**
+     * The result of the validation.
+     * @type {undefined | ErrorFenextjs}
+     */
+    const result: ErrorFenextjs | true | undefined = useMemo<
+        ErrorFenextjs | true | undefined
+    >(
+        () => (validator ? validator.onValidate(data) : undefined),
+        [data, validator],
+    );
+
+    /**
+     * The error message if validation fails.
+     * @type {undefined | ErrorFenextjs}
+     */
+    const error: undefined | ErrorFenextjs =
+        result !== true ? result : undefined;
+
+    /**
+     * A boolean indicating if the validation is successful.
+     * @type {boolean}
+     */
+    const isValid: boolean = result === true;
+
+    // Return the validation results and the original data
+    return {
+        error,
+        isValid,
+        data,
+        validator,
+    };
+};
+
+
+export interface useFormProps<T, M = any> extends useDataOptions<T, M> {
+    onSubmit?: RequestProps<T, RequestResultProps>;
+    defaultValue?: T;
+    setData?: (data: T) => void;
+    onChangeError?: (error: ErrorFenextjs | undefined) => void;
+    onChangeDisabled?: (disabled: boolean) => void;
+    onChangeLoader?: (loader: boolean) => void;
+    validator?: FenextjsValidatorClass<T>;
+}
+
+export const useForm = <T, M = any>({
+    defaultValue,
+    onChangeDisabled,
+    onChangeLoader,
+    onSubmit,
+    validator,
+    onChangeError,
+
+    ...Options
+}: useFormProps<T, M>) => {
+    const DATA = useData<T, M>(defaultValue as T, Options);
+
+    const { data: loader, setData: setLoader } = useData<boolean>(false, {
+        onChangeDataAfter: onChangeLoader,
+    });
+    const { data: disabled, setData: setDisabled } = useData<boolean>(true, {
+        onChangeDataAfter: onChangeDisabled,
+    });
+
+    const { data: error, setData: setError } = useData<
+        ErrorFenextjs | undefined
+    >(undefined, {
+        onChangeDataAfter: onChangeError,
+    });
+
+    const onSubmitData = useCallback(async () => {
+        setLoader(true);
+        try {
+            return await onSubmit?.(DATA.data);
+        } finally {
+            setLoader(false);
+        }
+    }, [DATA.data, onSubmit]);
+
+    const onValidate = useCallback(() => {
+        if (validator) {
+            const r = validator?.onValidate?.(DATA.data);
+            setDisabled(r !== true);
+            setError(r !== true ? r : undefined);
+        }
+    }, [DATA.data, validator]);
+
+    useEffect(() => {
+        onValidate();
+    }, [DATA.data, validator]);
+
+    return {
+        ...DATA,
+        error,
+        disabled,
+        loader,
+        setDisabled,
+        setLoader,
+        setError,
+        onSubmit: onSubmitData,
+    };
+};
+
+
+export interface usePrintDataProps
+    extends Pick<useLocalStorageProps, "parse"> {}
+
+export const usePrintData = <T,>({ parse }: usePrintDataProps) => {
+    const { value, load } = useLocalStorage<T>({
+        name: "fenext-print",
+        parse,
+    });
+    return {
+        data: value,
+        load,
+    };
+};
+
+export interface usePrintIframeProps<T> {
+    urlBase?: string;
+    url: string;
+    data?: T;
+    delayForPrint?: number;
+}
+
+export const usePrintIframe = <T,>({
+    urlBase = "/print",
+    url,
+    data,
+    delayForPrint = 1500,
+}: usePrintIframeProps<T>) => {
+    const [loader, setLoader] = useState(false);
+    const { setLocalStorage } = useLocalStorage<T>({
+        name: "fenext-print",
+    });
+    const onPrint = () => {
+        setLoader(true);
+        setLocalStorage(data);
+        let iframe: HTMLIFrameElement | undefined = document.getElementById(
+            "fenext-print",
+        ) as HTMLIFrameElement;
+        if (!iframe) {
+            iframe = document.createElement("iframe");
+            iframe.id = "fenext-print";
+            document.body.appendChild(iframe);
+            iframe.style.display = "none";
+        }
+
+        iframe.src = `${urlBase}${url}`;
+
+        if (iframe.contentWindow) {
+            iframe.contentWindow.onafterprint = () => {
+                setLoader(false);
+            };
+        }
+        iframe.onload = function () {
+            setTimeout(function () {
+                iframe?.focus();
+                iframe?.contentWindow?.print();
+            }, delayForPrint);
+            if (iframe?.contentWindow) {
+                iframe.contentWindow.onafterprint = () => {
+                    setLoader(false);
+                };
+            }
+        };
+    };
+    return {
+        loader,
+        onPrint,
+    };
+};
+
+
+/**
+ * Custom hook that extends useLocalStorageProps and adds caching functionality.
+ * @template T - Type of the data to be stored in local storage.
+ * @template O - Type of the options for local storage.
+ */
+export interface useLocalStorageCache<T = any, O = any>
+    extends useLocalStorageProps<T, O> {
+    data: T;
+
+    autoSaveData?: boolean;
+    parseDataPreSaveCache?: (data: { old?: T; news: T }) => T;
+}
+
+/**
+ * Custom hook that provides caching functionality on top of useLocalStorage.
+ * @template T - Type of the data to be stored in local storage.
+ * @template O - Type of the options for local storage.
+ * @param {useLocalStorageCache<T, O>} props - Configuration properties for the hook.
+ * @returns {Object} - An object containing functions and values for managing cached data.
+ */
+export const useLocalStorageCache = <T = any, O = any>({
+    data,
+    autoSaveData = true,
+    parseDataPreSaveCache = ({ news }) => news,
+    ...props
+}: useLocalStorageCache<T, O>) => {
+    const { load, setLocalStorage, value, onClearLocalStorage } =
+        useLocalStorage<T, O>(props);
+
+    /**
+     * Function to save the data to local storage with caching.
+     * @param {T} news - New data to be cached.
+     */
+    const onSaveCache = useCallback(
+        (news: T) => {
+            const d = parseDataPreSaveCache({ news, old: value });
+            setLocalStorage(d);
+        },
+        [value, parseDataPreSaveCache],
+    );
+
+    const onClearCache = () => {
+        onClearLocalStorage();
+    };
+
+    // Automatically save data to local storage when it changes
+    useEffect(() => {
+        if (autoSaveData) {
+            onSaveCache(data);
+        }
+    }, [data]);
+
+    return {
+        load,
+        value,
+        onSaveCache,
+        onClearCache,
+        setLocalStorage,
+    };
+};
+
+
+export interface useAlertProps {
+    name?: string;
+}
+
+export const useAlert = <T = any,>({
+    name = "fenextjs-alert",
+}: useAlertProps) => {
+    const [alert, setAlert] = useState<AlertProps<T> | undefined>(undefined);
+    const { onAction } = useAction<AlertProps<T>>({
+        name,
+        onActionExecute: setAlert,
+    });
+
+    return {
+        alert,
+        setAlert: onAction,
+        onClearAlert: () => {
+            onAction(undefined);
+        },
+    };
+};
+
+
+/**
+ * Properties to configure the useUser hook.
+ */
+export interface useUserProps<
+    Q = UserProps,
+    R = any,
+    E = any,
+    T = RequestResultTypeProps,
+> {
+    /**
+     * Function to validate the user's token. By default, it will check that the user
+     * object has a "token" property and decode it using JSON web tokens.
+     * You can replace it with your own custom validation function.
+     */
+    validateTokenUser?: RequestProps<Q, R, E, T>;
+    /**
+     * Name Var of save user in localStorage.
+     */
+    varName?: string;
+
+    onValidateUser?: (user: Q | null | undefined) => boolean;
+
+    urlRedirectInLogut?: string;
+
+    onLogOut?: () => void;
+}
+
+/**
+ * Hook to manage user data and authentication.
+ * @param validateTokenUser Function to validate the user's token. By default, it will check that the user
+ * object has a "token" property and decode it using JSON web tokens.
+ * You can replace it with your own custom validation function.
+ * @returns An object with the user data and authentication methods.
+ */
+export const useUser = <U = UserProps,>({
+    validateTokenUser: validateTokenUserProps,
+    varName = "fenextjs-user",
+    onValidateUser,
+    urlRedirectInLogut,
+    onLogOut: onLogOutProps,
+}: useUserProps<U>) => {
+    const validateTokenUserDefault = async (user: U) => {
+        const { token } = user as any;
+        if (!token) {
+            throw {
+                type: RequestResultTypeProps.ERROR,
+                message: "User not Token",
+                error: {
+                    code: ErrorCode.USER_TOKEN_NOT_FOUND,
+                    message: "User not Token",
+                },
+            } as RequestResultDataProps;
+        }
+        try {
+            const user_token = jwtDecode(token as string);
+            const { id } = user_token as any;
+            if (id) {
+                return {
+                    type: RequestResultTypeProps.OK,
+                    message: "User Validate Ok",
+                };
+            }
+            throw {
+                type: RequestResultTypeProps.ERROR,
+                message: "Token Invalid",
+                error: {
+                    code: ErrorCode.USER_TOKEN_INVALID,
+                    message: "Token Invalid",
+                },
+            } as RequestResultDataProps;
+        } catch (error) {
+            throw {
+                type: RequestResultTypeProps.ERROR,
+                message: "Token Invalid",
+                error: {
+                    code: ErrorCode.USER_TOKEN_INVALID,
+                    message: "Token Invalid",
+                },
+            } as RequestResultDataProps;
+        }
+    };
+    const validateTokenUser = useCallback(
+        validateTokenUserProps ?? validateTokenUserDefault,
+        [validateTokenUserProps, validateTokenUserDefault],
+    );
+
+    const {
+        value: user,
+        load,
+        setLocalStorage: setUser,
+    } = useLocalStorage<U | null>({
+        name: varName,
+        defaultValue: null,
+        parse: (v: any) => {
+            try {
+                return JSON.parse(v);
+            } catch (error) {
+                return null;
+            }
+        },
+    });
+
+    /**
+     * Function to log in a user. It will validate the user's token using the `validateTokenUser`
+     * function, and if the token is valid, it will store the user data in local storage and return
+     * a successful response. If the token is invalid, it will return an error response.
+     * @param data The user data to log in.
+     * @returns A `RequestResultDataProps` object with the response data. If the login is successful,
+     * the object will have a `type` of "ok" and a `message` of "User Validate Ok". If the login fails,
+     * the object will have a `type` of "error", a `message` of "Token Invalid", and an `error` property
+     * with a `code` of `ErrorCode.USER_TOKEN_INVALID` and a `message` of "Token Invalid".
+     */
+    const onLogin = async (data: U) => {
+        try {
+            const result = await validateTokenUser(data);
+            if (result.type == RequestResultTypeProps.OK) {
+                setUser(data);
+            }
+            return result;
+        } catch (error) {
+            return error;
+        }
+    };
+    /**
+     * Sets the user to null, effectively logging them out of the application.
+     */
+    const onLogOut = () => {
+        setUser(null);
+        onLogOutProps?.();
+        if (urlRedirectInLogut && typeof window != "undefined") {
+            window.location.href = urlRedirectInLogut;
+        }
+    };
+
+    const isValidUser = useMemo(
+        () => (load ? onValidateUser?.(user) : true) ?? true,
+        [load, user],
+    );
+
+    return {
+        load,
+        user,
+        setUser,
+        onLogin,
+        onLogOut,
+        isValidUser,
+    };
+};
+
+
+export interface useModalProps {
+    name?: string;
+    nameLocalStorage?: string;
+    activeByNameLocalStorage?: boolean;
+    activeByNameContentLocalStorage?: boolean;
+    active?: boolean;
+    defaultActive?: boolean;
+    onActive?: () => void;
+    onClose?: () => void;
+    onChange?: (d: boolean) => void;
+    disabled?: boolean;
+}
+
+export const useModal = ({
+    name,
+    nameLocalStorage,
+    active: activeProps,
+    defaultActive: defaultActiveProps,
+    onActive: onActiveProps,
+    onChange: onChangeProps,
+    onClose: onCloseProps,
+    disabled = false,
+    activeByNameLocalStorage = false,
+    activeByNameContentLocalStorage = false,
+}: useModalProps) => {
+    const [ifReload, setIfReload] = useState<boolean>(false);
+    const [active, setActive] = useState<boolean>(defaultActiveProps ?? false);
+
+    const { value, setLocalStorage } = useLocalStorage<string[]>({
+        name: nameLocalStorage ?? "fenext-modal-active-name",
+        parse: (e) => {
+            try {
+                return JSON.parse(e ?? "[]");
+            } catch {
+                return [];
+            }
+        },
+        defaultValue: [],
+    });
+    const onLoadWindows = () => {
+        if (!(window && typeof window != "undefined")) {
+            return;
+        }
+        window.addEventListener("beforeunload", () => {
+            setLocalStorage([]);
+            setActive(false);
+            setIfReload(true);
+        });
+    };
+    useEffect(onLoadWindows, []);
+
+    const listNamesLocalStorage = useMemo(
+        () => (value ? [value].flat(2) : []),
+        [value],
+    );
+
+    const onPush = (name?: string) => {
+        if (
+            name &&
+            (activeByNameLocalStorage || activeByNameContentLocalStorage)
+        ) {
+            const n = [...(listNamesLocalStorage ?? []), name];
+            setLocalStorage(n);
+        }
+    };
+    const onPop = (name?: string) => {
+        if (
+            name &&
+            (activeByNameLocalStorage || activeByNameContentLocalStorage)
+        ) {
+            const n = [...(listNamesLocalStorage ?? [])];
+            if (n.at(-1) === name) {
+                n.pop();
+            }
+            setLocalStorage(n);
+        }
+    };
+    const { onAction } = useAction<boolean>({
+        name: name ?? "fenext-modal",
+        onActionExecute: name
+            ? (e) => {
+                  setActive(e ?? false);
+              }
+            : undefined,
+    });
+    const onChange = (d: boolean) => {
+        if (disabled) {
+            return;
+        }
+        if (d) {
+            onPush(name);
+        } else {
+            onPop(name);
+        }
+        onChangeProps?.(d);
+        setActive(d);
+        onAction(d);
+    };
+    const onActive = () => {
+        if (disabled) {
+            return;
+        }
+        onChange(true);
+        onActiveProps?.();
+    };
+    const onClose = () => {
+        if (disabled) {
+            return;
+        }
+        onChange(false);
+        onCloseProps?.();
+    };
+
+    const { activeFinal, activeNameLast, activeName } = useMemo(() => {
+        let ACTIVE: boolean | undefined = undefined;
+        const ACTIVENAME = listNamesLocalStorage.includes(name ?? "");
+        const ACTIVENAMELAST = listNamesLocalStorage.at(-1) == name;
+
+        if (activeByNameContentLocalStorage && name) {
+            ACTIVE = ACTIVENAME;
+        }
+        if (activeByNameLocalStorage && name && listNamesLocalStorage.at(-1)) {
+            ACTIVE = ACTIVENAMELAST;
+        }
+        return {
+            activeFinal: ACTIVE ?? activeProps ?? active,
+            activeName: ACTIVENAME,
+            activeNameLast: ACTIVENAMELAST,
+        };
+    }, [
+        activeByNameContentLocalStorage,
+        activeByNameLocalStorage,
+        listNamesLocalStorage,
+        name,
+        activeProps,
+        active,
+    ]);
+
+    return {
+        active: !ifReload && activeFinal,
+        activeNameLast,
+        activeName,
+        listNamesLocalStorage,
+        onChange,
+        onActive,
+        onClose,
+    };
+};
+
+
+/**
+ * Represents the properties of a notification
+ */
+export interface NotificationDataProps {
+    /**
+     * The type of the notification
+     */
+    type?: RequestResultTypeProps | keyof typeof RequestResultTypeProps;
+    /**
+     * The message of the notification
+     */
+    message: string;
+}
+
+/**
+ * Represents the properties of the useNotification hook
+ */
+export interface useNotificationProps {
+    /**
+     * The time to display the notification in milliseconds
+     */
+    time?: number;
+}
+
+/**
+ * Hook to manage notification messages
+ * @param time - Optional duration in milliseconds for the notification to be displayed
+ * @returns An object with methods to manage notifications
+ */
+export const useNotification = ({ time = 2000 }: useNotificationProps) => {
+    const [notification, setNotification] = useState<
+        NotificationDataProps | undefined
+    >(undefined);
+    const { onAction } = useAction<NotificationDataProps>({
+        name: "fenextjs-notification",
+        onActionExecute: setNotification,
+    });
+
+    /**
+     * Resets the notification to its default state
+     */
+    const reset = () => {
+        onAction(undefined);
+    };
+
+    /**
+     * Sets a notification to be displayed
+     * @param props - Notification properties
+     */
+    const pop = (
+        props: NotificationDataProps,
+        options?: NotificationOptions,
+    ) => {
+        onAction(props);
+        Notification.requestPermission().then((permission) => {
+            if (permission == "granted") {
+                new Notification(props.message, options);
+            }
+        });
+        setTimeout(() => {
+            reset();
+        }, time);
+    };
+
+    return {
+        /**
+         * The current notification object
+         */
+        notification,
+        /**
+         * Sets a new notification to be displayed
+         */
+        pop,
+        /**
+         * Resets the current notification
+         */
+        reset,
+    };
+};
+
+
+/**
+ * Represents the properties for the useCSC hook.
+ */
+export interface useCSCProps
+    extends useJsonStringProps<CSCProps, CSCStringProps> {}
+/**
+ * Hook that provides a CSC (Country, State, City) selector functionality.
+ *
+ * @param {Object} useCSCProps - Object containing optional `defaultValue` prop.
+ * @param {Object} useCSCProps.defaultValue - Optional object containing default CSC values.
+ * @param {Object} CSCProps - Object containing optional `country`, `state`, and `city` props.
+ * @param {Object} CSCProps.country - Optional object containing country data.
+ * @param {Object} CSCProps.state - Optional object containing state data.
+ * @param {Object} CSCProps.city - Optional object containing city data.
+ *
+ * @returns {Object} An object with the following properties:
+ * @returns {Boolean} load - Indicates whether the CSC data has been loaded.
+ * @returns {Array} countrys - Array containing all loaded country objects.
+ * @returns {Array} states - Array containing all loaded state objects.
+ * @returns {Array} citys - Array containing all loaded city objects.
+ * @returns {Function} onChangeCSC - Function to update the CSC data.
+ * @returns {Object} value - Object containing the currently selected CSC data.
+ * @returns {Array} statesForCountrySelected - Array containing all loaded state objects that belong to the currently selected country.
+ * @returns {Array} citysForStateSelected - Array containing all loaded city objects that belong to the currently selected state.
+ */
+export const useCSC = ({
+    defaultValue: defaultValueProps,
+    value: valueProps,
+    onChange: onChangeProps,
+    defaultValueJsonString,
+    valueJsonString,
+    onChangeJsonString,
+    parseJson_to_String,
+    parseString_to_Json,
+}: useCSCProps) => {
+    const {
+        defaultValue,
+        onChange,
+        value: valueJson,
+    } = useJsonString<CSCProps, CSCStringProps>({
+        defaultValue: defaultValueProps,
+        value: valueProps,
+        onChange: onChangeProps,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        parseJson_to_String: parseJson_to_String ?? parseCSC_to_CSCString,
+        parseString_to_Json: parseString_to_Json ?? parseCSCString_to_CSC,
+    });
+
+    /**
+     * An array of countries loaded by the hook.
+     */
+    const [countrys, setCountrys] = useState<CountryProps[]>([]);
+    const [loadCountrys, setLoadCountrys] = useState(true);
+    /**
+     * An array of states loaded by the hook.
+     */
+    const [states, setStates] = useState<StateProps[]>([]);
+    const [loadStates, setLoadStates] = useState(true);
+    /**
+     * An array of cities loaded by the hook.
+     */
+    const [citys, setCitys] = useState<CityProps[]>([]);
+    const [loadCitys, setLoadCitys] = useState(true);
+
+    const onLoadCountrys = async () => {
+        setLoadCountrys(false);
+        const countrys: CountryProps[] = await getDataCountrys();
+
+        setCountrys(
+            countrys.map((e) => {
+                return {
+                    ...e,
+                    img: `${getRuteCountryImg(e)}`,
+                };
+            }),
+        );
+        setLoadCountrys(true);
+        if (defaultValue?.country) {
+            await onLoadStates(defaultValue?.country);
+            if (defaultValue?.state) {
+                await onLoadCitys(defaultValue?.country, defaultValue?.state);
+            }
+        }
+    };
+    const onLoadStates = async (country?: { text: string; id: number }) => {
+        setStates([]);
+        setCitys([]);
+        if (country) {
+            setLoadStates(false);
+            const states: StateProps[] = await getDataStatesByCountry(country);
+            setStates(states);
+        }
+        setLoadStates(true);
+    };
+    const onLoadCitys = async (
+        country?: { text: string; id: number },
+        state?: {
+            text: string;
+            id: number;
+        },
+    ) => {
+        setCitys([]);
+        if (country && state) {
+            setLoadCitys(false);
+            const citys: CityProps[] = await getDataCitysByStateAndCountry(
+                country,
+                state,
+            );
+            setCitys(citys);
+        }
+        setLoadCitys(true);
+    };
+
+    /**
+     * A memoized version of the `value` property returned by the `useData` hook.
+     * The `onChangeData` function returned by the `useData` hook is used to
+     * convert the input CSC data to the correct format.
+     */
+    const {
+        data: valueData,
+        onConcatData,
+        setDataFunction,
+    } = useData<CSCProps, CSCProps>(
+        {
+            country: defaultValue?.country,
+            state: defaultValue?.state,
+            city: defaultValue?.city,
+            ...(defaultValue?.country
+                ? {
+                      country: {
+                          ...defaultValue?.country,
+                          img:
+                              defaultValue?.country?.text != ""
+                                  ? `${getRuteCountryImg(defaultValue?.country)}`
+                                  : undefined,
+                      },
+                  }
+                : {}),
+        },
+        {
+            onChangeDataAfter: onChange,
+        },
+    );
+    const onChangeCSC =
+        (id: keyof CSCProps) =>
+        (v: CountryProps | StateProps | CityProps | undefined) => {
+            if (id == "country") {
+                onConcatData({
+                    country: v as CountryProps,
+                    state: undefined,
+                    city: undefined,
+                });
+                onLoadStates(v);
+            }
+            if (id == "state") {
+                setDataFunction((old) => {
+                    if (old?.country) {
+                        onLoadCitys(old?.country, v);
+                        return {
+                            ...old,
+                            state: v as StateProps,
+                            city: undefined,
+                        };
+                    }
+                    return old;
+                });
+            }
+            if (id == "city") {
+                setDataFunction((old) => {
+                    if (old?.country && old?.state) {
+                        return {
+                            ...old,
+                            city: v as CityProps,
+                        };
+                    }
+                    return old;
+                });
+            }
+        };
+    /**
+     * Loads the countries, states and cities asynchronously.
+     */
+    useEffect(() => {
+        onLoadCountrys();
+    }, []);
+
+    return {
+        countrys,
+        states,
+        citys,
+        onChangeCSC,
+        value: (valueProps ? valueJson : valueData) ?? valueData,
+        loadCountrys,
+        loadStates,
+        loadCitys,
+    };
+};
+export const useCountryStateCity = useCSC;
+
+
+/**
+ * Properties for the `useRequest` hook.
+ */
+export interface useRequestProps<
+    Q = any,
+    R = any,
+    E = any,
+    T = RequestResultTypeProps,
+> {
+    query: Q;
+    request: RequestProps<Q, R, E, T>;
+    autoRequest?: boolean;
+
+    defaultResult?: RequestResultDataProps<R, E, T>;
+    defaultResultValue?: R;
+    defaultError?: E;
+}
+
+/**
+ * A hook that sends an HTTP request.
+ * @template Q Query parameter type.
+ * @template R Response type.
+ * @template E Error type.
+ * @template T Request result type.
+ * @param query Query parameter.
+ * @param request HTTP request function.
+ * @param autoRequest Whether to send the request automatically on mount.
+ * @returns An object containing the request result, loading status, error, and request function.
+ */
+export const useRequest = <
+    Q = any,
+    R = any,
+    E = any,
+    T = RequestResultTypeProps,
+>({
+    query,
+    request,
+    autoRequest = false,
+    defaultError = undefined,
+    defaultResult = undefined,
+    defaultResultValue = undefined,
+}: useRequestProps<Q, R, E, T>) => {
+    const [error, setError] = useState<E | undefined>(defaultError);
+    const [result, setResult] = useState<
+        RequestResultDataProps<R, E, T> | undefined
+    >(defaultResult);
+    const [resultValue, setResultValue] = useState<R | undefined>(
+        defaultResultValue,
+    );
+    const [loader, setLoader] = useState(false);
+
+    const onRequest = useCallback(async () => {
+        setLoader(true);
+        try {
+            setError(undefined);
+            const respond = await request(query);
+            setResultValue(respond.result);
+            setResult(respond);
+        } catch (error: any) {
+            setError(error);
+        }
+        setLoader(false);
+    }, [query]);
+
+    useEffect(() => {
+        if (autoRequest) {
+            onRequest();
+        }
+    }, [query]);
+
+    return {
+        result,
+        resultValue,
+        loader,
+        error,
+        onRequest,
+    };
+};
+
+export interface useRequestFunctionProps<FP, FR, PE = any> {
+    f: RequestProps<FP, FR>;
+    parseError?: (errors: any) => PE;
+
+    defaultResult?: FR;
+    defaultError?: PE;
+}
+
+export const useRequestFunction = <FP = any, FR = any, PE = any>({
+    f,
+    parseError = (e) => e,
+    defaultError = undefined,
+    defaultResult = undefined,
+}: useRequestFunctionProps<FP, FR, PE>) => {
+    const [loader, setLoader] = useState(false);
+    const [error, setError] = useState<PE | undefined>(defaultError);
+    const [result, setResult] = useState<FR | undefined>(defaultResult);
+
+    interface onRequestActivionOptionsProps {
+        onError?: (error: any) => void;
+    }
+    const onRequestAction = async (
+        props: FP,
+        options?: onRequestActivionOptionsProps,
+    ) => {
+        setLoader(true);
+        setError(undefined);
+        setResult(undefined);
+        try {
+            const r = await f(props);
+            if (r.error) {
+                throw r.error;
+            }
+            setResult(r.result);
+            return r;
+        } catch (err: any) {
+            const error = parseError?.(err) ?? err;
+            setError(error);
+            options?.onError?.(error);
+            return error as PE;
+        } finally {
+            setLoader(false);
+        }
+    };
+    const onRequest = async (props: FP) => {
+        return await onRequestAction(props);
+    };
+    const onRequestWithThrow = async (props: FP) => {
+        return await onRequestAction(props, {
+            onError: (error) => {
+                throw error;
+            },
+        });
+    };
+    const onClear = () => {
+        setLoader(false);
+        setError(undefined);
+        setResult(undefined);
+    };
+    return {
+        loader,
+        error,
+        result,
+        onRequest,
+        onRequestWithThrow,
+        onClear,
+    };
+};
+
+export interface useRequestLiteProps<FP, FR, FE = ErrorFenextjs> {
+    f: (data: FP) => Promise<FR>;
+    onResult?: (data: FR) => void;
+    onError?: (data: FE) => void;
+    parseError?: (errors: any) => FE;
+
+    defaultResult?: FR;
+    defaultError?: FE;
+}
+
+export const useRequestLite = <FP, FR, FE = ErrorFenextjs>({
+    f,
+    onError,
+    onResult,
+    parseError,
+
+    defaultError = undefined,
+    defaultResult = undefined,
+}: useRequestLiteProps<FP, FR, FE>) => {
+    const [loader, setLoader] = useState(false);
+    const [error, setError] = useState<FE | undefined>(defaultError);
+    const [result, setResult] = useState<FR | undefined>(defaultResult);
+
+    const onRequest = async (props: FP) => {
+        setLoader(true);
+        setError(undefined);
+        setResult(undefined);
+        try {
+            const r = await f(props);
+            setResult(r as FR);
+            onResult?.(r as FR);
+            return r;
+        } catch (error: any) {
+            let err = error;
+            if (parseError) {
+                err = parseError(error);
+            }
+            setError(err as FE);
+            onError?.(err as FE);
+            return err as FE;
+        } finally {
+            setLoader(false);
+        }
+    };
+    const onClear = () => {
+        setLoader(false);
+        setError(undefined);
+        setResult(undefined);
+    };
+    return {
+        loader,
+        error,
+        result,
+        onRequest,
+        onClear,
+    };
+};
+
+
+/**
+ * Query parameters for useQuery hook
+ */
+
+export interface useQuery_QueryProps {
+    id?: string;
+    search?: string;
+    searchAddress?: string;
+    tab?: string;
+    page?: number;
+    npage?: number;
+    totalpage?: number;
+    allitems?: number;
+    start?: number;
+    end?: number;
+    order?: "asc" | "desc";
+    orderBy?: string;
+    exportBy?: string[];
+}
+/**
+ * Keys of useQuery_QueryProps
+ */
+export type useQuery_QueryKeysProps = keyof useQuery_QueryProps;
+
+export interface useQueryProps {
+    ignoreQuerys?: [id: useQuery_QueryKeysProps];
+}
+
+/**
+ * A hook that provides access to the query parameters in the URL.
+ */
+export const useQuery = (props?: useQueryProps) => {
+    const tomorrow = useMemo(() => {
+        const tomorrow = new Date();
+        tomorrow.setHours(tomorrow.getHours() + 24);
+        return tomorrow;
+    }, []);
+
+    /**
+     * Whether the query has been changed.
+     */
+    const [isChange, setIsChange] = useState(false);
+    /**
+     * The router instance from Next.js.
+     */
+    const router = useRouter();
+    /**
+     * The query parameters in the URL.
+     */
+    const query: useQuery_QueryProps = useMemo(() => {
+        if (!(router?.isReady ?? false)) {
+            return {};
+        }
+        const q: any = router?.query ?? {};
+        const {
+            id = undefined,
+            search = "",
+            searchAddress = "",
+            tab = "all",
+            page = "0",
+            npage = "10",
+            totalpage = "100",
+            allitems = "1000",
+            start = undefined,
+            end = undefined,
+            order = undefined,
+            orderBy = undefined,
+        } = q;
+
+        const r: useQuery_QueryProps = {
+            ...q,
+            id,
+            search,
+            searchAddress,
+            tab,
+            page: parseInt(page),
+            npage: parseInt(npage),
+            totalpage: parseInt(totalpage),
+            allitems: parseInt(allitems),
+            start: start ? parseInt(start) : 0,
+            end: end ? parseInt(end) : tomorrow?.getTime(),
+            order,
+            orderBy,
+            exportBy: [q?.export ?? []].flat(2),
+        };
+        (props?.ignoreQuerys ?? []).map((e: useQuery_QueryKeysProps) => {
+            delete r[e];
+        });
+        return r;
+    }, [router?.query, router?.isReady, props]);
+
+    /**
+     * Sets the query parameters in the URL.
+     *
+     * @param query - The query parameters to set.
+     */
+    const setQuery = useCallback(
+        (query: useQuery_QueryProps) => {
+            if (!(router?.isReady ?? false)) {
+                return false;
+            }
+            const queryParse: {
+                [id: string]: string;
+            } = {};
+            Object.keys(query).forEach((key) => {
+                const v = `${query[key] ?? ""}`;
+                if (v != "") {
+                    queryParse[key] = v;
+                }
+            });
+            router?.push?.(
+                {
+                    pathname: router.pathname,
+                    query: queryParse,
+                },
+                undefined,
+                { scroll: false },
+            );
+            setIsChange(true);
+            return true;
+        },
+        [router?.isReady, router?.query, router?.pathname],
+    );
+    /**
+     * Sets the query parameters in the URL.
+     *
+     * @param query - The query parameters to set.
+     */
+    const onConcatQuery = useCallback(
+        (newQuery: useQuery_QueryProps) => {
+            const nQuery = {
+                ...query,
+                ...newQuery,
+            };
+            return setQuery(nQuery);
+        },
+        [query],
+    );
+    /**
+     * A function that returns an event handler that sets a query parameter.
+     *
+     * @param id - The key of the query parameter to set.
+     */
+    const onChangeQuery = useCallback(
+        (id: keyof useQuery_QueryProps) =>
+            (value: (typeof query)[useQuery_QueryKeysProps]) => {
+                if (!(router?.isReady ?? false)) {
+                    return false;
+                }
+                router?.push?.(
+                    {
+                        pathname: router.pathname,
+                        query: {
+                            ...(router?.query ?? {}),
+                            [id]: value,
+                        },
+                    },
+                    undefined,
+                    { scroll: false },
+                );
+                setIsChange(true);
+                return true;
+            },
+        [router?.isReady, router?.query, router?.pathname],
+    );
+
+    const onDeleteQuery = useCallback(
+        (id: keyof useQuery_QueryProps) => {
+            if (!(router?.isReady ?? false)) {
+                return false;
+            }
+            const q = { ...(router?.query ?? {}) };
+            delete q[id];
+            router?.push?.(
+                {
+                    pathname: router.pathname,
+                    query: { ...q },
+                },
+                undefined,
+                { scroll: false },
+            );
+            setIsChange(true);
+            return true;
+        },
+        [router?.isReady, router?.query, router?.pathname],
+    );
+
+    return {
+        load: router?.isReady ?? false,
+        query,
+        setQuery,
+        onConcatQuery,
+        onChangeQuery,
+        onDeleteQuery,
+        isChange,
+    };
+};
+
+
+export interface use_TProps extends _TProps {}
+
+export const use_T = ({ _t: _tProps, useT = true }: use_TProps) => {
+    const _t = useCallback(
+        (message: any) =>
+            _tValidate(message, useT !== false ? _tProps : undefined),
+        [_tProps, useT],
+    );
+
+    return {
+        _t,
+    };
+};
+
+
+export interface useDataLayerProps {}
+export interface useDataLayerPushProps {
+    event: string;
+    value?: any;
+    [id: string]: any;
+}
+export const useDataLayer = ({}: useDataLayerProps) => {
+    const push = ({ event, ...props }: useDataLayerPushProps) => {
+        const w: any = window;
+        if (w?.dataLayer?.push) {
+            w.dataLayer?.push?.({
+                event,
+                ...props,
+            });
+            return true;
+        }
+        return false;
+    };
+
+    return {
+        push,
+    };
+};
+
+
+export interface useDataOptionsRefreshDataIfChangeDefaultDataOptions {
+    active?: boolean;
+    useReloadKeyData?: boolean;
+}
+
+export interface setDataOptions {
+    useOptionsOnChangeDataAfter?: boolean;
+    useSetIsChange?: boolean;
+}
+/**
+ * A custom hook options.
+ *
+ * @template T - The type of the data to manage.
+ * @template M - The type of the memoized data.
+ * @param {Object} options - The options for the hook.
+ * @param {Function} options.onChangeDataAfter - A function to execute after the data changes.
+ * @param {T} options.data - The data use not data.
+ * @param {Boolean} options.refreshDataIfChangeDefaultData - A swich for change data if change defaultData.
+ * @param {Function} options.onChangeDataMemoAfter - A function to execute after the dataMemo changes.
+ * @param {Function} options.onMemo - A function to memoize the data.
+ * @param {FenextjsValidatorClass} options.validator - A FenextjsValidatorClass for validate data.
+ * @param {FenextjsValidatorClass} options.validatorMemo - A FenextjsValidatorClass for validate dataMemo.
+ * @param {Function} options.onSubmitData - A function if is valid data for to send.
+ * @param {Function} options.onSubmitDataMemo - A function if is valid dataMemo for to send.
+ * @returns {Object} - An object with the data state and methods to manage it.
+ */
+
+export interface useDataOptions<
+    T,
+    M = any,
+    RT = void,
+    RM = void,
+    ET = any,
+    EM = any,
+> {
+    data?: T;
+    refreshDataIfChangeDefaultData?: useDataOptionsRefreshDataIfChangeDefaultDataOptions;
+    onChangeDataAfter?: (data: T) => void;
+    onDeleteDataAfter?: (data: T) => void;
+    onChangeDataMemoAfter?: (data: M) => void;
+    onMemo?: (data: T) => M;
+    validator?: FenextjsValidatorClass<T>;
+    validatorMemo?: FenextjsValidatorClass<M>;
+    onSubmitData?: (data: T) => RT | Promise<RT>;
+    onAfterSubmitDataOk?: (d: { data: T; result: RT }) => void;
+    onAfterSubmitParseError?: (error: any) => ET;
+    onAfterSubmitDataError?: (d: { data: T; error: ET }) => void;
+    afterSubmitDataSetIsChangeFalse?: boolean;
+
+    onSubmitDataMemo?: (data: M) => RM | Promise<RM>;
+    onAfterSubmitDataMemoOk?: (d: { dataMemo: M; result: RM }) => void;
+    onAfterSubmitParseErrorMemo?: (error: any) => EM;
+    onAfterSubmitDataMemoError?: (d: { dataMemo: M; error: EM }) => void;
+    afterSubmitDataMemoSetIsChangeFalse?: boolean;
+    autoOnValidate?: boolean;
+
+    env_log?: {
+        [id in useDataOptionsEnvLog]?: boolean;
+    };
+}
+
+export type useDataOptionsEnvLog =
+    | "data"
+    | "dataMemo"
+    | "isValidData"
+    | "isValidDataMemo"
+    | "dataError"
+    | "dataErrorMemo"
+    | "loaderSubmit"
+    | "loaderSubmitMemo"
+    | "keyData"
+    | "isChange";
+export interface onChangeDataOptionsProps<T> {
+    onCallback?: (data: T) => void;
+    parseDataBeforeOnChangeData?: (id: keyof T, data: T) => T;
+}
+
+/**
+ * A custom hook to manage data state and changes.
+ *
+ * @template T - The type of the data to manage.
+ * @template M - The type of the memoized data.
+ * @param {T} defaultData - The default value for the data.
+ * @param {useDataOptions} options - The options for the hook.
+ */
+export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
+    defaultData: T,
+    options?: useDataOptions<T, M, RT, RM, ET, EM>,
+) => {
+    type keys = keyof T;
+    const [loaderSubmit, setLoaderSubmit] = useState(false);
+    const [loaderSubmitMemo, setLoaderSubmitMemo] = useState(false);
+    const [keyData, setKeyData] = useState<number>(0);
+    const [isChange, setIsChange] = useState(false);
+    const [data_, setDataD] = useState<T>(defaultData);
+    const [dataError, setDataError] = useState<ET | undefined>(undefined);
+    const [dataErrorMemo, setDataErrorMemo] = useState<EM | undefined>(
+        undefined,
+    );
+    const [resultSubmitData, setResultSubmitData] = useState<RT | undefined>(
+        undefined,
+    );
+    const [resultSubmitDataMemo, setResultSubmitDataMemo] = useState<
+        RM | undefined
+    >(undefined);
+    const data = useMemo<T>(
+        () => options?.data ?? data_,
+        [data_, options?.data],
+    );
+
+    /**
+     * Update a keyData
+     *
+     * @returns {Function} - A function to update the keyData.
+     */
+    const onReloadKeyData = () => {
+        setKeyData(new Date().getTime());
+    };
+
+    /**
+     * Update a single property of the data.
+     *
+     * @param {keys} id - The id of the property to update.
+     * @returns {Function} - A function to update the property.
+     */
+    const onChangeData =
+        (id: keyof T) =>
+        (
+            value: (typeof data)[keys],
+            _options?: onChangeDataOptionsProps<T>,
+        ) => {
+            if (value === data[id]) {
+                return;
+            }
+            setDataD((pre: T) => {
+                if (Array.isArray(pre)) {
+                    const nData = [...pre] as T;
+                    nData[id] = value;
+                    options?.onChangeDataAfter?.(nData);
+                    _options?.onCallback?.(nData);
+                    if (_options?.parseDataBeforeOnChangeData) {
+                        return _options?.parseDataBeforeOnChangeData(id, nData);
+                    }
+                    return nData;
+                }
+                const nData = { ...pre, [id]: value };
+                options?.onChangeDataAfter?.(nData);
+                _options?.onCallback?.(nData);
+                if (_options?.parseDataBeforeOnChangeData) {
+                    return _options?.parseDataBeforeOnChangeData(id, nData);
+                }
+                return nData;
+            });
+            setIsChange(true);
+        };
+
+    /**
+     * Delete a single property of the data.
+     *
+     * @param {keys} id - The id of the property to delete.
+     * @returns {Function} - A function to delete the property.
+     */
+    const onDeleteData = (id: keyof T) => {
+        setDataD((pre: T) => {
+            if (Array.isArray(pre)) {
+                const nData = [...pre].filter(
+                    (v, i) => i !== (id as number) && (v || !v),
+                ) as T;
+                options?.onChangeDataAfter?.(nData);
+                options?.onDeleteDataAfter?.(nData);
+                return nData;
+            }
+            const nData = { ...pre };
+            delete nData[id];
+            options?.onChangeDataAfter?.(nData);
+            options?.onDeleteDataAfter?.(nData);
+            return nData;
+        });
+        setIsChange(true);
+    };
+
+    /**
+     * et the entire function.
+     *
+     * @param {Function} f  - The function for setData
+     * @param {setDataOptions} optionsData - The new data.
+     */
+    const setDataFunction = (f: (p: T) => T, optionsData?: setDataOptions) => {
+        setDataD((p) => {
+            const n = f(p);
+            if (!(optionsData?.useOptionsOnChangeDataAfter === false)) {
+                options?.onChangeDataAfter?.(n);
+            }
+            return n;
+        });
+        if (!(optionsData?.useSetIsChange === false)) {
+            setIsChange(true);
+        }
+    };
+
+    /**
+     * Set the entire data object.
+     *
+     * @param {T} nData - The new data.
+     * @param {setDataOptions} optionsData - The new data.
+     */
+    const setData = (nData: T, optionsData?: setDataOptions) => {
+        if (!(optionsData?.useOptionsOnChangeDataAfter === false)) {
+            options?.onChangeDataAfter?.(nData);
+        }
+        setDataD(nData);
+        if (!(optionsData?.useSetIsChange === false)) {
+            setIsChange(true);
+        }
+    };
+    /**
+     * Concat add data.
+     *
+     * @param {T} v - The concat data.
+     */
+    const onConcatData = (v: Partial<T> | Array<T>) => {
+        setDataD((pre: T) => {
+            if (Array.isArray(pre)) {
+                const nData = [...pre, ...(v as Array<T>)] as T;
+                options?.onChangeDataAfter?.(nData);
+                return nData;
+            }
+            if (typeof pre === "object") {
+                const nData = {
+                    ...pre,
+                    ...v,
+                };
+                options?.onChangeDataAfter?.(nData);
+                return nData;
+            }
+            if (typeof pre === "string" || typeof pre === "number") {
+                const nData = `${pre}${v}` as T;
+                options?.onChangeDataAfter?.(nData);
+                return nData;
+            }
+            return pre;
+        });
+        setIsChange(true);
+    };
+
+    /**
+     * Reset the data to the default value.
+     */
+    const onRestart = () => {
+        setDataD(defaultData);
+        setIsChange(false);
+    };
+
+    /**
+     * Memoize the data.
+     */
+    const dataMemo: M = useMemo(() => {
+        if (options?.onMemo) {
+            return options?.onMemo?.(data);
+        }
+        return data as any;
+    }, [data]);
+
+    useEffect(() => {
+        options?.onChangeDataMemoAfter?.(dataMemo);
+    }, [dataMemo]);
+
+    const { isValidData, onValidateData } = useDataValidator<T>({
+        data,
+        validator: options?.validator,
+        autoOnValidate: options?.autoOnValidate ?? true,
+    });
+
+    const { isValidData: isValidDataMemo, onValidateData: onValidateDataMemo } =
+        useDataValidator<M>({
+            data: dataMemo,
+            validator: options?.validatorMemo,
+            autoOnValidate: options?.autoOnValidate ?? true,
+        });
+
+    const onSubmitData = useCallback(
+        async (optionsSubmitData?: {
+            data?: T;
+            onSaveData?: (p: { data: T; result: RT }) => T;
+            useValidator?: boolean;
+        }) => {
+            const dataUse = optionsSubmitData?.data ?? data;
+            const isValidDataUse =
+                optionsSubmitData?.useValidator === false ||
+                (optionsSubmitData?.data
+                    ? options?.validator?.onValidate?.(
+                          optionsSubmitData?.data,
+                      ) ?? true
+                    : isValidData);
+            if (options?.onSubmitData && isValidDataUse === true) {
+                try {
+                    setDataError(undefined);
+                    setResultSubmitData(undefined);
+                    setLoaderSubmit(true);
+                    const result = await options?.onSubmitData?.(dataUse);
+                    setResultSubmitData(result);
+                    options?.onAfterSubmitDataOk?.({ data: dataUse, result });
+                    if (options?.afterSubmitDataSetIsChangeFalse) {
+                        setIsChange(false);
+                    }
+                    if (optionsSubmitData?.onSaveData) {
+                        const newData = optionsSubmitData?.onSaveData?.({
+                            data: dataUse,
+                            result,
+                        });
+                        setData(newData);
+                    }
+                    return result;
+                } catch (err) {
+                    const error = (options?.onAfterSubmitParseError?.(err) ??
+                        (err as any)) as ET;
+                    setDataError(error);
+                    options?.onAfterSubmitDataError?.({ data: dataUse, error });
+                } finally {
+                    setLoaderSubmit(false);
+                }
+            }
+            return undefined;
+        },
+        [data, isValidData, options?.onSubmitData],
+    );
+    const onSubmitDataMemo = useCallback(
+        async (optionsSubmitDataMemo?: {
+            dataMemo?: M;
+            useValidatorMemo?: boolean;
+        }) => {
+            const dataUse = optionsSubmitDataMemo?.dataMemo ?? dataMemo;
+            const isValidDataUse =
+                optionsSubmitDataMemo?.useValidatorMemo === false ||
+                (optionsSubmitDataMemo?.dataMemo
+                    ? options?.validatorMemo?.onValidate?.(
+                          optionsSubmitDataMemo?.dataMemo,
+                      ) ?? true
+                    : isValidDataMemo);
+            if (options?.onSubmitDataMemo && isValidDataUse === true) {
+                try {
+                    setDataErrorMemo(undefined);
+                    setResultSubmitDataMemo(undefined);
+                    setLoaderSubmitMemo(true);
+                    const result = await options?.onSubmitDataMemo?.(dataUse);
+                    setResultSubmitDataMemo(result);
+                    options?.onAfterSubmitDataMemoOk?.({
+                        dataMemo: dataUse,
+                        result,
+                    });
+                    if (options?.afterSubmitDataMemoSetIsChangeFalse) {
+                        setIsChange(false);
+                    }
+                    return result;
+                } catch (err) {
+                    const error = (options?.onAfterSubmitParseErrorMemo?.(
+                        err,
+                    ) ?? (err as any)) as EM;
+                    setDataErrorMemo(error);
+                    options?.onAfterSubmitDataMemoError?.({
+                        dataMemo: dataUse,
+                        error,
+                    });
+                } finally {
+                    setLoaderSubmitMemo(false);
+                }
+            }
+            return undefined;
+        },
+        [dataMemo, isValidDataMemo, options?.onSubmitDataMemo],
+    );
+
+    useEffect(() => {
+        if (options?.refreshDataIfChangeDefaultData?.active === true) {
+            setData(defaultData, {
+                useOptionsOnChangeDataAfter: false,
+                useSetIsChange: false,
+            });
+            if (
+                options?.refreshDataIfChangeDefaultData?.useReloadKeyData ===
+                true
+            ) {
+                onReloadKeyData();
+            }
+        }
+    }, [defaultData, options]);
+
+    const validatorData = useMemo(
+        () => options?.validator?.getObjectValidator?.(),
+        [options?.validator],
+    );
+
+    const validatorMemoData = useMemo(
+        () => options?.validatorMemo?.getObjectValidator?.(),
+        [options?.validatorMemo],
+    );
+
+    if (options?.env_log) {
+        if (options?.env_log?.data == true) {
+            env_log(data, {
+                name: "useData - data",
+                color: "#22cc8c",
+            });
+        }
+        if (options?.env_log?.dataMemo == true) {
+            env_log(dataMemo, {
+                name: "useData - dataMemo",
+                color: "#22cc8c",
+            });
+        }
+        if (options?.env_log?.isValidData == true) {
+            env_log(isValidData, {
+                name: "useData - isValidData",
+                color: "#f96161",
+            });
+        }
+        if (options?.env_log?.isValidDataMemo == true) {
+            env_log(isValidDataMemo, {
+                name: "useData - isValidDataMemo",
+                color: "#f96161",
+            });
+        }
+        if (options?.env_log?.dataError == true) {
+            env_log(dataError, {
+                name: "useData - dataError",
+                color: "#e84275",
+            });
+        }
+        if (options?.env_log?.dataErrorMemo == true) {
+            env_log(dataErrorMemo, {
+                name: "useData - dataErrorMemo",
+                color: "#e84275",
+            });
+        }
+        if (options?.env_log?.loaderSubmit == true) {
+            env_log(loaderSubmit, {
+                name: "useData - loaderSubmit",
+                color: "#f96161",
+            });
+        }
+        if (options?.env_log?.loaderSubmitMemo == true) {
+            env_log(loaderSubmitMemo, {
+                name: "useData - loaderSubmitMemo",
+                color: "#f96161",
+            });
+        }
+        if (options?.env_log?.keyData == true) {
+            env_log(keyData, {
+                name: "useData - keyData",
+                color: "#8d63e9",
+            });
+        }
+        if (options?.env_log?.isChange == true) {
+            env_log(isChange, {
+                name: "useData - isChange",
+                color: "#8d63e9",
+            });
+        }
+    }
+
+    return {
+        data,
+        onChangeData,
+        onDeleteData,
+        isChange,
+        setData,
+        setDataFunction,
+        dataMemo,
+        setIsChange,
+        onRestart,
+        onConcatData,
+
+        keyData,
+        setKeyData,
+        onReloadKeyData,
+
+        validator: options?.validator,
+        validatorData,
+        validatorMemo: options?.validatorMemo,
+        validatorMemoData,
+
+        isValidData,
+        isValidDataMemo,
+
+        onValidateData,
+        onValidateDataMemo,
+
+        onSubmitData,
+        onSubmitDataMemo,
+
+        loaderSubmit,
+        loaderSubmitMemo,
+
+        resultSubmitData,
+        resultSubmitDataMemo,
+
+        dataError,
+        dataErrorMemo,
+
+        setResultSubmitData,
+        setResultSubmitDataMemo,
+
+        setDataError,
+        setDataErrorMemo,
+    };
+};
+
+
+export interface useDateProps extends FenextjsDateProps {}
+export const useDate = ({ ...props }: useDateProps) => {
+    const [dateValue, setDateValue] = useState<Date | undefined>(
+        props.defaultDate,
+    );
+    const [date, setDate] = useState(
+        new FenextjsDate({
+            ...props,
+            onCallback: (a) => {
+                setDateValue(() => new Date(a));
+                props?.onCallback?.(a);
+            },
+        }),
+    );
+
+    useEffect(() => {
+        if (dateValue) {
+            setDate(
+                new FenextjsDate({
+                    ...props,
+                    defaultDate: dateValue,
+                    onCallback: (a) => {
+                        setDateValue(() => new Date(a));
+                        props?.onCallback?.(a);
+                    },
+                }),
+            );
+        }
+    }, [dateValue]);
+
+    return date;
+};
+
+
+export type TypeListenerKeyFunctions = keyof DocumentEventMap;
+
+export type TypeListenerFunctions<K extends TypeListenerKeyFunctions> = (
+    ev: DocumentEventMap[K],
+) => any;
+
+export type useDocumentEventProps<K extends TypeListenerKeyFunctions> = {
+    [id in TypeListenerKeyFunctions]?: TypeListenerFunctions<K>;
+};
+
+export const useDocumentEvent = <
+    K extends TypeListenerKeyFunctions = TypeListenerKeyFunctions,
+>({
+    ...props
+}: useDocumentEventProps<K>) => {
+    const onLoad = () => {
+        Object.keys(props).forEach((key) => {
+            const listener = key;
+            const fun = props[key];
+            if (listener && fun) {
+                document.addEventListener(listener, fun);
+            }
+        });
+    };
+    const onUnload = () => {
+        Object.keys(props).forEach((key) => {
+            const listener = key;
+            const fun = props[key];
+            if (listener && fun) {
+                document.removeEventListener(listener, fun);
+            }
+        });
+    };
+
+    const onReload = () => {
+        onUnload();
+        onLoad();
+    };
+
+    useEffect(() => {
+        onLoad();
+        return () => {
+            onUnload();
+        };
+    }, [props]);
+    return {
+        onReload,
+    };
+};
+
+
+export interface useThemeProps {}
+
+export const useTheme = ({}: useThemeProps) => {
+    const { setLocalStorage: setTheme, value: theme } =
+        useLocalStorage<ThemeType>({
+            name: "fenext-theme",
+            defaultValue: "auto",
+        });
+    const onLoadThemeWindow = () => {
+        if (!theme) {
+            return;
+        }
+        if (typeof window == "undefined" || typeof document == "undefined") {
+            setTimeout(onLoadThemeWindow, 500);
+        } else {
+            document.documentElement.setAttribute("fenext-theme", theme);
+        }
+    };
+    useEffect(() => {
+        onLoadThemeWindow();
+    }, [theme]);
+
+    return {
+        theme,
+        setTheme,
+    };
+};
+
+
+/**
+ * Props for configuring modal content.
+ */
+export interface useModalLocalStorageConfigContentProps {
+    /**
+     * A unique key to identify the content.
+     */
+    key: string;
+    /**
+     * Data to be passed to the modal content.
+     */
+    data: any;
+}
+
+/**
+ * Options for configuring a modal dialog component.
+ */
+export interface useModalLocalStorageConfigProps {
+    /**
+     * Whether the modal dialog should be displayed.
+     * Default is `false`.
+     */
+    active?: boolean;
+    /**
+     * Whether to use the modal dialog or not.
+     * Default is `true`.
+     */
+    use?: boolean;
+    /**
+     * Whether to show a loader while the modal content is being loaded.
+     * Default is `true`.
+     */
+    loader?: boolean;
+    /**
+     * The content to be displayed in the modal dialog.
+     * Each item in the array should have a unique `key` and `data`.
+     */
+    content?: useModalLocalStorageConfigContentProps[];
+}
+/**
+ * Represents a single content item to be displayed in a modal dialog.
+ */
+export interface useModalLocalStorageConfigContentProps {
+    /**
+     * Unique key for the content item.
+     */
+    key: string;
+    /**
+     * Data to be displayed in the content item.
+     */
+    data: any;
+}
+
+/**
+ * Hook for managing modal state and configuration
+ * @returns an object with modal state and functions to update it
+ */
+export const useModalLocalStorage = () => {
+    /**
+     * Custom hook for managing localStorage state
+     */
+    const {
+        load: loadModal,
+        setLocalStorage: setShowModal,
+        value: valueModal,
+    } = useLocalStorage<useModalLocalStorageConfigProps>({
+        name: "fenextjs-modal",
+        defaultValue: {
+            active: false,
+            use: false,
+            loader: false,
+            content: [],
+        },
+        parse: JSON.parse,
+    });
+
+    /**
+     * Function to update a modal property
+     * @param id - the name of the property to update
+     * @param value - the new value for the property
+     */
+    const updateModal = (
+        id: keyof useModalLocalStorageConfigProps,
+        value: any,
+    ) => {
+        setShowModal({
+            ...valueModal,
+            [id]: value,
+        });
+    };
+
+    /**
+     * Function to set the entire modal configuration
+     * @param value - the new modal configuration
+     */
+    const setModal = (value: useModalLocalStorageConfigProps) => {
+        setShowModal({
+            ...valueModal,
+            ...value,
+        });
+    };
+
+    return {
+        valueModal,
+        loadModal,
+        updateModal,
+        setModal,
+    };
+};

@@ -65,6 +65,12 @@ const main = async () => {
         onCopyLib({
             lib: "firebase"
         }),
+        onCopyLib({
+            lib: "date"
+        }),
+        onCopyLib({
+            lib: "hook"
+        }),
     ])
     let CODE = ALL_LIB.join("")
 
@@ -81,7 +87,19 @@ const main = async () => {
     }
 
     const CODE_TOP = `
-        import { getRuteCountryImg } from "country-state-city-nextjs";
+        import React, { useMemo, useEffect, useState, useRef, useCallback } from "react";
+        import { useRouter } from "next/router";
+        import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
+        import { jwtDecode } from "jwt-decode";
+        import {
+            // countryProps as CountryProps,
+            // stateProps as StateProps,
+            // cityProps as CityProps,
+            getDataStatesByCountry,
+            getDataCitysByStateAndCountry,
+            getDataCountrys,
+            getRuteCountryImg,
+        } from "country-state-city-nextjs";
         import firebase from "firebase/compat/app";
         import "firebase/compat/auth";
         import "firebase/storage";
