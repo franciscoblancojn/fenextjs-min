@@ -8,9 +8,12 @@
             useState, 
             useRef, 
             useCallback,
-            createPortal 
+            createPortal,
+            SyntheticEvent,
+            AnchorHTMLAttributes,
         } from "react";
-        import { useRouter } from "next/router";
+        import Router,{ useRouter } from "next/router";
+        import LinkNext, { LinkProps as LinkNextProps } from "next/link";
         import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
         import { jwtDecode } from "jwt-decode";
         import { 
@@ -33,6 +36,8 @@
             getDataCitysByStateAndCountry,
             getDataCountrys,
             getRuteCountryImg,
+            getDataStates,
+            getDataCitys,
         } from "country-state-city-nextjs";
         import firebase from "firebase/compat/app";
         import "firebase/compat/auth";
@@ -21890,7 +21895,7 @@ export const Table = <T,>({
 /**
  * Properties for the Alert component.
  */
-export interface AlertComponentProps extends _TProps, AlertInterface {
+export interface AlertComponentProps extends _TProps, AlertProps {
     /**
      * The class name for the component.
      */
@@ -24319,7 +24324,7 @@ export interface UserComponentProps {
     /**
      * User data.
      */
-    user?: Partial<UserInterfaceProps>;
+    user?: Partial<UserProps>;
     /**
      * If loader user.
      */

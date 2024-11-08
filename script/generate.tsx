@@ -106,9 +106,12 @@ const main = async () => {
             useState, 
             useRef, 
             useCallback,
-            createPortal 
+            createPortal,
+            SyntheticEvent,
+            AnchorHTMLAttributes,
         } from "react";
-        import { useRouter } from "next/router";
+        import Router,{ useRouter } from "next/router";
+        import LinkNext, { LinkProps as LinkNextProps } from "next/link";
         import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
         import { jwtDecode } from "jwt-decode";
         import { 
@@ -131,6 +134,8 @@ const main = async () => {
             getDataCitysByStateAndCountry,
             getDataCountrys,
             getRuteCountryImg,
+            getDataStates,
+            getDataCitys,
         } from "country-state-city-nextjs";
         import firebase from "firebase/compat/app";
         import "firebase/compat/auth";
