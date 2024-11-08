@@ -9803,3 +9803,17373 @@ export const FenextImgUserPlaceholder =
 
 export const FenextImgPlaceholder =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjoAAAI6CAYAAAAuSOLAAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAADq3SURBVHgB7d0HdFzXfefxC8ygEWwiKYK9CCJFUrRESRQ7RVKULNuyZcnqxbZkSXbWkSw7ZZPNnmyctifZTc7aZ08Sn3hPbMnO2uvEUiT2JoIdIkF0CiRBoncCRCXaFOz/kjPSEBoAb/De1Pf9nDNn3vT25r7fu/e+e5UCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJKEkBwwwNDU2SM6ec+uU0mJSU5NHXV1ZWpvf29mZfvnx5fXt7+9zW1tYZ/f39qS6XS8l9+uRxA/q+cq7Xq2RZduhz32XNq0++++jndCcnJ/uX9fVDQd7L9ev8t+nLetl//XBJN27UZ0m++yf5r1fGP/+QkfsFe7+Brzmexw5//eH3G/7exvseRvo+jLz3UJ7Pqucf4TUNfYdGHjfS+xr+uQLvF8pto71e4H2DvY+AdXkoyG0jrh+BtwVbb0Z7LSPvJ/D2II/zv94n/3k5d+syIi0trT0zM7NhypQpzbNmzeqcM2dO18qVK3sUECYEHVwnBVCGnM1TNwJOn5yuyqn/2rVrtzQ0NCwqLi5+6OLFi6v7+vqypNCaJacpckqTxyX7ClR98vrO/ZKGnX/ycgHnQ0GuH/FtjnE52Gsl0jpuKICFiDJg/GLluwvHemGF4f/z6zs0chqUcqNfyo12r9fbJDtK1TNnzsxdvnz5mTvuuKNu8eLF/QqwEIUcrpOCR9e+TFO+gkifLl269Pm8vLzHy8rKVns8nolOp3OGFE6TFQBYQ5c1vVL+dLjd7osZGRm599xzz78uXLiwSmp5BhVgAYKOzfkCTrqcXMq3Pkiz1NKzZ88+IyHnpZ6enqyUlJQ0uTpZAUD4uKQ8apcangKp4fntpk2bdq5evbpRASYRdGxONz3JmcN/saWl5c69e/f+udTmfElqb1KSk8k3ACKqX2qQ6x0Ox6E1a9b8jy996UuXFWACQQf+sKOampqW79mz5y8rKiqekEJGhdB/FwAs5fV6W6UM+nDt2rV/LmHnYwWME7vr0IHGe+XKldv27dv3xxJyHifkAIg2qU3WfQIf/uijj/5i9+7dKxQwTgQdqK6urhmHDh16q7y8/Cmn05mUkCGH3AbEo1ukPHpQws6f7d+/f4kCxoGgA3Xu3LlHysrKnpWQk67CJOo5I1YPwLU9EijGpMPOtry8vO9WVlZOVUCICDo219jYuOLw4cP/RQqSW8NZk0POQHCsGTDk1sHBwS9KzfNWBYSIoGNzR48efa2vr28pfXIAxLKhoaGFdXV1z+bm5s5TQAgIOjYmhcbSixcvbnc4HCkKAGKY7Iylezye1cXFxfcrIAQEHRsrKSl5VAqO2QoA4oCEnZmtra26c/J0BRhE0LEpqQZ2lpWVbZNzCgwAcSE5OXlib2/vyqamphkKMIigY1P19fW3DQwM6JDDOgAgXiTLztmc9vb2hQowiI2cTTU0NMyXZqsJCgDiiNTqTO7u7p6va6UVYABBx6Z6enoyvV5vOkdbAYgz6YODg/POnTsXtnG/kFhIxDbV19eXYtEeUa/UDFW63e4rvglAU30zoifrIZZl+XqS0ov6fEhfcf3qG+eBy/7zwPv5l9WNAVf8g64MX/ZLCjhPGnbZsMChoQPe/4jX3Xirny77Lwd77HDBPrOB72L4+x0K9rz+xcCr1QgfOdhyKJ85cDnY/a00/Dvwf/6Rvq/h65j/aVTw9WisgX2MfJ7RvvMhg/cLfK2kIKfhtxsdkOj64/3r50jn/t/vpgeOvD4kB5wCH+eVk0dObrmbS3asnCkpKXNl2dTh4foo0f7+/lvlPE0u9ihgDAQdm+rt7U2WgifZzHZIbzMk3JQsWrToX7Oysgol7AzqDYlcJ0/tHZKC6JMNi76sz51O5yeX/bfp6/y36/Ph9/XfTwLV9XMpLEcs1F0u1ycfSF5/3B9upA20fMabrpfPmjT8XN/H/3j/9cEE+w5G+/xG+b+n4Yx+b4GGf4fDv5fA7yPwswb73MOv83/Oke4/lsDHB1sO/P6GrzsjPXYkRj7PWM9l5HVGe23/uf+3CnX99v92wX4zXRboZU2+q+vnwz/f8N/eFx6vX6cf43+8vj7w/+8rZ5xyOaOysvIrV69efVkeMk2Nky5i5DkndHZ2sv2CIawoNiUFhcuCvW23FG7Vd9111+H777+/VAHAKP793/99qgSdrykTQUdnMAlWKeMJx7An+ujYlK5KViYlJV9vZvGkpqZeUwAwBikrBoI1i41jyrNkgg6MIujYl0eZNOQdul4lrQDAAAk5KVJmOD57gzIssE8YYARBx6ZC7fcxAl3YpAwMDFDoABiTNJnr6WYcyqSgtULACAg6Nma2sPB1PKStHIBR14/IVCZQm4NQEXRsyldYmCowfEHJScEDwAh9xJQyWe5olDkIBUHHpqwIOj4OanQAGGFVQLGo6R02QdCxKb1nZVGhwzoEwBACCqKBjZRNUfULINKk9teyoDPeARhhPwQdm5JCIsmqIxcocAAYoYdMVyEdTA6YR9CBWUNURwMwQiqSLQk6weZ3A0ZC0IFZQ9ToADDI9EClfpQ7MIqgY1MWtpV7U1JSvAoAxqAn/FUma3QYLBChIujYlIXNTV6argAY4fF46KODiCPo2NTwcGJiF4naHACGOBwOQg4ijqBjU7rpKrBDn5nSh7ZyAJGWkZFBuQNDCDo25TvM0woUNgCAmEXQsSldo2PVDObU6AAwwuPxWDHPFUNaICQEHZuioAAQr3TYkdBEGQZDnAq25As6ltToKACWKS8vT2tra5va2tqa2d/fP3FwcHByT0/PVJfLNUWWM2QjP5ient6ZkZHRJqfOiRMn9urTlClTuu6+++5rygbYUUMoCDoAEGVFRUWZHR0d05qbm+ft2bNnQ2dn5/0DAwOzZHs+RYJNptwlVc5T5ORQN4Z0cMlpQE462HQ5nc7WSZMmlb799tu5M2fOrFi0aFHr8uXL21SMkSZzy3aMaDKHUQQdm7JwwEBqdIBxKi0tnVZYWJh98ODBz/f29m6QGpuFcvVMh8MxWcJLmtHnkcAz2NXV9aCEpa9XVlbWSXD6+Kc//enB22+/PW/btm1VKsEwBQRCQdCBKbrASUtLo9ABQiABZ2JJScmyHTt2PNPX17dFgsptsvNxiwQchxoH+R/qGp9UeY6p8lyLJTTde+3atUeampoKf/KTn/xm1apVx9atW1enosyKWhgLm91hEwQdAIgQ2UYn79y5M3vXrl1fk4DzFbm8XMLJNGUhCTzK19yV6Xa75zQ2Nq5qbW099s477/zr/fffnxfNJi0GDEQ0EHRgypCPAjCq4uLiW3784x8/2N7e/g25uEbCyCwdSsJJ1/LI2SKXy5V16dKle+rr698/dOjQz7Zv335ZRYFVtTE0XSEUHF4OUyhwgLHl5uZm7d279xtXr179E7n4sA45KoLk9TKk5mil1CK9fvLkyb96//3379G1SyrC2ClCNFCjY2+mdyd1wcXRD8DIpAZl7oEDB16XWpXnJWzcrqK4gymvP9Pj8TxaUFBwS39//9/W1tbmzp8/v09FiAQuJvVExBF0bErCiSV15tToACP7j//4j/knTpz4voScpx0Ox3wVMfrvPeJfc5Kctp47d25iR0fHj1taWvbMnDmzR0UAHYkRDTRdwSwvNTrAZ+3evXteYWHh77vd7uciG3K0Mf+SaVK7s1ZqdP5wx44dD0v+SFWR4VEEHUQYQcemkqzrBUmhBQxz+vTpWfn5+b8rOwFPSqCYo2KTU9wjYef777333n0qMjz000GkEXRgGjU6wKcqKyunHj169EWpyXlaQs48FduckjvuLysr+8ODBw+uUGGmDy8PtbmbEUlhFkHHppJ8lHmEHMBHQoNj3759D3V3d78gF28b/d6xsQnXR2QNDAxsycvLe720tDSsR4Ppdm4VYpkR7M7yPZN/YBhBx6as6owM4FO7du1a2NLS8k1ZXK7GTDKxs4+gBy2UcPYVaXLbFM4Q4TvqyuxzUHYhJAQdm6KwAKzV1NSUefHixSelyeo+XUui4kxKSsqCurq6F86cObNYhQlHXSEaCDowi8AEqOsdkBd1dXU9IrUjWSo+pbhcrjXFxcWbJY+kqDDwTQFhxcjIlDswjKBjU7qgoJ0bsMb58+cnXb58+VGPx3OniuNyVYc0qdV58ujRo4tUGFCjg2gg6MAswhJs78KFC1lXr159WGosZqg4Jvs/Tq/Xe29JSYmeUX1cM6mPxqojNNlJQygIOjZlYWfkJNkLpNCBbek5o2pqatbJ4h0qAUabl//zra2trVvKyspmqjBgHB1EGkEHZhFyYGsFBQXTOzo61khtzjSVGFJlR2jppUuXLB8DyIqQo2tzNHawYBRBB4iwf/mXf1n79ttvr1FICFL7MbW/v1/X5mSqBCEhYn59ff3naCJCIiDo2JRVRy1QEIamvLz81qamppeqqqq+t2vXrtUKcU8CwRIJBotUApH/9dSrV6+uOn/+vOW1VFZMBEy5g1AQdGAaVcjGlZSUrBgcHNzs8Xi2S5PHHxw7dmypQtySkDNBguvn5D8wVSUQPQ6Qy+VaWl1dfYuykO/w8lDfjQLMIOgAEaI7rUpNzhfkfKFsGGdJ4HnoxIkTb+Tn59+qEJek2WriwMDAEgkG6SrxzOrq6pqiou6z2YhxdBAKgg5MocAx7syZM3N7enrukq9ssr4sYWe6HnY/Nzf3q+E4lBfh19fXlyq1c3p+qFSVYGSdnCIhLmY7WEvtEGUPDCHoABFSXl5+h2wU9USPn/zvUlJSFkrTx8u/+c1vNirEHQk6+nDyzHCNJBxl6f39/YlyJBlsjKBjU9TERJausWlpablXzoc3U+mf4t6ysrI/ePfdd1cqxBVp2nHKb5ouv2Ei1silSvPq1DDUNjKODiKKoANTOPrBmAMHDmRJs9V90lw1cfhtvgkgNxcVFb118uTJuQpxQ2p0UuT3S8TaHL1eOqRGZ1JVVZVln8+qwQIpdxAKgo6NWVWrw1FXY6urq1ukj2KRxbQR7qKP2nlYgs7X9LxJCnHB7XY7rajxiMU/kA4T8vlSUlNT2U4grrEC29RYU0AYLXhpAhtbZWVl+pUrV/QAgaPW1shXuUCaQl4+ePDgg4cPH477qQTsQELAoPxuLmVSjLbleFNSUvql+cqrLGLVXFdAKAg6CMpoaUQV8tjKyspmdHd3b5Car8lj3FUPa7+iubn5O1IDdKdCzJs4caJbgs6ASsx+J24Jct2LFi0yHeSGIewgogg6MIUanbFVV1ffLmfL1MjNVoHSHQ7HusuXL7/5wQcfLFCIaVLj4ZKw3y+LHpV4BtPS0jrkL27ZZxvfgIGfZcXoyrAPgg5MI+yMrKioKLOtrW2N0+mcFcLD9Gi0XygsLHx53759YZlBGtbIyMhwy8a7W8KO1bUeUSd/6z4JOlcVEOcIOjCFpqvRVVZWThsYGFgni2M1Ww031+v1PidB6Us6LCnEpPT09EH5DzRKKBhUiadTAnqrspBVR10BoSDowBRqc0ZXVVW1Qhlvthouu6en51unTp1apxCTJOh0TZgwoUwWe1Vi0YGkfvbs2V0KiHMEHZhC0BnZ4cOHp7a3tz8oTRuhNFsFSk1OTr6noaHhzZ/97GefU4g5K1euHMzKyipwu91XVGLpSUlJKV6wYEG7spBVR11RM4RQEHRgmjTNEHaCKC8vnykF+/2yaGZixIkSdjZVV1e/9d577y1SiDlS61Ejeb9cFt0qcbTOmDEjLzs7u1MBcY6gA1PooxOc/l5aWlrul5CSrcz/z6bL6QslJSWvHDx4MEshpixcuLAjIyOjWEJtj0oMXo/Hc0Fqc8pUjNJHXcl7pFYHhhB0YApNV8EdOnRo2uDg4Eb5eqYqa8yV5pGnCgoKvszIybFl2bJl3bfccstHEnQSpfmqXZqtTs+fPz/RmuNgUwQdIAwuXLgwX0LO3Sr0o61GJLVDS7q7u7/14YcfbgrDRIswYc6cOSUOh6NAfpc+FecksJVLs9XBlStXcmg5EgJBB7BYaWlpamtr61oJOouUtVIk7Nzd2Nj45s9//nM6J8eQxx57rGXatGk7JSQ0qzgmQe2qBLYjq1evLlcxjM7ICAVBB6bQR+ezpDZnunwvm9WNiTqtlqlHTq6urv69PXv2LFKICRJq3StWrDjidDrPyMUBFZ903xx9pNVv16xZ06SABEHQsSmpGWCPKExqa2vvkrNVcpqgwuMWqTl4KD8//7tHjx6drRATHnroodopU6b8Vn6behWH5H23ZGRk7JTAVqGABELQgWkSmqjV8dm7d++0zs7O7bI4R4WRfOezBwYGnjx58uTXpalsmkLU6SOBlixZckR+mwO6CUjFl14JOscXL168a+3atW0KSCAEHZjCUVc3q6qquk2q/zeqG/NVhZVsUBf19va+lJOT85XKysp0hah79NFHm6Tp558lNByVi9dUfHDLOlsyadKkX2zevLlahRE7RYgGgg5gER02Ojo69CHlt6nIkO1G8rKWlpbXjxw5slEhJrzyyiuFWVlZ/yi1OkVyMebnwJJQVjlhwoT/s3Xr1hPz58+Pi6PG2MFCKAg6gEVKSkpm9vX1PSRlcCSbkvSRWKtqamq+9+67765UiDr5/b0SGk6lp6f/VC5ekMDjUTFK3ludw+H49X333bebJiskKoIOTOGoq081NjbeK3vHy2UxVUVWpjQ9bCorK3vz8OHDixSibuXKlT0bN27cJSHin+TiBRWD00PIf7dBQtmv5s2b9/PPf/7zDQpIUAQdmEa7u1InT56c1tbWtk02HLeqKNC1SAMDA1/My8v7en5+flTeA272wAMPXNm0adO/Sdj5XxKAi2NoMEE9DE21rDPvLFmy5CevvvoqR1khoRF0YBY1OkKajub09/ffK6HPspGQQyWvPb+rq+vZU6dOPVpfXx+uQ9sRgm3btrXK6beZmZl/KWHnhFzVoaLLJe/jnKwr/7Bq1ap/fPHFFwk5SHgEHZjAUDyaNBc5m5qadGfgbBVlUnuwtLm5+ZWcnJzVCjFh8+bN7WvWrNmblZX1R9LE+GupTalR0WnK6pDXP5aRkfEX69ate/vxxx+vVXGKJnOEgqADEyhrNJfLNbOjo2Ob7CXHwng2unPyveXl5d/fs2fPHQoxQWp1+t944438BQsW/LXUqOjTSbk6Ip1/dZOZnC663e5fTJ8+/Y8leO195JFHWlT0sIeEiHIq2JKFc8XYPu00NjbeIWHnjpSUlDQVGybKhnRzQUHBm0eOHPnbLVu2xO2ee6J5/fXX644fP/6r/Pz8My0tLU9KDdyXkpKSFqvwTBfSL6dG+asfl1qc/7t06dKiJ598slEBNkPQgWl2HtPi8uXLU37zm99slw3WIhVDpFZnxsDAwFdPnTrVXlpa+g8rV65k7qIYsWnTpm45K9i7d291YWHh3r6+vifkL6RH054voWSKLJudmb5HTnpy0dNOp/O3ixcvznvhhRdq9WHvKsokgOsdLGp0EFEEHcCE8+fPZ127dm29bFDCsUduimzY5vX29j59+PDhxvr6+p/PnTu3VyFmfOELX9DTRBz/4IMPzktT47/Jb/Wwx+NZJ2FniVw/Xd2YKy1VfsfRuhh45f5uuY9untIdnSskdJ9JS0s7KL932bJly5pXr17tevHFFxVgVwQdwITa2tp1spFZomKU1Oxkt7W1vSRNWOWyITwUC3v1uNljjz3WKmetubm5H9fU1PyyoaHhcxKe10jo0Z3bp0ktiG6KnCi/X5qcnPo3lNOA/Lbd+iTL7XK/KmmeOj19+vSPs7Oz2/Sh7SoGyQ4BNTqIOIIOzLJts1V+fv6cXbt2fVE2NrE8bo1TNo53X7x48Xvvvfee7oBapBCT1q1b1yVn+lRZXFx8rKmpKUPCTqqEnpTBwcEMaeLKdLlcurO5W0LNNTn1ymlQanAGJ0+ePLB+/fpOCT0xOwozEC0EHWCcLly4kC0bnuWy4YnpCTVl46ebQDaeO3fuLanZ+cstW7ZUKsS0u+66S9fStKvEZEmNjgQ8DvuEIRxeDtPsODKyNFllVFdXPySffZ6KD7dIrcDDeXl5L5WUlGQpIArcbrcVZQUBByEh6ADjIE1BM3t7e++TZqGY64Q8EtkDntfR0fFcTk7OV0tLSycqALABgo5NWTiOji1VVlbeJU1CSy04FDii9MjJLS0t3ygqKrpfAYANEHSAEOl5pJqbmzdKyJmp4o9Tws4qqZH6/s6dO5crAEhwBB2YZbv2cqkNme3xeO6TxSkqPmVKSNtUUFDw+0eOHJmvgAjx9eejjw0iiqAD0wYGBmxVcFVUVGyQoLNUxbdp8hm+kJub+7oEt3ismYKN2Xk0doSOoAOE4MSJEzM7Ozv1TOUzVPyb29vb++zx48efaGpqylRAmFkZUPr6+gg7MISgA4SgsrJy4eDg4N2+sWkSQXZzc/Mr+/fv3zI0NBRXHasRtwgoiCiCjo3Jho0CJwSlpaWpuhOyfG+LVILQR43J6S5pjntj586dKxUQRtJcSpmDiCPoAAZJyLn12rVrm5OTk29RCUSCToaEt/WFhYU/OHz48CIFhJfpsMNOGkJB0LEpOvOFrra29k5pttITeKapBCOrw1T5bNvz8/NfvHDhQiL0P0IMsmgUdcouhISgAxhw/vz5SVeuXNkgBfVclaD0yMnt7e3PSa3Ol/QUFwoAEgBBBzDg8uXL07q7u9fomg+VwJxO5x0NDQ2v79+/f6MCLOarSbakRsaOc+xhfAg6gAF1dXX3eDyeJVJOJ/p/JkU2IKuqq6vfeP/99+9QQAyi6R2hIOgAY/joo4+mNzc3b09JSbHLrN8TZTuy8dy5c2/k5ubGy+zsiAO+o64IKYgogg7MSkr0KmSp3cgaHBzUh15PUjYhQWdGf3//Y8ePH385Pz//VgUAcYqgY1NU/RozNDSUXFNTs8nhcNyuEtRIK4IE2AWdnZ3Pnzp16jE9kakCTKLcQTQQdIBR5OTkzOzq6togi9OVJWKvnB8KdqXvbUrAW9rU1PTKoUOHNuvQpwDzGEcHEUXBZWPsXY2trq7uNjlbqQfVU5YYUnHh07fplLCzqqKi4ru7du1aoQAgzhB0bMrr9RJyxqDHkmloaNguTTiLlL3pCT83FhYWvnnixImFChgnq/rz6Z00Di+HUQQdYARFRUWz+65d2yyL0xSmDw4OPnLq1Knny8rKLGrGgx2ZbXaiJhqhIujArIQtdKS5ZutQUtJyxeGw1+nOyV1dXc/k5OQwcjLGxe12W1ajowCDCDo2RUExuqNHj9569epVPTowtRef0s0FK6Q579X9+/dvVsA4UPYg0gg6NsaRCyOrr69fKN/PCus6ISeMNIfDcW9NTc1/2rNnDyMnIyRW9auh7EIoCDo2xV7VyPRh1HV1dfqQ8kUKwUzSIycXFBS8ceTIkfkKiAI6I8Mogg4wjB47p7+/X0/geYvCSG6V7+grJ0+efJWRk2GUVZN6sqOGUBB0gGEqKyvvcLvduhNymsKIZI96YW9v79OnT59+jM7JMMI315UputmKpiuEgqBjUxaOo5NQBc758+cntbW1bZKClPFiDHA4HEv0yMnShMXIyTCKkIKIcirYllXVv4lUjXzx4sUZ165dWy+1FYydY0yKnFaVl5e/+cEHH1yR5QJlA3l5eSnnzp2bvWDBgt5t27a1KhjCgIGIBvbAgAD19fX3S/W6nuqAQtS4TN05uaSk5HsnT55M2MlP/fLz8+dIc92zEor/9OzZsy8WFRXNVDDEqj46QCgIOjZFZ77P0p1qr169+qB8NXSuDd0tg4ODDx07duzl0tLSWSoB6X4hUmt17759+/5Mmuv+a0pKylc6Ozu/KWFnm4IhVvTR0eijg1AQdACfioqKeX19fXdJlfhEhZDJ9zZPmv2+lpOT80RLS0tCfYcSbDJ/8YtffFnC8H+XdeRp+azL5OosCcXLamtrv3n48OGVCmNyOBx6m8NRV4gogg6gru8hOhsaGjZK+blYYdwkACxpbW39+p49exJm5OTCwsK5v/rVr75z6dKlP5OLW+UzfjLsgCxnSC3F/dJ89Xx1dTXDEYyBgIJoIOjYlIUFTkIUXFILMautre0B2eNkygdz9AEOd8lG/3d27twZ97Ucu3btWiqf4086OjreklBznwoy5IBcP0PWna8ePHhwq8KodNOVFc1O+jn6+/sJTTCEoAMI2TCvkEJYN0ekKJiV6Xa7N0gtx+8eOnQoLg/TLy8vT3vnnXcePHPmzN/JZ3le9gsWjHZ/CTu3VVVVfUOasBK+M7YZ8j2xzUHEsdLZmFUd+uL9MM/S0tKJdXV1251O5wIFS+hajoGBgUfz8vJe/fjjj2erOKIndN2/f/+zEnb+Sv4jD8lVYzZJ6TnRpDZw7dmzZ5+5fPnyFIWg9PhdVtQm0wSGUBB0YFbcFziyYZrV19e3WhY/s4GiNB0/CTvzu7u7n5Jmwa9euXJlkooDH3zwwYIjR478oKmp6U90cAlxUtdZ0sT1pNTqcBTWCDi8HNFA0LEpC0dGjnu1tbW6b07QmbiHFMyQWrLbJTR8/cCBAxt1h28Vo3RT1dtvv72+oKDgr1wu18u+9SHU8jFJPu+y+vr6l5nZPThGz0Y0sNLBrLgOTKdPn9adkPWRNHExdk4cftkp8t3effHixTfefffde1QMOnHixMydO3e+WFlZ+TeyA/BVeb9mmtomyHOsLS4ufkZC01SFm1hVo8M4OggFQQemxXN7eVVV1WLZMOmjg1JVHIjTGqZMOW0oKSl569ixY0tVDJGAc9uHH374n6XJ6Y9l46mHF5g84p0NruXyHLN6e3ufyM/PX69wEyvLCqaAgFEEHdhWaWlpqjRb6c6mTOAZfrpD77bc3NyXz58/P0dFmR4A8Je//OX2vLy8v/d4PN+U7e8SOTlGfVAIKVOea6k0Yb0iTXa3KXzCNzIyAQURRdCxKY5aUKq5uXn2tWvXNshXwUBvkTFHvu/HDx069Hh5eflkFSUSbmb/+te/fkWa0/5GanEekatmKOvpQ+w3Sq3Os9KMxfrlQy0MooGgA9PiNTRJs9Vq2cPUTSkUvpGzRALmS6dOndoiISPiYxbt3r07e//+/X/Q1tb2Az0AYIhHVYVE9/XRU2KcPXt2rcJ1HHWFaCDo2Jida3XKysqmywZ3m3wFWQqR5JTv/O6Kiorv7tix43MqQnQNkm6qOnPmzN/29/d/3eFw6CalcK//+i+2rKam5jWpxcpWoCYZUUHQgS1J0Jk9ODh4r7rRURYRJNs6fWTSuqKiordOnjwZ9pGE5TXm7ty589vSVPU/5XW/FMkj7OSzTpRaw3UFBQWPnz9/Pi7GEgISDUEHZsXlHlp9ff0G2QAtUogKCRtTXS7XwydOnPi2BJ55KkwOHDiwPCcn50/b29v1XFX3hLOpaiS6Caurq+spqU1apWyOzsiIBoKOTdm5Clk2rDN7enrWS/PFNIWo8QWArx0/fvxpq6dNqKysnPrTn/70axKkfiQ1d8/Ja4UtTBmgp3haIZ/xOxK8mGYEiDCCDmynvLx8bn9/v57AM00hqnRfmcbGxpc++uijh4aGhiz5PXQN0Y4dO16vqan5oVzcqoJM7REF+iizB6QJ60k7N2HRRwfRQNCBreih/uvq6tZ7vV7GzokNetqElfK7vCHhZJ2ZEW/1Y3fv3r1i586df9ra2vqmhCjd2TlmBoKU9zent7f3mVOnTq1TNkXQQTQQdGArspc/o6OjY6NsBMMxdkpEJdAWI1VCwJrCwsLfO3bs2LiOxNJNX++8885jUjP099JU9YyeUFTFGN+AhHfKOvj6+++/H/ZO2ImMwIRQEHRgK7KRWeF2u/WUDxEfw8VqCTbh6ASPx7Pp9OnT3/74449Dqm2TpqrFe/bs+Z1Lly79uWz/9JABsTzH1CT5nBuk+epJ3Y9I2YxvMmFLQgqDD8Iogg5sQ/eNaGpq2iYFJB1CY5AElGldXV1fzsnJeUaassY8BFyCQro0Va3bt2/ff2tpadFNVXerOOh3JeufHiH6ySNHjtynbIaaGEQDQQe2UVVVlSUbmLX60GaFmCS/zcKGhoYXjh49+kU9H9VI95Pam5mHDx9+SWqA/q6np+cpedxcFT/0xn65rI/fZi4sIPwIOrAN2bCs05M3KsQ0qZlZUVtb+43i4uKg484UFBQskaaq78vv+UdDQ0PrJeRMVHFGv2dpxtlYWFj4NHNhhc5Mp3XYD0EHtqDHzmltbd0SyVFxMT4SRlMlBKw+e/bst6RmZ4X/egk/GTt37twmzVV/3dbW9pr8lrfLfeO2DNPjCHV2dj4ln3O9QhBkGViDoAOz4qJPrDR1zOvv718pG8Z0hZgnIWBKX1/fQ7m5ua/l5+evaGxsvDUnJ+c5aar6C5fL9ajcJRECa7LUXi2TmqlX7DIXVmh9dBKsuz2ixqmABCfV3M4f/ehHD/gmckQ46M2Xxdsl3Wm8p6fnsWPHjk2R39B19epVXSN3h0qgXX09F5acrZcaRz0X1j8vW7asWyUwqzoj06kZoSDoIOEdOHBgpjQRPCCL0xXCI0w73xJssqWZaqYsOmR5gkpMszs6Op6WZroiWT6oAFiKpiuYNaSpGCZNA3oQumW+AdsQZyTgTErgkKNdnwuroaHh5USfC8s3jg4QUQQdJLTy8vLJzc3N22UxmpM6IkriaKuq5796ID8//2t6nVUALEPQQUK7dOnSbI/Hc7+6sSGJQ+wAmxFn3Vnn9vb2PitNWLadCwsIB4IOzIrppisJOlvk7S1TcYsjT2zhRp5NlubVO+vr619hIEHAOgQdJKzc3Nx5XV1dX1SJcSgyEtmneXaS2+3eVFhY+HheXt4UlWB8R0uZrqZkwECEgqCDhFVRUbHc5XKtpBMy4omeC6u7u/vpc+fOjWsmdwA3I+jArJhsW9HzJMnpAa/Xm6WA+KKPwrqzsrLyPx06dCikmdwBfBZBBwlJqv5n9/T0rNOHJisg/kzyeDxbzpw582xBQQGT0A4jtbR0XoNhBB0kpPr6+nul2YoJPEdEF4dY53A45vT29j599uxZjsICTCDowKwhaR6Kqb2ry5cvT2lra9sge30zFUbADnEcSJIayeW1tbWvHz58+HYFYFwIOkg4Fy5cmHvt2rX7JOhkKCC+Zcp6vCE3N/fZ8+fP0wwLjANBB2bFVNXA0NCQo6amZpPH48lm3r8YxE8yHrMGBgaeOHHixFoFIGQEHSSUM2fOzLl69epWh8PB2DmxiBaz8VomTViv7dq1K66PwrJqcFH9PLHWZI7YRdCxKQtHM46pkZEvXbq0pLe3906pzXEqIHFkymlTSUnJ07oPmopvBBREFEEHZsVMoSV7vBkNDQ1bkpOTE3oGaNjWnL6+vqePHj26RsUp+W8SchBxBB2YFTNVyFVVVbM7Ozv12DmMO4JEpGdQuLO6uvrbe/fu5SgswCCCDszyqhhRUVGhh8xnA4BElunxeDZKE9aT8TiQYCxPAIzERdCBKXqE0rS0tKgXXrrfQmNjo262mqWABOZwOHTN5dNFRUX3qThjZdChMzKMIujAlFjZQysrK5vf19e3VoLXBAUkOKfTuayysvI7+/btW6wAjIqgA1N0jU4s7FlJof+AvBemfIBd6KOwNsbbUVh0RkY0EHRsKsmi0fRioUYnNzd3Xnt7+4OyOEMBNiF/4TnShPXcoUOHNqv4QthBRBF0EPfOnz+/wuPx6I7IjLsLW3E4HHfU1ta+un//fmozgREQdGCKbrqKZq1OU1NTZnNz8yZ5H3MVxkQSTDgTJOysLywsjIsmLKvKCl3upKenUzMEQwg6NuX1enVCifvtXnFx8Zz+/v4N6kafBYwhUbYMBLabZPX09Dx14MCB9QrAZxB0ENfq6uruldC2XMFW2JW/mdRw3CG1m9/cs2fPIgXgJgQdm0qEzshlZWXTr1y58qC8BSbwhK3pYRUk8G8uLS19PAHmwgIsRdBB3JICfZE0W62RQj5FATaXnJw8p6ur67ljx46tVgmOEZYRCoKOTVlVoxMtsueaWltbu9Xj8SwK30ehJwjiSpKEnTurqqq+deDAgdtU7OKPhYgi6CAuXbt2bW5ra+tWCTlhnO+HnUbEF/k/TJTwvyUvL++J8vLyySqBMQUEjCLowBRdhRyNAqeysnLJwMDAHXFeMQVYzuFwzJEdgSelCWulSlD68HIFGETQsSl9eLkVzVfRKHDq6+snNDc3b5DXZgJP4LOSnE7nypqamtelCWuBAmyOoANTotEpsKqqanZ7e/uG5OTkSQpAMPq/sf3MmTPPcBQW7I6gA9PS0tIiGnak4F7hcrmyabYCRjVvcHDwqQ8//HCNSjCJMNgpIoegA1Mi3XR14cKFGQ0NDVulan6OAjAaHQbulKbeV2PlKCwOC0c0EHQQVy5dujSvt7dX989JVwDGMlGyxeaCgoKvJvpRWMBICDo2ZsXeVST30OSlkisqKrbI4u0KgCGyUzCnp6fn2ZycnHtVlMX7+F2ITwQdmBLJpquioqLZbW1tDyQnJ09XAAyT/8xK3YS1a9euhSqKLJy9XA+OSGiCIQQdm5JCIu7ayi9cuLDc6/V+TjGyKhCqTI/Hs7WsrOwxmrBgNwQdxIXKysr0mpqaTRLQGDsHGAeHwzGvq6vrhRMnTtyvABsh6MC0gYGBsNewVFRUzO3r69MFNGPnAOMkLT53VVVV/c7BgweXquihRhYRRdCxKavayiM1nkV1dfU9vmYrAOMkQWeC/I82nz179snz58+z0wBbIOjYmL8jsZmkEolOgcXFxbc0NTVtlcWZCuPHfjTU9f55Wd3d3U/l5uYm3ECCQDAEHZsKrNExU7UTiRqdixcvZg8ODq6TxTSF8WOoNvg4nc4VlZWV3zl06FC2iiArDy9n9nIYRdCBKUk+KkwkSDkbGho2SaEW0QIZSHB6wM0t+fn5z5WWlk5TkUXdIiKKoGNTVh1ermt0HA5H2NajkydPzpVq9gckS01VACwj/6mZ8t96/tixY5/Xg3GqCJAdFkIOIo6gY2NWdEjWtTnSrBS2wqu+vn6py+VaxYCqgPVkh2fplStXvrl79+47VQT4an9N/5mZMwuhIOjYlGVHXanwDeve1NSUqSfw9Hg8WQpAOKS43e51Fy5ceOHSpUt09kdCIujAlOQwHnVVWlqa3dnZuU2ef4ICEBby/5ra0dHxVE5OziOy/5Oiwoi5rhANBB2YEs6jrmpqatZIs1V2opeNlPyINgk72bW1ta8cPHhwpQISDEEHpoVjL01qc2ZduXLlQSmAZ6gER2cDxIAkr9e7uqio6JWPP/54tgISCEEHMUlqc7K7u7tXS9BhHQUiwOFwTJKm4i+fPn36YampTVVhYOXs5QowiI0IYo5uDpNqdD2vFZ0jgQiS/YqFVVVVrxw6dOhuFePCPSI7EgdBx6as2iPS00hYfahnQUHBjJaWljVOp5NOyIhT8bkN1scWSBPWPWfOnPlWOJqw5Pm9itZaRJhTATHm0qVLEwcGBqZIVfqAXBz1KBBf0PLqAlQvBAavwDAX2Gl6pJA3Wsdq/7xgvvsNjXW9RYw+n5nXTTJ4XehPbCBMB/vOo9UsMcLvb+S9BLnPzT9JKJ8pyHo0FHg+bB0fCvL4JP9r+paTR/ovBCN3Te3r61tz4sQJ3TG5UVmI8W8QDQQdm4rlEUrr6+uHUlNT35cC96qcsqRszFA3ah/13mC/nHrl1Ce39clt10+yPCDnLjl3++53XWBhr0d/9Rf4NzLRjduGnw97nP95hnyP0+de/8bGd7034Db/hmisjYmVBf5QkPc45usEftbAy8q34R5++5hvYoTPHGwjO/x3GG15+HMb+e6Gv5dQQtfw9WCk5wglpBk5OnF4gPFTn65vHt/y9fOA01DAOnd9XVc31vcUuf76SS475bJDlh36XC47fPfTl/V2IFXfpk9SNnilWaixoaHB+cMf/jBZTl5lEd/nIewgogg6NmXlHFVWPY/fD37wg6q8vLxfejye3+pC2O1260L5+iR+cp0OQd7BwUFvWlqaV2p+vBkZGV7ZA9XXDU2fPv2TQlRf9i/LY8Z8j21tbZ+5T7DHBT6vX+DrhiLYa5ox3vcx3Hjel5Hv2C8lJSXofaW5MsnIdZHU3d0dltefNGnSqL+VrPdDwZZdLtf1Zf966P/N/b+Z/3fQ37H+7uS/kez/DqWWVE/ZkiT/m2T/su7rIs+l+/1/MiaWnLvb29u7H3nkEctCju/1hySKDZmNOtQMIRQEHcSk1atX61qbXgUgYVwPKEQURBidkW3K6loYABgLTVeIBoKOTTGLMIBI083PygIW93FDgiPo2NTwzrbjZcVzALCH6310gAgj6NhUrHZEBpC4rGq6ojMyQkHQsSkrm64IOwCMIKAgGgg6NmZFQKHpCoBRVoyMrFvd9cmq/j5IfAQdm6LpCkCkcdQVooGgA1P0aMMKAAzw1ehYgkk9YRQbKQBARFjVR4cmc4SCoAOzhuhgCCAEpsoLQg5CRdCxMSsKDD3BIEEHQISx7YJhrCwwRc+ozNEPAIywasBAfRBEf38/NTswhKADs9zU6ACIMLZdMIyVxaZ0OLFivhhqdAAYJWWFJdscXXxx1BWMIujYlBQSlnQi1n100tLSCDoAxiTlhVNZgPG7EAqCjn15LKrRUQBghJQXKcoi1CTDKIKOTUmB45Yz04N3Sc1QpsvlmqgAYAyyc5UpZ1bU6lg28CASnyXViIhLg7p/jdkaYLfbvbi6unprQUGBw98UNrxJLMkn8LqhAE6n0+vfOxupOS3w8cHuE3hd4HJKSsrQSPcb/pr+y/6muOF7jKE29RmpXjfynGPtuYayZ2tVM+PAwEBYmg6M9rswcj+jzRvj6evh//yBv99Irxf4/MPvE+y1BwcHk4w+PpQmHH1f+b8mBT5utP9VsHUz8HH+ZY/Hkxx42eFweP30sn7/8rrJsuzIz8/fJneZrMzRIWdQyg2PAgwg6NiUBIAuKZcGlQm6XJOyLLukpOSt4uLiF9SNGsLkIKFGX/afPrk64Nyrm9GCdZAONtZP4H38hXGw64ZfP/y20Z4r4H5DQd7zaHzvV38V3oDLYxoK5bZgzY5jhSYrmip9rzPukDPevhUhvGaozz+u9xPK5xj+3oeFizFv8183/HKwxxt5roDHjPYZjK4rIz1X4JxWSb6Xdsj5PDllKnPcEp465eRWgAEEHZvKzMzskIKiV4KKskC2FGLZI91odJsQ7H5jPTbUxxi9bZzb4wC6jDf7HKEx/55j63Wi/ZpWsWJ9HOm+4/lvxfN3qUlQc6WmprZOmjRpQAEG0EfHpqZMmdIpBd6VEFtjACDa+iXo1ErzYb8CDCDo2NTMmTPbJehUyCLVvwDihsfj6ZwwYcLllStXmmp6h30QdGxq8eLFHVJYlMhijwKA+KC7otVPnjy5QgEGEXRsTGp1TstZgwKA+NCVnp5eMH/+/BYFGETQsbGNGzeek+arj2SRTn0AYp40WzVOnTr1iJRdBB0YRtCxMd18NWvWrPe9Xm+tAoDY1pOcnHwyOzv7rAJCQNCxuS1bthyXwmO/LHarmBTfh8ICsIbskFVOnDjxg0cffbRaASEg6Njc8uXL21atWvUTl8ul++vE4BFYHP4OQDXIDtn7DzzwwHEFhIigA/X444+XzJkzR4edjxUAxJY2KZv2L1my5J21a9e2KSBEBB1ct2nTpj0zZsz4scfjIewAiBXtbrf7w+zs7P/94osvlitgHOgAgU+UlpZO3Ldv3/MdHR3fdzgcyxRBGED0XJGQc/D222//+5dffpkOyBg3gg5uosPO3r17n+js7PyOtInfnZSUNFEBQOS49KCAEnJ2L168+J9ee+21UgWYQNDBZ+Tl5aWcPXt2bUNDw6ter3er1O7MkatTFQCEV7uUOSWpqan/T5qrdjz//PMMfQHTCDoY0Y4dO+ZevHhxU3t7+xNSs3OP1PDMkqszZdmhAMAaehqaTqnBuSxlzOHZs2e/v2HDhot33333NQVYgKCDMe3evXtedXX10vr6+o0ej+dOqeG5TQqkW+WUqW7U9OjgkyTVzckSgvzrVLB1K9T1zcix5UmjLct7+uS6gPdmVJLJ9zYe4/lPGn0v/N+DG/X705MrqXEYZX1LUqG9D6t+t5ueP/BzyVsdGuv+I0ga5TFDvpfx+p7fIyevnNxy3YDU3HTLqU6WS9PS0s5KM1WehJyGhx9+uFMBFqLgg2G6/86FCxemSg3P1I6Ojvl9fX2z9EnCz2QpyFKkwHLI+fWwExgwhgvcAPgLW39BO3SD98ZTyJMMOx/+PP7X8S8HnAe+j+TA232vM+q6P9btge95+LLR5w0Wwoy87mjvw8jrjvAcIb3ueN6nGVZ8xtGeL9h6GHg5cP0b7b0MXx8D10n/9aM8dszPOOy/kzTa5/L/b4YvB/6nAm8b7fVH+6+pYQctBDy3/h+7JMy4ZKdoUIcbOfWnpKR0SrBpnjRpUq2c2hYuXNi5ffv2drmvVwFhQNCBKboW5+zZs4709PTr65IUYKOuUwMDA0EL0/7+/puu7+7uvuny1q1bgz4uJyfnM68nhecn1/nfl5H35nQ6o/Z/iOZrm9Hc3JwwZUhWVtaIG3ppVhlXrU60f9dg73v4dSP9J8cS+H8K9jn16+jn1v9t/X/2/Ye9RncKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYJn/D1UiRijfPEKsAAAAAElFTkSuQmCC";
+
+
+
+
+
+
+export interface ChatProps {
+    loader?: boolean;
+    useAccountOwner?: boolean;
+    onScrollIfNewMessage?: boolean;
+    onActionAfterNewMessage?: () => void;
+
+    empty?: ReactNode;
+
+    chatUser: ChatUserProps | ChatUserProps[];
+    loaderChatUser?: boolean;
+
+    chatMessage: ChatMessageProps[];
+    loaderChatMessage?: boolean;
+
+    chatFormSendMessage: ChatFormSendMessageProps;
+    loaderChatFormSendMessage?: boolean;
+
+    useBtnLoadMoreMssages?: boolean;
+    btnLoadMoreMessages?: ButtonProps;
+
+    fullPage?: boolean;
+}
+export const Chat = ({
+    loader,
+
+    empty = (
+        <>
+            <Text>There is not messages yet</Text>
+            <Telegram />
+        </>
+    ),
+
+    chatUser,
+    loaderChatUser,
+
+    chatMessage,
+    loaderChatMessage,
+
+    chatFormSendMessage,
+    loaderChatFormSendMessage,
+
+    useBtnLoadMoreMssages = false,
+    btnLoadMoreMessages = {
+        children: "Load more messages",
+    },
+
+    fullPage = true,
+
+    onScrollIfNewMessage = true,
+    ...props
+}: ChatProps) => {
+    const onActionAfterNewMessage = () => {
+        setTimeout(() => {
+            if (onScrollIfNewMessage) {
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+            props?.onActionAfterNewMessage?.();
+        }, 100);
+    };
+
+    const [lastMessage, setLastMessage] = useState<
+        ChatMessageProps | undefined
+    >(undefined);
+
+    const onLoadLastMessage = useCallback(
+        (newMessage: ChatMessageProps) => {
+            if (
+                !lastMessage ||
+                (lastMessage.createdAt?.getTime() ?? 0) <
+                    (newMessage.createdAt?.getTime() ?? 0)
+            ) {
+                setLastMessage(newMessage);
+                onActionAfterNewMessage();
+            }
+        },
+        [lastMessage],
+    );
+    useEffect(() => {
+        if (chatMessage) {
+            onLoadLastMessage(
+                [...chatMessage].sort(
+                    (a, b) =>
+                        (b.createdAt?.getTime() ?? 0) -
+                        (a.createdAt?.getTime() ?? 0),
+                )[0],
+            );
+        }
+    }, [chatMessage]);
+
+    return (
+        <>
+            <div
+                className={`fenext-chat fenext-chat-${
+                    fullPage ? "full-page" : ""
+                }`}
+            >
+                <div className="fenext-chat-contentTop">
+                    <Back />
+                    {[chatUser].flat(2).map((e, i) => {
+                        return (
+                            <>
+                                <ChatUser key={i} {...e} />
+                            </>
+                        );
+                    })}
+                    {(loader || loaderChatUser) &&
+                        new Array(2).fill(<ChatUser loader={true} />)}
+                </div>
+                <div className="fenext-chat-contentMessage">
+                    {loader || loaderChatMessage ? (
+                        new Array(2).fill(1).map((e, i) => {
+                            const n = e * i;
+                            return (
+                                <>
+                                    <ChatMessage
+                                        key={i}
+                                        id={i}
+                                        loader={true}
+                                        right={n % 2 == 0}
+                                    />
+                                </>
+                            );
+                        })
+                    ) : (
+                        <>
+                            {useBtnLoadMoreMssages && (
+                                <div className="fenext-chat-contentBtnLoadMore">
+                                    <Button {...btnLoadMoreMessages} />
+                                </div>
+                            )}
+                        </>
+                    )}
+                    {chatMessage.map((e) => {
+                        return (
+                            <>
+                                <ChatMessage key={e.id} {...e} />
+                            </>
+                        );
+                    })}
+                    {!loader &&
+                        !loaderChatMessage &&
+                        chatMessage.length == 0 && (
+                            <div className="fenext-chat-empty">{empty}</div>
+                        )}
+                </div>
+                <div className="fenext-chat-contentForm">
+                    <ChatFormSendMessage
+                        loader={loader || loaderChatFormSendMessage}
+                        {...chatFormSendMessage}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+export interface ChatMessageProps {
+    id: string | number;
+    loader?: boolean;
+    right?: boolean;
+    account?: Partial<UserProps>;
+    message?: ReactNode;
+    createdAt?: Date;
+    view?: boolean;
+    imgProps?: Partial<ImgProps>;
+}
+export const ChatMessage = ({
+    message,
+    createdAt,
+    account,
+
+    right = false,
+    view = false,
+    loader,
+    imgProps = {
+        imgIf404: FenextImgUserPlaceholder,
+    },
+}: ChatMessageProps) => {
+    return (
+        <>
+            <div
+                className={`
+                    fenext-chat-message
+                    fenext-chat-message-${right ? "right" : ""}
+                    fenext-chat-message-${view ? "viewed" : ""}
+                `}
+            >
+                <div className="fenext-chat-message-img">
+                    <Img
+                        loader={loader}
+                        src=""
+                        {...account?.img}
+                        {...imgProps}
+                    />
+                </div>
+                <div className="fenext-chat-message-info">
+                    <div className="fenext-chat-message-top">
+                        <Text
+                            loader={loader}
+                            nLineLoader={1}
+                            className="fenext-chat-message-name"
+                        >
+                            {account?.name}
+                        </Text>
+                        <Text
+                            loader={loader}
+                            nLineLoader={1}
+                            className="fenext-chat-message-createdAt"
+                        >
+                            {createdAt && (
+                                <>
+                                    {parseDateToText({
+                                        date: createdAt,
+                                        type: "date",
+                                    })}
+                                    {", "}
+                                    {parseDateToText({
+                                        date: createdAt,
+                                        type: "time",
+                                    })}
+                                </>
+                            )}
+                        </Text>
+                    </div>
+                    <Text
+                        loader={loader}
+                        className="fenext-chat-message-message"
+                    >
+                        {message}
+                    </Text>
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+export interface ChatFormSendMessageDataProps {
+    message: string;
+}
+
+export interface ChatFormSendMessageProps extends _TProps {
+    onSubmit?: RequestProps<ChatFormSendMessageDataProps, RequestResultProps>;
+    loader?: boolean;
+    useSubmitInEnter?: boolean;
+    btnChildren?: ReactNode;
+    placeholderMessage?: string;
+}
+export const ChatFormSendMessage = ({
+    useSubmitInEnter = true,
+    btnChildren = "Send",
+    placeholderMessage = "Message",
+
+    ...props
+}: ChatFormSendMessageProps) => {
+    const { _t } = use_T({ ...props });
+    const [__key, set__key] = useState(0);
+    const [loader, setLoader] = useState(false);
+
+    const { data, onChangeData } = useData<ChatFormSendMessageDataProps>({
+        message: "",
+    });
+
+    const onSubmit = async () => {
+        setLoader(true);
+        try {
+            await props?.onSubmit?.(data);
+        } finally {
+            setLoader(false);
+            set__key((a) => a + 1);
+            onChangeData("message")("");
+        }
+    };
+
+    return (
+        <>
+            <form
+                className="fenext-chat-form-send-message"
+                key={__key}
+                onSubmit={onSubmit}
+            >
+                <InputText
+                    type="textarea"
+                    placeholder={_t(placeholderMessage)}
+                    className="fenext-chat-form-send-message-input-message"
+                    onChange={onChangeData("message")}
+                    value={data.message}
+                    onEnter={() => {
+                        if (!data.message || data.message == "") {
+                            return;
+                        }
+                        if (useSubmitInEnter) {
+                            onSubmit();
+                        }
+                    }}
+                    disabled={loader || props?.loader}
+                />
+                <Button
+                    loader={loader || props?.loader}
+                    disabled={!data.message || data.message == ""}
+                >
+                    {_t(btnChildren)}
+                </Button>
+            </form>
+        </>
+    );
+};
+
+
+export interface ChatUserProps extends Partial<UserProps> {
+    loader?: boolean;
+    imgProps?: Partial<ImgProps>;
+    extraData?: ReactNode;
+}
+export const ChatUser = ({
+    name,
+    img,
+    role,
+
+    imgProps = {
+        imgIf404: FenextImgUserPlaceholder,
+    },
+    loader,
+    extraData,
+}: ChatUserProps) => {
+    return (
+        <>
+            <div className={`fenext-chat-user fenext-chat-user-${role}`}>
+                <Img
+                    loader={loader}
+                    src=""
+                    {...img}
+                    {...imgProps}
+                    className={`fenext-chat-user-img ${
+                        imgProps?.className ?? ""
+                    }`}
+                />
+                <div className="fenext-chat-user-content">
+                    <Text
+                        className="fenext-chat-user-text"
+                        loader={loader}
+                        nLineLoader={1}
+                    >
+                        {name}
+                    </Text>
+                    {extraData}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Text component.
+ */
+export interface TextBaseProps extends PropsWithChildren, _TProps {
+    /**
+     * The class name for the component.
+     */
+    tag?:
+        | "p"
+        | "strong"
+        | "small"
+        | "em"
+        | "b"
+        | "del"
+        | "i"
+        | "mark"
+        | "ins"
+        | "sub"
+        | "sup";
+    /**
+     * The loader for the component.
+     */
+    loader?: boolean;
+    /**
+     * The nLineLoader for the component.
+     */
+    nLineLoader?: number;
+}
+
+/**
+ * Properties for the class of the Text component.
+ */
+export interface TextClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Text component.
+ */
+export interface TextProps extends TextBaseProps, TextClassProps {}
+
+export const Text = ({
+    className = "",
+    tag = "p",
+    loader = false,
+    children,
+    nLineLoader = 3,
+    ...props
+}: TextProps) => {
+    const { _t } = use_T({ ...props });
+    const Tag = tag;
+    return (
+        <>
+            <Tag className={`fenext-text fenext-text-${tag} ${className} `}>
+                {loader ? (
+                    <>
+                        <div className="fenext-text-loader">
+                            {new Array(nLineLoader).fill(<LoaderLine />)}
+                        </div>
+                    </>
+                ) : (
+                    <>{_t(children)}</>
+                )}
+            </Tag>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ContentShow component.
+ */
+export interface ContentShowBaseProps extends _TProps {
+    /**
+     * The children for the component.
+     */
+    children?: ReactNode;
+    /**
+     * The show for the component.
+     */
+    show?: boolean;
+}
+
+/**
+ * Properties for the class of the ContentShow component.
+ */
+export interface ContentShowClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ContentShow component.
+ */
+export interface ContentShowProps
+    extends ContentShowBaseProps,
+        ContentShowClassProps {}
+
+export const ContentShow = ({
+    className = "",
+    children,
+    show = true,
+    ...props
+}: ContentShowProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div
+                className={`fenext-content-show fenext-content-show-${
+                    show ? "show" : "hidden"
+                } ${className} `}
+            >
+                {_t(children)}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the Title component.
+ */
+export interface TitleProps extends PropsWithChildren, _TProps {
+    /**
+     * The class name for the component.
+     */
+    tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    /**
+     * The loader for the component.
+     */
+    loader?: boolean;
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+export const Title = ({
+    className = "",
+    tag = "h1",
+    loader = false,
+    children,
+    ...props
+}: TitleProps) => {
+    const { _t } = use_T({ ...props });
+    const Tag = tag;
+    return (
+        <>
+            <Tag className={`fenext-title fenext-title-${tag} ${className} `}>
+                {loader ? <LoaderLine /> : <>{_t(children)}</>}
+            </Tag>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Breadcrumb Link component.
+ */
+export interface BreadcrumbLinkProps extends _TProps {
+    /**
+     * Url of the redirect.
+     */
+    href: string;
+    /**
+     * Content of the Link.
+     */
+    children: ReactNode;
+    /**
+     * onClick of the Link.
+     */
+    onClick?: () => void;
+}
+/**
+ * Properties for the base Breadcrumb component.
+ */
+export interface BreadcrumbBaseProps extends _TProps {
+    /**
+     * List of the Links for Breadcrymb.
+     */
+    links: BreadcrumbLinkProps[];
+}
+
+/**
+ * Properties for the class of the Breadcrumb component.
+ */
+export interface BreadcrumbClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the Items.
+     */
+    classNameItem?: string;
+    /**
+     * The class name for the Link.
+     */
+    classNameLink?: string;
+}
+
+/**
+ * Properties for the Breadcrumb component.
+ */
+export interface BreadcrumbProps
+    extends BreadcrumbBaseProps,
+        BreadcrumbClassProps {}
+
+export const Breadcrumb = ({
+    className = "",
+    classNameItem = "",
+    classNameLink = "",
+    links,
+    ...props
+}: BreadcrumbProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <ul className={`fenext-breadcrumb ${className} `}>
+                {links.map((link, i) => {
+                    return (
+                        <>
+                            <li
+                                key={i}
+                                className={`fenext-breadcrumb-item ${classNameItem}`}
+                            >
+                                <Link
+                                    href={link.href}
+                                    className={`fenext-breadcrumb-item-link ${classNameLink}`}
+                                    onClick={link?.onClick}
+                                    _t={link?._t ?? _t}
+                                    useT={link?.useT ?? props?.useT}
+                                    children={link.children}
+                                />
+                            </li>
+                        </>
+                    );
+                })}
+            </ul>
+        </>
+    );
+};
+
+
+
+
+
+/**
+ * Properties for the base SwichViewList component.
+ */
+export interface SwichViewListBaseItemProps<T> {
+    id: T;
+    icon: ReactNode;
+}
+/**
+ * Properties for the base SwichViewList component.
+ */
+export interface SwichViewListBaseProps<T> extends _TProps {
+    name?: string;
+    /**
+     * The class name for the component.
+     */
+    list?: SwichViewListBaseItemProps<T>[];
+    /**
+     * The class name for the component.
+     */
+    defaultValue?: T;
+
+    /**
+     * The class name for the component.
+     */
+    onChange?: (e?: T) => void;
+}
+
+/**
+ * Properties for the class of the SwichViewList component.
+ */
+export interface SwichViewListClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the SwichViewList component.
+ */
+export interface SwichViewListProps<T>
+    extends SwichViewListBaseProps<T>,
+        SwichViewListClassProps {}
+
+export const SwichViewList = <T,>({
+    className = "",
+    defaultValue,
+    onChange,
+    list = [],
+    name = "fenext-swich-view",
+}: SwichViewListProps<T>) => {
+    const ITEMS = useMemo<InputRadioItemProps<T>[]>(() => {
+        return list.map((e) => {
+            return {
+                id: `fenext-swich-view-${e.id}`,
+                label: (
+                    <>
+                        <div className={`fenext-swich-view-item`}>{e.icon}</div>
+                    </>
+                ),
+                data: e.id,
+            };
+        });
+    }, [defaultValue, list]);
+
+    return (
+        <div className={`fenext-swich-view ${className}`}>
+            <InputRadio
+                name={name}
+                defaultValue={ITEMS.find((e) => e.data == defaultValue)}
+                items={ITEMS}
+                onChange={(e) => {
+                    onChange?.(e?.data);
+                }}
+            />
+        </div>
+    );
+};
+
+
+export type SwichViewTableType =
+    | "fenext-swich-view-table-box"
+    | "fenext-swich-view-table-list";
+
+/**
+ * Properties for the base SwichViewTable component.
+ */
+export interface SwichViewTableBaseProps
+    extends Omit<SwichViewListBaseProps<SwichViewTableType>, "list" | "name"> {}
+
+/**
+ * Properties for the class of the SwichViewTable component.
+ */
+export interface SwichViewTableClassProps extends SwichViewListClassProps {}
+
+/**
+ * Properties for the SwichViewTable component.
+ */
+export interface SwichViewTableProps
+    extends SwichViewTableBaseProps,
+        SwichViewTableClassProps {}
+
+export const SwichViewTable = ({
+    className = "",
+    defaultValue = "fenext-swich-view-table-list",
+    ...props
+}: SwichViewTableProps) => {
+    const ITEMS: SwichViewListBaseItemProps<SwichViewTableType>[] = [
+        {
+            id: "fenext-swich-view-table-box",
+            icon: <TableBox />,
+        },
+        {
+            id: "fenext-swich-view-table-list",
+            icon: <TableList />,
+        },
+    ];
+    return (
+        <SwichViewList<SwichViewTableType>
+            {...props}
+            name="fenext-swich-view-table"
+            className={`fenext-swich-view-table ${className}`}
+            list={ITEMS}
+            defaultValue={defaultValue}
+        />
+    );
+};
+
+
+export type SwichViewSelectType =
+    | "fenext-swich-view-select-box"
+    | "fenext-swich-view-select-list"
+    | "fenext-swich-view-select-normal";
+
+/**
+ * Properties for the base SwichViewSelect component.
+ */
+export interface SwichViewSelectBaseProps
+    extends Omit<
+        SwichViewListBaseProps<SwichViewSelectType>,
+        "list" | "name"
+    > {}
+
+/**
+ * Properties for the class of the SwichViewSelect component.
+ */
+export interface SwichViewSelectClassProps extends SwichViewListClassProps {}
+
+/**
+ * Properties for the SwichViewSelect component.
+ */
+export interface SwichViewSelectProps
+    extends SwichViewSelectBaseProps,
+        SwichViewSelectClassProps {}
+
+export const SwichViewSelect = ({
+    className = "",
+    defaultValue = "fenext-swich-view-select-normal",
+    ...props
+}: SwichViewSelectProps) => {
+    const ITEMS: SwichViewListBaseItemProps<SwichViewSelectType>[] = [
+        {
+            id: "fenext-swich-view-select-box",
+            icon: <SelectBox />,
+        },
+        {
+            id: "fenext-swich-view-select-list",
+            icon: <SelectList />,
+        },
+        {
+            id: "fenext-swich-view-select-normal",
+            icon: <SelectNormal />,
+        },
+    ];
+    return (
+        <SwichViewList<SwichViewSelectType>
+            {...props}
+            name="fenext-swich-view-select"
+            className={`fenext-swich-view-select ${className}`}
+            list={ITEMS}
+            defaultValue={defaultValue}
+        />
+    );
+};
+
+
+/**
+ * Properties for the base TableActionCheckbox component.
+ */
+export interface TableActionCheckboxBaseProps<T> extends _TProps {
+    /**
+     * The actionAllCheckbox for the component.
+     */
+    actionAllCheckbox?: InputCheckboxProps;
+
+    /**
+     * The actions for the component.
+     */
+    actions?: ((data: T[]) => ReactNode)[];
+
+    /**
+     * The data for the component.
+     */
+    data?: T[];
+}
+
+/**
+ * Properties for the class of the TableActionCheckbox component.
+ */
+export interface TableActionCheckboxClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the TableActionCheckbox component.
+ */
+export interface TableActionCheckboxProps<T>
+    extends TableActionCheckboxBaseProps<T>,
+        TableActionCheckboxClassProps {}
+
+export const TableActionCheckbox = <T = any,>({
+    className = "",
+    actionAllCheckbox,
+    actions,
+    data,
+}: TableActionCheckboxProps<T>) => {
+    const ACTIONS = useMemo(() => {
+        return actions?.map((a) => {
+            return (
+                <>
+                    <div className={`fenext-table-actions-checkbox-action  `}>
+                        {a(data ?? [])}
+                    </div>
+                </>
+            );
+        });
+    }, [data, actions]);
+    return (
+        <>
+            <div className={`fenext-table-actions-checkbox ${className} `}>
+                <div className={`fenext-table-actions-checkbox-select  `}>
+                    <InputCheckbox {...actionAllCheckbox} />
+                </div>
+                {ACTIONS}
+            </div>
+        </>
+    );
+};
+
+
+
+
+/**
+ * Properties for the base MediaInput component.
+ */
+export interface MediaInputBaseProps extends _TProps {
+    /**
+     * The titleView for the component.
+     */
+    titleView?: string;
+    /**
+     * The titleView for the component.
+     */
+    textView?: string;
+    /**
+     * The iconView for the component.
+     */
+    iconView?: ReactNode;
+    /**
+     * The defaultValue for the component.
+     */
+    defaultValue?: ImgDataProps[] | ImgDataProps;
+    /**
+     * The multiple for the component.
+     */
+    multiple?: boolean;
+    /**
+     * The onChange for the component.
+     */
+    onChange?: (data: ImgDataProps[] | ImgDataProps | undefined) => void;
+    /**
+     * The ButtonUploadProps for the component.
+     */
+    ButtonUploadProps?: Omit<ButtonProps, "onClick">;
+    /**
+     * The MediaPageProps for the component.
+     */
+    MediaPageProps?: Omit<
+        MediaPageProps,
+        "onChange" | "multiple" | "defaultValue"
+    >;
+    /**
+     * The ModalProps for the component.
+     */
+    ModalProps?: Pick<ModalBaseBaseProps, "type">;
+}
+
+/**
+ * Properties for the class of the MediaInput component.
+ */
+export interface MediaInputClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the MediaInput component.
+ */
+export interface MediaInputProps
+    extends MediaInputBaseProps,
+        MediaInputClassProps {}
+
+export const MediaInput = ({
+    className = "",
+    titleView = "Upload Image",
+    textView = "Click for select or upload Image.",
+    iconView = undefined,
+    defaultValue = undefined,
+    multiple = false,
+    onChange,
+    ButtonUploadProps = {
+        children: "Upload Image",
+        full: true,
+    },
+    MediaPageProps = {},
+    ModalProps = {
+        type: "full",
+    },
+    ...props
+}: MediaInputProps) => {
+    const { _t } = use_T({ ...props });
+    const [modalActive, setModalActive] = useState(false);
+    const { data, onChangeData, onDeleteData, setData } = useData<
+        ImgDataProps[]
+    >([defaultValue ?? []].flat(2), {
+        onChangeDataAfter: (d) => {
+            if (multiple) {
+                onChange?.(d);
+            } else {
+                onChange?.(d?.[0]);
+            }
+        },
+    });
+    const onOpen = () => {
+        setModalActive(true);
+    };
+    const onClose = () => {
+        setModalActive(false);
+    };
+    const onAddImg = (data: ImgDataProps | ImgDataProps[] | undefined = []) => {
+        const d = [data].flat(2).map((e) => ({
+            ...e,
+            name: `${new Date().getTime()}_${e.name}`,
+        }));
+        setData(d);
+    };
+    const onAcepteImg = (data: ImgDataProps | ImgDataProps[]) => {
+        onAddImg(data);
+        onClose();
+    };
+    return (
+        <>
+            <div className={`fenext-media ${className} `}>
+                {data == undefined || data.length == 0 ? (
+                    <div
+                        onClick={onOpen}
+                        className="fenext-media-element-show-modal"
+                    >
+                        <InputUpload
+                            disabled={true}
+                            title={titleView}
+                            text={textView}
+                            icon={iconView}
+                            _t={_t}
+                        />
+                        <div className="fenext-media-btn-modal"></div>
+                    </div>
+                ) : (
+                    <></>
+                )}
+                <GridGallery
+                    _t={_t}
+                    items={[data]
+                        ?.flat(2)
+                        .splice(0, multiple ? data.length : 1)
+                        .map((item, i) => {
+                            return (
+                                <InputUpload
+                                    key={`${i}-${JSON.stringify(item ?? {})}`}
+                                    disabled={data === undefined}
+                                    title={titleView}
+                                    text={textView}
+                                    defaultValue={{
+                                        fileData: item.src,
+                                        text: item.name,
+                                    }}
+                                    onChange={(e) => {
+                                        if (e.fileData) {
+                                            onChangeData(i)({
+                                                src: e.fileData,
+                                                name: e.text,
+                                            });
+                                        } else {
+                                            onDeleteData(i);
+                                        }
+                                    }}
+                                    tagPreview="img"
+                                    _t={_t}
+                                />
+                            );
+                        })}
+                />
+                {multiple ? (
+                    <>
+                        <Button
+                            {...ButtonUploadProps}
+                            onClick={onOpen}
+                            _t={_t}
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                <ModalBase
+                    {...ModalProps}
+                    onClose={onClose}
+                    active={modalActive}
+                >
+                    <MediaPage
+                        {...MediaPageProps}
+                        key={JSON.stringify(data)}
+                        multiple={multiple}
+                        onChange={onAddImg}
+                        defaultValue={data}
+                        onAcepte={onAcepteImg}
+                        isPage={false}
+                        _t={_t}
+                    />
+                </ModalBase>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base MediaPage component.
+ */
+export interface MediaPageBaseProps extends _TProps {
+    /**
+     * The defaultValue for the component.
+     */
+    defaultValue?: ImgDataProps[] | ImgDataProps;
+    /**
+     * The disabledSelectImg for the component.
+     */
+    disabledSelectImg?: boolean;
+    /**
+     * The images for the component.
+     */
+    images?: ImgDataProps[];
+    /**
+     * The loaderImages for the component.
+     */
+    loaderImages?: boolean;
+    /**
+     * The multiple for the component.
+     */
+    multiple?: boolean;
+    /**
+     * The isPage for the component.
+     */
+    isPage?: boolean;
+    /**
+     * The onChange for the component.
+     */
+    onRenderImg?: (data: ImgDataProps) => ReactNode;
+    /**
+     * The onChange for the component.
+     */
+    onChange?: (data: ImgDataProps[] | ImgDataProps | undefined) => void;
+    /**
+     * The onUploadImg for the component.
+     */
+    onUploadImg?: (data: ImgDataProps) => void;
+    /**
+     * The onDeleteImg for the component.
+     */
+    onDeleteImg?: (data: ImgDataProps) => void;
+    /**
+     * The onAcepte for the component.
+     */
+    onAcepte?: (data: ImgDataProps[] | ImgDataProps) => void;
+    /**
+     * The HeaderPage for the component.
+     */
+    HeaderPage?: ReactNode;
+    /**
+     * The ButtonAcceptProps for the component.
+     */
+    ButtonAcceptProps?: Omit<ButtonProps, "onClick">;
+    /**
+     * The ButtonCancelProps for the component.
+     */
+    ButtonCancelProps?: Omit<ButtonProps, "onClick">;
+    /**
+     * The HeaderPage for the component.
+     */
+    InputUploadProps?: Omit<
+        InputUploadProps,
+        | "onChange"
+        | "defaultValue"
+        | "onChangeProgress"
+        | "onUploadFile"
+        | "clearAfterUpload"
+    >;
+    /**
+     * The extraContentImgs for the component.
+     */
+    extraContentImgs?: ReactNode;
+}
+
+/**
+ * Properties for the class of the MediaPage component.
+ */
+export interface MediaPageClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the MediaPage component.
+ */
+export interface MediaPageProps
+    extends MediaPageBaseProps,
+        MediaPageClassProps {}
+
+export const MediaPage = ({
+    className = "",
+    multiple = false,
+    onChange,
+    onUploadImg,
+    onDeleteImg,
+    onAcepte,
+    HeaderPage = (
+        <>
+            <Title tag="h3">Media</Title>
+            <Text>Upload or Select Imagen.</Text>
+        </>
+    ),
+    defaultValue,
+    images = [],
+    loaderImages = false,
+    disabledSelectImg = false,
+    InputUploadProps = {
+        accept: ["png", "jpg", "jpeg", "webp"],
+        title: "Upload Imagen",
+        text: "Click for select or upload Imagen.",
+    },
+    ButtonAcceptProps = {
+        children: "Acepte",
+    },
+    ButtonCancelProps = {
+        children: "Cancel",
+    },
+    isPage = true,
+    extraContentImgs = undefined,
+    onRenderImg = undefined,
+    ...props
+}: MediaPageProps) => {
+    const { _t } = use_T({ ...props });
+    const [keyInputUpload, setKeyInputUpload] = useState(0);
+    const { data, onConcatData, onDeleteData, setData } = useData<
+        ImgDataProps[]
+    >([defaultValue ?? []].flat(2), {
+        onChangeDataAfter: (d) => {
+            if (multiple) {
+                onChange?.(d);
+            } else {
+                onChange?.(d?.[0]);
+            }
+        },
+    });
+    const onSelectImg = (i: number) => () => {
+        if (disabledSelectImg) {
+            return;
+        }
+        const selected = images[i];
+        const indexDelete = data.findIndex((e) => e.src == selected.src);
+        if (indexDelete > -1) {
+            onDeleteData(indexDelete);
+            return;
+        }
+        if (multiple) {
+            onConcatData([selected]);
+        } else {
+            setData([selected]);
+        }
+    };
+    const onUploadImgFile = async (v: FileProps) => {
+        setKeyInputUpload(new Date().getTime());
+        const img = await parseBase64ToImgData({
+            base64: v.fileData,
+            name: v.text,
+            quality: 0.7,
+        });
+        // console.log(img.srcThumbnail_100);
+        env_log(img, {
+            name: "Img upload",
+        });
+        onUploadImg?.(img);
+    };
+    const onClickAcepte = () => {
+        if (multiple) {
+            onAcepte?.(data);
+        } else {
+            onAcepte?.(data?.[0]);
+        }
+    };
+    const onClickCancel = () => {
+        setData([]);
+    };
+
+    const LISTIMAGES = useMemo(() => {
+        return (
+            <>
+                {images.map((img, i) => {
+                    const active =
+                        data.find((e) => e.src == img.src) !== undefined;
+                    return (
+                        <>
+                            <div
+                                key={`${i}-${img.src}-${img?.id ?? ""}`}
+                                className={`fenext-media-page-img fenext-media-page-img-${
+                                    active ? "active" : ""
+                                }`}
+                                onClick={onSelectImg(i)}
+                            >
+                                <div
+                                    className={`fenext-media-page-img-element`}
+                                >
+                                    {(onRenderImg ? (
+                                        onRenderImg(img)
+                                    ) : (
+                                        <Img {...img} />
+                                    )) ?? <Img {...img} />}
+                                </div>
+                                <div
+                                    className={`fenext-media-page-img-capa`}
+                                ></div>
+                                <div
+                                    className={`fenext-media-page-img-actions`}
+                                >
+                                    <a
+                                        className={`fenext-media-page-img-action fenext-media-page-img-download`}
+                                        href={img.src}
+                                        download={img.name ?? "download.png"}
+                                        target="_blank"
+                                    >
+                                        <Save />
+                                    </a>
+                                    <div
+                                        className={`fenext-media-page-img-action fenext-media-page-img-delete`}
+                                        onClick={() => {
+                                            onDeleteImg?.(img);
+                                        }}
+                                    >
+                                        <Trash />
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                    );
+                })}
+            </>
+        );
+    }, [images, onRenderImg, onSelectImg, onDeleteImg, _t]);
+
+    return (
+        <>
+            <div className={`fenext-media-page ${className} `}>
+                <div className={`fenext-media-page-top`}>
+                    <div className={`fenext-media-page-top-header`}>
+                        {_t(HeaderPage)}
+                    </div>
+                    <div className={`fenext-media-page-top-btn-acepte`}>
+                        {data.length != 0 && !isPage && (
+                            <>
+                                <Button
+                                    {...ButtonCancelProps}
+                                    onClick={onClickCancel}
+                                    _t={_t}
+                                />
+
+                                <Button
+                                    {...ButtonAcceptProps}
+                                    onClick={onClickAcepte}
+                                    _t={_t}
+                                />
+                            </>
+                        )}
+                    </div>
+                </div>
+                <div className={`fenext-media-page-upload`}>
+                    <InputUpload
+                        {...InputUploadProps}
+                        key={keyInputUpload}
+                        onChange={onUploadImgFile}
+                        clearAfterUpload={true}
+                        _t={_t}
+                    />
+                </div>
+                <div className={`fenext-media-page-imgs`}>
+                    {loaderImages ? (
+                        <>
+                            <div
+                                className={`fenext-media-page-img fenext-media-page-img-loader`}
+                            >
+                                <LoaderSpinner />
+                            </div>
+                        </>
+                    ) : (
+                        <></>
+                    )}
+                    {LISTIMAGES}
+                    {extraContentImgs && (
+                        <div className={`fenext-media-page-extra-content-imgs`}>
+                            {_t(extraContentImgs)}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the Cols component.
+ */
+export interface ColsProps extends _TProps {
+    /**
+     * The nCols for the component.
+     */
+    nCols?: number | string;
+    /**
+     * The breakInside for the component.
+     */
+    breakInside?: boolean;
+
+    /**
+     * The children for the component.
+     */
+    children?: ReactNode;
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+export const Cols = ({
+    className = "",
+    children,
+    nCols = 2,
+    breakInside = true,
+    ...props
+}: ColsProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div
+                className={`fenext-cols fenext-cols-${
+                    breakInside ? "break-inside" : ""
+                } ${className} `}
+                style={
+                    {
+                        ["--nCols"]: nCols,
+                    } as CSSProperties
+                }
+            >
+                {_t(children)}
+            </div>
+        </>
+    );
+};
+
+
+export type ButtonBaseSize =
+    | "extra-small"
+    | "small"
+    | "normal"
+    | "strong"
+    | "extra-strong";
+
+export type ButtonOnClick = React.MouseEventHandler<HTMLButtonElement> &
+    React.MouseEventHandler<HTMLDivElement>;
+/**
+ * Properties for the base button component.
+ */
+export interface ButtonBaseProps extends PropsWithChildren, _TProps {
+    /**
+     * Indicates whether the button is currently in the loading state.
+     */
+    loader?: boolean;
+    /**
+     * Indicates whether the button is disabled or not.
+     */
+    disabled?: boolean;
+    /**
+     * The callback function that is called when the button is clicked.
+     */
+    onClick?: ButtonOnClick;
+    /**
+     * The callback function that is called when the button is clicked as disabled.
+     */
+    onClickDisabled?: ButtonOnClick;
+    /**
+     * The icon to display in the button.
+     */
+    icon?: ReactNode;
+    /**
+     * Indicates whether the component should render as a button element.
+     */
+    isBtn?: boolean;
+    /**
+     * The Size of Button.
+     */
+    size?: ButtonBaseSize;
+    /**
+     * The Size  Full of Button.
+     */
+    full?: boolean;
+}
+
+/**
+ * Properties for the class of the button component.
+ */
+export interface ButtonClassProps extends LoaderClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the button component.
+ */
+export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {}
+
+export const Button = ({
+    className = "",
+    classNameLoader = "",
+
+    children,
+    loader = false,
+    disabled = false,
+    onClick = () => {},
+    onClickDisabled = () => {},
+    icon = "",
+    isBtn = true,
+    full = false,
+    size = "normal",
+    ...props
+}: ButtonProps) => {
+    const { _t } = use_T({ ...props });
+    const Tag = isBtn ? "button" : "div";
+
+    return (
+        <>
+            <Tag
+                onClick={disabled ? onClickDisabled : onClick}
+                className={`
+                    fenext-btn
+                    fenext-btn-${loader ? "loader" : ""}
+                    fenext-btn-size-${size}
+                    ${full ? "fenext-btn-size-full" : ""}
+                    ${className}
+                `}
+                disabled={loader || disabled}
+            >
+                {loader && <Loader classNameLoader={classNameLoader} />}
+
+                {icon}
+                {_t(children)}
+            </Tag>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base button component.
+ */
+export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
+    /**
+     * Indicates if render componenet alert hook.
+     */
+    useAlertHook?: boolean;
+    /**
+     * props for alert hook.
+     */
+    alertHookProps?: AlertHookProps;
+    /**
+     * Indicates whether the page is currently in the loading state.
+     */
+    loader?: boolean;
+    /**
+     * Menu Left of Layout.
+     */
+    menuLeft?: ReactNode;
+    /**
+     * Menu Top of Layout.
+     */
+    menuLeftActive?: boolean;
+    /**
+     * Menu Top of Layout.
+     */
+    menuLeftMovilActive?: boolean;
+    /**
+     * useHeaderButtonMenu for show menu.
+     */
+    useHeaderButtonMenu?: boolean;
+    /**
+     * Use page progress bar.
+     */
+    usePageProgress?: boolean;
+    /**
+     * target for btn.
+     */
+    target?: string;
+}
+
+/**
+ * Properties for the class of the button component.
+ */
+export interface LayoutGridMenuLeftClassProps extends LoaderClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the Menu Left element.
+     */
+    classNameMenuLeft?: string;
+    /**
+     * The class name for the Menu Left element.
+     */
+    classNameMenuLeftContent?: string;
+    /**
+     * The class name for the Content Children element.
+     */
+    classNameChildren?: string;
+}
+
+/**
+ * Properties for the button component.
+ */
+export interface LayoutGridMenuLeftProps
+    extends LayoutGridMenuLeftBaseProps,
+        LayoutGridMenuLeftClassProps {}
+
+export const LayoutGridMenuLeft = ({
+    className = "",
+    classNameLoader = "",
+    classNameChildren = "",
+    classNameMenuLeft = "",
+    classNameMenuLeftContent = "",
+
+    children,
+    menuLeft,
+    loader = false,
+    menuLeftActive = true,
+    menuLeftMovilActive = false,
+    useHeaderButtonMenu = false,
+    usePageProgress = true,
+    useAlertHook = true,
+    alertHookProps = {},
+    target = "fenext-btn-menu-checkbox",
+    ...props
+}: LayoutGridMenuLeftProps) => {
+    const t = `[name="${target}"]:checked`;
+    return (
+        <>
+            <div
+                className={`fenext-layout-grid fenext-layout-grid-ml 
+                    ${className} 
+                    fenext-layout-grid-ml-${
+                        menuLeftActive ? "active" : "inactive"
+                    }
+                    fenext-layout-grid-ml-movil-${
+                        menuLeftMovilActive ? "active" : "inactive"
+                    }
+                    fenext-layout-grid-ml-${
+                        useHeaderButtonMenu ? "use-btn-menu" : ""
+                    }
+                `}
+                data-target={target}
+                {...props}
+            >
+                <div
+                    className={`fenext-layout-grid-ml-menu-left ${classNameMenuLeft}`}
+                >
+                    <div
+                        className={`fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}`}
+                    >
+                        {menuLeft}
+                    </div>
+                </div>
+                <div
+                    className={`fenext-layout-grid-ml-children ${classNameChildren}`}
+                >
+                    {usePageProgress && <PageProgress />}
+                    {useAlertHook && (
+                        <AlertHook
+                            {...alertHookProps}
+                            className={`fenext-layout-grid-alert ${alertHookProps?.className ?? ""}`}
+                        />
+                    )}
+                    {loader ? (
+                        <Loader
+                            classNameLoader={`${classNameLoader} fenext-layout-grid-loader`}
+                        />
+                    ) : (
+                        <>{children}</>
+                    )}
+                </div>
+                {target != "fenext-btn-menu-checkbox" && (
+                    <>
+                        <style>
+                            {`
+                                body:has(${t}) .fenext-layout-grid-ml-use-btn-menu[data-target=${target}] {
+                                    @media (min-width: 576px) {
+                                        --size-menu : var(--fenext-size-menu-left, auto);
+                                    }
+                                    @media (max-width: 575px) {
+                                        --clip-path: circle(200% at 0% 0%);
+                                    }
+                                }
+                                body:not(:has(${t})) .fenext-layout-grid-ml-use-btn-menu[data-target=${target}] {
+                                    @media (min-width: 576px) {
+                                        --size-menu : var(--fenext-size-menu-left-close, 0px);
+                                    }
+                                    @media (max-width: 575px) {
+                                        --clip-path: circle(0% at 0% 0%);
+                                    }
+                                }
+                            `}
+                        </style>
+                    </>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base button component.
+ */
+export interface LayoutGridMenuTopLeftBaseProps
+    extends LayoutGridMenuTopBaseProps,
+        LayoutGridMenuLeftBaseProps {}
+
+/**
+ * Properties for the class of the button component.
+ */
+export interface LayoutGridMenuTopLeftClassProps
+    extends LayoutGridMenuTopClassProps,
+        LayoutGridMenuLeftClassProps,
+        LoaderClassProps {}
+
+/**
+ * Properties for the button component.
+ */
+export interface LayoutGridMenuTopLeftProps
+    extends LayoutGridMenuTopLeftBaseProps,
+        LayoutGridMenuTopLeftClassProps {}
+
+export const LayoutGridMenuTopLeft = ({
+    className = "",
+    classNameLoader = "",
+    classNameChildren = "",
+    classNameMenuTop = "",
+    classNameMenuLeft = "",
+    classNameMenuLeftContent = "",
+
+    children,
+    menuLeft,
+    menuTop,
+    loader = false,
+    menuLeftActive = true,
+    menuLeftMovilActive = false,
+    useHeaderButtonMenu = false,
+    usePageProgress = true,
+    alertHookProps,
+    useAlertHook = true,
+    target = "fenext-btn-menu-checkbox",
+}: LayoutGridMenuTopLeftProps) => {
+    return (
+        <>
+            <LayoutGridMenuTop
+                className={`fenext-layout-grid fenext-layout-grid-mtl ${className}`}
+                classNameMenuTop={classNameMenuTop}
+                menuTop={menuTop}
+                usePageProgress={false}
+                useAlertHook={false}
+            >
+                <LayoutGridMenuLeft
+                    classNameLoader={classNameLoader}
+                    classNameChildren={classNameChildren}
+                    classNameMenuLeft={classNameMenuLeft}
+                    classNameMenuLeftContent={classNameMenuLeftContent}
+                    menuLeft={menuLeft}
+                    loader={loader}
+                    menuLeftActive={menuLeftActive}
+                    menuLeftMovilActive={menuLeftMovilActive}
+                    useHeaderButtonMenu={useHeaderButtonMenu}
+                    usePageProgress={usePageProgress}
+                    useAlertHook={useAlertHook}
+                    alertHookProps={alertHookProps}
+                    target={target}
+                >
+                    {children}
+                </LayoutGridMenuLeft>
+            </LayoutGridMenuTop>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base button component.
+ */
+export interface LayoutGridMenuTopBaseProps extends PropsWithChildren {
+    /**
+     * Indicates if render componenet alert hook.
+     */
+    useAlertHook?: boolean;
+    /**
+     * props for alert hook.
+     */
+    alertHookProps?: AlertHookProps;
+    /**
+     * Indicates whether the page is currently in the loading state.
+     */
+    loader?: boolean;
+    /**
+     * Menu Top of Layout.
+     */
+    menuTop?: ReactNode;
+    /**
+     * Use page progress bar.
+     */
+    usePageProgress?: boolean;
+}
+
+/**
+ * Properties for the class of the button component.
+ */
+export interface LayoutGridMenuTopClassProps extends LoaderClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the Menu Top element.
+     */
+    classNameMenuTop?: string;
+    /**
+     * The class name for the Content Children element.
+     */
+    classNameChildren?: string;
+}
+
+/**
+ * Properties for the button component.
+ */
+export interface LayoutGridMenuTopProps
+    extends LayoutGridMenuTopBaseProps,
+        LayoutGridMenuTopClassProps {}
+
+export const LayoutGridMenuTop = ({
+    className = "",
+    classNameLoader = "",
+    classNameChildren = "",
+    classNameMenuTop = "",
+
+    children,
+    menuTop,
+    loader = false,
+    usePageProgress = true,
+    useAlertHook = true,
+    alertHookProps = {},
+    ...props
+}: LayoutGridMenuTopProps) => {
+    return (
+        <>
+            <div
+                className={`fenext-layout-grid fenext-layout-grid-mt ${className}`}
+                {...props}
+            >
+                <div
+                    className={`fenext-layout-grid-mt-menu-top ${classNameMenuTop}`}
+                >
+                    {menuTop}
+                </div>
+                <div
+                    className={`fenext-layout-grid-mt-children ${classNameChildren}`}
+                >
+                    {usePageProgress && <PageProgress />}
+                    {useAlertHook && (
+                        <AlertHook
+                            {...alertHookProps}
+                            className={`fenext-layout-grid-alert ${alertHookProps?.className ?? ""}`}
+                        />
+                    )}
+                    {loader ? (
+                        <Loader
+                            classNameLoader={`${classNameLoader} fenext-layout-grid-loader`}
+                        />
+                    ) : (
+                        <>{children}</>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the Container component.
+ */
+export interface ContainerProps extends PropsWithChildren, _TProps {
+    /**
+     * The Custom Size of Container / 16 * rem.
+     */
+    customSize?: number;
+    /**
+     * Use Padding Inline in Container.
+     */
+    usePaddingInline?: boolean;
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+export const Container = ({
+    className = "",
+    customSize = undefined,
+    usePaddingInline = true,
+    children,
+    ...props
+}: ContainerProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div
+                className={`fenext-container ${className} ${
+                    usePaddingInline
+                        ? "fenext-container-p"
+                        : "fenext-container-notp"
+                }`}
+                style={
+                    customSize
+                        ? ({
+                              ["--fenext-size-container-custom"]: `${
+                                  customSize / 16
+                              }rem`,
+                          } as React.CSSProperties)
+                        : {}
+                }
+            >
+                {_t(children)}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the StepsCircleItemProps component.
+ */
+export interface StepsCircleItemProps {
+    children?: ReactNode;
+    onClick?: () => void;
+}
+
+/**
+ * Properties for the class of the StepsCircle component.
+ */
+export interface StepsCircleProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+
+    items?: StepsCircleItemProps[];
+
+    defaultStep?: number;
+    valueStep?: number;
+
+    disabled?: boolean;
+}
+
+export const StepsCircle = ({
+    className = "",
+    defaultStep = undefined,
+    valueStep = undefined,
+    disabled = false,
+    items = [],
+}: StepsCircleProps) => {
+    const [step_, setStep] = useState(defaultStep ?? 0);
+
+    const step = useMemo(() => valueStep ?? step_, [step_, valueStep]);
+
+    return (
+        <>
+            <div
+                className={`
+                    fenext-steps-circle 
+                    fenext-steps-circle-${disabled ? "disabled" : ""}
+                    ${className} 
+                `}
+                style={
+                    {
+                        "--nItems": items?.length,
+                        "--step": step,
+                    } as CSSProperties
+                }
+            >
+                {items?.map((item, i) => {
+                    return (
+                        <>
+                            <div
+                                className={`
+                                    fenext-steps-circle-item
+                                    fenext-steps-circle-item-${step >= i ? "active" : ""}
+                                `}
+                                onClick={() => {
+                                    if (disabled) {
+                                        return;
+                                    }
+                                    item?.onClick?.();
+                                    setStep(i);
+                                }}
+                            >
+                                <div
+                                    className={`fenext-steps-circle-item-circle`}
+                                >
+                                    {i + 1}
+                                </div>
+                                <div className="fenext-steps-circle-item-content">
+                                    {item?.children}
+                                </div>
+                            </div>
+                        </>
+                    );
+                })}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ButtonMenu component.
+ */
+export interface ButtonMenuBaseProps extends PropsWithChildren, _TProps {
+    /**
+     * Indicates whether the Collapse is currently in the loading state.
+     */
+    loader?: boolean;
+    /**
+     * Indicates whether the Collapse is disabled or not.
+     */
+    disabled?: boolean;
+    /**
+     * Indicates whether the Collapse is defaultActive for show.
+     */
+    defaultActive?: boolean;
+    /**
+     * target for btn.
+     */
+    target?: string;
+}
+
+/**
+ * Properties for the class of the ButtonMenu component.
+ */
+export interface ButtonMenuClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name Icon for the component.
+     */
+    classNameIcon?: string;
+    /**
+     * The class name Icon for the component.
+     */
+    classNameIconBarClose?: string;
+    /**
+     * The class name for content children.
+     */
+    classNameContent?: string;
+}
+
+/**
+ * Properties for the ButtonMenu component.
+ */
+export interface ButtonMenuProps
+    extends ButtonMenuBaseProps,
+        ButtonMenuClassProps {}
+
+export const ButtonMenu = ({
+    className = "",
+    classNameIcon = "",
+    classNameIconBarClose = "",
+    classNameContent = "",
+
+    loader = false,
+    disabled = false,
+    defaultActive: defaultActiveProps = undefined,
+    children,
+    target = "fenext-btn-menu-checkbox",
+    ...props
+}: ButtonMenuProps) => {
+    const { _t } = use_T({ ...props });
+    const [defaultActive, setDefaultActive] = useState(true);
+    const onLoad = () => {
+        if (typeof window == "undefined") {
+            setTimeout(onLoad, 100);
+        } else {
+            setDefaultActive(window.innerWidth > 575);
+        }
+    };
+    useEffect(() => {
+        onLoad();
+    }, []);
+    return (
+        <>
+            <label className={`fenext-btn-menu ${className}`}>
+                <input
+                    type={"checkbox"}
+                    className={`fenext-btn-menu-checkbox`}
+                    disabled={disabled || loader}
+                    defaultChecked={defaultActiveProps ?? defaultActive}
+                    key={defaultActiveProps ?? defaultActive ? "0" : "1"}
+                    name={target}
+                    id={target}
+                />
+                {loader ? (
+                    <>
+                        <Loader />
+                    </>
+                ) : (
+                    <>
+                        <div
+                            className={`fenext-btn-menu-icon ${classNameIcon}`}
+                        >
+                            <div
+                                className={`fenext-btn-menu-icon-bar-close ${classNameIconBarClose}`}
+                            />
+                        </div>
+                        <div
+                            className={`fenext-btn-menu-content ${classNameContent}`}
+                        >
+                            {_t(children)}
+                        </div>
+                    </>
+                )}
+            </label>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Menu component.
+ */
+export interface MenuBaseProps extends _TProps {
+    /**
+     * The class name for the component.
+     */
+    items?: ItemMenuProps[];
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
+    /**
+     * type of collapse.
+     */
+    typeCollapse?: "radio" | "checkbox";
+}
+
+/**
+ * Properties for the class of the Menu component.
+ */
+export interface MenuClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * defaultShowSubMenu for the component.
+     * @default false
+     */
+    defaultShowSubMenu?: boolean;
+}
+
+/**
+ * Properties for the Menu component.
+ */
+export interface MenuProps extends MenuBaseProps, MenuClassProps {}
+
+export const Menu = ({
+    className = "",
+
+    items = [],
+
+    defaultShowSubMenu = false,
+    iconArrow = <Arrow />,
+    typeCollapse,
+    ...props
+}: MenuProps) => {
+    return (
+        <>
+            <div className={`fenext-menu ${className}`}>
+                {items?.map((item, i) => (
+                    <ItemMenu
+                        key={i}
+                        {...props}
+                        {...item}
+                        defaultActive={item.defaultActive ?? defaultShowSubMenu}
+                        iconArrow={item?.iconArrow ?? iconArrow}
+                        typeCollapse={item?.typeCollapse ?? typeCollapse}
+                    />
+                ))}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ItemMenu component.
+ */
+export interface ItemMenuBaseProps extends _TProps {
+    /**
+     * Url of page in Menu Item.
+     */
+    url: string;
+    /**
+     * Text of page in Menu Item.
+     */
+    text: ReactNode;
+    /**
+     * Icon of page in Menu Item.
+     */
+    icon?: ReactNode;
+    /**
+     * Sub page in Menu Item.
+     */
+    subItems?: Omit<ItemMenuProps, "_t">[];
+    /**
+     * Indicates whether the Collapse is defaultActive for show.
+     */
+    defaultActive?: boolean;
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
+    /**
+     * nameNumber of Collapse.
+     * @default 1
+     */
+    nameNumber?: number;
+    /**
+     * type of collapse.
+     */
+    typeCollapse?: "radio" | "checkbox";
+    /**
+     * isLink.
+     */
+    isLink?: boolean;
+    /**
+     * isLink.
+     */
+    onClick?: () => void;
+}
+
+/**
+ * Properties for the class of the ItemMenu component.
+ */
+export interface ItemMenuClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name <a> for the component.
+     */
+    classNameA?: string;
+    /**
+     * The class name text for the component.
+     */
+    classNameText?: string;
+    /**
+     * The class name icon for the component.
+     */
+    classNameIcon?: string;
+}
+
+/**
+ * Properties for the ItemMenu component.
+ */
+export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {}
+
+export const ItemMenu = ({
+    className = "",
+    classNameA = "",
+    classNameIcon = "",
+    classNameText = "",
+
+    text,
+    url,
+    icon = <></>,
+    subItems = [],
+    defaultActive = false,
+    iconArrow = <Arrow />,
+    nameNumber = 1,
+    typeCollapse,
+    isLink = true,
+    onClick,
+    ...props
+}: ItemMenuProps) => {
+    const { _t } = use_T({ ...props });
+    const router = useRouter();
+
+    const urlInter = useMemo(() => {
+        const nlLink = router?.asPath.split("/");
+        const nlUrl = url.split("/");
+        const common = nlLink.filter((x) => nlUrl.indexOf(x) !== -1);
+        return common.length;
+    }, [router?.asPath, url]);
+
+    const urlActive = useCallback(
+        (url: Omit<ItemMenuProps, "_t">["url"]) => {
+            return (
+                router?.asPath?.indexOf?.(url) == 0 &&
+                ((router?.asPath != "/" && url != "/") ||
+                    (url == "/" && router?.asPath == "/"))
+            );
+        },
+        [router?.asPath],
+    );
+
+    const subItemsActive = useCallback(
+        (sub: Omit<ItemMenuProps, "_t">[]) => {
+            return sub?.some((e) => {
+                return (
+                    urlActive(e?.url) ||
+                    (e?.subItems && subItemsActive(e?.subItems))
+                );
+            });
+        },
+        [router?.asPath],
+    );
+
+    const contentSubItemAtive = useMemo(
+        () => subItemsActive(subItems),
+        [subItems, router?.asPath],
+    );
+
+    const Tag = isLink ? Link : "div";
+
+    return (
+        <>
+            <div className={`fenext-menu-item ${className}`}>
+                <Collapse
+                    key={router?.asPath ?? ""}
+                    name={`fenext-menu-item-${nameNumber}`}
+                    defaultActive={defaultActive || contentSubItemAtive}
+                    type={typeCollapse}
+                    header={
+                        <>
+                            <Tag
+                                href={url}
+                                className={`fenext-menu-item-a ${classNameA} ${
+                                    urlActive(url)
+                                        ? `fenext-menu-item-a-active fenext-menu-item-a-url-inter-${urlInter}`
+                                        : ""
+                                }`}
+                                data-url={url}
+                                onClick={onClick}
+                            >
+                                <div
+                                    className={`fenext-menu-item-a-icon ${classNameIcon}`}
+                                >
+                                    {icon}
+                                </div>
+                                <div
+                                    className={`fenext-menu-item-a-text ${classNameText}`}
+                                >
+                                    {_t(text)}
+                                </div>
+                            </Tag>
+                        </>
+                    }
+                    iconArrow={iconArrow}
+                >
+                    {subItems?.map((sub, i) => (
+                        <ItemMenu
+                            key={i}
+                            {...sub}
+                            _t={_t}
+                            iconArrow={sub?.iconArrow ?? iconArrow}
+                            nameNumber={nameNumber + 1}
+                        />
+                    ))}
+                </Collapse>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Box component.
+ */
+export interface BoxBaseProps extends PropsWithChildren, _TProps {}
+
+/**
+ * Properties for the class of the Box component.
+ */
+export interface BoxClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Box component.
+ */
+export interface BoxProps extends BoxBaseProps, BoxClassProps {}
+
+export const Box = ({ className = "", children }: BoxProps) => {
+    return (
+        <>
+            <div className={`fenext-box ${className} `}>{children}</div>
+        </>
+    );
+};
+
+
+/**
+ * Props for InputNumber component.
+ */
+export interface InputNumberProps
+    extends Omit<
+        InputTextProps,
+        "defaultValue" | "onChange" | "onChangeValidate" | "value"
+    > {
+    /**
+     * The default value of the input.
+     * @default ""
+     */
+    value?: number | "";
+    /**
+     * The default value of the input.
+     * @default ""
+     */
+    defaultValue?: number | "";
+    /**
+     * The callback function that is triggered when the value of the input changes.
+     */
+    onChange?: (v: number | "") => void;
+    /**
+     * The callback function that is triggered when the input loses focus, after the value has been validated.
+     */
+    onChangeValidate?: (v: number | "") => void;
+    /**
+     * The minimum value allowed for the input.
+     */
+    min?: number;
+    /**
+     * The maximum value allowed for the input.
+     */
+    max?: number;
+    /**
+     * The useBtnIncreaseDecrease show btn.
+     */
+    useBtnIncreaseDecrease?: boolean;
+    /**
+     * The disabledScroll.
+     */
+    disabledScroll?: boolean;
+}
+
+export const InputNumber = ({
+    defaultValue = "",
+    onChange,
+    useBtnIncreaseDecrease = false,
+    validator = undefined,
+    value,
+    disabledScroll = false,
+    ...props
+}: InputNumberProps) => {
+    const [value_, setValue_] = useState<number | "">(defaultValue ?? "");
+
+    const valueInput = useMemo(
+        () => value ?? (value_ == "" ? defaultValue : value_),
+        [value_, defaultValue, value],
+    );
+
+    const setValue = (v: number) => {
+        setValue_(v);
+        onChange?.(v);
+    };
+
+    const minMaxValue = (v: number) => {
+        return Math.max(
+            props.min ?? -Infinity,
+            Math.min(props.max ?? Infinity, v),
+        );
+    };
+
+    const valueToNumber = (v: string) => {
+        try {
+            v = `${v}`.replace?.(/[^\d-]/g, "");
+            return parseFloat(v);
+        } catch {
+            return 0;
+        }
+    };
+
+    const addValue = (add: number) => () => {
+        if (props?.disabled) {
+            return;
+        }
+        const Value = minMaxValue((valueInput == "" ? 0 : valueInput) + add);
+        setValue(Value);
+    };
+    const { error: errorFenext } = useValidator({
+        data:
+            valueInput != undefined && valueInput != ""
+                ? parseNumber(valueInput)
+                : undefined,
+        validator: validator ?? FenextjsValidator(),
+    });
+
+    return (
+        <>
+            <InputText
+                {...props}
+                type="number"
+                value={`${valueInput ?? ""}`}
+                className={`fenext-input-number ${props?.className}`}
+                useLoader={false}
+                error={errorFenext}
+                onWheel={(e) => {
+                    if (disabledScroll === true) {
+                        e.target.blur();
+
+                        e.stopPropagation();
+
+                        setTimeout(() => {
+                            e.target.focus();
+                        }, 0);
+                    }
+                    props?.onWheel?.(e);
+                }}
+                icon={
+                    <>
+                        {useBtnIncreaseDecrease ? (
+                            <>
+                                <span
+                                    onClick={addValue(1)}
+                                    className={`fenext-input-number-icon-arrow fenext-input-number-icon-increase`}
+                                >
+                                    <SVGNumberIncrease />
+                                </span>
+                                <span
+                                    onClick={addValue(-1)}
+                                    className={`fenext-input-number-icon-arrow fenext-input-number-icon-decrease`}
+                                >
+                                    <SVGNumberDecrease />
+                                </span>
+                            </>
+                        ) : (
+                            <>
+                                <div className="fenext-input-number-icon-arrow">
+                                    <span
+                                        onClick={addValue(1)}
+                                        className={`fenext-input-number-icon-arrow-up`}
+                                    >
+                                        <Arrow />
+                                    </span>
+                                    <span
+                                        onClick={addValue(-1)}
+                                        className={`fenext-input-number-icon-arrow-down`}
+                                    >
+                                        <Arrow />
+                                    </span>
+                                </div>
+                            </>
+                        )}
+                    </>
+                }
+                onChangeValidate={(v: string) => {
+                    const v2 = minMaxValue(valueToNumber(v));
+                    const s = props?.onChangeValidate?.(v2) ?? v2;
+                    return `${s}`;
+                }}
+                onChange={(v: string) => {
+                    setValue(minMaxValue(valueToNumber(v)));
+                }}
+            />
+        </>
+    );
+};
+
+
+export type InputTextChangeEvent =
+    | React.ChangeEvent<HTMLTextAreaElement>
+    | React.ChangeEvent<HTMLInputElement>;
+
+/**
+ * Interface that defines CSS class properties for a text input component.
+ */
+export interface InputTextClassProps {
+    /**
+     * CSS class name for the input label.
+     */
+    classNameLabel?: string;
+
+    /**
+     * CSS class name for the input error label.
+     */
+    classNameLabelError?: string;
+
+    /**
+     * CSS class name for the input validation label.
+     */
+    classNameLabelOk?: string;
+
+    /**
+     * CSS class name for the input container.
+     */
+    classNameContentInput?: string;
+
+    /**
+     * CSS class name for the input.
+     */
+    classNameInput?: string;
+
+    /**
+     * CSS class name for the enabled input.
+     */
+    classNameInputEnabled?: string;
+
+    /**
+     * CSS class name for the disabled input.
+     */
+    classNameInputDisabled?: string;
+
+    /**
+     * CSS class name for the input icon.
+     */
+    classNameIcon?: string;
+
+    /**
+     * CSS class name for the input error message.
+     */
+    classNameError?: string;
+
+    /**
+     * CSS class name for the input options container.
+     */
+    classNameOptions?: string;
+
+    /**
+     * CSS class name for each input option.
+     */
+    classNameOption?: string;
+
+    /**
+     * CSS class name for a disabled input option.
+     */
+    classNameOptionDisabled?: string;
+
+    /**
+     * CSS class name for the input validation loader.
+     */
+    classNameLoaderValidate?: string;
+
+    /**
+     * Icon to display while validating the input.
+     */
+    iconLoader?: any;
+}
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputTextBaseProps extends _TProps {
+    /**
+     * ID of Input.
+     */
+    id?: string;
+    /**
+     * Name of Input.
+     */
+    name?: string;
+    /**
+     * Datalist name of Input.
+     */
+    datalist?: any;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass;
+
+    /**
+     * Label text to display for the input.
+     */
+    label?: ReactNode;
+
+    /**
+     * Placeholder text to display in the input field.
+     */
+    placeholder?: string;
+    /**
+     * Placeholder text to display in the input field.
+     */
+    placeholderFocus?: string;
+
+    /**
+     * Default value to set for the input field.
+     */
+    defaultValue?: string | undefined | null;
+
+    /**
+     * Value to set for the input field.
+     */
+    value?: string | undefined | null;
+
+    /**
+     * Type of input to display (e.g. text, number, password, etc.).
+     */
+    type?:
+        | "text"
+        | "search"
+        | "tel"
+        | "url"
+        | "password"
+        | "number"
+        | "textarea";
+
+    /**
+     * Function to call when the input value changes.
+     */
+    onChange?: (v: string) => void;
+
+    /**
+     * Function to call when the input loses focus.
+     */
+    onBlur?: (v: string) => void;
+
+    /**
+     * Function to call when the Enter key is pressed.
+     */
+    onEnter?: () => void;
+
+    /**
+     * Function to call for custom input validation.
+     */
+    onChangeValidate?: (e: string) => Promise<string> | string;
+
+    /**
+     * Additional properties to pass to the input component.
+     */
+    props?: any;
+
+    /**
+     * Icon to display inside the input field.
+     */
+    icon?: ReactNode;
+    /**
+     * Position of Icon to display inside the input field.
+     */
+    iconPos?: "left" | "right";
+
+    /**
+     * Extra content to display inside the input container.
+     */
+    extraInContentInput?: ReactNode;
+
+    /**
+     * Extra content to display inside the input label.
+     */
+    extraInLabel?: ReactNode;
+
+    /**
+     * Boolean value indicating whether the input field is disabled.
+     */
+    disabled?: boolean;
+
+    /**
+     * Boolean value indicating whether to display the input icon.
+     */
+    showIcon?: boolean;
+
+    /**
+     * CSS class name for the input component.
+     */
+    className?: string;
+    /**
+     * Text of Error of Input.
+     */
+    error?: ErrorFenextjs;
+    /**
+     * Show error if IsChange.
+     */
+    errorWithIsChange?: boolean;
+    /**
+     * Optional of Input.
+     */
+    optional?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    optionalText?: string;
+    /**
+     * Optional of Input.
+     */
+    required?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    requiredText?: string;
+    /**
+     * Loader of Input.
+     */
+    loader?: boolean;
+    /**
+     * Loader of Input.
+     */
+    isChange?: boolean;
+    /**
+     * useLoader of Input.
+     */
+    useLoader?: boolean;
+    /**
+     * inputMode of Input.
+     */
+    inputMode?:
+        | "none"
+        | "text"
+        | "tel"
+        | "url"
+        | "email"
+        | "numeric"
+        | "decimal"
+        | "search"
+        | undefined;
+    /**
+     * AutoComplete of Input.
+     */
+    autoComplete?: boolean;
+
+    /**
+     * onKeyDown of Input.
+     */
+    onKeyDown?:
+        | (React.KeyboardEventHandler<HTMLTextAreaElement> &
+              React.KeyboardEventHandler<HTMLInputElement>)
+        | undefined;
+
+    onWheel?:
+        | (React.WheelEventHandler<HTMLTextAreaElement> &
+              React.WheelEventHandler<HTMLInputElement>)
+        | undefined;
+    /**
+     * maxLength of Input.
+     */
+    maxLength?: number;
+    /**
+     * regExp of Input.
+     */
+    regExp?: RegExp;
+    /**
+     * regExpReplace of Input.
+     */
+    regExpReplace?: string;
+    /**
+     * parseText of Input.
+     */
+    parseText?: (data: string) => string;
+    /**
+     * onChangeEvent of Input.
+     */
+    onChangeEvent?: (e: InputTextChangeEvent) => void;
+    /**
+     * showFocusInTarget of Input.
+     */
+    showFocusInTarget?: boolean;
+}
+/**
+ * Props interface for the InputText component. Extends both InputTextBaseProps and InputTextClassProps interfaces.
+ */
+export interface InputTextProps
+    extends InputTextBaseProps,
+        InputTextClassProps {}
+
+export const InputText = ({
+    id = "",
+    datalist = undefined,
+    name = "",
+    label = "",
+    placeholder = "",
+    placeholderFocus = undefined,
+    defaultValue = undefined,
+    value = undefined,
+    type = "text",
+    className = "",
+    classNameLabel = "",
+    classNameContentInput = "",
+    classNameInput = "",
+    classNameIcon = "",
+    classNameLoaderValidate = "",
+    iconLoader = <Loader />,
+    onChange = () => {},
+    onBlur = () => {},
+    onEnter = () => {},
+    onChangeValidate = async (e: string) => e,
+    parseText,
+    props = {},
+    icon = <></>,
+    extraInContentInput = <></>,
+    extraInLabel = <></>,
+    disabled = false,
+    showIcon = true,
+    error = undefined,
+    errorWithIsChange = true,
+    optional = false,
+    optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
+    loader = false,
+    autoComplete = false,
+    useLoader = true,
+    isChange: isChangeProps = undefined,
+    onKeyDown,
+    onWheel,
+    iconPos = "right",
+    inputMode,
+
+    validator,
+    maxLength = undefined,
+    regExp = undefined,
+    regExpReplace = "",
+
+    onChangeEvent,
+
+    showFocusInTarget = false,
+
+    ...p
+}: InputTextProps) => {
+    const { _t } = use_T({ ...p });
+    const [isFocus, setIsFocus] = useState(false);
+    const [statusInput, setStateInput] = useState("");
+
+    const { dataMemo: dataErrorInput, setData: setErrorInput } = useData<
+        ErrorFenextjs | undefined
+    >(undefined);
+    const errorInput = useMemo(
+        () => error ?? dataErrorInput,
+        [error, dataErrorInput],
+    );
+
+    const { dataMemo: dataLoaderInput, setData: setLoaderInput } =
+        useData<boolean>(loader);
+    const loaderInput = useMemo(
+        () => loader ?? dataLoaderInput,
+        [loader, dataLoaderInput],
+    );
+    const {
+        dataMemo: dataValueInput,
+        setData: setValueInput,
+        isChange: isChangeData,
+    } = useData<string>(defaultValue ?? "");
+    const valueInput = useMemo(
+        () => value ?? dataValueInput,
+        [value, dataValueInput],
+    );
+
+    const isChange = useMemo(
+        () => isChangeProps ?? isChangeData,
+        [isChangeData, isChangeProps],
+    );
+
+    const ref = useRef(null);
+
+    const validateValue = async (v: string) => {
+        setLoaderInput(true);
+        try {
+            if (onChangeValidate) {
+                const n = await onChangeValidate(v);
+                v = n ?? v;
+            }
+        } catch (error: any) {
+            env_log(error, {
+                name: "error",
+                color: "red",
+            });
+            setStateInput("error");
+            setErrorInput(
+                new ErrorFenextjs({
+                    code: ErrorCode.ERROR,
+                    message: error.message,
+                }),
+            );
+            setLoaderInput(false);
+            return v;
+        }
+        return v;
+    };
+    const onChangeInput = async (
+        e:
+            | React.ChangeEvent<HTMLTextAreaElement>
+            | React.ChangeEvent<HTMLInputElement>,
+    ) => {
+        onChangeEvent?.(e);
+        const input = e.target;
+        let text = `${input.value ?? ""}`;
+        if (maxLength) {
+            text = `${text}`?.slice(0, maxLength);
+        }
+        if (regExp) {
+            text = `${text}`?.replace(regExp, regExpReplace);
+        }
+        if (text === valueInput) {
+            return;
+        }
+        setValueInput(text);
+        onChange(text);
+        validateValue(text);
+    };
+    const blurInput = () => {
+        validateValue(valueInput);
+        onBlur(valueInput);
+    };
+
+    const TagInput = type == "textarea" ? "textarea" : "input";
+
+    const ICON = useMemo(() => {
+        if (showIcon) {
+            return (
+                <span className={`fenext-input-content-icon ${classNameIcon}`}>
+                    {icon}
+                </span>
+            );
+        }
+        return <></>;
+    }, [
+        showIcon,
+        icon,
+        classNameIcon,
+        classNameLoaderValidate,
+        iconLoader,
+        loader,
+    ]);
+
+    const LOADER = useMemo(() => {
+        if (!useLoader) {
+            return <></>;
+        }
+        if (loaderInput) {
+            return (
+                <span
+                    className={`fenext-input-content-loader ${classNameLoaderValidate}`}
+                >
+                    {iconLoader}
+                </span>
+            );
+        }
+        return <></>;
+    }, [loaderInput, classNameLoaderValidate, iconLoader, loader, useLoader]);
+
+    const { error: errorFenext } = useValidator({
+        data: valueInput,
+        validator: validator ?? FenextjsValidator(),
+    });
+
+    const FenextInputValidatorStatus = useMemo<"ok" | "error">(() => {
+        if (errorWithIsChange && !isChange) {
+            return "ok";
+        }
+        if (errorInput instanceof ErrorFenextjs) {
+            return "error";
+        }
+        if (errorFenext instanceof ErrorFenextjs) {
+            return "error";
+        }
+        if (error instanceof ErrorFenextjs) {
+            return "error";
+        }
+        return "ok";
+    }, [errorInput, error, errorFenext, errorWithIsChange, isChange]);
+
+    return (
+        <>
+            <label
+                className={`fenext-input ${className}`}
+                style={
+                    {
+                        ...(maxLength
+                            ? { ["--fenext-max-length"]: maxLength }
+                            : {}),
+                    } as CSSProperties
+                }
+            >
+                <div className={`fenext-input-label ${classNameLabel}`}>
+                    {_t(label)}
+                    {optional && (
+                        <>
+                            <small className="fenext-input-optional">
+                                {_t(optionalText)}
+                            </small>
+                        </>
+                    )}
+                    {required && (
+                        <>
+                            <small className="fenext-input-required">
+                                {_t(requiredText)}
+                            </small>
+                        </>
+                    )}
+                </div>
+                <div
+                    className={`fenext-input-content fenext-input-icon-pos-${iconPos} ${classNameContentInput}`}
+                >
+                    <TagInput
+                        id={id}
+                        name={name}
+                        list={datalist}
+                        type={type}
+                        ref={ref}
+                        className={`
+                            fenext-input-content-input
+                            fenext-input-validator-status-${FenextInputValidatorStatus}
+                            fenext-input-content-input-${showFocusInTarget ? "show-focus-target" : ""}
+                            ${classNameInput}
+                            ${statusInput}
+                        `}
+                        placeholder={_t(
+                            (isFocus ? placeholderFocus : placeholder) ??
+                                placeholder,
+                        )}
+                        value={
+                            (parseText ? parseText(valueInput) : valueInput) ??
+                            valueInput
+                        }
+                        onChange={onChangeInput}
+                        onBlur={() => {
+                            blurInput();
+                            setIsFocus(false);
+                        }}
+                        disabled={disabled}
+                        onKeyUp={(event) => {
+                            if (event.keyCode === 13) {
+                                onEnter();
+                            }
+                        }}
+                        onClick={() => {
+                            setIsFocus(true);
+                        }}
+                        onWheel={onWheel}
+                        autoComplete={autoComplete ? "on" : "off"}
+                        onKeyDown={onKeyDown}
+                        {...props}
+                        inputMode={inputMode}
+                    />
+                    {ICON}
+                    {LOADER}
+                    {extraInContentInput}
+                    {type == "textarea" && maxLength && (
+                        <>
+                            <span className="fenext-input-content-input-max-leght">
+                                ({valueInput?.length ?? 0} / {maxLength})
+                            </span>
+                        </>
+                    )}
+                </div>
+                {extraInLabel}
+                {FenextInputValidatorStatus == "error" && (
+                    <ErrorComponent
+                        error={errorFenext ?? errorInput}
+                        className="fenext-input-error"
+                        _t={_t}
+                    />
+                )}
+            </label>
+        </>
+    );
+};
+
+
+/**
+ * All props for the InputCalendar component.
+ */
+export interface InputCalendarProps
+    extends Pick<
+            InputTextProps,
+            | "label"
+            | "placeholder"
+            | "optional"
+            | "optionalText"
+            | "required"
+            | "requiredText"
+            | "icon"
+            | "iconPos"
+            | "validator"
+            | "errorWithIsChange"
+        >,
+        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
+    defaultValue?: Date;
+    value?: Date;
+    defaultValueRange?: Date[];
+    valueRange?: Date[];
+    onChange?: (d: Date | undefined) => void;
+    onChangeRange?: (d: Date[]) => void;
+    nMonthShow?: number;
+}
+
+export const InputCalendar = ({
+    nMonthShow = 1,
+    icon = <SvgDate />,
+    type = "normal",
+    defaultValue,
+    value,
+    defaultValueRange,
+    valueRange,
+    onChange,
+    onChangeRange,
+    validator,
+    errorWithIsChange = true,
+    ...props
+}: InputCalendarProps) => {
+    const [isChange, setIsChange] = useState(!errorWithIsChange);
+    const { data: dataSelectDate, setData: setSelectDate } = useData<
+        Date | undefined
+    >(defaultValue, {
+        onChangeDataAfter: (e) => {
+            setIsChange(true);
+            onChange?.(e);
+        },
+    });
+    const selectDate = useMemo(
+        () => value ?? dataSelectDate,
+        [value, dataSelectDate],
+    );
+
+    const [dataNSelect, setDataNSelect] = useState(true);
+    const { data: dataSelectDateRange, setDataFunction: setSelectDateRange } =
+        useData<Date[]>(defaultValueRange ?? [], {
+            onChangeDataAfter: (e) => {
+                setIsChange(true);
+                onChangeRange?.(e);
+            },
+        });
+    const selectDateRange = useMemo(
+        () => valueRange ?? dataSelectDateRange,
+        [valueRange, dataSelectDateRange],
+    );
+
+    const date = useDate({});
+
+    const onPreMonth = () => {
+        date.addMonth(-1);
+    };
+
+    const onNextMonth = () => {
+        date.addMonth(1);
+    };
+
+    const { error: errorFenext } = useValidator({
+        data: type == "normal" ? selectDate : selectDateRange,
+        validator,
+    });
+
+    return (
+        <>
+            <div className={`fenext-input-calendar`}>
+                <Collapse
+                    header={
+                        <>
+                            <InputText
+                                {...props}
+                                icon={icon}
+                                value={
+                                    type == "normal"
+                                        ? `${selectDate ? date.onFormat({}, selectDate) : ""}`
+                                        : `${
+                                              selectDateRange &&
+                                              selectDateRange.length == 2
+                                                  ? `${date.onFormat({}, selectDateRange[0])} - ${date.onFormat({}, selectDateRange[1])}`
+                                                  : ""
+                                          }`
+                                }
+                                error={errorFenext}
+                                errorWithIsChange={!isChange}
+                            />
+                        </>
+                    }
+                >
+                    <div
+                        className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""}`}
+                    >
+                        <InputCalendarMonth
+                            _t={props?._t}
+                            type={type}
+                            dataNSelect={dataNSelect}
+                            selectDate={selectDate}
+                            selectDateRange={selectDateRange}
+                            setDataNSelect={setDataNSelect}
+                            setSelectDate={setSelectDate}
+                            setSelectDateRange={setSelectDateRange}
+                            date={date}
+                            onNextMonth={onNextMonth}
+                            onPreMonth={onPreMonth}
+                            {...props}
+                        />
+                        {nMonthShow > 1 && (
+                            <>
+                                {new Array(nMonthShow - 1)
+                                    .fill(1)
+                                    .map((e, i) => {
+                                        const n = e * i + 1;
+
+                                        const d = new Date(date?.date ?? 0);
+                                        d.setMonth(d.getMonth() + n);
+                                        const dateN = new FenextjsDate({
+                                            defaultDate: d,
+                                        });
+
+                                        return (
+                                            <>
+                                                <InputCalendarMonth
+                                                    key={n}
+                                                    _t={props?._t}
+                                                    type={type}
+                                                    dataNSelect={dataNSelect}
+                                                    selectDate={selectDate}
+                                                    selectDateRange={
+                                                        selectDateRange
+                                                    }
+                                                    setDataNSelect={
+                                                        setDataNSelect
+                                                    }
+                                                    setSelectDate={
+                                                        setSelectDate
+                                                    }
+                                                    setSelectDateRange={
+                                                        setSelectDateRange
+                                                    }
+                                                    date={dateN}
+                                                    onNextMonth={onNextMonth}
+                                                    onPreMonth={onPreMonth}
+                                                    {...props}
+                                                />
+                                            </>
+                                        );
+                                    })}
+                            </>
+                        )}
+                    </div>
+                </Collapse>
+            </div>
+        </>
+    );
+};
+
+
+export interface InputCalendarMonthProps extends _TProps {
+    type?: "normal" | "range";
+
+    date?: FenextjsDate;
+    onPreMonth?: () => void;
+    onNextMonth?: () => void;
+
+    selectDate: Date | undefined;
+    selectDateRange: Date[];
+
+    setSelectDate: (d: Date) => void;
+    setSelectDateRange: (d: (d: Date[]) => Date[]) => void;
+
+    dataNSelect: boolean;
+    setDataNSelect: (d: (d: boolean) => boolean) => void;
+
+    min?: Date;
+    max?: Date;
+}
+export const InputCalendarMonth = ({
+    type = "normal",
+
+    onPreMonth,
+    onNextMonth,
+    date,
+    selectDate,
+    selectDateRange,
+    setSelectDate,
+    setSelectDateRange,
+    dataNSelect,
+    setDataNSelect,
+    min,
+    max,
+    ...props
+}: InputCalendarMonthProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div className={`fenext-input-calendar-month`}>
+                <div className={`fenext-input-calendar-month-content`}>
+                    <div className={`fenext-input-calendar-top`}>
+                        <button
+                            className={`fenext-input-calendar-btn`}
+                            onClick={onPreMonth}
+                        >
+                            <PaginationPre />
+                        </button>
+                        <div className={`fenext-input-calendar-top-info`}>
+                            {date?.onFormat({
+                                month: "long",
+                                year: "numeric",
+                            })}
+                        </div>
+                        <button
+                            className={`fenext-input-calendar-btn`}
+                            onClick={onNextMonth}
+                        >
+                            <PaginationNext />
+                        </button>
+                    </div>
+                    <div className={`fenext-input-calendar-days`}>
+                        {[
+                            DaysEnum.Sunday,
+                            DaysEnum.Monday,
+                            DaysEnum.Tuesday,
+                            DaysEnum.Wednesday,
+                            DaysEnum.Thursday,
+                            DaysEnum.Friday,
+                            DaysEnum.Saturday,
+                        ].map((day, i) => {
+                            return (
+                                <>
+                                    <div
+                                        key={i}
+                                        data-day={day}
+                                        className={`fenext-input-calendar-day`}
+                                    >
+                                        {_t(day)[0]}
+                                    </div>
+                                </>
+                            );
+                        })}
+                    </div>
+                    {date?.onGenerateDateByCalendar()?.map((d, i) => {
+                        const isValid = date?.onValidateMinMax({
+                            date: d,
+                            max,
+                            min,
+                        });
+
+                        const COMPARE_DATE = date.onCompareDate({
+                            date: selectDate,
+                            dateCompare: d,
+                            compare: {
+                                Date: true,
+                                Month: true,
+                                FullYear: true,
+                            },
+                        });
+
+                        const COMPARE_DATE_RANGE_0 = date.onCompareDate({
+                            date: d,
+                            dateCompare: selectDateRange[0],
+                            compare: {
+                                Date: true,
+                                Month: true,
+                                FullYear: true,
+                            },
+                        });
+                        const COMPARE_DATE_RANGE_1 = date.onCompareDate({
+                            date: d,
+                            dateCompare: selectDateRange[1],
+                            compare: {
+                                Date: true,
+                                Month: true,
+                                FullYear: true,
+                            },
+                        });
+                        return (
+                            <>
+                                <div
+                                    key={i}
+                                    data-date={d.getDate()}
+                                    data-month={d.getMonth() + 1}
+                                    data-year={d.getFullYear()}
+                                    onClick={() => {
+                                        if (!isValid) {
+                                            return;
+                                        }
+                                        if (type == "normal") {
+                                            setSelectDate(d);
+                                        }
+                                        if (type == "range") {
+                                            if (dataNSelect) {
+                                                setSelectDateRange(() => {
+                                                    return [d];
+                                                });
+                                            } else {
+                                                setSelectDateRange((old) => {
+                                                    return [...old, d].sort(
+                                                        (a, b) =>
+                                                            a.getTime() -
+                                                            b.getTime(),
+                                                    );
+                                                });
+                                            }
+
+                                            setDataNSelect((e) => !e);
+                                        }
+                                    }}
+                                    className={`
+                                        fenext-input-calendar-date
+                                        fenext-input-calendar-date-${isValid ? "valid" : "disabled"}
+                                        fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
+                                        fenext-input-calendar-date-${type == "normal" && COMPARE_DATE["=="] ? "select" : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0["=="] ? "select" : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0[">"] && COMPARE_DATE_RANGE_1["<"] ? "select-range" : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_1["=="] ? "select" : ""}
+                                    `}
+                                >
+                                    {d?.getDate()}
+                                </div>
+                            </>
+                        );
+                    })}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+export interface InputSelectNumberProps
+    extends Omit<
+        InputSelectProps,
+        "options" | "onChange" | "defaultValue" | "parseText"
+    > {
+    onChange?: (n?: number) => void;
+    defaultValue?: number;
+    min?: number;
+    max?: number;
+    parseText?: (e: number) => string;
+}
+
+export const InputSelectNumber = ({
+    onChange,
+    defaultValue = undefined,
+    min = 0,
+    max = 100,
+    parseText = (e) => `${e}`,
+    useTOption = false,
+    ...props
+}: InputSelectNumberProps) => {
+    const parseOption = useCallback(
+        (n: number): InputSelectItemOptionBaseProps<number> => {
+            return {
+                id: `${n}`,
+                text: parseText(n),
+                data: n,
+            };
+        },
+        [parseText],
+    );
+
+    return (
+        <>
+            <InputSelect<number>
+                {...props}
+                classNameSelect={`fenext-select-number ${props?.classNameSelect}`}
+                defaultValue={
+                    defaultValue != undefined
+                        ? parseOption(defaultValue)
+                        : undefined
+                }
+                nItems={max - min}
+                options={new Array(Math.abs(max - min + 1))
+                    .fill(1)
+                    .map((e, i) => {
+                        const n = e * i + min;
+                        return parseOption(n);
+                    })}
+                onChangeData={onChange}
+                useTOption={useTOption}
+            />
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base InputGallery component.
+ */
+export interface InputGalleryBaseProps
+    extends Omit<InputImgBaseProps, "defaultValue" | "onRemove" | "onChange">,
+        _TProps {
+    /**
+     * Default value for the input element
+     */
+    defaultValue?: FileProps[];
+    /**
+     * Default value for the input element
+     */
+    value?: FileProps[];
+    /**
+     * The class name for the component.
+     */
+    textBtn?: string;
+    /**
+     * on Remove Img for the component.
+     */
+    onChange?: (items: FileProps[]) => void;
+}
+
+/**
+ * Properties for the class of the InputGallery component.
+ */
+export interface InputGalleryClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameContentButton?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameButton?: ButtonClassProps;
+}
+
+/**
+ * Properties for the InputGallery component.
+ */
+export interface InputGalleryProps
+    extends InputGalleryBaseProps,
+        InputGalleryClassProps {}
+
+export const InputGallery = ({
+    className = "",
+    classNameContentButton = "",
+    classNameButton = {},
+
+    textBtn = "Add More Images",
+    defaultValue = [
+        {
+            fileData: "",
+            text: "",
+        },
+        {
+            fileData: "",
+            text: "",
+        },
+        {
+            fileData: "",
+            text: "",
+        },
+        {
+            fileData: "",
+            text: "",
+        },
+        {
+            fileData: "",
+            text: "",
+        },
+    ],
+    value = undefined,
+    onChange,
+
+    ...props
+}: InputGalleryProps) => {
+    const { _t } = use_T({ ...props });
+    const [items_, setItems] = useState<FileProps[]>(defaultValue);
+
+    const onChangeItem = (i: number) => (data: FileProps) => {
+        setItems((pre) => {
+            const n = [...pre];
+            n[i] = data;
+            onChange?.(n);
+            return n;
+        });
+    };
+    const onAddItem = () => {
+        setItems((pre) => {
+            const n = [
+                ...pre,
+                {
+                    fileData: "",
+                    text: "",
+                },
+            ];
+            onChange?.(n);
+            return n;
+        });
+    };
+    const onRemoveItem = (i: number) => () => {
+        setItems((pre) => {
+            const n = [...pre].filter((e, j) => e && i != j);
+            onChange?.(n);
+            return n;
+        });
+    };
+
+    const items = useMemo(() => {
+        return (value ?? items_).map((item, i) => {
+            return (
+                <>
+                    <InputImg
+                        {...props}
+                        defaultValue={item}
+                        onChange={onChangeItem(i)}
+                        onRemove={onRemoveItem(i)}
+                        _t={_t}
+                    />
+                </>
+            );
+        });
+    }, [items_, value, _t]);
+
+    return (
+        <>
+            <div className={`fenext-input-gallery ${className} `}>
+                <GridGallery
+                    items={[
+                        ...items,
+                        <>
+                            <div
+                                className={`fenext-input-gallery-content-btn ${classNameContentButton}`}
+                            >
+                                <Button
+                                    {...classNameButton}
+                                    className={`fenext-input-gallery-btn-add ${classNameButton.className}`}
+                                    onClick={onAddItem}
+                                >
+                                    {_t(textBtn)}
+                                </Button>
+                            </div>
+                        </>,
+                    ]}
+                    _t={_t}
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base InputUpload component.
+ */
+export interface InputUploadBaseProps extends InputFileBaseProps {
+    /**
+     * The Title for the component.
+     */
+    title?: ReactNode;
+    /**
+     * The Text for the component.
+     */
+    text?: ReactNode;
+    /**
+     * The Title for the component.
+     */
+    titleFile?: ReactNode;
+    /**
+     * The Text for the component.
+     */
+    textFile?: ReactNode;
+    /**
+     * The Text for the component.
+     */
+    textPreview?: ReactNode;
+    /**
+     * The Icon for the component.
+     */
+    icon?: ReactNode;
+    /**
+     * The Icon for the component.
+     */
+    iconFile?: ReactNode;
+    /**
+     * The Buton for the component.
+     */
+    btn?: ReactNode;
+    /**
+     * The tagPreview for the component.
+     */
+    tagPreview?: "embed" | "img";
+    /**
+     * The tagPreview for the component.
+     */
+    customPreview?: (data: FileProps) => ReactNode;
+    /**
+     * The loader for the component.
+     */
+    loader?: boolean;
+    /**
+     * The Icon for the component.
+     */
+    iconLoader?: ReactNode;
+}
+
+/**
+ * Properties for the class of the InputUpload component.
+ */
+export interface InputUploadClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameUp?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameTitle?: Omit<TitleProps, "children">;
+    /**
+     * The class name for the component.
+     */
+    classNameContentIcon?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameBtn?: Omit<ButtonProps, "children">;
+    /**
+     * The class name for the component.
+     */
+    classNameText?: Omit<TextProps, "children">;
+    /**
+     * The class name for the component.
+     */
+    classNameProgress?: string;
+    /**
+     * The class name for the component.
+     */
+    classNamePreview?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameRemove?: string;
+}
+
+/**
+ * Properties for the InputUpload component.
+ */
+export interface InputUploadProps
+    extends InputUploadBaseProps,
+        InputUploadClassProps {}
+
+export const InputUpload = ({
+    className = "",
+    classNameBtn = {},
+    classNameContentIcon = "",
+    classNameText = {},
+    classNamePreview = "",
+    classNameTitle = {
+        tag: "h2",
+    },
+    classNameUp = "",
+    classNameProgress = "",
+    classNameRemove = "",
+    btn = "Choose File",
+    icon = (
+        <>
+            <Upload2 />
+        </>
+    ),
+    text = "Drag and drop your file or template here.",
+    title = "Drag and drop here",
+    titleFile = undefined,
+    textFile = undefined,
+    iconFile = "",
+
+    textPreview = "Preview File",
+
+    defaultValue = {
+        fileData: "",
+        text: "",
+    },
+    parseProgress = (e) => `Uploading . . . ${e.toFixed(0)}%`,
+    onChange,
+
+    tagPreview = "embed",
+    loader = false,
+    iconLoader = <LoaderSpinner />,
+    customPreview = undefined,
+
+    ...props
+}: InputUploadProps) => {
+    const { _t } = use_T({ ...props });
+    const { data, setData } = useData<FileProps>(defaultValue, {
+        onChangeDataAfter: onChange,
+    });
+
+    const [progress, setProgress] = useState(-1);
+    const { data: error, setData: setError } = useData<ErrorProps | undefined>(
+        undefined,
+    );
+
+    const TAGPREVIEW = useMemo(() => {
+        if (data.extend) {
+            if (["png", "jpeg", "jpg", "gif", "webp"].includes(data.extend)) {
+                return "img";
+            }
+        }
+        return tagPreview;
+    }, [tagPreview, data]);
+
+    return (
+        <>
+            <div
+                className={`fenext-input-upload ${className} ${
+                    progress > 0 && progress < 100
+                        ? "fenext-input-upload-in-progress"
+                        : ""
+                } ${
+                    data?.fileData && data?.fileData != ""
+                        ? "fenext-input-upload-ok"
+                        : ""
+                } ${error ? "fenext-input-upload-error" : ""}`}
+            >
+                {data.fileData && data.fileData != "" ? (
+                    <>
+                        <div
+                            className={`fenext-input-upload-up ${classNameUp}`}
+                        >
+                            <Title
+                                {...classNameTitle}
+                                className={`fenext-input-upload-title ${classNameTitle.className}`}
+                            >
+                                {_t(titleFile ?? data?.text)}
+                            </Title>
+                            {textFile && (
+                                <Text
+                                    {...classNameText}
+                                    className={`fenext-input-upload-text ${classNameText.className}`}
+                                >
+                                    {_t(textFile)}
+                                </Text>
+                            )}
+                            <div
+                                className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
+                            >
+                                {loader ? iconLoader : iconFile}
+                            </div>
+                            <Collapse
+                                header={
+                                    <>
+                                        <Text
+                                            {...classNameText}
+                                            className={`fenext-input-upload-text ${classNameText.className}`}
+                                        >
+                                            {_t(textPreview)}
+                                        </Text>
+                                    </>
+                                }
+                            >
+                                {customPreview ? (
+                                    <>{customPreview(data)}</>
+                                ) : (
+                                    <TAGPREVIEW
+                                        src={data.fileData}
+                                        className={`fenext-input-upload-preview ${classNamePreview}`}
+                                    />
+                                )}
+                            </Collapse>
+                            {!props.disabled && (
+                                <div
+                                    className={`fenext-input-upload-remove ${classNameRemove}`}
+                                    onClick={() => {
+                                        setData({
+                                            fileData: "",
+                                            text: "",
+                                        });
+                                    }}
+                                >
+                                    <Close />
+                                </div>
+                            )}
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <InputFile
+                            onChange={setData}
+                            parseProgress={() => ""}
+                            onChangeProgress={setProgress}
+                            onChangeError={setError}
+                            {...props}
+                            _t={_t}
+                        >
+                            <div
+                                className={`fenext-input-upload-up ${classNameUp}`}
+                            >
+                                {progress > 0 && progress < 100 ? (
+                                    <Title
+                                        {...classNameTitle}
+                                        className={`fenext-input-upload-progress ${classNameProgress}`}
+                                    >
+                                        {parseProgress(progress)}
+                                    </Title>
+                                ) : (
+                                    <Title
+                                        {...classNameTitle}
+                                        className={`fenext-input-upload-title ${classNameTitle.className}`}
+                                    >
+                                        {_t(title)}
+                                    </Title>
+                                )}
+                                <div
+                                    className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
+                                >
+                                    {loader ? iconLoader : icon}
+                                </div>
+                                <Button
+                                    {...classNameBtn}
+                                    className={`fenext-input-upload-btn ${classNameBtn.className}`}
+                                >
+                                    {_t(btn)}
+                                </Button>
+                                <Text
+                                    {...classNameText}
+                                    className={`fenext-input-upload-text ${classNameText.className}`}
+                                >
+                                    {_t(text)}
+                                </Text>
+                            </div>
+                        </InputFile>
+                    </>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+
+
+import React, {
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from "react";
+/**
+ * Props for InputScannerQr component.
+ */
+export interface InputScannerQrProps {
+    className?: string;
+    onChange?: (v: string) => void;
+    buttonScannerContent?: ReactNode;
+    buttonChangeCameraContent?: ReactNode;
+    buttonToggleFlashContent?: ReactNode;
+}
+
+export const InputScannerQr = ({
+    className = "",
+    onChange,
+    buttonScannerContent = <Qr />,
+    buttonChangeCameraContent = <CameraChange />,
+    buttonToggleFlashContent = <Bolt />,
+}: InputScannerQrProps) => {
+    const uuid = useMemo(() => generateRandomID(), []);
+    const ref = useRef<HTMLVideoElement>(null);
+    const [showScanner, setShowScanner] = useState(false);
+    const [hasFlash, setHasFlash] = useState(false);
+    const [nCamera, setNCamera] = useState(0);
+    const [listCamera, setListCamera] = useState<
+        QrScanner.Camera[] | undefined
+    >(undefined);
+    const [qrScanner, setQrScanner] = useState<QrScanner | undefined>(
+        undefined,
+    );
+    const onStoptScan = useCallback(() => {
+        setShowScanner(false);
+        qrScanner?.stop();
+    }, [qrScanner]);
+
+    const onStartScan = useCallback(() => {
+        setShowScanner(true);
+        qrScanner?.start();
+    }, [qrScanner]);
+    const onToggleFlash = useCallback(() => {
+        qrScanner?.toggleFlash();
+    }, [qrScanner]);
+    const onChangeCamera = useCallback(() => {
+        setNCamera((p) => {
+            let n = p + 1;
+            if (n >= (listCamera?.length ?? 0)) {
+                n = 0;
+            }
+            if (listCamera?.[n]?.id) {
+                qrScanner?.setCamera(listCamera?.[n]?.id);
+            }
+            return n;
+        });
+    }, [qrScanner, listCamera]);
+
+    const onScan = useCallback(
+        (v?: string) => {
+            if (v) {
+                onChange?.(v);
+                onStoptScan();
+            }
+        },
+        [qrScanner],
+    );
+
+    const { onAction } = useAction<string>({
+        name: `input-scanner-qr-${uuid}`,
+        onActionExecute: onScan,
+    });
+
+    const onLoad = () => {
+        if (ref.current) {
+            const qrScanner = new QrScanner(ref.current, onAction);
+            qrScanner.stop();
+            setQrScanner(qrScanner);
+            (async () => {
+                setListCamera(await QrScanner.listCameras());
+                setHasFlash(await QrScanner.hasCamera());
+            })();
+        } else {
+            setTimeout(onStartScan, 500);
+        }
+    };
+
+    useEffect(onLoad, []);
+
+    return (
+        <>
+            <div
+                className={`
+                    fenext-input-scanner-qr
+                    fenext-input-scanner-qr-n-camera-${nCamera}
+                    fenext-input-scanner-qr-${showScanner ? "show" : "hidden"}
+                    ${className ?? ""}
+                `}
+            >
+                <Button
+                    className="fenext-input-scanner-qr-btn-scanner"
+                    onClick={onStartScan}
+                >
+                    {buttonScannerContent}
+                </Button>
+                <Modal active={showScanner} type="full" onClose={onStoptScan}>
+                    <video
+                        ref={ref}
+                        className="fenext-input-scanner-qr-video"
+                    ></video>
+                    {listCamera && listCamera.length > 1 && (
+                        <Button
+                            className="fenext-input-scanner-qr-btn-change-camera"
+                            onClick={onChangeCamera}
+                        >
+                            {buttonChangeCameraContent}
+                        </Button>
+                    )}
+                    {hasFlash && (
+                        <Button
+                            className="fenext-input-scanner-qr-btn-flash"
+                            onClick={onToggleFlash}
+                        >
+                            {buttonToggleFlashContent}
+                        </Button>
+                    )}
+                </Modal>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Props for InputScannerTextQr component.
+ */
+export interface InputScannerTextQrProps
+    extends InputTextProps,
+        InputScannerQrProps {}
+
+export const InputScannerTextQr = ({
+    className = "",
+    defaultValue = "",
+    onChange,
+    ...props
+}: InputScannerTextQrProps) => {
+    const { data, setData } = useData(defaultValue ?? "", {
+        onChangeDataAfter: onChange,
+    });
+    return (
+        <>
+            <InputText
+                {...props}
+                className={`
+                    fenext-input-scanner-text-qr
+                    ${className ?? ""}
+                `}
+                value={data}
+                onChange={setData}
+                icon={
+                    <>
+                        <InputScannerQr {...props} onChange={setData} />
+                    </>
+                }
+            />
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a select input component.
+ */
+export interface InputSelectOptionClassProps {
+    /**
+     * CSS class name for the option select.
+     */
+    classNameOption?: string;
+    /**
+     * CSS class name for the option img select.
+     */
+    classNameOptionImg?: string;
+    /**
+     * CSS class name for the delete option select.
+     */
+    classNameOptionDelete?: string;
+}
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectOptionBaseProps<T = any>
+    extends PropsWithChildren,
+        _TProps {
+    /**
+     * ID of option.
+     */
+    id: string | number;
+    /**
+     * Text of option.
+     */
+    text: string;
+    /**
+     * Img of option.
+     */
+    img?: string;
+    /**
+     * Img of option.
+     */
+    imgComponent?: ImgProps;
+    /**
+     * Img of option.
+     */
+    icon?: ReactNode;
+    /**
+     * Type of option.
+     */
+    type?: "div" | "option" | "multiple";
+    /**
+     * Disabled of option.
+     */
+    disabled?: boolean;
+    /**
+     * Selected of option.
+     */
+    selected?: boolean;
+    /**
+     * Selected of option.
+     */
+    hidden?: boolean;
+    /**
+     * onClick of option.
+     */
+    onClick?: (item: InputSelectOptionBaseProps) => void;
+    /**
+     * onDelete of option.
+     */
+    onDelete?: (item: InputSelectOptionBaseProps) => void;
+    /**
+     * isBtn of option.
+     */
+    isBtn?: boolean;
+    /**
+     * Data custom of option.
+     */
+    data?: T;
+    /**
+     * iconDelete custom of option.
+     * @default <Trash />
+     */
+    iconDelete?: ReactNode;
+}
+/**
+ * Props interface for the InputSelectOption component. Extends both InputSelectOptionBaseProps and InputSelectOptionClassProps interfaces.
+ */
+export interface InputSelectOptionProps<T = any>
+    extends InputSelectOptionBaseProps<T>,
+        InputSelectOptionClassProps {}
+
+export const InputSelectOption = <T = any,>({
+    classNameOption = "",
+    classNameOptionImg = "",
+    classNameOptionDelete = "",
+
+    id,
+    text,
+    img = undefined,
+    imgComponent = undefined,
+    icon = undefined,
+    children,
+    type = "div",
+    onClick,
+    onDelete,
+    disabled = false,
+    selected = false,
+    hidden = false,
+    isBtn = false,
+    data,
+    iconDelete = <Trash />,
+    ...props
+}: InputSelectOptionProps<T>) => {
+    const { _t } = use_T({ ...props });
+    const TAG = type == "option" ? "option" : "div";
+
+    return (
+        <>
+            <TAG
+                key={id}
+                id={`${id}`}
+                className={`
+                    fenext-select-option
+                    fenext-select-option-${disabled ? "disabled" : ""}
+                    fenext-select-option-${selected ? "selected" : "not-selected"}
+                    fenext-select-option-${isBtn ? "btn" : ""}
+                    fenext-select-option-type-${type}
+                    fenext-select-option-${hidden ? "hidden" : "not-hidden"}
+                    ${classNameOption}
+                `}
+                onClick={() => {
+                    if (!disabled) {
+                        onClick?.({
+                            id,
+                            text,
+                            children,
+                            data,
+                            img,
+                            icon,
+                            imgComponent,
+                        });
+                    }
+                }}
+                disabled={disabled}
+                selected={selected}
+                value={text}
+            >
+                {img ? (
+                    <>
+                        <img
+                            src={img}
+                            alt={text}
+                            className={`fenext-select-option-img ${classNameOptionImg}`}
+                        />
+                    </>
+                ) : (
+                    <>
+                        {imgComponent ? (
+                            <>
+                                <Img
+                                    {...imgComponent}
+                                    className={`fenext-select-option-img ${classNameOptionImg} ${imgComponent.className}`}
+                                />
+                            </>
+                        ) : (
+                            <></>
+                        )}
+                    </>
+                )}
+                {icon ? (
+                    <>
+                        <div className={`fenext-select-option-icon`}>
+                            {icon}
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
+                {_t(TAG == "option" ? text : children ?? text)}
+                {type == "multiple" ? (
+                    <>
+                        <span
+                            className={`fenext-select-option-delete ${classNameOptionDelete} `}
+                            onClick={() => {
+                                if (!disabled) {
+                                    onDelete?.({
+                                        id,
+                                        text,
+                                        children,
+                                        data,
+                                        img,
+                                    });
+                                }
+                            }}
+                        >
+                            {iconDelete}
+                        </span>
+                    </>
+                ) : (
+                    <></>
+                )}
+            </TAG>
+        </>
+    );
+};
+
+
+
+
+
+export const InputCardNumberIcons: {
+    [id in Card_Enum]: ReactNode;
+} = {
+    AMEX: <CardAmericanExpress />,
+    DINERS: <CardDinersClub />,
+    DINERS_CARTE_BLANCHE: <CardDinersClub />,
+    DISCOVER: <CardDiscover />,
+    JCB: <CardJCB />,
+    MASTERCARD: <CardMasterCard />,
+    OTHER: <></>,
+    VISA: <CardVisa />,
+    VISA_ELECTRON: <CardVisaElectron />,
+};
+
+/**
+ * Props for InputCardNumber component.
+ */
+export interface InputCardNumberProps
+    extends Omit<InputTextProps, "onChangeValidate" | "icon" | "type"> {
+    /**
+     * The max length number card.
+     * @default 19
+     * @min 15
+     */
+    maxNumberLength?: number;
+}
+
+export const InputCardNumber = ({
+    value: valueProps,
+    defaultValue = "",
+    onChange,
+    validator = undefined,
+    maxNumberLength = 19,
+    ...props
+}: InputCardNumberProps) => {
+    const { data, setData } = useData<string>(defaultValue ?? "", {
+        onChangeDataAfter: onChange,
+    });
+    const value = useMemo(() => valueProps ?? data, [valueProps, data]);
+
+    const { error: errorFenext } = useValidator({
+        data: value,
+        validator: validator ?? FenextjsValidator(),
+    });
+
+    const numberToTextCard = (e: number | string) => {
+        const n = `${e}`.split(" ").join("");
+        const first3 = n.slice(0, 4);
+        const secud3 = n.slice(4, 8);
+        const eighthDigit = n.slice(8, 12);
+        const lastNumbers = n.slice(12, Math.max(15, maxNumberLength));
+        return `${first3 ?? ""}${secud3 ? " " + secud3 : ""}${
+            eighthDigit ? " " + eighthDigit : ""
+        }${lastNumbers ? " " + lastNumbers : ""}`;
+    };
+
+    const ICON = useMemo(
+        () => InputCardNumberIcons[GetCardType(value)],
+        [value],
+    );
+
+    return (
+        <>
+            <InputText
+                {...props}
+                value={numberToTextCard(value)}
+                className={`fenext-input-card-number ${props?.className}`}
+                useLoader={false}
+                error={errorFenext}
+                icon={ICON}
+                onChange={(v: string) => {
+                    setData(
+                        `${v}`
+                            .replace(/[^0-9]/g, "")
+                            .slice(0, Math.max(15, maxNumberLength)),
+                    );
+                }}
+                inputMode="numeric"
+            />
+        </>
+    );
+};
+
+
+export interface InputCardExpDateDataProps {
+    month?: number;
+    year?: number;
+}
+
+/**
+ * Props for InputCardExpDate component.
+ */
+export interface InputCardExpDateProps
+    extends Omit<
+        InputTextProps,
+        | "onChangeValidate"
+        | "icon"
+        | "type"
+        | "defaultValue"
+        | "value"
+        | "onChange"
+        | "inputMode"
+    > {
+    /**
+     * The max length number card.
+     * @default 19
+     * @min 15
+     */
+    maxExpDateLength?: number;
+
+    defaultValue?: InputCardExpDateDataProps;
+    value?: InputCardExpDateDataProps;
+    onChange?: (data: InputCardExpDateDataProps) => void;
+}
+
+export const InputCardExpDate = ({
+    value: valueProps,
+    defaultValue = {},
+    placeholder = "MM/YY",
+    onChange,
+    validator = undefined,
+    maxExpDateLength = 4,
+    ...props
+}: InputCardExpDateProps) => {
+    const { data, setData } = useData<InputCardExpDateDataProps>(defaultValue, {
+        onChangeDataAfter: onChange,
+    });
+    const value = useMemo(() => valueProps ?? data, [valueProps, data]);
+
+    const { error: errorFenext } = useValidator({
+        data: value,
+        validator: validator ?? FenextjsValidator(),
+    });
+
+    const textToCardExpDateData = (
+        e: number | string,
+    ): InputCardExpDateDataProps => {
+        const n = `${e}`.replace(/[^0-9]/g, "");
+        let month: number | undefined = parseInt(n.slice(0, 2));
+        if (Number.isNaN(month)) {
+            month = undefined;
+        }
+
+        if ((month ?? 0) > 12) {
+            return textToCardExpDateData(`0${e}`);
+        }
+        let year: number | undefined = parseInt(
+            n.slice(2, Math.min(6, maxExpDateLength)),
+        );
+        if (Number.isNaN(year)) {
+            year = undefined;
+        }
+
+        return {
+            month,
+            year,
+        };
+    };
+    const CardExpDateDataToText = (d?: InputCardExpDateDataProps) => {
+        let m: number | string = parseInt(`${d?.month ?? ""}`);
+        if (Number.isNaN(m) || m == 0) {
+            m = "";
+        }
+        let y: number | string = parseInt(`${d?.year ?? ""}`);
+        if (Number.isNaN(y) || y == 0) {
+            y = "";
+        } else {
+            m = parseNumberCount(m, {
+                minimumIntegerDigits: 2,
+                maximumFractionDigits: 0,
+            });
+        }
+
+        const r = `${m}${y != "" ? "/" + y : ""}`;
+        return r;
+    };
+
+    return (
+        <>
+            <InputText
+                {...props}
+                value={CardExpDateDataToText(value)}
+                className={`fenext-input-card-exp-date ${props?.className}`}
+                error={errorFenext}
+                placeholder={placeholder}
+                onChange={(v: string) => {
+                    setData(textToCardExpDateData(v));
+                }}
+                inputMode="numeric"
+            />
+        </>
+    );
+};
+
+
+/**
+ * Props for InputCardCCV component.
+ */
+export interface InputCardCCVProps
+    extends Omit<
+        InputTextProps,
+        | "onChangeValidate"
+        | "icon"
+        | "type"
+        | "maxLength"
+        | "regExpReplace"
+        | "regExp"
+        | "inputMode"
+        | "type"
+    > {}
+
+export const InputCardCCV = ({
+    placeholder = "XXX",
+    ...props
+}: InputCardCCVProps) => {
+    return (
+        <>
+            <InputText
+                {...props}
+                placeholder={placeholder}
+                maxLength={4}
+                regExpReplace=""
+                regExp={/[^0-9]/g}
+                inputMode="numeric"
+                type="number"
+            />
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectCityProps
+    extends Omit<
+        InputSelectTProps<CityProps>,
+        "options" | "onParse" | "useLoader" | "loader"
+    > {
+    country?: CountryProps;
+    state?: StateProps;
+}
+
+export const InputSelectCity = ({
+    country = undefined,
+    state = undefined,
+    ...props
+}: InputSelectCityProps) => {
+    const [loader, setLoader] = useState(true);
+    const [options, setOptions] = useState<CityProps[]>([]);
+    const onLoad = async () => {
+        const getData = async () => {
+            if (country && state) {
+                return await getDataCitysByStateAndCountry(country, state);
+            }
+            if (country) {
+                return await getDataCitysByCountry(country);
+            }
+            return await getDataCitys();
+        };
+        const r = await getData();
+        setOptions(r);
+        setLoader(false);
+    };
+    useEffect(() => {
+        onLoad();
+    }, [country, state]);
+
+    return (
+        <>
+            <InputSelectT<CityProps>
+                {...props}
+                useTOption={false}
+                options={options}
+                onParse={(e) => {
+                    const r: InputSelectItemOptionBaseProps<CityProps> = {
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        data: e,
+                    };
+                    return r;
+                }}
+                loader={loader}
+                useLoader={true}
+            />
+        </>
+    );
+};
+
+
+import React, {
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from "react";
+export type InputSelectTypeStyle =
+    | "normal"
+    | "normal-out"
+    | "box"
+    | "list"
+    | "checkbox";
+
+/**
+ * Interface that defines CSS class properties for a select input component.
+ */
+export interface InputSelectClassProps
+    extends InputTextClassProps,
+        InputSelectOptionClassProps {
+    /**
+     * CSS class name for the input select.
+     */
+    classNameSelect?: string;
+
+    /**
+     * CSS class name for the list options.
+     */
+    classNameList?: string;
+}
+
+export interface InputSelectItemOptionBaseProps<T = any>
+    extends Omit<InputSelectOptionProps<T>, "type" | "onDelete"> {}
+
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectBaseProps<T = any>
+    extends Omit<
+        InputTextBaseProps,
+        | "value"
+        | "type"
+        | "defaultValue"
+        | "value"
+        | "onChange"
+        | "onBlur"
+        | "onEnter"
+        | "onChangeValidate"
+    > {
+    /**
+     * Options of select.
+     */
+    options: InputSelectItemOptionBaseProps<T>[];
+    /**
+     * Options of select.
+     */
+    filterOptions?: (
+        data: InputSelectItemOptionBaseProps<T>[],
+    ) => InputSelectItemOptionBaseProps<T>[];
+    /**
+     * showOptions type of show option select.
+     */
+    showOptions?: "hover" | "focus" | "focus-hover";
+    /**
+     * hiddenOptions type of hidden option select.
+     */
+    hiddenOptions?: "not-hover" | "not-focus" | "not-focus-hover";
+    /**
+     * Default Options of select.
+     */
+    defaultValue?: InputSelectItemOptionBaseProps<T>;
+    /**
+     * Type Select of option.
+     */
+    typeSelect?: "div" | "select" | "datalist";
+    /**
+     * Type Select of styles.
+     */
+    typeSelectStyle?: InputSelectTypeStyle;
+    /**
+     * Type Select of styles.
+     */
+    useSwichtypeSelectStyle?: boolean;
+    /**
+     * useTOption.
+     */
+    useTOption?: boolean;
+    /**
+     * Value Options of select.
+     */
+    value?: InputSelectItemOptionBaseProps<T>;
+    /**
+     * Value of Not Result of select.
+     */
+    noResult?: InputSelectItemOptionBaseProps<T>;
+    /**
+     * Value of Not Result of select.
+     */
+    loaderOption?: InputSelectItemOptionBaseProps<T>;
+    /**
+     * Value of Selected of select.
+     */
+    selected?: InputSelectItemOptionBaseProps<T>;
+    /**
+     * Value of Create of select.
+     */
+    create?: InputSelectItemOptionBaseProps<T>;
+    /**
+     * Value of Create of select.
+     */
+    itemMaxLengthShowOptions?: InputSelectItemOptionBaseProps<T>;
+    /**
+     * onCreate of select.
+     */
+    onCreate?: () => void;
+    /**
+     * Value of Not Result of select.
+     */
+    isSelectClearText?: boolean;
+    /**
+     * is permit change text in input.
+     */
+    isSelectChangeText?: boolean;
+    /**
+     * Function to call when the input value changes.
+     */
+    onChange?: (v?: InputSelectItemOptionBaseProps<T>) => void;
+    /**
+     * Function to call when the input value changes.
+     */
+    onChangeData?: (v?: T) => void;
+    /**
+     * Function to call when the input value changes text.
+     */
+    onChangeText?: (v?: string) => void;
+
+    /**
+     * Function to call for custom input validation.
+     */
+    onChangeValidate?: (
+        e?: InputSelectItemOptionBaseProps<T>,
+    ) => Promise<any> | any;
+    /**
+     * Icon for close options in Movil.
+     */
+    iconCloseMovil?: any;
+    /**
+     * ReactNode for clear option in Movil.
+     */
+    clearContent?: ReactNode;
+    /**
+     * searchById .
+     */
+    searchById?: boolean;
+    /**
+     * Icon search in select.
+     */
+    iconSearch?: ReactNode;
+    /**
+     * changeByFirstOptionInOnBlur in select.
+     */
+    changeByFirstOptionInOnBlur?: boolean;
+    /**
+     * maxLengthShowOptions in select.
+     */
+    maxLengthShowOptions?: number;
+    /**
+     * useItemMaxLengthShowOptions in select.
+     */
+    useItemMaxLengthShowOptions?: boolean;
+    /**
+     * nItems in select.
+     */
+    nItems?: number;
+    /**
+     * converterInSearchWithMaxLenght in select.
+     */
+    converterInSearchWithMaxLenght?: boolean;
+    /**
+     * showOptionIconImg in select.
+     */
+    showOptionIconImg?: boolean;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validatorData?: FenextjsValidatorClass<T>;
+    /**
+     * forceShowOptionOnLoad
+     */
+    forceShowOptionOnLoad?: boolean;
+    /**
+     * iconDelete custom of option.
+     * @default <Trash />
+     */
+    iconDelete?: ReactNode;
+}
+/**
+ * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
+ */
+export interface InputSelectProps<T = any>
+    extends InputSelectBaseProps<T>,
+        InputSelectClassProps {}
+
+export interface InputSelectValue<T = any> {
+    option?: InputSelectItemOptionBaseProps<T>;
+    text?: string;
+    textSearch?: string;
+}
+
+export const InputSelect = <T = any,>({
+    classNameSelect = "",
+    classNameList = "",
+
+    error = undefined,
+    options: optionsProps = [],
+    showOptions = "focus",
+    hiddenOptions = "not-hover",
+    defaultValue = undefined,
+    typeSelect = "div",
+    typeSelectStyle = "normal",
+    value = undefined,
+    onChange,
+    onChangeData,
+    onChangeText,
+    onChangeValidate,
+    icon = <Arrow />,
+    iconSearch = <SVGSearch />,
+    noResult,
+    loaderOption,
+    selected,
+    create,
+    onCreate,
+    isSelectClearText = false,
+    iconCloseMovil = <Cancel />,
+    filterOptions = undefined,
+    clearContent = "Clear",
+    isSelectChangeText = true,
+    errorWithIsChange = true,
+    validator,
+    searchById = false,
+    useSwichtypeSelectStyle = false,
+    changeByFirstOptionInOnBlur = false,
+    converterInSearchWithMaxLenght = false,
+    nItems = undefined,
+
+    useItemMaxLengthShowOptions = true,
+    maxLengthShowOptions = 20,
+    itemMaxLengthShowOptions = {
+        id: "fenext-item-max-length-show-options",
+        text: "There are more elements ...",
+    },
+    showOptionIconImg = true,
+    validatorData,
+    useTOption,
+    forceShowOptionOnLoad = false,
+    iconDelete = <Trash />,
+    ...props
+}: InputSelectProps<T>) => {
+    const { _t } = use_T({ ...props });
+    const { _t: _tValue } = use_T({ ...props, useT: useTOption });
+    const options = useMemo(
+        () => (filterOptions ? filterOptions(optionsProps) : optionsProps),
+        [optionsProps, filterOptions],
+    );
+
+    const checkboxClose = useRef<HTMLInputElement | null>(null);
+    const selectRef = useRef<HTMLDivElement>(null);
+    const [dataErrorInput, setErrorInput] = useState<ErrorFenextjs | undefined>(
+        undefined,
+    );
+    const [isChangeTextBlur, setIsChangeTextBlur] = useState(false);
+    const { data, setData, isChange } = useData<
+        InputSelectValue<T>,
+        InputSelectValue<T>
+    >(
+        {
+            option: value ?? defaultValue,
+            text: defaultValue?.text ?? "",
+            textSearch: "",
+        },
+        {
+            onChangeDataAfter: (d: InputSelectValue<T>) => {
+                onChange?.(d.option ?? undefined);
+                onChangeData?.(d?.option?.data ?? undefined);
+            },
+        },
+    );
+
+    const dataMemo = useMemo(() => {
+        if (value) {
+            return {
+                option: value,
+                text: value?.text,
+                textSearch: data?.textSearch,
+            };
+        }
+        return data;
+    }, [data, value]);
+
+    const validateOption = async () => {
+        if (onChangeValidate) {
+            setErrorInput(undefined);
+            try {
+                await onChangeValidate(dataMemo.option);
+            } catch (error: any) {
+                setErrorInput(
+                    new ErrorFenextjs({
+                        code: ErrorCode.ERROR,
+                        message: `${error.message}`,
+                    }),
+                );
+            }
+        }
+    };
+    useEffect(() => {
+        if (isChange) {
+            validateOption();
+        }
+    }, [dataMemo, isChange]);
+
+    const onChangeText_ = (text: string) => {
+        if (!isSelectChangeText) {
+            return;
+        }
+        setIsChangeTextBlur(true);
+        onChangeText?.(text);
+        let option: InputSelectItemOptionBaseProps<T> | undefined = undefined;
+        if (typeSelect != "div") {
+            option = options.find((o) => o.text == text);
+        }
+        setData({
+            option,
+            text: text,
+            textSearch: text,
+        });
+    };
+    const onClear = () => {
+        setData({
+            option: undefined,
+            text: "",
+            textSearch: "",
+        });
+    };
+    const onChangeOption = (option: InputSelectItemOptionBaseProps<T>) => {
+        setData({
+            option,
+            text: isSelectClearText ? "" : option.text,
+            textSearch: "",
+        });
+
+        setTimeout(() => {
+            checkboxClose?.current?.click?.();
+            checkboxClose?.current?.focus?.();
+        }, 100);
+    };
+
+    const parseTextSearch = (e?: string | number) => {
+        return `${e ?? ""}`
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+    };
+    const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
+        const textSearch = parseTextSearch(dataMemo?.textSearch);
+
+        if (textSearch == "") {
+            return [...options];
+        }
+        return [...options].filter(
+            (option) =>
+                parseTextSearch(option.text)?.includes(textSearch) ||
+                textSearch?.includes(parseTextSearch(option.text)) ||
+                (searchById &&
+                    (parseTextSearch(option.id)?.includes(textSearch) ||
+                        textSearch?.includes(parseTextSearch(option.id)))),
+        );
+    }, [options, dataMemo, searchById]);
+    const { OPTIONS } = useMemo<{
+        OPTIONS: InputSelectItemOptionBaseProps<T>[];
+        nMax: boolean;
+    }>(() => {
+        if (props?.disabled) {
+            return {
+                OPTIONS: [],
+                nMax: false,
+            };
+        }
+        let nMax = false;
+        let list = [...options];
+
+        if (typeSelect == "div") {
+            list = [...OPTIONSSEARCH];
+        }
+        if (maxLengthShowOptions && useItemMaxLengthShowOptions) {
+            nMax =
+                list.length > maxLengthShowOptions ||
+                (nItems ?? 0) > maxLengthShowOptions;
+            list = list.splice(0, maxLengthShowOptions);
+            if (nMax && itemMaxLengthShowOptions) {
+                list.push({
+                    ...itemMaxLengthShowOptions,
+                    classNameOption: `fenext-select-option-item-max-lenght-show-options ${itemMaxLengthShowOptions.classNameOption}`,
+                    text: `${itemMaxLengthShowOptions.text} (${maxLengthShowOptions ?? 0} / ${nItems})`,
+                    children: (
+                        <>
+                            <div className="fenext-select-option-item-max-lenght-show-options-content">
+                                {itemMaxLengthShowOptions.children ??
+                                    itemMaxLengthShowOptions.text}
+                            </div>
+                            {nItems && (
+                                <>
+                                    <span className="fenext-select-option-item-max-lenght-show-options-maxlegnth-nitems">
+                                        ({maxLengthShowOptions ?? 0} / {nItems})
+                                    </span>
+                                </>
+                            )}
+                        </>
+                    ),
+                    disabled: true,
+                });
+            }
+        }
+        return {
+            OPTIONS: list,
+            nMax,
+            nItems,
+        };
+    }, [
+        typeSelect,
+        OPTIONSSEARCH,
+        options,
+        useItemMaxLengthShowOptions,
+        maxLengthShowOptions,
+        props?.disabled,
+        itemMaxLengthShowOptions,
+        nItems,
+    ]);
+
+    const onEnter = useCallback(() => {
+        const optionSect = OPTIONSSEARCH[0];
+        if (optionSect) {
+            onChangeOption(optionSect);
+        }
+    }, [OPTIONSSEARCH]);
+
+    const { error: errorFenextV } = useValidator({
+        data: data.option,
+        validator,
+    });
+    const { error: errorFenextVD } = useValidator({
+        data: data?.option?.data,
+        validator: validatorData,
+    });
+
+    const errorFenext = useMemo(
+        () => errorFenextV ?? errorFenextVD,
+        [errorFenextV, errorFenextVD],
+    );
+
+    const errorInput = useMemo<ErrorFenextjs | undefined>(() => {
+        if (errorWithIsChange && !isChange) {
+            return undefined;
+        }
+        return error ?? errorFenext ?? dataErrorInput;
+    }, [error, errorFenext, dataErrorInput, errorWithIsChange, isChange]);
+
+    const onBlur = () => {
+        if (changeByFirstOptionInOnBlur && isChangeTextBlur) {
+            const optionSect = OPTIONS[0];
+            if (optionSect) {
+                onChangeOption(optionSect);
+                setIsChangeTextBlur(false);
+            }
+        }
+    };
+
+    const OPTIONSLENGTH = useMemo(
+        () =>
+            OPTIONS.filter(
+                (e) => (e?.selected ?? false) || !(e?.hidden ?? false),
+            )?.length,
+        [OPTIONS],
+    );
+
+    const TAGLIST = useMemo(() => {
+        const TAG = typeSelect;
+        return (
+            <>
+                <TAG
+                    id={props?.datalist}
+                    className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`}
+                    onChange={(e) => {
+                        onChangeText_(e?.target?.value);
+                    }}
+                >
+                    {create && typeSelect == "div" ? (
+                        <>
+                            <InputSelectOption
+                                type={"div"}
+                                id={create?.id ?? "create"}
+                                text={create?.text ?? "Create"}
+                                children={create?.children ?? undefined}
+                                _t={_t}
+                                isBtn={true}
+                                onClick={create?.onClick ?? onCreate}
+                            />
+                        </>
+                    ) : (
+                        <></>
+                    )}
+                    {OPTIONSLENGTH != 0 && typeSelect == "select" ? (
+                        <>
+                            <InputSelectOption
+                                type={"option"}
+                                id={noResult?.id ?? "selected"}
+                                text={_t(
+                                    selected?.text ??
+                                        props?.placeholder ??
+                                        "Select",
+                                )}
+                                children={selected?.children ?? undefined}
+                                _t={_t}
+                                useT={useTOption}
+                            />
+                        </>
+                    ) : (
+                        <></>
+                    )}
+                    {OPTIONS.map((option, i) => {
+                        return (
+                            <InputSelectOption<T>
+                                key={i}
+                                selected={
+                                    data.option?.id != undefined &&
+                                    data.option?.id === option?.id
+                                }
+                                {...option}
+                                onClick={(e) => {
+                                    onChangeOption(e);
+                                    option?.onClick?.(e);
+                                }}
+                                type={typeSelect == "div" ? "div" : "option"}
+                                _t={_t}
+                                useT={useTOption}
+                            />
+                        );
+                    })}
+                    {props.loader ? (
+                        <>
+                            <InputSelectOption
+                                type={typeSelect == "div" ? "div" : "option"}
+                                id={loaderOption?.id ?? "loader"}
+                                text={loaderOption?.text ?? "Loading"}
+                                children={loaderOption?.children ?? undefined}
+                                classNameOption="fenext-select-option-loading"
+                                _t={_t}
+                                useT={useTOption}
+                                disabled={true}
+                            />
+                        </>
+                    ) : (
+                        <>
+                            {OPTIONSLENGTH == 0 ? (
+                                <>
+                                    <InputSelectOption
+                                        type={
+                                            typeSelect == "div"
+                                                ? "div"
+                                                : "option"
+                                        }
+                                        id={noResult?.id ?? "notResult"}
+                                        text={noResult?.text ?? "Not Result"}
+                                        children={
+                                            noResult?.children ?? undefined
+                                        }
+                                        classNameOption="fenext-select-option-not-result"
+                                        _t={_t}
+                                        useT={useTOption}
+                                        disabled={true}
+                                    />
+                                </>
+                            ) : (
+                                <></>
+                            )}
+                        </>
+                    )}
+                </TAG>
+            </>
+        );
+    }, [
+        typeSelect,
+        props?.datalist,
+        classNameList,
+        create,
+        onCreate,
+        OPTIONSLENGTH,
+        noResult,
+        selected,
+        props?.placeholder,
+        OPTIONS,
+        data,
+        useTOption,
+        onChangeOption,
+
+        props.loader,
+        loaderOption,
+        selectRef,
+    ]);
+
+    const [isFocus, setIsFocus] = useState(false);
+
+    const CHILDREN_SELECT = useMemo(() => {
+        if (
+            typeSelect == "div" &&
+            (typeSelectStyle == "normal" || typeSelectStyle == "normal-out")
+        ) {
+            return (
+                <>
+                    <div className={`fenext-select-content-search`}>
+                        <InputText
+                            {...props}
+                            _t={_t}
+                            icon={
+                                <>
+                                    <div className="fenext-select-content-icon">
+                                        <div className="fenext-select-content-icon-search">
+                                            {iconSearch}
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                            onBlur={onBlur}
+                            onChange={onChangeText_}
+                            value={_tValue(dataMemo?.text ?? "")}
+                            onEnter={onEnter}
+                            error={errorInput}
+                            autoComplete={false}
+                            errorWithIsChange={errorWithIsChange}
+                            extraInContentInput={
+                                <>
+                                    <button
+                                        className={`fenext-select-clear`}
+                                        onClick={onClear}
+                                    >
+                                        {_t(clearContent)}
+                                    </button>
+                                </>
+                            }
+                            validator={undefined}
+                        />
+                        <button className={`fenext-select-close`}>
+                            {iconCloseMovil}
+                        </button>
+                    </div>
+                    {TAGLIST}
+                </>
+            );
+        }
+        return <></>;
+    }, [
+        options,
+        isFocus,
+        forceShowOptionOnLoad,
+        typeSelect,
+        props?.datalist,
+        classNameList,
+        create,
+        onCreate,
+        OPTIONSLENGTH,
+        noResult,
+        selected,
+        props?.placeholder,
+        OPTIONS,
+        data,
+        useTOption,
+        onChangeOption,
+
+        props.loader,
+        loaderOption,
+        selectRef,
+    ]);
+
+    const { onLoadPos, onLoadChildren } = useSelectOptionsPos({
+        children: CHILDREN_SELECT,
+        target: selectRef?.current,
+    });
+    useEffect(() => {
+        if (isFocus || forceShowOptionOnLoad) {
+            onLoadChildren();
+            if (forceShowOptionOnLoad) {
+                const ele = selectRef.current?.querySelector<HTMLInputElement>(
+                    ".fenext-input-content-input",
+                );
+
+                ele?.click();
+                ele?.focus();
+            }
+        }
+    }, [
+        isFocus,
+        forceShowOptionOnLoad,
+
+        CHILDREN_SELECT,
+
+        options,
+        typeSelect,
+        props?.datalist,
+        classNameList,
+        create,
+        onCreate,
+        OPTIONSLENGTH,
+        noResult,
+        selected,
+        props?.placeholder,
+        OPTIONS,
+        data,
+        useTOption,
+        onChangeOption,
+
+        props.loader,
+        loaderOption,
+        selectRef,
+    ]);
+
+    return (
+        <>
+            <div
+                ref={selectRef}
+                className={`
+                    fenext-select
+                    fenext-select-${converterInSearchWithMaxLenght && options.length > maxLengthShowOptions ? "search-nmax" : ""}
+                    fenext-select-type-${typeSelect}
+                    fenext-select-type-style-${typeSelectStyle}
+                    fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
+                    fenext-select-${
+                        isSelectChangeText
+                            ? "is-change-text"
+                            : "is-not-change-text"
+                    }
+                    ${classNameSelect} ${showOptions}
+                    ${hiddenOptions}
+                `}
+                onMouseLeave={() => {
+                    setIsFocus(false);
+                }}
+            >
+                <div
+                    className={`fenext-select-content-search`}
+                    onClick={() => {
+                        setIsFocus(true);
+                        onLoadPos?.();
+                        if (window?.innerWidth <= 575) {
+                            const ele =
+                                selectRef.current?.querySelector<HTMLInputElement>(
+                                    ".fenext-input-content-input",
+                                );
+
+                            ele?.click();
+                            ele?.focus();
+                        }
+                    }}
+                    // onMouseEnter={onLoadPos}
+                >
+                    <InputText
+                        {...props}
+                        _t={_t}
+                        icon={
+                            <>
+                                <div className="fenext-select-content-icon">
+                                    <div className="fenext-select-content-icon-arrow">
+                                        {icon}
+                                    </div>
+                                    <div className="fenext-select-content-icon-search">
+                                        {iconSearch}
+                                    </div>
+                                </div>
+                            </>
+                        }
+                        onBlur={onBlur}
+                        onChange={(e) => {
+                            onChangeText_(e);
+                            onLoadChildren();
+                        }}
+                        value={
+                            typeSelectStyle == "normal-out"
+                                ? undefined
+                                : _tValue(dataMemo?.text ?? "")
+                        }
+                        onEnter={onEnter}
+                        error={errorInput}
+                        autoComplete={false}
+                        errorWithIsChange={errorWithIsChange}
+                        extraInContentInput={
+                            <>
+                                <button
+                                    className={`fenext-select-clear`}
+                                    onClick={onClear}
+                                >
+                                    {_t(clearContent)}
+                                </button>
+                                {showOptionIconImg && (
+                                    <>
+                                        {dataMemo?.option?.img ? (
+                                            <>
+                                                <div className="fenext-select-option-selected-img">
+                                                    <img
+                                                        src={
+                                                            dataMemo?.option
+                                                                ?.img
+                                                        }
+                                                    />
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                {dataMemo?.option
+                                                    ?.imgComponent ? (
+                                                    <>
+                                                        <div className="fenext-select-option-selected-img">
+                                                            <Img
+                                                                {...dataMemo
+                                                                    ?.option
+                                                                    ?.imgComponent}
+                                                            />
+                                                        </div>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        {dataMemo?.option
+                                                            ?.icon && (
+                                                            <>
+                                                                <div className="fenext-select-option-selected-img">
+                                                                    {
+                                                                        dataMemo
+                                                                            ?.option
+                                                                            ?.icon
+                                                                    }
+                                                                </div>
+                                                            </>
+                                                        )}
+                                                    </>
+                                                )}
+                                            </>
+                                        )}
+                                    </>
+                                )}
+                            </>
+                        }
+                        validator={undefined}
+                        extraInLabel={
+                            <>
+                                {typeSelectStyle == "normal-out" &&
+                                    dataMemo?.option && (
+                                        <>
+                                            <div
+                                                className={`fenext-select-multiple-list `}
+                                            >
+                                                <InputSelectOption
+                                                    {...dataMemo?.option}
+                                                    type={"multiple"}
+                                                    onDelete={() => {
+                                                        onClear();
+                                                    }}
+                                                    iconDelete={iconDelete}
+                                                    disabled={props?.disabled}
+                                                    useT={useTOption}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                {props?.extraInLabel}
+                            </>
+                        }
+                    />
+                </div>
+                {typeSelect == "div" &&
+                (typeSelectStyle == "normal" ||
+                    typeSelectStyle == "normal-out") &&
+                !useSwichtypeSelectStyle ? (
+                    <></>
+                ) : (
+                    <>{TAGLIST}</>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines base properties for a swich input swich.
+ */
+export interface InputColorProps {
+    className?: string;
+
+    defaultValue?: string;
+    value?: string;
+    onChange?: (data: string) => void;
+
+    disabled?: boolean;
+}
+
+/**
+ * Component that renders a swich input.
+ * Takes an InputColorProps object as props.
+ */
+export const InputColor = ({
+    className = "",
+    defaultValue,
+    value,
+    onChange,
+    disabled,
+}: InputColorProps) => {
+    const { data: data_, setData } = useData<string>(defaultValue ?? "", {
+        onChangeDataAfter: onChange,
+    });
+
+    const data = useMemo(() => value ?? data_, [value, data_]);
+
+    return (
+        <label className={`fenext-input-color ${className}`}>
+            <input
+                type="color"
+                className="fenext-input-color-input"
+                value={data}
+                onChange={(e) => {
+                    setData(e.target.value);
+                }}
+                disabled={disabled}
+            />
+        </label>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a SelectTimeZone input component.
+ */
+export interface InputSelectTimeZoneClassProps extends InputSelectClassProps {}
+
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectTimeZoneBaseProps
+    extends Omit<InputSelectTProps<TimeZoneProps>, "options" | "onParse"> {}
+/**
+ * Props interface for the InputSelectTimeZone component. Extends both InputSelectTimeZoneBaseProps and InputSelectTimeZoneClassProps interfaces.
+ */
+export interface InputSelectTimeZoneProps
+    extends InputSelectTimeZoneBaseProps,
+        InputSelectTimeZoneClassProps {}
+
+export const InputSelectTimeZone = ({
+    useTOption = false,
+    ...props
+}: InputSelectTimeZoneProps) => {
+    return (
+        <>
+            <InputSelectT<TimeZoneProps>
+                {...props}
+                options={TimeZoneList}
+                onParse={(e) => {
+                    const r: InputSelectItemOptionBaseProps<TimeZoneProps> = {
+                        id: e?.time ?? "",
+                        text: `${e?.time ?? ""}`,
+                        data: e,
+                    };
+                    return r;
+                }}
+                useTOption={useTOption}
+            />
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a text input component.
+ */
+export interface InputNumberCountClassProps extends InputTextClassProps {}
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputNumberCountBaseProps
+    extends Omit<
+        InputTextBaseProps,
+        | "type"
+        | "defaultValue"
+        | "onChange"
+        | "onChangeValidate"
+        | "value"
+        | "validator"
+    > {
+    /**
+     * symbol of money in de Init, default $.
+     */
+    symbolInit?: string;
+    /**
+     * symbol of money in the final.
+     */
+    symbolFinal?: string;
+    /**
+     * The default value of the input.
+     * @default ""
+     */
+    defaultValue?: number | "";
+    /**
+     * The value of the input.
+     * @default undefined
+     */
+    value?: number | "";
+    /**
+     * The callback function that is triggered when the value of the input changes.
+     */
+    onChange?: (v: number | "") => void;
+    /**
+     * The minimum value allowed for the input.
+     */
+    min?: number;
+    /**
+     * The maximum value allowed for the input.
+     */
+    max?: number;
+    /**
+     * The minimum value allowed for the input.
+     */
+    aplyMin?: boolean;
+    /**
+     * The maximum value allowed for the input.
+     */
+    aplyMax?: boolean;
+    /**
+     * The minimum value allowed for the input.
+     */
+    minError?: string;
+    /**
+     * The maximum value allowed for the input.
+     */
+    maxError?: string;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass<number>;
+    /**
+     * optionsParseNumber used for input validation.
+     */
+    optionsParseNumber?: Intl.NumberFormatOptions;
+}
+/**
+ * Props interface for the InputNumberCount component. Extends both InputNumberCountBaseProps and InputNumberCountClassProps interfaces.
+ */
+export interface InputNumberCountProps
+    extends InputNumberCountBaseProps,
+        InputNumberCountClassProps {}
+
+export const InputNumberCount = ({
+    onChange,
+    value: valueProps = undefined,
+    defaultValue,
+
+    symbolInit = "$",
+    symbolFinal = "",
+
+    validator: validatorProps = undefined,
+    min = -Infinity,
+    max = Infinity,
+    minError,
+    maxError,
+    optionsParseNumber,
+    aplyMax = true,
+    aplyMin = false,
+
+    ...props
+}: InputNumberCountProps) => {
+    const { data, setDataFunction, isChange } = useData<string>(
+        `${defaultValue ?? ""}`,
+        {
+            onChangeDataAfter: (e) => {
+                if (e == "") {
+                    onChange?.("");
+                    return;
+                }
+                onChange?.(parseNumber(e));
+            },
+        },
+    );
+    const value = useMemo(() => valueProps ?? data, [valueProps, data]);
+
+    const validator = useMemo(() => {
+        const v = validatorProps ?? FenextjsValidator().isNumber();
+        if (!validatorProps) {
+            v.isMinOrEqual(min, minError).isMaxOrEqual(max, maxError);
+        }
+        return v;
+    }, [validatorProps, min, max]);
+
+    const { error: errorFenext } = useValidator({
+        data:
+            value != undefined && value != "" ? parseNumber(value) : undefined,
+        validator: validator,
+    });
+
+    const dataText = useMemo(() => {
+        const d = `${value}`;
+        if (d == "") {
+            return "";
+        }
+        const n = parseNumberCount(d, optionsParseNumber);
+        return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
+    }, [symbolInit, symbolFinal, value, optionsParseNumber]);
+
+    const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
+        props?.onKeyDown?.(event);
+        const keyNew = event?.key;
+
+        setDataFunction((old) => {
+            let n = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
+            if (keyNew == "Backspace") {
+                n = n.slice(0, n.length - 1);
+            }
+            if (keyNew == "ArrowUp") {
+                n = `${parseNumber(n) + 1}`;
+            }
+            if (keyNew == "ArrowDown") {
+                n = `${parseNumber(n) - 1}`;
+            }
+            if (aplyMax && max != undefined) {
+                n = `${Math.min(max, parseNumber(n))}`;
+            }
+            if (aplyMin && min != undefined) {
+                n = `${Math.max(min, parseNumber(n))}`;
+            }
+            if (keyNew == "." && !n.includes(".")) {
+                n += ".";
+            } else {
+                n = parseNumberCount(n, optionsParseNumber);
+            }
+            return n;
+        });
+    };
+
+    return (
+        <>
+            <InputText
+                {...props}
+                className={`fenext-input-number-count ${props?.className ?? ""}`}
+                // onChange={onChangeNumber}
+                type="text"
+                value={dataText}
+                isChange={isChange}
+                onKeyDown={onKeyDown as any}
+                validator={undefined}
+                error={errorFenext}
+                inputMode="numeric"
+            />
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base InputRate component.
+ */
+export interface InputRateBaseProps {
+    /**
+     * Value of component.
+     * @default undefined.
+     * @min 0
+     * @max 5
+     */
+    value?: number;
+    /**
+     * Default Value of component.
+     * @default 0.
+     * @min 0
+     * @max 5
+     */
+    defaultValue?: number;
+}
+
+/**
+ * Properties for the class of the InputRate component.
+ */
+export interface InputRateClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the content Star.
+     */
+    classNameContentStar?: string;
+    /**
+     * The class name for the Star.
+     */
+    classNameStar?: string;
+    /**
+     * The class name for the Star active.
+     */
+    classNameStarActive?: string;
+    /**
+     * The class name for the Star number.
+     */
+    classNameNumber?: string;
+    /**
+     * onChange value.
+     */
+    onChange?: (star: number) => void;
+}
+
+/**
+ * Properties for the InputRate component.
+ */
+export interface InputRateProps
+    extends InputRateBaseProps,
+        InputRateClassProps {}
+
+export const InputRate = ({
+    className = "",
+    classNameContentStar = "",
+    classNameStar = "",
+    classNameStarActive = "",
+    classNameNumber = "",
+
+    defaultValue = 0,
+    value = undefined,
+    onChange,
+}: InputRateProps) => {
+    const [data, setData] = useState(defaultValue);
+    const start = useMemo(
+        () => Math.max(0, Math.min(value ?? data ?? 0, 5)),
+        [value, data],
+    );
+
+    // const elemento = e.currentTarget;
+    // const posX = e.nativeEvent.offsetX;
+    // const porcentajeX = (posX / elemento.offsetWidth) * 100;
+
+    const onSelectStar = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const v = parseFloat(e.target.value);
+        onChange?.(v);
+        setData(v);
+    };
+
+    return (
+        <>
+            <div
+                className={`fenext-input-rate ${className} `}
+                style={
+                    {
+                        ["--start"]: start,
+                        ["--startP"]: `${start * 20}%`,
+                    } as React.CSSProperties
+                }
+            >
+                <div
+                    className={`fenext-input-rate-content-start ${classNameContentStar} `}
+                >
+                    <Star
+                        className={`fenext-input-rate-start ${classNameStar}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start ${classNameStar}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start ${classNameStar}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start ${classNameStar}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start ${classNameStar}`}
+                    />
+                </div>
+                <div
+                    className={`fenext-input-rate-content-start fenext-input-rate-content-start-active ${classNameContentStar} `}
+                >
+                    <Star
+                        className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
+                    />
+                    <Star
+                        className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
+                    />
+                </div>
+                <div
+                    className={`fenext-input-rate-content-start fenext-input-rate-cap`}
+                >
+                    <input
+                        type="range"
+                        onChange={onSelectStar}
+                        min={0}
+                        max={5}
+                        step={0.1}
+                        value={start}
+                        className={`fenext-input-rate-cap-input`}
+                    />
+                </div>
+                <div className={`fenext-input-rate-number ${classNameNumber}`}>
+                    {start}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a checkbox input component.
+ */
+export interface InputPhoneClassProps {
+    /**
+     * Obj of class name Select Code.
+     */
+    classNameSelectCode?: InputSelectClassProps;
+    /**
+     * Obj of class name Input Number.
+     */
+    classNameInputNumber?: InputTextClassProps;
+    /**
+     * Class Name Phone.
+     */
+    classNamePhone?: string;
+    /**
+     * Class Name Phone Label.
+     */
+    classNamePhoneLabel?: string;
+    /**
+     * Class Name Phone Code.
+     */
+    classNamePhoneCode?: string;
+    /**
+     * Class Name Phone Number.
+     */
+    classNamePhoneNumber?: string;
+    /**
+     * Class Name Error.
+     */
+    classNameError?: string;
+}
+
+/**
+ * Interface that defines base properties for a checkbox input component.
+ */
+export interface InputPhoneBaseProps
+    extends Omit<
+            InputTextBaseProps,
+            | "type"
+            | "value"
+            | "onChange"
+            | "defaultValue"
+            | "datalist"
+            | "validator"
+        >,
+        useJsonStringProps<Partial<PhoneProps>> {
+    /**
+     * defaultCode select code.
+     */
+    defaultCode?: string;
+    /**
+     * disabled select code.
+     */
+    disabledSelectCode?: boolean;
+    /**
+     * Placeholder select code.
+     */
+    placeholderCode?: string;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass<PhoneProps>;
+}
+
+/**
+ * Interface that defines all properties for a checkbox input component.
+ * Extends InputPhoneBaseProps and InputPhoneClassProps.
+ */
+export interface InputPhoneProps
+    extends InputPhoneBaseProps,
+        InputPhoneClassProps {}
+
+/**
+ * Component that renders a checkbox input.
+ * Takes an InputPhoneProps object as props.
+ */
+export const InputPhone = ({
+    classNameInputNumber = {},
+    classNameSelectCode = {},
+    classNamePhone = "",
+    classNamePhoneCode = "",
+    classNamePhoneLabel = "",
+    classNamePhoneNumber = "",
+    classNameError = "",
+
+    disabledSelectCode = false,
+    disabled,
+    label,
+    loader,
+
+    placeholderCode = "+57",
+    placeholder = "xxx-xx-xx-xxxx",
+    validator = undefined,
+    optional = false,
+    optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
+
+    defaultCode = "+57",
+    defaultValue: defaultValueProps = undefined,
+    value: valueProps = undefined,
+    onChange: onChangeProps,
+    defaultValueJsonString,
+    valueJsonString,
+    onChangeJsonString,
+    parseJson_to_String,
+    parseString_to_Json,
+
+    ...props
+}: InputPhoneProps) => {
+    const { _t } = use_T({ ...props });
+    const { value, defaultValue, onChange } = useJsonString<
+        Partial<PhoneProps>
+    >({
+        parseJson_to_String: parseJson_to_String ?? parsePhone_to_String,
+        parseString_to_Json: parseString_to_Json ?? parseString_to_Phone,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        value: valueProps,
+        defaultValue: {
+            code:
+                (defaultValueProps?.code ?? "") == ""
+                    ? defaultCode
+                    : defaultValueProps?.code,
+            number: defaultValueProps?.number ?? "",
+            tel: defaultValueProps?.tel ?? "",
+            code_country: defaultValueProps?.code_country ?? undefined,
+            country: defaultValueProps?.country ?? undefined,
+            img: defaultValueProps?.img ?? undefined,
+        },
+        onChange: onChangeProps,
+    });
+
+    const [loadPhoneCodes, setlLoadPhoneCodes] = useState(false);
+    const {
+        dataMemo: data,
+        onChangeData,
+        onConcatData,
+        isChange,
+    } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(defaultValue ?? {}, {
+        onChangeDataMemoAfter: onChange,
+        onMemo: (d: Partial<PhoneProps>) => {
+            const v = value ?? d;
+            return {
+                ...v,
+                tel: `${v.code} ${v.number}`,
+            };
+        },
+    });
+    const [phones, setPhones] = useState<CountryProps[]>([]);
+    const loadPhones = async () => {
+        const countrys: CountryProps[] = await getDataCountrys();
+        setPhones(countrys);
+        setlLoadPhoneCodes(true);
+    };
+    useEffect(() => {
+        loadPhones();
+    }, []);
+
+    const { error: errorFenext } = useValidator({
+        data: data,
+        validator: validator ?? FenextjsValidator(),
+    });
+
+    const getCountryPhone = (d: Partial<PhoneProps> | undefined) => {
+        return (
+            d?.country ??
+            (d?.code_country
+                ? phones.find((e) => e.code == d?.code_country)
+                : undefined) ??
+            (d?.code ? phones.find((e) => e.code_phone == d?.code) : undefined)
+        );
+    };
+
+    return (
+        <>
+            <div className={`fenext-input-phone ${classNamePhone}`}>
+                <div
+                    className={`fenext-input-phone-label fenext-input-label ${classNamePhoneLabel} `}
+                >
+                    {_t(label)}
+                    {optional && (
+                        <>
+                            <small className="fenext-input-optional">
+                                {_t(optionalText)}
+                            </small>
+                        </>
+                    )}
+                    {required && (
+                        <>
+                            <small className="fenext-input-required">
+                                {_t(requiredText)}
+                            </small>
+                        </>
+                    )}
+                </div>
+                <div
+                    className={`fenext-input-phone-code ${classNamePhoneCode}`}
+                >
+                    <InputSelectT<CountryProps>
+                        {...classNameSelectCode}
+                        classNameList={`fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`}
+                        key={`${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`}
+                        placeholder={placeholderCode}
+                        _t={_t}
+                        options={phones}
+                        onParse={(e) => {
+                            return {
+                                id: e?.code_phone ?? "",
+                                text: e?.code_phone ?? "",
+                                data: e,
+                                img: e ? `${getRuteCountryImg(e)}` : undefined,
+                            };
+                        }}
+                        disabled={
+                            !loadPhoneCodes || disabled || disabledSelectCode
+                        }
+                        defaultValue={getCountryPhone(defaultValue)}
+                        value={getCountryPhone(value)}
+                        onChange={(e) => {
+                            if (e?.code_phone) {
+                                onConcatData({
+                                    code: e?.code_phone,
+                                    country: e,
+                                    code_country: e?.code,
+                                    img: e
+                                        ? `${getRuteCountryImg(e)}`
+                                        : undefined,
+                                });
+                            }
+                        }}
+                        regExp={/[^0-9+-]/g}
+                        regExpReplace=""
+                        icon={<></>}
+                        // changeByFirstOptionInOnBlur={true}
+                        optional={false}
+                        showOptionIconImg={true}
+                        itemMaxLengthShowOptions={{
+                            id: "fenext-item-max-length-show-options",
+                            text: "...",
+                        }}
+                    />
+                </div>
+                <div
+                    className={`fenext-input-phone-text ${classNamePhoneNumber}`}
+                >
+                    <InputText
+                        {...classNameInputNumber}
+                        {...props}
+                        type="text"
+                        onChange={onChangeData("number")}
+                        loader={!loadPhoneCodes || loader}
+                        disabled={!loadPhoneCodes || disabled}
+                        placeholder={placeholder}
+                        defaultValue={data?.number}
+                        value={value?.number}
+                        _t={_t}
+                        validator={validator?.getObjectValidator?.()?.number}
+                        inputMode="numeric"
+                        regExpReplace=""
+                        regExp={/[^0-9]/g}
+                        optional={false}
+                        error={undefined}
+                    />
+                </div>
+                {(props?.error || (errorFenext && isChange)) && (
+                    <ErrorComponent
+                        error={errorFenext ?? props?.error}
+                        className={`fenext-input-error ${classNameError}`}
+                        _t={_t}
+                    />
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Props for the InputDateValueType
+ */
+export type InputDateValueType = Date | undefined;
+/**
+ * Props for the base InputDate component
+ */
+export interface InputDateBaseProps
+    extends Omit<
+        InputTextBaseProps,
+        "type" | "value" | "onChange" | "defaultValue"
+    > {
+    /**
+     * The type of the input field. Should be 'date'.
+     */
+    type?: TypeDate;
+    /**
+     * The default value of the input field.
+     */
+    defaultValue?: InputDateValueType;
+    /**
+     * The current value of the input field.
+     */
+    value?: InputDateValueType;
+    /**
+     * The min Date valid.
+     */
+    min?: InputDateValueType;
+    /**
+     * The max Date valid.
+     */
+    max?: InputDateValueType;
+    /**
+     * A callback function to handle changes to the input field.
+     */
+    onChange?: (v: InputDateValueType) => void;
+}
+
+/**
+ * Props for the InputDate component to customize CSS class names.
+ */
+export interface InputDateClassProps extends InputTextClassProps {
+    /**
+     * The CSS class for the input date field.
+     */
+    classNameInputDate?: string;
+}
+
+/**
+ * All props for the InputDate component.
+ */
+export interface InputDateProps
+    extends InputDateBaseProps,
+        InputDateClassProps {}
+
+export const InputDate = ({
+    classNameInputDate = "",
+
+    type = "date",
+    defaultValue = undefined,
+    value = undefined,
+    min = undefined,
+    max = undefined,
+    onChange,
+    icon = <SVGDate />,
+    iconPos = "left",
+    validator,
+    ...props
+}: InputDateProps) => {
+    const uuid = useMemo(() => new Date().getTime(), []);
+    const { data, setData, isChange } = useData<Date | undefined>(defaultValue);
+    const d = useMemo(
+        () =>
+            `${
+                defaultValue
+                    ? parseDateToText({ date: defaultValue, type })
+                    : ""
+            }`,
+        [defaultValue],
+    );
+    const [valueString, setValueString] = useState(d);
+
+    const changeInput = (e: any) => {
+        const text = e.target.value;
+        if (text == "") {
+            setValueString("");
+            onChange?.(undefined);
+            return;
+        }
+
+        const nDate = parseTextToDate({
+            text,
+            type,
+        });
+        setData(nDate);
+        const nText = parseDateToText({ date: nDate, type });
+
+        setValueString(nText);
+        onChange?.(nDate);
+    };
+
+    const MIN = useMemo(() => {
+        if (!min) {
+            return undefined;
+        }
+        if (type == "month") {
+            return getMonthValue(min);
+        }
+        if (type == "week") {
+            return getWeekValue(min);
+        }
+        if (type == "time") {
+            return getTimeValue(min);
+        }
+        return min?.toISOString?.().split?.("T")?.[0];
+    }, [min, type]);
+    const MAX = useMemo(() => {
+        if (!max) {
+            return undefined;
+        }
+        if (type == "month") {
+            return getMonthValue(max);
+        }
+        if (type == "week") {
+            return getWeekValue(max);
+        }
+        if (type == "time") {
+            return getTimeValue(max);
+        }
+        return max?.toISOString?.().split?.("T")?.[0];
+    }, [max, type]);
+    const DATALIST = useMemo(() => {
+        if (type == "time") {
+            return (
+                <>
+                    <datalist id={`input-date-${uuid}`}>
+                        {new Array(24).fill(1).map((e, i) => {
+                            const h = parseNumberCount(e * i, {
+                                minimumIntegerDigits: 2,
+                            });
+                            return (
+                                <>
+                                    {new Array(6).fill(1).map((l, j) => {
+                                        const m = parseNumberCount(l * j * 10, {
+                                            minimumIntegerDigits: 2,
+                                        });
+                                        return (
+                                            <>
+                                                <option value={`${h}:${m}`} />
+                                            </>
+                                        );
+                                    })}
+                                </>
+                            );
+                        })}
+                    </datalist>
+                </>
+            );
+        }
+        return <></>;
+    }, [uuid, type]);
+
+    const { error: errorFenext } = useValidator({
+        data: data,
+        validator: validator ?? FenextjsValidator(),
+    });
+
+    return (
+        <InputText
+            {...props}
+            defaultValue={""}
+            value={value ? parseDateToText({ date: value, type }) : valueString}
+            onChange={() => 1}
+            extraInContentInput={
+                <>
+                    {props?.disabled != true && (
+                        <>
+                            <input
+                                type={type}
+                                onChange={changeInput}
+                                className={`fenext-input-date ${classNameInputDate}`}
+                                min={MIN}
+                                max={MAX}
+                                list={`input-date-${uuid}`}
+                            />
+                            {DATALIST}
+                        </>
+                    )}
+                </>
+            }
+            iconPos={iconPos}
+            icon={<span className={`fenext-input-date-icon `}>{icon}</span>}
+            validator={undefined}
+            error={errorFenext}
+            isChange={isChange}
+        />
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a select input component.
+ */
+export interface InputSelectCSCClassProps extends InputSelectClassProps {
+    /**
+     * CSS class name for the input select.
+     */
+    classNameSelectCSC?: string;
+}
+
+type InputCSCProps = Pick<
+    InputSelectProps,
+    | "id"
+    | "label"
+    | "placeholder"
+    | "placeholderFocus"
+    | "disabled"
+    | "classNameSelect"
+    | "validator"
+    | "validatorData"
+    | "filterOptions"
+    | "optional"
+    | "optionalText"
+    | "required"
+    | "requiredText"
+    | "forceShowOptionOnLoad"
+    | "maxLengthShowOptions"
+>;
+
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectCSCBaseProps
+    extends useCSCProps,
+        Omit<
+            InputSelectBaseProps,
+            | "options"
+            | "defaultValue"
+            | "value"
+            | "isSelectClearText"
+            | "onChange"
+            | "onChangeValidate"
+            | "validator"
+            | "validatorData"
+            | "filterOptions"
+        > {
+    /**
+     * useContainer for group select in div.
+     */
+    useContainer?: boolean;
+    /**
+     * onChange CSC selected.
+     */
+    onChange?: (data: CSCProps) => void;
+    /**
+     * country Input Label and Placeholder.
+     */
+    country?: InputCSCProps;
+    /**
+     * state Input Label and Placeholder.
+     */
+    state?: InputCSCProps;
+    /**
+     * city Input Label and Placeholder.
+     */
+    city?: InputCSCProps;
+}
+/**
+ * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
+ */
+export interface InputSelectCSCProps
+    extends InputSelectCSCBaseProps,
+        InputSelectCSCClassProps {}
+
+export const InputSelectCSC = ({
+    classNameSelectCSC = "",
+    useContainer = true,
+    country = {
+        label: "Country",
+        placeholder: "Country",
+    },
+    state = {
+        label: "State",
+        placeholder: "State",
+    },
+    city = {
+        label: "City",
+        placeholder: "City",
+    },
+
+    defaultValue: defaultValueProps,
+    value: valueProps,
+    onChange: onChangeProps,
+    defaultValueJsonString,
+    valueJsonString,
+    onChangeJsonString,
+    parseJson_to_String,
+    parseString_to_Json,
+    ...props
+}: InputSelectCSCProps) => {
+    const {
+        countrys,
+        states,
+        citys,
+        onChangeCSC,
+        value,
+        loadCitys,
+        loadCountrys,
+        loadStates,
+    } = useCSC({
+        defaultValue: defaultValueProps,
+        value: valueProps,
+        onChange: onChangeProps,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        parseJson_to_String: parseJson_to_String ?? parseCSC_to_CSCString,
+        parseString_to_Json: parseString_to_Json ?? parseCSCString_to_CSC,
+    });
+
+    const CONTENT = useMemo(() => {
+        let C = (
+            <>
+                <InputSelectT<CountryProps>
+                    {...props}
+                    {...country}
+                    useTOption={false}
+                    options={countrys}
+                    nItems={countrys.length}
+                    onChange={onChangeCSC("country")}
+                    defaultValue={value?.country}
+                    loader={!loadCountrys}
+                    onParse={(e) => {
+                        return {
+                            ...e,
+                            id: e?.id ?? "",
+                            text: e?.text ?? "",
+                            data: e,
+                        };
+                    }}
+                />
+                <InputSelectT<StateProps>
+                    {...props}
+                    {...state}
+                    useTOption={false}
+                    key={`state-${value?.country?.id}`}
+                    options={states}
+                    nItems={states.length}
+                    onChange={onChangeCSC("state")}
+                    value={value?.state}
+                    loader={!loadStates}
+                    onParse={(e) => {
+                        return {
+                            ...e,
+                            id: e?.id ?? "",
+                            text: e?.text ?? "",
+                            data: e,
+                        };
+                    }}
+                />
+                <InputSelectT<CityProps>
+                    {...props}
+                    {...city}
+                    useTOption={false}
+                    key={`city-${value?.state?.id}`}
+                    options={citys}
+                    nItems={citys.length}
+                    onChange={onChangeCSC("city")}
+                    value={value?.city}
+                    loader={!loadCitys}
+                    onParse={(e) => {
+                        return {
+                            ...e,
+                            id: e?.id ?? "",
+                            text: e?.text ?? "",
+                            data: e,
+                        };
+                    }}
+                />
+            </>
+        );
+
+        if (useContainer) {
+            C = (
+                <>
+                    <div className={`fenext-select-csc ${classNameSelectCSC}`}>
+                        {C}
+                    </div>
+                </>
+            );
+        }
+
+        return C;
+    }, [
+        value,
+        value?.country?.id,
+        value?.state?.id,
+        value?.city?.id,
+        countrys,
+        states,
+        citys,
+        useContainer,
+        country,
+        state,
+        city,
+        loadCitys,
+        loadCountrys,
+        loadStates,
+    ]);
+    return <>{CONTENT}</>;
+};
+
+
+export interface InputSelectCountryMultipleProps
+    extends Omit<
+        InputSelectMultipleTProps<CountryProps>,
+        "options" | "useLoader" | "loader" | "onParse"
+    > {}
+
+export const InputSelectCountryMultiple = ({
+    ...props
+}: InputSelectCountryMultipleProps) => {
+    const [loader, setLoader] = useState(false);
+    const [options, setOptions] = useState<CountryProps[]>([]);
+    const onLoad = async () => {
+        const countrys = await getDataCountrys();
+        setOptions(
+            countrys.map((e) => {
+                return {
+                    ...e,
+                    img: `${getRuteCountryImg(e)}`,
+                };
+            }),
+        );
+        setLoader(false);
+    };
+    useEffect(() => {
+        onLoad();
+    }, []);
+
+    return (
+        <>
+            <InputSelectMultipleT<CountryProps>
+                {...props}
+                useTOption={false}
+                options={options}
+                loader={loader}
+                useLoader={true}
+                onParse={(e) => ({
+                    ...e,
+                    text: e?.text ?? "",
+                    id: e?.id ?? "",
+                    data: e,
+                })}
+            />
+        </>
+    );
+};
+
+
+export type InputFileStatusContentByStatus = {
+    [id in FileStatus]?: {
+        /**
+         * The Title for the component.
+         */
+        title?: ReactNode;
+        /**
+         * The Icon for the component.
+         */
+        icon?: ReactNode;
+        /**
+         * The Tag for the component.
+         */
+        tag?: ReactNode;
+    };
+};
+
+/**
+ * Properties for the InputFileStatus component.
+ */
+export interface InputFileStatusProps
+    extends Omit<InputFileBaseProps, "onUploadFile"> {
+    /**
+     * The Title for the component.
+     */
+    title?: ReactNode;
+    /**
+     * The Text for the component.
+     */
+    text?: ReactNode;
+    /**
+     * The Icon for the component.
+     */
+    icon?: ReactNode;
+    /**
+     * The Buton for the component.
+     */
+    btn?: ReactNode;
+
+    /**
+     * The Icon for the component.
+     */
+    iconLoader?: ReactNode;
+
+    /**
+     * className for the component.
+     */
+    className?: string;
+
+    onUploadFile: (data: FileProps) => Promise<FileProps>;
+
+    contentByStatus?: InputFileStatusContentByStatus;
+}
+
+export const InputFileStatus = ({
+    className = "",
+    btn = "Choose File",
+    icon = (
+        <>
+            <Upload2 />
+        </>
+    ),
+    text = "Drag and drop your file or template here.",
+    title = "Drag and drop here",
+
+    defaultValue = {
+        fileData: "",
+        text: "",
+    },
+    onChange,
+
+    iconLoader = <LoaderSpinner />,
+
+    onUploadFile,
+    contentByStatus: contentByStatusProps = {},
+    ...props
+}: InputFileStatusProps) => {
+    const { _t } = use_T({ ...props });
+    const contentByStatus = useMemo(
+        () => ({
+            APPROVED: {
+                title: "Approved!",
+                tag: "Accepted",
+                icon: <Check />,
+            },
+            REFUSED: {
+                title: "Refused! go up again",
+                tag: "Denied",
+                icon: <Upload2 />,
+            },
+            PENDING: {
+                title: "Pending",
+                tag: "Pending",
+                icon: <Upload2 />,
+            },
+            ...contentByStatusProps,
+        }),
+        [contentByStatusProps],
+    );
+
+    const { data, setData, dataError, onSubmitData, loaderSubmit } = useData<
+        FileProps,
+        any,
+        FileProps
+    >(defaultValue, {
+        onChangeDataAfter: onChange,
+        onSubmitData: onUploadFile,
+    });
+
+    return (
+        <>
+            <div
+                className={`fenext-input-file-status fenext-input-file-status-${data?.status ?? "NONE"} ${className}`}
+            >
+                {!dataError &&
+                !loaderSubmit &&
+                data?.fileData &&
+                data?.fileData != "" ? (
+                    <>
+                        <div className={`fenext-input-file-status-up `}>
+                            <Title
+                                className={`fenext-input-file-status-title `}
+                            >
+                                {_t(
+                                    contentByStatus?.[data?.status ?? "NONE"]
+                                        ?.title ?? title,
+                                )}
+                            </Title>
+                            <div
+                                className={`fenext-input-file-status-content-icon`}
+                            >
+                                {contentByStatus?.[data?.status ?? "NONE"]
+                                    ?.icon ?? icon}
+                            </div>
+                            <div className={`fenext-input-file-status-tag`}>
+                                <Text>
+                                    {_t(
+                                        contentByStatus?.[
+                                            data?.status ?? "NONE"
+                                        ]?.tag,
+                                    )}
+                                </Text>
+                            </div>
+                            <Link
+                                href={
+                                    data?.url ?? data?.base64 ?? data?.fileData
+                                }
+                                target="_blank"
+                                className={`fenext-input-file-status-link `}
+                            >
+                                {data.text}
+                            </Link>
+                            {!props.disabled && (
+                                <div
+                                    className={`fenext-input-file-status-remove `}
+                                    onClick={() => {
+                                        setData({
+                                            fileData: "",
+                                            text: "",
+                                        });
+                                    }}
+                                >
+                                    <Close />
+                                </div>
+                            )}
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <InputFile
+                            onChange={(e) => {
+                                onSubmitData({
+                                    data: e,
+                                    onSaveData: ({ result }) => {
+                                        return result;
+                                    },
+                                });
+                            }}
+                            parseProgress={() => ""}
+                            {...props}
+                            _t={_t}
+                        >
+                            <div className={`fenext-input-file-status-up `}>
+                                <Title
+                                    className={`fenext-input-file-status-title `}
+                                >
+                                    {_t(title)}
+                                </Title>
+                                <div
+                                    className={`fenext-input-file-status-content-icon`}
+                                >
+                                    {loaderSubmit ? iconLoader : icon}
+                                </div>
+                                <Button
+                                    className={`fenext-input-file-status-btn `}
+                                >
+                                    {_t(btn)}
+                                </Button>
+                                <Text
+                                    className={`fenext-input-file-status-text `}
+                                >
+                                    {_t(text)}
+                                </Text>
+                                {dataError && (
+                                    <ErrorComponent error={dataError} />
+                                )}
+                            </div>
+                        </InputFile>
+                    </>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the config InputRange component.
+ */
+export interface InputRangeConfigProps {
+    min: number;
+    max: number;
+    value: number;
+    center: number;
+}
+/**
+ * Properties for the base InputRange component.
+ */
+export interface InputRangeBaseProps {
+    /**
+     * The value of the input.
+     * @default 0
+     */
+    value?: number;
+    /**
+     * The valueMin of the input.
+     * @default -100
+     */
+    valueMin?: number;
+    /**
+     * The valueMax of the input.
+     * @default 100
+     */
+    valueMax?: number;
+    /**
+     * The default value of the input.
+     * @default 0
+     */
+    defaultValue?: number;
+    /**
+     * The default value of the input.
+     * @default -100
+     */
+    defaultValueMin?: number;
+    /**
+     * The default value of the input.
+     * @default 100
+     */
+    defaultValueMax?: number;
+    /**
+     * The callback function that is triggered when the value of the input changes.
+     */
+    onChange?: (v: number) => void;
+    /**
+     * use range min value and max.
+     * @default false
+     */
+    useRange?: boolean;
+    /**
+     * The callback function that is triggered when the value range of the input changes.
+     */
+    onChangeRange?: (v: [number, number]) => void;
+    /**
+     * The minimum value allowed for the input.
+     * @default -100
+     */
+    min?: number;
+    /**
+     * The maximum value allowed for the input.
+     * @default 100
+     */
+    max?: number;
+    /**
+     * The step value allowed for the input.
+     * @default 1
+     */
+    step?: number;
+    /**
+     * The position show Number.
+     * @default "top"
+     */
+    showNumber?: "top" | "bottom" | "none";
+}
+
+/**
+ * Properties for the class of the InputRange component.
+ */
+export interface InputRangeClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the component content range.
+     */
+    classNameContentRange?: string;
+    /**
+     * The class name for the component min.
+     */
+    classNameMin?: string;
+    /**
+     * The class name for the component max.
+     */
+    classNameMax?: string;
+    /**
+     * The class name for the component current.
+     */
+    classNameCurrent?: string;
+    /**
+     * The class name for the component content value.
+     */
+    classNameContentValue?: string;
+    /**
+     * The class name for the component value.
+     */
+    classNameValue?: string;
+    /**
+     * The class name for the component value min.
+     */
+    classNameValueMin?: string;
+    /**
+     * The class name for the component value max.
+     */
+    classNameValueMax?: string;
+    /**
+     * The class name for the component content Circle.
+     */
+    classNameContentCircle?: string;
+    /**
+     * The class name for the component Circle.
+     */
+    classNameCircle?: string;
+    /**
+     * The class name for the component Line.
+     */
+    classNameLine?: string;
+}
+
+/**
+ * Properties for the InputRange component.
+ */
+export interface InputRangeProps
+    extends InputRangeBaseProps,
+        InputRangeClassProps {}
+
+export const InputRange = ({
+    className = "",
+    classNameContentValue = "",
+    classNameValue = "",
+    classNameValueMax = "",
+    classNameValueMin = "",
+    classNameContentRange = "",
+    classNameCurrent = "",
+    classNameMax = "",
+    classNameMin = "",
+    classNameContentCircle = "",
+    classNameCircle = "",
+    classNameLine = "",
+
+    min = -100,
+    max = 100,
+    defaultValue = 0,
+    defaultValueMin = -100,
+    defaultValueMax = 100,
+    value = undefined,
+    valueMin = undefined,
+    valueMax = undefined,
+    onChange,
+    onChangeRange,
+    useRange = false,
+    step = 1,
+    showNumber = "top",
+}: InputRangeProps) => {
+    const onParceData = (d: InputRangeConfigProps): InputRangeConfigProps => {
+        const _max = valueMax ?? d.max;
+        const _min = valueMin ?? d.min;
+        const _value = value ?? d.value;
+        return {
+            ...d,
+            center: (_max - _min) / 2 + _min,
+            value: _value,
+            min: Math.min(_min, _max - step),
+            max: Math.max(_min + step, _max),
+        };
+    };
+
+    const { dataMemo: _data, onChangeData } = useData<
+        InputRangeConfigProps,
+        InputRangeConfigProps
+    >(
+        {
+            min: defaultValueMin,
+            max: defaultValueMax,
+            value: defaultValue,
+            center: (defaultValueMax - defaultValueMin) / 2 + defaultValueMin,
+        },
+        {
+            onChangeDataMemoAfter: (d: InputRangeConfigProps) => {
+                onChange?.(d.value);
+                onChangeRange?.([d.min, d.max]);
+            },
+            onMemo: onParceData,
+        },
+    );
+    const data = useMemo(
+        () => onParceData(_data),
+        [_data, value, valueMax, valueMin, step],
+    );
+    const onChangeItem =
+        (id: keyof InputRangeConfigProps) =>
+        (event: React.ChangeEvent<HTMLInputElement>) => {
+            onChangeData(id)(parseFloat(event.target.value));
+        };
+    return (
+        <>
+            <div
+                className={`fenext-input-range ${className} ${
+                    useRange ? "range" : ""
+                } 
+                fenext-input-range-show-number-${showNumber}
+                `}
+                style={
+                    {
+                        ["--line"]: max - min,
+                        ["--min"]: min,
+                        ["--max"]: max,
+                        ["--minValue"]: data.min,
+                        ["--maxValue"]: data.max,
+                        ["--value"]: data.value,
+                        ["--center"]: data.center,
+                        ["--step"]: step,
+                        ["--minP"]: `${
+                            ((data.min - min) / (max - min)) * 100
+                        }%`,
+                        ["--maxP"]: `${
+                            ((max - data.max) / (max - min)) * 100
+                        }%`,
+                        ["--valueP"]: `${
+                            ((data.value - min) / (max - min)) * 100
+                        }%`,
+                        ["--centerP"]: `${
+                            ((data.center - min) / (max - min)) * 100
+                        }%`,
+                    } as React.CSSProperties
+                }
+            >
+                <div
+                    className={`fenext-input-range-content-value ${classNameContentValue}    `}
+                >
+                    <div
+                        className={`fenext-input-range-value fenext-input-range-value-min ${classNameValueMin}    `}
+                    >
+                        {data.min}
+                    </div>
+                    <div
+                        className={`fenext-input-range-value-arrow fenext-input-range-value-min ${classNameValueMin}    `}
+                    ></div>
+                    <div
+                        className={`fenext-input-range-value fenext-input-range-value-current ${classNameValue}    `}
+                    >
+                        {data.value}
+                    </div>
+                    <div
+                        className={`fenext-input-range-value-arrow fenext-input-range-value-current ${classNameValue}    `}
+                    ></div>
+                    <div
+                        className={`fenext-input-range-value fenext-input-range-value-max ${classNameValueMax}    `}
+                    >
+                        {data.max}
+                    </div>
+                    <div
+                        className={`fenext-input-range-value-arrow fenext-input-range-value-max ${classNameValueMax}    `}
+                    ></div>
+                </div>
+                <div
+                    className={`fenext-input-range-content-circle ${classNameContentCircle}    `}
+                >
+                    <div
+                        className={`fenext-input-range-line ${classNameLine}    `}
+                    ></div>
+                    <div
+                        className={`fenext-input-range-circle fenext-input-range-circle-min ${classNameCircle}    `}
+                    ></div>
+                    <div
+                        className={`fenext-input-range-circle fenext-input-range-circle-current ${classNameCircle}    `}
+                    ></div>
+                    <div
+                        className={`fenext-input-range-circle fenext-input-range-circle-max ${classNameCircle}    `}
+                    ></div>
+                </div>
+                <div
+                    className={`fenext-input-range-content-range ${classNameContentRange}    `}
+                >
+                    <input
+                        type="range"
+                        className={`fenext-input-range-item fenext-input-range-min ${classNameMin} `}
+                        min={min}
+                        max={max - step}
+                        value={data.min}
+                        onChange={onChangeItem("min")}
+                        step={step}
+                    />
+                    <input
+                        type="range"
+                        className={`fenext-input-range-item fenext-input-range-current ${classNameCurrent} `}
+                        min={min}
+                        max={max}
+                        value={data.value}
+                        onChange={onChangeItem("value")}
+                        step={step}
+                    />
+                    <input
+                        type="range"
+                        className={`fenext-input-range-item fenext-input-range-max ${classNameMax} `}
+                        min={min + step}
+                        max={max}
+                        value={data.max}
+                        onChange={onChangeItem("max")}
+                        step={step}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+
+
+
+/**
+ * Properties for the base InputGoogleLoadScript component.
+ */
+export interface InputGoogleLoadScriptBaseProps
+    extends Omit<LoadScriptProps, "googleMapsApiKey" | "id">,
+        _TProps {
+    /**
+     * GOOGLE_KEY of Google maps.
+     * @default process.env["NEXT_PUBLIC_GOOGLE_KEY"]
+     */
+    googleMapsApiKey?: string;
+
+    children?: ReactNode;
+}
+
+/**
+ * Properties for the class of the InputGoogleLoadScript component.
+ */
+export interface InputGoogleLoadScriptClassProps {
+    /**
+     * CSS class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the InputGoogleLoadScript component.
+ */
+export interface InputGoogleLoadScriptProps
+    extends InputGoogleLoadScriptBaseProps,
+        InputGoogleLoadScriptClassProps {}
+
+export const InputGoogleLoadScript = ({
+    googleMapsApiKey = process.env["NEXT_PUBLIC_GOOGLE_KEY"],
+    children,
+    className = "",
+    _t,
+    useT,
+    ...props
+}: InputGoogleLoadScriptProps) => {
+    const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
+
+    return (
+        <div className={`fenext-input-google-load-script ${className}`}>
+            <LoadScript
+                {...props}
+                googleMapsApiKey={googleMapsApiKey ?? ""}
+                libraries={["places", "geometry", "marker"]}
+                onError={() => {
+                    setError(new ErrorGoogleKeyInvalid());
+                }}
+            >
+                {children}
+            </LoadScript>
+            {error && <ErrorComponent error={error} _t={_t} useT={useT} />}
+        </div>
+    );
+};
+
+
+/**
+ * Properties for the base InputGoogleMaps component.
+ */
+export interface InputGoogleMapsBaseProps
+    extends Omit<GoogleMapProps, "onBoundsChanged"> {
+    markers?: MarkerProps[];
+    useLoadCenterWithMarker?: boolean;
+    useLoadFitBoundsWithMarker?: boolean;
+    useLoadDirectionsWithMarker?: boolean;
+    showDirectionsWaypoints?: boolean;
+
+    onBoundsChanged?: (data: google.maps.LatLngBounds | undefined) => void;
+}
+
+/**
+ * Properties for the class of the InputGoogleMaps component.
+ */
+export interface InputGoogleMapsClassProps {}
+
+/**
+ * Properties for the InputGoogleMaps component.
+ */
+export interface InputGoogleMapsProps
+    extends InputGoogleMapsBaseProps,
+        InputGoogleMapsClassProps {}
+
+export const InputGoogleMaps = ({
+    mapContainerStyle = {
+        width: "100%",
+        height: "100dvh",
+    },
+    markers = undefined,
+    useLoadCenterWithMarker = true,
+    useLoadFitBoundsWithMarker = true,
+    useLoadDirectionsWithMarker = false,
+    showDirectionsWaypoints = false,
+    center = {
+        lat: 0,
+        lng: 0,
+    },
+    ...props
+}: InputGoogleMapsProps) => {
+    const [directionsResult, setDirectionsResult] = useState<
+        google.maps.DirectionsResult | undefined
+    >(undefined);
+    const [map, setMap] = useState<google.maps.Map | undefined>(undefined);
+    const [centerMarker, setCenterMarker] =
+        useState<GoogleMapProps["center"]>(undefined);
+
+    const onGetBounds = () => {
+        const bounds = new google.maps.LatLngBounds();
+        markers?.forEach((e) => {
+            bounds.extend(e.position);
+        });
+        return bounds;
+    };
+    const onLoadCenterMarker = () => {
+        if (!(useLoadCenterWithMarker && markers && markers?.length > 0)) {
+            return;
+        }
+        const bounds = onGetBounds();
+        setCenterMarker(bounds.getCenter());
+    };
+
+    const onLoadFitBounds = () => {
+        if (!(useLoadFitBoundsWithMarker && markers && markers?.length > 0)) {
+            return;
+        }
+        const bounds = onGetBounds();
+        map?.fitBounds?.(bounds);
+    };
+
+    const onLoadDirectionsList = async () => {
+        if (!(useLoadDirectionsWithMarker && markers && markers?.length > 0)) {
+            return;
+        }
+        const directionsService = new window.google.maps.DirectionsService();
+
+        const origin = markers[0];
+        const destination = markers[markers.length - 1];
+        const resultDirections = await directionsService.route({
+            origin: origin.position,
+            destination: destination.position,
+            travelMode: google.maps.TravelMode.DRIVING,
+            waypoints: [...markers].splice(1, markers.length - 2).map((e) => {
+                return {
+                    location: e.position,
+                };
+            }),
+        });
+        setDirectionsResult(resultDirections);
+    };
+
+    const onLoadMap = () => {
+        if (typeof window == "undefined") {
+            setTimeout(onLoadMap, 250);
+            return;
+        }
+        onLoadCenterMarker();
+        onLoadFitBounds();
+        onLoadDirectionsList();
+    };
+
+    useEffect(onLoadMap, [map]);
+
+    return (
+        <div className={`fenext-input-google-maps `}>
+            <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                center={centerMarker ?? center}
+                {...props}
+                onLoad={(e) => {
+                    setMap(e);
+                    props?.onLoad?.(e);
+                }}
+                onBoundsChanged={() => {
+                    props?.onBoundsChanged?.(map?.getBounds?.());
+                }}
+            >
+                {markers && !showDirectionsWaypoints && (
+                    <>
+                        <MarkerClusterer>
+                            {() => (
+                                <>
+                                    {markers.map((e, i) => (
+                                        <Marker key={i} {...e} />
+                                    ))}
+                                </>
+                            )}
+                        </MarkerClusterer>
+                    </>
+                )}
+
+                {directionsResult && (
+                    <DirectionsRenderer
+                        directions={directionsResult}
+                        options={{
+                            markerOptions: {
+                                opacity: showDirectionsWaypoints ? 1 : 0,
+                            },
+                        }}
+                    />
+                )}
+            </GoogleMap>
+        </div>
+    );
+};
+
+
+/**
+ * Properties for the base InputGoogleAutocomplete component.
+ */
+export interface InputGoogleAutocompleteBaseProps
+    extends Omit<AutocompleteProps, "children">,
+        Omit<
+            InputTextBaseProps,
+            | "defaultValue"
+            | "onChange"
+            | "onChangeValidate"
+            | "value"
+            | "validator"
+        >,
+        useJsonStringProps<AddressGoogle | undefined> {
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass<AddressGoogle>;
+}
+
+/**
+ * Properties for the class of the InputGoogleAutocomplete component.
+ */
+export interface InputGoogleAutocompleteClassProps
+    extends InputTextClassProps {}
+
+/**
+ * Properties for the InputGoogleAutocomplete component.
+ */
+export interface InputGoogleAutocompleteProps
+    extends InputGoogleAutocompleteBaseProps,
+        InputGoogleAutocompleteClassProps {}
+
+export const InputGoogleAutocomplete = ({
+    defaultValueJsonString,
+    valueJsonString,
+    onChangeJsonString,
+
+    defaultValue: defaultValueProps = undefined,
+    value: valueProps = undefined,
+    onChange: onChangeProps,
+
+    parseJson_to_String,
+    parseString_to_Json,
+
+    className = "",
+    validator,
+    ...props
+}: InputGoogleAutocompleteProps) => {
+    const { defaultValue, value, onChange } = useJsonString<
+        AddressGoogle | undefined
+    >({
+        parseJson_to_String: parseJson_to_String ?? parseAddress_to_String,
+        parseString_to_Json: parseString_to_Json ?? parseString_to_Address,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        value: valueProps,
+        defaultValue: defaultValueProps,
+        onChange: onChangeProps,
+    });
+
+    const [valueText, setValueText] = useState(
+        value?.formatted_address ?? defaultValue?.formatted_address ?? "",
+    );
+
+    const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
+
+    const { setData, isValidData } = useData<AddressGoogle | undefined>(
+        defaultValue,
+        {
+            onChangeDataAfter: (d) => {
+                onChange?.(d);
+                if (d) {
+                    setValueText(d?.formatted_address ?? "");
+                }
+            },
+            validator,
+        },
+    );
+
+    const [autocompleteValue, setAutocompleteValue] = useState<
+        AutocompleteGoogle | undefined
+    >(undefined);
+
+    const onPlaceChanged = () => {
+        if (autocompleteValue) {
+            const place = autocompleteValue?.getPlace?.();
+            if (place == undefined) {
+                setError(new ErrorGoogleKeyInvalid());
+                return;
+            }
+            setData({
+                ...place,
+                lat: place?.geometry?.location?.lat?.(),
+                lng: place?.geometry?.location?.lng?.(),
+            });
+        } else {
+            setData(undefined);
+        }
+    };
+
+    return (
+        <div className={`fenext-input-google-autocomplete ${className}`}>
+            <div className={`fenext-input-google-autocomplete-content`}>
+                <div
+                    className={`fenext-input-google-autocomplete-content-input`}
+                >
+                    <Autocomplete
+                        {...props}
+                        onLoad={setAutocompleteValue}
+                        onPlaceChanged={onPlaceChanged}
+                    >
+                        <InputText
+                            {...props}
+                            validator={undefined}
+                            value={valueText}
+                            onChange={(e) => {
+                                setValueText(e);
+                                setData(undefined);
+                            }}
+                            error={
+                                error ??
+                                (isValidData instanceof ErrorFenextjs
+                                    ? isValidData
+                                    : undefined)
+                            }
+                        />
+                    </Autocomplete>
+                </div>
+                <span className={`fenext-input-google-autocomplete-close`}>
+                    <Close />
+                </span>
+            </div>
+        </div>
+    );
+};
+
+
+export interface InputSelectTProps<T>
+    extends Omit<
+        InputSelectProps<T>,
+        "defaultValue" | "value" | "options" | "onChange" | "onChangeData"
+    > {
+    /**
+     * Default Options of select.
+     */
+    defaultValue?: T;
+    /**
+     * Value Options of select.
+     */
+    value?: T;
+    /**
+     * Options of select.
+     */
+    options: T[];
+    /**
+     * Function to call when the input value changes.
+     */
+    onChange?: (v?: T) => void;
+    /**
+     * Function for converter T to InputSelectItemOptionBaseProps<T>
+     */
+    onParse: (v?: T) => InputSelectItemOptionBaseProps<T>;
+}
+
+export const InputSelectT = <T,>({
+    defaultValue,
+    value,
+    options,
+    onChange,
+    onParse,
+    ...props
+}: InputSelectTProps<T>) => {
+    return (
+        <>
+            <InputSelect
+                {...props}
+                defaultValue={defaultValue ? onParse(defaultValue) : undefined}
+                value={value ? onParse(value) : undefined}
+                options={options.map(onParse)}
+                onChangeData={onChange}
+            />
+        </>
+    );
+};
+
+
+import React, {
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useState,
+} from "react";
+
+/**
+ * Interface that defines CSS class properties for a select-multiple input component.
+ */
+export interface InputSelectMultipleClassProps extends InputSelectClassProps {
+    /**
+     * CSS class name for the input select-multiple.
+     */
+    classNameSelectMultiple?: string;
+
+    /**
+     * CSS class name for the list options.
+     */
+    classNameSelectMultipleList?: string;
+}
+
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectMultipleBaseProps<T = any>
+    extends Omit<
+        InputSelectBaseProps<T>,
+        | "defaultValue"
+        | "value"
+        | "onChange"
+        | "onChangeData"
+        | "onChangeValidate"
+        | "validatorData"
+    > {
+    /**
+     * Default Options of select.
+     */
+    defaultValue?: InputSelectItemOptionBaseProps<T>[];
+    /**
+     * Default Options of select.
+     */
+    value?: InputSelectItemOptionBaseProps<T>[];
+    /**
+     * Function to call when the input value changes.
+     */
+    onChange?: (v?: InputSelectItemOptionBaseProps<T>[]) => void;
+    /**
+     * Function to call when the input value changes.
+     */
+    onChangeData?: (v?: T[]) => void;
+
+    /**
+     * Function to call for custom input validation.
+     */
+    onChangeValidate?: (
+        e: InputSelectItemOptionBaseProps<T>[],
+    ) => Promise<any> | any;
+    /**
+     * iconDelete custom of option.
+     * @default <Trash />
+     */
+    iconDelete?: ReactNode;
+
+    typeSelectMultipleStyle?: "normal" | "checkbox";
+
+    CustomOptionsSelected?: typeof InputSelectOption<T>;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validatorData?: FenextjsValidatorClass<T[]>;
+}
+/**
+ * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
+ */
+export interface InputSelectMultipleProps<T = any>
+    extends InputSelectMultipleBaseProps<T>,
+        InputSelectMultipleClassProps {}
+
+export const InputSelectMultiple = <T = any,>({
+    classNameSelectMultiple = "",
+    classNameSelectMultipleList = "",
+    onChange,
+    onChangeData,
+    value = undefined,
+    defaultValue = [],
+    onChangeValidate,
+    options = [],
+    iconDelete = <Trash />,
+    typeSelectMultipleStyle = "normal",
+    CustomOptionsSelected = undefined,
+    validatorData,
+    useTOption,
+    ...props
+}: InputSelectMultipleProps<T>) => {
+    const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
+    const { data, setData, setDataFunction } = useData<
+        InputSelectItemOptionBaseProps<T>[]
+    >(defaultValue, {
+        onChangeDataAfter: (e) => {
+            onChange?.(e);
+            onChangeData?.(e?.map((e) => e.data as T));
+        },
+    });
+
+    const dataMemo = useMemo(() => value ?? data, [data, value]);
+
+    const validateOptions = async () => {
+        if (onChangeValidate) {
+            setError(undefined);
+            try {
+                await onChangeValidate(dataMemo);
+            } catch (error: any) {
+                setError(
+                    new ErrorFenextjs({
+                        code: ErrorCode.ERROR,
+                        message: `${error.message}`,
+                    }),
+                );
+            }
+        }
+    };
+    useEffect(() => {
+        validateOptions();
+    }, [dataMemo]);
+    const onAddItemSelect = useCallback(
+        (newItem: InputSelectItemOptionBaseProps<T> | undefined) => {
+            if (newItem) {
+                setDataFunction(() => {
+                    const old = [...dataMemo];
+                    if (old.find((e) => e.id == newItem.id)) {
+                        return old.filter((e) => e.id != newItem.id);
+                    }
+                    return [...old, newItem];
+                });
+            }
+        },
+        [dataMemo],
+    );
+
+    const onRemoveItemSelect = (deleteItem: InputSelectItemOptionBaseProps) => {
+        setData(dataMemo.filter((option) => option.id != deleteItem.id));
+    };
+
+    const OPTIONS = useMemo(() => {
+        return options.map((option) => {
+            const isSelect =
+                dataMemo.find((e) => e.id == option.id) != undefined;
+            return {
+                ...option,
+                hidden: isSelect,
+                selected: isSelect,
+            };
+        });
+    }, [options, dataMemo]);
+
+    const { error: errorFenextVD } = useValidator({
+        data: dataMemo?.map((e) => e?.data),
+        validator: validatorData,
+    });
+    return (
+        <>
+            <div
+                className={`
+                    fenext-select-multiple
+                    fenext-select-multiple-${typeSelectMultipleStyle}
+                    ${classNameSelectMultiple}
+                `}
+            >
+                <InputSelect<T>
+                    {...props}
+                    onChange={onAddItemSelect}
+                    options={OPTIONS}
+                    error={props?.error ?? errorFenextVD ?? error}
+                    isSelectClearText={true}
+                    showOptionIconImg={false}
+                    useTOption={useTOption}
+                    extraInLabel={
+                        <>
+                            <div
+                                className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
+                            >
+                                {dataMemo.map((option) => {
+                                    const OptionTag =
+                                        CustomOptionsSelected ??
+                                        InputSelectOption<T>;
+                                    return (
+                                        <OptionTag
+                                            {...option}
+                                            type={"multiple"}
+                                            onDelete={onRemoveItemSelect}
+                                            iconDelete={
+                                                option?.iconDelete ?? iconDelete
+                                            }
+                                            disabled={
+                                                props?.disabled ??
+                                                option?.disabled
+                                            }
+                                            useT={useTOption}
+                                        />
+                                    );
+                                })}
+                            </div>
+                            {props?.extraInLabel}
+                        </>
+                    }
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a radio input component.
+ */
+export interface InputRadioClassProps {
+    /**
+     * CSS class name for content the radio.
+     */
+    classNameContent?: string;
+
+    /**
+     * CSS class name for the radio label.
+     */
+    classNameLabel?: string;
+
+    /**
+     * CSS class name for the active radio label.
+     */
+    classNameLabelActive?: string;
+
+    /**
+     * CSS class name for the inactive radio label.
+     */
+    classNameLabelInactive?: string;
+
+    /**
+     * CSS class name for the text next to the radio.
+     */
+    classNameText?: string;
+
+    /**
+     * CSS class name for the container that holds the radio and its label.
+     */
+    classNameContentRadio?: string;
+
+    /**
+     * CSS class name for the container that holds the radio and its label when the radio is active.
+     */
+    classNameContentRadioActive?: string;
+
+    /**
+     * CSS class name for the container that holds the radio and its label when the radio is inactive.
+     */
+    classNameContentRadioInactive?: string;
+
+    /**
+     * CSS class name for the radio input element.
+     */
+    classNameRadio?: string;
+
+    /**
+     * CSS class name for the radio input element when the radio is active.
+     */
+    classNameRadioActive?: string;
+
+    /**
+     * CSS class name for the radio input element when the radio is inactive.
+     */
+    classNameRadioInactive?: string;
+
+    /**
+     * Icon to display next to the radio.
+     */
+    icon?: ReactNode;
+}
+
+/**
+ * Interface that defines base properties for a radio Item.
+ */
+export interface InputRadioItemProps<T> {
+    /**
+     * The id to display next to the item radio.
+     */
+    id: string;
+    /**
+     * The label to display next to the item radio.
+     */
+    label?: ReactNode;
+    /**
+     * The data of the item radio.
+     */
+    data?: T;
+}
+
+/**
+ * Interface that defines base properties for a radio input component.
+ */
+export interface InputRadioBaseProps<T = any> extends _TProps {
+    /**
+     * Items of Input Radio.
+     */
+    items?: InputRadioItemProps<T>[];
+
+    /**
+     * The position of the label relative to the radio.
+     */
+    labelPosition?: "right" | "left";
+
+    /**
+     * The name attribute of the radio input element.
+     */
+    name?: string;
+
+    /**
+     * A callback function to execute when the radio is toggled.
+     * Receives a boolean value indicating whether the radio is checked or not.
+     */
+    onChange?: (e: InputRadioItemProps<T>) => void;
+
+    /**
+     * The default value of the radio when it is first rendered.
+     */
+    defaultValue?: InputRadioItemProps<T>;
+
+    /**
+     * The value of the radio input element.
+     */
+    value?: InputRadioItemProps<T>;
+
+    /**
+     * A boolean value indicating whether the radio is disabled or not.
+     */
+    disabled?: boolean;
+}
+
+/**
+ * Interface that defines all properties for a radio input component.
+ * Extends InputRadioBaseProps and InputRadioClassProps.
+ */
+export interface InputRadioProps<T>
+    extends InputRadioBaseProps<T>,
+        InputRadioClassProps {}
+
+/**
+ * Component that renders a radio input.
+ * Takes an InputRadioProps object as props.
+ */
+export const InputRadio = <T = any,>({
+    classNameContent = "",
+    classNameLabel = "",
+    classNameLabelActive = "",
+    classNameLabelInactive = "",
+    classNameText = "",
+
+    classNameContentRadio = "",
+    classNameContentRadioActive = "",
+    classNameContentRadioInactive = "",
+
+    classNameRadio = "",
+    classNameRadioActive = "",
+    classNameRadioInactive = "",
+
+    labelPosition = "right",
+    name = "",
+    onChange = (e) => {
+        env_log(e, {
+            name: "input radio onchange",
+        });
+    },
+    defaultValue = undefined,
+    value = undefined,
+    disabled = false,
+    icon = <Check />,
+
+    items = [],
+    ...props
+}: InputRadioProps<T>) => {
+    const { _t } = use_T({ ...props });
+    const [checked, setChecked] = useState(defaultValue);
+
+    const onChecked = (i: InputRadioItemProps<T>) => () => {
+        if (disabled) {
+            return;
+        }
+        setChecked(i);
+        onChange(i);
+    };
+
+    return (
+        <div className={`fenext-content-radio ${classNameContent}`}>
+            {items.map((item, i) => {
+                const isCheck = (value?.id ?? checked?.id) == item.id;
+                return (
+                    <label
+                        key={i}
+                        className={`fenext-input-radio ${labelPosition} ${classNameLabel}  ${
+                            isCheck
+                                ? classNameLabelActive
+                                : classNameLabelInactive
+                        }`}
+                        onClick={onChecked(item)}
+                    >
+                        <input
+                            type="radio"
+                            name={name}
+                            defaultChecked={item?.id == defaultValue?.id}
+                            className={`fenext-input-radio-input fenext-input-radio-input-id-${item.id}`}
+                        />
+                        <span
+                            className={`fenext-input-radio-box ${classNameContentRadio} ${
+                                isCheck
+                                    ? classNameContentRadioActive
+                                    : classNameContentRadioInactive
+                            }`}
+                        >
+                            <span
+                                className={`
+                                fenext-input-radio-box-icon
+                                ${classNameRadio} ${
+                                    isCheck
+                                        ? classNameRadioActive
+                                        : classNameRadioInactive
+                                }`}
+                            >
+                                {isCheck && icon}
+                            </span>
+                        </span>
+                        <span
+                            className={`fenext-input-radio-text ${classNameText}`}
+                        >
+                            {_t(item.label)}
+                        </span>
+                    </label>
+                );
+            })}
+        </div>
+    );
+};
+
+
+/**
+ * Properties for the base InputImg component.
+ */
+export interface InputImgBaseProps extends Omit<InputFileBaseProps, "accept"> {
+    /**
+     * The Title for the component.
+     */
+    title?: ReactNode;
+    /**
+     * The Text for the component.
+     */
+    text?: ReactNode;
+    /**
+     * The Icon for the component.
+     */
+    icon?: ReactNode;
+    /**
+     * on Remove Img for the component.
+     */
+    onRemove?: () => void;
+}
+
+/**
+ * Properties for the class of the InputImg component.
+ */
+export interface InputImgClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameUp?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameTitle?: Omit<TitleProps, "children">;
+    /**
+     * The class name for the component.
+     */
+    classNameContentIcon?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameText?: Omit<TextProps, "children">;
+    /**
+     * The class name for the component.
+     */
+    classNameProgress?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameRemove?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameImg?: string;
+}
+
+/**
+ * Properties for the InputImg component.
+ */
+export interface InputImgProps extends InputImgBaseProps, InputImgClassProps {}
+
+export const InputImg = ({
+    className = "",
+    classNameContentIcon = "",
+    classNameText = {},
+    classNameTitle = {
+        tag: "h2",
+    },
+    classNameUp = "",
+    classNameProgress = "",
+    classNameRemove = "",
+    classNameImg = "",
+    icon = (
+        <>
+            <SvgImg />
+        </>
+    ),
+    text = "Drag Image",
+    title = "Add Image",
+
+    defaultValue = {
+        fileData: "",
+        text: "",
+    },
+    parseProgress = (e) => `Imging . . . ${e.toFixed(0)}%`,
+    onChange,
+    onRemove,
+
+    ...props
+}: InputImgProps) => {
+    const { _t } = use_T({ ...props });
+    const { data, setData } = useData<FileProps>(defaultValue, {
+        onChangeDataAfter: onChange,
+    });
+
+    const [progress, setProgress] = useState(-1);
+    const { data: error, setData: setError } = useData<ErrorProps | undefined>(
+        undefined,
+    );
+    return (
+        <>
+            <div
+                className={`fenext-input-img ${className} ${
+                    progress > 0 && progress < 100
+                        ? "fenext-input-img-in-progress"
+                        : ""
+                } ${
+                    data?.fileData && data?.fileData != ""
+                        ? "fenext-input-img-ok"
+                        : ""
+                } ${error ? "fenext-input-img-error" : ""}`}
+            >
+                {data.fileData && data.fileData != "" ? (
+                    <>
+                        <div className={`fenext-input-img-up ${classNameUp}`}>
+                            <img
+                                src={data.fileData}
+                                className={`fenext-input-img-img ${classNameImg}`}
+                            />
+                            <div
+                                className={`fenext-input-img-remove ${classNameRemove}`}
+                                onClick={() => {
+                                    setData({
+                                        fileData: "",
+                                        text: "",
+                                    });
+                                    onRemove?.();
+                                }}
+                            >
+                                <Close />
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <InputFile
+                            onChange={setData}
+                            parseProgress={() => ""}
+                            onChangeProgress={setProgress}
+                            onChangeError={setError}
+                            accept={[
+                                "jpg",
+                                "jpeg",
+                                "png",
+                                "gif",
+                                "svg",
+                                "bmp",
+                                "webp",
+                            ]}
+                            {...props}
+                            _t={_t}
+                        >
+                            <div
+                                className={`fenext-input-img-up ${classNameUp}`}
+                            >
+                                <div
+                                    className={`fenext-input-img-content-icon ${classNameContentIcon}`}
+                                >
+                                    {icon}
+                                </div>
+                                {progress > 0 && progress < 100 ? (
+                                    <Title
+                                        {...classNameTitle}
+                                        className={`fenext-input-img-progress ${classNameProgress}`}
+                                    >
+                                        {parseProgress(progress)}
+                                    </Title>
+                                ) : (
+                                    <Title
+                                        {...classNameTitle}
+                                        className={`fenext-input-img-title ${classNameTitle.className}`}
+                                    >
+                                        {_t(title)}
+                                    </Title>
+                                )}
+                                <Text
+                                    {...classNameText}
+                                    className={`fenext-input-img-text ${classNameText.className}`}
+                                >
+                                    {_t(text)}
+                                </Text>
+                            </div>
+                        </InputFile>
+                    </>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a text input component.
+ */
+export interface InputCodeClassProps extends InputTextClassProps {}
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputCodeBaseProps
+    extends Omit<InputTextBaseProps, "type" | "maxLength"> {
+    /**
+     * maxLength of Input.
+     */
+    maxLength: number;
+}
+/**
+ * Props interface for the InputCode component. Extends both InputCodeBaseProps and InputCodeClassProps interfaces.
+ */
+export interface InputCodeProps
+    extends InputCodeBaseProps,
+        InputCodeClassProps {}
+
+export const InputCode = ({ ...props }: InputCodeProps) => {
+    const { data, setData } = useData(props?.defaultValue ?? "", {
+        onChangeDataAfter: props?.onChange,
+    });
+    return (
+        <>
+            <InputText
+                {...props}
+                onChange={setData}
+                className={`${props?.className} fenext-input-code`}
+                onKeyDown={({ target }) => {
+                    const end = target.value.length;
+
+                    target.setSelectionRange(end, end);
+                    target.focus();
+                }}
+                extraInContentInput={
+                    <>
+                        <div className="fenext-input-code-content-items">
+                            {new Array(props?.maxLength ?? 1)
+                                ?.fill(1)
+                                .map((e, i) => {
+                                    return (
+                                        <>
+                                            <div
+                                                key={i * e}
+                                                className={`fenext-input-code-item fenext-input-code-item-${
+                                                    data.length == i
+                                                        ? "current"
+                                                        : ""
+                                                }`}
+                                            >
+                                                {!data || data == ""
+                                                    ? props?.placeholder?.[i] ??
+                                                      ""
+                                                    : ""}
+                                                {data?.[i] ?? ""}
+                                            </div>
+                                        </>
+                                    );
+                                })}
+                        </div>
+                    </>
+                }
+            />
+        </>
+    );
+};
+
+
+export interface TextSelectProps {
+    text?: string;
+    select?: InputSelectItemOptionBaseProps;
+}
+
+/**
+ * Interface that defines CSS class properties for a checkbox input component.
+ */
+export interface InputTextSelectClassProps
+    extends InputTextClassProps,
+        InputSelectClassProps {}
+
+/**
+ * Interface that defines base properties for a checkbox input component.
+ */
+export interface InputTextSelectBaseProps
+    extends Omit<
+            InputTextBaseProps,
+            | "type"
+            | "value"
+            | "onChange"
+            | "defaultValue"
+            | "datalist"
+            | "onChangeValidate"
+            | "label"
+            | "placeholder"
+            | "icon"
+        >,
+        Omit<
+            InputSelectBaseProps,
+            | "value"
+            | "onChange"
+            | "defaultValue"
+            | "onChangeValidate"
+            | "label"
+            | "placeholder"
+            | "icon"
+        > {
+    /**
+     * Label text to display for the input.
+     */
+    label?: any;
+
+    /**
+     * Placeholder text to display in the input field.
+     */
+    placeholderSelect?: string;
+    /**
+     * Placeholder text to display in the input field.
+     */
+    placeholderText?: string;
+    /**
+     * Default Value of TextSelect.
+     */
+    defaultValue?: Partial<TextSelectProps>;
+    /**
+     * Value of TextSelect.
+     */
+    value?: Partial<TextSelectProps>;
+    /**
+     * onChange of TextSelect.
+     */
+    onChange?: (data: Partial<TextSelectProps>) => void;
+    /**
+     * posSelect of TextSelect.
+     */
+    posSelect?: "left" | "right";
+}
+
+/**
+ * Interface that defines all properties for a checkbox input component.
+ * Extends InputTextSelectBaseProps and InputTextSelectClassProps.
+ */
+export interface InputTextSelectProps
+    extends InputTextSelectBaseProps,
+        InputTextSelectClassProps {}
+
+/**
+ * Component that renders a checkbox input.
+ * Takes an InputTextSelectProps object as props.
+ */
+export const InputTextSelect = ({
+    label,
+    placeholderSelect,
+    placeholderText,
+    defaultValue = {},
+    value: valueProps = undefined,
+    onChange,
+    validator = undefined,
+    posSelect = "left",
+    errorWithIsChange = false,
+    error,
+    ...props
+}: InputTextSelectProps) => {
+    const { _t } = use_T({ ...props });
+    const { data, onChangeData, isChange } = useData<
+        Partial<TextSelectProps>,
+        Partial<TextSelectProps>
+    >(defaultValue, {
+        onChangeDataAfter: onChange,
+    });
+    const value = useMemo(() => valueProps ?? data, [valueProps, data]);
+
+    const { error: errorFenext } = useValidator({
+        data: data,
+        validator: validator ?? FenextjsValidator(),
+    });
+
+    const errorInput = useMemo<ErrorFenextjs | undefined>(() => {
+        if (errorWithIsChange && !isChange) {
+            return undefined;
+        }
+        return error ?? errorFenext;
+    }, [error, errorFenext, errorWithIsChange, isChange]);
+
+    return (
+        <>
+            <div
+                className={`fenext-input-text-select fenext-input-text-select-${posSelect}`}
+            >
+                <div
+                    className={`fenext-input-text-select-label fenext-input-label  `}
+                >
+                    {_t(label)}
+                </div>
+                <div className={`fenext-input-text-select-select `}>
+                    <InputSelect
+                        {...props}
+                        placeholder={placeholderSelect}
+                        onChange={onChangeData("select")}
+                        validator={undefined}
+                        value={value.select}
+                        _t={_t}
+                        parseText={(e) => e}
+                    />
+                </div>
+                <div className={`fenext-input-text-select-text `}>
+                    <InputText
+                        {...props}
+                        placeholder={placeholderText}
+                        onChange={onChangeData("text")}
+                        validator={undefined}
+                        value={value.text}
+                        _t={_t}
+                    />
+                </div>
+                {errorInput && (
+                    <ErrorComponent
+                        error={errorInput}
+                        className={`fenext-input-error `}
+                        _t={_t}
+                    />
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Interface for the base props of an input password component.
+ */
+export interface InputPasswordBaseProps
+    extends Omit<InputTextBaseProps, "type"> {}
+
+/**
+ * Interface for the class props of an input password component.
+ */
+export interface InputPasswordClassProps extends InputTextClassProps {
+    classNameContentEye?: string;
+}
+
+/**
+ * Interface for the props of an input password component.
+ */
+export interface InputPasswordProps
+    extends InputPasswordBaseProps,
+        InputPasswordClassProps {}
+
+export const InputPassword = ({
+    classNameContentEye = "",
+    ...props
+}: InputPasswordProps) => {
+    const [type, setType] = useState<"text" | "password">("password");
+    const toggleTypePassword = () => {
+        setType(type == "password" ? "text" : "password");
+    };
+    const ICON = useMemo(() => {
+        return (
+            <span
+                onClick={toggleTypePassword}
+                className={`fenext-input-password-icon ${classNameContentEye}`}
+            >
+                {type == "password" ? <Eye /> : <EyeBar />}
+            </span>
+        );
+    }, [type]);
+    return (
+        <>
+            <InputText {...props} icon={ICON} type={type} />
+        </>
+    );
+};
+
+
+export interface InputSelectMultipleTProps<T>
+    extends Omit<
+        InputSelectMultipleProps<T>,
+        "defaultValue" | "value" | "options" | "onChange"
+    > {
+    /**
+     * Default Options of select.
+     */
+    defaultValue?: T[];
+    /**
+     * Value Options of select.
+     */
+    value?: T[];
+    /**
+     * Options of select.
+     */
+    options: T[];
+    /**
+     * Function to call when the input value changes.
+     */
+    onChange?: (v?: T[]) => void;
+    /**
+     * Function for converter T to InputSelectItemOptionBaseProps<T>
+     */
+    onParse: (v?: T) => InputSelectItemOptionBaseProps<T>;
+}
+
+export const InputSelectMultipleT = <T,>({
+    defaultValue,
+    value,
+    options,
+    onChange,
+    onParse,
+    ...props
+}: InputSelectMultipleTProps<T>) => {
+    return (
+        <>
+            <InputSelectMultiple<T>
+                {...props}
+                defaultValue={
+                    defaultValue ? defaultValue.map(onParse) : undefined
+                }
+                value={value ? value.map(onParse) : undefined}
+                options={options.map(onParse)}
+                onChangeData={onChange}
+            />
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a SelectCountry input component.
+ */
+export interface InputSelectCountryClassProps extends InputSelectClassProps {}
+
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectCountryBaseProps
+    extends Omit<
+        InputSelectTProps<CountryProps>,
+        "options" | "onParse" | "useLoader" | "loader"
+    > {}
+/**
+ * Props interface for the InputSelectCountry component. Extends both InputSelectCountryBaseProps and InputSelectCountryClassProps interfaces.
+ */
+export interface InputSelectCountryProps
+    extends InputSelectCountryBaseProps,
+        InputSelectCountryClassProps {}
+
+export const InputSelectCountry = ({ ...props }: InputSelectCountryProps) => {
+    const [loader, setLoader] = useState(false);
+    const [options, setOptions] = useState<CountryProps[]>([]);
+    const onLoad = async () => {
+        const countrys: CountryProps[] = await getDataCountrys();
+        setOptions(countrys);
+        setLoader(false);
+    };
+    useEffect(() => {
+        onLoad();
+    }, []);
+
+    return (
+        <>
+            <InputSelectT<CountryProps>
+                {...props}
+                useTOption={false}
+                options={options}
+                onParse={(e) => {
+                    const r: InputSelectItemOptionBaseProps<CountryProps> = {
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        img: e ? `${getRuteCountryImg(e)}` : undefined,
+                        data: e,
+                    };
+                    return r;
+                }}
+                loader={loader}
+                useLoader={true}
+                maxLengthShowOptions={50}
+            />
+        </>
+    );
+};
+
+
+/**
+ * Properties for styling the various elements of the input file component
+ */
+export interface InputFileClassProps {
+    /**
+     * Class name for the component
+     */
+    className?: string;
+    /**
+     * Class name for the label element
+     */
+    classNameLabel?: string;
+    /**
+     * Class name for the content element
+     */
+    classNameContent?: string;
+    /**
+     * Class name for the input element
+     */
+    classNameInput?: string;
+    /**
+     * Class name for the error element
+     */
+    classNameError?: string;
+}
+
+/**
+ * Properties needed for uploading a file
+ */
+export interface InputFileUploadDataProps {
+    /**
+     * The file to be uploaded
+     */
+    file: any;
+    /**
+     * The name of the file to be uploaded
+     */
+    nameFile: string;
+    /**
+     * The name of the file to be uploaded
+     */
+    extend: string;
+    /**
+     * Function to set the progress of the upload
+     */
+    setProgress: (progress: number) => void;
+    /**
+     * Function to set the data of the uploaded file
+     */
+    setFileData: (data: FileProps) => void;
+}
+
+/**
+ * Base properties for the input file component
+ */
+export interface InputFileBaseProps extends _TProps {
+    /**
+     * Allowed file types for the input element
+     */
+    accept?: string[];
+    /**
+     * Default value for the input element
+     */
+    defaultValue?: FileProps;
+    /**
+     * Function to call when the value of the input element changes
+     */
+    onChange?: (v: FileProps) => void;
+    /**
+     * Function to call when the value of the input element changes progress
+     */
+    onChangeProgress?: (v: number) => void;
+    /**
+     * Function to call when the value of the input element changes error
+     */
+    onChangeError?: (v: ErrorProps | undefined) => void;
+    /**
+     * Function to call when a file is being uploaded
+     */
+    onUploadFile?: (data: InputFileUploadDataProps) => Promise<FileProps>;
+    /**
+     * Whether to clear the input element after a file has been uploaded
+     */
+    clearAfterUpload?: boolean;
+    /**
+     * Maximum size of file that can be uploaded
+     */
+    MAX_SIZE_FILE?: number;
+    /**
+     * Function to parse progress during file upload
+     */
+    parseProgress?: (progres: number) => any;
+    /**
+     * disabled upload.
+     */
+    disabled?: boolean;
+    /**
+     * textMaxSizeFile.
+     */
+    textMaxSizeFile?: string;
+}
+
+/**
+ * Properties for the input file component, combining the base properties and styling properties
+ */
+export interface InputFileProps
+    extends InputFileBaseProps,
+        InputFileClassProps,
+        PropsWithChildren {}
+
+export const InputFile = ({
+    defaultValue = {
+        fileData: "",
+        text: "",
+    },
+    className = "",
+    classNameLabel = "",
+    classNameContent = "",
+    classNameInput = "",
+    classNameError = "",
+    onChange = (v: FileProps) => {
+        env_log(v, {
+            name: "onChange File",
+        });
+    },
+    accept = [],
+    children,
+    clearAfterUpload = false,
+    MAX_SIZE_FILE = 5000000,
+    parseProgress = (e) => e,
+    onChangeProgress,
+    onChangeError,
+    disabled = false,
+    textMaxSizeFile = "File max size",
+    ...props
+}: InputFileProps) => {
+    const { _t } = use_T({ ...props });
+    const onUploadFile = async (
+        data: InputFileUploadDataProps,
+    ): Promise<FileProps> => {
+        if (props?.onUploadFile) {
+            const r = await props?.onUploadFile(data);
+            if (r) {
+                return r;
+            }
+        }
+        const fileData = await parseFile(data.file, {
+            updateProgress: data.setProgress,
+        });
+        return {
+            fileData,
+            base64: `${fileData ?? ""}`,
+            text: data.nameFile,
+            extend: data.extend,
+        };
+    };
+    const { data: error, setData: setError } = useData<ErrorProps | undefined>(
+        undefined,
+        {
+            onChangeDataAfter: onChangeError,
+        },
+    );
+    const ref = useRef<any>(null);
+
+    const { setData } = useData<FileProps>(defaultValue, {
+        onChangeDataAfter: onChange,
+    });
+
+    const { data: progress, setData: setProgress } = useData<number>(-1, {
+        onChangeDataAfter: onChangeProgress,
+    });
+
+    const validateAccept = (nameFile: string) => {
+        const extend = nameFile.split(".").pop()?.toLowerCase();
+        if (
+            accept.length != 0 &&
+            extend &&
+            !accept.map((e) => e.toLowerCase()).includes(extend)
+        ) {
+            throw "File Invalid";
+        }
+        return extend;
+    };
+    const uploadFile = async (e: any) => {
+        try {
+            setError(undefined);
+            const file = e.target.files[0];
+            if (!file) {
+                setProgress(-2);
+                setData({
+                    fileData: "",
+                    text: "",
+                });
+                return;
+            }
+
+            if (file?.size > MAX_SIZE_FILE) {
+                throw `${_t(textMaxSizeFile)} ${MAX_SIZE_FILE / 1000000}mb`;
+            }
+
+            const nameFile = e.target.value.split("\\").pop();
+
+            env_log(nameFile, {
+                name: "nameFile",
+            });
+            const extend = validateAccept(nameFile);
+
+            const result = await onUploadFile({
+                file,
+                setFileData: setData,
+                nameFile,
+                setProgress,
+                extend: extend ?? "",
+            });
+            setData(result);
+
+            if (clearAfterUpload) {
+                e.target.value = null;
+                e.target.type = "text";
+
+                setTimeout(() => {
+                    e.target.type = "file";
+                }, 100);
+                if (ref?.current) {
+                    ref.current.value = null;
+                }
+            }
+        } catch (e) {
+            setError({
+                message: `${e}`,
+                data: e,
+            });
+            setProgress(-2);
+            setData({
+                fileData: "",
+                text: "",
+            });
+            env_log(e, {
+                name: "error upload file",
+                color: "red",
+            });
+        }
+    };
+
+    return (
+        <>
+            <div className={`fenext-input-file ${className}`}>
+                <label className={`fenext-input-file-label ${classNameLabel}`}>
+                    <div
+                        className={`fenext-input-file-content ${classNameContent}`}
+                    >
+                        {children}
+                    </div>
+                    <input
+                        ref={ref}
+                        type="file"
+                        className={`fenext-input-file-input ${classNameInput}`}
+                        onChange={uploadFile}
+                        accept={accept.map((e: string) => `.${e}`).join(",")}
+                        disabled={disabled}
+                    />
+                </label>
+                {progress > 0 && progress < 100 && parseProgress(progress)}
+                {error && (
+                    <div className={`fenext-error ${classNameError}`}>
+                        {error.message}
+                    </div>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Props for the InputDateValueType
+ */
+export type InputDateRangeValueType =
+    | [InputDateValueType, InputDateValueType]
+    | undefined;
+/**
+ * Props for the base InputDateRangeData component
+ */
+export interface InputDateRangeDataProps {
+    /**
+     * value of Date valueMin
+     */
+    valueMin?: Date;
+    /**
+     * value of Date valueMax
+     */
+    valueMax?: Date;
+}
+
+/**
+ * Props for the base InputDateRange component
+ */
+export interface InputDateRangeElementBaseProps
+    extends Omit<InputDateBaseProps, "value" | "onChange" | "defaultValue"> {}
+
+/**
+ * Props for the base InputDateRange component
+ */
+export interface InputDateRangeBaseProps
+    extends InputDateRangeElementBaseProps {
+    /**
+     * The default value of the input field.
+     */
+    defaultValue?: InputDateRangeValueType;
+    /**
+     * The current value of the input field.
+     */
+    value?: InputDateRangeValueType;
+    /**
+     * A callback function to handle changes to the input field.
+     */
+    onChange?: (v: InputDateRangeValueType) => void;
+    /**
+     * Props of input date start.
+     */
+    propsStart?: InputDateRangeElementBaseProps;
+    /**
+     * Props of input date end.
+     */
+    propsEnd?: InputDateRangeElementBaseProps;
+}
+
+/**
+ * Props for the InputDateRange component to customize CSS class names.
+ */
+export interface InputDateRangeClassProps extends InputDateClassProps {
+    /**
+     * The CSS class for the input date field.
+     */
+    classNameInputDateRange?: string;
+    /**
+     * The CSS class for the input date field.
+     */
+    classNameInputDateRangeContentInputDate?: string;
+}
+
+/**
+ * All props for the InputDateRange component.
+ */
+export interface InputDateRangeProps
+    extends InputDateRangeBaseProps,
+        InputDateRangeClassProps {}
+
+export const InputDateRange = ({
+    classNameInputDateRange = "",
+    classNameInputDateRangeContentInputDate = "",
+    classNameLabel = "",
+
+    label,
+    min,
+    max,
+
+    defaultValue = undefined,
+    value = undefined,
+    onChange,
+    optional = false,
+    optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
+
+    propsStart = {},
+    propsEnd = {},
+
+    ...props
+}: InputDateRangeProps) => {
+    const { _t } = use_T({ ...props });
+    const { dataMemo: data, onChangeData } = useData<
+        InputDateRangeDataProps,
+        InputDateRangeDataProps
+    >(
+        {
+            valueMin: value?.[0] ?? defaultValue?.[0],
+            valueMax: value?.[1] ?? defaultValue?.[1],
+        },
+        {
+            onMemo: (d) => {
+                return {
+                    valueMin: value?.[0] ?? d.valueMin,
+                    valueMax: value?.[1] ?? d.valueMax,
+                };
+            },
+            onChangeDataAfter: (d) => {
+                if (d) {
+                    onChange?.([d?.valueMin, d?.valueMax]);
+                }
+            },
+        },
+    );
+    return (
+        <>
+            <div
+                className={`fenext-input-date-range ${classNameInputDateRange}`}
+            >
+                <div className={`fenext-input-label ${classNameLabel}`}>
+                    {_t(label)}
+                    {optional && (
+                        <>
+                            <small className="fenext-input-optional">
+                                {_t(optionalText)}
+                            </small>
+                        </>
+                    )}
+                    {required && (
+                        <>
+                            <small className="fenext-input-required">
+                                {_t(requiredText)}
+                            </small>
+                        </>
+                    )}
+                </div>
+                <div
+                    className={`fenext-input-date-range-content-input-date ${classNameInputDateRangeContentInputDate}`}
+                >
+                    <InputDate
+                        {...props}
+                        {...propsStart}
+                        _t={_t}
+                        min={min}
+                        max={data?.valueMax ?? max}
+                        onChange={onChangeData("valueMin")}
+                        value={data.valueMin}
+                    />
+                </div>
+                <div
+                    className={`fenext-input-date-range-content-input-date ${classNameInputDateRangeContentInputDate}`}
+                >
+                    <InputDate
+                        {...props}
+                        {...propsEnd}
+                        _t={_t}
+                        max={max}
+                        min={data?.valueMin ?? min}
+                        onChange={onChangeData("valueMax")}
+                        value={data.valueMax}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a checkbox input component.
+ */
+export interface InputCheckboxClassProps {
+    /**
+     * CSS class name for the checkbox label.
+     */
+    classNameLabel?: string;
+
+    /**
+     * CSS class name for the active checkbox label.
+     */
+    classNameLabelActive?: string;
+
+    /**
+     * CSS class name for the inactive checkbox label.
+     */
+    classNameLabelInactive?: string;
+
+    /**
+     * CSS class name for the text next to the checkbox.
+     */
+    classNameText?: string;
+
+    /**
+     * CSS class name for the container that holds the checkbox and its label.
+     */
+    classNameContentCheckbox?: string;
+
+    /**
+     * CSS class name for the container that holds the checkbox and its label when the checkbox is active.
+     */
+    classNameContentCheckboxActive?: string;
+
+    /**
+     * CSS class name for the container that holds the checkbox and its label when the checkbox is inactive.
+     */
+    classNameContentCheckboxInactive?: string;
+
+    /**
+     * CSS class name for the checkbox input element.
+     */
+    classNameCheckbox?: string;
+
+    /**
+     * CSS class name for the checkbox input element when the checkbox is active.
+     */
+    classNameCheckboxActive?: string;
+
+    /**
+     * CSS class name for the checkbox input element when the checkbox is inactive.
+     */
+    classNameCheckboxInactive?: string;
+
+    /**
+     * Icon to display next to the checkbox.
+     */
+    icon?: any;
+}
+
+/**
+ * Interface that defines base properties for a checkbox input component.
+ */
+export interface InputCheckboxBaseProps<VT = any, VF = any> extends _TProps {
+    /**
+     * The label to display next to the checkbox.
+     */
+    label?: ReactNode;
+
+    /**
+     * The position of the label relative to the checkbox.
+     */
+    labelPosition?: "right" | "left";
+
+    /**
+     * The name attribute of the checkbox input element.
+     */
+    name?: string;
+
+    /**
+     * A callback function to execute when the checkbox is toggled.
+     * Receives a boolean value indicating whether the checkbox is checked or not.
+     */
+    onChange?: (e: boolean) => void;
+
+    onActive?: () => void;
+    onInactive?: () => void;
+    onActiveValue?: (data?: VT) => void;
+    onInactiveValue?: (data?: VF) => void;
+    valueActive?: VT;
+    valueInactive?: VF;
+
+    /**
+     * The default value of the checkbox when it is first rendered.
+     */
+    defaultValue?: boolean;
+
+    /**
+     * The value of the checkbox input element.
+     */
+    value?: boolean;
+
+    /**
+     * A boolean value indicating whether the checkbox is disabled or not.
+     */
+    disabled?: boolean;
+
+    /**
+     * A callback function to execute when the checkbox is validated.
+     * Should return a promise or void.
+     */
+    onValidateCheck?: () => Promise<void> | void;
+    /**
+     * Optional of Input.
+     */
+    optional?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    optionalText?: string;
+    /**
+     * Optional of Input.
+     */
+    required?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    requiredText?: string;
+}
+
+/**
+ * Interface that defines all properties for a checkbox input component.
+ * Extends InputCheckboxBaseProps and InputCheckboxClassProps.
+ */
+export interface InputCheckboxProps<VT = any, VF = any>
+    extends InputCheckboxBaseProps<VT, VF>,
+        InputCheckboxClassProps {}
+
+/**
+ * Component that renders a checkbox input.
+ * Takes an InputCheckboxProps object as props.
+ */
+export const InputCheckbox = <VT = any, VF = any>({
+    classNameLabel = "",
+    classNameLabelActive = "",
+    classNameLabelInactive = "",
+    classNameText = "",
+
+    classNameContentCheckbox = "",
+    classNameContentCheckboxActive = "",
+    classNameContentCheckboxInactive = "",
+
+    classNameCheckbox = "",
+    classNameCheckboxActive = "",
+    classNameCheckboxInactive = "",
+
+    label = "",
+    labelPosition = "right",
+    name = "",
+    onChange = (e) => {
+        env_log(e, {
+            name: "input checkbox onchange",
+        });
+    },
+    defaultValue = false,
+    value = undefined,
+    disabled = false,
+    icon = <Check />,
+    onValidateCheck = async () => {},
+    optional = false,
+    optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
+
+    onActive,
+    onActiveValue,
+    onInactive,
+    onInactiveValue,
+    valueActive,
+    valueInactive,
+
+    ...props
+}: InputCheckboxProps<VT, VF>) => {
+    const { _t } = use_T({ ...props });
+    const [checked_, setChecked] = useState(defaultValue === true);
+    const checked = useMemo(() => value ?? checked_, [value, checked_]);
+
+    const onChecked = async () => {
+        if (disabled) {
+            return;
+        }
+        const v = !checked;
+        if (v) {
+            await onValidateCheck();
+        }
+        setChecked(v);
+        onChange(v);
+        if (v) {
+            onActive?.();
+            onActiveValue?.(valueActive);
+        } else {
+            onInactive?.();
+            onInactiveValue?.(valueInactive);
+        }
+    };
+
+    return (
+        <label
+            className={`fenext-input-checkbox ${labelPosition} ${classNameLabel}  ${
+                checked ? classNameLabelActive : classNameLabelInactive
+            }`}
+        >
+            <input
+                type="checkbox"
+                name={name}
+                checked={checked}
+                onChange={onChecked}
+                className="fenext-input-checkbox-input"
+            />
+            <span
+                className={`fenext-input-checkbox-box ${classNameContentCheckbox} ${
+                    checked
+                        ? classNameContentCheckboxActive
+                        : classNameContentCheckboxInactive
+                }`}
+            >
+                <span
+                    className={`
+                    fenext-input-checkbox-box-icon
+                    ${classNameCheckbox} ${
+                        checked
+                            ? classNameCheckboxActive
+                            : classNameCheckboxInactive
+                    }`}
+                >
+                    {checked && icon}
+                </span>
+            </span>
+            <span className={`fenext-input-checkbox-text ${classNameText}`}>
+                {_t(label)}
+                {optional && (
+                    <>
+                        <small className="fenext-input-optional">
+                            {_t(optionalText)}
+                        </small>
+                    </>
+                )}
+                {required && (
+                    <>
+                        <small className="fenext-input-required">
+                            {_t(requiredText)}
+                        </small>
+                    </>
+                )}
+            </span>
+        </label>
+    );
+};
+
+
+/**
+ * Interface that defines CSS class properties for a swich input component.
+ */
+export interface InputSwichClassProps {
+    /**
+     * CSS class name for the swich.
+     */
+    className?: string;
+
+    /**
+     * CSS class name for the circle swich.
+     */
+    classNameCicle?: string;
+
+    /**
+     * CSS class name for the inactive swich.
+     */
+    classNameInactive?: string;
+
+    /**
+     * CSS class name for the active swich.
+     */
+    classNameActive?: string;
+}
+
+/**
+ * Interface that defines base properties for a swich input swich.
+ */
+export interface InputSwichBaseProps {
+    /**
+     * The name attribute of the swich input element.
+     */
+    name?: string;
+
+    /**
+     * A callback function to execute when the swich is toggled.
+     * Receives a boolean value indicating whether the swich is checked or not.
+     */
+    onChange?: (e: boolean) => void;
+
+    /**
+     * The default value of the swich when it is first rendered.
+     */
+    defaultValue?: boolean;
+
+    /**
+     * The value of the swich input element.
+     */
+    value?: boolean;
+
+    /**
+     * A boolean value indicating whether the swich is disabled or not.
+     */
+    disabled?: boolean;
+
+    /**
+     * A callback function to execute when the swich is validated.
+     * Should return a promise or void.
+     */
+    onValidateCheck?: (
+        data: boolean,
+    ) => Promise<void | boolean> | void | boolean;
+}
+
+/**
+ * Interface that defines all properties for a swich input component.
+ * Extends InputSwichBaseProps and InputSwichClassProps.
+ */
+export interface InputSwichProps
+    extends InputSwichBaseProps,
+        InputSwichClassProps {}
+
+/**
+ * Component that renders a swich input.
+ * Takes an InputSwichProps object as props.
+ */
+export const InputSwich = ({
+    className = "",
+    classNameActive = "",
+    classNameInactive = "",
+    classNameCicle = "",
+
+    name = "",
+    onChange,
+    defaultValue = false,
+    value = undefined,
+    disabled = false,
+    onValidateCheck = async () => {},
+}: InputSwichProps) => {
+    const [checked_, setChecked] = useState(defaultValue === true);
+    const checked = useMemo(() => value ?? checked_, [value, checked_]);
+
+    const onChecked = async () => {
+        try {
+            if (disabled) {
+                return;
+            }
+            const r = await onValidateCheck(checked);
+            if (r === false) {
+                throw new Error("1");
+            }
+            setChecked(!checked);
+            onChange?.(!checked);
+        } catch {
+            return;
+        }
+    };
+
+    return (
+        <label
+            className={`fenext-input-swich ${className}  ${
+                checked ? classNameActive : classNameInactive
+            }`}
+        >
+            <input
+                type="checkbox"
+                name={name}
+                checked={checked}
+                onChange={onChecked}
+                className="fenext-input-swich-input"
+            />
+            <span
+                className={`fenext-input-swich-circle ${classNameCicle}`}
+            ></span>
+        </label>
+    );
+};
+
+
+/**
+ * Properties for the base InputSearch component.
+ */
+
+export interface InputSearchTabFilterProps
+    extends Omit<
+        InputSelectOptionProps,
+        | "type"
+        | "disabled"
+        | "selected"
+        | "onClick"
+        | "onDelete"
+        | "_t"
+        | "isBtn"
+        | "data"
+        | "iconDelete"
+    > {}
+
+/**
+ * Properties for the base InputSearch component.
+ */
+export interface InputSearchResultProps {
+    /**
+     * id of Result Search.
+     */
+    id: string;
+    /**
+     * text of Result Search.
+     */
+    text: string;
+    /**
+     * content of Result Search.
+     */
+    content?: ReactNode;
+    /**
+     * data of item Search.
+     */
+    data?: any;
+}
+/**
+ * Properties for the base InputSearch component.
+ */
+export interface InputSearchBaseProps extends Omit<InputTextBaseProps, "type"> {
+    /**
+     * onSearch by string.
+     */
+    onSearch?: (
+        v: string,
+        tabFilter?: InputSearchTabFilterProps[],
+    ) => Promise<InputSearchResultProps[]>;
+    /**
+     * onEnterSearch by InputSearchResultProps.
+     */
+    onEnterSearch?: (v: string) => void;
+    /**
+     * onClearSearch by InputSearchResultProps.
+     */
+    onClearSearch?: () => void;
+    /**
+     * onClickSearch by InputSearchResultProps.
+     */
+    onClickSearch?: (v: InputSearchResultProps) => void;
+    /**
+     * useResult  show list resut of onSearch.
+     * @default false
+     */
+    useResult?: boolean;
+    /**
+     * useLoadMore  load more items for list resut of onSearch.
+     * @default false
+     */
+    useLoadMore?: boolean;
+    /**
+     * ButtonLoadMoreProps  props for btn loadmore.
+     *
+     */
+    ButtonLoadMoreProps?: Omit<ButtonProps, "onClick">;
+    /**
+     * onLoadMore on click of ButtonLoadMoreProps.
+     */
+    onLoadMore?: () => void;
+    /**
+     * resultList  show list resut of onSearch.
+     * @default undefined
+     */
+    resultList?: InputSearchResultProps[];
+    /**
+     * resultEmpty  show empty if list resut is empty.
+     */
+    resultEmpty?: ReactNode;
+    /**
+     * resultPreSearch show empty if list resut is empty.
+     */
+    resultPreSearch?: ReactNode;
+    /**
+     * useSearchFixed Search fixed focus.
+     * @default false
+     */
+    useSearchFixed?: boolean;
+    /**
+     * useTabFilter  show list tab filter of onSearch.
+     * @default false
+     */
+    useTabFilter?: boolean;
+    /**
+     * selectMultipleTabFilter  of onSearch.
+     * @default false
+     */
+    selectMultipleTabFilter?: boolean;
+    /**
+     * listTabFilter list tab filter of onSearch.
+     * @default []
+     */
+    listTabFilter?: InputSearchTabFilterProps[];
+    /**
+     * defaultTabFilterSelected list tab filter of onSearch.
+     * @default []
+     */
+    defaultTabFilterSelected?: InputSearchTabFilterProps[];
+    /**
+     * onChangeTabFilterSelected by InputSearchTabFilterProps.
+     */
+    onChangeTabFilterSelected?: (v: InputSearchTabFilterProps[]) => void;
+    /**
+     * useLoseFocusInEnter .
+     * @default true
+     */
+    useLoseFocusInEnter?: boolean;
+    /**
+     * iconClear .
+     * @default <Close/>
+     */
+    iconClear?: ReactNode;
+}
+
+/**
+ * Properties for the class of the InputSearch component.
+ */
+export interface InputSearchClassProps extends InputTextClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameSearch?: string;
+    /**
+     * The class name for the component bg.
+     */
+    classNameSearchBg?: string;
+    /**
+     * The class name for the component content result.
+     */
+    classNameSearchContentResult?: string;
+    /**
+     * The class name for the component result.
+     */
+    classNameSearchResult?: string;
+}
+
+/**
+ * Properties for the InputSearch component.
+ */
+export interface InputSearchProps
+    extends InputSearchBaseProps,
+        InputSearchClassProps {}
+
+export const InputSearch = ({
+    classNameSearch = "",
+    classNameSearchBg = "",
+    classNameSearchContentResult = "",
+    classNameSearchResult = "",
+
+    placeholder = "Search",
+    icon = <SVGSearch />,
+    iconClear = <Close />,
+    loader = false,
+
+    onSearch,
+    onChange,
+    onClickSearch,
+    onEnterSearch,
+    onClearSearch: onClearSearchProps,
+    useLoseFocusInEnter = true,
+    defaultValue = undefined,
+    value = undefined,
+    useResult = false,
+    useLoadMore = true,
+    ButtonLoadMoreProps = {
+        children: "Load More",
+    },
+    onLoadMore: onLoadMore_,
+    useSearchFixed = false,
+    useTabFilter = false,
+    resultList = undefined,
+
+    resultEmpty = (
+        <>
+            <Title tag="h4">Not Results</Title>
+        </>
+    ),
+    resultPreSearch = (
+        <>
+            <Title tag="h4">Search</Title>
+        </>
+    ),
+
+    listTabFilter = [],
+    defaultTabFilterSelected = [],
+    onChangeTabFilterSelected,
+    selectMultipleTabFilter = false,
+    iconPos = "left",
+
+    ...props
+}: InputSearchProps) => {
+    const { _t } = use_T({ ...props });
+    const SEARCH = useRef<HTMLInputElement>(null);
+    const BG = useRef<HTMLInputElement>(null);
+    const {
+        data: listTabFilterSelected,
+        onDeleteData: onDeleteTabFilter,
+        onConcatData: onAddTabFilter,
+        setData: setTabFilter,
+    } = useData<InputSearchTabFilterProps[]>(defaultTabFilterSelected, {
+        onChangeDataAfter: (d) => {
+            onChangeTabFilterSelected?.(d);
+        },
+    });
+    const [searchText, setSearchText] = useState<string | undefined>(
+        defaultValue ?? "",
+    );
+    const [loaderSearch, setLoaderSearch] = useState(false);
+    const { dataMemo: resultSearch, setData: setResultSearch } = useData<
+        InputSearchResultProps[],
+        InputSearchResultProps[]
+    >(resultList ?? [], {
+        data: resultList,
+        onMemo: (d) => {
+            return resultList ?? d ?? [];
+        },
+    });
+
+    const onSearchFetch = async (
+        v: string,
+        l: InputSearchTabFilterProps[] | undefined = undefined,
+    ) => {
+        if (onSearch) {
+            const r = await onSearch(v, l ?? listTabFilterSelected);
+            setResultSearch(r);
+        }
+    };
+
+    const onSearch_ = async (
+        v: string,
+        l: InputSearchTabFilterProps[] | undefined = undefined,
+    ) => {
+        onChange?.(v);
+        setSearchText(v);
+        if (onSearch) {
+            setLoaderSearch(true);
+            try {
+                await onSearchFetch(v, l);
+            } finally {
+                setLoaderSearch(false);
+            }
+        }
+    };
+
+    const onSearchTabFilter = async (
+        l: InputSearchTabFilterProps[] | undefined = undefined,
+    ) => {
+        setResultSearch([]);
+        await onSearch_("", l);
+    };
+
+    const onFocusClickSearch = () => {
+        if (SEARCH) {
+            const input = SEARCH.current?.querySelector(
+                ".fenext-input-content-input",
+            ) as HTMLElement;
+
+            input?.click();
+            input?.focus();
+        }
+    };
+
+    const onClickTabFilter = (tab: InputSearchTabFilterProps) => () => {
+        if (selectMultipleTabFilter) {
+            onAddTabFilter([tab]);
+            onSearchTabFilter([...listTabFilterSelected, tab]);
+        } else {
+            setTabFilter([tab]);
+            onSearchTabFilter([tab]);
+        }
+        onFocusClickSearch();
+    };
+
+    const onClickDeleteTabFilter = (i: number) => () => {
+        const n = [...listTabFilterSelected];
+        onDeleteTabFilter(i);
+        onSearchTabFilter(n.filter((e, j) => e && j != i));
+        onFocusClickSearch();
+    };
+
+    const onClearSearch = () => {
+        setTabFilter([]);
+        setSearchText("");
+        onSearchTabFilter([]);
+        onFocusClickSearch();
+        onClearSearchProps?.();
+    };
+    const onLoadMore = () => {
+        onLoadMore_?.();
+        onFocusClickSearch();
+    };
+
+    return (
+        <>
+            <div
+                ref={SEARCH}
+                className={`fenext-input-search ${classNameSearch} ${
+                    useResult
+                        ? "fenext-input-search-use-result"
+                        : "fenext-input-search-not-use-result"
+                } 
+                    ${
+                        selectMultipleTabFilter
+                            ? "fenext-input-search-multiple-tabs"
+                            : "fenext-input-search-single-tabs"
+                    }
+                
+                    ${useSearchFixed ? "fenext-input-search-fixed-focus" : ""}
+                `}
+            >
+                <input
+                    type="checkbox"
+                    ref={BG}
+                    className="fenext-input-search-checkbox"
+                />
+                <div
+                    className={`fenext-input-search-bg ${classNameSearchBg} `}
+                />
+                <InputText
+                    {...props}
+                    _t={_t}
+                    placeholder={placeholder}
+                    iconPos={iconPos}
+                    icon={icon}
+                    onChange={onSearch_}
+                    loader={loaderSearch || loader}
+                    value={value ?? searchText}
+                    onEnter={() => {
+                        onEnterSearch?.(searchText ?? "");
+                        if (useLoseFocusInEnter) {
+                            BG?.current?.click?.();
+                            BG?.current?.focus?.();
+                        }
+                        props?.onEnter?.();
+                    }}
+                    extraInContentInput={
+                        <>
+                            <div className="fenext-input-search-content-tabs fenext-input-search-content-tabs-selected">
+                                {listTabFilterSelected.map((item, i) => {
+                                    if (!item) {
+                                        return <></>;
+                                    }
+                                    return (
+                                        <InputSelectOption
+                                            key={`${i}_item_selected_${item.id}`}
+                                            onDelete={onClickDeleteTabFilter(i)}
+                                            onClick={onFocusClickSearch}
+                                            type="multiple"
+                                            iconDelete={<Close />}
+                                            {...item}
+                                            _t={_t}
+                                        />
+                                    );
+                                })}
+                            </div>
+                            <div
+                                className="fenext-input-search-clear"
+                                onClick={onClearSearch}
+                            >
+                                {iconClear}
+                            </div>
+                        </>
+                    }
+                />
+                {useResult && (
+                    <>
+                        <div
+                            className={`fenext-input-search-content-result ${classNameSearchContentResult} `}
+                        >
+                            {useTabFilter ? (
+                                <div className="fenext-input-search-content-tabs">
+                                    {listTabFilter.map((item, i) => {
+                                        const existTab =
+                                            listTabFilterSelected.find(
+                                                (e) => e && e?.id == item?.id,
+                                            ) != undefined;
+                                        if (existTab) {
+                                            return <></>;
+                                        }
+                                        return (
+                                            <InputSelectOption
+                                                key={`${i}_item_${item.id}`}
+                                                onClick={onClickTabFilter(item)}
+                                                {...item}
+                                                _t={_t}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                <></>
+                            )}
+                            {resultSearch.map((item, i) => {
+                                return (
+                                    <div
+                                        key={i}
+                                        className={`fenext-input-search-result ${classNameSearchResult} `}
+                                        onClick={() => {
+                                            onClickSearch?.(item);
+                                            setSearchText(item.text);
+                                        }}
+                                    >
+                                        {_t(item?.content ?? item?.text)}
+                                    </div>
+                                );
+                            })}
+                            {resultSearch.length == 0 ? (
+                                <>
+                                    {searchText === undefined ||
+                                    loader ||
+                                    loaderSearch ? (
+                                        <>
+                                            <div
+                                                className={`fenext-input-search-content-result-pre-search `}
+                                            >
+                                                {_t(resultPreSearch)}
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div
+                                                className={`fenext-input-search-content-result-empty `}
+                                            >
+                                                {_t(resultEmpty)}
+                                            </div>
+                                        </>
+                                    )}
+                                </>
+                            ) : (
+                                <>
+                                    {useLoadMore ? (
+                                        <>
+                                            <div className="fenext-input-search-content-load-more ">
+                                                <Button
+                                                    {...ButtonLoadMoreProps}
+                                                    onClick={onLoadMore}
+                                                    _t={_t}
+                                                    className={`fenext-input-search-load-more ${
+                                                        ButtonLoadMoreProps?.className ??
+                                                        ""
+                                                    }`}
+                                                />
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <></>
+                                    )}
+                                </>
+                            )}
+                        </div>
+                    </>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Interface that defines the base properties for a text input component.
+ */
+export interface InputSelectStateProps
+    extends Omit<
+        InputSelectTProps<StateProps>,
+        "options" | "onParse" | "useLoader" | "loader"
+    > {
+    country?: CountryProps;
+}
+
+export const InputSelectState = ({
+    country = undefined,
+    ...props
+}: InputSelectStateProps) => {
+    const [loader, setLoader] = useState(true);
+    const [options, setOptions] = useState<StateProps[]>([]);
+    const onLoad = async () => {
+        const getData = async () => {
+            if (country) {
+                return await getDataStatesByCountry(country);
+            }
+            return await getDataStates();
+        };
+        const r = await getData();
+        setOptions(r);
+        setLoader(false);
+    };
+    useEffect(() => {
+        onLoad();
+    }, [country]);
+
+    return (
+        <>
+            <InputSelectT<StateProps>
+                {...props}
+                options={options}
+                onParse={(e) => {
+                    const r: InputSelectItemOptionBaseProps<StateProps> = {
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        data: e,
+                    };
+                    return r;
+                }}
+                loader={loader}
+                useLoader={true}
+                useTOption={false}
+            />
+        </>
+    );
+};
+
+
+
+
+
+
+export interface InputUnitVolumenValue {
+    value?: number | "";
+    unit?: Unit_All;
+}
+
+/**
+ * Interface that defines CSS class properties for a checkbox input component.
+ */
+export interface InputUnitVolumenClassProps extends InputUnitBaseClassProps {}
+
+/**
+ * Interface that defines base properties for a checkbox input component.
+ */
+export interface InputUnitVolumenBaseProps
+    extends Omit<
+        InputUnitBaseBaseProps,
+        "value" | "onChange" | "defaultValue" | "options"
+    > {
+    /**
+     * Default Value of TextSelect.
+     */
+    defaultValue?: Partial<InputUnitVolumenValue>;
+    /**
+     * Value of TextSelect.
+     */
+    value?: Partial<InputUnitVolumenValue>;
+    /**
+     * onChange of TextSelect.
+     */
+    onChange?: (data: Partial<InputUnitVolumenValue>) => void;
+    /**
+     * posSelect of TextSelect.
+     */
+    options?: Unit_Volumen[];
+}
+
+/**
+ * Interface that defines all properties for a checkbox input component.
+ * Extends InputUnitVolumenBaseProps and InputUnitVolumenClassProps.
+ */
+export interface InputUnitVolumenProps
+    extends InputUnitVolumenBaseProps,
+        InputUnitVolumenClassProps {}
+
+/**
+ * Component that renders a checkbox input.
+ * Takes an InputUnitVolumenProps object as props.
+ */
+export const InputUnitVolumen = ({
+    options = Object.keys(Unit_Volumen).map((e) => Unit_Volumen[e]),
+    ...props
+}: InputUnitVolumenProps) => {
+    return (
+        <>
+            <InputUnitBase {...props} options={options} />
+        </>
+    );
+};
+
+
+export interface InputUnitValue {
+    value?: number | "";
+    unit?: Unit_All;
+}
+export interface InputUnitValueText {
+    value?: string;
+    unit?: Unit_All;
+}
+
+/**
+ * Interface that defines CSS class properties for a checkbox input component.
+ */
+export interface InputUnitBaseClassProps extends InputTextSelectClassProps {}
+
+/**
+ * Interface that defines base properties for a checkbox input component.
+ */
+export interface InputUnitBaseBaseProps
+    extends Omit<
+        InputTextSelectBaseProps,
+        "value" | "onChange" | "defaultValue" | "options"
+    > {
+    /**
+     * Default Value of TextSelect.
+     */
+    defaultValue?: Partial<InputUnitValue>;
+    /**
+     * Value of TextSelect.
+     */
+    value?: Partial<InputUnitValue>;
+    /**
+     * onChange of TextSelect.
+     */
+    onChange?: (data: Partial<InputUnitValue>) => void;
+    /**
+     * posSelect of TextSelect.
+     */
+    options: Unit_All[];
+}
+
+/**
+ * Interface that defines all properties for a checkbox input component.
+ * Extends InputUnitBaseBaseProps and InputUnitBaseClassProps.
+ */
+export interface InputUnitBaseProps
+    extends InputUnitBaseBaseProps,
+        InputUnitBaseClassProps {}
+
+/**
+ * Component that renders a checkbox input.
+ * Takes an InputUnitBaseProps object as props.
+ */
+export const InputUnitBase = ({
+    defaultValue = {},
+    value: valueProps = undefined,
+    onChange,
+    options,
+    ...props
+}: InputUnitBaseProps) => {
+    const { data, setData } = useData<Partial<InputUnitValueText>>(
+        {
+            unit: defaultValue?.unit,
+            value: defaultValue?.value ? `${defaultValue?.value}` : undefined,
+        },
+        {
+            onChangeDataAfter: (e) => {
+                onChange?.({
+                    unit: e.unit,
+                    value: e.value ? parseNumber(e.value) : undefined,
+                });
+            },
+        },
+    );
+    const value = useMemo(() => valueProps ?? data, [valueProps, data]);
+
+    const parseValue = (va: string | number) => {
+        const v = `${va}`.replace(/[^0-9.]/g, "");
+        const nm = v.split(".");
+        const first = `${nm[0]}`;
+        let n_ = `${first}`;
+        if (nm.length > 1) {
+            nm[0] = "";
+            n_ += `.${nm.join("")}`;
+        }
+        if (va[0] == "-") {
+            n_ = "-" + n_;
+        }
+        return n_;
+    };
+
+    return (
+        <>
+            <InputTextSelect
+                {...props}
+                value={{
+                    text: value.value
+                        ? parseValue(`${value.value}`)
+                        : undefined,
+                    select: value.unit
+                        ? {
+                              id: value.unit,
+                              text: parseUnitToText(value.unit),
+                          }
+                        : undefined,
+                }}
+                options={options.map((o) => {
+                    return {
+                        id: o,
+                        text: parseUnitToText(o),
+                    };
+                })}
+                onChange={(e) => {
+                    setData({
+                        unit: e.select?.id as Unit_All,
+                        value: e.text,
+                    });
+                }}
+            />
+        </>
+    );
+};
+
+
+export interface InputUnitDistanceValue {
+    value?: number | "";
+    unit?: Unit_All;
+}
+
+/**
+ * Interface that defines CSS class properties for a checkbox input component.
+ */
+export interface InputUnitDistanceClassProps extends InputUnitBaseClassProps {}
+
+/**
+ * Interface that defines base properties for a checkbox input component.
+ */
+export interface InputUnitDistanceBaseProps
+    extends Omit<
+        InputUnitBaseBaseProps,
+        "value" | "onChange" | "defaultValue" | "options"
+    > {
+    /**
+     * Default Value of TextSelect.
+     */
+    defaultValue?: Partial<InputUnitDistanceValue>;
+    /**
+     * Value of TextSelect.
+     */
+    value?: Partial<InputUnitDistanceValue>;
+    /**
+     * onChange of TextSelect.
+     */
+    onChange?: (data: Partial<InputUnitDistanceValue>) => void;
+    /**
+     * posSelect of TextSelect.
+     */
+    options?: Unit_Distance[];
+}
+
+/**
+ * Interface that defines all properties for a checkbox input component.
+ * Extends InputUnitDistanceBaseProps and InputUnitDistanceClassProps.
+ */
+export interface InputUnitDistanceProps
+    extends InputUnitDistanceBaseProps,
+        InputUnitDistanceClassProps {}
+
+/**
+ * Component that renders a checkbox input.
+ * Takes an InputUnitDistanceProps object as props.
+ */
+export const InputUnitDistance = ({
+    options = Object.keys(Unit_Distance).map((e) => Unit_Distance[e]),
+    ...props
+}: InputUnitDistanceProps) => {
+    return (
+        <>
+            <InputUnitBase {...props} options={options} />
+        </>
+    );
+};
+
+
+export interface InputUnitWeightValue {
+    value?: number | "";
+    unit?: Unit_All;
+}
+
+/**
+ * Interface that defines CSS class properties for a checkbox input component.
+ */
+export interface InputUnitWeightClassProps extends InputUnitBaseClassProps {}
+
+/**
+ * Interface that defines base properties for a checkbox input component.
+ */
+export interface InputUnitWeightBaseProps
+    extends Omit<
+        InputUnitBaseBaseProps,
+        "value" | "onChange" | "defaultValue" | "options"
+    > {
+    /**
+     * Default Value of TextSelect.
+     */
+    defaultValue?: Partial<InputUnitWeightValue>;
+    /**
+     * Value of TextSelect.
+     */
+    value?: Partial<InputUnitWeightValue>;
+    /**
+     * onChange of TextSelect.
+     */
+    onChange?: (data: Partial<InputUnitWeightValue>) => void;
+    /**
+     * posSelect of TextSelect.
+     */
+    options?: Unit_Weight[];
+}
+
+/**
+ * Interface that defines all properties for a checkbox input component.
+ * Extends InputUnitWeightBaseProps and InputUnitWeightClassProps.
+ */
+export interface InputUnitWeightProps
+    extends InputUnitWeightBaseProps,
+        InputUnitWeightClassProps {}
+
+/**
+ * Component that renders a checkbox input.
+ * Takes an InputUnitWeightProps object as props.
+ */
+export const InputUnitWeight = ({
+    options = Object.keys(Unit_Weight).map((e) => Unit_Weight[e]),
+    ...props
+}: InputUnitWeightProps) => {
+    return (
+        <>
+            <InputUnitBase {...props} options={options} />
+        </>
+    );
+};
+
+
+/**
+ * Properties for the Counter component.
+ */
+export interface CounterProps extends _TProps {
+    /**
+     * Number show.
+     */
+    number: number;
+    /**
+     * Text show.
+     * @default undefined
+     */
+    text?: ReactNode;
+    /**
+     * Time for increment Number.
+     * @default 1000
+     */
+    time?: number;
+    /**
+     * N decimal show in Number.
+     * @default 2
+     */
+    decimal?: number;
+    /**
+     * Format Number.
+     * @default parseNumberCount
+     */
+    parseNumber?: (n: number) => ReactNode;
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the Number.
+     */
+    classNameNumber?: string;
+    /**
+     * The class name for the Text.
+     */
+    classNameText?: string;
+}
+
+export const Counter = ({
+    className = "",
+    classNameNumber = "",
+    classNameText = "",
+
+    number = 0,
+    text = undefined,
+    time = 1000,
+    decimal = 2,
+    parseNumber = parseNumberCount,
+    ...props
+}: CounterProps) => {
+    const { _t } = use_T({ ...props });
+    const [numberShow, setNumberShow] = useState(0);
+    const onIncrementeNumber = async () => {
+        const dis = number - numberShow;
+        const inc = dis / (time / 50);
+        for (let i = 0; i < Math.abs(dis); i += Math.abs(inc)) {
+            setNumberShow((pre) => pre + inc);
+            await sleep(50);
+        }
+        setNumberShow(number);
+    };
+    useEffect(() => {
+        onIncrementeNumber();
+    }, [number]);
+
+    const formatNumber = (n: number) => {
+        if (n % 1 === 0) {
+            return n;
+        }
+        return parseFloat(n.toFixed(decimal));
+    };
+
+    return (
+        <>
+            <div className={`fenext-counter ${className} `}>
+                {text && (
+                    <div className={`fenext-counter-text ${classNameText} `}>
+                        {_t(text)}
+                    </div>
+                )}
+                <div className={`fenext-counter-number ${classNameNumber} `}>
+                    <span className={`fenext-counter-number-rel `}>
+                        {parseNumber(formatNumber(number))}
+                    </span>
+                    <span className={`fenext-counter-number-abs `}>
+                        {parseNumber(formatNumber(numberShow))}
+                    </span>
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base NotificationPop component.
+ */
+export interface NotificationPopBaseProps
+    extends useNotificationProps,
+        _TProps {
+    /**
+     * The class name for the component.
+     */
+    typePop?: "top" | "down";
+}
+
+/**
+ * Properties for the class of the NotificationPop component.
+ */
+export interface NotificationPopClassProps extends NotificationClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNamePop?: string;
+}
+
+/**
+ * Properties for the NotificationPop component.
+ */
+export interface NotificationPopProps
+    extends NotificationPopBaseProps,
+        NotificationPopClassProps {}
+
+export const NotificationPop = ({
+    classNamePop = "",
+    className = "",
+    typePop = "down",
+    time = 2000,
+    ...props
+}: NotificationPopProps) => {
+    const { notification, reset } = useNotification({ time });
+    useEffect(() => {
+        setTimeout(() => {
+            reset();
+        }, time);
+    }, []);
+
+    return (
+        <>
+            {notification && (
+                <div
+                    className={`
+                        fenext-notification-pop
+                        fenext-notification-pop-${typePop}
+                        fenext-notification-pop-${notification?.message != "" ? "active" : ""}
+                        ${classNamePop}
+                    `}
+                >
+                    <Notification
+                        {...props}
+                        className={className}
+                        type={notification?.type}
+                        children={notification?.message}
+                    />
+                </div>
+            )}
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Notification component.
+ */
+export interface NotificationBaseProps extends PropsWithChildren, _TProps {
+    /**
+     * The class name for the component.
+     */
+    type?: RequestResultTypeProps | keyof typeof RequestResultTypeProps;
+}
+
+/**
+ * Properties for the class of the Notification component.
+ */
+export interface NotificationClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Notification component.
+ */
+export interface NotificationProps
+    extends NotificationBaseProps,
+        NotificationClassProps {}
+
+export const Notification = ({
+    className = "",
+    type = RequestResultTypeProps.NORMAL,
+    children,
+    ...props
+}: NotificationProps) => {
+    const { _t } = use_T({ ...props });
+    const { reset } = useNotification({});
+    return (
+        <>
+            <div
+                className={`fenext-notification fenext-notification-${type.toLowerCase()} ${className} `}
+            >
+                {_t(children)}
+                <div className="fenext-notification-close" onClick={reset}>
+                    <Close />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Copy component.
+ */
+export interface CopyBaseProps extends _TProps {
+    /**
+     * The text for the copy.
+     */
+    text?: string;
+    /**
+     * The children for the component.
+     */
+    children?: ReactNode;
+    /**
+     * The onClickForCopy for the component.
+     */
+    onClickForCopy?: (text: string) => void;
+    /**
+     * The notification for the component.
+     */
+    notification?: NotificationDataProps;
+}
+
+/**
+ * Properties for the class of the Copy component.
+ */
+export interface CopyClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Copy component.
+ */
+export interface CopyProps extends CopyBaseProps, CopyClassProps {}
+
+export const Copy = ({
+    className = "",
+
+    children,
+    text = "",
+    onClickForCopy,
+    notification = {
+        message: "Copy",
+        type: RequestResultTypeProps.OK,
+    },
+    ...props
+}: CopyProps) => {
+    const { _t } = use_T({ ...props });
+    const { pop } = useNotification({});
+
+    const onCopy = () => {
+        navigator.clipboard.writeText(text);
+        onClickForCopy?.(text);
+        if (notification) {
+            pop(notification);
+        }
+    };
+
+    return (
+        <>
+            <div className={`fenext-copy ${className} `} onClick={onCopy}>
+                {_t(children)}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Slider component.
+ */
+export interface SliderBaseProps extends _TProps {
+    /**
+     * Items of slider.
+     */
+    items?: ReactNode[];
+    /**
+     * N Items of slider in Desktop.
+     */
+    nItemsDesktop?: number;
+    /**
+     * N Items of slider in Table.
+     */
+    nItemsTable?: number;
+    /**
+     * N Items of slider in Phone.
+     */
+    nItemsPhone?: number;
+    /**
+     * Time of Delay by next move Slider.
+     */
+    timeDelay?: number;
+    /**
+     * Time of Dration by animation move Slider.
+     */
+    timeAnimation?: number;
+    /**
+     * If loop in Slider.
+     */
+    loop?: boolean;
+    /**
+     * Separation in Items Slider.
+     */
+    separationItems?: number;
+}
+
+/**
+ * Properties for the class of the Slider component.
+ */
+export interface SliderClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the Content slider.
+     */
+    classNameContent?: string;
+    /**
+     * The class name for the item slider.
+     */
+    classNameItem?: string;
+    /**
+     * The class name for the Dogs slider.
+     */
+    classNameDogs?: string;
+    /**
+     * The class name for the Dog slider.
+     */
+    classNameDog?: string;
+    /**
+     * The class name for the Arrows slider.
+     */
+    classNameArrows?: string;
+    /**
+     * The class name for the Arrow Pre slider.
+     */
+    classNameArrowPre?: string;
+    /**
+     * The class name for the Arrow Next slider.
+     */
+    classNameArrowNext?: string;
+}
+
+/**
+ * Properties for the Slider component.
+ */
+export interface SliderProps extends SliderBaseProps, SliderClassProps {}
+
+export const Slider = ({
+    className = "",
+    classNameContent = "",
+    classNameItem = "",
+    classNameDogs = "",
+    classNameDog = "",
+    classNameArrows = "",
+    classNameArrowPre = "",
+    classNameArrowNext = "",
+
+    items = [],
+    nItemsDesktop = 3,
+    nItemsTable = 2,
+    nItemsPhone = 1,
+    timeDelay = 4000,
+    timeAnimation = 500,
+    loop = true,
+    separationItems = 16,
+    ...props
+}: SliderProps) => {
+    const { _t } = use_T({ ...props });
+    const SliderRef = useRef<HTMLDivElement>(null);
+    const [currentDog, setCurrentDog] = useState(0);
+    const [isHover, setIsHover] = useState(false);
+
+    const getIsHover = () =>
+        SliderRef.current?.classList.value.includes(
+            "fenext-slider-content-hover",
+        );
+
+    const getNItems = () => {
+        let nItems = nItemsDesktop;
+        if (window.innerWidth <= 991) {
+            nItems = nItemsTable;
+        }
+        if (window.innerWidth <= 575) {
+            nItems = nItemsPhone;
+        }
+        return nItems;
+    };
+
+    const getSizeElement = () => {
+        return (SliderRef.current?.clientWidth ?? 0) / getNItems();
+    };
+
+    const onSetCurrentDog = (f: (pre: number) => number) => (pre: number) => {
+        const max = items.length - getNItems();
+        const min = 0;
+        const m = f(pre);
+
+        let n = Math.max(min, Math.min(m, max));
+        if (loop) {
+            if (m > max) {
+                n = 0;
+            }
+            if (m < 0) {
+                n = max;
+            }
+        }
+        SliderRef.current?.scrollTo?.(n * getSizeElement(), 0);
+        return n;
+    };
+
+    const onScrollAdd = (add: number) => {
+        setCurrentDog(onSetCurrentDog((pre) => pre + add));
+    };
+    const onScrollTo = (to: number) => {
+        setCurrentDog(onSetCurrentDog(() => to));
+    };
+
+    const onScroll = (m: number) => () => {
+        onScrollTo(m);
+    };
+    const onScrollToNext = () => {
+        onScrollAdd(1);
+    };
+    const onScrollToPre = () => {
+        onScrollAdd(-1);
+    };
+    const onLoop = async () => {
+        if (loop) {
+            await new Promise((r) => setTimeout(r, timeDelay));
+            if (!getIsHover()) {
+                onScrollToNext();
+            }
+            onLoop();
+        }
+    };
+    const onLoadLoop = () => {
+        onLoop();
+    };
+    const onLoadSlider = () => {
+        if (SliderRef.current) {
+            // onLoadTouchScroll(SliderRef.current);
+            onLoadLoop();
+        } else {
+            setTimeout(onLoadSlider, 100);
+        }
+    };
+
+    useEffect(onLoadSlider, []);
+
+    return (
+        <>
+            <div
+                className={`fenext-slider ${className} ${
+                    loop ? "fenext-slider-loop" : ""
+                }`}
+                onMouseEnter={() => {
+                    setIsHover(true);
+                }}
+                onMouseLeave={() => {
+                    setIsHover(false);
+                }}
+                style={
+                    {
+                        ["--nItems"]: items.length,
+                        ["--nItemsDesktop"]: nItemsDesktop,
+                        ["--nItemsTable"]: nItemsTable,
+                        ["--nItemsPhone"]: nItemsPhone,
+                        ["--timeDelay"]: timeDelay,
+                        ["--timeAnimation"]: timeAnimation,
+                        ["--separationItems"]: `${separationItems / 16}rem`,
+                    } as React.CSSProperties
+                }
+            >
+                <div
+                    ref={SliderRef}
+                    className={`fenext-slider-content fenext-slider-content-${
+                        isHover ? "hover" : ""
+                    } ${classNameContent}`}
+                >
+                    {items?.map?.((item, i) => {
+                        return (
+                            <div
+                                key={i}
+                                className={`fenext-slider-item ${classNameItem}`}
+                                style={
+                                    {
+                                        ["--i"]: i + 1,
+                                    } as React.CSSProperties
+                                }
+                            >
+                                {_t(item)}
+                            </div>
+                        );
+                    })}
+                </div>
+                <div className={`fenext-slider-dogs ${classNameDogs}`}>
+                    {new Array(
+                        Math.max(1, Math.ceil(items.length - getNItems() + 1)),
+                    )
+                        .fill(1)
+                        .map((e, i) => {
+                            const n = e * i;
+                            return (
+                                <>
+                                    <div
+                                        onClick={onScroll(n)}
+                                        className={`fenext-slider-dog ${classNameDog} ${
+                                            currentDog == i ? "active" : ""
+                                        }`}
+                                    ></div>
+                                </>
+                            );
+                        })}
+                </div>
+                <div
+                    onClick={onScrollToPre}
+                    className={`fenext-slider-arrow fenext-slider-arrow-pre ${classNameArrows} ${classNameArrowPre}`}
+                >
+                    <PaginationPre />
+                </div>
+                <div
+                    onClick={onScrollToNext}
+                    className={`fenext-slider-arrow fenext-slider-arrow-next ${classNameArrows} ${classNameArrowNext}`}
+                >
+                    <PaginationNext />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ImgGallery component.
+ */
+export interface ImgGalleryBaseProps extends _TProps {
+    /**
+     * List of Img.
+     */
+    imgs: ImgProps[];
+    /**
+     * Props of Button for show more Imgs.
+     */
+    buttonShowMoreImg?: Omit<ButtonProps, "onClick">;
+    /**
+     * Props of Button for hidden more Imgs.
+     */
+    buttonHiddenMoreImg?: Omit<ButtonProps, "onClick">;
+    /**
+     * loader.
+     */
+    loader?: boolean;
+    /**
+     * n items loader.
+     * @default 5
+     */
+    nLoader?: number;
+}
+
+/**
+ * Properties for the class of the ImgGallery component.
+ */
+export interface ImgGalleryClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ImgGallery component.
+ */
+export interface ImgGalleryProps
+    extends ImgGalleryBaseProps,
+        ImgGalleryClassProps {}
+
+export const ImgGallery = ({
+    className = "",
+    imgs,
+    buttonShowMoreImg = {
+        children: "Show more pictures",
+    },
+    buttonHiddenMoreImg = {
+        children: "Hidden pictures",
+    },
+    loader = false,
+    nLoader = 5,
+    ...props
+}: ImgGalleryProps) => {
+    const [showAllImg, setShowAllImg] = useState(false);
+    const [activeModal, setActiveModal] = useState(false);
+    const [steps, setSteps] = useState(0);
+
+    const onClickImg = (i: number) => () => {
+        setActiveModal(true);
+        setSteps(i);
+    };
+
+    const onClose = () => {
+        setActiveModal(false);
+    };
+    return (
+        <>
+            <div className={`fenext-img-gallery ${className} `}>
+                <ModalBase active={activeModal} onClose={onClose} type="full">
+                    <ImgSlider
+                        imgs={imgs}
+                        step={steps}
+                        setStep={setSteps}
+                        {...props}
+                    />
+                </ModalBase>
+                {loader ? (
+                    <GridGallery
+                        items={new Array(nLoader).fill(1).map((e, i) => {
+                            return <Img key={i * e} src="" loader={true} />;
+                        })}
+                        {...props}
+                    />
+                ) : (
+                    <>
+                        <GridGallery
+                            {...props}
+                            items={[...imgs]
+                                .splice(0, showAllImg ? imgs.length + 1 : 5)
+                                .map((e, i) => {
+                                    return (
+                                        <Img
+                                            key={i}
+                                            {...e}
+                                            onClick={onClickImg(i)}
+                                        />
+                                    );
+                                })}
+                        />
+                        {imgs.length > 5 && !showAllImg ? (
+                            <>
+                                <div
+                                    className={`fenext-img-gallery-content-btn`}
+                                >
+                                    <Button
+                                        {...buttonShowMoreImg}
+                                        onClick={() => {
+                                            setShowAllImg(true);
+                                        }}
+                                        {...props}
+                                    />
+                                </div>
+                            </>
+                        ) : (
+                            <></>
+                        )}
+                        {showAllImg && (
+                            <div className={`fenext-img-gallery-content-btn`}>
+                                <Button
+                                    {...buttonHiddenMoreImg}
+                                    {...props}
+                                    onClick={() => {
+                                        setShowAllImg(false);
+                                    }}
+                                />
+                            </div>
+                        )}
+                    </>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ImgSlider component.
+ */
+export interface ImgSliderBaseProps extends _TProps {
+    /**
+     * List of Img.
+     */
+    imgs: ImgProps[];
+    /**
+     * defaultStep of Img.
+     */
+    defaultStep?: number;
+    /**
+     * step of Img.
+     */
+    step?: number;
+    /**
+     * step of Img.
+     */
+    setStep?: (e: number) => void;
+}
+
+/**
+ * Properties for the class of the ImgSlider component.
+ */
+export interface ImgSliderClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ImgSlider component.
+ */
+export interface ImgSliderProps
+    extends ImgSliderBaseProps,
+        ImgSliderClassProps {}
+
+export const ImgSlider = ({
+    className = "",
+    imgs,
+
+    defaultStep = 0,
+    setStep: setStepProps,
+    step: stepProps,
+
+    ...props
+}: ImgSliderProps) => {
+    const [step__, setStep__] = useState(defaultStep);
+
+    const setStep = (e: number) => {
+        setStep__(e);
+        setStepProps?.(e);
+    };
+
+    const step = useMemo(() => stepProps ?? step__, [stepProps, step__]);
+    return (
+        <>
+            <div className={`fenext-img-slider ${className} `}>
+                <Steps
+                    items={imgs.map((e, i) => {
+                        return {
+                            label: e.name ?? "",
+                            content: <Img key={i} {...e} />,
+                        };
+                    })}
+                    stepPos="top"
+                    step={step}
+                    onSetStep={setStep}
+                    btnNext={
+                        <>
+                            <PaginationNext />
+                        </>
+                    }
+                    btnPrev={
+                        <>
+                            <PaginationPre />
+                        </>
+                    }
+                    useDogs={true}
+                    {...props}
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Class properties to customize the style of the pagination.
+ */
+export interface PaginationItemPageClassProps {
+    /**
+     * CSS class for the main container of the pagination.
+     */
+    classNameContent?: string;
+
+    /**
+     * CSS class for the "Go Up" button.
+     */
+    classNameUp?: string;
+
+    /**
+     * CSS class for the previous button.
+     */
+    classNamePre?: string;
+
+    /**
+     * CSS class for the current page number.
+     */
+    classNameCurrent?: string;
+    /**
+     * CSS class for the current item page number.
+     */
+    classNameCurrentItem?: string;
+
+    /**
+     * CSS class for the next button.
+     */
+    classNameNext?: string;
+
+    /**
+     * CSS class for the "Go Down" button.
+     */
+    classNameDown?: string;
+
+    /**
+     * Custom icons for each button of the pagination.
+     */
+    icons?: {
+        /**
+         * Custom icon for the "Go Up" button.
+         */
+        up?: any;
+
+        /**
+         * Custom icon for the previous button.
+         */
+        pre?: any;
+
+        /**
+         * Custom icon for the next button.
+         */
+        next?: any;
+
+        /**
+         * Custom icon for the "Go Down" button.
+         */
+        down?: any;
+    };
+}
+/**
+ * The base props for the pagination component
+ */
+export interface PaginationItemPageBaseProps extends _TProps {
+    /**
+     * The default page to show when the component is mounted
+     */
+    defaultPage?: number;
+    /**
+     * The total number of items to paginate
+     */
+    nItems: number;
+    /**
+     * The number of items to display per page
+     */
+    nItemsPage?: number;
+    /**
+     * Whether the component is disabled
+     */
+    disabled?: boolean;
+    /**
+     * Hidden Pagination of nItems if smaller than or equal of nItemsPages.
+     * @default false
+     */
+    hiddenIfNItemsSmallerThanOrEqualNItemsPage?: boolean;
+    /**
+     * A callback function that is called when the page changes
+     * @param page - The new page number
+     */
+    onChangePage?: (page: number) => void;
+}
+/**
+ * Props for PaginationItemPage component
+ */
+export interface PaginationItemPageProps
+    extends PaginationItemPageClassProps,
+        PaginationItemPageBaseProps {}
+
+export const PaginationItemPage = ({
+    classNameContent = "",
+    classNameUp = "",
+    classNamePre = "",
+    classNameCurrent = "",
+    classNameCurrentItem = "",
+    classNameNext = "",
+    classNameDown = "",
+
+    icons = {
+        up: <PaginationUp />,
+        pre: <PaginationPre />,
+        next: <PaginationNext />,
+        down: <PaginationDown />,
+    },
+
+    defaultPage = 0,
+
+    nItems,
+    nItemsPage = 10,
+
+    disabled = false,
+    onChangePage,
+    hiddenIfNItemsSmallerThanOrEqualNItemsPage = true,
+}: PaginationItemPageProps) => {
+    const [page, setPage_] = useState(defaultPage);
+
+    const maxPage = useMemo(
+        () => (nItemsPage == 0 ? 0 : Math.ceil(nItems / nItemsPage) - 1),
+        [nItems, nItemsPage],
+    );
+
+    const minMaxValue = (v: number) => {
+        return Math.max(0, Math.min(maxPage, v));
+    };
+    const setPage = (v: number) => {
+        if (disabled) {
+            return;
+        }
+        const Value = minMaxValue(v);
+        setPage_(Value);
+        onChangePage?.(Value);
+    };
+    const onSetPage = (e: number) => () => setPage(e);
+
+    const addPage = (add: number) => () => {
+        setPage(page + add);
+    };
+
+    return (
+        <div
+            className={`fenext-pagination-item-page ${
+                hiddenIfNItemsSmallerThanOrEqualNItemsPage &&
+                nItems <= nItemsPage
+                    ? "fenext-pagination-item-page-hidden"
+                    : ""
+            } ${classNameContent} `}
+        >
+            {page > 0 && (
+                <>
+                    <div
+                        key={`fenext-pagination-item-page-up`}
+                        className={`fenext-pagination-item-page-current-item fenext-pagination-item-page-up ${classNameUp}`}
+                        onClick={onSetPage(0)}
+                    >
+                        {icons.up}
+                    </div>
+                    <div
+                        key={`fenext-pagination-item-page-pre`}
+                        className={`fenext-pagination-item-page-current-item fenext-pagination-item-page-pre ${classNamePre}`}
+                        onClick={addPage(-1)}
+                    >
+                        {icons.pre}
+                    </div>
+                </>
+            )}
+            <div
+                className={`fenext-pagination-item-page-current ${classNameCurrent}`}
+            >
+                {page > 2 ? (
+                    <>
+                        <div
+                            key={`fenext-pagination-item-page-current-item-init`}
+                            className={`fenext-pagination-item-page-current-item fenext-pagination-item-page-current-item-init ${classNameCurrentItem}`}
+                            onClick={onSetPage(0)}
+                        >
+                            {1}
+                        </div>
+                        <div
+                            key={`fenext-pagination-item-page-current-item-init-dog`}
+                            className={`fenext-pagination-item-page-current-item fenext-pagination-item-page-current-item-dog ${classNameCurrentItem}`}
+                        >
+                            ...
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
+                {new Array(5).fill(1).map((e, i) => {
+                    const n = e * i - 2 + page;
+                    if (n < 0 || n > maxPage) {
+                        return <></>;
+                    }
+                    return (
+                        <>
+                            <div
+                                key={`fenext-pagination-item-page-current-item-${i}`}
+                                className={`fenext-pagination-item-page-current-item ${
+                                    n == page
+                                        ? "fenext-pagination-item-page-current-item-active"
+                                        : ""
+                                } ${classNameCurrentItem}`}
+                                onClick={onSetPage(n)}
+                            >
+                                {n + 1}
+                            </div>
+                        </>
+                    );
+                })}
+                {page < maxPage - 2 ? (
+                    <>
+                        <div
+                            key={`fenext-pagination-item-page-current-item-final-dog`}
+                            className={`fenext-pagination-item-page-current-item fenext-pagination-item-page-current-item-dog ${classNameCurrentItem}`}
+                        >
+                            ...
+                        </div>
+                        <div
+                            key={`fenext-pagination-item-page-current-item-final`}
+                            className={`fenext-pagination-item-page-current-item  fenext-pagination-item-page-current-item-final ${classNameCurrentItem}`}
+                            onClick={onSetPage(maxPage)}
+                        >
+                            {maxPage + 1}
+                        </div>
+                    </>
+                ) : (
+                    <></>
+                )}
+            </div>
+            {page < maxPage && (
+                <>
+                    <div
+                        key={`fenext-pagination-item-page-next`}
+                        className={`fenext-pagination-item-page-current-item fenext-pagination-item-page-next ${classNameNext}`}
+                        onClick={addPage(1)}
+                    >
+                        {icons.next}
+                    </div>
+                    <div
+                        key={`fenext-pagination-item-page-down`}
+                        className={`fenext-pagination-item-page-current-item fenext-pagination-item-page-down ${classNameDown}`}
+                        onClick={onSetPage(maxPage)}
+                    >
+                        {icons.down}
+                    </div>
+                </>
+            )}
+        </div>
+    );
+};
+
+
+/**
+ * Class properties to customize the style of the pagination.
+ */
+export interface PaginationClassProps {
+    /**
+     * CSS class for the main container of the pagination.
+     */
+    className?: string;
+    /**
+     * Object with className of component classNameNPage.
+     */
+    classNameItemPage?: PaginationItemPageClassProps;
+    /**
+     * Object with className of component PaginationNPage.
+     */
+    classNameNPage?: PaginationNPageClassProps;
+}
+/**
+ * The base props for the pagination component
+ */
+export interface PaginationBaseProps
+    extends PaginationItemPageBaseProps,
+        PaginationNPageBaseProps,
+        _TProps {
+    showItemPage?: boolean;
+    showNPage?: boolean;
+}
+/**
+ * Props for Pagination component
+ */
+export interface PaginationProps
+    extends PaginationClassProps,
+        PaginationBaseProps {}
+
+export const Pagination = ({
+    className = "",
+    classNameItemPage = {},
+    classNameNPage = {},
+    showItemPage = true,
+    showNPage = true,
+    listNpage = [
+        {
+            id: "10",
+            text: "10",
+        },
+        {
+            id: "20",
+            text: "20",
+        },
+        {
+            id: "50",
+            text: "50",
+        },
+        {
+            id: "100",
+            text: "100",
+        },
+        {
+            id: "all",
+            text: "All",
+        },
+    ],
+
+    ...props
+}: PaginationProps) => {
+    const { _t } = use_T({ ...props });
+    const minPage = useMemo(() => {
+        let m = Infinity;
+        listNpage?.forEach((e) => {
+            const n = parseInt(`${e?.id ?? ""}`);
+            if (n && !Number.isNaN(n)) {
+                m = Math.min(m, n);
+            }
+        });
+        return m;
+    }, [listNpage]);
+
+    return (
+        <div className={`fenext-pagination ${className}`}>
+            <div className={`fenext-pagination-content-item-page ${className}`}>
+                {showItemPage && (
+                    <PaginationItemPage
+                        {...classNameItemPage}
+                        {...props}
+                        _t={_t}
+                    />
+                )}
+            </div>
+            <div className={`fenext-pagination-content-n-page ${className}`}>
+                {showNPage && minPage < (props?.nItems ?? minPage + 1) && (
+                    <PaginationNPage
+                        {...classNameNPage}
+                        {...props}
+                        listNpage={listNpage}
+                        defaultValue={
+                            props?.nItemsPage
+                                ? listNpage.find(
+                                      (e) =>
+                                          `${e.id}` == `${props?.nItemsPage}`,
+                                  )
+                                : undefined
+                        }
+                        _t={_t}
+                    />
+                )}
+            </div>
+        </div>
+    );
+};
+
+
+/**
+ * Class properties to customize the style of the pagination.
+ */
+export interface PaginationNPageClassProps {
+    /**
+     * CSS class for the main container of the pagination.
+     */
+    className?: string;
+}
+/**
+ * The base props for the pagination component
+ */
+export interface PaginationNPageBaseProps
+    extends Omit<
+        InputSelectBaseProps,
+        "options" | "onChange" | "nItems" | "maxLengthShowOptions"
+    > {
+    /**
+     * List NPage for select.
+     */
+    listNpage?: InputSelectBaseProps["options"];
+    /**
+     * onChange of nPage.
+     */
+    onChangeNPage?: InputSelectBaseProps["onChange"];
+}
+/**
+ * Props for PaginationNPage component
+ */
+export interface PaginationNPageProps
+    extends PaginationNPageClassProps,
+        PaginationNPageBaseProps {}
+
+export const PaginationNPage = ({
+    className = "",
+    defaultValue,
+    listNpage = [
+        {
+            id: "10",
+            text: "10",
+        },
+        {
+            id: "20",
+            text: "20",
+        },
+        {
+            id: "50",
+            text: "50",
+        },
+        {
+            id: "100",
+            text: "100",
+        },
+        {
+            id: "all",
+            text: "All",
+        },
+    ],
+    onChangeNPage,
+    ...props
+}: PaginationNPageProps) => {
+    return (
+        <div className={`fenext-pagination-npage ${className}`}>
+            <InputSelect
+                {...props}
+                useItemMaxLengthShowOptions={false}
+                options={listNpage}
+                onChange={onChangeNPage}
+                isSelectChangeText={false}
+                defaultValue={defaultValue ?? listNpage[0]}
+            />
+        </div>
+    );
+};
+
+
+/**
+ * Properties for the AlertHook component.
+ */
+export interface AlertHookProps extends _TProps {
+    className?: string;
+
+    configHook?: useAlertProps;
+}
+
+export const AlertHook = ({
+    className = "",
+    configHook = {},
+    ...props
+}: AlertHookProps) => {
+    const { alert, onClearAlert } = useAlert(configHook);
+    return (
+        <>
+            {alert && (
+                <div className={`fenext-alert-hook ${className}`}>
+                    <Alert {...props} {...alert} onClose={onClearAlert} />
+                </div>
+            )}
+        </>
+    );
+};
+
+
+/**
+ * Represents the properties that can be passed to a table component to specify CSS class names.
+ */
+export interface TableClassProps {
+    /**
+     * A CSS class name for the overall content container of the table.
+     */
+    classNameContent?: string;
+
+    /**
+     * A CSS class name for the table element within the content container.
+     */
+    classNameContentTable?: string;
+
+    /**
+     * A CSS class name for the table element itself.
+     */
+    classNameTable?: string;
+
+    /**
+     * A CSS class name for the table header element.
+     */
+    classNameTHead?: string;
+
+    /**
+     * A CSS class name for the table body element.
+     */
+    classNameTBody?: string;
+
+    /**
+     * A CSS class name for the table row header element.
+     */
+    classNameThr?: string;
+
+    /**
+     * A CSS class name for the table row element.
+     */
+    classNameTr?: string;
+
+    /**
+     * A CSS class name for the table cell header element.
+     */
+    classNameTh?: string;
+
+    /**
+     * A CSS class name for the table cell element.
+     */
+    classNameTd?: string;
+
+    /**
+     * A CSS class name for the content container of the pagination component.
+     */
+    classNameContentPagination?: string;
+
+    /**
+     * A CSS class name for the loader element.
+     */
+    classNameLoader?: string;
+}
+/**
+ * A type that represents the header of a table component.
+ *
+ * @template T The type of data that the table contains.
+ */
+export type TableHeader<T> = {
+    /**
+     * The property key in the data object that corresponds to this header column.
+     */
+    id: keyof T;
+
+    /**
+     * The label to display in the header column.
+     */
+    th: ReactNode;
+    /**
+     * The name in the header column.
+     */
+    thText?: string;
+
+    /**
+     * A function that can be used to transform the data before displaying it in the table cell.
+     * This function takes in the data object for the row and returns the transformed value.
+     *
+     * @param data The data object for the row.
+     * @returns The transformed value to display in the table cell.
+     */
+    parse?: (data: T) => any;
+    /**
+     * The columnOptions for table.
+     */
+    columnOptions?: {
+        orderBy?: boolean;
+        showHidden?: boolean;
+    };
+    /**
+     * The label to display in the header column.
+     */
+    defaultShowHidden?: "show" | "hidden";
+    /**
+     * The column width : 100% in new tr;
+     */
+    colNewTr?: boolean;
+    /**
+     * The className of de column;
+     */
+    className?: string;
+}[];
+
+/**
+ * Represents the base properties that can be passed to a table component.
+ *
+ * @template T The type of data that the table contains.
+ */
+export interface TableBaseProps<T> extends _TProps {
+    /**
+     * Name the table.
+     */
+    name: string;
+    /**
+     * An array of data objects to display in the table.
+     */
+    items: T[];
+
+    /**
+     * The header configuration for the table.
+     */
+    header: TableHeader<T>;
+
+    /**
+     * Optional pagination properties for the table.
+     */
+    pagination?: PaginationProps;
+
+    /**
+     * Whether to display a loader while the table data is being loaded.
+     */
+    loader?: boolean;
+
+    /**
+     * typeLoader for show loader.
+     * @default "line"
+     */
+    typeLoader?: "spinner" | "line";
+
+    /**
+     * If use checkbox in table.
+     */
+    useCheckbox?: boolean;
+
+    /**
+     * If on checked items.
+     */
+    onChecked?: (items: T[]) => void;
+
+    /**
+     * onOrderBy table.
+     */
+    onOrderBy?: (order: { id: keyof T; order: "ASC" | "DESC" }) => void;
+
+    /**
+     * onShowHidden table.
+     */
+    onShowHidden?: (showHidden: {
+        id: keyof T;
+        showHidden: "SHOW" | "HIDDEN";
+    }) => void;
+    /**
+     * notResult the table.
+     */
+    notResult?: ReactNode;
+
+    /**
+     * If use checkbox in table.
+     */
+    showPagination?: boolean;
+
+    actionsCheckbox?: Omit<
+        TableActionCheckboxProps<T>,
+        "actionAllCheckbox" | "data"
+    >;
+    actionsCheckboxSelectAll?: ReactNode;
+}
+/**
+ * Represents the properties that can be passed to a table component.
+ *
+ * @template T The type of data that the table contains.
+ */
+export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {}
+
+export const Table = <T,>({
+    classNameContent = "",
+
+    classNameContentTable = "",
+    classNameTable = "",
+    classNameTHead = "",
+    classNameTBody = "",
+    classNameThr = "",
+    classNameTr = "",
+    classNameTh = "",
+    classNameTd = "",
+
+    classNameContentPagination = "",
+
+    classNameLoader = "",
+
+    name,
+    items,
+    header,
+
+    pagination,
+    showPagination = true,
+    loader = false,
+    typeLoader = "line",
+    useCheckbox = true,
+    onOrderBy,
+    onShowHidden,
+    onChecked,
+    notResult = <div>There is not results</div>,
+    actionsCheckbox,
+    actionsCheckboxSelectAll = "Select All",
+    ...props
+}: TableProps<T>) => {
+    const { _t } = use_T({ ...props });
+    const checkboxItems = useMemo(
+        () => items.map((item: T) => ({ ...item, __checkbox: false })),
+        [items],
+    );
+    const [checkbox, setCheckbox] =
+        useState<(T & { __checkbox: boolean })[]>(checkboxItems);
+
+    const onCheckedAll = (v: boolean) => {
+        const itemsChange = items.map((item: T) => ({
+            ...item,
+            __checkbox: v,
+        }));
+        setCheckbox(itemsChange);
+        onChecked?.(itemsChange?.filter((e) => e.__checkbox));
+    };
+    const onCheckedItem = (i: number) => (__checkbox: boolean) => {
+        setCheckbox((pre) => {
+            const itemsChange = pre.map((e, j) => {
+                return {
+                    ...e,
+                    ...(i == j
+                        ? {
+                              __checkbox,
+                          }
+                        : {}),
+                };
+            });
+            onChecked?.(itemsChange?.filter((e) => e.__checkbox));
+            return itemsChange;
+        });
+    };
+
+    useEffect(() => {
+        setCheckbox(checkboxItems);
+    }, [checkboxItems]);
+
+    const headerNotTr = useMemo(
+        () => header.filter((e) => e.colNewTr !== true),
+        [header],
+    );
+    const headerTr = useMemo(
+        () => header.filter((e) => e.colNewTr === true),
+        [header],
+    );
+
+    const CONTENT = useMemo(() => {
+        if (loader) {
+            if (typeLoader == "spinner") {
+                return (
+                    <tr
+                        className={`fenext-table-content-table-tr ${classNameTr}`}
+                    >
+                        <td
+                            className={`fenext-table-content-table-td ${classNameTd}`}
+                            colSpan={999}
+                        >
+                            <div className={`${classNameLoader}`}>
+                                <Loader />
+                            </div>
+                        </td>
+                    </tr>
+                );
+            }
+            return new Array(Math.min(pagination?.nItemsPage ?? 10, 20))
+                .fill(1)
+                .map((item, i) => (
+                    <tr
+                        key={i * item}
+                        className={`fenext-table-content-table-tr ${classNameTr}`}
+                    >
+                        {useCheckbox && (
+                            <td
+                                key={`${i}-checkbox`}
+                                className={`fenext-table-content-table-td ${classNameTd}`}
+                            >
+                                <InputCheckbox
+                                    value={false}
+                                    classNameLabel="fenext-table-content-table-checkbox"
+                                />
+                            </td>
+                        )}
+                        {headerNotTr.map((h, j) => (
+                            <td
+                                key={`${i}-${j}`}
+                                className={`fenext-table-content-table-td ${classNameTd}`}
+                                style={
+                                    {
+                                        ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
+                                    } as React.CSSProperties
+                                }
+                                data-col-id={h?.id}
+                                data-col-text={h?.thText ?? h?.th}
+                            >
+                                <LoaderLine />
+                            </td>
+                        ))}
+                    </tr>
+                ));
+        }
+        if (items.length == 0) {
+            return (
+                <tr className={`fenext-table-content-table-tr ${classNameTr}`}>
+                    <td
+                        className={`fenext-table-content-table-td fenext-table-not-result ${classNameTd}`}
+                        colSpan={999}
+                    >
+                        {_t(notResult)}
+                    </td>
+                </tr>
+            );
+        }
+        return items.map((item, i) => {
+            return (
+                <>
+                    <tr
+                        key={i}
+                        className={`fenext-table-content-table-tr ${classNameTr}`}
+                    >
+                        {useCheckbox && (
+                            <td
+                                key={`${i}-checkbox`}
+                                className={`fenext-table-content-table-td ${classNameTd}`}
+                            >
+                                <InputCheckbox
+                                    onChange={onCheckedItem(i)}
+                                    value={checkbox[i]?.__checkbox ?? false}
+                                    classNameLabel="fenext-table-content-table-checkbox"
+                                />
+                            </td>
+                        )}
+                        {headerNotTr.map((h, j) => (
+                            <td
+                                key={`${i}-${j}`}
+                                className={`fenext-table-content-table-td ${classNameTd} ${h?.className ?? ""}`}
+                                style={
+                                    {
+                                        ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
+                                    } as React.CSSProperties
+                                }
+                                data-col-id={h?.id}
+                                data-col-text={h?.thText ?? h?.th}
+                            >
+                                {h?.parse?.(item) ?? item[h.id] ?? ""}
+                            </td>
+                        ))}
+                    </tr>
+                    {headerTr.map((new_tr, j) => {
+                        return (
+                            <>
+                                <tr
+                                    key={`${i}_tr_${j}`}
+                                    className={`fenext-table-content-table-tr ${classNameTr} ${new_tr?.className ?? ""}`}
+                                >
+                                    <td
+                                        key={`${i}-${j}`}
+                                        className={`fenext-table-content-table-td ${classNameTd}`}
+                                        style={
+                                            {
+                                                ["--fenext-table-head-th"]: `"${new_tr?.thText ?? new_tr?.th}"`,
+                                            } as React.CSSProperties
+                                        }
+                                        colSpan={100}
+                                        data-col-id={new_tr?.id}
+                                        data-col-text={
+                                            new_tr?.thText ?? new_tr?.th
+                                        }
+                                    >
+                                        {new_tr?.parse?.(item) ??
+                                            item[new_tr.id] ??
+                                            ""}
+                                    </td>
+                                </tr>
+                            </>
+                        );
+                    })}
+                </>
+            );
+        });
+    }, [
+        items,
+        header,
+        headerNotTr,
+        loader,
+        classNameTr,
+        classNameTd,
+        useCheckbox,
+        checkbox,
+        typeLoader,
+        notResult,
+        headerTr,
+    ]);
+
+    return (
+        <>
+            <div
+                className={`fenext-table ${classNameContent}`}
+                style={
+                    {
+                        ["--fenext-table-name"]: `"${name}"`,
+                    } as React.CSSProperties
+                }
+            >
+                {useCheckbox &&
+                    checkbox.some((e) => e.__checkbox) &&
+                    actionsCheckbox && (
+                        <div className={`fenext-table-content-actions`}>
+                            <TableActionCheckbox
+                                {...actionsCheckbox}
+                                actionAllCheckbox={{
+                                    label: actionsCheckboxSelectAll,
+                                    onChange: onCheckedAll,
+                                    value: checkbox.every(
+                                        (e) => e?.__checkbox ?? false,
+                                    ),
+                                }}
+                                data={checkbox.filter((e) => e.__checkbox)}
+                            />
+                        </div>
+                    )}
+                <div
+                    className={`fenext-table-content ${classNameContentTable}`}
+                >
+                    <table
+                        className={`fenext-table-content-table ${classNameTable}`}
+                    >
+                        <thead
+                            className={`fenext-table-content-table-thead ${classNameTHead}`}
+                        >
+                            <tr
+                                className={`fenext-table-content-table-thr ${classNameThr}`}
+                            >
+                                {useCheckbox && (
+                                    <th
+                                        className={`fenext-table-content-table-th ${classNameTh}`}
+                                    >
+                                        <InputCheckbox
+                                            onChange={onCheckedAll}
+                                            value={checkbox.every(
+                                                (e) => e?.__checkbox ?? false,
+                                            )}
+                                            _t={_t}
+                                            classNameLabel="fenext-table-content-table-checkbox"
+                                        />
+                                    </th>
+                                )}
+                                {headerNotTr.map((h, i) => (
+                                    <th
+                                        key={i}
+                                        className={`fenext-table-content-table-th ${classNameTh} ${h?.className ?? ""}`}
+                                        data-col-id={h?.id}
+                                        data-col-text={h?.th}
+                                    >
+                                        <DropDown header={<>{_t(h.th)}</>}>
+                                            {h?.columnOptions?.orderBy ? (
+                                                <>
+                                                    <div
+                                                        onClick={() => {
+                                                            onOrderBy?.({
+                                                                id: h.id,
+                                                                order: "ASC",
+                                                            });
+                                                        }}
+                                                        className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                                                    >
+                                                        {_t("Order ASC")}
+                                                    </div>
+                                                    <div
+                                                        onClick={() => {
+                                                            onOrderBy?.({
+                                                                id: h.id,
+                                                                order: "DESC",
+                                                            });
+                                                        }}
+                                                        className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                                                    >
+                                                        {_t("Order DESC")}
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <></>
+                                            )}
+                                            {h?.columnOptions?.showHidden ? (
+                                                <>
+                                                    <InputRadio
+                                                        name={`${h.th}-${i}-show-hidden`}
+                                                        _t={_t}
+                                                        items={[
+                                                            {
+                                                                id: "show",
+                                                                label: "Show",
+                                                            },
+                                                            {
+                                                                id: "hidden",
+                                                                label: "Hidden",
+                                                            },
+                                                        ]}
+                                                        defaultValue={{
+                                                            id: "show",
+                                                            label: "Show",
+                                                        }}
+                                                        labelPosition="right"
+                                                        onChange={(e) => {
+                                                            onShowHidden?.({
+                                                                id: h.id,
+                                                                showHidden:
+                                                                    e?.id ==
+                                                                    "show"
+                                                                        ? "SHOW"
+                                                                        : "HIDDEN",
+                                                            });
+                                                        }}
+                                                    />
+                                                </>
+                                            ) : (
+                                                <></>
+                                            )}
+                                        </DropDown>
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody
+                            className={`fenext-table-content-table-tbody ${classNameTBody}`}
+                        >
+                            {CONTENT}
+                        </tbody>
+                    </table>
+                </div>
+                {pagination && showPagination && (
+                    <div
+                        className={`fenext-table-content-pagination ${classNameContentPagination}`}
+                    >
+                        <Pagination {...pagination} disabled={loader} _t={_t} />
+                    </div>
+                )}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the Alert component.
+ */
+export interface AlertComponentProps extends _TProps, AlertInterface {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The iconClose for the component.
+     */
+    iconClose?: ReactNode;
+    /**
+     * The onClose for the component.
+     */
+    onClose?: () => void;
+}
+
+export const Alert = ({
+    className = "",
+    message,
+    iconClose = <Close />,
+    type,
+    data,
+    onClose,
+    ...props
+}: AlertComponentProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div
+                className={`fenext-alert fenext-alert-${type} ${className}`}
+                data-type={type}
+                meta-data={data}
+            >
+                <div className={`fenext-alert-content`}>{_t(message)}</div>
+                <div className={`fenext-alert-close`} onClick={onClose}>
+                    {iconClose}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+
+
+/**
+ * Properties for the base Collapse component.
+ */
+export interface CollapseBaseProps {
+    /**
+     * Indicates whether the Collapse is currently in the loading state.
+     */
+    loader?: boolean;
+    /**
+     * Indicates whether the Collapse is disabled or not.
+     */
+    disabled?: boolean;
+    /**
+     * Indicates whether the Collapse is defaultActive for show.
+     */
+    defaultActive?: boolean;
+    /**
+     * Indicates whether the Collapse is active for show.
+     */
+    active?: boolean;
+    /**
+     * The id for the component.
+     */
+    id?: string;
+    /**
+     * The name for the component.
+     */
+    name?: string;
+    /**
+     * status of collapse.
+     */
+    status?: "none" | "error" | "ok";
+    /**
+     * type of collapse.
+     */
+    type?: "radio" | "checkbox";
+    /**
+     * type of show content collapse.
+     */
+    show?: "checked" | "focus";
+    /**
+     * Header of Collapse.
+     */
+    header: ReactNode;
+    /**
+     * onChange of Collapse.
+     */
+    onChange?: (value: boolean) => void;
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
+
+    /**
+     * children of Collapse.
+     */
+    children?: ReactNode;
+
+    /**
+     * rotateIcon of Collapse.
+     */
+    rotateIcon?: boolean;
+
+    /**
+     * useActiveForShowChildren of Collapse.
+     */
+    useActiveForShowChildren?: boolean;
+}
+
+/**
+ * Properties for the class of the Collapse component.
+ */
+export interface CollapseClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for Header the component.
+     */
+    classNameHeader?: string;
+    /**
+     * The class name for Header Content the component.
+     */
+    classNameHeaderContent?: string;
+    /**
+     * The class name for Header Icon the component.
+     */
+    classNameHeaderIcon?: string;
+    /**
+     * The class name for Body the component.
+     */
+    classNameBody?: string;
+}
+
+/**
+ * Properties for the Collapse component.
+ */
+export interface CollapseProps extends CollapseBaseProps, CollapseClassProps {}
+
+export const Collapse = ({
+    className = "",
+    classNameHeader = "",
+    classNameHeaderContent = "",
+    classNameHeaderIcon = "",
+    classNameBody = "",
+
+    children,
+    loader = false,
+    header,
+    disabled = false,
+    defaultActive = false,
+    active: activeProps = undefined,
+    id,
+    name = "",
+    type = "checkbox",
+    show = "checked",
+    status = "none",
+    onChange,
+    iconArrow = <Arrow />,
+    rotateIcon = true,
+    useActiveForShowChildren = false,
+}: CollapseProps) => {
+    const [active_, setActive_] = useState(defaultActive);
+
+    const active = useMemo(
+        () => activeProps ?? active_,
+        [activeProps, active_],
+    );
+
+    const { onAction } = useAction({
+        name: `fenext-collapse-${name}`,
+        onActionExecute: () => {
+            if (type == "radio") {
+                setActive_(false);
+                onChange?.(false);
+            }
+        },
+    });
+
+    const setActive = async (e: boolean) => {
+        onAction();
+        if (type == "radio") {
+            await sleep(50);
+        }
+        setActive_(e);
+        onChange?.(e);
+    };
+    return (
+        <>
+            <div
+                className={`
+                    fenext-collapse
+                    fenext-collapse-status-${status}
+                    fenext-collapse-rotate-icon-${rotateIcon ? "yes" : "no"}
+                    fenext-collapse-${show}
+                    fenext-collapse-${useActiveForShowChildren ? "active-for-show-children" : ""}
+                    ${className}
+                `}
+            >
+                <label className={`fenext-collapse-header ${classNameHeader}`}>
+                    <input
+                        type={type}
+                        className={`fenext-collapse-header-checkbox`}
+                        id={id}
+                        name={name}
+                        disabled={disabled || loader}
+                        defaultChecked={defaultActive}
+                        {...(active !== undefined
+                            ? {
+                                  checked: active,
+                              }
+                            : {})}
+                        onChange={(e) => {
+                            setActive?.(e.target.checked);
+                        }}
+                    />
+                    <div
+                        className={`fenext-collapse-header-content ${classNameHeaderContent}`}
+                    >
+                        {header}
+                        {type == "radio" && !disabled ? (
+                            <>
+                                <input
+                                    type={type}
+                                    className={`fenext-collapse-header-uncheck`}
+                                    name={name}
+                                    disabled={loader}
+                                    onChange={() => {
+                                        setActive?.(false);
+                                    }}
+                                />
+                            </>
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+                    <div
+                        className={`fenext-collapse-header-icon ${classNameHeaderIcon}`}
+                    >
+                        {loader ? (
+                            <>
+                                <Loader />
+                            </>
+                        ) : (
+                            <>{iconArrow}</>
+                        )}
+                    </div>
+                </label>
+                <div className={`fenext-collapse-body ${classNameBody}`}>
+                    {useActiveForShowChildren ? (
+                        <>{active && <>{children}</>}</>
+                    ) : (
+                        <>{children}</>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base CollapseMultiple component.
+ */
+export interface CollapseMultipleBaseProps
+    extends Pick<
+        CollapseBaseProps,
+        "name" | "type" | "useActiveForShowChildren"
+    > {
+    /**
+     * items of Collapse.
+     */
+    items?: Omit<CollapseBaseProps, "checkbox" | "name" | "id">[];
+
+    /**
+     * defaultActive of Collapse.
+     */
+    defaultActive?: number | number[];
+}
+
+/**
+ * Properties for the class of the CollapseMultiple component.
+ */
+export interface CollapseMultipleClassProps extends CollapseClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameMultiple?: string;
+}
+
+/**
+ * Properties for the CollapseMultiple component.
+ */
+export interface CollapseMultipleProps
+    extends CollapseMultipleBaseProps,
+        CollapseMultipleClassProps {}
+
+export const CollapseMultiple = ({
+    classNameMultiple = "",
+    name = "",
+    items = [],
+    type = "checkbox",
+    defaultActive = [],
+
+    ...props
+}: CollapseMultipleProps) => {
+    return (
+        <>
+            <div className={`fenext-collapse-multiple ${classNameMultiple}`}>
+                {items.map((item, i) => (
+                    <Collapse
+                        key={i}
+                        name={name}
+                        type={type}
+                        defaultActive={[defaultActive].flat(2).includes(i)}
+                        {...props}
+                        {...item}
+                    />
+                ))}
+            </div>
+        </>
+    );
+};
+
+
+export interface LavaLampGetNumberRandomProps {
+    /**
+     * The min number for generator number random.
+     */
+    min: number;
+    /**
+     * The max number for generator number random.
+     */
+    max: number;
+}
+
+/**
+ * Properties for the base LavaLamp component.
+ */
+export interface LavaLampRangeStylesProps {
+    top?: LavaLampGetNumberRandomProps;
+    left?: LavaLampGetNumberRandomProps;
+    scale?: LavaLampGetNumberRandomProps;
+    moveX?: LavaLampGetNumberRandomProps;
+    moveY?: LavaLampGetNumberRandomProps;
+    time?: LavaLampGetNumberRandomProps;
+}
+
+export type LavaLampStylesElement = Pick<
+    CSSProperties,
+    | "borderRadius"
+    | "aspectRatio"
+    | "width"
+    | "background"
+    | "animationTimingFunction"
+>;
+
+/**
+ * Properties for the base LavaLamp component.
+ */
+export interface LavaLampBaseProps {
+    /**
+     * The number items elements.
+     */
+    nItems?: number;
+    /**
+     * The styles of elements.
+     */
+    styles?: CSSProperties;
+    /**
+     * The styles of elements.
+     */
+    ranges?: LavaLampRangeStylesProps;
+    /**
+     * The styles of elemens.
+     */
+    stylesElement?: LavaLampStylesElement[];
+}
+
+/**
+ * Properties for the class of the LavaLamp component.
+ */
+export interface LavaLampClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the LavaLamp component.
+ */
+export interface LavaLampProps extends LavaLampBaseProps, LavaLampClassProps {}
+
+export const LavaLamp = ({
+    className = "",
+    nItems = 20,
+    styles = {
+        width: "100%",
+        height: "500px",
+        background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+    },
+    stylesElement = [
+        {
+            width: "150px",
+            aspectRatio: "2/1.5",
+            borderRadius: "30% 70% 70% 30% / 68% 30% 70% 32% ",
+            background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+            animationTimingFunction: "ease",
+        },
+        {
+            width: "100px",
+            aspectRatio: "1 / 1",
+            borderRadius: "30% 70% 44% 56% / 23% 46% 54% 77% ",
+            background: `linear-gradient(75deg,var(--fenext-color-info) 0%,var(--fenext-color-indigo) 100%)`,
+            animationTimingFunction: "ease-out",
+        },
+        {
+            width: "100px",
+            aspectRatio: "1 / 1",
+            borderRadius: "87% 13% 65% 35% / 46% 46% 54% 54% ",
+            background: `linear-gradient(135deg,var(--fenext-color-cyan) 0%,var(--fenext-color-purple) 100%)`,
+            animationTimingFunction: "linear",
+        },
+    ],
+    ranges = {},
+}: LavaLampProps) => {
+    const getNumberRandom = ({ min, max }: LavaLampGetNumberRandomProps) => {
+        return Math.trunc(Math.random() * (max - min) + min);
+    };
+    const getPosRandom = () => {
+        const pos: Pick<CSSProperties, "top" | "left"> = {
+            top: `${getNumberRandom(ranges?.top ?? { min: 20, max: 80 })}%`,
+            left: `${getNumberRandom(ranges?.left ?? { min: 20, max: 80 })}%`,
+        };
+        return pos;
+    };
+    const getVarRandom = () => {
+        return {
+            ["--scale"]:
+                getNumberRandom(ranges?.scale ?? { min: 50, max: 100 }) / 10,
+            ["--move-X"]: `${getNumberRandom(
+                ranges?.moveX ?? { min: -300, max: 300 },
+            )}%`,
+            ["--move-Y"]: `${getNumberRandom(
+                ranges?.moveY ?? { min: -300, max: 300 },
+            )}%`,
+            ["--time"]: `${
+                getNumberRandom(ranges?.time ?? { min: 30, max: 50 }) / 10
+            }s`,
+        } as CSSProperties;
+    };
+    return (
+        <>
+            <div className={`fenext-lava-lamp ${className} `} style={styles}>
+                {new Array(nItems).fill(1).map((e, i) => {
+                    return (
+                        <>
+                            <div
+                                key={e * i}
+                                className="fenext-lava-lamp-item"
+                                style={{
+                                    ...stylesElement[
+                                        Math.trunc(i % stylesElement.length)
+                                    ],
+                                    ...getPosRandom(),
+                                    ...getVarRandom(),
+                                }}
+                            ></div>
+                        </>
+                    );
+                })}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ErrorComponent component.
+ */
+export interface ErrorComponentBaseProps extends PropsWithChildren, _TProps {
+    /**
+     * The class name for the component.
+     */
+    error?: ErrorFenextjs;
+    /**
+     * The data-error .
+     */
+    useDataError?: boolean;
+    /**
+     * The data-error .
+     */
+    useErrorInput?: boolean;
+}
+
+/**
+ * Properties for the class of the ErrorComponent component.
+ */
+export interface ErrorComponentClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ErrorComponent component.
+ */
+export interface ErrorComponentProps
+    extends ErrorComponentBaseProps,
+        ErrorComponentClassProps {}
+
+export const ErrorComponent = ({
+    error,
+    children,
+    className = "",
+    useDataError = true,
+    useErrorInput = true,
+    ...props
+}: ErrorComponentProps) => {
+    const { _t } = use_T({ ...props });
+
+    const dataError = useMemo(() => {
+        const err = useDataError ? error?.data : undefined;
+        return err ? JSON.stringify(error) : undefined;
+    }, [useDataError, error]);
+
+    return (
+        <div
+            className={`fenext-error ${className} fenext-error-${error?.code}`}
+            data-error={dataError}
+        >
+            {error ? (
+                <>
+                    {_t(error?.msg ?? "")}
+                    {useErrorInput && error?.input && (
+                        <>
+                            {" "}
+                            <span className="fenext-error-input">
+                                {_t(`[${error?.input ?? ""}]`)}
+                            </span>
+                        </>
+                    )}
+                </>
+            ) : (
+                _t(children)
+            )}
+        </div>
+    );
+};
+
+
+export type onError = (error: string) => void;
+export type onOk = () => Promise<void> | void;
+
+export interface FormProps<
+    D = any,
+    R = any,
+    E = any,
+    T = RequestResultTypeProps,
+> extends PropsWithChildren,
+        _TProps {
+    /**
+     * The ID of the form
+     */
+    id?: string;
+
+    /**
+     * The initial data of the form
+     */
+    data: D;
+
+    /**
+     * The function to handle the form submission
+     */
+    onSubmit?: RequestProps<D, R, E, T>;
+
+    /**
+     * The function to call after a successful form submission
+     */
+    onAfterSubmit?: (data: RequestResultDataProps<R, E, T>) => void;
+
+    /**
+     * Whether the form is disabled
+     */
+    disabled?: boolean;
+
+    /**
+     * Whether to show a loader while the form is submitting
+     */
+    loader?: boolean;
+
+    /**
+     * The className to apply to the form element
+     */
+    className?: string;
+}
+
+export const Form = <D = any, R = any, E = any>({
+    id = "",
+    data,
+    disabled = true,
+    children,
+    className = "",
+    ...props
+}: PropsWithChildren<FormProps<D, R, E>>) => {
+    const { _t } = use_T({ ...props });
+    const { pop } = useNotification({});
+    const { push } = useDataLayer({});
+    const onSendForm = async () => {
+        try {
+            const result = await props?.onSubmit?.(data);
+            pop({
+                type: result?.type,
+                message: _t(result?.message ?? ""),
+            });
+            if (result?.type == RequestResultTypeProps.OK) {
+                if (id != "") {
+                    push({
+                        event: `form-${id}`,
+                    });
+                }
+                props?.onAfterSubmit?.(result);
+            }
+        } catch (error: any) {
+            pop({
+                type: RequestResultTypeProps.ERROR,
+                message: _t(error?.message ?? error ?? ""),
+            });
+        }
+    };
+
+    const onSubmit = async (e: any) => {
+        e.preventDefault();
+        if (disabled) {
+            return;
+        }
+        onSendForm();
+    };
+
+    return (
+        <>
+            <form className={`fenext-form ${className}`} onSubmit={onSubmit}>
+                {_t(children)}
+            </form>
+        </>
+    );
+};
+
+
+export type TooltipPositionX = "center" | "right" | "left";
+export type TooltipPositionY = "center" | "top" | "bottom";
+
+/**
+ * Properties for the base Tooltip component.
+ */
+export interface TooltipProps extends _TProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The children for the component.
+     */
+    children?: ReactNode;
+    /**
+     * The children for the component.
+     */
+    tooltip?: ReactNode;
+    /**
+     * The position x for the component.
+     */
+    positionX?: TooltipPositionX;
+    /**
+     * The position y for the component.
+     */
+    positionY?: TooltipPositionY;
+}
+
+export const Tooltip = ({
+    className = "",
+    children,
+    tooltip,
+    positionX = "center",
+    positionY = "top",
+    ...props
+}: TooltipProps) => {
+    const { _t } = use_T({ ...props });
+    const ref = useRef<HTMLDivElement>(null);
+    const refTooltipContent = useRef<HTMLDivElement>(null);
+
+    type configTooltipType = {
+        "--element-width"?: string;
+        "--element-height"?: string;
+        "--element-top"?: string;
+        "--element-left"?: string;
+        "--element-right"?: string;
+        "--element-bottom"?: string;
+        "--element-center-x"?: string;
+        "--element-center-y"?: string;
+    };
+
+    const [configTooltip, setConfigTooltip] = useState<
+        configTooltipType | undefined
+    >(undefined);
+
+    const onShowTooltip = () => {
+        const target = ref?.current as HTMLElement;
+        const tooltipElement = refTooltipContent?.current;
+        if (tooltipElement) {
+            const bounding = target.getBoundingClientRect();
+            setConfigTooltip({
+                "--element-width": `${tooltipElement.offsetWidth}px`,
+                "--element-height": `${tooltipElement.offsetHeight}px`,
+                "--element-top": `${bounding.top}px`,
+                "--element-left": `${bounding.left}px`,
+                "--element-right": `${bounding.right}px`,
+                "--element-bottom": `${bounding.bottom}px`,
+                "--element-center-x": `${(bounding.right - bounding.left) / 2 + bounding.left}px`,
+                "--element-center-y": `${(bounding.bottom - bounding.top) / 2 + bounding.top}px`,
+            });
+        }
+    };
+
+    return (
+        <>
+            <Portal>
+                <div
+                    ref={refTooltipContent}
+                    className={`
+                        fenext-tooltip-content 
+                        fenext-tooltip-content-x-${positionX} 
+                        fenext-tooltip-content-y-${positionY} 
+                        fenext-tooltip-content-${configTooltip ? "active" : "inactive"}
+                    `}
+                    onMouseEnter={onShowTooltip}
+                    onMouseLeave={() => {
+                        setConfigTooltip(undefined);
+                    }}
+                    style={configTooltip as any}
+                >
+                    {tooltip}
+                </div>
+            </Portal>
+            <div
+                ref={ref}
+                className={`fenext-tooltip ${className} `}
+                onMouseEnter={onShowTooltip}
+                onClick={onShowTooltip}
+                onMouseLeave={() => {
+                    setConfigTooltip(undefined);
+                }}
+            >
+                <div className={`fenext-tooltip-children`}>{_t(children)}</div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the TwoColSticky component.
+ */
+export interface TwoColStickyProps extends _TProps {
+    /**
+     * children for the component.
+     */
+    children?: ReactNode;
+    /**
+     * colSticky for the component.
+     */
+    colSticky?: ReactNode;
+    /**
+     *postion of col for the component.
+     */
+    posCol?: "left" | "right";
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name children for the component.
+     */
+    classNameChildren?: string;
+    /**
+     * The class name colSticky for the component.
+     */
+    classNameColSticky?: string;
+}
+
+/**
+ * TwoColSticky Component
+ *
+ * A component that renders two columns: one sticky column and one children column.
+ * The sticky column will stay fixed while the children column will be scrollable.
+ *
+ * @param {TwoColStickyProps} props - The props for the TwoColSticky component.
+ * @returns {JSX.Element} - The TwoColSticky JSX Element.
+ */
+export const TwoColSticky = ({
+    className = "",
+    classNameChildren = "",
+    classNameColSticky = "",
+    children,
+    colSticky,
+    posCol = "left",
+    ...props
+}: TwoColStickyProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            {/* The wrapper div for the TwoColSticky component */}
+            <div
+                className={`fenext-two-col-sticky fenext-two-col-sticky-pos-${posCol} ${className} `}
+            >
+                {/* The sticky column */}
+                <div
+                    className={`fenext-two-col-sticky-col-sticky ${classNameColSticky} `}
+                >
+                    {_t(colSticky)}
+                </div>
+                {/* The scrollable children column */}
+                <div
+                    className={`fenext-two-col-sticky-children ${classNameChildren} `}
+                >
+                    {_t(children)}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties of a tab item?.
+ */
+export interface TabItemProps<T = string> {
+    /**
+     * Unique identifier of the tab.
+     */
+    id: T;
+
+    /**
+     * Content to be displayed in the tab header.
+     */
+    head: ReactNode;
+
+    /**
+     * Content to be displayed in the tab body.
+     */
+    body: ReactNode;
+    /**
+     * Component of before list  Tabs Header;
+     */
+    beforeTab?: ReactNode;
+
+    /**
+     * Component of after list  Tabs Header;
+     */
+    afterTab?: ReactNode;
+
+    /**
+     * useCount  Tabs Header;
+     */
+    useCount?: boolean;
+
+    /**
+     * count  Tabs Header;
+     */
+    count?: number;
+
+    /**
+     * singular  Tabs Header;
+     */
+    singular?: ReactNode;
+
+    /**
+     * plural  Tabs Header;
+     */
+    plural?: ReactNode;
+}
+
+/**
+ * Base properties of a tab component.
+ */
+export interface TabBaseProps<T = string> extends _TProps {
+    /**
+     * Array of `TabItemProps` objects representing the tabs.
+     */
+    items?: TabItemProps<T>[];
+    /**
+     * onChange Tab.
+     */
+    onChange?: (item: TabItemProps<T>) => void;
+
+    /**
+     * Index of the tab to be shown by default.
+     */
+    defaultTab?: number;
+
+    /**
+     * Index of the tab to be shown by default.
+     */
+    activeTab?: number;
+
+    /**
+     * Component of before list  Tabs Header;
+     */
+    beforeTabs?: ReactNode;
+
+    /**
+     * Component of after list  Tabs Header;
+     */
+    afterTabs?: ReactNode;
+
+    /**
+     * tabScrollActive if show all tabs in scroll in selecte.
+     * @default false
+     */
+    tabScrollActive?: boolean;
+    /**
+     * validataTabOneHiddenHeader if one tab, header is hidden
+     * @default true
+     */
+    validataTabOneHiddenHeader?: boolean;
+
+    /**
+     * useCount  Tabs;
+     */
+    useCount?: boolean;
+}
+
+/**
+ * CSS class properties for a tab component.
+ */
+export interface TabClassProps {
+    /**
+     * Name of the CSS class for the component.
+     */
+    className?: string;
+
+    /**
+     * Name of the CSS class for the tab content header.
+     */
+    classNameContentHead?: string;
+    /**
+     * Name of the CSS class for the tab content before header.
+     */
+    classNameContentBeforeHead?: string;
+    /**
+     * Name of the CSS class for the tab content after header.
+     */
+    classNameContentAfterHead?: string;
+
+    /**
+     * Name of the CSS class for the tab header.
+     */
+    classNameHead?: string;
+
+    /**
+     * Name of the CSS class for an item in the tab header.
+     */
+    classNameHeadItem?: string;
+
+    /**
+     * Name of the CSS class for the active item in the tab header.
+     */
+    classNameHeadItemActive?: string;
+
+    /**
+     * Name of the CSS class for the tab body.
+     */
+    classNameBody?: string;
+
+    /**
+     * Name of the CSS class for an item in the tab body.
+     */
+    classNameBodyItem?: string;
+}
+
+/**
+ * Properties for a tab component.
+ * Combines `TabBaseProps` and `TabClassProps`.
+ */
+export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {}
+
+export const parseTabCount = <T,>(
+    d: TabItemProps<T>,
+    _t: ReturnType<typeof use_T>["_t"],
+): TabItemProps<T> => {
+    if (!d.useCount) {
+        return d;
+    }
+    return {
+        ...d,
+        head: (
+            <>
+                {_t(((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head) ??
+                    ""}{" "}
+                ({parseNumberCount(d.count ?? 0)})
+            </>
+        ),
+    };
+};
+
+/**
+ * Tab component that displays a set of tabs with content.
+ * @param className CSS class name for the component.
+ * @param classNameHead CSS class name for the tab header.
+ * @param classNameHeadItem CSS class name for each item in the tab header.
+ * @param classNameHeadItemActive CSS class name for the active item in the tab header.
+ * @param classNameBody CSS class name for the tab body.
+ * @param classNameBodyItem CSS class name for each item in the tab body.
+ * @param items Array of `TabItemProps` objects representing the tabs.
+ * @param defaultTab Index of the tab to be shown by default.
+ */
+export const Tab = <T = string,>({
+    className = "",
+    classNameContentHead = "",
+    classNameHead = "",
+    classNameHeadItem = "",
+    classNameHeadItemActive = "",
+    classNameBody = "",
+    classNameBodyItem = "",
+    classNameContentAfterHead = "",
+    classNameContentBeforeHead = "",
+
+    items = [],
+    defaultTab = 0,
+    activeTab = undefined,
+    afterTabs = undefined,
+    beforeTabs = undefined,
+    onChange,
+    tabScrollActive = false,
+    validataTabOneHiddenHeader = true,
+
+    useCount = false,
+    ...props
+}: TabProps<T>) => {
+    const { _t } = use_T({ ...props });
+    const [_tabSelect, setTabSelect] = useState(
+        Math.max(0, Math.min(defaultTab, items?.length - 1)),
+    );
+    const tabSelect = useMemo(
+        () => activeTab ?? _tabSelect,
+        [activeTab, _tabSelect],
+    );
+
+    const CHead = useMemo(() => {
+        return items?.map((item, i) => {
+            const ITEM = parseTabCount<T>(
+                {
+                    ...item,
+                    useCount: item?.useCount ?? useCount ?? false,
+                },
+                _t,
+            );
+            return (
+                <div
+                    key={i}
+                    className={`fenext-tab-head-item ${classNameHeadItem} ${
+                        i == tabSelect
+                            ? `fenext-tab-head-item-active ${classNameHeadItemActive}`
+                            : ""
+                    } fenext-tab-head-item-id-${item?.id}`}
+                    onClick={() => {
+                        setTabSelect(i);
+                        onChange?.(ITEM);
+                    }}
+                >
+                    {_t(ITEM?.head) ?? ""}
+                </div>
+            );
+        });
+    }, [tabSelect, items, useCount, _t]);
+
+    const CBody = useMemo(() => {
+        if (tabScrollActive) {
+            return (
+                <>
+                    {items?.map((item, i) => {
+                        return (
+                            <>
+                                <div
+                                    className={`fenext-tab-body-item fenext-tab-body-item-${
+                                        i == tabSelect ? "active" : ""
+                                    } ${classNameBodyItem}`}
+                                >
+                                    {item?.body ?? ""}
+                                </div>
+                            </>
+                        );
+                    })}
+                </>
+            );
+        }
+        const item = items?.[tabSelect];
+        return (
+            <div className={`fenext-tab-body-item ${classNameBodyItem}`}>
+                {item?.body ?? ""}
+            </div>
+        );
+    }, [tabSelect, items, tabScrollActive]);
+
+    const BEFORETAB = useMemo(() => {
+        let b = beforeTabs;
+        const item = items?.[tabSelect];
+        if (item?.beforeTab) {
+            b = item?.beforeTab;
+        }
+        return (
+            <>
+                {b && (
+                    <div
+                        className={`fenext-tab-content-head-before ${classNameContentBeforeHead}`}
+                    >
+                        {_t(b)}
+                    </div>
+                )}
+            </>
+        );
+    }, [beforeTabs, classNameContentBeforeHead, tabSelect, items, _t]);
+
+    const AFTERTAB = useMemo(() => {
+        let a = afterTabs;
+        const item = items?.[tabSelect];
+        if (item?.beforeTab) {
+            a = item?.afterTab;
+        }
+        return (
+            <>
+                {a && (
+                    <div
+                        className={`fenext-tab-content-head-after ${classNameContentAfterHead}`}
+                    >
+                        {_t(a)}
+                    </div>
+                )}
+            </>
+        );
+    }, [afterTabs, classNameContentAfterHead, tabSelect, items, _t]);
+    return (
+        <>
+            <div
+                className={`fenext-tab fenext-tab-${
+                    tabScrollActive ? "scroll-active" : ""
+                } 
+                fenext-tab-${
+                    validataTabOneHiddenHeader ? "validate-one-tab" : ""
+                }
+                
+                ${className}`}
+            >
+                <div
+                    className={`fenext-tab-content-head ${classNameContentHead}`}
+                >
+                    {BEFORETAB}
+                    <div className={`fenext-tab-head ${classNameHead}`}>
+                        {CHead}
+                    </div>
+                    {AFTERTAB}
+                </div>
+                <div className={`fenext-tab-body ${classNameBody}`}>
+                    {CBody}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DropDown component.
+ */
+export interface DropDownBaseProps extends CollapseBaseProps {}
+
+/**
+ * Properties for the class of the DropDown component.
+ */
+export interface DropDownClassProps extends CollapseClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameDropDown?: string;
+}
+
+/**
+ * Properties for the DropDown component.
+ */
+export interface DropDownProps extends DropDownBaseProps, DropDownClassProps {}
+
+export const DropDown = ({
+    classNameDropDown = "",
+    show = "focus",
+    ...props
+}: DropDownProps) => {
+    const dropDownRef = useRef<HTMLDivElement>(null);
+    const [spaces, setSpaces] = useState({
+        spaceBottom: 0,
+        spaceLeft: 0,
+        spaceRight: 0,
+        spaceTop: 0,
+    });
+
+    const onDefDropDownPos = () => {
+        if (dropDownRef.current) {
+            setSpaces(GetSpaceParent(dropDownRef.current));
+        }
+    };
+    useEffect(() => {
+        onDefDropDownPos();
+        window.addEventListener("resize", onDefDropDownPos);
+        window.addEventListener("scroll", onDefDropDownPos);
+        return () => {
+            window.removeEventListener("resize", onDefDropDownPos);
+            window.removeEventListener("scroll", onDefDropDownPos);
+        };
+    }, [dropDownRef.current]);
+    return (
+        <>
+            <div
+                ref={dropDownRef}
+                className={`fenext-dropdown fenext-dropdown-${
+                    spaces.spaceRight > spaces.spaceLeft ? "left" : "right"
+                } fenext-dropdown-${
+                    spaces.spaceTop > spaces.spaceBottom ? "up" : "down"
+                } ${classNameDropDown} `}
+                style={
+                    {
+                        ["--fenext-space-top"]: spaces.spaceTop,
+                        ["--fenext-space-left"]: spaces.spaceLeft,
+                        ["--fenext-space-right"]: spaces.spaceRight,
+                        ["--fenext-space-bottom"]: spaces.spaceBottom,
+                    } as React.CSSProperties
+                }
+                onMouseEnter={onDefDropDownPos}
+            >
+                <Collapse {...props} show={show} />
+            </div>
+        </>
+    );
+};
+
+
+
+
+export interface PrintIframeComponentProps {
+    loader: boolean;
+}
+
+/**
+ * Properties for the base PrintIframe component.
+ */
+export interface PrintIframeBaseProps<T> extends usePrintIframeProps<T> {
+    /**
+     * The class name for the component.
+     */
+    onComponent: (data: PrintIframeComponentProps) => ReactNode;
+}
+
+/**
+ * Properties for the class of the PrintIframe component.
+ */
+export interface PrintIframeClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the PrintIframe component.
+ */
+export interface PrintIframeProps<T>
+    extends PrintIframeBaseProps<T>,
+        PrintIframeClassProps {}
+
+export const PrintIframe = <T,>({
+    className = "",
+    onComponent,
+    ...props
+}: PrintIframeProps<T>) => {
+    const { loader, onPrint } = usePrintIframe<T>(props);
+    const COMPONENT = useMemo(() => onComponent?.({ loader }), [loader]);
+    return (
+        <>
+            <div
+                className={`fenext-print-iframe ${className} `}
+                onClick={onPrint}
+            >
+                {COMPONENT}
+            </div>
+        </>
+    );
+};
+
+
+export interface PrintPageComponentProps<T> {
+    data: T | undefined;
+    load: boolean;
+}
+
+/**
+ * Properties for the base PrintPage component.
+ */
+export interface PrintPageBaseProps<T> extends usePrintDataProps {
+    /**
+     * The class name for the component.
+     */
+    onComponent: (data: PrintPageComponentProps<T>) => ReactNode;
+}
+
+/**
+ * Properties for the class of the PrintPage component.
+ */
+export interface PrintPageClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the PrintPage component.
+ */
+export interface PrintPageProps<T>
+    extends PrintPageBaseProps<T>,
+        PrintPageClassProps {}
+
+export const PrintPage = <T,>({
+    className = "",
+    onComponent,
+    ...props
+}: PrintPageProps<T>) => {
+    const { data, load } = usePrintData<T>(props);
+    const COMPONENT = useMemo(
+        () => onComponent?.({ data, load }),
+        [data, load],
+    );
+    return (
+        <>
+            <div className={`fenext-print-page ${className} `}>{COMPONENT}</div>
+        </>
+    );
+};
+
+
+import React, {
+    useCallback,
+    ReactNode,
+    useMemo,
+    useRef,
+    useState,
+} from "react";
+export interface StepsItemProps {
+    /**
+     * Item label.
+     */
+    label: ReactNode;
+    /**
+     * Item icon.
+     */
+    icon?: ReactNode;
+    /**
+     * Item content.
+     */
+    content: ReactNode;
+    /**
+     * status Item.
+     */
+    status?: "none" | "ok" | "error";
+}
+
+/**
+ * Properties for the base Steps component.
+ */
+export interface StepsBaseProps extends _TProps {
+    /**
+     * Items steps.
+     */
+    items: StepsItemProps[];
+    /**
+     * defaultStep show.
+     * @default 0
+     */
+    defaultStep?: number;
+    /**
+     * Step show.
+     * @default undefined
+     */
+    step?: number;
+    /**
+     * useArrowKey.
+     * @default true
+     */
+    useArrowKey?: boolean;
+    /**
+     * Content of Button previous.
+     * @default "Previous"
+     */
+    btnPrev?: ReactNode;
+    /**
+     * Content of Button next.
+     * @default "Next"
+     */
+    btnNext?: ReactNode;
+    /**
+     * If Disabled Button previous.
+     * @default false
+     */
+    disabledBtnPrev?: boolean;
+    /**
+     * If Disabled Button next.
+     * @default false
+     */
+    disabledBtnNext?: boolean;
+    /**
+     * onClick in btn Prev.
+     */
+    onPrev?: (step: number) => Promise<void> | void;
+    /**
+     * onClick in btn Next.
+     */
+    onNext?: (step: number) => Promise<void> | void;
+    /**
+     * onSetStep.
+     */
+    onSetStep?: (step: number) => void;
+    /**
+     * Position of list Step.
+     * @default left
+     */
+    stepPos?: "top" | "left" | "right";
+    /**
+     * showCurrentStepNStep of list Step.
+     * @default false
+     */
+    showCurrentStepNStep?: boolean;
+    /**
+     * useDogs of list Step.
+     * @default false
+     */
+    useDogs?: boolean;
+}
+
+/**
+ * Properties for the class of the Steps component.
+ */
+export interface StepsClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the content steps.
+     */
+    classNameContentSteps?: string;
+    /**
+     * The class name for the content steps.
+     */
+    classNameListSteps?: string;
+    /**
+     * The class name for the contents items.
+     */
+    classNameContentItems?: string;
+    /**
+     * The class name for the step.
+     */
+    classNameStep?: string;
+    /**
+     * The class name for the item.
+     */
+    classNameItem?: string;
+    /**
+     * The class name for the step acitve.
+     */
+    classNameStepActive?: string;
+    /**
+     * The class name for the item acitve.
+     */
+    classNameItemActive?: string;
+    /**
+     * The class name for the step circle.
+     */
+    classNameStepCircle?: string;
+    /**
+     * The class name for the step label.
+     */
+    classNameStepLabel?: string;
+    /**
+     * The class name for the content btn next and prev.
+     */
+    classNameContentBtn?: string;
+    /**
+     * The class name for the btn next and prev.
+     */
+    classNameBtn?: string;
+    /**
+     * The class name for the btn next.
+     */
+    classNameBtnNext?: string;
+    /**
+     * The class name for the btn prev.
+     */
+    classNameBtnPrev?: string;
+
+    forceShowBtnPrev?: boolean;
+
+    forceShowBtnNext?: boolean;
+}
+
+/**
+ * Properties for the Steps component.
+ */
+export interface StepsProps extends StepsBaseProps, StepsClassProps {}
+
+export const Steps = ({
+    className = "",
+    classNameContentItems = "",
+    classNameContentSteps = "",
+    classNameListSteps = "",
+    classNameItem = "",
+    classNameItemActive = "",
+    classNameStep = "",
+    classNameStepActive = "",
+    classNameStepCircle = "",
+    classNameStepLabel = "",
+    classNameContentBtn = "",
+    classNameBtn = "",
+    classNameBtnNext = "",
+    classNameBtnPrev = "",
+
+    defaultStep = 0,
+    step = undefined,
+    items = [],
+    btnNext = "Next",
+    btnPrev = "Previous",
+    disabledBtnNext = false,
+    disabledBtnPrev = false,
+    onNext,
+    onPrev,
+    stepPos = "left",
+    showCurrentStepNStep = false,
+    useArrowKey = false,
+    useDogs = false,
+    onSetStep,
+    forceShowBtnPrev = false,
+    forceShowBtnNext = false,
+    ...props
+}: StepsProps) => {
+    const { _t } = use_T({ ...props });
+    const ref = useRef<HTMLDivElement>(null);
+    const [loader, setLoader] = useState(false);
+    const parseCurrentStep = useCallback(
+        (n: number) => {
+            return Math.max(0, Math.min(n, items.length - 1));
+        },
+        [items.length],
+    );
+    const [currentStep___, setCurrentStep__] = useState(defaultStep);
+
+    const setCurrentStep = (e: number) => {
+        setCurrentStep__(e);
+        onSetStep?.(e);
+    };
+
+    const currentStep = useMemo(
+        () => parseCurrentStep(step ?? currentStep___),
+        [currentStep___, step, items.length],
+    );
+
+    const getNumberSum = useCallback(
+        (a: number) => {
+            return parseCurrentStep(currentStep + a);
+        },
+        [currentStep, items.length],
+    );
+
+    const onMoveStep = async (add: number, fn?: (n: number) => any) => {
+        if (
+            ref &&
+            ref?.current &&
+            ref?.current?.classList?.contains("fenext-steps-not-loader")
+        ) {
+            setLoader(true);
+            try {
+                const n = getNumberSum(add);
+                if (fn) {
+                    await fn(n);
+                }
+                setCurrentStep(n);
+            } finally {
+                setLoader(false);
+            }
+            setLoader(false);
+        }
+    };
+
+    const onNext_ = async () => {
+        if (disabledBtnNext) {
+            return;
+        }
+        await onMoveStep(1, onNext);
+    };
+
+    const onPrev_ = async () => {
+        if (disabledBtnPrev) {
+            return;
+        }
+        await onMoveStep(-1, onPrev);
+    };
+
+    const keydown: TypeListenerFunctions<"keydown"> = useCallback(
+        (e) => {
+            if (!useArrowKey) {
+                return;
+            }
+            if (e.keyCode == 37) {
+                onPrev_();
+            }
+            if (e.keyCode == 39) {
+                onNext_();
+            }
+        },
+        [
+            currentStep,
+            useArrowKey,
+            disabledBtnNext,
+            disabledBtnPrev,
+            items.length,
+        ],
+    );
+
+    useDocumentEvent({
+        keydown,
+    });
+
+    return (
+        <>
+            <div
+                ref={ref}
+                className={`
+                    fenext-steps
+                    fenext-steps-${loader ? "loader" : "not-loader"}
+                    fenext-steps-pos-${stepPos}
+                    fenext-steps-pos-${stepPos}
+                    ${className} 
+                    `}
+            >
+                <div
+                    className={`fenext-steps-content-steps ${classNameContentSteps} `}
+                >
+                    <div
+                        className={`fenext-steps-list-steps ${classNameListSteps} `}
+                    >
+                        {items.map((item, i) => {
+                            return (
+                                <div
+                                    key={i}
+                                    className={`fenext-steps-step ${classNameStep} ${
+                                        currentStep == i
+                                            ? `fenext-steps-step-active ${classNameStepActive}`
+                                            : ""
+                                    }
+                                        fenext-steps-step-status-${
+                                            item?.status ?? "none"
+                                        } 
+                                    `}
+                                >
+                                    <div
+                                        className={`fenext-steps-step-circle ${classNameStepCircle} `}
+                                    >
+                                        {item.icon ?? i + 1}
+                                    </div>
+                                    <div
+                                        className={`fenext-steps-step-label ${classNameStepLabel} `}
+                                    >
+                                        {_t(item.label)}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+                <div
+                    className={`fenext-steps-content-items ${classNameContentItems} `}
+                >
+                    {items.map((item, i) => {
+                        return (
+                            <div
+                                key={i}
+                                className={`fenext-steps-item ${classNameItem} ${
+                                    currentStep == i
+                                        ? `fenext-steps-item-active ${classNameItemActive}`
+                                        : ""
+                                } `}
+                            >
+                                {_t(item.content)}
+                            </div>
+                        );
+                    })}
+                </div>
+                <div
+                    className={`fenext-steps-content-btn ${classNameContentBtn} `}
+                >
+                    {(currentStep != 0 || forceShowBtnPrev) && (
+                        <Button
+                            className={`fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`}
+                            disabled={disabledBtnPrev}
+                            onClick={onPrev_}
+                            loader={loader}
+                            _t={_t}
+                        >
+                            {btnPrev}
+                        </Button>
+                    )}
+                    {showCurrentStepNStep && items.length > 1 && (
+                        <>
+                            <div className="fenext-steps-current-step">
+                                {currentStep + 1} / {items.length}
+                            </div>
+                        </>
+                    )}
+                    {useDogs && items.length > 1 && (
+                        <>
+                            <div className="fenext-steps-content-dog">
+                                {new Array(items.length).fill(1).map((e, i) => {
+                                    return (
+                                        <>
+                                            <div
+                                                key={e * i}
+                                                onClick={() => {
+                                                    setCurrentStep(i);
+                                                }}
+                                                className={`
+                                                fenext-steps-dog
+                                                ${
+                                                    currentStep == i
+                                                        ? "fenext-steps-dog-current"
+                                                        : ""
+                                                }    
+
+                                                `}
+                                            ></div>
+                                        </>
+                                    );
+                                })}
+                            </div>
+                        </>
+                    )}
+                    {(currentStep != items.length - 1 || forceShowBtnNext) && (
+                        <Button
+                            className={`fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`}
+                            disabled={disabledBtnNext}
+                            onClick={onNext_}
+                            loader={loader}
+                            _t={_t}
+                        >
+                            {btnNext}
+                        </Button>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+export type BackTypeOnBack = "history" | "router" | "link" | "none";
+
+/**
+ * Properties for the base Back component.
+ */
+export interface BackBaseProps extends _TProps {
+    /**
+     * Indicates whether the Back is currently in the loading state.
+     */
+    loader?: boolean;
+    /**
+     * Indicates whether the Back is disabled or not.
+     */
+    disabled?: boolean;
+    /**
+     * The callback function that is called when the Back is clicked.
+     */
+    onClick?: (e?: any) => void;
+    /**
+     * The icon to display in the Back.
+     */
+    icon?: ReactNode;
+    /**
+     * The icon to display in the Back.
+     */
+    children?: ReactNode;
+    /**
+     * The type of onBack in component.
+     */
+    typeOnBack?: BackTypeOnBack;
+    /**
+     * The link to redirect if typeOnBack is link.
+     */
+    link?: string;
+    /**
+     * useHistoryMinLenght for show back.
+     * @default false
+     */
+    useHistoryMinLenght?: boolean;
+    /**
+     * minLenght for show back.
+     * @default 2
+     */
+    minLenght?: number;
+}
+
+/**
+ * Properties for the class of the Back component.
+ */
+export interface BackClassProps extends LoaderClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the Disabled Back element.
+     */
+    classNameDisabled?: string;
+    /**
+     * The class name for the Icon Back element.
+     */
+    classNameIcon?: string;
+    /**
+     * The class name for the Content Back element.
+     */
+    classNameContent?: string;
+}
+
+/**
+ * Properties for the Back component.
+ */
+export interface BackProps extends BackBaseProps, BackClassProps {}
+
+export const Back = ({
+    className = "",
+    classNameLoader = "",
+    classNameDisabled = "",
+    classNameIcon = "",
+    classNameContent = "",
+
+    children = "Back",
+    loader = false,
+    disabled = false,
+    onClick = undefined,
+    icon = <PaginationPre />,
+    typeOnBack = "history",
+    link = "",
+    minLenght = 2,
+    useHistoryMinLenght = false,
+    ...props
+}: BackProps) => {
+    const { _t } = use_T({ ...props });
+    const router = useRouter();
+    const onBack = () => {
+        if (loader || disabled) {
+            return;
+        }
+        onClick?.();
+        const actions: {
+            [id in BackTypeOnBack]: () => void;
+        } = {
+            history: () => {
+                history.back();
+            },
+            router: () => {
+                router.back();
+            },
+            link: () => {
+                router.push(link);
+            },
+            none: () => 1,
+        };
+        actions[typeOnBack]();
+    };
+
+    if (useHistoryMinLenght && typeof window != "undefined" && window) {
+        if (window.history.length < minLenght) {
+            return <></>;
+        }
+    }
+
+    return (
+        <>
+            <div
+                onClick={onBack}
+                className={`fenext-back ${className} ${
+                    disabled ? `${classNameDisabled} fenext-back-disabled` : ""
+                }`}
+            >
+                <div className={`fenext-back-icon ${classNameIcon}`}>
+                    {loader ? (
+                        <Loader classNameLoader={classNameLoader} />
+                    ) : (
+                        <>{icon}</>
+                    )}
+                </div>
+                <div className={`fenext-back-content ${classNameContent}`}>
+                    {_t(children)}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the Theme component.
+ */
+export interface ThemeProps extends _TProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameItem?: string;
+}
+
+export const Theme = ({ className = "", classNameItem = "" }: ThemeProps) => {
+    const { setTheme, theme } = useTheme({});
+    return (
+        <>
+            <div
+                className={`fenext-theme fenext-theme-current-${theme} ${className} `}
+            >
+                {ThemeConst.map((t, i) => {
+                    return (
+                        <div
+                            key={i}
+                            className={`fenext-theme-item fenext-theme-item-${t} fenext-theme-item-${
+                                t == theme ? "active" : ""
+                            } ${classNameItem} `}
+                            onClick={() => {
+                                setTheme(t);
+                            }}
+                        >
+                            <SvgTheme />
+                        </div>
+                    );
+                })}
+            </div>
+        </>
+    );
+};
+
+
+export type LinkTypeOnLink = "history" | "router" | "link" | "none";
+
+/**
+ * Properties for the base Link component.
+ */
+export interface LinkBaseProps
+    extends PropsWithChildren,
+        LinkNextProps,
+        Pick<
+            AnchorHTMLAttributes<HTMLAnchorElement>,
+            "target" | "referrerPolicy" | "rel"
+        >,
+        _TProps {}
+
+/**
+ * Properties for the class of the Link component.
+ */
+export interface LinkClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Link component.
+ */
+export interface LinkProps extends LinkBaseProps, LinkClassProps {}
+
+export const Link = ({
+    className = "",
+
+    children = "",
+
+    ...props
+}: LinkProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <LinkNext {...props} className={`fenext-link ${className}`}>
+                <>{_t(children)}</>
+            </LinkNext>
+        </>
+    );
+};
+
+
+export type ShareListType = "whatsapp" | "facebook" | "x" | "email" | "copy";
+
+/**
+ * Properties for the base Share component.
+ */
+export interface ShareBaseProps extends _TProps {
+    /**
+     * ButtonProps for the component.
+     */
+    ButtonProps?: ButtonProps;
+
+    /**
+     * TitleProps for the component.
+     */
+    TitleProps?: TitleProps;
+    /**
+     * share text for the component.
+     */
+    share?: string;
+    /**
+     * share text for the component.
+     */
+    shareList?: ShareListType[];
+    /**
+     * show share text for copy in the component.
+     */
+    showShareCopy?: boolean;
+}
+
+/**
+ * Properties for the class of the Share component.
+ */
+export interface ShareClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Share component.
+ */
+export interface ShareProps extends ShareBaseProps, ShareClassProps {}
+
+export const Share = ({
+    className = "",
+
+    share = "",
+
+    ButtonProps = {
+        children: "Share",
+    },
+    TitleProps = {
+        children: "Share",
+        tag: "h2",
+    },
+    shareList = ["whatsapp", "facebook", "x", "email", "copy"],
+    showShareCopy = false,
+    ...props
+}: ShareProps) => {
+    const { _t } = use_T({ ...props });
+    const LISTSHARE: {
+        [id in ShareListType]: {
+            urlShare: string;
+            icon: ReactNode;
+        };
+    } = {
+        whatsapp: {
+            urlShare: "https://web.whatsapp.com/share?url=",
+            icon: <WhatsappBox />,
+        },
+        facebook: {
+            urlShare: "https://www.facebook.com/sharer/sharer.php?u=",
+            icon: <FacebookBox />,
+        },
+        x: {
+            urlShare: "https://x.com/share?text=",
+            icon: <XBox />,
+        },
+        email: {
+            urlShare: "mailto:?body=",
+            icon: <EmailBox />,
+        },
+        copy: {
+            urlShare: "",
+            icon: <SvgCopyBox />,
+        },
+    };
+
+    return (
+        <>
+            <div className={`fenext-share ${className} `}>
+                <Modal
+                    ElementActionModalActive={
+                        <>
+                            <Button {...ButtonProps} />
+                        </>
+                    }
+                >
+                    <Title {...TitleProps} _t={_t} />
+
+                    <div className="fenext-share-items">
+                        {shareList.map((e, i) => {
+                            const key = e as ShareListType;
+                            const item = LISTSHARE[key];
+
+                            if (key === "copy") {
+                                return (
+                                    <>
+                                        <Copy
+                                            key={i}
+                                            className={`fenext-share-item fenext-share-item-${key}`}
+                                            text={share}
+                                            _t={_t}
+                                        >
+                                            {item.icon}
+                                        </Copy>
+                                    </>
+                                );
+                            }
+
+                            return (
+                                <a
+                                    href={`${item.urlShare}${share}`}
+                                    key={i}
+                                    className={`fenext-share-item fenext-share-item-${key}`}
+                                    target="_blank"
+                                >
+                                    {_t(item.icon)}
+                                </a>
+                            );
+                        })}
+                    </div>
+                    {showShareCopy && (
+                        <div className="fenext-share-copy">
+                            <Copy
+                                className={`fenext-share-copy`}
+                                text={share}
+                                _t={_t}
+                            >
+                                {share}
+                            </Copy>
+                        </div>
+                    )}
+                </Modal>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ContentLoading component.
+ */
+export interface ContentLoadingBaseProps extends _TProps {
+    /**
+     * children for the component.
+     */
+    children?: ReactNode;
+    /**
+     * componentLoader for the component.
+     * @default <LoaderSpinner/>
+     */
+    componentLoader?: ReactNode;
+    /**
+     * loader for the component.
+     * @default false
+     */
+    loader?: boolean;
+    /**
+     * isPage for the component.
+     * @default false
+     */
+    isPage?: boolean;
+}
+
+/**
+ * Properties for the class of the ContentLoading component.
+ */
+export interface ContentLoadingClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ContentLoading component.
+ */
+export interface ContentLoadingProps
+    extends ContentLoadingBaseProps,
+        ContentLoadingClassProps {}
+
+export const ContentLoading = ({
+    className = "",
+    children,
+    componentLoader = <LoaderSpinner />,
+    loader = false,
+    isPage = false,
+    ...props
+}: ContentLoadingProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div
+                className={`fenext-content-loading fenext-content-loading-${
+                    loader ? "loader" : ""
+                } fenext-content-loading-${isPage ? "page" : ""} ${className} `}
+            >
+                {loader ? componentLoader : _t(children)}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the GridGallery component.
+ */
+export interface GridGalleryProps extends _TProps {
+    /**
+     * The items for the component.
+     */
+    items: ReactNode[];
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for item the component.
+     */
+    classNameItem?: string;
+}
+
+export const GridGallery = ({
+    className = "",
+    classNameItem = "",
+    items,
+    ...props
+}: GridGalleryProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div className={`fenext-grid-gallery ${className} `}>
+                {items.map((item, i) => {
+                    return (
+                        <div
+                            key={i}
+                            className={`fenext-grid-gallery-item ${classNameItem} `}
+                        >
+                            {_t(item)}
+                        </div>
+                    );
+                })}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ChronologicalList component.
+ */
+export interface ChronologicalListItemsProps {
+    date: Date;
+    children: ReactNode;
+    market?: ReactNode;
+    className?: string;
+}
+
+/**
+ * Properties for the base ChronologicalList component.
+ */
+export interface ChronologicalListBaseProps extends _TProps {
+    /**
+     * The list of items for chronological
+     */
+    items: ChronologicalListItemsProps[];
+    /**
+     * The market custom for all items
+     */
+    market?: ReactNode;
+    /**
+     * Function for parse day, month and year
+     */
+    parseDateYYYYMMDD?: (date: Date) => string;
+    /**
+     * Function for parse hours, minutes and seconds
+     */
+    parseDateHHMMSS?: (date: Date) => string;
+}
+
+/**
+ * Properties for the class of the ChronologicalList component.
+ */
+export interface ChronologicalListClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ChronologicalList component.
+ */
+export interface ChronologicalListProps
+    extends ChronologicalListBaseProps,
+        ChronologicalListClassProps {}
+
+export const ChronologicalList = ({
+    className = "",
+    items,
+    market = undefined,
+    parseDateHHMMSS: parseDateHHMMSSProps,
+    parseDateYYYYMMDD: parseDateYYYYMMDDProps,
+    ...props
+}: ChronologicalListProps) => {
+    const { _t } = use_T({ ...props });
+    const ITEMS = useMemo(() => {
+        const i_: {
+            [id: string]: {
+                [id: string]: ChronologicalListItemsProps[];
+            };
+        } = {};
+        items.forEach((element) => {
+            const date = (parseDateYYYYMMDDProps ?? parseDateYYYYMMDD)(
+                element?.date,
+            );
+            const time = (parseDateHHMMSSProps ?? getTimeToText)(
+                element?.date,
+                {
+                    days: false,
+                },
+            );
+
+            i_[date] ??= {};
+            i_[date][time] ??= [];
+            i_[date][time].push(element);
+        });
+        return i_;
+    }, [items, parseDateYYYYMMDDProps, parseDateHHMMSSProps]);
+
+    return (
+        <>
+            <div className={`fenext-chronological-list ${className} `}>
+                {Object.keys(ITEMS).map((key_Day, i) => {
+                    const items_day = ITEMS[key_Day];
+                    return (
+                        <>
+                            <div
+                                className={`fenext-chronological-list-group`}
+                                key={i}
+                            >
+                                <div
+                                    className={`fenext-chronological-list-group-day`}
+                                >
+                                    {key_Day}
+                                </div>
+                                <div
+                                    className={`fenext-chronological-list-group-list`}
+                                >
+                                    {Object.keys(items_day).map(
+                                        (key_time, j) => {
+                                            const itemsList =
+                                                items_day[key_time];
+                                            return (
+                                                <>
+                                                    {itemsList?.map(
+                                                        (item, k) => {
+                                                            return (
+                                                                <>
+                                                                    <div
+                                                                        key={`${j}-${k}`}
+                                                                        className={`fenext-chronological-list-item ${item?.className}`}
+                                                                    >
+                                                                        <div
+                                                                            className={`fenext-chronological-list-item-market`}
+                                                                        >
+                                                                            {item?.market ??
+                                                                                market ?? (
+                                                                                    <div
+                                                                                        className={`fenext-chronological-list-item-market-default`}
+                                                                                    />
+                                                                                )}
+                                                                        </div>
+
+                                                                        <div
+                                                                            className={`fenext-chronological-list-item-children`}
+                                                                        >
+                                                                            {_t(
+                                                                                item?.children,
+                                                                            )}
+                                                                        </div>
+                                                                        <div
+                                                                            className={`fenext-chronological-list-item-time`}
+                                                                        >
+                                                                            {
+                                                                                key_time
+                                                                            }
+                                                                        </div>
+                                                                    </div>
+                                                                </>
+                                                            );
+                                                        },
+                                                    )}
+                                                </>
+                                            );
+                                        },
+                                    )}
+                                </div>
+                            </div>
+                        </>
+                    );
+                })}
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the User component.
+ */
+export interface UserComponentProps {
+    /**
+     * User data.
+     */
+    user?: Partial<UserInterfaceProps>;
+    /**
+     * If loader user.
+     */
+    loader?: boolean;
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name  for picture the component.
+     */
+    classNamePicture?: string;
+    /**
+     * The class name  for img the component.
+     */
+    classNameImg?: string;
+    /**
+     * The class name for name the component.
+     */
+    classNameName?: string;
+    /**
+     * The class name for letter the component.
+     */
+    classNameLetter?: string;
+    /**
+     * The class name for email the component.
+     */
+    classNameEmail?: string;
+    /**
+     * The class name for Loader the component.
+     */
+    classNameLoader?: LoaderUserClassProps;
+}
+
+export const User = ({
+    className = "",
+    classNameEmail = "",
+    classNamePicture = "",
+    classNameImg = "",
+    classNameName = "",
+    classNameLetter = "",
+    classNameLoader = {},
+    user,
+    loader = false,
+}: UserComponentProps) => {
+    if (loader) {
+        return (
+            <>
+                <LoaderUser {...classNameLoader} />
+            </>
+        );
+    }
+    return (
+        <>
+            <div className={`fenext-user ${className} `}>
+                <Img
+                    src=""
+                    {...user?.img}
+                    className={`fenext-user-picture ${classNamePicture}`}
+                    classNameImg={`fenext-user-img ${classNameImg}`}
+                    onErrorImg={(e) => {
+                        e.currentTarget.style.display = "none";
+                    }}
+                />
+                <div className={`fenext-user-letter ${classNameLetter} `}>
+                    {user?.name?.[0]}
+                </div>
+                <div className={`fenext-user-name ${classNameName} `}>
+                    {user?.name}
+                </div>
+                <div className={`fenext-user-email ${classNameEmail} `}>
+                    {user?.email}
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Img component.
+ */
+export interface ImgBaseProps extends ImgDataProps {
+    /**
+     * Url of Img if img not load.
+     */
+    imgIf404?: string;
+    /**
+     * Layers for Img.
+     */
+    layers?: Pick<
+        React.CSSProperties,
+        "background" | "mixBlendMode" | "filter" | "opacity"
+    >[];
+    /**
+     * onErrorImg.
+     */
+    onErrorImg?: (e: SyntheticEvent<HTMLImageElement, Event>) => void;
+    /**
+     * onClick.
+     */
+    onClick?: () => void;
+
+    /**
+     * loader.
+     */
+    loader?: boolean;
+}
+
+/**
+ * Properties for the class of the Img component.
+ */
+export interface ImgClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for the component img.
+     */
+    classNameImg?: string;
+}
+
+/**
+ * Properties for the Img component.
+ */
+export interface ImgProps extends ImgBaseProps, ImgClassProps {}
+
+export const Img = ({
+    className = "",
+    classNameImg = "",
+    id,
+    name = "",
+    alt,
+    src,
+    srcMin1920 = undefined,
+    srcMin1680 = undefined,
+    srcMin1440 = undefined,
+    srcMin1024 = undefined,
+    srcMin992 = undefined,
+    srcMin768 = undefined,
+    srcMin575 = undefined,
+    imgIf404 = undefined,
+    layers = [],
+    onErrorImg: onErrorImg_,
+    onClick,
+    loader = false,
+}: ImgProps) => {
+    const onErrorImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
+        const img: any = e.target;
+        if (imgIf404) {
+            img.src = imgIf404;
+        }
+        onErrorImg_?.(e);
+    };
+
+    return (
+        <>
+            <picture
+                className={`fenext-picture ${className} id-${id}`}
+                onClick={onClick}
+            >
+                {srcMin1920 ? (
+                    <>
+                        <source
+                            srcSet={`${srcMin1920}`}
+                            media="(min-width: 1920px)"
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {srcMin1680 ? (
+                    <>
+                        <source
+                            srcSet={`${srcMin1680}`}
+                            media="(min-width: 1680px)"
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {srcMin1440 ? (
+                    <>
+                        <source
+                            srcSet={`${srcMin1440}`}
+                            media="(min-width: 1440px)"
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {srcMin1024 ? (
+                    <>
+                        <source
+                            srcSet={`${srcMin1024}`}
+                            media="(min-width: 1024px)"
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {srcMin992 ? (
+                    <>
+                        <source
+                            srcSet={`${srcMin992}`}
+                            media="(min-width: 992px)"
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {srcMin768 ? (
+                    <>
+                        <source
+                            srcSet={`${srcMin768}`}
+                            media="(min-width: 768px)"
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {srcMin575 ? (
+                    <>
+                        <source
+                            srcSet={`${srcMin575}`}
+                            media="(min-width: 575px)"
+                        />
+                    </>
+                ) : (
+                    <></>
+                )}
+                {loader && <LoaderLine />}
+                <img
+                    src={`${src}`}
+                    alt={alt ?? name}
+                    data-src={`${src}`}
+                    data-name={name}
+                    data-alt={alt}
+                    className={`fenext-img ${classNameImg}`}
+                    onError={onErrorImg}
+                />
+                {layers?.map((e, i) => (
+                    <div key={i} className="fenext-img-layer" style={e} />
+                ))}
+            </picture>
+        </>
+    );
+};
+
+
+
+
+/**
+ * Properties for the base DesignTypography component.
+ */
+export interface DesignTypographyValueProps
+    extends Partial<DesignTypographyValue> {}
+
+/**
+ * Properties for the base DesignTypography component.
+ */
+export interface DesignTypographyProps extends _TProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+
+    defaultValue?: DesignTypographyValueProps;
+    value?: DesignTypographyValueProps;
+    onChange?: (data: DesignTypographyValueProps) => void;
+    onChangeStyles?: (data: CSSProperties) => void;
+
+    textTypography?: string;
+    textExample?: string;
+    textExampleValue?: string;
+    textColor?: string;
+    textSize?: string;
+    textAlign?: string;
+    textWeight?: string;
+    textTransform?: string;
+    textStyle?: string;
+    textDecoration?: string;
+    textLineHeight?: string;
+    textLetterSpacing?: string;
+    textWordSpacing?: string;
+
+    collapseName?: CollapseProps["name"];
+    collapseType?: CollapseProps["type"];
+    collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
+}
+
+export const DesignTypography = ({
+    className = "",
+
+    textTypography = "Typography",
+    textExample = "Example",
+    textExampleValue = "Lorem ipsum dolor sit",
+    textColor = "Color",
+    textSize = "Size",
+    textAlign = "Alignment",
+    textWeight = "Weight",
+    textTransform = "Transform",
+    textStyle = "Style",
+    textDecoration = "Decoration",
+    textLineHeight = "Line Height",
+    textLetterSpacing = "Letter Spacing",
+    textWordSpacing = "Word Spacing",
+
+    defaultValue = {
+        fontSize: 20,
+        fontSizeUnit: "px",
+        textAlign: "left",
+        weight: 400,
+        transform: "none",
+        style: "normal",
+        decoration: "normal",
+        lineHeight: 1.2,
+        lineHeightUnit: "normal",
+        letterSpacing: 0,
+        letterSpacingUnit: "px",
+        wordSpacing: 0,
+        wordSpacingUnit: "px",
+    },
+    value,
+    onChange,
+    onChangeStyles,
+
+    collapseName,
+    collapseType,
+    collapseUseActiveForShowChildren = true,
+    ...props
+}: DesignTypographyProps) => {
+    const { _t } = use_T({ ...props });
+    const {
+        data: data_,
+        onChangeData,
+        dataMemo,
+    } = useData<DesignTypographyValueProps, CSSProperties>(defaultValue, {
+        onChangeDataAfter: onChange,
+        onChangeDataMemoAfter: onChangeStyles,
+        onMemo: parseDesignTypographyValueProps_to_CSSProperties,
+    });
+
+    const data = useMemo(() => value ?? data_, [value, data_]);
+
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    return (
+        <>
+            <div className={`fenext-design-typography ${className} `}>
+                <Collapse
+                    header={<>{_t(textTypography)}</>}
+                    iconArrow={
+                        <>
+                            <Edit />
+                        </>
+                    }
+                    rotateIcon={false}
+                    name={collapseName}
+                    type={collapseType}
+                    useActiveForShowChildren={collapseUseActiveForShowChildren}
+                >
+                    <div className={`fenext-design-typography-content `}>
+                        <div
+                            className={`fenext-design-typography-item fenext-design-typography-item-2`}
+                        >
+                            <Text>{_t(textExample)}</Text>
+                            <div
+                                className={`fenext-design-typography-content-example `}
+                            >
+                                <Text>
+                                    <div style={dataMemo}>
+                                        {_t(textExampleValue)}
+                                    </div>
+                                </Text>
+                            </div>
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>{_t(textColor)}</Text>
+                            <InputColor
+                                defaultValue={data.color}
+                                onChange={onChangeData("color")}
+                            />
+                        </div>
+                        <div
+                            className={`fenext-design-typography-item fenext-design-typography-item-3`}
+                        >
+                            <Text>{_t(textSize)}</Text>
+                            <InputNumberCount
+                                symbolInit=""
+                                symbolFinal={data.fontSizeUnit}
+                                defaultValue={data.fontSize}
+                                min={0}
+                                aplyMin={true}
+                                onChange={onChangeData("fontSize")}
+                            />
+                            <InputSelectT<DesignTypographyValue["fontSizeUnit"]>
+                                onParse={_p}
+                                options={[...ConstDesignTypographyFontSizeUnit]}
+                                defaultValue={data.fontSizeUnit}
+                                onChange={onChangeData("fontSizeUnit")}
+                            />
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>{_t(textAlign)}</Text>
+                            <InputSelectT<DesignTypographyValue["textAlign"]>
+                                onParse={_p}
+                                options={[
+                                    ...ConstDesignTypographyTextAlignUnit,
+                                ]}
+                                defaultValue={data.textAlign}
+                                onChange={onChangeData("textAlign")}
+                            />
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>{_t(textWeight)}</Text>
+                            <InputSelectT<DesignTypographyValue["weight"]>
+                                onParse={_p}
+                                options={[...ConstDesignTypographyWeightUnit]}
+                                defaultValue={data.weight}
+                                onChange={onChangeData("weight")}
+                            />
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>{_t(textTransform)}</Text>
+                            <InputSelectT<DesignTypographyValue["transform"]>
+                                onParse={_p}
+                                options={[
+                                    ...ConstDesignTypographyTransformUnit,
+                                ]}
+                                defaultValue={data.transform}
+                                onChange={onChangeData("transform")}
+                            />
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>{_t(textStyle)}</Text>
+                            <InputSelectT<DesignTypographyValue["style"]>
+                                onParse={_p}
+                                options={[...ConstDesignTypographyStyleUnit]}
+                                defaultValue={data.style}
+                                onChange={onChangeData("style")}
+                            />
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>{_t(textDecoration)}</Text>
+                            <InputSelectT<DesignTypographyValue["decoration"]>
+                                onParse={_p}
+                                options={[
+                                    ...ConstDesignTypographyDecorationUnit,
+                                ]}
+                                defaultValue={data.decoration}
+                                onChange={onChangeData("decoration")}
+                            />
+                        </div>
+                        <div
+                            className={`fenext-design-typography-item fenext-design-typography-item-3`}
+                        >
+                            <Text>{_t(textLineHeight)}</Text>
+                            <InputNumberCount
+                                symbolInit=""
+                                symbolFinal={
+                                    data.lineHeightUnit == "normal"
+                                        ? ""
+                                        : data.lineHeightUnit
+                                }
+                                defaultValue={data.lineHeight}
+                                onChange={onChangeData("lineHeight")}
+                            />
+                            <InputSelectT<
+                                DesignTypographyValue["lineHeightUnit"]
+                            >
+                                onParse={_p}
+                                options={[
+                                    ...ConstDesignTypographyLineHeightUnit,
+                                ]}
+                                defaultValue={data.lineHeightUnit}
+                                onChange={onChangeData("lineHeightUnit")}
+                            />
+                        </div>
+                        <div
+                            className={`fenext-design-typography-item fenext-design-typography-item-3`}
+                        >
+                            <Text>{_t(textLetterSpacing)}</Text>
+                            <InputNumberCount
+                                symbolInit=""
+                                symbolFinal={data.letterSpacingUnit}
+                                defaultValue={data.letterSpacing}
+                                onChange={onChangeData("letterSpacing")}
+                            />
+                            <InputSelectT<
+                                DesignTypographyValue["letterSpacingUnit"]
+                            >
+                                onParse={_p}
+                                options={[
+                                    ...ConstDesignTypographyLetterSpacingUnit,
+                                ]}
+                                defaultValue={data.letterSpacingUnit}
+                                onChange={onChangeData("letterSpacingUnit")}
+                            />
+                        </div>
+                        <div
+                            className={`fenext-design-typography-item fenext-design-typography-item-3`}
+                        >
+                            <Text>{_t(textWordSpacing)}</Text>
+                            <InputNumberCount
+                                symbolInit=""
+                                symbolFinal={data.wordSpacingUnit}
+                                defaultValue={data.wordSpacing}
+                                onChange={onChangeData("wordSpacing")}
+                            />
+                            <InputSelectT<
+                                DesignTypographyValue["wordSpacingUnit"]
+                            >
+                                onParse={_p}
+                                options={[
+                                    ...ConstDesignTypographyWordSpacingUnit,
+                                ]}
+                                defaultValue={data.wordSpacingUnit}
+                                onChange={onChangeData("wordSpacingUnit")}
+                            />
+                        </div>
+                    </div>
+                </Collapse>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBox component.
+ */
+export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
+
+export interface DesignBoxTextProps
+    extends DesignBoxPaddingProps,
+        DesignBoxMarginProps,
+        DesignBoxBorderProps,
+        DesignBoxBorderRadiusProps,
+        DesignBoxBorderColorProps,
+        DesignBoxBackgroundProps,
+        DesignBoxWidthProps,
+        DesignBoxHeightProps,
+        DesignBoxGapProps,
+        DesignBoxAlignProps,
+        DesignBoxBorderStyleProps {}
+
+/**
+ * Properties for the base DesignBox component.
+ */
+export interface DesignBoxProps
+    extends Omit<
+        DesignBoxTextProps,
+        "setDataFunction" | "data" | "onChangeData"
+    > {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+
+    onChangeStyles?: (data: CSSProperties) => void;
+
+    collapseName?: CollapseProps["name"];
+    collapseType?: CollapseProps["type"];
+    collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
+
+    textBox?: string;
+
+    defaultValue?: DesignBoxValueProps;
+    value?: DesignBoxValueProps;
+    onChange?: (data: DesignBoxValueProps) => void;
+}
+
+export const DesignBox = ({
+    className = "",
+
+    textBox = "Box",
+
+    textBackground = "Background",
+
+    textPadding = "Padding",
+    textPaddingBottom = "Bottom",
+    textPaddingLeft = "Left",
+    textPaddingRight = "Right",
+    textPaddingTop = "Top",
+
+    textMargin = "Margin",
+    textMarginBottom = "Bottom",
+    textMarginLeft = "Left",
+    textMarginRight = "Right",
+    textMarginTop = "Top",
+
+    textBorder = "Border",
+    textBorderBottom = "Bottom",
+    textBorderLeft = "Left",
+    textBorderRight = "Right",
+    textBorderTop = "Top",
+
+    textBorderRadius = "Border Radius",
+    textBorderRadiusTopLeft = "Top Left",
+    textBorderRadiusTopRight = "Top Right",
+    textBorderRadiusBottomLeft = "Bottom Left",
+    textBorderRadiusBottomRight = "Bottom Right",
+
+    textBorderStyle = "Border Style",
+    textBorderStyleTop = "Top",
+    textBorderStyleLeft = "Left",
+    textBorderStyleRight = "Right",
+    textBorderStyleBottom = "Bottom",
+
+    textBorderColor = "Border Color",
+
+    textWidth = "Width",
+    textMinWidth = "Min Width",
+    textMaxWidth = "Max Width",
+
+    textHeight = "Height",
+    textMinHeight = "Min Height",
+    textMaxHeight = "Max Height",
+
+    textAlignItems = "Align Vertical",
+    textJustifyContent = "Align Horizontal",
+
+    textGap = "Gap",
+    textGapRow = "Gap Row",
+    textGapColumn = "Gap Column",
+
+    defaultValue = {
+        widthUnit: "auto",
+        minWidthUnit: "auto",
+        maxWidthUnit: "auto",
+        heightUnit: "auto",
+        minHeightUnit: "auto",
+        maxHeightUnit: "auto",
+        paddingUnit: "px",
+        marginUnit: "px",
+        borderUnit: "px",
+        borderUnitRadius: "px",
+        gapUnit: "px",
+        borderTopStyle: "hidden",
+        borderLeftStyle: "hidden",
+        borderRightStyle: "hidden",
+        borderBottomStyle: "hidden",
+
+        justifyContent: "stretch",
+        alignItems: "start",
+    },
+    value,
+    onChange,
+    onChangeStyles,
+
+    collapseName,
+    collapseType,
+    collapseUseActiveForShowChildren = true,
+    ...props
+}: DesignBoxProps) => {
+    const { _t } = use_T({ ...props });
+    const {
+        onChangeData,
+        data: data_,
+        setDataFunction,
+    } = useData<DesignBoxValueProps, CSSProperties>(defaultValue, {
+        onChangeDataAfter: onChange,
+        onChangeDataMemoAfter: onChangeStyles,
+        onMemo: parseDesignBoxValueProps_to_CSSProperties,
+    });
+
+    const data = useMemo(() => value ?? data_, [value, data_]);
+
+    return (
+        <>
+            <div className={`fenext-design-box ${className} `}>
+                <Collapse
+                    header={<>{_t(textBox)}</>}
+                    iconArrow={
+                        <>
+                            <Edit />
+                        </>
+                    }
+                    rotateIcon={false}
+                    name={collapseName}
+                    type={collapseType}
+                    useActiveForShowChildren={collapseUseActiveForShowChildren}
+                >
+                    <div className={`fenext-design-box-content `}>
+                        <DesignBoxBackground
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textBackground={textBackground}
+                            _t={_t}
+                        />
+                        <DesignBoxPadding
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textPadding={textPadding}
+                            textPaddingBottom={textPaddingBottom}
+                            textPaddingLeft={textPaddingLeft}
+                            textPaddingRight={textPaddingRight}
+                            textPaddingTop={textPaddingTop}
+                            _t={_t}
+                        />
+                        <DesignBoxMargin
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textMargin={textMargin}
+                            textMarginBottom={textMarginBottom}
+                            textMarginLeft={textMarginLeft}
+                            textMarginRight={textMarginRight}
+                            textMarginTop={textMarginTop}
+                            _t={_t}
+                        />
+                        <DesignBoxBorder
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textBorder={textBorder}
+                            textBorderBottom={textBorderBottom}
+                            textBorderLeft={textBorderLeft}
+                            textBorderRight={textBorderRight}
+                            textBorderTop={textBorderTop}
+                            _t={_t}
+                        />
+                        <DesignBoxBorderRadius
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textBorderRadius={textBorderRadius}
+                            textBorderRadiusBottomLeft={
+                                textBorderRadiusBottomLeft
+                            }
+                            textBorderRadiusBottomRight={
+                                textBorderRadiusBottomRight
+                            }
+                            textBorderRadiusTopLeft={textBorderRadiusTopLeft}
+                            textBorderRadiusTopRight={textBorderRadiusTopRight}
+                            _t={_t}
+                        />
+                        <DesignBoxBorderStyle
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textBorderStyle={textBorderStyle}
+                            textBorderStyleBottom={textBorderStyleBottom}
+                            textBorderStyleLeft={textBorderStyleLeft}
+                            textBorderStyleRight={textBorderStyleRight}
+                            textBorderStyleTop={textBorderStyleTop}
+                            _t={_t}
+                        />
+                        <DesignBoxBorderColor
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textBorderColor={textBorderColor}
+                            _t={_t}
+                        />
+                        <DesignBoxWidth
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textWidth={textWidth}
+                            textMaxWidth={textMaxWidth}
+                            textMinWidth={textMinWidth}
+                            _t={_t}
+                        />
+                        <DesignBoxHeight
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textHeight={textHeight}
+                            textMaxHeight={textMaxHeight}
+                            textMinHeight={textMinHeight}
+                            _t={_t}
+                        />
+                        <DesignBoxAlign
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textAlignItems={textAlignItems}
+                            textJustifyContent={textJustifyContent}
+                            _t={_t}
+                        />
+                        <DesignBoxGap
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
+                            textGap={textGap}
+                            textGapRow={textGapRow}
+                            textGapColumn={textGapColumn}
+                            _t={_t}
+                        />
+                    </div>
+                </Collapse>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxWidth component.
+ */
+export interface DesignBoxWidthProps extends DesignBoxUseDataProps {
+    textWidth?: string;
+    textMinWidth?: string;
+    textMaxWidth?: string;
+}
+
+export const DesignBoxWidth = ({
+    textWidth = "Width",
+    textMinWidth = "Min Width",
+    textMaxWidth = "Max Width",
+
+    data,
+    onChangeData,
+    ...props
+}: DesignBoxWidthProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    return (
+        <>
+            <div
+                className={` fenext-design-box-item fenext-design-box-item-2-2`}
+            >
+                <Text>{_t(textWidth)}</Text>
+                <InputNumberCount
+                    defaultValue={data.width}
+                    onChange={onChangeData("width")}
+                    symbolInit=""
+                    symbolFinal={data.widthUnit}
+                    placeholder="Width"
+                />
+                <InputSelectT<DesignBoxValue["widthUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxWidthUnit]}
+                    defaultValue={data.widthUnit}
+                    onChange={onChangeData("widthUnit")}
+                    placeholder="Width"
+                />
+            </div>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
+                <Text>{_t(textMaxWidth)}</Text>
+                <InputNumberCount
+                    defaultValue={data.maxWidth}
+                    onChange={onChangeData("maxWidth")}
+                    symbolInit=""
+                    symbolFinal={data.maxWidthUnit}
+                    placeholder="Max Width"
+                />
+                <InputSelectT<DesignBoxValue["maxWidthUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxWidthUnit]}
+                    defaultValue={data.maxWidthUnit}
+                    onChange={onChangeData("maxWidthUnit")}
+                    placeholder="Max Width"
+                />
+            </div>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
+                <Text>{_t(textMinWidth)}</Text>
+                <InputNumberCount
+                    defaultValue={data.minWidth}
+                    onChange={onChangeData("minWidth")}
+                    symbolInit=""
+                    symbolFinal={data.minWidthUnit}
+                    placeholder="Min Width"
+                />
+                <InputSelectT<DesignBoxValue["minWidthUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxWidthUnit]}
+                    defaultValue={data.minWidthUnit}
+                    onChange={onChangeData("minWidthUnit")}
+                    placeholder="Min Width"
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxBorderColor component.
+ */
+export interface DesignBoxBorderColorProps extends DesignBoxUseDataProps {
+    textBorderColor?: string;
+}
+
+export const DesignBoxBorderColor = ({
+    textBorderColor = "Border Color",
+
+    data,
+    onChangeData,
+    ...props
+}: DesignBoxBorderColorProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-1-2`}
+            >
+                <Text>{_t(textBorderColor)}</Text>
+                <InputColor
+                    value={data.borderColor}
+                    onChange={onChangeData("borderColor")}
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxBorderStyle component.
+ */
+export interface DesignBoxBorderStyleProps extends DesignBoxUseDataProps {
+    textBorderStyle?: string;
+    textBorderStyleTop?: string;
+    textBorderStyleLeft?: string;
+    textBorderStyleRight?: string;
+    textBorderStyleBottom?: string;
+}
+
+export const DesignBoxBorderStyle = ({
+    textBorderStyle = "Border Style",
+    textBorderStyleTop = "Top",
+    textBorderStyleLeft = "Left",
+    textBorderStyleRight = "Right",
+    textBorderStyleBottom = "Bottom",
+
+    data,
+    setDataFunction,
+    ...props
+}: DesignBoxBorderStyleProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    const onChangeBorderStyle =
+        (
+            borderStyle:
+                | "borderTopStyle"
+                | "borderLeftStyle"
+                | "borderRightStyle"
+                | "borderBottomStyle",
+        ) =>
+        (e?: DesignBoxBorderStylesUnit) => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e;
+                n[borderStyle] = v;
+                if (n.borderStyleTogether) {
+                    n.borderTopStyle = v;
+                    n.borderLeftStyle = v;
+                    n.borderRightStyle = v;
+                    n.borderBottomStyle = v;
+                }
+                return n;
+            });
+        };
+    const onChangeBorderStyleTogether = (e: boolean) => {
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderStyleTogether = e;
+            if (e) {
+                n.borderTopStyle = "hidden";
+                n.borderLeftStyle = "hidden";
+                n.borderRightStyle = "hidden";
+                n.borderBottomStyle = "hidden";
+            }
+            return n;
+        });
+    };
+
+    return (
+        <>
+            <div className={`fenext-design-box-item`}>
+                <Text>{_t(textBorderStyle)}</Text>
+                <div></div>
+                <InputCheckbox
+                    defaultValue={data.borderStyleTogether}
+                    onChange={onChangeBorderStyleTogether}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
+                    classNameLabel="fenext-design-box-item-together"
+                />
+                <div
+                    className={`fenext-design-box-item fenext-design-box-item-4`}
+                >
+                    <InputSelectT<DesignBoxValue["borderTopStyle"]>
+                        onParse={_p}
+                        options={[...ConstDesignBoxBorderStylesUnit]}
+                        placeholder={textBorderStyleTop}
+                        onChange={onChangeBorderStyle("borderTopStyle")}
+                        value={data.borderTopStyle}
+                    />
+
+                    <InputSelectT<DesignBoxValue["borderLeftStyle"]>
+                        onParse={_p}
+                        options={[...ConstDesignBoxBorderStylesUnit]}
+                        placeholder={textBorderStyleLeft}
+                        onChange={onChangeBorderStyle("borderLeftStyle")}
+                        value={data.borderLeftStyle}
+                    />
+
+                    <InputSelectT<DesignBoxValue["borderRightStyle"]>
+                        onParse={_p}
+                        options={[...ConstDesignBoxBorderStylesUnit]}
+                        placeholder={textBorderStyleRight}
+                        onChange={onChangeBorderStyle("borderRightStyle")}
+                        value={data.borderRightStyle}
+                    />
+
+                    <InputSelectT<DesignBoxValue["borderBottomStyle"]>
+                        onParse={_p}
+                        options={[...ConstDesignBoxBorderStylesUnit]}
+                        placeholder={textBorderStyleBottom}
+                        onChange={onChangeBorderStyle("borderBottomStyle")}
+                        value={data.borderBottomStyle}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxAlign component.
+ */
+export interface DesignBoxAlignProps extends DesignBoxUseDataProps {
+    textAlignItems?: string;
+    textJustifyContent?: string;
+}
+
+export const DesignBoxAlign = ({
+    textAlignItems = "Align Vertical",
+    textJustifyContent = "Align Horizontal",
+
+    data,
+    onChangeData,
+    ...props
+}: DesignBoxAlignProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    return (
+        <>
+            <div
+                className={` fenext-design-box-item fenext-design-box-item-1-2`}
+            >
+                <Text>{_t(textAlignItems)}</Text>
+                <InputSelectT<DesignBoxValue["alignItems"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxAlignItemsUnit]}
+                    defaultValue={data.alignItems}
+                    onChange={onChangeData("alignItems")}
+                    placeholder={textAlignItems}
+                />
+            </div>
+            <div
+                className={` fenext-design-box-item fenext-design-box-item-1-2`}
+            >
+                <Text>{_t(textJustifyContent)}</Text>
+                <InputSelectT<DesignBoxValue["justifyContent"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxJustifyContentUnit]}
+                    defaultValue={data.justifyContent}
+                    onChange={onChangeData("justifyContent")}
+                    placeholder={textJustifyContent}
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxHeight component.
+ */
+export interface DesignBoxHeightProps extends DesignBoxUseDataProps {
+    textHeight?: string;
+    textMinHeight?: string;
+    textMaxHeight?: string;
+}
+
+export const DesignBoxHeight = ({
+    textHeight = "Height",
+    textMinHeight = "Min Height",
+    textMaxHeight = "Max Height",
+
+    data,
+    onChangeData,
+    ...props
+}: DesignBoxHeightProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    return (
+        <>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
+                <Text>{_t(textHeight)}</Text>
+                <InputNumberCount
+                    defaultValue={data.height}
+                    onChange={onChangeData("height")}
+                    symbolInit=""
+                    symbolFinal={data.heightUnit}
+                    placeholder="Height"
+                />
+                <InputSelectT<DesignBoxValue["heightUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxHeightUnit]}
+                    defaultValue={data.heightUnit}
+                    onChange={onChangeData("heightUnit")}
+                    placeholder="Height"
+                />
+            </div>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
+                <Text>{_t(textMaxHeight)}</Text>
+                <InputNumberCount
+                    defaultValue={data.maxHeight}
+                    onChange={onChangeData("maxHeight")}
+                    symbolInit=""
+                    symbolFinal={data.maxHeightUnit}
+                    placeholder="Max Height"
+                />
+                <InputSelectT<DesignBoxValue["maxHeightUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxHeightUnit]}
+                    defaultValue={data.maxHeightUnit}
+                    onChange={onChangeData("maxHeightUnit")}
+                    placeholder="Max Height"
+                />
+            </div>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
+                <Text>{_t(textMinHeight)}</Text>
+                <InputNumberCount
+                    defaultValue={data.minHeight}
+                    onChange={onChangeData("minHeight")}
+                    symbolInit=""
+                    symbolFinal={data.minHeightUnit}
+                    placeholder="Min Height"
+                />
+                <InputSelectT<DesignBoxValue["minHeightUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxHeightUnit]}
+                    defaultValue={data.minHeightUnit}
+                    onChange={onChangeData("minHeightUnit")}
+                    placeholder="Min Height"
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxBorderRadius component.
+ */
+export interface DesignBoxBorderRadiusProps extends DesignBoxUseDataProps {
+    textBorderRadius?: string;
+    textBorderRadiusTopLeft?: string;
+    textBorderRadiusTopRight?: string;
+    textBorderRadiusBottomLeft?: string;
+    textBorderRadiusBottomRight?: string;
+}
+
+export const DesignBoxBorderRadius = ({
+    textBorderRadius = "Border Radius",
+    textBorderRadiusTopLeft = "Top Left",
+    textBorderRadiusTopRight = "Top Right",
+    textBorderRadiusBottomLeft = "Bottom Left",
+    textBorderRadiusBottomRight = "Bottom Right",
+
+    data,
+    onChangeData,
+    setDataFunction,
+    ...props
+}: DesignBoxBorderRadiusProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    const onChangeBorderRadius =
+        (
+            borderRadius:
+                | "borderTopLeftRadius"
+                | "borderTopRightRadius"
+                | "borderBottomLeftRadius"
+                | "borderBottomRightRadius",
+        ) =>
+        (e: number | "") => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e == "" ? undefined : e;
+                n[borderRadius] = v;
+                if (n.borderRadiusTogether) {
+                    n.borderTopLeftRadius = v;
+                    n.borderTopRightRadius = v;
+                    n.borderBottomLeftRadius = v;
+                    n.borderBottomRightRadius = v;
+                }
+                return n;
+            });
+        };
+    const onChangeBorderRadiusTogether = (e: boolean) => {
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderRadiusTogether = e;
+            if (e) {
+                n.borderTopLeftRadius = 0;
+                n.borderTopRightRadius = 0;
+                n.borderBottomLeftRadius = 0;
+                n.borderBottomRightRadius = 0;
+            }
+            return n;
+        });
+    };
+
+    return (
+        <>
+            <div className={`fenext-design-box-item`}>
+                <Text>{_t(textBorderRadius)}</Text>
+                <InputSelectT<DesignBoxValue["borderUnitRadius"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxBorderRadiusUnit]}
+                    defaultValue={data.borderUnitRadius}
+                    onChange={onChangeData("borderUnitRadius")}
+                    placeholder="Unit"
+                />
+                <InputCheckbox
+                    defaultValue={data.borderRadiusTogether}
+                    onChange={onChangeBorderRadiusTogether}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
+                    classNameLabel="fenext-design-box-item-together"
+                />
+                <div
+                    className={`fenext-design-box-item fenext-design-box-item-4`}
+                >
+                    <InputNumberCount
+                        placeholder={textBorderRadiusTopLeft}
+                        onChange={onChangeBorderRadius("borderTopLeftRadius")}
+                        value={data.borderTopLeftRadius}
+                        symbolInit=""
+                        symbolFinal={data.borderUnitRadius}
+                    />
+                    <InputNumberCount
+                        placeholder={textBorderRadiusTopRight}
+                        onChange={onChangeBorderRadius("borderTopRightRadius")}
+                        value={data.borderTopRightRadius}
+                        symbolInit=""
+                        symbolFinal={data.borderUnitRadius}
+                    />
+                    <InputNumberCount
+                        placeholder={textBorderRadiusBottomLeft}
+                        onChange={onChangeBorderRadius(
+                            "borderBottomLeftRadius",
+                        )}
+                        value={data.borderBottomLeftRadius}
+                        symbolInit=""
+                        symbolFinal={data.borderUnitRadius}
+                    />
+                    <InputNumberCount
+                        placeholder={textBorderRadiusBottomRight}
+                        onChange={onChangeBorderRadius(
+                            "borderBottomRightRadius",
+                        )}
+                        value={data.borderBottomRightRadius}
+                        symbolInit=""
+                        symbolFinal={data.borderUnitRadius}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxGap component.
+ */
+export interface DesignBoxGapProps extends DesignBoxUseDataProps {
+    textGap?: string;
+    textGapRow?: string;
+    textGapColumn?: string;
+}
+
+export const DesignBoxGap = ({
+    textGap = "Gap",
+    textGapRow = "Gap Row",
+    textGapColumn = "Gap Column",
+
+    data,
+    onChangeData,
+    setDataFunction,
+    ...props
+}: DesignBoxGapProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    const onChangeGap = (gap: "gapColumn" | "gapRow") => (e: number | "") => {
+        setDataFunction((old) => {
+            const n = { ...old };
+            const v = e == "" ? undefined : e;
+            n[gap] = v;
+            if (n.gapTogether) {
+                n.gapColumn = v;
+                n.gapRow = v;
+            }
+            return n;
+        });
+    };
+    const onChangeGapTogether = (e: boolean) => {
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.gapTogether = e;
+            if (n.gapTogether) {
+                n.gapColumn = 0;
+                n.gapRow = 0;
+            }
+            return n;
+        });
+    };
+
+    return (
+        <>
+            <div className={`fenext-design-box-item`}>
+                <Text>{_t(textGap)}</Text>
+                <InputSelectT<DesignBoxValue["gapUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxGapsUnit]}
+                    defaultValue={data.gapUnit}
+                    onChange={onChangeData("gapUnit")}
+                    placeholder="Unit"
+                />
+                <InputCheckbox
+                    defaultValue={data.gapTogether}
+                    onChange={onChangeGapTogether}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
+                    classNameLabel="fenext-design-box-item-together"
+                />
+                <div
+                    className={`fenext-design-box-item fenext-design-box-item-2`}
+                >
+                    <InputNumberCount
+                        placeholder={textGapRow}
+                        onChange={onChangeGap("gapRow")}
+                        value={data.gapRow}
+                        symbolInit=""
+                        symbolFinal={data.gapUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textGapColumn}
+                        onChange={onChangeGap("gapColumn")}
+                        value={data.gapColumn}
+                        symbolInit=""
+                        symbolFinal={data.gapUnit}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxBorder component.
+ */
+export interface DesignBoxBorderProps extends DesignBoxUseDataProps {
+    textBorder?: string;
+    textBorderTop?: string;
+    textBorderLeft?: string;
+    textBorderRight?: string;
+    textBorderBottom?: string;
+}
+
+export const DesignBoxBorder = ({
+    textBorder = "Border",
+    textBorderBottom = "Bottom",
+    textBorderLeft = "Left",
+    textBorderRight = "Right",
+    textBorderTop = "Top",
+
+    data,
+    setDataFunction,
+    onChangeData,
+    ...props
+}: DesignBoxBorderProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    const onChangeBorder = useCallback(
+        (border: "borderTop" | "borderRight" | "borderBottom" | "borderLeft") =>
+            (e: number | "") => {
+                setDataFunction((old) => {
+                    const n = { ...old };
+                    const v = e == "" ? undefined : e;
+                    n[border] = v;
+                    if (n.borderTogether) {
+                        n.borderTop = v;
+                        n.borderRight = v;
+                        n.borderBottom = v;
+                        n.borderLeft = v;
+                    }
+                    return n;
+                });
+            },
+        [data],
+    );
+
+    const onChangeBorderTogether = (e: boolean) => {
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderTogether = e;
+            if (e) {
+                n.borderBottom = 0;
+                n.borderLeft = 0;
+                n.borderRight = 0;
+                n.borderTop = 0;
+            }
+            return n;
+        });
+    };
+
+    return (
+        <>
+            <div className={`fenext-design-box-item`}>
+                <Text>{_t(textBorder)}</Text>
+                <InputSelectT<DesignBoxValue["borderUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxBorderUnit]}
+                    defaultValue={data.borderUnit}
+                    onChange={onChangeData("borderUnit")}
+                    placeholder="Unit"
+                />
+                <InputCheckbox
+                    defaultValue={data.borderTogether}
+                    onChange={onChangeBorderTogether}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
+                    classNameLabel="fenext-design-box-item-together"
+                />
+                <div
+                    className={`fenext-design-box-item fenext-design-box-item-4`}
+                >
+                    <InputNumberCount
+                        placeholder={textBorderTop}
+                        onChange={onChangeBorder("borderTop")}
+                        value={data.borderTop}
+                        symbolInit=""
+                        symbolFinal={data.borderUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textBorderRight}
+                        onChange={onChangeBorder("borderRight")}
+                        value={data.borderRight}
+                        symbolInit=""
+                        symbolFinal={data.borderUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textBorderBottom}
+                        onChange={onChangeBorder("borderBottom")}
+                        value={data.borderBottom}
+                        symbolInit=""
+                        symbolFinal={data.borderUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textBorderLeft}
+                        onChange={onChangeBorder("borderLeft")}
+                        value={data.borderLeft}
+                        symbolInit=""
+                        symbolFinal={data.borderUnit}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxBackground component.
+ */
+export interface DesignBoxBackgroundProps extends DesignBoxUseDataProps {
+    textBackground?: string;
+}
+
+export const DesignBoxBackground = ({
+    textBackground = "Background",
+    data,
+    onChangeData,
+    ...props
+}: DesignBoxBackgroundProps) => {
+    const { _t } = use_T({ ...props });
+    return (
+        <>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-1-2`}
+            >
+                <Text>{_t(textBackground)}</Text>
+                <InputColor
+                    value={data.background}
+                    onChange={onChangeData("background")}
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxMargin component.
+ */
+export interface DesignBoxMarginProps extends DesignBoxUseDataProps {
+    textMargin?: string;
+    textMarginTop?: string;
+    textMarginLeft?: string;
+    textMarginRight?: string;
+    textMarginBottom?: string;
+}
+
+export const DesignBoxMargin = ({
+    textMargin = "Margin",
+    textMarginBottom = "Bottom",
+    textMarginLeft = "Left",
+    textMarginRight = "Right",
+    textMarginTop = "Top",
+
+    data,
+    onChangeData,
+    setDataFunction,
+    ...props
+}: DesignBoxMarginProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    const onChangeMargin =
+        (margin: "marginTop" | "marginRight" | "marginBottom" | "marginLeft") =>
+        (e: number | "") => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e == "" ? undefined : e;
+                n[margin] = v;
+                if (n.marginTogether) {
+                    n.marginTop = v;
+                    n.marginRight = v;
+                    n.marginBottom = v;
+                    n.marginLeft = v;
+                }
+                return n;
+            });
+        };
+    const onChangeMarginTogether = (e: boolean) => {
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.marginTogether = e;
+            if (n.marginTogether) {
+                n.marginTop = 0;
+                n.marginRight = 0;
+                n.marginBottom = 0;
+                n.marginLeft = 0;
+            }
+            return n;
+        });
+    };
+
+    return (
+        <>
+            <div className={`fenext-design-box-item`}>
+                <Text>{_t(textMargin)}</Text>
+                <InputSelectT<DesignBoxValue["marginUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxMarginUnit]}
+                    defaultValue={data.marginUnit}
+                    onChange={onChangeData("marginUnit")}
+                    placeholder="Unit"
+                />
+                <InputCheckbox
+                    defaultValue={data.marginTogether}
+                    onChange={onChangeMarginTogether}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
+                    classNameLabel="fenext-design-box-item-together"
+                />
+                <div
+                    className={`fenext-design-box-item fenext-design-box-item-4`}
+                >
+                    <InputNumberCount
+                        placeholder={textMarginTop}
+                        onChange={onChangeMargin("marginTop")}
+                        value={data.marginTop}
+                        symbolInit=""
+                        symbolFinal={data.marginUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textMarginRight}
+                        onChange={onChangeMargin("marginRight")}
+                        value={data.marginRight}
+                        symbolInit=""
+                        symbolFinal={data.marginUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textMarginBottom}
+                        onChange={onChangeMargin("marginBottom")}
+                        value={data.marginBottom}
+                        symbolInit=""
+                        symbolFinal={data.marginUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textMarginLeft}
+                        onChange={onChangeMargin("marginLeft")}
+                        value={data.marginLeft}
+                        symbolInit=""
+                        symbolFinal={data.marginUnit}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base DesignBoxPadding component.
+ */
+export interface DesignBoxPaddingProps extends DesignBoxUseDataProps {
+    textPadding?: string;
+    textPaddingTop?: string;
+    textPaddingLeft?: string;
+    textPaddingRight?: string;
+    textPaddingBottom?: string;
+}
+
+export const DesignBoxPadding = ({
+    textPadding = "Padding",
+    textPaddingBottom = "Bottom",
+    textPaddingLeft = "Left",
+    textPaddingRight = "Right",
+    textPaddingTop = "Top",
+
+    data,
+    onChangeData,
+    setDataFunction,
+    ...props
+}: DesignBoxPaddingProps) => {
+    const { _t } = use_T({ ...props });
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
+
+    const onChangePadding =
+        (
+            padding:
+                | "paddingTop"
+                | "paddingRight"
+                | "paddingBottom"
+                | "paddingLeft",
+        ) =>
+        (e: number | "") => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e == "" ? undefined : e;
+                n[padding] = v;
+                if (n.paddingTogether) {
+                    n.paddingTop = v;
+                    n.paddingRight = v;
+                    n.paddingBottom = v;
+                    n.paddingLeft = v;
+                }
+                return n;
+            });
+        };
+    const onChangePaddingTogether = (e: boolean) => {
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.paddingTogether = e;
+            if (n.paddingTogether) {
+                n.paddingTop = 0;
+                n.paddingRight = 0;
+                n.paddingBottom = 0;
+                n.paddingLeft = 0;
+            }
+            return n;
+        });
+    };
+
+    return (
+        <>
+            <div className={`fenext-design-box-item`}>
+                <Text>{_t(textPadding)}</Text>
+                <InputSelectT<DesignBoxValue["paddingUnit"]>
+                    onParse={_p}
+                    options={[...ConstDesignBoxPaddingUnit]}
+                    defaultValue={data.paddingUnit}
+                    onChange={onChangeData("paddingUnit")}
+                    placeholder="Unit"
+                />
+                <InputCheckbox
+                    defaultValue={data.paddingTogether}
+                    onChange={onChangePaddingTogether}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
+                    classNameLabel="fenext-design-box-item-together"
+                />
+                <div
+                    className={`fenext-design-box-item fenext-design-box-item-4`}
+                >
+                    <InputNumberCount
+                        placeholder={textPaddingTop}
+                        onChange={onChangePadding("paddingTop")}
+                        value={data.paddingTop}
+                        symbolInit=""
+                        symbolFinal={data.paddingUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textPaddingRight}
+                        onChange={onChangePadding("paddingRight")}
+                        value={data.paddingRight}
+                        symbolInit=""
+                        symbolFinal={data.paddingUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textPaddingBottom}
+                        onChange={onChangePadding("paddingBottom")}
+                        value={data.paddingBottom}
+                        symbolInit=""
+                        symbolFinal={data.paddingUnit}
+                    />
+                    <InputNumberCount
+                        placeholder={textPaddingLeft}
+                        onChange={onChangePadding("paddingLeft")}
+                        value={data.paddingLeft}
+                        symbolInit=""
+                        symbolFinal={data.paddingUnit}
+                    />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+export interface PortalProps {
+    container?: Element | DocumentFragment;
+    children: ReactNode;
+}
+export const Portal = ({ children, container }: PortalProps) => {
+    if (!window || typeof window == "undefined") {
+        return <></>;
+    }
+    return createPortal(<>{children}</>, container ?? document?.body);
+};
+
+
+/**
+ * Properties for the base PageProgress component.
+ */
+export interface PageProgressBaseProps {}
+
+/**
+ * Properties for the class of the PageProgress component.
+ */
+export interface PageProgressClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the PageProgress component.
+ */
+export interface PageProgressProps
+    extends PageProgressBaseProps,
+        PageProgressClassProps {}
+
+export const PageProgress = ({ className = "" }: PageProgressProps) => {
+    const [statusBar, setStatusBar] = useState<"none" | "start" | "done">(
+        "none",
+    );
+
+    const onNone = () => {
+        setStatusBar("none");
+    };
+    const onDone = () => {
+        setStatusBar("done");
+        setTimeout(onNone, 250);
+    };
+    const onStart = () => {
+        setStatusBar("start");
+    };
+
+    Router?.events?.on?.("routeChangeStart", onStart);
+    Router?.events?.on?.("routeChangeComplete", onDone);
+    Router?.events?.on?.("routeChangeError", onDone);
+    return (
+        <>
+            <div
+                className={`fenext-page-progress fenext-page-progress-${statusBar} ${className} `}
+            ></div>
+        </>
+    );
+};
+
+
+
+
+export type ScheduleDayValueType = InputDateRangeValueType[];
+/**
+ * Properties for the base ScheduleDay component.
+ */
+export interface ScheduleDayBaseProps
+    extends Omit<
+            InputDateRangeBaseProps,
+            "value" | "onChange" | "defaultValue"
+        >,
+        _TProps {
+    /**
+     * The default value of the input field.
+     */
+    defaultValue?: ScheduleDayValueType;
+    /**
+     * The current value of the input field.
+     */
+    value?: ScheduleDayValueType;
+    /**
+     * A callback function to handle changes to the input field.
+     */
+    onChange?: (v: ScheduleDayValueType) => void;
+    /**
+     * props of button of add item.
+     */
+    ButtonProps?: Omit<ButtonProps, "onClick">;
+}
+
+/**
+ * Properties for the class of the ScheduleDay component.
+ */
+export interface ScheduleDayClassProps extends InputDateRangeClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ScheduleDay component.
+ */
+export interface ScheduleDayProps
+    extends ScheduleDayBaseProps,
+        ScheduleDayClassProps {}
+
+export const ScheduleDay = ({
+    className = "",
+
+    defaultValue = [[undefined, undefined]],
+    value = undefined,
+    onChange,
+
+    propsStart = {
+        label: "Start time",
+        placeholder: "Start time",
+    },
+    propsEnd = {
+        label: "Final hour",
+        placeholder: "Final hour",
+    },
+    ButtonProps = {
+        children: "Add Time Range",
+    },
+
+    ...props
+}: ScheduleDayProps) => {
+    const { _t } = use_T({ ...props });
+    const { data, onChangeData, setData, onDeleteData } =
+        useData<ScheduleDayValueType>(defaultValue, {
+            onChangeDataAfter: onChange,
+            onDeleteDataAfter: onChange,
+            data: value,
+        });
+
+    const onAddTimeRange = () => {
+        setData([...data, [undefined, undefined]]);
+    };
+    return (
+        <>
+            <div className={`fenext-schedule-day ${className} `}>
+                <div className="fenext-schedule-day-content-date-range">
+                    {data.map((e, i) => {
+                        return (
+                            <>
+                                <div
+                                    key={`${i}-${JSON.stringify(e)}`}
+                                    className="fenext-schedule-day-date-range"
+                                >
+                                    <InputDateRange
+                                        type="time"
+                                        defaultValue={e}
+                                        onChange={onChangeData(i)}
+                                        propsStart={propsStart}
+                                        propsEnd={propsEnd}
+                                        {...props}
+                                        _t={_t}
+                                    />
+                                    <div
+                                        className="fenext-schedule-day-date-range-close"
+                                        onClick={() => {
+                                            onDeleteData(i);
+                                        }}
+                                    >
+                                        <Close />
+                                    </div>
+                                </div>
+                            </>
+                        );
+                    })}
+                </div>
+                <div className="fenext-schedule-day-content-btn">
+                    <Button {...ButtonProps} onClick={onAddTimeRange} _t={_t} />
+                </div>
+            </div>
+        </>
+    );
+};
+
+
+export type ScheduleWeeklyValueType = {
+    [id in DaysEnum]?: ScheduleDayValueType;
+};
+/**
+ * Properties for the base ScheduleWeekly component.
+ */
+export interface ScheduleWeeklyBaseProps
+    extends Omit<ScheduleDayBaseProps, "value" | "onChange" | "defaultValue">,
+        _TProps {
+    /**
+     * title of ScheduleWeekly.
+     */
+    title?: ReactNode;
+    /**
+     * The default value of the input field.
+     */
+    defaultValue?: ScheduleWeeklyValueType;
+    /**
+     * The current value of the input field.
+     */
+    value?: ScheduleWeeklyValueType;
+    /**
+     * A callback function to handle changes to the input field.
+     */
+    onChange?: (v: ScheduleWeeklyValueType) => void;
+    /**
+     * The CollapseMultipleProps of the input field.
+     */
+    CollapseMultipleProps?: Omit<CollapseMultipleProps, "items">;
+    /**
+     * A callback function to handle onParseHeaderDay.
+     */
+    onParseHeaderDay?: (v: DaysEnum) => ReactNode;
+}
+
+/**
+ * Properties for the class of the ScheduleWeekly component.
+ */
+export interface ScheduleWeeklyClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ScheduleWeekly component.
+ */
+export interface ScheduleWeeklyProps
+    extends ScheduleWeeklyBaseProps,
+        ScheduleWeeklyClassProps {}
+
+export const ScheduleWeekly = ({
+    title = "Schedule Weekly",
+    className = "",
+    defaultValue = {},
+    value = undefined,
+    onChange,
+    CollapseMultipleProps = {
+        name: "schedule",
+        type: "radio",
+        defaultActive: 0,
+    },
+    onParseHeaderDay,
+
+    ...props
+}: ScheduleWeeklyProps) => {
+    const { _t } = use_T({ ...props });
+    const { data, onChangeData } = useData<ScheduleWeeklyValueType>(
+        defaultValue,
+        {
+            onChangeDataAfter: onChange,
+            data: value,
+        },
+    );
+
+    return (
+        <>
+            <div className={`fenext-schedule-weekly ${className} `}>
+                <Title tag="h4">{_t(title)}</Title>
+
+                <CollapseMultiple
+                    {...CollapseMultipleProps}
+                    items={Object.keys(DaysEnum).map((e) => {
+                        const day = e as DaysEnum;
+                        return {
+                            children: (
+                                <>
+                                    <ScheduleDay
+                                        {...props}
+                                        defaultValue={defaultValue?.[day]}
+                                        value={data?.[day]}
+                                        onChange={onChangeData(day)}
+                                        _t={_t}
+                                    />
+                                </>
+                            ),
+                            header: (
+                                <>
+                                    {_t(
+                                        (onParseHeaderDay
+                                            ? onParseHeaderDay(day)
+                                            : day) ?? day,
+                                    )}
+                                </>
+                            ),
+                        };
+                    })}
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the Template component.
+ */
+export interface TemplateProps extends _TProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+export const Template = ({ className = "" }: TemplateProps) => {
+    return (
+        <>
+            <div className={`fenext-template ${className} `}></div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ModalBase component.
+ */
+export interface ModalBaseBaseProps extends PropsWithChildren {
+    /**
+     * If active modal.
+     */
+    active?: boolean;
+    /**
+     * If active modal.
+     */
+    activeName?: boolean | null;
+    /**
+     * If active modal.
+     */
+    activeNameLast?: boolean | null;
+    /**
+     * If active modal.
+     */
+    childrenUseActiveForShowHidden?: boolean;
+    /**
+     * If disabled close modal.
+     */
+    disabledClose?: boolean;
+    /**
+     * If disabled close modal.
+     */
+    useRender?: boolean;
+    /**
+     * Type of modal.
+     */
+    type?:
+        | "top"
+        | "left"
+        | "right"
+        | "bottom"
+        | "center"
+        | "full"
+        | "layout-grid"
+        | "top-right"
+        | "top-left"
+        | "bottom-right"
+        | "bottom-left";
+    /**
+     * Type of btn close for modal.
+     */
+    typeClose?: "out" | "inset" | "none";
+    /**
+     * onClose ModalBase.
+     */
+    onClose?: () => void;
+    /**
+     * name of Modal.
+     */
+    name?: string;
+    /**
+     * nameLocalStorage of Modal.
+     */
+    nameLocalStorage?: string;
+    /**
+     * closeComponent of Modal.
+     */
+    closeComponent?: ReactNode;
+}
+
+/**
+ * Properties for the class of the ModalBase component.
+ */
+export interface ModalBaseClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for Bg the component.
+     */
+    classNameBg?: string;
+    /**
+     * The class name for Icon Close the component.
+     */
+    classNameClose?: string;
+    /**
+     * The class name for Content the component.
+     */
+    classNameContent?: string;
+}
+
+/**
+ * Properties for the ModalBase component.
+ */
+export interface ModalBaseProps
+    extends ModalBaseBaseProps,
+        ModalBaseClassProps {}
+
+export const ModalBase = ({
+    className = "",
+    classNameBg = "",
+    classNameContent = "",
+    classNameClose = "",
+
+    active = false,
+    activeName,
+    activeNameLast,
+
+    childrenUseActiveForShowHidden = false,
+    disabledClose = false,
+    type = "center",
+    typeClose = "out",
+    onClose,
+    children,
+    useRender = false,
+    name,
+    closeComponent = <Close />,
+}: ModalBaseProps) => {
+    const uuid = useMemo(() => new Date().getTime(), [active]);
+
+    const CLOSECOMPONENTE = useMemo(() => {
+        return (
+            <>
+                <div
+                    onClick={disabledClose ? () => {} : onClose}
+                    className={`fenext-modal-base-close fenext-modal-base-close-${type}  fenext-modal-base-close-${
+                        active ? "active" : "inactive"
+                    } ${classNameClose}`}
+                >
+                    {closeComponent}
+                </div>
+            </>
+        );
+    }, [onClose, type, active, classNameClose, disabledClose, closeComponent]);
+
+    const CONTENT = useMemo(() => {
+        return (
+            <>
+                <dialog
+                    open={active}
+                    className={`
+                        fenext-modal-base-dialog
+                        fenext-modal-base-dialog-close-${typeClose}
+                        fenext-modal-base-dialog-${active ? "active" : "inactive"}
+                        fenext-modal-base-dialog-name-${activeName ? "active" : "inactive"}
+                        fenext-modal-base-dialog-name-last-${activeNameLast ? "active" : "inactive"}
+                        fenext-modal-base-dialog-disabled-close-${disabledClose ? "active" : "inactive"}
+                    `}
+                    data-name={name}
+                >
+                    <div
+                        className={`fenext-modal-base-bg fenext-modal-base-bg-${
+                            active ? "active" : "inactive"
+                        } ${classNameBg} `}
+                    ></div>
+                    <div
+                        className={`fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${
+                            active ? "active" : "inactive"
+                        } fenext-modal-base-${type} ${className} `}
+                        onClick={(e) => {
+                            const ele = e.target as HTMLDivElement;
+                            if (
+                                ele.classList.value.includes(
+                                    `fenext-modal-base-bg-close-${uuid}`,
+                                ) &&
+                                !disabledClose
+                            ) {
+                                onClose?.();
+                            }
+                        }}
+                    >
+                        <div
+                            className={`fenext-modal-base-content ${classNameContent} `}
+                        >
+                            {CLOSECOMPONENTE}
+                            {((childrenUseActiveForShowHidden && active) ||
+                                !childrenUseActiveForShowHidden) &&
+                                children}
+                        </div>
+                    </div>
+                    {CLOSECOMPONENTE}
+                </dialog>
+            </>
+        );
+    }, [
+        CLOSECOMPONENTE,
+        childrenUseActiveForShowHidden,
+        active,
+        activeName,
+        activeNameLast,
+        children,
+        uuid,
+        classNameContent,
+        className,
+        type,
+        classNameBg,
+        disabledClose,
+        typeClose,
+    ]);
+    if (useRender) {
+        return (
+            <>
+                <Portal>{CONTENT}</Portal>
+            </>
+        );
+    }
+
+    return <>{CONTENT}</>;
+};
+
+
+/**
+ * Properties for the class of the Modal component.
+ */
+export interface ModalClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameElementActionModalActive?: string;
+    /**
+     * Objet for className Modal.
+     */
+    classNameModal?: ModalBaseClassProps;
+}
+
+/**
+ * Properties for the Modal component.
+ */
+export interface ModalProps
+    extends Pick<
+            ModalBaseBaseProps,
+            | "children"
+            | "type"
+            | "active"
+            | "onClose"
+            | "typeClose"
+            | "disabledClose"
+            | "useRender"
+            | "name"
+            | "closeComponent"
+            | "nameLocalStorage"
+        >,
+        ModalClassProps {
+    /**
+     * The element with onClick for active modal.
+     */
+    ElementActionModalActive?: ReactNode;
+    /**
+     * If The element with onClick for active modal is disabled.
+     */
+    disabledElementActionModalActive?: boolean;
+    /**
+     * onActive Modal.
+     */
+    onActive?: () => void;
+    /**
+     * onActive Modal.
+     */
+    activeByNameLocalStorage?: boolean;
+    activeByNameContentLocalStorage?: boolean;
+}
+
+export const Modal = ({
+    classNameElementActionModalActive = "",
+    classNameModal = {},
+
+    ElementActionModalActive,
+    disabledElementActionModalActive = false,
+    children,
+
+    active: activeProps = undefined,
+    disabledClose = false,
+
+    onClose: onCloseProps,
+    onActive: onActiveProps,
+    type = "center",
+    typeClose = "out",
+    useRender = false,
+    name,
+    nameLocalStorage,
+    activeByNameLocalStorage = false,
+    activeByNameContentLocalStorage = false,
+    closeComponent,
+}: ModalProps) => {
+    const { active, onActive, onClose, activeName, activeNameLast } = useModal({
+        active: activeProps,
+        disabled: disabledElementActionModalActive,
+        onActive: onActiveProps,
+        onClose: onCloseProps,
+        name,
+        activeByNameLocalStorage,
+        activeByNameContentLocalStorage,
+        nameLocalStorage,
+    });
+    return (
+        <>
+            <div
+                onClick={onActive}
+                className={`fenext-modal-element-active ${classNameElementActionModalActive}`}
+            >
+                {ElementActionModalActive}
+            </div>
+            <ModalBase
+                {...classNameModal}
+                closeComponent={closeComponent}
+                onClose={onClose}
+                active={active}
+                activeName={activeName}
+                activeNameLast={activeNameLast}
+                type={type}
+                typeClose={typeClose}
+                disabledClose={disabledClose}
+                useRender={useRender}
+                name={name}
+                nameLocalStorage={nameLocalStorage}
+            >
+                {children}
+            </ModalBase>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ProgressCircle component.
+ */
+export interface ProgressCircleBaseProps {
+    /**
+     * Progress Number.
+     */
+    p: number;
+    /**
+     * Show Number Progress.
+     */
+    showP: boolean;
+}
+
+/**
+ * Properties for the class of the ProgressCircle component.
+ */
+export interface ProgressCircleClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ProgressCircle component.
+ */
+export interface ProgressCircleProps
+    extends ProgressCircleBaseProps,
+        ProgressCircleClassProps {}
+
+export const ProgressCircle = ({
+    className = "",
+    p,
+    showP = true,
+}: ProgressCircleProps) => {
+    return (
+        <>
+            <div
+                className={`fenext-progess-circle fenext-progess-circle-${
+                    showP ? "show-p" : ""
+                } ${className} `}
+                style={
+                    {
+                        ["--p"]: Math.max(0, Math.min(p, 100)),
+                    } as React.CSSProperties
+                }
+            ></div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base ProgressLine component.
+ */
+export interface ProgressLineBaseProps {
+    /**
+     * Progress Number.
+     */
+    p: number;
+    /**
+     * Show Number Progress.
+     */
+    showP: boolean;
+}
+
+/**
+ * Properties for the class of the ProgressLine component.
+ */
+export interface ProgressLineClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the ProgressLine component.
+ */
+export interface ProgressLineProps
+    extends ProgressLineBaseProps,
+        ProgressLineClassProps {}
+
+export const ProgressLine = ({
+    className = "",
+    p,
+    showP = true,
+}: ProgressLineProps) => {
+    return (
+        <>
+            <div
+                className={`fenext-progess-line fenext-progess-line-${
+                    showP ? "show-p" : ""
+                } ${className} `}
+                style={
+                    {
+                        ["--p"]: Math.max(0, Math.min(p, 100)),
+                    } as React.CSSProperties
+                }
+            ></div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base Chronometer component.
+ */
+export interface ChronometerBaseProps {
+    /**
+     * The time in seconds for the component.
+     */
+    time?: number;
+    /**
+     * The change time for the component.
+     */
+    onChange?: (time: number) => void;
+    /**
+     * The min in seconds for the component.
+     */
+    min?: number;
+    /**
+     * The optionsTimeToText for the component.
+     */
+    optionsTimeToText?: getTimeToTextProps;
+}
+
+/**
+ * Properties for the class of the Chronometer component.
+ */
+export interface ChronometerClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Chronometer component.
+ */
+export interface ChronometerProps
+    extends ChronometerBaseProps,
+        ChronometerClassProps {}
+
+export const Chronometer = ({
+    className = "",
+    time = 100,
+    min = 0,
+    onChange,
+    optionsTimeToText = {
+        days: false,
+        hours: true,
+        minutes: true,
+        seconds: true,
+    },
+}: ChronometerProps) => {
+    const { data, setData } = useData<number>(time, {
+        onChangeDataAfter: onChange,
+    });
+
+    const onReduce = useCallback(() => {
+        setData(Math.max(data - 1, min));
+    }, [data]);
+
+    useEffect(() => {
+        const intervalId = setInterval(onReduce, 1000);
+        return () => clearInterval(intervalId);
+    }, [data]);
+
+    return (
+        <>
+            <div className={`fenext-chronometer ${className} `}>
+                {getTimeToText(
+                    new Date(0, 0, 0, 0, 0, data, 0),
+                    optionsTimeToText,
+                )}
+            </div>
+        </>
+    );
+};
+
+
+
+
+
+
+/**
+ * Properties for the base Loader component.
+ */
+export interface LoaderBaseProps {}
+
+/**
+ * Properties for the class of the Loader component.
+ */
+export interface LoaderClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameLoader?: string;
+}
+
+/**
+ * Properties for the Loader component.
+ */
+export interface LoaderProps extends LoaderBaseProps, LoaderClassProps {}
+
+export const Loader = ({ classNameLoader = "" }: LoaderProps) => {
+    return (
+        <>
+            <div className={`fenext-loader ${classNameLoader}`} />
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base LoaderLine component.
+ */
+export interface LoaderLineBaseProps {
+    /**
+     * Height of Line.
+     */
+    height?: number;
+}
+
+/**
+ * Properties for the class of the LoaderLine component.
+ */
+export interface LoaderLineClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameLoaderLine?: string;
+}
+
+/**
+ * Properties for the LoaderLine component.
+ */
+export interface LoaderLineProps
+    extends LoaderLineBaseProps,
+        LoaderLineClassProps {}
+
+export const LoaderLine = ({
+    classNameLoaderLine = "",
+    height = 20,
+}: LoaderLineProps) => {
+    return (
+        <>
+            <div
+                className={`fenext-loader-line ${classNameLoaderLine}`}
+                style={
+                    {
+                        ["--height"]: `${height / 16}rem`,
+                    } as React.CSSProperties
+                }
+            />
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base LoaderUser component.
+ */
+export interface LoaderUserBaseProps {}
+
+/**
+ * Properties for the class of the LoaderUser component.
+ */
+export interface LoaderUserClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameLoaderUser?: string;
+    /**
+     * The class name for img the component.
+     */
+    classNameLoaderUserImg?: string;
+    /**
+     * The class name for Name the component.
+     */
+    classNameLoaderUserName?: string;
+    /**
+     * The class name for email the component.
+     */
+    classNameLoaderUserEmail?: string;
+}
+
+/**
+ * Properties for the LoaderUser component.
+ */
+export interface LoaderUserProps
+    extends LoaderUserBaseProps,
+        LoaderUserClassProps {}
+
+export const LoaderUser = ({
+    classNameLoaderUser = "",
+    classNameLoaderUserImg = "",
+    classNameLoaderUserName = "",
+    classNameLoaderUserEmail = "",
+}: LoaderUserProps) => {
+    return (
+        <>
+            <div className={`fenext-loader-user ${classNameLoaderUser}`}>
+                <LoaderLine
+                    classNameLoaderLine={`fenext-loader-user-img ${classNameLoaderUserImg}`}
+                />
+                <LoaderLine
+                    classNameLoaderLine={`fenext-loader-user-name ${classNameLoaderUserName}`}
+                />
+                <LoaderLine
+                    classNameLoaderLine={`fenext-loader-user-email ${classNameLoaderUserEmail}`}
+                />
+            </div>
+        </>
+    );
+};
+
+
+/**
+ * Properties for the base LoaderSpinner component.
+ */
+export interface LoaderSpinnerBaseProps {}
+
+/**
+ * Properties for the class of the LoaderSpinner component.
+ */
+export interface LoaderSpinnerClassProps {
+    /**
+     * The class name for the component.
+     */
+    classNameLoaderSpinner?: string;
+}
+
+/**
+ * Properties for the LoaderSpinner component.
+ */
+export interface LoaderSpinnerProps
+    extends LoaderSpinnerBaseProps,
+        LoaderSpinnerClassProps {}
+
+export const LoaderSpinner = ({
+    classNameLoaderSpinner = "",
+}: LoaderSpinnerProps) => {
+    return (
+        <>
+            <div
+                className={`fenext-loader-spinner ${classNameLoaderSpinner}`}
+            />
+        </>
+    );
+};

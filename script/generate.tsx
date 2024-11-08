@@ -77,6 +77,9 @@ const main = async () => {
         onCopyLib({
             lib: "img-placeholder"
         }),
+        onCopyLib({
+            lib: "component"
+        }),
     ])
     let CODE = ALL_LIB.join("")
 
