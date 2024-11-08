@@ -12,8 +12,8 @@
       "module": "esnext",
       "lib": ["dom", "esnext"],
       "importHelpers": true,
-      "declaration": true,
-      "sourceMap": true,
+      "declaration": false,
+      "sourceMap": false,
       "baseUrl": "./src",
       "rootDir": "./src",
       "outDir": "./esm",
@@ -30,7 +30,7 @@
       "target": "esnext",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "removeComments": false,
+      "removeComments": true,
       "noImplicitAny": false,
       "isolatedModules": true
   }

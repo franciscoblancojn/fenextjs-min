@@ -12,8 +12,9 @@
     "prettier": "npx prettier ./src --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix",
-    "flb": "npm run generate && npm run format && npm run build",
-    "generate": "bun script/generate.tsx"
+    "flb": "npm run generate && npm run format && npm run build && npm run min",
+    "generate": "bun script/generate.tsx",
+    "min":"terser ./cjs/index.js -o ./cjs/index.min.js --compress --mangle"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "@types/react-dom": "18.2.19",
     "npm-check-updates": "16.14.14",
     "prettier": "3.2.5",
+    "terser": "^5.36.0",
     "ts-loader": "9.5.1",
     "tslib": "2.6.2",
     "typescript": "5.3.3"
