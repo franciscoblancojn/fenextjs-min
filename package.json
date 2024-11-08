@@ -12,11 +12,12 @@
     "prettier": "npx prettier ./src --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix",
-    "flb": "npm run generate && npm run format && npm run build && npm run min",
+    "flb": "npm run generate && npm run format && npm run build && npm run min && npm run copy-dts",
     "generate": "bun script/generate.tsx",
     "min-js":"terser ./cjs/index.js -o ./min/index.js --compress --mangle",
     "min-dts":"terser ./cjs/index.d.ts --comments false --compress --mangle --output ./min/index.d.ts",
-    "min":"npm run min-js"
+    "min":"npm run min-js",
+    "copy-dts":"cp ./cjs/index.d.ts ./min/index.d.ts"
   },
   "repository": {
     "type": "git",
