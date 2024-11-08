@@ -1,10 +1,10 @@
 {
   "name": "fenextjs-min",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
-  "main": "./cjs/index.js",
-  "module": "./cjs/index.js",
-  "types": "./cjs/index.d.ts",
+  "main": "./min/index.js",
+  "module": "./min/index.js",
+  "types": "./min/index.d.ts",
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "echo 'esm'",
