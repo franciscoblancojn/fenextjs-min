@@ -166,7 +166,7 @@ const main = async () => {
 
     CODE = CODE_TOP + CODE
 
-    await Bun_.write("./text.tsx", CODE);
+    await Bun_.write("./src/index.tsx", CODE);
 }
 
 
