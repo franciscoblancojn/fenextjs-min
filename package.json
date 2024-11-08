@@ -14,7 +14,9 @@
     "format": "npm run prettier:fix",
     "flb": "npm run generate && npm run format && npm run build && npm run min",
     "generate": "bun script/generate.tsx",
-    "min":"terser ./cjs/index.js -o ./cjs/index.min.js --compress --mangle"
+    "min-js":"terser ./cjs/index.js -o ./min/index.js --compress --mangle",
+    "min-dts":"terser ./cjs/index.d.ts --comments false --compress --mangle --output ./min/index.d.ts",
+    "min":"npm run min-js"
   },
   "repository": {
     "type": "git",
