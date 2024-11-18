@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-min",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "",
   "main": "./min/index.js",
   "module": "./min/index.js",
@@ -18,7 +18,15 @@
     "min-dts":"terser ./cjs/index.d.ts --comments false --compress --mangle --output ./min/index.d.ts",
     "min":"npm run min-js",
     "copy-dts":"cp ./cjs/index.d.ts ./min/index.d.ts",
-    "copy-css":"cp ../fenextjs-component/styles/index.css ./styles/index.css"
+    "copy-css":"cp ../fenextjs-component/styles/index.css ./styles/index.css",
+    "bun-i": "bun i",
+    "remove-bun-lockb": "rm -r bun.lockb",
+    "remove-node-module": "rm -r node_modules",
+    "remove": "npm run remove-node-module && npm run remove-bun-lockb",
+    "update-package-storybook": "ncu -u '/.*storybook.*$/'",
+    "update-package": "ncu -u '/^fenextjs.*$/' country-state-city-nextjs uselocalstoragenextjs",
+    "update": "npm run update-package && npm run remove && npm run bun-i && npm run flb",
+    "u": "npm run update"
   },
   "repository": {
     "type": "git",
@@ -36,8 +44,8 @@
   "homepage": "https://github.com/franciscoblancojn/fenextjs-min#readme",
   "dependencies": {
     "@react-google-maps/api": "2.19.3",
-    "country-state-city-nextjs": "^9.1.0",
-    "fenextjs-nextjs-dependencies": "2.0.1",
+    "country-state-city-nextjs": "^10.0.0",
+    "fenextjs-nextjs-dependencies": "3.0.0",
     "firebase": "10.8.0",
     "jwt-decode": "^4.0.0",
     "qr-scanner": "1.4.2",

@@ -113,6 +113,7 @@ export interface CountryProps {
     code: string;
     img?: string;
     code_phone?: string;
+    lang?: string;
 }
 export interface StateProps {
     id: number;
@@ -1020,21 +1021,6 @@ export declare const usePrintIframe: <T>({ urlBase, url, data, delayForPrint, }:
     loader: boolean;
     onPrint: () => void;
 };
-export interface useLocalStorageCache<T = any, O = any> extends useLocalStorageProps<T, O> {
-    data: T;
-    autoSaveData?: boolean;
-    parseDataPreSaveCache?: (data: {
-        old?: T;
-        news: T;
-    }) => T;
-}
-export declare const useLocalStorageCache: <T = any, O = any>({ data, autoSaveData, parseDataPreSaveCache, ...props }: useLocalStorageCache<T, O>) => {
-    load: boolean;
-    value: T | undefined;
-    onSaveCache: (news: T) => void;
-    onClearCache: () => void;
-    setLocalStorage: (newValue: any) => void;
-};
 export interface useAlertProps {
     name?: string;
 }
@@ -1243,6 +1229,7 @@ export interface useDataOptions<T, M = any, RT = void, RM = void, ET = any, EM =
     env_log?: {
         [id in useDataOptionsEnvLog]?: boolean;
     };
+    useGlobalContext?: string;
 }
 export type useDataOptionsEnvLog = "data" | "dataMemo" | "isValidData" | "isValidDataMemo" | "dataError" | "dataErrorMemo" | "loaderSubmit" | "loaderSubmitMemo" | "keyData" | "isChange";
 export interface onChangeDataOptionsProps<T> {
@@ -1311,26 +1298,6 @@ export declare const useTheme: ({}: useThemeProps) => {
     theme: ThemeType | undefined;
     setTheme: (newValue: any) => void;
 };
-export interface useModalLocalStorageConfigContentProps {
-    key: string;
-    data: any;
-}
-export interface useModalLocalStorageConfigProps {
-    active?: boolean;
-    use?: boolean;
-    loader?: boolean;
-    content?: useModalLocalStorageConfigContentProps[];
-}
-export interface useModalLocalStorageConfigContentProps {
-    key: string;
-    data: any;
-}
-export declare const useModalLocalStorage: () => {
-    valueModal: useModalLocalStorageConfigProps | undefined;
-    loadModal: boolean;
-    updateModal: (id: keyof useModalLocalStorageConfigProps, value: any) => void;
-    setModal: (value: useModalLocalStorageConfigProps) => void;
-};
 export declare const SvgMove: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
@@ -1341,12 +1308,6 @@ export declare const SvgShareArrow: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgOnlyFans: ({ className }: {
-    className?: string | undefined;
-}) => React.JSX.Element;
-export declare const SvgNumberIncrease: ({ className, }: {
-    className?: string | undefined;
-}) => React.JSX.Element;
-export declare const SvgNumberDecrease: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgBehance: ({ className }: {
@@ -1382,13 +1343,7 @@ export declare const SvgPaypal: ({ className }: {
 export declare const SvgInstagram: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgCancel: ({ className }: {
-    className?: string | undefined;
-}) => React.JSX.Element;
 export declare const SvgFacebookF: ({ className }: {
-    className?: string | undefined;
-}) => React.JSX.Element;
-export declare const SvgVisa: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgJcb: ({ className }: {
@@ -1404,6 +1359,9 @@ export declare const SvgCameraChange: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgEdit: ({ className }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
+export declare const SvgPaginationDown: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgReddit: ({ className }: {
@@ -1427,7 +1385,7 @@ export declare const SvgTiktok: ({ className }: {
 export declare const SvgVerified: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgStar: ({ className }: {
+export declare const SvgStart: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgLocation: ({ className }: {
@@ -1550,6 +1508,9 @@ export declare const SvgDribbble: ({ className }: {
 export declare const SvgStripe: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
+export declare const SvgCancel: ({ className }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
 export declare const SvgDownload: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
@@ -1568,16 +1529,7 @@ export declare const SvgArrowCollapse: ({ className, }: {
 export declare const SvgClicks: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgPaginationUp: ({ className }: {
-    className?: string | undefined;
-}) => React.JSX.Element;
-export declare const SvgPaginationPre: ({ className, }: {
-    className?: string | undefined;
-}) => React.JSX.Element;
-export declare const SvgPaginationNext: ({ className, }: {
-    className?: string | undefined;
-}) => React.JSX.Element;
-export declare const SvgPaginationDown: ({ className, }: {
+export declare const SvgVisa: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgNequi: ({ className }: {
@@ -1589,6 +1541,9 @@ export declare const SvgStripachat: ({ className }: {
 export declare const SvgSnapchat: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
+export declare const SvgNumberIncrease: ({ className, }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
 export declare const SvgPlane: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
@@ -1598,7 +1553,13 @@ export declare const SvgSoundCloud: ({ className }: {
 export declare const SvgStack: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
+export declare const SvgPaginationNext: ({ className, }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
 export declare const SvgQr: ({ className }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
+export declare const SvgPaginationPre: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgMasterCard: ({ className }: {
@@ -1665,6 +1626,9 @@ export declare const SvgShare: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgNoConfirm: ({ className }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
+export declare const SvgNumberDecrease: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgEmail: ({ className }: {
@@ -1739,6 +1703,9 @@ export declare const SvgUserAccount2: ({ className }: {
 export declare const SvgUserAccount3: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
+export declare const SvgPaginationUp: ({ className }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
 export declare const SvgManageAddresses: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
@@ -1760,19 +1727,19 @@ export declare const SvgBolt: ({ className }: {
 export declare const SvgBrush: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgTableBox: ({ className }: {
+export declare const SvgViewTableBox: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgTableList: ({ className }: {
+export declare const SvgViewTableList: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgSelectList: ({ className }: {
+export declare const SvgViewSelectList: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgSelectNormal: ({ className }: {
+export declare const SvgViewSelectNormal: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const SvgSelectBox: ({ className }: {
+export declare const SvgViewSelectBox: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgSearch: ({ className }: {
@@ -2160,7 +2127,7 @@ export interface InputTextBaseProps extends _TProps {
     isChange?: boolean;
     useLoader?: boolean;
     inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined;
-    autoComplete?: boolean;
+    autoComplete?: boolean | string | "off" | "on";
     onKeyDown?: (React.KeyboardEventHandler<HTMLTextAreaElement> & React.KeyboardEventHandler<HTMLInputElement>) | undefined;
     onWheel?: (React.WheelEventHandler<HTMLTextAreaElement> & React.WheelEventHandler<HTMLInputElement>) | undefined;
     maxLength?: number;
