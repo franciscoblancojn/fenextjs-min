@@ -2842,7 +2842,7 @@ const useData = (defaultData, options) => {
             return options?.onMemo?.(data);
         }
         return data;
-    }, [data]);
+    }, [data, JSON.stringify({ a: options?.memoDependencies })]);
     (0, react_1.useEffect)(() => {
         options?.onChangeDataMemoAfter?.(dataMemo);
     }, [dataMemo]);
@@ -6032,8 +6032,14 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
         onChange: onChangeProps,
     });
     const [loadPhoneCodes, setlLoadPhoneCodes] = (0, react_1.useState)(false);
-    const { dataMemo: data, onChangeData, onConcatData, isChange, } = (0, exports.useData)(defaultValue ?? {}, {
-        onChangeDataMemoAfter: onChange,
+    const { dataMemo: data, onChangeData, onConcatData, isChange, } = (0, exports.useData)(value ?? defaultValue ?? {}, {
+        onChangeDataMemoAfter: (v) => {
+            onChange({
+                ...v,
+                tel: `${v.code} ${v.number}`,
+            });
+        },
+        memoDependencies: [value],
         onMemo: (d) => {
             const v = value ?? d;
             return {
@@ -6080,11 +6086,18 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                         };
                     }, disabled: !loadPhoneCodes || disabled || disabledSelectCode, defaultValue: getCountryPhone(defaultValue), value: getCountryPhone(value), onChange: (e) => {
                         if (e?.code_phone) {
-                            onConcatData({
+                            const v = {
                                 code: e?.code_phone,
                                 country: e,
                                 code_country: e?.code,
                                 img: e ? `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}` : undefined,
+                            };
+                            onConcatData({
+                                ...v,
+                            });
+                            onChange({
+                                ...data,
+                                ...v,
                             });
                         }
                     }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), optional: false, showOptionIconImg: true, itemMaxLengthShowOptions: {
@@ -6092,7 +6105,13 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                         text: "...",
                     } })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
-                react_1.default.createElement(exports.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number, inputMode: "numeric", regExpReplace: "", regExp: /[^0-9]/g, optional: false, error: undefined })),
+                react_1.default.createElement(exports.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: (n) => {
+                        onChangeData("number")(n);
+                        onChange({
+                            ...data,
+                            number: n,
+                        });
+                    }, loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: data?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number, inputMode: "numeric", regExpReplace: "", regExp: /[^0-9]/g, optional: false, error: undefined })),
             (props?.error || (errorFenext && isChange)) && (react_1.default.createElement(exports.ErrorComponent, { error: errorFenext ?? props?.error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputPhone = InputPhone;
@@ -8995,7 +9014,15 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
                         fenext-modal-base-dialog-disabled-close-${disabledClose ? "active" : "inactive"}
                     `, "data-name": name },
                 react_1.default.createElement("div", { className: `fenext-modal-base-bg fenext-modal-base-bg-${active ? "active" : "inactive"} ${classNameBg} ` }),
-                react_1.default.createElement("div", { className: `fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${active ? "active" : "inactive"} fenext-modal-base-${type} ${className} `, onClick: (e) => {
+                react_1.default.createElement("div", { className: `
+                            fenext-modal-base
+                            fenext-modal-base-bg-close 
+                            fenext-modal-base-bg-close-${uuid} 
+                            fenext-modal-base-${active ? "active" : "inactive"}
+                            fenext-modal-base-${useRender ? "use-render" : "no-use-render"}
+                            fenext-modal-base-${type}
+                            ${className}
+                        `, onClick: (e) => {
                         const ele = e.target;
                         if (ele.classList.value.includes(`fenext-modal-base-bg-close-${uuid}`) &&
                             !disabledClose) {
@@ -9022,6 +9049,7 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
         classNameBg,
         disabledClose,
         typeClose,
+        useRender,
     ]);
     if (useRender) {
         return (react_1.default.createElement(react_1.default.Fragment, null,

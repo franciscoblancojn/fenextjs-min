@@ -4724,6 +4724,7 @@ export interface useDataOptions<
   onChangeDataAfter?: (data: T) => void;
   onDeleteDataAfter?: (data: T) => void;
   onChangeDataMemoAfter?: (data: M) => void;
+  memoDependencies?: any[];
   onMemo?: (data: T) => M;
   validator?: FenextjsValidatorClass<T>;
   validatorMemo?: FenextjsValidatorClass<M>;
@@ -4990,7 +4991,7 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
       return options?.onMemo?.(data);
     }
     return data as any;
-  }, [data]);
+  }, [data, JSON.stringify({ a: options?.memoDependencies })]);
 
   useEffect(() => {
     options?.onChangeDataMemoAfter?.(dataMemo);
@@ -15521,16 +15522,26 @@ export const InputPhone = ({
     onChangeData,
     onConcatData,
     isChange,
-  } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(defaultValue ?? {}, {
-    onChangeDataMemoAfter: onChange,
-    onMemo: (d: Partial<PhoneProps>) => {
-      const v = value ?? d;
-      return {
-        ...v,
-        tel: `${v.code} ${v.number}`,
-      };
+  } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(
+    value ?? defaultValue ?? {},
+    {
+      onChangeDataMemoAfter: (v: Partial<PhoneProps>) => {
+        onChange({
+          ...v,
+          tel: `${v.code} ${v.number}`,
+        });
+      },
+      memoDependencies: [value],
+      onMemo: (d: Partial<PhoneProps>) => {
+        const v = value ?? d;
+        return {
+          ...v,
+          tel: `${v.code} ${v.number}`,
+        };
+      },
     },
-  });
+  );
+
   const [phones, setPhones] = useState<CountryProps[]>([]);
   const loadPhones = async () => {
     const countrys: CountryProps[] = await getDataCountrys();
@@ -15599,11 +15610,18 @@ export const InputPhone = ({
             value={getCountryPhone(value)}
             onChange={(e) => {
               if (e?.code_phone) {
-                onConcatData({
+                const v = {
                   code: e?.code_phone,
                   country: e,
                   code_country: e?.code,
                   img: e ? `${getRuteCountryImg(e)}` : undefined,
+                };
+                onConcatData({
+                  ...v,
+                });
+                onChange({
+                  ...data,
+                  ...v,
                 });
               }
             }}
@@ -15624,12 +15642,18 @@ export const InputPhone = ({
             {...classNameInputNumber}
             {...props}
             type="text"
-            onChange={onChangeData("number")}
+            onChange={(n) => {
+              onChangeData("number")(n);
+              onChange({
+                ...data,
+                number: n,
+              });
+            }}
             loader={!loadPhoneCodes || loader}
             disabled={!loadPhoneCodes || disabled}
             placeholder={placeholder}
             defaultValue={data?.number}
-            value={value?.number}
+            value={data?.number}
             _t={_t}
             validator={validator?.getObjectValidator?.()?.number}
             inputMode="numeric"
@@ -26073,7 +26097,6 @@ export interface ModalBaseClassProps {
 export interface ModalBaseProps
   extends ModalBaseBaseProps,
     ModalBaseClassProps {}
-
 export const ModalBase = ({
   className = "",
   classNameBg = "",
@@ -26132,9 +26155,15 @@ export const ModalBase = ({
             } ${classNameBg} `}
           ></div>
           <div
-            className={`fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${
-              active ? "active" : "inactive"
-            } fenext-modal-base-${type} ${className} `}
+            className={`
+                            fenext-modal-base
+                            fenext-modal-base-bg-close 
+                            fenext-modal-base-bg-close-${uuid} 
+                            fenext-modal-base-${active ? "active" : "inactive"}
+                            fenext-modal-base-${useRender ? "use-render" : "no-use-render"}
+                            fenext-modal-base-${type}
+                            ${className}
+                        `}
             onClick={(e) => {
               const ele = e.target as HTMLDivElement;
               if (
@@ -26172,6 +26201,7 @@ export const ModalBase = ({
     classNameBg,
     disabledClose,
     typeClose,
+    useRender,
   ]);
   if (useRender) {
     return (
