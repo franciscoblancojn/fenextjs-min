@@ -15186,13 +15186,34 @@ export const InputNumberCount = ({
     validator: validator,
   });
 
+  const parseNumberCountForInputNumberCount = useCallback(
+    (d: string | number, old: string | number, keyDown?: string) => {
+      let n = parseNumberCount(d, optionsParseNumber);
+      if (keyDown == "-" && n == "0") {
+        return "-0";
+      }
+      if (`${old}`.includes(".")) {
+        const decimales = (`${old}`.split(".")?.[1] ?? "")
+          .slice(0, optionsParseNumber?.maximumFractionDigits ?? 3)
+          .replace(/[^0-9]/g, "");
+        n = parseNumberCount(`${parseInt(`${parseNumber(n)}`)}`);
+        if (!n.includes(".")) {
+          n += ".";
+        }
+        n += decimales;
+      }
+      return n;
+    },
+    [optionsParseNumber],
+  );
+
   const dataText = useMemo(() => {
     const d = `${value}`;
     if (d == "") {
       return "";
     }
-    const n = parseNumberCount(d, optionsParseNumber);
-    return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
+    const n = parseNumberCountForInputNumberCount(d, d);
+    return `${symbolInit}${n}${d.at(-1) == "." ? "" : symbolFinal}`;
   }, [symbolInit, symbolFinal, value, optionsParseNumber]);
 
   const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
@@ -15200,9 +15221,12 @@ export const InputNumberCount = ({
     const keyNew = event?.key;
 
     setDataFunction((old) => {
-      let n = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
+      let oldN = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
+
+      let n = `${oldN}`;
       if (keyNew == "Backspace") {
         n = n.slice(0, n.length - 1);
+        oldN = oldN.slice(0, oldN.length - 1);
       }
       if (keyNew == "ArrowUp") {
         n = `${parseNumber(n) + 1}`;
@@ -15218,9 +15242,8 @@ export const InputNumberCount = ({
       }
       if (keyNew == "." && !n.includes(".")) {
         n += ".";
-      } else {
-        n = parseNumberCount(n, optionsParseNumber);
       }
+      n = parseNumberCountForInputNumberCount(n, oldN, keyNew);
       return n;
     });
   };

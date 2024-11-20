@@ -5939,21 +5939,40 @@ const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValu
         data: value != undefined && value != "" ? (0, exports.parseNumber)(value) : undefined,
         validator: validator,
     });
+    const parseNumberCountForInputNumberCount = (0, react_1.useCallback)((d, old, keyDown) => {
+        let n = (0, exports.parseNumberCount)(d, optionsParseNumber);
+        if (keyDown == "-" && n == "0") {
+            return "-0";
+        }
+        if (`${old}`.includes(".")) {
+            const decimales = (`${old}`.split(".")?.[1] ?? "")
+                .slice(0, optionsParseNumber?.maximumFractionDigits ?? 3)
+                .replace(/[^0-9]/g, "");
+            n = (0, exports.parseNumberCount)(`${parseInt(`${(0, exports.parseNumber)(n)}`)}`);
+            if (!n.includes(".")) {
+                n += ".";
+            }
+            n += decimales;
+        }
+        return n;
+    }, [optionsParseNumber]);
     const dataText = (0, react_1.useMemo)(() => {
         const d = `${value}`;
         if (d == "") {
             return "";
         }
-        const n = (0, exports.parseNumberCount)(d, optionsParseNumber);
-        return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
+        const n = parseNumberCountForInputNumberCount(d, d);
+        return `${symbolInit}${n}${d.at(-1) == "." ? "" : symbolFinal}`;
     }, [symbolInit, symbolFinal, value, optionsParseNumber]);
     const onKeyDown = (event) => {
         props?.onKeyDown?.(event);
         const keyNew = event?.key;
         setDataFunction((old) => {
-            let n = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
+            let oldN = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
+            let n = `${oldN}`;
             if (keyNew == "Backspace") {
                 n = n.slice(0, n.length - 1);
+                oldN = oldN.slice(0, oldN.length - 1);
             }
             if (keyNew == "ArrowUp") {
                 n = `${(0, exports.parseNumber)(n) + 1}`;
@@ -5970,9 +5989,7 @@ const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValu
             if (keyNew == "." && !n.includes(".")) {
                 n += ".";
             }
-            else {
-                n = (0, exports.parseNumberCount)(n, optionsParseNumber);
-            }
+            n = parseNumberCountForInputNumberCount(n, oldN, keyNew);
             return n;
         });
     };
