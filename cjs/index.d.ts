@@ -1,6 +1,5 @@
 import React, { ReactNode, PropsWithChildren, CSSProperties, SyntheticEvent, AnchorHTMLAttributes } from "react";
 import { LinkProps as LinkNextProps } from "next/link";
-import { useLocalStorageProps } from "uselocalstoragenextjs";
 import { AutocompleteProps as GoogleAutocompleteProps, LoadScriptProps, GoogleMapProps, MarkerProps } from "@react-google-maps/api";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
@@ -923,6 +922,18 @@ export declare const useDataValidator: <T>({ data, validator, autoOnValidate, }:
     isValidData: true | ErrorFenextjs<any> | undefined;
     onValidateData: () => void;
 };
+export interface useLocalStorageProps<T = any, O = any> {
+    name: string;
+    defaultValue?: T;
+    parse?: (value: any) => T;
+    updateValue?: (oldValue: O, newValue: T) => T;
+}
+export declare const useLocalStorage: <T = any, O = any>(props: useLocalStorageProps<T, O>) => {
+    load: boolean;
+    value: T | undefined;
+    setLocalStorage: (newValue: any) => void;
+    onClearLocalStorage: () => void;
+};
 export interface useActionProps<T = any> {
     name: string;
     onActionExecute?: (d?: T) => void;
@@ -1281,6 +1292,18 @@ export declare const useData: <T, M = any, RT = void, RM = void, ET = any, EM = 
     setResultSubmitDataMemo: React.Dispatch<React.SetStateAction<RM | undefined>>;
     setDataError: React.Dispatch<React.SetStateAction<ET | undefined>>;
     setDataErrorMemo: React.Dispatch<React.SetStateAction<EM | undefined>>;
+};
+export interface useSessionStorageProps<T = any, O = any> {
+    name: string;
+    defaultValue?: T;
+    parse?: (value: any) => T;
+    updateValue?: (oldValue: O, newValue: T) => T;
+}
+export declare const useSessionStorage: <T = any, O = any>(props: useSessionStorageProps<T, O>) => {
+    load: boolean;
+    value: T | undefined;
+    setSessionStorage: (newValue: any) => void;
+    onClearSessionStorage: () => void;
 };
 export interface useDateProps extends FenextjsDateProps {
 }

@@ -14,7 +14,6 @@ import * as ReactDOM from "react-dom";
 import { createPortal } from "react-dom";
 import Router, { useRouter } from "next/router";
 import LinkNext, { LinkProps as LinkNextProps } from "next/link";
-import { useLocalStorage, useLocalStorageProps } from "uselocalstoragenextjs";
 import { jwtDecode } from "jwt-decode";
 import {
   Autocomplete as GoogleAutocomplete,
@@ -3392,6 +3391,85 @@ export const useDataValidator = <T,>({
   };
 };
 
+export interface useLocalStorageProps<T = any, O = any> {
+  name: string;
+  defaultValue?: T;
+  parse?: (value: any) => T;
+  updateValue?: (oldValue: O, newValue: T) => T;
+}
+
+export const useLocalStorage = <T = any, O = any>(
+  props: useLocalStorageProps<T, O>,
+) => {
+  const { name, defaultValue, parse, updateValue } = useMemo(
+    () => ({
+      parse: (v: any) => v,
+      updateValue: (o: O, n: T) => {
+        o;
+        return n;
+      },
+      ...props,
+    }),
+    [props],
+  );
+
+  const [load, setLoad] = useState(false);
+  const [value, setValue] = useState<T>();
+
+  const onListenerStorage = () => {
+    window.addEventListener("storage", (e) => {
+      if (e.key == name) {
+        onLoadValue();
+      }
+    });
+  };
+  const getLocalStorage = () => {
+    const valueLocal: any = window.localStorage.getItem(name);
+    return valueLocal ? parse(valueLocal) : defaultValue;
+  };
+  const onLoadValue = () => {
+    const valueLocal = getLocalStorage();
+    setValue(valueLocal);
+    setLoad(true);
+    return valueLocal;
+  };
+
+  const updateLocalStorage = (newValue: any) => {
+    if (typeof newValue == "object") {
+      newValue = JSON.stringify(newValue);
+    }
+    window.localStorage.setItem(name, newValue);
+    window.dispatchEvent(
+      new StorageEvent("storage", {
+        key: name,
+      }),
+    );
+  };
+  const setLocalStorage = (newValue: any) => {
+    const oldValue = getLocalStorage();
+    const nValue = updateValue(oldValue, newValue);
+    setValue(nValue);
+    updateLocalStorage(nValue);
+  };
+
+  const onClearLocalStorage = () => {
+    window.localStorage.removeItem(name);
+    setValue(undefined);
+  };
+
+  useEffect(() => {
+    onLoadValue();
+    onListenerStorage();
+  }, []);
+
+  return {
+    load,
+    value,
+    setLocalStorage,
+    onClearLocalStorage,
+  };
+};
+
 export interface useActionProps<T = any> {
   name: string;
   onActionExecute?: (d?: T) => void;
@@ -5228,6 +5306,85 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
 
     setDataError,
     setDataErrorMemo,
+  };
+};
+
+export interface useSessionStorageProps<T = any, O = any> {
+  name: string;
+  defaultValue?: T;
+  parse?: (value: any) => T;
+  updateValue?: (oldValue: O, newValue: T) => T;
+}
+
+export const useSessionStorage = <T = any, O = any>(
+  props: useSessionStorageProps<T, O>,
+) => {
+  const { name, defaultValue, parse, updateValue } = useMemo(
+    () => ({
+      parse: (v: any) => v,
+      updateValue: (o: O, n: T) => {
+        o;
+        return n;
+      },
+      ...props,
+    }),
+    [props],
+  );
+
+  const [load, setLoad] = useState(false);
+  const [value, setValue] = useState<T>();
+
+  const onListenerStorage = () => {
+    window.addEventListener("sessionStorage", (e) => {
+      if ((e as any).key == name) {
+        onLoadValue();
+      }
+    });
+  };
+  const getSessionStorage = () => {
+    const valueSession: any = window.sessionStorage.getItem(name);
+    return valueSession ? parse(valueSession) : defaultValue;
+  };
+  const onLoadValue = () => {
+    const valueSession = getSessionStorage();
+    setValue(valueSession);
+    setLoad(true);
+    return valueSession;
+  };
+
+  const updateSessionStorage = (newValue: any) => {
+    if (typeof newValue == "object") {
+      newValue = JSON.stringify(newValue);
+    }
+    window.sessionStorage.setItem(name, newValue);
+    window.dispatchEvent(
+      new StorageEvent("sessionStorage", {
+        key: name,
+      }),
+    );
+  };
+  const setSessionStorage = (newValue: any) => {
+    const oldValue = getSessionStorage();
+    const nValue = updateValue(oldValue, newValue);
+    setValue(nValue);
+    updateSessionStorage(nValue);
+  };
+
+  const onClearSessionStorage = () => {
+    window.sessionStorage.removeItem(name);
+    setValue(undefined);
+  };
+
+  useEffect(() => {
+    onLoadValue();
+    onListenerStorage();
+  }, []);
+
+  return {
+    load,
+    value,
+    setSessionStorage,
+    onClearSessionStorage,
   };
 };
 
