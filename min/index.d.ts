@@ -3313,8 +3313,8 @@ export interface StepsClassProps {
 export interface StepsProps extends StepsBaseProps, StepsClassProps {
 }
 export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnNext, classNameBtnPrev, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
-export type BackTypeOnBack = "history" | "router" | "link" | "none";
-export interface BackBaseProps extends _TProps {
+export type BackTypeOnBack = "fenextjs-history" | "history" | "router" | "link" | "none";
+export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
     loader?: boolean;
     disabled?: boolean;
     onClick?: (e?: any) => void;
@@ -3333,7 +3333,7 @@ export interface BackClassProps extends LoaderClassProps {
 }
 export interface BackProps extends BackBaseProps, BackClassProps {
 }
-export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, ...props }: BackProps) => React.JSX.Element;
+export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, ...props }: BackProps) => React.JSX.Element;
 export interface ThemeProps extends _TProps {
     className?: string;
     classNameItem?: string;

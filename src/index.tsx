@@ -23386,12 +23386,16 @@ export const Steps = ({
   );
 };
 
-export type BackTypeOnBack = "history" | "router" | "link" | "none";
-
+export type BackTypeOnBack =
+  | "fenextjs-history"
+  | "history"
+  | "router"
+  | "link"
+  | "none";
 /**
  * Properties for the base Back component.
  */
-export interface BackBaseProps extends _TProps {
+export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
   /**
    * Indicates whether the Back is currently in the loading state.
    */
@@ -23475,8 +23479,10 @@ export const Back = ({
   link = "",
   minLenght = 2,
   useHistoryMinLenght = false,
+  onValidateRuteBack,
   ...props
 }: BackProps) => {
+  const { onBack: onBackHistory } = useHistory({});
   const { _t } = use_T({ ...props });
   const router = useRouter();
   const onBack = () => {
@@ -23487,6 +23493,11 @@ export const Back = ({
     const actions: {
       [id in BackTypeOnBack]: () => void;
     } = {
+      "fenextjs-history": () => {
+        onBackHistory({
+          onValidateRuteBack,
+        });
+      },
       history: () => {
         history.back();
       },
