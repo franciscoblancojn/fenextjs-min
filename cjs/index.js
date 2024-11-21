@@ -9131,7 +9131,7 @@ const Template = ({ className = "" }) => {
         react_1.default.createElement("div", { className: `fenext-template ${className} ` })));
 };
 exports.Template = Template;
-const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", classNameClose = "", active = false, activeName, activeNameLast, childrenUseActiveForShowHidden = false, disabledClose = false, type = "center", typeClose = "out", onClose, children, useRender = false, name, closeComponent = react_1.default.createElement(exports.SvgClose, null), }) => {
+const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", classNameClose = "", active = false, activeName, activeNameLast, childrenUseActiveForShowHidden = false, disabledClose = false, type = "center", typeClose = "out", onClose, children, useRender = true, name, closeComponent = react_1.default.createElement(exports.SvgClose, null), }) => {
     const uuid = (0, react_1.useMemo)(() => new Date().getTime(), [active]);
     const CLOSECOMPONENTE = (0, react_1.useMemo)(() => {
         return (react_1.default.createElement(react_1.default.Fragment, null,

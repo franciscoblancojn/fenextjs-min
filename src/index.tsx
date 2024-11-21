@@ -26293,7 +26293,7 @@ export const ModalBase = ({
   typeClose = "out",
   onClose,
   children,
-  useRender = false,
+  useRender = true,
   name,
   closeComponent = <SvgClose />,
 }: ModalBaseProps) => {
