@@ -6034,8 +6034,8 @@ exports.TimeZoneList = [
         time: "(GMT+13:00) Nuku'alofa",
     },
 ];
-const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumber, aplyMax = true, aplyMin = false, ...props }) => {
-    const { data, setDataFunction, isChange } = (0, exports.useData)(`${defaultValue ?? ""}`, {
+const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumberDefault, optionsParseNumber, aplyMax = true, aplyMin = false, ...props }) => {
+    const { data, setDataFunction, isChange } = (0, exports.useData)(`${(0, exports.parseNumberCount)(defaultValue ?? "", optionsParseNumberDefault ?? optionsParseNumber)}`, {
         onChangeDataAfter: (e) => {
             if (e == "") {
                 onChange?.("");
