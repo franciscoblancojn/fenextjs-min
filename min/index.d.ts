@@ -2426,10 +2426,11 @@ export interface InputPhoneBaseProps extends Omit<InputTextBaseProps, "type" | "
     disabledSelectCode?: boolean;
     placeholderCode?: string;
     validator?: FenextjsValidatorClass<PhoneProps>;
+    parseCountrys?: (data: CountryProps[]) => CountryProps[];
 }
 export interface InputPhoneProps extends InputPhoneBaseProps, InputPhoneClassProps {
 }
-export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, placeholderCode, placeholder, validator, optional, optionalText, required, requiredText, defaultCode, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }: InputPhoneProps) => React.JSX.Element;
+export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, placeholderCode, placeholder, validator, optional, optionalText, required, requiredText, defaultCode, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, parseCountrys, ...props }: InputPhoneProps) => React.JSX.Element;
 export type InputDateValueType = Date | undefined;
 export interface InputDateBaseProps extends Omit<InputTextBaseProps, "type" | "value" | "onChange" | "defaultValue"> {
     type?: TypeDate;

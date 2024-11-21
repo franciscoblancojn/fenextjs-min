@@ -15626,6 +15626,8 @@ export interface InputPhoneBaseProps
    * FenextjsValidatorClass used for input validation.
    */
   validator?: FenextjsValidatorClass<PhoneProps>;
+
+  parseCountrys?: (data: CountryProps[]) => CountryProps[];
 }
 
 /**
@@ -15671,7 +15673,7 @@ export const InputPhone = ({
   onChangeJsonString,
   parseJson_to_String,
   parseString_to_Json,
-
+  parseCountrys,
   ...props
 }: InputPhoneProps) => {
   const { _t } = use_T({ ...props });
@@ -15724,13 +15726,16 @@ export const InputPhone = ({
 
   const [phones, setPhones] = useState<CountryProps[]>([]);
   const loadPhones = async () => {
-    const countrys: CountryProps[] = await getDataCountrys();
+    let countrys: CountryProps[] = await getDataCountrys();
+    if (parseCountrys) {
+      countrys = parseCountrys(countrys);
+    }
     setPhones(countrys);
     setlLoadPhoneCodes(true);
   };
   useEffect(() => {
     loadPhones();
-  }, []);
+  }, [parseCountrys]);
 
   const { error: errorFenext } = useValidator({
     data: data,

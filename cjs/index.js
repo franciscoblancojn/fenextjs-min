@@ -6144,7 +6144,7 @@ const InputRate = ({ className = "", classNameContentStar = "", classNameStar = 
             react_1.default.createElement("div", { className: `fenext-input-rate-number ${classNameNumber}` }, start))));
 };
 exports.InputRate = InputRate;
-const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultCode = "+57", defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
+const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultCode = "+57", defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, parseCountrys, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const { value, defaultValue, onChange } = (0, exports.useJsonString)({
         parseJson_to_String: parseJson_to_String ?? exports.parsePhone_to_String,
@@ -6184,13 +6184,16 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
     });
     const [phones, setPhones] = (0, react_1.useState)([]);
     const loadPhones = async () => {
-        const countrys = await (0, country_state_city_nextjs_1.getDataCountrys)();
+        let countrys = await (0, country_state_city_nextjs_1.getDataCountrys)();
+        if (parseCountrys) {
+            countrys = parseCountrys(countrys);
+        }
         setPhones(countrys);
         setlLoadPhoneCodes(true);
     };
     (0, react_1.useEffect)(() => {
         loadPhones();
-    }, []);
+    }, [parseCountrys]);
     const { error: errorFenext } = (0, exports.useValidator)({
         data: data,
         validator: validator ?? (0, exports.FenextjsValidator)(),
