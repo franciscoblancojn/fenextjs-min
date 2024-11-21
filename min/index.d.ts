@@ -945,6 +945,17 @@ export interface useActionProps<T = any> {
 export declare const useAction: <T = any>({ name, onActionExecute, env_log: env_log_boolean, }: useActionProps<T>) => {
     onAction: (detail?: T | undefined) => void;
 };
+export interface useHistoryProps {
+    name?: string;
+}
+export interface useHistoryOnBackProps {
+    onValidateRuteBack?: (path: string) => boolean;
+}
+export declare const useHistory: ({ name }: useHistoryProps) => {
+    paths: string[] | undefined;
+    onBack: ({ onValidateRuteBack }: useHistoryOnBackProps) => void;
+    currentPath: string | undefined;
+};
 export interface useValidatorProps<T> {
     data: T;
     validator?: FenextjsValidatorClass<T>;
