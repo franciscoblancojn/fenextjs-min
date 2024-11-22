@@ -9256,7 +9256,7 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
     return react_1.default.createElement(react_1.default.Fragment, null, CONTENT);
 };
 exports.ModalBase = ModalBase;
-const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, ElementActionModalActive, disabledElementActionModalActive = false, children, active: activeProps = undefined, disabledClose = false, onClose: onCloseProps, onActive: onActiveProps, type = "center", typeClose = "out", useRender = false, name, nameLocalStorage, activeByNameLocalStorage = false, activeByNameContentLocalStorage = false, closeComponent, }) => {
+const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, ElementActionModalActive, disabledElementActionModalActive = false, children, active: activeProps = undefined, disabledClose = false, onClose: onCloseProps, onActive: onActiveProps, type = "center", typeClose = "out", useRender = true, name, nameLocalStorage, activeByNameLocalStorage = false, activeByNameContentLocalStorage = false, closeComponent, }) => {
     const { active, onActive, onClose, activeName, activeNameLast } = (0, exports.useModal)({
         active: activeProps,
         disabled: disabledElementActionModalActive,
