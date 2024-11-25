@@ -1087,6 +1087,13 @@ export declare const useModal: ({ name, nameLocalStorage, active: activeProps, d
     onActive: () => void;
     onClose: () => void;
 };
+export interface useOnlineProps {
+    onOnline?: () => void;
+    onOffline?: () => void;
+}
+export declare const useOnline: ({ onOffline, onOnline }?: useOnlineProps) => {
+    isOnline: boolean;
+};
 export interface NotificationDataProps {
     type?: RequestResultTypeProps | keyof typeof RequestResultTypeProps;
     message: string;
