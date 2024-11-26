@@ -178,6 +178,7 @@ export enum ErrorCode {
 export interface ErrorProps<D = any> {
   code?: ErrorCode;
   message?: string;
+  content?: any;
   data?: D;
 }
 
@@ -590,12 +591,13 @@ export interface ErrorFenextjsProps<D> extends ErrorProps<D> {
 
 export class ErrorFenextjs<D = any> extends Error {
   code: ErrorCode;
+  content?: any;
   message: string;
   msg?: string;
   input?: string;
   data?: D;
 
-  constructor({ code, data, message, input }: ErrorFenextjsProps<D>) {
+  constructor({ code, data, message, input, content }: ErrorFenextjsProps<D>) {
     super(message);
     this.code = code ?? ErrorCode.ERROR;
     this.name = code ?? ErrorCode.ERROR;
@@ -603,6 +605,7 @@ export class ErrorFenextjs<D = any> extends Error {
     this.msg = message ?? "";
     this.data = data;
     this.input = input;
+    this.content = content;
   }
 }
 
@@ -14236,6 +14239,10 @@ export interface InputSelectBaseProps<T = any>
    * @default <Trash />
    */
   iconDelete?: ReactNode;
+  /**
+   * Use component to search when user types on text field.
+   */
+  useSearch?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -14285,6 +14292,7 @@ export const InputSelect = <T = any,>({
   changeByFirstOptionInOnBlur = false,
   converterInSearchWithMaxLenght = false,
   nItems = undefined,
+  useSearch = true,
 
   useItemMaxLengthShowOptions = true,
   maxLengthShowOptions = 20,
@@ -14404,6 +14412,9 @@ export const InputSelect = <T = any,>({
       .toLowerCase();
   };
   const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
+    if (!useSearch) {
+      return [...options];
+    }
     const textSearch = parseTextSearch(dataMemo?.textSearch);
 
     if (textSearch == "") {
@@ -14417,7 +14428,7 @@ export const InputSelect = <T = any,>({
           (parseTextSearch(option.id)?.includes(textSearch) ||
             textSearch?.includes(parseTextSearch(option.id)))),
     );
-  }, [options, dataMemo, searchById]);
+  }, [options, dataMemo, searchById, useSearch]);
   const { OPTIONS } = useMemo<{
     OPTIONS: InputSelectItemOptionBaseProps<T>[];
     nMax: boolean;
@@ -22233,13 +22244,17 @@ export const ErrorComponent = ({
     >
       {error ? (
         <>
-          {_t(error?.msg ?? "")}
-          {useErrorInput && error?.input && (
+          {error?.content ?? (
             <>
-              {" "}
-              <span className="fenext-error-input">
-                {_t(`[${error?.input ?? ""}]`)}
-              </span>
+              {_t(error?.msg ?? "")}
+              {useErrorInput && error?.input && (
+                <>
+                  {" "}
+                  <span className="fenext-error-input">
+                    {_t(`[${error?.input ?? ""}]`)}
+                  </span>
+                </>
+              )}
             </>
           )}
         </>

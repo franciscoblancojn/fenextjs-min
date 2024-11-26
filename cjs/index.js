@@ -156,11 +156,12 @@ var Unit_Volumen;
 })(Unit_Volumen || (exports.Unit_Volumen = Unit_Volumen = {}));
 class ErrorFenextjs extends Error {
     code;
+    content;
     message;
     msg;
     input;
     data;
-    constructor({ code, data, message, input }) {
+    constructor({ code, data, message, input, content }) {
         super(message);
         this.code = code ?? ErrorCode.ERROR;
         this.name = code ?? ErrorCode.ERROR;
@@ -168,6 +169,7 @@ class ErrorFenextjs extends Error {
         this.msg = message ?? "";
         this.data = data;
         this.input = input;
+        this.content = content;
     }
 }
 exports.ErrorFenextjs = ErrorFenextjs;
@@ -5403,7 +5405,7 @@ const InputSelectCity = ({ country = undefined, state = undefined, ...props }) =
             }, loader: loader, useLoader: true })));
 };
 exports.InputSelectCity = InputSelectCity;
-const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(exports.SvgArrow, null), iconSearch = react_1.default.createElement(exports.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(exports.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
+const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(exports.SvgArrow, null), iconSearch = react_1.default.createElement(exports.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(exports.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useSearch = true, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
     id: "fenext-item-max-length-show-options",
     text: "There are more elements ...",
 }, showOptionIconImg = true, validatorData, useTOption, forceShowOptionOnLoad = false, iconDelete = react_1.default.createElement(exports.SvgTrash, null), ...props }) => {
@@ -5494,6 +5496,9 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             .toLowerCase();
     };
     const OPTIONSSEARCH = (0, react_1.useMemo)(() => {
+        if (!useSearch) {
+            return [...options];
+        }
         const textSearch = parseTextSearch(dataMemo?.textSearch);
         if (textSearch == "") {
             return [...options];
@@ -5503,7 +5508,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             (searchById &&
                 (parseTextSearch(option.id)?.includes(textSearch) ||
                     textSearch?.includes(parseTextSearch(option.id)))));
-    }, [options, dataMemo, searchById]);
+    }, [options, dataMemo, searchById, useSearch]);
     const { OPTIONS } = (0, react_1.useMemo)(() => {
         if (props?.disabled) {
             return {
@@ -8045,11 +8050,11 @@ const ErrorComponent = ({ error, children, className = "", useDataError = true, 
         const err = useDataError ? error?.data : undefined;
         return err ? JSON.stringify(error) : undefined;
     }, [useDataError, error]);
-    return (react_1.default.createElement("div", { className: `fenext-error ${className} fenext-error-${error?.code}`, "data-error": dataError }, error ? (react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement("div", { className: `fenext-error ${className} fenext-error-${error?.code}`, "data-error": dataError }, error ? (react_1.default.createElement(react_1.default.Fragment, null, error?.content ?? (react_1.default.createElement(react_1.default.Fragment, null,
         _t(error?.msg ?? ""),
         useErrorInput && error?.input && (react_1.default.createElement(react_1.default.Fragment, null,
             " ",
-            react_1.default.createElement("span", { className: "fenext-error-input" }, _t(`[${error?.input ?? ""}]`)))))) : (_t(children))));
+            react_1.default.createElement("span", { className: "fenext-error-input" }, _t(`[${error?.input ?? ""}]`)))))))) : (_t(children))));
 };
 exports.ErrorComponent = ErrorComponent;
 const Form = ({ id = "", data, disabled = true, children, className = "", ...props }) => {

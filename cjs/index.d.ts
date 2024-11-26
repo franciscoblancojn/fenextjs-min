@@ -97,6 +97,7 @@ export declare enum ErrorCode {
 export interface ErrorProps<D = any> {
     code?: ErrorCode;
     message?: string;
+    content?: any;
     data?: D;
 }
 export type ThemeType = "light" | "dark" | "auto";
@@ -429,11 +430,12 @@ export interface ErrorFenextjsProps<D> extends ErrorProps<D> {
 }
 export declare class ErrorFenextjs<D = any> extends Error {
     code: ErrorCode;
+    content?: any;
     message: string;
     msg?: string;
     input?: string;
     data?: D;
-    constructor({ code, data, message, input }: ErrorFenextjsProps<D>);
+    constructor({ code, data, message, input, content }: ErrorFenextjsProps<D>);
 }
 export declare class ErrorNetworkError extends ErrorFenextjs {
     constructor();
@@ -2361,6 +2363,7 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
     validatorData?: FenextjsValidatorClass<T | undefined>;
     forceShowOptionOnLoad?: boolean;
     iconDelete?: ReactNode;
+    useSearch?: boolean;
 }
 export interface InputSelectProps<T = any> extends InputSelectBaseProps<T>, InputSelectClassProps {
 }
@@ -2369,7 +2372,7 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useSearch, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
 export interface useSelectOptionsPosProps {
     children?: ReactNode;
     target?: HTMLElement | null | undefined;
