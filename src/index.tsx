@@ -14545,6 +14545,7 @@ export const InputSelect = <T = any,>({
           onChange={(e) => {
             onChangeText_(e?.target?.value);
           }}
+          key={props.loader ? "loader" : "load"}
         >
           {create && typeSelect == "div" ? (
             <>
@@ -14927,7 +14928,7 @@ export const useSelectOptionsPos = ({
   };
   useEffect(onLoadRef, []);
 
-  const onLoadPos = () => {
+  const onLoadPos = useCallback(() => {
     if (ref && target) {
       const bounding = target.getBoundingClientRect();
       ReactDOM.render(<>{children}</>, ref);
@@ -14942,12 +14943,13 @@ export const useSelectOptionsPos = ({
         bounding.top > window?.innerHeight - bounding.bottom ? "top" : "bottom",
       );
     }
-  };
-  const onLoadChildren = () => {
+  }, [children, target, ref]);
+
+  const onLoadChildren = useCallback(() => {
     if (ref) {
       ReactDOM.render(<>{children}</>, ref);
     }
-  };
+  }, [children, ref]);
 
   return {
     ref,

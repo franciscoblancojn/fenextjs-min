@@ -5597,7 +5597,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         return (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(TAG, { id: props?.datalist, className: `fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`, onChange: (e) => {
                     onChangeText_(e?.target?.value);
-                } },
+                }, key: props.loader ? "loader" : "load" },
                 create && typeSelect == "div" ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(exports.InputSelectOption, { type: "div", id: create?.id ?? "create", text: create?.text ?? "Create", children: create?.children ?? undefined, _t: _t, isBtn: true, onClick: create?.onClick ?? onCreate }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 OPTIONSLENGTH != 0 && typeSelect == "select" ? (react_1.default.createElement(react_1.default.Fragment, null,
@@ -5769,7 +5769,7 @@ const useSelectOptionsPos = ({ children, target, }) => {
         }
     };
     (0, react_1.useEffect)(onLoadRef, []);
-    const onLoadPos = () => {
+    const onLoadPos = (0, react_1.useCallback)(() => {
         if (ref && target) {
             const bounding = target.getBoundingClientRect();
             ReactDOM.render(react_1.default.createElement(react_1.default.Fragment, null, children), ref);
@@ -5779,12 +5779,12 @@ const useSelectOptionsPos = ({ children, target, }) => {
             ref.style.setProperty("--element-bottom", `${bounding.bottom}px`);
             ref.setAttribute("fenext-direction-pos", bounding.top > window?.innerHeight - bounding.bottom ? "top" : "bottom");
         }
-    };
-    const onLoadChildren = () => {
+    }, [children, target, ref]);
+    const onLoadChildren = (0, react_1.useCallback)(() => {
         if (ref) {
             ReactDOM.render(react_1.default.createElement(react_1.default.Fragment, null, children), ref);
         }
-    };
+    }, [children, ref]);
     return {
         ref,
         onLoadPos,
