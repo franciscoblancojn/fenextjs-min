@@ -2825,7 +2825,7 @@ const useDataLayer = ({}) => {
 };
 exports.useDataLayer = useDataLayer;
 const useLanguage = ({ langs, listTranductions, defaultLang, onNoFoundTranslate, fallbackNoFoundTranslation = undefined, }) => {
-    const { setLocalStorage: setCurrentLang, value: currentLang } = (0, exports.useLocalStorage)({
+    const { setLocalStorage: setCurrentLang, value: currentLang, load, } = (0, exports.useLocalStorage)({
         name: "fenextjs-lang",
         defaultValue: defaultLang ?? langs?.[0],
     });
@@ -2861,6 +2861,8 @@ const useLanguage = ({ langs, listTranductions, defaultLang, onNoFoundTranslate,
     ]);
     return {
         onTranslate,
+        load,
+        currentLang,
         setCurrentLang,
     };
 };

@@ -4910,11 +4910,14 @@ export const useLanguage = <Langs extends string[]>({
   onNoFoundTranslate,
   fallbackNoFoundTranslation = undefined,
 }: useLanguageProps<Langs>) => {
-  const { setLocalStorage: setCurrentLang, value: currentLang } =
-    useLocalStorage<Langs[number]>({
-      name: "fenextjs-lang",
-      defaultValue: defaultLang ?? langs?.[0],
-    });
+  const {
+    setLocalStorage: setCurrentLang,
+    value: currentLang,
+    load,
+  } = useLocalStorage<Langs[number]>({
+    name: "fenextjs-lang",
+    defaultValue: defaultLang ?? langs?.[0],
+  });
 
   const onTranslate = useCallback(
     (word?: any) => {
@@ -4955,6 +4958,8 @@ export const useLanguage = <Langs extends string[]>({
 
   return {
     onTranslate,
+    load,
+    currentLang,
     setCurrentLang,
   };
 };
