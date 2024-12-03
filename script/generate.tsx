@@ -4,7 +4,7 @@ interface onCopyLibProps {
     lib: string
 }
 
-const onCopyLib = async ({ lib }: onCopyLibProps) => {
+const onCopyLib =  async ({ lib }: onCopyLibProps) => {
     console.log("---------------------------");
     console.log(`Init generate ${lib}`);
     console.log("---------------------------");
@@ -48,8 +48,7 @@ const onCopyLib = async ({ lib }: onCopyLibProps) => {
 
 
 const main = async () => {
-
-    const ALL_LIB = await Promise.all([
+    const listPromises = [
         onCopyLib({
             lib: "interface"
         }),
@@ -80,7 +79,14 @@ const main = async () => {
         onCopyLib({
             lib: "component"
         }),
-    ])
+    ]
+    // const ALL_LIB = []
+    // for (let i = 0; i < listPromises.length; i++) {
+    //     const element = await listPromises[i]();
+    //     ALL_LIB.push(element)
+    // }
+
+    const ALL_LIB = await Promise.all(listPromises)
     let CODE = ALL_LIB.join("")
 
     const REPLACE = [

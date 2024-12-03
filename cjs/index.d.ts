@@ -769,6 +769,7 @@ export interface getBase64ForImageDonwloadProps {
     url: string;
 }
 export declare const getBase64ForImageDonwload: ({ url, }: getBase64ForImageDonwloadProps) => Promise<string>;
+export declare const cleanTextForTranslate: (text: string) => string;
 export declare const env_log: (data: any, options?: {
     name?: string;
     color?: string;
@@ -1216,6 +1217,25 @@ export interface useDataLayerPushProps {
 }
 export declare const useDataLayer: ({}: useDataLayerProps) => {
     push: ({ event, ...props }: useDataLayerPushProps) => boolean;
+};
+export interface LanguageListProps<Langs extends string[]> {
+    [word: string]: {
+        [lang in Langs[number]]: any;
+    };
+}
+export interface useLanguageProps<Langs extends string[]> {
+    defaultLang?: Langs[number];
+    langs: Langs;
+    listTranductions: LanguageListProps<Langs>;
+    onNoFoundTranslate?: (data: {
+        word: string;
+        lang: Langs[number];
+    }) => void;
+    fallbackNoFoundTranslation?: string;
+}
+export declare const useLanguage: <Langs extends string[]>({ langs, listTranductions, defaultLang, onNoFoundTranslate, fallbackNoFoundTranslation, }: useLanguageProps<Langs>) => {
+    onTranslate: (word?: any) => any;
+    setCurrentLang: (newValue: any) => void;
 };
 export interface useDataOptionsRefreshDataIfChangeDefaultDataOptions {
     active?: boolean;
