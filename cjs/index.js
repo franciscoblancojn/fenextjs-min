@@ -8108,42 +8108,27 @@ const ErrorComponent = ({ error, children, className = "", useDataError = true, 
             react_1.default.createElement("span", { className: "fenext-error-input" }, _t(`[${error?.input ?? ""}]`)))))))) : (_t(children))));
 };
 exports.ErrorComponent = ErrorComponent;
-const Form = ({ id = "", data, disabled = true, children, className = "", ...props }) => {
-    const { _t } = (0, exports.use_T)({ ...props });
-    const { pop } = (0, exports.useNotification)({});
+const Form = ({ id = "", disabled = true, children, className = "", onSubmit = async () => { }, }) => {
     const { push } = (0, exports.useDataLayer)({});
-    const onSendForm = async () => {
-        try {
-            const result = await props?.onSubmit?.(data);
-            pop({
-                type: result?.type,
-                message: _t(result?.message ?? ""),
-            });
-            if (result?.type == RequestResultTypeProps.OK) {
-                if (id != "") {
-                    push({
-                        event: `form-${id}`,
-                    });
-                }
-                props?.onAfterSubmit?.(result);
-            }
-        }
-        catch (error) {
-            pop({
-                type: RequestResultTypeProps.ERROR,
-                message: _t(error?.message ?? error ?? ""),
-            });
-        }
-    };
-    const onSubmit = async (e) => {
+    const onSendForm = async (e) => {
         e.preventDefault();
         if (disabled) {
             return;
         }
-        onSendForm();
+        try {
+            await onSubmit?.();
+            if (id != "") {
+                push({
+                    event: `form-${id}`,
+                });
+            }
+        }
+        catch (error) {
+            error;
+        }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSubmit }, _t(children))));
+        react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSendForm }, children)));
 };
 exports.Form = Form;
 const Tooltip = ({ className = "", children, tooltip, positionX = "center", positionY = "top", ...props }) => {

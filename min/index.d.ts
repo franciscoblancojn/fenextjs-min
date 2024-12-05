@@ -3201,18 +3201,13 @@ export interface ErrorComponentClassProps {
 export interface ErrorComponentProps extends ErrorComponentBaseProps, ErrorComponentClassProps {
 }
 export declare const ErrorComponent: ({ error, children, className, useDataError, useErrorInput, ...props }: ErrorComponentProps) => React.JSX.Element;
-export type onError = (error: string) => void;
-export type onOk = () => Promise<void> | void;
-export interface FormProps<D = any, R = any, E = any, T = RequestResultTypeProps> extends PropsWithChildren, _TProps {
+export interface FormProps extends PropsWithChildren {
     id?: string;
-    data: D;
-    onSubmit?: RequestProps<D, R, E, T>;
-    onAfterSubmit?: (data: RequestResultDataProps<R, E, T>) => void;
+    onSubmit?: () => Promise<void>;
     disabled?: boolean;
-    loader?: boolean;
     className?: string;
 }
-export declare const Form: <D = any, R = any, E = any>({ id, data, disabled, children, className, ...props }: React.PropsWithChildren<FormProps<D, R, E, RequestResultTypeProps>>) => React.JSX.Element;
+export declare const Form: ({ id, disabled, children, className, onSubmit, }: FormProps) => React.JSX.Element;
 export type TooltipPositionX = "center" | "right" | "left";
 export type TooltipPositionY = "center" | "top" | "bottom";
 export interface TooltipProps extends _TProps {
