@@ -1,9 +1,11 @@
+/// <reference types="node" />
 import React, { ReactNode, PropsWithChildren, CSSProperties, SyntheticEvent, AnchorHTMLAttributes } from "react";
 import { LinkProps as LinkNextProps } from "next/link";
 import { AutocompleteProps as GoogleAutocompleteProps, LoadScriptProps, GoogleMapProps, MarkerProps } from "@react-google-maps/api";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/storage";
+import { ParsedUrlQuery } from "querystring";
 export declare enum Card_Enum {
     VISA = "VISA",
     MASTERCARD = "MASTERCARD",
@@ -1175,7 +1177,7 @@ export declare const useRequestLite: <FP, FR, FE = ErrorFenextjs<any>>({ f, onEr
     onRequest: (props: FP) => Promise<FR | FE>;
     onClear: () => void;
 };
-export interface useQuery_QueryProps {
+export interface QueryDataDefault {
     id?: string;
     search?: string;
     searchAddress?: string;
@@ -1190,17 +1192,17 @@ export interface useQuery_QueryProps {
     orderBy?: string;
     exportBy?: string[];
 }
-export type useQuery_QueryKeysProps = keyof useQuery_QueryProps;
-export interface useQueryProps {
-    ignoreQuerys?: [id: useQuery_QueryKeysProps];
+export interface useQueryProps<T = QueryDataDefault> {
+    ignoreQuerys?: [id: keyof T];
+    parseQuery?: (data: ParsedUrlQuery) => T;
 }
-export declare const useQuery: (props?: useQueryProps) => {
+export declare const useQuery: <T = QueryDataDefault>(props?: useQueryProps<T> | undefined) => {
     load: boolean;
-    query: useQuery_QueryProps;
-    setQuery: (query: useQuery_QueryProps) => boolean;
-    onConcatQuery: (newQuery: useQuery_QueryProps) => boolean;
-    onChangeQuery: (id: keyof useQuery_QueryProps) => (value: string | number | string[] | undefined) => boolean;
-    onDeleteQuery: (id: keyof useQuery_QueryProps) => boolean;
+    query: T;
+    setQuery: (query: T) => boolean;
+    onConcatQuery: (newQuery: T) => boolean;
+    onChangeQuery: (id: keyof T) => (value: T[keyof T]) => boolean;
+    onDeleteQuery: (id: keyof T) => boolean;
     isChange: boolean;
 };
 export interface use_TProps extends _TProps {

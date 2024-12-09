@@ -167,6 +167,7 @@ const main = async () => {
             DatabaseReference,
         } from "firebase/database";
         import QrScanner from "qr-scanner";
+        import { ParsedUrlQuery } from "querystring";
     `
 
     CODE = CODE_TOP + CODE

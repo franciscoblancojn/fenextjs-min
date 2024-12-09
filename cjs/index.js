@@ -2715,35 +2715,40 @@ const useQuery = (props) => {
             return {};
         }
         const q = router?.query ?? {};
-        const { id = undefined, search = "", searchAddress = "", tab = "all", page = "0", npage = "10", totalpage = "100", allitems = "1000", start = undefined, end = undefined, order = undefined, orderBy = undefined, } = q;
-        const r = {
-            ...q,
-            id,
-            search,
-            searchAddress,
-            tab,
-            page: parseInt(page),
-            npage: parseInt(npage),
-            totalpage: parseInt(totalpage),
-            allitems: parseInt(allitems),
-            start: start ? parseInt(start) : 0,
-            end: end ? parseInt(end) : tomorrow?.getTime(),
-            order,
-            orderBy,
-            exportBy: [q?.export ?? []].flat(2),
-        };
+        const parseQuery = props?.parseQuery ??
+            ((q) => {
+                const { id = undefined, search = "", searchAddress = "", tab = "all", page = "0", npage = "10", totalpage = "100", allitems = "1000", start = undefined, end = undefined, order = undefined, orderBy = undefined, } = q;
+                const r = {
+                    ...q,
+                    id,
+                    search,
+                    searchAddress,
+                    tab,
+                    page: parseInt(page),
+                    npage: parseInt(npage),
+                    totalpage: parseInt(totalpage),
+                    allitems: parseInt(allitems),
+                    start: start ? parseInt(start) : 0,
+                    end: end ? parseInt(end) : tomorrow?.getTime(),
+                    order,
+                    orderBy,
+                    exportBy: [q?.export ?? []].flat(2),
+                };
+                return r;
+            });
+        const r = parseQuery(q);
         (props?.ignoreQuerys ?? []).map((e) => {
             delete r[e];
         });
         return r;
-    }, [router?.query, router?.isReady, props]);
+    }, [router?.query, router?.isReady, props?.ignoreQuerys, props?.parseQuery]);
     const setQuery = (0, react_1.useCallback)((query) => {
         if (!(router?.isReady ?? false)) {
             return false;
         }
         const queryParse = {};
         Object.keys(query).forEach((key) => {
-            const v = `${query[key] ?? ""}`;
+            const v = `${query?.[key] ?? ""}`;
             if (v != "") {
                 queryParse[key] = v;
             }
