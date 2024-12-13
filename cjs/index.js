@@ -8575,7 +8575,7 @@ const User = ({ className = "", classNameEmail = "", classNamePicture = "", clas
             react_1.default.createElement("div", { className: `fenext-user-email ${classNameEmail} ` }, user?.email))));
 };
 exports.User = User;
-const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMin1920 = undefined, srcMin1680 = undefined, srcMin1440 = undefined, srcMin1024 = undefined, srcMin992 = undefined, srcMin768 = undefined, srcMin575 = undefined, imgIf404 = undefined, layers = [], onErrorImg: onErrorImg_, onClick, loader = false, }) => {
+const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMin1920 = undefined, srcMin1680 = undefined, srcMin1440 = undefined, srcMin1024 = undefined, srcMin992 = undefined, srcMin768 = undefined, srcMin575 = undefined, imgIf404 = undefined, layers = [], onErrorImg: onErrorImg_, onClick, loader = false, onLoad, }) => {
     const onErrorImg = (e) => {
         const img = e.target;
         if (imgIf404) {
@@ -8600,7 +8600,7 @@ const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMi
             srcMin575 ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("source", { srcSet: `${srcMin575}`, media: "(min-width: 575px)" }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
             loader && react_1.default.createElement(exports.LoaderLine, null),
-            react_1.default.createElement("img", { src: `${src}`, alt: alt ?? name, "data-src": `${src}`, "data-name": name, "data-alt": alt, className: `fenext-img ${classNameImg}`, onError: onErrorImg }),
+            react_1.default.createElement("img", { src: `${src}`, alt: alt ?? name, "data-src": `${src}`, "data-name": name, "data-alt": alt, className: `fenext-img ${classNameImg}`, onError: onErrorImg, onLoad: onLoad }),
             layers?.map((e, i) => (react_1.default.createElement("div", { key: i, className: "fenext-img-layer", style: e }))))));
 };
 exports.Img = Img;
