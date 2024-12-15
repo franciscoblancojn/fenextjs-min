@@ -5707,6 +5707,31 @@ export const useTheme = ({}: useThemeProps) => {
   };
 };
 
+export interface useActionDropDownProps {
+  name?: string;
+  onChange?: (e?: boolean) => void;
+}
+export const useActionDropDown = ({
+  name,
+  onChange,
+}: useActionDropDownProps) => {
+  const { onAction } = useAction<boolean>({
+    name: `fenext-dropdown-${name ?? ""}`,
+    onActionExecute: name != undefined ? onChange : undefined,
+  });
+  return {
+    onClose: () => {
+      onAction(false);
+    },
+    onActive: () => {
+      onAction(true);
+    },
+    onToogle: () => {
+      onAction();
+    },
+  };
+};
+
 export const SvgMove = ({ className = "" }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22924,73 +22949,208 @@ export const Tab = <T = string,>({
 };
 
 /**
- * Properties for the base DropDown component.
+ * Properties for the DropDown component.
  */
-export interface DropDownBaseProps extends CollapseBaseProps {}
-
-/**
- * Properties for the class of the DropDown component.
- */
-export interface DropDownClassProps extends CollapseClassProps {
+export interface DropDownProps {
   /**
    * The class name for the component.
    */
-  classNameDropDown?: string;
+  className?: string;
+
+  /**
+   * Indicates whether the Collapse is currently in the loading state.
+   */
+  loader?: boolean;
+  /**
+   * Indicates whether the Collapse is disabled or not.
+   */
+  disabled?: boolean;
+  /**
+   * Indicates whether the Collapse is defaultActive for show.
+   */
+  defaultActive?: boolean;
+  /**
+   * Indicates whether the Collapse is active for show.
+   */
+  active?: boolean;
+  /**
+   * The name for the component.
+   */
+  name?: string;
+  /**
+   * Header of Collapse.
+   */
+  header: ReactNode;
+  /**
+   * onChange of Collapse.
+   */
+  onChange?: (value: boolean) => void;
+  /**
+   * iconArrow of Collapse.
+   * @default ArrowCollapse
+   */
+  iconArrow?: ReactNode;
+
+  /**
+   * children of Collapse.
+   */
+  children?: ReactNode;
+
+  /**
+   * rotateIcon of Collapse.
+   */
+  rotateIcon?: boolean;
+  /**
+   * type of show content collapse.
+   */
+  type?: "checked" | "focus";
 }
 
-/**
- * Properties for the DropDown component.
- */
-export interface DropDownProps extends DropDownBaseProps, DropDownClassProps {}
-
 export const DropDown = ({
-  classNameDropDown = "",
-  show = "focus",
-  ...props
+  className = "",
+
+  header,
+  active: activeProps,
+  defaultActive,
+  disabled,
+  loader,
+  onChange: onChangeProps,
+  iconArrow = <SvgArrow />,
+  rotateIcon = true,
+  name,
+  children,
+  type = "focus",
 }: DropDownProps) => {
-  const dropDownRef = useRef<HTMLDivElement>(null);
-  const [spaces, setSpaces] = useState({
-    spaceBottom: 0,
-    spaceLeft: 0,
-    spaceRight: 0,
-    spaceTop: 0,
+  const [tlrb, settlrb] = useState<{
+    top: string;
+    left: string;
+    right: string;
+    bottom: string;
+  }>({
+    top: "inherit",
+    left: "inherit",
+    right: "inherit",
+    bottom: "inherit",
+  });
+  const refDropDownHeader = useRef<HTMLDivElement>(null);
+  const refDropDownBody = useRef<HTMLDivElement>(null);
+  const [isChange, setIsChange] = useState(false);
+  const [active_, setActive] = useState(defaultActive);
+
+  const active = useMemo(() => activeProps ?? active_, [activeProps, active_]);
+
+  const onChange = (b?: boolean) => {
+    if (disabled) {
+      return;
+    }
+    setActive(b ?? !active);
+    onChangeProps?.(b ?? !active);
+    setIsChange(true);
+  };
+  useActionDropDown({
+    name,
+    onChange: (e) => {
+      setTimeout(() => {
+        onChange(e);
+      }, 50);
+    },
   });
 
-  const onDefDropDownPos = () => {
-    if (dropDownRef.current) {
-      setSpaces(GetSpaceParent(dropDownRef.current));
+  const onClick: React.MouseEventHandler<HTMLDivElement> = () => {
+    if (disabled) {
+      return;
     }
+    onChange();
+
+    const element = refDropDownHeader?.current as HTMLDivElement;
+
+    const selectRect = element?.getBoundingClientRect?.();
+    const { top, left, right, bottom } = selectRect;
+
+    const swForTop = top > window.innerHeight - bottom;
+    const swForLeft = left > window.innerWidth - right;
+
+    settlrb({
+      top: swForTop ? "inherit" : `${bottom}px`,
+      bottom: !swForTop ? "inherit" : `${window.innerHeight - top}px`,
+      left: swForLeft ? "inherit" : `${left}px`,
+      right: !swForLeft ? "inherit" : `${window.innerWidth - right}px`,
+    });
   };
+
+  const onClickClose = useCallback<
+    (this: GlobalEventHandlers, ev: MouseEvent) => any
+  >(
+    (ev) => {
+      if (active) {
+        const element = ev.target as HTMLDivElement;
+        if (
+          refDropDownHeader.current?.contains(element) ||
+          refDropDownBody.current?.contains(element)
+        ) {
+          return;
+        }
+        onChange();
+      }
+    },
+    [active, refDropDownBody, refDropDownHeader],
+  );
+
   useEffect(() => {
-    onDefDropDownPos();
-    window.addEventListener("resize", onDefDropDownPos);
-    window.addEventListener("scroll", onDefDropDownPos);
-    return () => {
-      window.removeEventListener("resize", onDefDropDownPos);
-      window.removeEventListener("scroll", onDefDropDownPos);
-    };
-  }, [dropDownRef.current]);
+    if (type == "focus") {
+      window.addEventListener("click", onClickClose);
+      return () => {
+        window.removeEventListener("click", onClickClose);
+      };
+    }
+    return;
+  }, [type, active, refDropDownBody, refDropDownHeader]);
+
   return (
     <>
       <div
-        ref={dropDownRef}
-        className={`fenext-dropdown fenext-dropdown-${
-          spaces.spaceRight > spaces.spaceLeft ? "left" : "right"
-        } fenext-dropdown-${
-          spaces.spaceTop > spaces.spaceBottom ? "up" : "down"
-        } ${classNameDropDown} `}
-        style={
-          {
-            ["--fenext-space-top"]: spaces.spaceTop,
-            ["--fenext-space-left"]: spaces.spaceLeft,
-            ["--fenext-space-right"]: spaces.spaceRight,
-            ["--fenext-space-bottom"]: spaces.spaceBottom,
-          } as React.CSSProperties
-        }
-        onMouseEnter={onDefDropDownPos}
+        ref={refDropDownHeader}
+        data-component={"fenext-dropdown"}
+        className={`
+                    fenext-dropdown 
+                    fenext-dropdown-${active ? "active" : "inactive"}
+                    fenext-dropdown-rotate-icon-${rotateIcon ? "yes" : "no"}
+                    ${className}
+                `}
+        onClick={onClick}
       >
-        <Collapse {...props} show={show} />
+        <div className={`fenext-dropdown-header-content `}>{header}</div>
+        <div className={`fenext-dropdown-header-icon `}>
+          {loader ? (
+            <>
+              <Loader />
+            </>
+          ) : (
+            <>{iconArrow}</>
+          )}
+        </div>
       </div>
+      <Portal>
+        <div
+          ref={refDropDownBody}
+          data-component={"fenext-dropdown-body"}
+          className={`
+                        fenext-dropdown-body
+                        fenext-dropdown-body-${isChange ? "change" : "no-change"}
+                        fenext-dropdown-body-${active ? "active" : "inactive"}
+                    `}
+          style={
+            {
+              ["--fenext-dropdown-top"]: tlrb.top,
+              ["--fenext-dropdown-left"]: tlrb.left,
+              ["--fenext-dropdown-right"]: tlrb.right,
+              ["--fenext-dropdown-bottom"]: tlrb.bottom,
+            } as React.CSSProperties
+          }
+        >
+          {children}
+        </div>
+      </Portal>
     </>
   );
 };

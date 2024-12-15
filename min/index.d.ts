@@ -1366,6 +1366,15 @@ export declare const useTheme: ({}: useThemeProps) => {
     theme: ThemeType | undefined;
     setTheme: (newValue: any) => void;
 };
+export interface useActionDropDownProps {
+    name?: string;
+    onChange?: (e?: boolean) => void;
+}
+export declare const useActionDropDown: ({ name, onChange, }: useActionDropDownProps) => {
+    onClose: () => void;
+    onActive: () => void;
+    onToogle: () => void;
+};
 export declare const SvgMove: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
@@ -3266,14 +3275,21 @@ export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {
 }
 export declare const parseTabCount: <T>(d: TabItemProps<T>, _t: ReturnType<typeof use_T>["_t"]) => TabItemProps<T>;
 export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, activeTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, useCount, ...props }: TabProps<T>) => React.JSX.Element;
-export interface DropDownBaseProps extends CollapseBaseProps {
+export interface DropDownProps {
+    className?: string;
+    loader?: boolean;
+    disabled?: boolean;
+    defaultActive?: boolean;
+    active?: boolean;
+    name?: string;
+    header: ReactNode;
+    onChange?: (value: boolean) => void;
+    iconArrow?: ReactNode;
+    children?: ReactNode;
+    rotateIcon?: boolean;
+    type?: "checked" | "focus";
 }
-export interface DropDownClassProps extends CollapseClassProps {
-    classNameDropDown?: string;
-}
-export interface DropDownProps extends DropDownBaseProps, DropDownClassProps {
-}
-export declare const DropDown: ({ classNameDropDown, show, ...props }: DropDownProps) => React.JSX.Element;
+export declare const DropDown: ({ className, header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow, rotateIcon, name, children, type, }: DropDownProps) => React.JSX.Element;
 export interface PrintIframeComponentProps {
     loader: boolean;
 }
