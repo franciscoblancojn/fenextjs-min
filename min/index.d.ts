@@ -669,6 +669,7 @@ export declare class FenextjsValidatorClass<T = any> {
     onValidate(d: T): ErrorFenextjs | true;
 }
 export declare const FenextjsValidator: <T = any>(props?: FenextjsValidatorClassConstructorProps) => FenextjsValidatorClass<T>;
+export declare const FV: <T = any>(props?: FenextjsValidatorClassConstructorProps) => FenextjsValidatorClass<T>;
 export declare const parseNumber: (n: number | string) => number;
 export declare const parseCountry_to_String: (data: CountryProps | undefined | null) => string | undefined;
 export declare const parseString_to_Country: (data: string | undefined | null) => CountryProps | undefined;

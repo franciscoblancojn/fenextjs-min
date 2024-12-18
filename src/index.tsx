@@ -1342,7 +1342,7 @@ export class FenextjsValidatorClass<T = any> {
     }
     // Comprueba si los datos no son de tipo objeto.
     // Si no son de tipo objeto, lanza un ErrorInputInvalid para indicar que la validación falló.
-    if (typeof this.data !== "object") {
+    if (typeof this.data !== "object" && this.messageError?.isObject) {
       this.onError(ErrorCode.INPUT_INVALID, this.messageError?.isObject);
     }
     // Si la validación "isObject"  no se proporcionaron reglas de validación (objectValue), no se hace nada.
@@ -1371,7 +1371,8 @@ export class FenextjsValidatorClass<T = any> {
       const r = validator.onValidate(this.data?.[key]);
 
       // Si alguna propiedad no cumple con las reglas de validación, se lanza el error devuelto por la validación.
-      if (r !== true) {
+      if (r instanceof ErrorFenextjs) {
+        this.onError(r.code, r.msg ?? r?.message);
         throw r;
       }
     }
@@ -1971,6 +1972,8 @@ export class FenextjsValidatorClass<T = any> {
 export const FenextjsValidator = <T = any,>(
   props?: FenextjsValidatorClassConstructorProps,
 ) => new FenextjsValidatorClass<T>(props);
+
+export const FV = FenextjsValidator;
 
 /**
  * Parses a string or number to a formatted number.
