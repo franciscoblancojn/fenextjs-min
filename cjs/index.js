@@ -4583,17 +4583,22 @@ const Cols = ({ className = "", children, nCols = 2, breakInside = true, ...prop
             } }, _t(children))));
 };
 exports.Cols = Cols;
-const Button = ({ className = "", classNameLoader = "", children, loader = false, disabled = false, onClick = () => { }, onClickDisabled = () => { }, icon = "", isBtn = true, full = false, size = "normal", ...props }) => {
+const Button = ({ className = "", classNameLoader = "", children, loader = false, disabled = false, onClick = () => { }, onClickDisabled: onClickDisabledProps, icon = "", isBtn = true, full = false, size = "normal", ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const Tag = isBtn ? "button" : "div";
+    const onClickDisabled = (e) => {
+        e?.preventDefault?.();
+        onClickDisabledProps?.(e);
+    };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(Tag, { onClick: disabled ? onClickDisabled : onClick, className: `
                     fenext-btn
                     fenext-btn-${loader ? "loader" : ""}
+                    fenext-btn-${disabled ? "disabled" : ""}
                     fenext-btn-size-${size}
                     ${full ? "fenext-btn-size-full" : ""}
                     ${className}
-                `, disabled: loader || disabled },
+                `, disabled: loader },
             loader && react_1.default.createElement(exports.Loader, { classNameLoader: classNameLoader }),
             icon,
             _t(children))));
