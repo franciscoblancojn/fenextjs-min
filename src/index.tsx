@@ -11071,6 +11071,10 @@ export interface ButtonClassProps extends LoaderClassProps {
    * The class name for the component.
    */
   className?: string;
+  /**
+   * The class name for the component.
+   */
+  classNameDisabled?: string;
 }
 
 /**
@@ -11081,6 +11085,7 @@ export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {}
 export const Button = ({
   className = "",
   classNameLoader = "",
+  classNameDisabled = "",
 
   children,
   loader = false,
@@ -11108,7 +11113,7 @@ export const Button = ({
         className={`
                     fenext-btn
                     fenext-btn-${loader ? "loader" : ""}
-                    fenext-btn-${disabled ? "disabled" : ""}
+                    fenext-btn-${disabled ? `disabled ${classNameDisabled}` : ""}
                     fenext-btn-size-${size}
                     ${full ? "fenext-btn-size-full" : ""}
                     ${className}
