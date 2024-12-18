@@ -3354,14 +3354,17 @@ export interface StepsClassProps {
     classNameStepLabel?: string;
     classNameContentBtn?: string;
     classNameBtn?: string;
+    classNameBtnDisabled?: string;
     classNameBtnNext?: string;
+    classNameBtnNextDisabled?: string;
     classNameBtnPrev?: string;
+    classNameBtnPrevDisabled?: string;
     forceShowBtnPrev?: boolean;
     forceShowBtnNext?: boolean;
 }
 export interface StepsProps extends StepsBaseProps, StepsClassProps {
 }
-export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnNext, classNameBtnPrev, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
+export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnDisabled, classNameBtnNext, classNameBtnNextDisabled, classNameBtnPrev, classNameBtnPrevDisabled, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
 export type BackTypeOnBack = "fenextjs-history" | "history" | "router" | "link" | "none";
 export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
     loader?: boolean;

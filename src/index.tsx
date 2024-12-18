@@ -23417,14 +23417,18 @@ export interface StepsClassProps {
    * The class name for the btn next and prev.
    */
   classNameBtn?: string;
+
+  classNameBtnDisabled?: string;
   /**
    * The class name for the btn next.
    */
   classNameBtnNext?: string;
+  classNameBtnNextDisabled?: string;
   /**
    * The class name for the btn prev.
    */
   classNameBtnPrev?: string;
+  classNameBtnPrevDisabled?: string;
 
   forceShowBtnPrev?: boolean;
 
@@ -23449,8 +23453,11 @@ export const Steps = ({
   classNameStepLabel = "",
   classNameContentBtn = "",
   classNameBtn = "",
+  classNameBtnDisabled = "",
   classNameBtnNext = "",
+  classNameBtnNextDisabled = "",
   classNameBtnPrev = "",
+  classNameBtnPrevDisabled = "",
 
   defaultStep = 0,
   step = undefined,
@@ -23616,6 +23623,7 @@ export const Steps = ({
           {(currentStep != 0 || forceShowBtnPrev) && (
             <Button
               className={`fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`}
+              classNameDisabled={`${classNameBtnDisabled} ${classNameBtnPrevDisabled}`}
               disabled={disabledBtnPrev}
               onClick={onPrev_}
               onClickDisabled={onPrevDisabled}
@@ -23662,6 +23670,7 @@ export const Steps = ({
           {(currentStep != items.length - 1 || forceShowBtnNext) && (
             <Button
               className={`fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`}
+              classNameDisabled={`${classNameBtnDisabled} ${classNameBtnNextDisabled}`}
               disabled={disabledBtnNext}
               onClick={onNext_}
               onClickDisabled={onNextDisabled}
