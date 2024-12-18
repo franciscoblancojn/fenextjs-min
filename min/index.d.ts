@@ -2218,7 +2218,7 @@ export interface InputTextBaseProps extends _TProps {
 }
 export interface InputTextProps extends InputTextBaseProps, InputTextClassProps {
 }
-export declare const InputText: ({ id, datalist, name, label, placeholder, placeholderFocus, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, iconLoader, onChange, onBlur, onEnter, onChangeValidate, parseText, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, required, requiredText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, onWheel, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, showFocusInTarget, ...p }: InputTextProps) => React.JSX.Element;
+export declare const InputText: ({ id, datalist, name, label, placeholder, placeholderFocus, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, classNameError, iconLoader, onChange, onBlur, onEnter, onChangeValidate, parseText, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, required, requiredText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, onWheel, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, showFocusInTarget, ...p }: InputTextProps) => React.JSX.Element;
 export interface InputCalendarProps extends Pick<InputTextProps, "label" | "placeholder" | "optional" | "optionalText" | "required" | "requiredText" | "icon" | "iconPos" | "validator" | "errorWithIsChange">, Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
     defaultValue?: Date;
     value?: Date;
@@ -2709,7 +2709,7 @@ export interface InputTextSelectBaseProps extends Omit<InputTextBaseProps, "type
 }
 export interface InputTextSelectProps extends InputTextSelectBaseProps, InputTextSelectClassProps {
 }
-export declare const InputTextSelect: ({ label, placeholderSelect, placeholderText, defaultValue, value: valueProps, onChange, validator, posSelect, errorWithIsChange, error, ...props }: InputTextSelectProps) => React.JSX.Element;
+export declare const InputTextSelect: ({ label, placeholderSelect, placeholderText, defaultValue, value: valueProps, onChange, validator, posSelect, errorWithIsChange, error, classNameError, ...props }: InputTextSelectProps) => React.JSX.Element;
 export interface InputPasswordBaseProps extends Omit<InputTextBaseProps, "type"> {
 }
 export interface InputPasswordClassProps extends InputTextClassProps {

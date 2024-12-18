@@ -4821,7 +4821,7 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
             } })));
 };
 exports.InputNumber = InputNumber;
-const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(exports.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = "off", useLoader = true, isChange: isChangeProps = undefined, onKeyDown, onWheel, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, showFocusInTarget = false, ...p }) => {
+const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", classNameError = "", iconLoader = react_1.default.createElement(exports.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = "off", useLoader = true, isChange: isChangeProps = undefined, onKeyDown, onWheel, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, showFocusInTarget = false, ...p }) => {
     const { _t } = (0, exports.use_T)({ ...p });
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     const [statusInput, setStateInput] = (0, react_1.useState)("");
@@ -4961,7 +4961,7 @@ const InputText = ({ id = "", datalist = undefined, name = "", label = "", place
                         maxLength,
                         ")")))),
             extraInLabel,
-            FenextInputValidatorStatus == "error" && (react_1.default.createElement(exports.ErrorComponent, { error: errorFenext ?? errorInput, className: "fenext-input-error", _t: _t })))));
+            FenextInputValidatorStatus == "error" && (react_1.default.createElement(exports.ErrorComponent, { error: errorFenext ?? errorInput, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputText = InputText;
 const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(exports.SvgDate, null), type = "normal", defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange = true, ...props }) => {
@@ -7018,7 +7018,7 @@ const InputCode = ({ ...props }) => {
                 }))) })));
 };
 exports.InputCode = InputCode;
-const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultValue = {}, value: valueProps = undefined, onChange, validator = undefined, posSelect = "left", errorWithIsChange = false, error, ...props }) => {
+const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultValue = {}, value: valueProps = undefined, onChange, validator = undefined, posSelect = "left", errorWithIsChange = false, error, classNameError = "", ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const { data, onChangeData, isChange } = (0, exports.useData)(defaultValue, {
         onChangeDataAfter: onChange,
@@ -7041,7 +7041,7 @@ const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultVal
                 react_1.default.createElement(exports.InputSelect, { ...props, placeholder: placeholderSelect, onChange: onChangeData("select"), validator: undefined, value: value.select, _t: _t, parseText: (e) => e })),
             react_1.default.createElement("div", { className: `fenext-input-text-select-text ` },
                 react_1.default.createElement(exports.InputText, { ...props, placeholder: placeholderText, onChange: onChangeData("text"), validator: undefined, value: value.text, _t: _t })),
-            errorInput && (react_1.default.createElement(exports.ErrorComponent, { error: errorInput, className: `fenext-input-error `, _t: _t })))));
+            errorInput && (react_1.default.createElement(exports.ErrorComponent, { error: errorInput, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputTextSelect = InputTextSelect;
 const InputPassword = ({ classNameContentEye = "", ...props }) => {
