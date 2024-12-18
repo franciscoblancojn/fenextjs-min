@@ -2405,7 +2405,7 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useSearch, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, classNameOption, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useSearch, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
 export interface useSelectOptionsPosProps {
     children?: ReactNode;
     target?: HTMLElement | null | undefined;
@@ -2655,13 +2655,14 @@ export interface InputRadioBaseProps<T = any> extends _TProps {
     labelPosition?: "right" | "left";
     name?: string;
     onChange?: (e: InputRadioItemProps<T>) => void;
+    onChangeData?: (e: T) => void;
     defaultValue?: InputRadioItemProps<T>;
     value?: InputRadioItemProps<T>;
     disabled?: boolean;
 }
 export interface InputRadioProps<T> extends InputRadioBaseProps<T>, InputRadioClassProps {
 }
-export declare const InputRadio: <T = any>({ classNameContent, classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentRadio, classNameContentRadioActive, classNameContentRadioInactive, classNameRadio, classNameRadioActive, classNameRadioInactive, labelPosition, name, onChange, defaultValue, value, disabled, icon, items, ...props }: InputRadioProps<T>) => React.JSX.Element;
+export declare const InputRadio: <T = any>({ classNameContent, classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentRadio, classNameContentRadioActive, classNameContentRadioInactive, classNameRadio, classNameRadioActive, classNameRadioInactive, labelPosition, name, onChange, onChangeData, defaultValue, value, disabled, icon, items, ...props }: InputRadioProps<T>) => React.JSX.Element;
 export interface InputImgBaseProps extends Omit<InputFileBaseProps, "accept"> {
     title?: ReactNode;
     text?: ReactNode;
@@ -3332,6 +3333,8 @@ export interface StepsBaseProps extends _TProps {
     disabledBtnNext?: boolean;
     onPrev?: (step: number) => Promise<void> | void;
     onNext?: (step: number) => Promise<void> | void;
+    onPrevDisabled?: () => void;
+    onNextDisabled?: () => void;
     onSetStep?: (step: number) => void;
     stepPos?: "top" | "left" | "right";
     showCurrentStepNStep?: boolean;
@@ -3357,7 +3360,7 @@ export interface StepsClassProps {
 }
 export interface StepsProps extends StepsBaseProps, StepsClassProps {
 }
-export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnNext, classNameBtnPrev, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
+export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnNext, classNameBtnPrev, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
 export type BackTypeOnBack = "fenextjs-history" | "history" | "router" | "link" | "none";
 export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
     loader?: boolean;
@@ -3791,10 +3794,11 @@ export interface ProgressLineBaseProps {
 }
 export interface ProgressLineClassProps {
     className?: string;
+    classNameBar?: string;
 }
 export interface ProgressLineProps extends ProgressLineBaseProps, ProgressLineClassProps {
 }
-export declare const ProgressLine: ({ className, p, showP, }: ProgressLineProps) => React.JSX.Element;
+export declare const ProgressLine: ({ className, classNameBar, p, showP, }: ProgressLineProps) => React.JSX.Element;
 export interface ChronometerBaseProps {
     time?: number;
     onChange?: (time: number) => void;

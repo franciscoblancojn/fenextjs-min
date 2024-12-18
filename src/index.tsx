@@ -14375,6 +14375,7 @@ export interface InputSelectValue<T = any> {
 export const InputSelect = <T = any,>({
   classNameSelect = "",
   classNameList = "",
+  classNameOption = "",
 
   error = undefined,
   options: optionsProps = [],
@@ -14672,6 +14673,7 @@ export const InputSelect = <T = any,>({
                 _t={_t}
                 isBtn={true}
                 onClick={create?.onClick ?? onCreate}
+                classNameOption={`${classNameOption} ${create?.classNameOption}`}
               />
             </>
           ) : (
@@ -14699,6 +14701,7 @@ export const InputSelect = <T = any,>({
                   data.option?.id != undefined && data.option?.id === option?.id
                 }
                 {...option}
+                classNameOption={`${classNameOption} ${option?.classNameOption}`}
                 onClick={(e) => {
                   onChangeOption(e);
                   option?.onClick?.(e);
@@ -14716,7 +14719,7 @@ export const InputSelect = <T = any,>({
                 id={loaderOption?.id ?? "loader"}
                 text={loaderOption?.text ?? "Loading"}
                 children={loaderOption?.children ?? undefined}
-                classNameOption="fenext-select-option-loading"
+                classNameOption={`${classNameOption} fenext-select-option-loading`}
                 _t={_t}
                 useT={useTOption}
                 disabled={true}
@@ -14731,7 +14734,7 @@ export const InputSelect = <T = any,>({
                     id={noResult?.id ?? "notResult"}
                     text={noResult?.text ?? "Not Result"}
                     children={noResult?.children ?? undefined}
-                    classNameOption="fenext-select-option-not-result"
+                    classNameOption={`${classNameOption} fenext-select-option-not-result`}
                     _t={_t}
                     useT={useTOption}
                     disabled={true}
@@ -14748,6 +14751,7 @@ export const InputSelect = <T = any,>({
   }, [
     typeSelect,
     props?.datalist,
+    classNameOption,
     classNameList,
     create,
     onCreate,
@@ -17763,6 +17767,12 @@ export interface InputRadioBaseProps<T = any> extends _TProps {
   onChange?: (e: InputRadioItemProps<T>) => void;
 
   /**
+   * A callback function to execute when the radio is toggled.
+   * Receives a boolean value indicating whether the radio is checked or not.
+   */
+  onChangeData?: (e: T) => void;
+
+  /**
    * The default value of the radio when it is first rendered.
    */
   defaultValue?: InputRadioItemProps<T>;
@@ -17812,6 +17822,7 @@ export const InputRadio = <T = any,>({
       name: "input radio onchange",
     });
   },
+  onChangeData,
   defaultValue = undefined,
   value = undefined,
   disabled = false,
@@ -17829,6 +17840,7 @@ export const InputRadio = <T = any,>({
     }
     setChecked(i);
     onChange(i);
+    onChangeData?.(i?.data as T);
   };
 
   return (
@@ -23318,6 +23330,9 @@ export interface StepsBaseProps extends _TProps {
    * onClick in btn Next.
    */
   onNext?: (step: number) => Promise<void> | void;
+
+  onPrevDisabled?: () => void;
+  onNextDisabled?: () => void;
   /**
    * onSetStep.
    */
@@ -23435,6 +23450,8 @@ export const Steps = ({
   disabledBtnPrev = false,
   onNext,
   onPrev,
+  onNextDisabled,
+  onPrevDisabled,
   stepPos = "left",
   showCurrentStepNStep = false,
   useArrowKey = false,
@@ -23590,6 +23607,7 @@ export const Steps = ({
               className={`fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`}
               disabled={disabledBtnPrev}
               onClick={onPrev_}
+              onClickDisabled={onPrevDisabled}
               loader={loader}
               _t={_t}
             >
@@ -23635,6 +23653,7 @@ export const Steps = ({
               className={`fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`}
               disabled={disabledBtnNext}
               onClick={onNext_}
+              onClickDisabled={onNextDisabled}
               loader={loader}
               _t={_t}
             >
@@ -26953,6 +26972,10 @@ export interface ProgressLineClassProps {
    * The class name for the component.
    */
   className?: string;
+  /**
+   * The class name for the component.
+   */
+  classNameBar?: string;
 }
 
 /**
@@ -26964,6 +26987,7 @@ export interface ProgressLineProps
 
 export const ProgressLine = ({
   className = "",
+  classNameBar = "",
   p,
   showP = true,
 }: ProgressLineProps) => {
@@ -26978,7 +27002,13 @@ export const ProgressLine = ({
             ["--p"]: Math.max(0, Math.min(p, 100)),
           } as React.CSSProperties
         }
-      ></div>
+      >
+        <div
+          className={`
+                    fenext-progess-line-bar ${classNameBar}
+                    `}
+        ></div>
+      </div>
     </>
   );
 };
