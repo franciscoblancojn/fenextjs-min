@@ -2018,17 +2018,21 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
     onClick?: ButtonOnClick;
     onClickDisabled?: ButtonOnClick;
     icon?: ReactNode;
+    iconLoader?: ReactNode;
     isBtn?: boolean;
     size?: ButtonBaseSize;
     full?: boolean;
 }
-export interface ButtonClassProps extends LoaderClassProps {
+export interface ButtonClassProps {
     className?: string;
     classNameDisabled?: string;
+    classNameLoader?: string;
+    classNameContentLoaderElement?: string;
+    classNameLoaderElement?: string;
 }
 export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {
 }
-export declare const Button: ({ className, classNameLoader, classNameDisabled, children, loader, disabled, onClick, onClickDisabled: onClickDisabledProps, icon, isBtn, full, size, ...props }: ButtonProps) => React.JSX.Element;
+export declare const Button: ({ className, classNameLoader, classNameDisabled, classNameContentLoaderElement, classNameLoaderElement, children, loader, disabled, onClick, onClickDisabled: onClickDisabledProps, icon, iconLoader, isBtn, full, size, ...props }: ButtonProps) => React.JSX.Element;
 export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
     useAlertHook?: boolean;
     alertHookProps?: AlertHookProps;
