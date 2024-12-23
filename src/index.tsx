@@ -5018,12 +5018,17 @@ export interface useDataOptions<
   validator?: FenextjsValidatorClass<T>;
   validatorMemo?: FenextjsValidatorClass<M>;
   onSubmitData?: (data: T) => RT | Promise<RT>;
+  onBeforeSubmitData?: (d: { data: T; isValid?: ErrorFenextjs | true }) => void;
   onAfterSubmitDataOk?: (d: { data: T; result: RT }) => void;
   onAfterSubmitParseError?: (error: any) => ET;
   onAfterSubmitDataError?: (d: { data: T; error: ET }) => void;
   afterSubmitDataSetIsChangeFalse?: boolean;
 
   onSubmitDataMemo?: (data: M) => RM | Promise<RM>;
+  onBeforeSubmitDataMemo?: (d: {
+    dataMemo: M;
+    isValidDataMemo?: ErrorFenextjs | true;
+  }) => void;
   onAfterSubmitDataMemoOk?: (d: { dataMemo: M; result: RM }) => void;
   onAfterSubmitParseErrorMemo?: (error: any) => EM;
   onAfterSubmitDataMemoError?: (d: { dataMemo: M; error: EM }) => void;
@@ -5311,6 +5316,10 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
         (optionsSubmitData?.data
           ? options?.validator?.onValidate?.(optionsSubmitData?.data) ?? true
           : isValidData);
+      options?.onBeforeSubmitData?.({
+        data: dataUse,
+        isValid: isValidDataUse,
+      });
       if (options?.onSubmitData && isValidDataUse === true) {
         try {
           setDataError(undefined);
@@ -5329,8 +5338,10 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
             });
             setData(newData);
           }
+          setLoaderSubmit(false);
           return result;
         } catch (err) {
+          setLoaderSubmit(false);
           const error = (options?.onAfterSubmitParseError?.(err) ??
             (err as any)) as ET;
           setDataError(error);
@@ -5356,6 +5367,10 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
               optionsSubmitDataMemo?.dataMemo,
             ) ?? true
           : isValidDataMemo);
+      options?.onBeforeSubmitDataMemo?.({
+        dataMemo: dataUse,
+        isValidDataMemo: isValidDataUse,
+      });
       if (options?.onSubmitDataMemo && isValidDataUse === true) {
         try {
           setDataErrorMemo(undefined);

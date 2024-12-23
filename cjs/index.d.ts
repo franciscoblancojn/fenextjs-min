@@ -1261,6 +1261,10 @@ export interface useDataOptions<T, M = any, RT = void, RM = void, ET = any, EM =
     validator?: FenextjsValidatorClass<T>;
     validatorMemo?: FenextjsValidatorClass<M>;
     onSubmitData?: (data: T) => RT | Promise<RT>;
+    onBeforeSubmitData?: (d: {
+        data: T;
+        isValid?: ErrorFenextjs | true;
+    }) => void;
     onAfterSubmitDataOk?: (d: {
         data: T;
         result: RT;
@@ -1272,6 +1276,10 @@ export interface useDataOptions<T, M = any, RT = void, RM = void, ET = any, EM =
     }) => void;
     afterSubmitDataSetIsChangeFalse?: boolean;
     onSubmitDataMemo?: (data: M) => RM | Promise<RM>;
+    onBeforeSubmitDataMemo?: (d: {
+        dataMemo: M;
+        isValidDataMemo?: ErrorFenextjs | true;
+    }) => void;
     onAfterSubmitDataMemoOk?: (d: {
         dataMemo: M;
         result: RM;
