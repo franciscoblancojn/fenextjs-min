@@ -8183,7 +8183,7 @@ const Form = ({ id = "", disabled = true, children, className = "", onSubmit = a
         react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSendForm }, children)));
 };
 exports.Form = Form;
-const Tooltip = ({ className = "", children, tooltip, positionX = "center", positionY = "top", ...props }) => {
+const Tooltip = ({ className = "", classNameChildren = "", classNameContent = "", children, tooltip, positionX = "center", positionY = "top", ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const ref = (0, react_1.useRef)(null);
     const refTooltipContent = (0, react_1.useRef)(null);
@@ -8212,13 +8212,15 @@ const Tooltip = ({ className = "", children, tooltip, positionX = "center", posi
                         fenext-tooltip-content-x-${positionX} 
                         fenext-tooltip-content-y-${positionY} 
                         fenext-tooltip-content-${configTooltip ? "active" : "inactive"}
+
+                        ${classNameContent}
                     `, onMouseEnter: onShowTooltip, onMouseLeave: () => {
                     setConfigTooltip(undefined);
                 }, style: configTooltip }, tooltip)),
         react_1.default.createElement("div", { ref: ref, className: `fenext-tooltip ${className} `, onMouseEnter: onShowTooltip, onClick: onShowTooltip, onMouseLeave: () => {
                 setConfigTooltip(undefined);
             } },
-            react_1.default.createElement("div", { className: `fenext-tooltip-children` }, _t(children)))));
+            react_1.default.createElement("div", { className: `fenext-tooltip-children ${classNameChildren}` }, _t(children)))));
 };
 exports.Tooltip = Tooltip;
 const TwoColSticky = ({ className = "", classNameChildren = "", classNameColSticky = "", children, colSticky, posCol = "left", ...props }) => {

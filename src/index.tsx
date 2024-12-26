@@ -22558,6 +22558,14 @@ export interface TooltipProps extends _TProps {
    */
   className?: string;
   /**
+   * The class name for the component.
+   */
+  classNameChildren?: string;
+  /**
+   * The class name for the component.
+   */
+  classNameContent?: string;
+  /**
    * The children for the component.
    */
   children?: ReactNode;
@@ -22577,6 +22585,8 @@ export interface TooltipProps extends _TProps {
 
 export const Tooltip = ({
   className = "",
+  classNameChildren = "",
+  classNameContent = "",
   children,
   tooltip,
   positionX = "center",
@@ -22630,6 +22640,8 @@ export const Tooltip = ({
                         fenext-tooltip-content-x-${positionX} 
                         fenext-tooltip-content-y-${positionY} 
                         fenext-tooltip-content-${configTooltip ? "active" : "inactive"}
+
+                        ${classNameContent}
                     `}
           onMouseEnter={onShowTooltip}
           onMouseLeave={() => {
@@ -22649,7 +22661,9 @@ export const Tooltip = ({
           setConfigTooltip(undefined);
         }}
       >
-        <div className={`fenext-tooltip-children`}>{_t(children)}</div>
+        <div className={`fenext-tooltip-children ${classNameChildren}`}>
+          {_t(children)}
+        </div>
       </div>
     </>
   );
