@@ -7738,7 +7738,7 @@ const ImgGallery = ({ className = "", imgs, buttonShowMoreImg = {
                         } }))))))));
 };
 exports.ImgGallery = ImgGallery;
-const ImgSlider = ({ className = "", classNameStep = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
+const ImgSlider = ({ className = "", classNameStep = "", classNamePictureImg = "", classNameImg = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
     const [step__, setStep__] = (0, react_1.useState)(defaultStep);
     const setStep = (e) => {
         setStep__(e);
@@ -7750,7 +7750,7 @@ const ImgSlider = ({ className = "", classNameStep = "", imgs, defaultStep = 0, 
             react_1.default.createElement(exports.Steps, { className: classNameStep, items: imgs.map((e, i) => {
                     return {
                         label: e.name ?? "",
-                        content: react_1.default.createElement(exports.Img, { key: i, ...e }),
+                        content: (react_1.default.createElement(exports.Img, { key: i, ...e, className: classNamePictureImg, classNameImg: classNameImg })),
                     };
                 }), stepPos: "top", step: step, onSetStep: setStep, btnNext: react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(exports.SvgPaginationNext, null)), btnPrev: react_1.default.createElement(react_1.default.Fragment, null,
