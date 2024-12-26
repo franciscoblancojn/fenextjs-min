@@ -3297,6 +3297,9 @@ export declare const parseTabCount: <T>(d: TabItemProps<T>, _t: ReturnType<typeo
 export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, activeTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, useCount, ...props }: TabProps<T>) => React.JSX.Element;
 export interface DropDownProps {
     className?: string;
+    classNameContentHeader?: string;
+    classNameContentIcon?: string;
+    classNameBody?: string;
     loader?: boolean;
     disabled?: boolean;
     defaultActive?: boolean;
@@ -3309,7 +3312,7 @@ export interface DropDownProps {
     rotateIcon?: boolean;
     type?: "checked" | "focus";
 }
-export declare const DropDown: ({ className, header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow, rotateIcon, name, children, type, }: DropDownProps) => React.JSX.Element;
+export declare const DropDown: ({ className, classNameBody, classNameContentHeader, classNameContentIcon, header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow, rotateIcon, name, children, type, }: DropDownProps) => React.JSX.Element;
 export interface PrintIframeComponentProps {
     loader: boolean;
 }

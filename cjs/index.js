@@ -8301,7 +8301,7 @@ const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", cl
             react_1.default.createElement("div", { className: `fenext-tab-body ${classNameBody}` }, CBody))));
 };
 exports.Tab = Tab;
-const DropDown = ({ className = "", header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow = react_1.default.createElement(exports.SvgArrow, null), rotateIcon = true, name, children, type = "focus", }) => {
+const DropDown = ({ className = "", classNameBody = "", classNameContentHeader = "", classNameContentIcon = "", header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow = react_1.default.createElement(exports.SvgArrow, null), rotateIcon = true, name, children, type = "focus", }) => {
     const [tlrb, settlrb] = (0, react_1.useState)({
         top: "inherit",
         left: "inherit",
@@ -8372,14 +8372,15 @@ const DropDown = ({ className = "", header, active: activeProps, defaultActive, 
                     fenext-dropdown-rotate-icon-${rotateIcon ? "yes" : "no"}
                     ${className}
                 `, onClick: onClick },
-            react_1.default.createElement("div", { className: `fenext-dropdown-header-content ` }, header),
-            react_1.default.createElement("div", { className: `fenext-dropdown-header-icon ` }, loader ? (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("div", { className: `fenext-dropdown-header-content ${classNameContentHeader}` }, header),
+            react_1.default.createElement("div", { className: `fenext-dropdown-header-icon ${classNameContentIcon}` }, loader ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(exports.Loader, null))) : (react_1.default.createElement(react_1.default.Fragment, null, iconArrow)))),
         react_1.default.createElement(exports.Portal, null,
             react_1.default.createElement("div", { ref: refDropDownBody, "data-component": "fenext-dropdown-body", className: `
                         fenext-dropdown-body
                         fenext-dropdown-body-${isChange ? "change" : "no-change"}
                         fenext-dropdown-body-${active ? "active" : "inactive"}
+                        ${classNameBody}
                     `, style: {
                     ["--fenext-dropdown-top"]: tlrb.top,
                     ["--fenext-dropdown-left"]: tlrb.left,
