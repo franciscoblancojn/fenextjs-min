@@ -20834,11 +20834,16 @@ export interface ImgSliderBaseProps extends _TProps {
 /**
  * Properties for the class of the ImgSlider component.
  */
-export interface ImgSliderClassProps {
+export interface ImgSliderClassProps
+  extends Omit<StepsClassProps, "className"> {
   /**
    * The class name for the component.
    */
   className?: string;
+  /**
+   * The class name for the component.
+   */
+  classNameSteps?: string;
 }
 
 /**
@@ -20850,6 +20855,7 @@ export interface ImgSliderProps
 
 export const ImgSlider = ({
   className = "",
+  classNameStep = "",
   imgs,
 
   defaultStep = 0,
@@ -20870,6 +20876,7 @@ export const ImgSlider = ({
     <>
       <div className={`fenext-img-slider ${className} `}>
         <Steps
+          className={classNameStep}
           items={imgs.map((e, i) => {
             return {
               label: e.name ?? "",
@@ -21933,15 +21940,27 @@ export const Alert = ({
   ...props
 }: AlertComponentProps) => {
   const { _t } = use_T({ ...props });
+  const [active, setActive] = useState(true);
   return (
     <>
       <div
-        className={`fenext-alert fenext-alert-${type} ${className}`}
+        className={`
+                    fenext-alert 
+                    fenext-alert-${type} 
+                    fenext-alert-${active ? "active" : "inactive"} 
+                    ${className}
+                `}
         data-type={type}
         meta-data={data}
       >
         <div className={`fenext-alert-content`}>{_t(message)}</div>
-        <div className={`fenext-alert-close`} onClick={onClose}>
+        <div
+          className={`fenext-alert-close`}
+          onClick={() => {
+            onClose?.();
+            setActive(false);
+          }}
+        >
           {iconClose}
         </div>
       </div>

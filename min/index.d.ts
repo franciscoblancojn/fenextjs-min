@@ -3038,12 +3038,13 @@ export interface ImgSliderBaseProps extends _TProps {
     step?: number;
     setStep?: (e: number) => void;
 }
-export interface ImgSliderClassProps {
+export interface ImgSliderClassProps extends Omit<StepsClassProps, "className"> {
     className?: string;
+    classNameSteps?: string;
 }
 export interface ImgSliderProps extends ImgSliderBaseProps, ImgSliderClassProps {
 }
-export declare const ImgSlider: ({ className, imgs, defaultStep, setStep: setStepProps, step: stepProps, ...props }: ImgSliderProps) => React.JSX.Element;
+export declare const ImgSlider: ({ className, classNameStep, imgs, defaultStep, setStep: setStepProps, step: stepProps, ...props }: ImgSliderProps) => React.JSX.Element;
 export interface PaginationItemPageClassProps {
     classNameContent?: string;
     classNameUp?: string;

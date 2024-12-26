@@ -7738,7 +7738,7 @@ const ImgGallery = ({ className = "", imgs, buttonShowMoreImg = {
                         } }))))))));
 };
 exports.ImgGallery = ImgGallery;
-const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
+const ImgSlider = ({ className = "", classNameStep = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
     const [step__, setStep__] = (0, react_1.useState)(defaultStep);
     const setStep = (e) => {
         setStep__(e);
@@ -7747,7 +7747,7 @@ const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProp
     const step = (0, react_1.useMemo)(() => stepProps ?? step__, [stepProps, step__]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-img-slider ${className} ` },
-            react_1.default.createElement(exports.Steps, { items: imgs.map((e, i) => {
+            react_1.default.createElement(exports.Steps, { className: classNameStep, items: imgs.map((e, i) => {
                     return {
                         label: e.name ?? "",
                         content: react_1.default.createElement(exports.Img, { key: i, ...e }),
@@ -8023,10 +8023,19 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
 exports.Table = Table;
 const Alert = ({ className = "", message, iconClose = react_1.default.createElement(exports.SvgClose, null), type, data, onClose, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
+    const [active, setActive] = (0, react_1.useState)(true);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: `fenext-alert fenext-alert-${type} ${className}`, "data-type": type, "meta-data": data },
+        react_1.default.createElement("div", { className: `
+                    fenext-alert 
+                    fenext-alert-${type} 
+                    fenext-alert-${active ? "active" : "inactive"} 
+                    ${className}
+                `, "data-type": type, "meta-data": data },
             react_1.default.createElement("div", { className: `fenext-alert-content` }, _t(message)),
-            react_1.default.createElement("div", { className: `fenext-alert-close`, onClick: onClose }, iconClose))));
+            react_1.default.createElement("div", { className: `fenext-alert-close`, onClick: () => {
+                    onClose?.();
+                    setActive(false);
+                } }, iconClose))));
 };
 exports.Alert = Alert;
 const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent = "", classNameHeaderIcon = "", classNameBody = "", children, loader = false, header, disabled = false, defaultActive = false, active: activeProps = undefined, id, name = "", type = "checkbox", show = "checked", status = "none", onChange, iconArrow = react_1.default.createElement(exports.SvgArrow, null), rotateIcon = true, useActiveForShowChildren = false, }) => {
