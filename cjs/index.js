@@ -4975,7 +4975,7 @@ const InputText = ({ id = "", datalist = undefined, name = "", label = "", place
             FenextInputValidatorStatus == "error" && (react_1.default.createElement(exports.ErrorComponent, { error: errorFenext ?? errorInput, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputText = InputText;
-const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(exports.SvgDate, null), type = "normal", defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange = true, ...props }) => {
+const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(exports.SvgDate, null), type = "normal", defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange = true, collapseProps = {}, className = "", classNameContentCalendar = "", classNameInputText = {}, classNameInputCalendarMonth = {}, ...props }) => {
     const [isChange, setIsChange] = (0, react_1.useState)(!errorWithIsChange);
     const { data: dataSelectDate, setData: setSelectDate } = (0, exports.useData)(defaultValue, {
         onChangeDataAfter: (e) => {
@@ -5004,15 +5004,15 @@ const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(ex
         validator,
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: `fenext-input-calendar` },
-            react_1.default.createElement(exports.Collapse, { header: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(exports.InputText, { ...props, icon: icon, value: type == "normal"
+        react_1.default.createElement("div", { className: `fenext-input-calendar ${className}` },
+            react_1.default.createElement(exports.Collapse, { ...collapseProps, header: react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(exports.InputText, { ...props, ...classNameInputText, icon: icon, value: type == "normal"
                             ? `${selectDate ? date.onFormat({}, selectDate) : ""}`
                             : `${selectDateRange && selectDateRange.length == 2
                                 ? `${date.onFormat({}, selectDateRange[0])} - ${date.onFormat({}, selectDateRange[1])}`
                                 : ""}`, error: errorFenext, errorWithIsChange: !isChange })) },
-                react_1.default.createElement("div", { className: `fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""}` },
-                    react_1.default.createElement(exports.InputCalendarMonth, { _t: props?._t, type: type, dataNSelect: dataNSelect, selectDate: selectDate, selectDateRange: selectDateRange, setDataNSelect: setDataNSelect, setSelectDate: setSelectDate, setSelectDateRange: setSelectDateRange, date: date, onNextMonth: onNextMonth, onPreMonth: onPreMonth, ...props }),
+                react_1.default.createElement("div", { className: `fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""} ${classNameContentCalendar}` },
+                    react_1.default.createElement(exports.InputCalendarMonth, { ...classNameInputCalendarMonth, _t: props?._t, type: type, dataNSelect: dataNSelect, selectDate: selectDate, selectDateRange: selectDateRange, setDataNSelect: setDataNSelect, setSelectDate: setSelectDate, setSelectDateRange: setSelectDateRange, date: date, onNextMonth: onNextMonth, onPreMonth: onPreMonth, ...props }),
                     nMonthShow > 1 && (react_1.default.createElement(react_1.default.Fragment, null, new Array(nMonthShow - 1).fill(1).map((e, i) => {
                         const n = e * i + 1;
                         const d = new Date(date?.date ?? 0);
@@ -5021,25 +5021,25 @@ const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(ex
                             defaultDate: d,
                         });
                         return (react_1.default.createElement(react_1.default.Fragment, null,
-                            react_1.default.createElement(exports.InputCalendarMonth, { key: n, _t: props?._t, type: type, dataNSelect: dataNSelect, selectDate: selectDate, selectDateRange: selectDateRange, setDataNSelect: setDataNSelect, setSelectDate: setSelectDate, setSelectDateRange: setSelectDateRange, date: dateN, onNextMonth: onNextMonth, onPreMonth: onPreMonth, ...props })));
+                            react_1.default.createElement(exports.InputCalendarMonth, { key: n, ...classNameInputCalendarMonth, _t: props?._t, type: type, dataNSelect: dataNSelect, selectDate: selectDate, selectDateRange: selectDateRange, setDataNSelect: setDataNSelect, setSelectDate: setSelectDate, setSelectDateRange: setSelectDateRange, date: dateN, onNextMonth: onNextMonth, onPreMonth: onPreMonth, ...props })));
                     }))))))));
 };
 exports.InputCalendar = InputCalendar;
-const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, min, max, ...props }) => {
+const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, min, max, className = "", classNameContent = "", classNameTop = "", classNameTopBtn = "", classNameTopBtnPrev = "", classNameTopBtnNext = "", classNameTopInfo = "", classNameDays = "", classNameDay = "", classNameDate = "", classNameDateValid = "", classNameDateDisabled = "", classNameDateInMonth = "", classNameDateOtherMonth = "", classNameDateSelect = "", classNameDateSelectRange = "", ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: `fenext-input-calendar-month` },
-            react_1.default.createElement("div", { className: `fenext-input-calendar-month-content` },
-                react_1.default.createElement("div", { className: `fenext-input-calendar-top` },
-                    react_1.default.createElement("button", { className: `fenext-input-calendar-btn`, onClick: onPreMonth },
+        react_1.default.createElement("div", { className: `fenext-input-calendar-month ${className}` },
+            react_1.default.createElement("div", { className: `fenext-input-calendar-month-content ${classNameContent}` },
+                react_1.default.createElement("div", { className: `fenext-input-calendar-top ${classNameTop}` },
+                    react_1.default.createElement("button", { className: `fenext-input-calendar-btn ${classNameTopBtn} ${classNameTopBtnPrev}`, onClick: onPreMonth },
                         react_1.default.createElement(exports.SvgPaginationPre, null)),
-                    react_1.default.createElement("div", { className: `fenext-input-calendar-top-info` }, date?.onFormat({
+                    react_1.default.createElement("div", { className: `fenext-input-calendar-top-info ${classNameTopInfo}` }, date?.onFormat({
                         month: "long",
                         year: "numeric",
                     })),
-                    react_1.default.createElement("button", { className: `fenext-input-calendar-btn`, onClick: onNextMonth },
+                    react_1.default.createElement("button", { className: `fenext-input-calendar-btn ${classNameTopBtn} ${classNameTopBtnNext}`, onClick: onNextMonth },
                         react_1.default.createElement(exports.SvgPaginationNext, null))),
-                react_1.default.createElement("div", { className: `fenext-input-calendar-days` }, [
+                react_1.default.createElement("div", { className: `fenext-input-calendar-days ${classNameDays}` }, [
                     DaysEnum.Sunday,
                     DaysEnum.Monday,
                     DaysEnum.Tuesday,
@@ -5049,7 +5049,7 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                     DaysEnum.Saturday,
                 ].map((day, i) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement("div", { key: i, "data-day": day, className: `fenext-input-calendar-day` }, _t(day)[0])));
+                        react_1.default.createElement("div", { key: i, "data-day": day, className: `fenext-input-calendar-day ${classNameDay}` }, _t(day)[0])));
                 })),
                 date?.onGenerateDateByCalendar()?.map((d, i) => {
                     const isValid = date?.onValidateMinMax({
@@ -5107,12 +5107,14 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                                 }
                             }, className: `
                                         fenext-input-calendar-date
-                                        fenext-input-calendar-date-${isValid ? "valid" : "disabled"}
-                                        fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
-                                        fenext-input-calendar-date-${type == "normal" && COMPARE_DATE["=="] ? "select" : ""}
-                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0["=="] ? "select" : ""}
-                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0[">"] && COMPARE_DATE_RANGE_1["<"] ? "select-range" : ""}
-                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_1["=="] ? "select" : ""}
+                                        fenext-input-calendar-date-${isValid ? `valid ${classNameDateValid}` : `disabled ${classNameDateDisabled}`}
+                                        fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? `in-month ${classNameDateInMonth}` : `other-month ${classNameDateOtherMonth}`}
+                                        fenext-input-calendar-date-${type == "normal" && COMPARE_DATE["=="] ? `select ${classNameDateSelect}` : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0["=="] ? `select ${classNameDateSelect}` : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0[">"] && COMPARE_DATE_RANGE_1["<"] ? `select-range ${classNameDateSelectRange}` : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_1["=="] ? `select ${classNameDateSelect}` : ""}
+
+                                        ${classNameDate}
                                     ` }, d?.getDate())));
                 })))));
 };
@@ -5836,7 +5838,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
                             react_1.default.createElement("div", { className: `fenext-select-multiple-list ` },
                                 react_1.default.createElement(exports.InputSelectOption, { ...dataMemo?.option, type: "multiple", onDelete: () => {
                                         onClear();
-                                    }, iconDelete: iconDelete, disabled: props?.disabled, useT: useTOption })))),
+                                    }, iconDelete: iconDelete, disabled: props?.disabled, useT: useTOption, classNameOption: `${classNameOption} ${dataMemo?.option?.classNameOption}` })))),
                         props?.extraInLabel) })),
             typeSelect == "div" &&
                 (typeSelectStyle == "normal" || typeSelectStyle == "normal-out") &&

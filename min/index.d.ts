@@ -2239,9 +2239,32 @@ export interface InputCalendarProps extends Pick<InputTextProps, "label" | "plac
     onChange?: (d: Date | undefined) => void;
     onChangeRange?: (d: Date[]) => void;
     nMonthShow?: number;
+    collapseProps?: Omit<CollapseProps, "children" | "header">;
+    className?: string;
+    classNameContentCalendar?: string;
+    classNameInputText?: InputTextClassProps;
+    classNameInputCalendarMonth?: InputCalendarMonthClassProps;
 }
-export declare const InputCalendar: ({ nMonthShow, icon, type, defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange, ...props }: InputCalendarProps) => React.JSX.Element;
-export interface InputCalendarMonthProps extends _TProps {
+export declare const InputCalendar: ({ nMonthShow, icon, type, defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange, collapseProps, className, classNameContentCalendar, classNameInputText, classNameInputCalendarMonth, ...props }: InputCalendarProps) => React.JSX.Element;
+export interface InputCalendarMonthClassProps {
+    className?: string;
+    classNameContent?: string;
+    classNameTop?: string;
+    classNameTopBtn?: string;
+    classNameTopBtnPrev?: string;
+    classNameTopBtnNext?: string;
+    classNameTopInfo?: string;
+    classNameDays?: string;
+    classNameDay?: string;
+    classNameDate?: string;
+    classNameDateValid?: string;
+    classNameDateDisabled?: string;
+    classNameDateInMonth?: string;
+    classNameDateOtherMonth?: string;
+    classNameDateSelect?: string;
+    classNameDateSelectRange?: string;
+}
+export interface InputCalendarMonthProps extends InputCalendarMonthClassProps, _TProps {
     type?: "normal" | "range";
     date?: FenextjsDate;
     onPreMonth?: () => void;
@@ -2255,7 +2278,7 @@ export interface InputCalendarMonthProps extends _TProps {
     min?: Date;
     max?: Date;
 }
-export declare const InputCalendarMonth: ({ type, onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, min, max, ...props }: InputCalendarMonthProps) => React.JSX.Element;
+export declare const InputCalendarMonth: ({ type, onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, min, max, className, classNameContent, classNameTop, classNameTopBtn, classNameTopBtnPrev, classNameTopBtnNext, classNameTopInfo, classNameDays, classNameDay, classNameDate, classNameDateValid, classNameDateDisabled, classNameDateInMonth, classNameDateOtherMonth, classNameDateSelect, classNameDateSelectRange, ...props }: InputCalendarMonthProps) => React.JSX.Element;
 export interface InputSelectNumberProps extends Omit<InputSelectProps, "options" | "onChange" | "defaultValue" | "parseText"> {
     onChange?: (n?: number) => void;
     defaultValue?: number;

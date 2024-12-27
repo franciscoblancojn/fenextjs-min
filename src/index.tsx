@@ -12784,6 +12784,13 @@ export interface InputCalendarProps
   onChange?: (d: Date | undefined) => void;
   onChangeRange?: (d: Date[]) => void;
   nMonthShow?: number;
+
+  collapseProps?: Omit<CollapseProps, "children" | "header">;
+
+  className?: string;
+  classNameContentCalendar?: string;
+  classNameInputText?: InputTextClassProps;
+  classNameInputCalendarMonth?: InputCalendarMonthClassProps;
 }
 
 export const InputCalendar = ({
@@ -12798,6 +12805,11 @@ export const InputCalendar = ({
   onChangeRange,
   validator,
   errorWithIsChange = true,
+  collapseProps = {},
+  className = "",
+  classNameContentCalendar = "",
+  classNameInputText = {},
+  classNameInputCalendarMonth = {},
   ...props
 }: InputCalendarProps) => {
   const [isChange, setIsChange] = useState(!errorWithIsChange);
@@ -12844,12 +12856,14 @@ export const InputCalendar = ({
 
   return (
     <>
-      <div className={`fenext-input-calendar`}>
+      <div className={`fenext-input-calendar ${className}`}>
         <Collapse
+          {...collapseProps}
           header={
             <>
               <InputText
                 {...props}
+                {...classNameInputText}
                 icon={icon}
                 value={
                   type == "normal"
@@ -12867,9 +12881,10 @@ export const InputCalendar = ({
           }
         >
           <div
-            className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""}`}
+            className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""} ${classNameContentCalendar}`}
           >
             <InputCalendarMonth
+              {...classNameInputCalendarMonth}
               _t={props?._t}
               type={type}
               dataNSelect={dataNSelect}
@@ -12898,6 +12913,7 @@ export const InputCalendar = ({
                     <>
                       <InputCalendarMonth
                         key={n}
+                        {...classNameInputCalendarMonth}
                         _t={props?._t}
                         type={type}
                         dataNSelect={dataNSelect}
@@ -12923,7 +12939,28 @@ export const InputCalendar = ({
   );
 };
 
-export interface InputCalendarMonthProps extends _TProps {
+export interface InputCalendarMonthClassProps {
+  className?: string;
+  classNameContent?: string;
+  classNameTop?: string;
+  classNameTopBtn?: string;
+  classNameTopBtnPrev?: string;
+  classNameTopBtnNext?: string;
+  classNameTopInfo?: string;
+  classNameDays?: string;
+  classNameDay?: string;
+  classNameDate?: string;
+  classNameDateValid?: string;
+  classNameDateDisabled?: string;
+  classNameDateInMonth?: string;
+  classNameDateOtherMonth?: string;
+  classNameDateSelect?: string;
+  classNameDateSelectRange?: string;
+}
+
+export interface InputCalendarMonthProps
+  extends InputCalendarMonthClassProps,
+    _TProps {
   type?: "normal" | "range";
 
   date?: FenextjsDate;
@@ -12956,34 +12993,56 @@ export const InputCalendarMonth = ({
   setDataNSelect,
   min,
   max,
+
+  className = "",
+  classNameContent = "",
+  classNameTop = "",
+  classNameTopBtn = "",
+  classNameTopBtnPrev = "",
+  classNameTopBtnNext = "",
+  classNameTopInfo = "",
+  classNameDays = "",
+  classNameDay = "",
+  classNameDate = "",
+  classNameDateValid = "",
+  classNameDateDisabled = "",
+  classNameDateInMonth = "",
+  classNameDateOtherMonth = "",
+  classNameDateSelect = "",
+  classNameDateSelectRange = "",
+
   ...props
 }: InputCalendarMonthProps) => {
   const { _t } = use_T({ ...props });
   return (
     <>
-      <div className={`fenext-input-calendar-month`}>
-        <div className={`fenext-input-calendar-month-content`}>
-          <div className={`fenext-input-calendar-top`}>
+      <div className={`fenext-input-calendar-month ${className}`}>
+        <div
+          className={`fenext-input-calendar-month-content ${classNameContent}`}
+        >
+          <div className={`fenext-input-calendar-top ${classNameTop}`}>
             <button
-              className={`fenext-input-calendar-btn`}
+              className={`fenext-input-calendar-btn ${classNameTopBtn} ${classNameTopBtnPrev}`}
               onClick={onPreMonth}
             >
               <SvgPaginationPre />
             </button>
-            <div className={`fenext-input-calendar-top-info`}>
+            <div
+              className={`fenext-input-calendar-top-info ${classNameTopInfo}`}
+            >
               {date?.onFormat({
                 month: "long",
                 year: "numeric",
               })}
             </div>
             <button
-              className={`fenext-input-calendar-btn`}
+              className={`fenext-input-calendar-btn ${classNameTopBtn} ${classNameTopBtnNext}`}
               onClick={onNextMonth}
             >
               <SvgPaginationNext />
             </button>
           </div>
-          <div className={`fenext-input-calendar-days`}>
+          <div className={`fenext-input-calendar-days ${classNameDays}`}>
             {[
               DaysEnum.Sunday,
               DaysEnum.Monday,
@@ -12998,7 +13057,7 @@ export const InputCalendarMonth = ({
                   <div
                     key={i}
                     data-day={day}
-                    className={`fenext-input-calendar-day`}
+                    className={`fenext-input-calendar-day ${classNameDay}`}
                   >
                     {_t(day)[0]}
                   </div>
@@ -13073,12 +13132,14 @@ export const InputCalendarMonth = ({
                   }}
                   className={`
                                         fenext-input-calendar-date
-                                        fenext-input-calendar-date-${isValid ? "valid" : "disabled"}
-                                        fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
-                                        fenext-input-calendar-date-${type == "normal" && COMPARE_DATE["=="] ? "select" : ""}
-                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0["=="] ? "select" : ""}
-                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0[">"] && COMPARE_DATE_RANGE_1["<"] ? "select-range" : ""}
-                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_1["=="] ? "select" : ""}
+                                        fenext-input-calendar-date-${isValid ? `valid ${classNameDateValid}` : `disabled ${classNameDateDisabled}`}
+                                        fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? `in-month ${classNameDateInMonth}` : `other-month ${classNameDateOtherMonth}`}
+                                        fenext-input-calendar-date-${type == "normal" && COMPARE_DATE["=="] ? `select ${classNameDateSelect}` : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0["=="] ? `select ${classNameDateSelect}` : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0[">"] && COMPARE_DATE_RANGE_1["<"] ? `select-range ${classNameDateSelectRange}` : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_1["=="] ? `select ${classNameDateSelect}` : ""}
+
+                                        ${classNameDate}
                                     `}
                 >
                   {d?.getDate()}
@@ -15058,6 +15119,7 @@ export const InputSelect = <T = any,>({
                         iconDelete={iconDelete}
                         disabled={props?.disabled}
                         useT={useTOption}
+                        classNameOption={`${classNameOption} ${dataMemo?.option?.classNameOption}`}
                       />
                     </div>
                   </>
