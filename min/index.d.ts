@@ -2231,7 +2231,13 @@ export interface InputTextBaseProps extends _TProps {
 export interface InputTextProps extends InputTextBaseProps, InputTextClassProps {
 }
 export declare const InputText: ({ id, datalist, name, label, placeholder, placeholderFocus, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, classNameError, iconLoader, onChange, onBlur, onEnter, onChangeValidate, parseText, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, required, requiredText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, onWheel, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, showFocusInTarget, ...p }: InputTextProps) => React.JSX.Element;
-export interface InputCalendarProps extends Pick<InputTextProps, "label" | "placeholder" | "optional" | "optionalText" | "required" | "requiredText" | "icon" | "iconPos" | "validator" | "errorWithIsChange">, Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
+export interface InputCalendarClassProps {
+    className?: string;
+    classNameContentCalendar?: string;
+    classNameInputText?: InputTextClassProps;
+    classNameInputCalendarMonth?: InputCalendarMonthClassProps;
+}
+export interface InputCalendarProps extends Pick<InputTextProps, "label" | "placeholder" | "optional" | "optionalText" | "required" | "requiredText" | "icon" | "iconPos" | "validator" | "errorWithIsChange">, Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max">, InputCalendarClassProps {
     defaultValue?: Date;
     value?: Date;
     defaultValueRange?: Date[];
@@ -2240,10 +2246,6 @@ export interface InputCalendarProps extends Pick<InputTextProps, "label" | "plac
     onChangeRange?: (d: Date[]) => void;
     nMonthShow?: number;
     collapseProps?: Omit<CollapseProps, "children" | "header">;
-    className?: string;
-    classNameContentCalendar?: string;
-    classNameInputText?: InputTextClassProps;
-    classNameInputCalendarMonth?: InputCalendarMonthClassProps;
 }
 export declare const InputCalendar: ({ nMonthShow, icon, type, defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange, collapseProps, className, classNameContentCalendar, classNameInputText, classNameInputCalendarMonth, ...props }: InputCalendarProps) => React.JSX.Element;
 export interface InputCalendarMonthClassProps {
@@ -3318,11 +3320,13 @@ export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {
 }
 export declare const parseTabCount: <T>(d: TabItemProps<T>, _t: ReturnType<typeof use_T>["_t"]) => TabItemProps<T>;
 export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, activeTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, useCount, ...props }: TabProps<T>) => React.JSX.Element;
-export interface DropDownProps {
+export interface DropDownClassProps {
     className?: string;
     classNameContentHeader?: string;
     classNameContentIcon?: string;
     classNameBody?: string;
+}
+export interface DropDownProps extends DropDownClassProps {
     loader?: boolean;
     disabled?: boolean;
     defaultActive?: boolean;
@@ -3760,6 +3764,38 @@ export interface PageProgressClassProps {
 export interface PageProgressProps extends PageProgressBaseProps, PageProgressClassProps {
 }
 export declare const PageProgress: ({ className }: PageProgressProps) => React.JSX.Element;
+export interface FilterDateDataProps {
+    type?: InputCalendarMonthProps["type"];
+    date?: Date;
+    dateRange?: Date[];
+}
+export interface FilterDateClassProps {
+    className?: string;
+    classNameDropDown?: DropDownClassProps;
+    classNameCollapse?: InputCalendarClassProps;
+    classNameBtnToday?: ButtonClassProps;
+    classNameBtnWeek?: ButtonClassProps;
+    classNameTextValue?: Pick<TextProps, "tag" | "className">;
+    classNameTextSwich?: Pick<TextProps, "tag" | "className">;
+    classNameInputSwich?: InputSwichClassProps;
+    classNameContentTop?: string;
+    classNameLabelSwich?: string;
+    classNameClear?: string;
+}
+export interface FilterDateProps extends FilterDateClassProps, _TProps {
+    defaultValue?: FilterDateDataProps;
+    onChange?: (data: FilterDateDataProps) => void;
+    formatDateOption?: FenextjsDateFormatOptions;
+    textValue?: string;
+    textFilterByDate?: string;
+    textFilterByRange?: string;
+    textBtnToday?: string;
+    textBtnWeek?: string;
+    iconTrash?: ReactNode;
+    extraListBtn?: ((data: ReturnType<typeof useData<FilterDateDataProps>>) => ReactNode)[];
+    nMonthShow?: number;
+}
+export declare const FilterDate: ({ onChange, defaultValue, formatDateOption, className, classNameDropDown, classNameCollapse, classNameBtnToday, classNameBtnWeek, classNameTextValue, classNameTextSwich, classNameInputSwich, classNameContentTop, classNameLabelSwich, classNameClear, textValue, textFilterByDate, textFilterByRange, textBtnToday, textBtnWeek, iconTrash, extraListBtn, nMonthShow, ...p }: FilterDateProps) => React.JSX.Element;
 export type ScheduleDayValueType = InputDateRangeValueType[];
 export interface ScheduleDayBaseProps extends Omit<InputDateRangeBaseProps, "value" | "onChange" | "defaultValue">, _TProps {
     defaultValue?: ScheduleDayValueType;

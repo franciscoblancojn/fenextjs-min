@@ -8,7 +8,7 @@ exports.SvgWechat = exports.SvgEstadisticas = exports.SvgEbay = exports.SvgMovil
 exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = exports.SwichViewList = exports.Breadcrumb = exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = void 0;
 exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.Box = exports.ItemMenu = exports.Menu = void 0;
 exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = void 0;
-exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = void 0;
+exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterDate = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const ReactDOM = tslib_1.__importStar(require("react-dom"));
@@ -9315,6 +9315,116 @@ const PageProgress = ({ className = "" }) => {
         react_1.default.createElement("div", { className: `fenext-page-progress fenext-page-progress-${statusBar} ${className} ` })));
 };
 exports.PageProgress = PageProgress;
+const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, className = "", classNameDropDown = {}, classNameCollapse = {}, classNameBtnToday = {}, classNameBtnWeek = {}, classNameTextValue = {}, classNameTextSwich = {}, classNameInputSwich = {}, classNameContentTop = "", classNameLabelSwich = "", classNameClear = "", textValue = "Filtrar por fecha:", textFilterByDate = "Filtar por fecha", textFilterByRange = "Filtar por rango", textBtnToday = "Hoy", textBtnWeek = "Esta Semana", iconTrash = react_1.default.createElement(exports.SvgTrash, null), extraListBtn = [], nMonthShow = 2, ...p }) => {
+    const { _t } = (0, exports.use_T)({ ...p });
+    const date = (0, exports.useDate)({});
+    const { data, onChangeData, onConcatData, setData, ...HOOK } = (0, exports.useData)({
+        type: "normal",
+        ...defaultValue,
+    }, {
+        onChangeDataAfter: (e) => {
+            const date = { ...e };
+            if (date.date) {
+                date.date.setHours(0);
+                date.date.setMinutes(0);
+                date.date.setSeconds(0);
+                date.date.setMilliseconds(0);
+            }
+            if (date.dateRange?.[0]) {
+                date.dateRange?.[0].setHours(0);
+                date.dateRange?.[0].setMinutes(0);
+                date.dateRange?.[0].setSeconds(0);
+                date.dateRange?.[0].setMilliseconds(0);
+            }
+            if (date.dateRange?.[1]) {
+                date.dateRange?.[1].setHours(0);
+                date.dateRange?.[1].setMinutes(0);
+                date.dateRange?.[1].setSeconds(0);
+                date.dateRange?.[1].setMilliseconds(0);
+                date.dateRange?.[1].setDate(date.dateRange?.[1]?.getDate() + 1);
+                date.dateRange?.[1].setSeconds(date.dateRange?.[1]?.getSeconds() - 10);
+            }
+            onChange?.(date);
+        },
+    });
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: `
+                    fenext-filter-date  
+                    ${className}
+                ` },
+            react_1.default.createElement(exports.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(exports.Text, { ...classNameTextValue },
+                        _t(textValue),
+                        " ",
+                        data.type == "normal" && data.date != undefined && (react_1.default.createElement(react_1.default.Fragment, null, date.onFormat(formatDateOption, data.date))),
+                        data.type == "range" && data.dateRange != undefined && (react_1.default.createElement(react_1.default.Fragment, null,
+                            date.onFormat(formatDateOption, data.dateRange?.[0]),
+                            " -",
+                            data.dateRange?.[1] != undefined
+                                ? date.onFormat(formatDateOption, data.dateRange?.[1])
+                                : "")))), ...classNameDropDown, rotateIcon: false, classNameBody: `
+                        fenext-filter-date-dropdown-body
+                        ${[classNameDropDown.classNameBody]}
+                    ` },
+                react_1.default.createElement("div", { className: `fenext-filter-date-content-top  ${classNameContentTop}` },
+                    react_1.default.createElement("label", { className: `
+                                fenext-filter-date-label-swich    
+                                ${classNameLabelSwich}
+                            ` },
+                        react_1.default.createElement(exports.Text, { ...classNameTextSwich }, _t(textFilterByDate)),
+                        react_1.default.createElement(exports.InputSwich, { value: data.type == "normal", onChange: (e) => {
+                                onChangeData("type")(e ? "normal" : "range");
+                            }, ...classNameInputSwich })),
+                    react_1.default.createElement("label", { className: `
+                                fenext-filter-date-label-swich    
+                                ${classNameLabelSwich}
+                            ` },
+                        react_1.default.createElement(exports.Text, { ...classNameTextSwich }, _t(textFilterByRange)),
+                        react_1.default.createElement(exports.InputSwich, { value: data.type == "range", onChange: (e) => {
+                                onChangeData("type")(!e ? "normal" : "range");
+                            }, ...classNameInputSwich })),
+                    react_1.default.createElement("div", { className: `
+                                fenext-filter-date-content-btn    
+                            ` },
+                        react_1.default.createElement(exports.Button, { ...classNameBtnToday, onClick: () => {
+                                onConcatData({
+                                    type: "normal",
+                                    date: new Date(),
+                                });
+                            }, size: "extra-small" }, _t(textBtnToday)),
+                        react_1.default.createElement(exports.Button, { ...classNameBtnWeek, onClick: () => {
+                                const start = new Date();
+                                start.setDate(start.getDate() - start.getDay());
+                                const end = new Date();
+                                end.setDate(end.getDate() + (6 - end.getDay()));
+                                onConcatData({
+                                    type: "range",
+                                    dateRange: [start, end],
+                                });
+                            }, size: "extra-small" }, _t(textBtnWeek)),
+                        extraListBtn.map((f) => f({
+                            data,
+                            onChangeData,
+                            onConcatData,
+                            setData,
+                            ...HOOK,
+                        })))),
+                react_1.default.createElement(exports.InputCalendar, { onChange: onChangeData("date"), onChangeRange: onChangeData("dateRange"), type: data.type, nMonthShow: nMonthShow, collapseProps: {
+                        active: true,
+                    }, value: data.date, valueRange: data.dateRange, ...classNameCollapse })),
+            ((data?.type == "normal" && data?.date != undefined) ||
+                (data?.type == "range" &&
+                    data?.dateRange?.[0] != undefined &&
+                    data?.dateRange?.[1] != undefined)) && (react_1.default.createElement("div", { className: `
+                            fenext-filter-date-clear
+                            ${classNameClear}
+                        `, onClick: () => {
+                    setData({
+                        type: "normal",
+                    });
+                } }, iconTrash)))));
+};
+exports.FilterDate = FilterDate;
 const ScheduleDay = ({ className = "", defaultValue = [[undefined, undefined]], value = undefined, onChange, propsStart = {
     label: "Start time",
     placeholder: "Start time",
