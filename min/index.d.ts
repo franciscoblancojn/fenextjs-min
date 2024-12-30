@@ -2022,6 +2022,7 @@ export type ButtonBaseSize = "extra-small" | "small" | "normal" | "strong" | "ex
 export type ButtonOnClick = React.MouseEventHandler<HTMLButtonElement> & React.MouseEventHandler<HTMLDivElement>;
 export interface ButtonBaseProps extends PropsWithChildren, _TProps {
     loader?: boolean;
+    invert?: boolean;
     disabled?: boolean;
     onClick?: ButtonOnClick;
     onClickDisabled?: ButtonOnClick;
@@ -2035,12 +2036,13 @@ export interface ButtonClassProps {
     className?: string;
     classNameDisabled?: string;
     classNameLoader?: string;
+    classNameInvert?: string;
     classNameContentLoaderElement?: string;
     classNameLoaderElement?: string;
 }
 export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {
 }
-export declare const Button: ({ className, classNameLoader, classNameDisabled, classNameContentLoaderElement, classNameLoaderElement, children, loader, disabled, onClick, onClickDisabled: onClickDisabledProps, icon, iconLoader, isBtn, full, size, ...props }: ButtonProps) => React.JSX.Element;
+export declare const Button: ({ className, classNameLoader, classNameInvert, classNameDisabled, classNameContentLoaderElement, classNameLoaderElement, children, loader, invert, disabled, onClick, onClickDisabled: onClickDisabledProps, icon, iconLoader, isBtn, full, size, ...props }: ButtonProps) => React.JSX.Element;
 export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
     useAlertHook?: boolean;
     alertHookProps?: AlertHookProps;

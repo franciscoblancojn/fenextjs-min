@@ -11051,6 +11051,7 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
    * Indicates whether the button is currently in the loading state.
    */
   loader?: boolean;
+  invert?: boolean;
   /**
    * Indicates whether the button is disabled or not.
    */
@@ -11104,6 +11105,10 @@ export interface ButtonClassProps {
   /**
    * The class name for the component.
    */
+  classNameInvert?: string;
+  /**
+   * The class name for the component.
+   */
   classNameContentLoaderElement?: string;
   /**
    * The class name for the component.
@@ -11119,12 +11124,14 @@ export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {}
 export const Button = ({
   className = "",
   classNameLoader = "",
+  classNameInvert = "",
   classNameDisabled = "",
   classNameContentLoaderElement = "",
   classNameLoaderElement = "",
 
   children,
   loader = false,
+  invert = false,
   disabled = false,
   onClick = () => {},
   onClickDisabled: onClickDisabledProps,
@@ -11150,6 +11157,7 @@ export const Button = ({
         className={`
                     fenext-btn
                     fenext-btn-${loader ? `loader ${classNameLoader}` : ""}
+                    fenext-btn-${invert ? `invert ${classNameInvert}` : ""}
                     fenext-btn-${disabled ? `disabled ${classNameDisabled}` : ""}
                     fenext-btn-size-${size}
                     ${full ? "fenext-btn-size-full" : ""}

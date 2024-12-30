@@ -4595,7 +4595,7 @@ const Cols = ({ className = "", children, nCols = 2, breakInside = true, ...prop
             } }, _t(children))));
 };
 exports.Cols = Cols;
-const Button = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameContentLoaderElement = "", classNameLoaderElement = "", children, loader = false, disabled = false, onClick = () => { }, onClickDisabled: onClickDisabledProps, icon = "", iconLoader = undefined, isBtn = true, full = false, size = "normal", ...props }) => {
+const Button = ({ className = "", classNameLoader = "", classNameInvert = "", classNameDisabled = "", classNameContentLoaderElement = "", classNameLoaderElement = "", children, loader = false, invert = false, disabled = false, onClick = () => { }, onClickDisabled: onClickDisabledProps, icon = "", iconLoader = undefined, isBtn = true, full = false, size = "normal", ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const Tag = isBtn ? "button" : "div";
     const onClickDisabled = (e) => {
@@ -4606,6 +4606,7 @@ const Button = ({ className = "", classNameLoader = "", classNameDisabled = "", 
         react_1.default.createElement(Tag, { onClick: disabled ? onClickDisabled : onClick, className: `
                     fenext-btn
                     fenext-btn-${loader ? `loader ${classNameLoader}` : ""}
+                    fenext-btn-${invert ? `invert ${classNameInvert}` : ""}
                     fenext-btn-${disabled ? `disabled ${classNameDisabled}` : ""}
                     fenext-btn-size-${size}
                     ${full ? "fenext-btn-size-full" : ""}
