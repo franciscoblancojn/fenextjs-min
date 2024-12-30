@@ -13951,6 +13951,12 @@ export const InputSelectOption = <T = any,>({
         selected={selected}
         value={text}
       >
+        {type == "multiple" && (
+          <InputCheckbox
+            classNameLabel="fenext-select-option-checkbox"
+            value={true}
+          />
+        )}
         {img ? (
           <>
             <img
@@ -20408,7 +20414,7 @@ export const Notification = ({
   return (
     <>
       <div
-        className={`fenext-notification fenext-notification-${type.toLowerCase()} ${className} `}
+        className={`fenext-notification fenext-notification-${type.toUpperCase()} ${className} `}
       >
         {_t(children)}
         <div className="fenext-notification-close" onClick={reset}>
@@ -21540,7 +21546,7 @@ export type TableHeader<T> = {
    */
   columnOptions?: {
     orderBy?: boolean;
-    showHidden?: boolean;
+    // showHidden?: boolean;
   };
   /**
    * The label to display in the header column.
@@ -21607,13 +21613,13 @@ export interface TableBaseProps<T> extends _TProps {
    */
   onOrderBy?: (order: { id: keyof T; order: "ASC" | "DESC" }) => void;
 
-  /**
-   * onShowHidden table.
-   */
-  onShowHidden?: (showHidden: {
-    id: keyof T;
-    showHidden: "SHOW" | "HIDDEN";
-  }) => void;
+  // /**
+  //  * onShowHidden table.
+  //  */
+  // onShowHidden?: (showHidden: {
+  //     id: keyof T;
+  //     showHidden: "SHOW" | "HIDDEN";
+  // }) => void;
   /**
    * notResult the table.
    */
@@ -21663,7 +21669,7 @@ export const Table = <T,>({
   typeLoader = "line",
   useCheckbox = true,
   onOrderBy,
-  onShowHidden,
+  // onShowHidden,
   onChecked,
   notResult = <div>There is not results</div>,
   actionsCheckbox,
@@ -21907,67 +21913,82 @@ export const Table = <T,>({
                     data-col-id={h?.id}
                     data-col-text={h?.th}
                   >
-                    <DropDown header={<>{_t(h.th)}</>}>
-                      {h?.columnOptions?.orderBy ? (
-                        <>
-                          <div
-                            onClick={() => {
-                              onOrderBy?.({
-                                id: h.id,
-                                order: "ASC",
-                              });
-                            }}
-                            className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
-                          >
-                            {_t("Order ASC")}
-                          </div>
-                          <div
-                            onClick={() => {
-                              onOrderBy?.({
-                                id: h.id,
-                                order: "DESC",
-                              });
-                            }}
-                            className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
-                          >
-                            {_t("Order DESC")}
-                          </div>
-                        </>
-                      ) : (
-                        <></>
-                      )}
-                      {h?.columnOptions?.showHidden ? (
-                        <>
-                          <InputRadio
-                            name={`${h.th}-${i}-show-hidden`}
-                            _t={_t}
-                            items={[
-                              {
-                                id: "show",
-                                label: "Show",
-                              },
-                              {
-                                id: "hidden",
-                                label: "Hidden",
-                              },
-                            ]}
-                            defaultValue={{
-                              id: "show",
-                              label: "Show",
-                            }}
-                            labelPosition="right"
-                            onChange={(e) => {
-                              onShowHidden?.({
-                                id: h.id,
-                                showHidden: e?.id == "show" ? "SHOW" : "HIDDEN",
-                              });
-                            }}
-                          />
-                        </>
-                      ) : (
-                        <></>
-                      )}
-                    </DropDown>
+                    {Object.values(h?.columnOptions ?? {}).some(
+                      (e) => e == true,
+                    ) ? (
+                      <DropDown
+                        header={<>{_t(h.th)}</>}
+                        classNameBody={`
+                                                      fenext-table-content-table-th-dropdown-body  
+                                                    `}
+                      >
+                        {h?.columnOptions?.orderBy ? (
+                          <>
+                            <div
+                              onClick={() => {
+                                onOrderBy?.({
+                                  id: h.id,
+                                  order: "ASC",
+                                });
+                              }}
+                              className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                            >
+                              {_t("Order ASC")}
+                            </div>
+                            <div
+                              onClick={() => {
+                                onOrderBy?.({
+                                  id: h.id,
+                                  order: "DESC",
+                                });
+                              }}
+                              className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                            >
+                              {_t("Order DESC")}
+                            </div>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+                        {/* {h?.columnOptions?.showHidden ? (
+                                                        <>
+                                                            <InputRadio
+                                                                name={`${h.th}-${i}-show-hidden`}
+                                                                _t={_t}
+                                                                items={[
+                                                                    {
+                                                                        id: "show",
+                                                                        label: "Show",
+                                                                    },
+                                                                    {
+                                                                        id: "hidden",
+                                                                        label: "Hidden",
+                                                                    },
+                                                                ]}
+                                                                defaultValue={{
+                                                                    id: "show",
+                                                                    label: "Show",
+                                                                }}
+                                                                labelPosition="right"
+                                                                onChange={(e) => {
+                                                                    onShowHidden?.({
+                                                                        id: h.id,
+                                                                        showHidden:
+                                                                            e?.id ==
+                                                                            "show"
+                                                                                ? "SHOW"
+                                                                                : "HIDDEN",
+                                                                    });
+                                                                }}
+                                                            />
+                                                        </>
+                                                    ) : (
+                                                        <></>
+                                                    )} */}
+                      </DropDown>
+                    ) : (
+                      <>{_t(h.th)}</>
+                    )}
                   </th>
                 ))}
               </tr>
@@ -22402,28 +22423,28 @@ export const LavaLamp = ({
   styles = {
     width: "100%",
     height: "500px",
-    background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+    background: `linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-success) 100%)`,
   },
   stylesElement = [
     {
       width: "150px",
       aspectRatio: "2/1.5",
       borderRadius: "30% 70% 70% 30% / 68% 30% 70% 32% ",
-      background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+      background: `linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-success) 100%)`,
       animationTimingFunction: "ease",
     },
     {
       width: "100px",
       aspectRatio: "1 / 1",
       borderRadius: "30% 70% 44% 56% / 23% 46% 54% 77% ",
-      background: `linear-gradient(75deg,var(--fenext-color-info) 0%,var(--fenext-color-indigo) 100%)`,
+      background: `linear-gradient(75deg,var(--fenext-color-primary) 0%,var(--fenext-color-secondary) 100%)`,
       animationTimingFunction: "ease-out",
     },
     {
       width: "100px",
       aspectRatio: "1 / 1",
       borderRadius: "87% 13% 65% 35% / 46% 46% 54% 54% ",
-      background: `linear-gradient(135deg,var(--fenext-color-cyan) 0%,var(--fenext-color-purple) 100%)`,
+      background: `linear-gradient(135deg,var(--fenext-color-primary) 0%,var(--fenext-color-secondary) 100%)`,
       animationTimingFunction: "linear",
     },
   ],

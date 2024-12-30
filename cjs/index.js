@@ -5355,6 +5355,7 @@ const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", clas
                     });
                 }
             }, disabled: disabled, selected: selected, value: text },
+            type == "multiple" && (react_1.default.createElement(exports.InputCheckbox, { classNameLabel: "fenext-select-option-checkbox", value: true })),
             img ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("img", { src: img, alt: text, className: `fenext-select-option-img ${classNameOptionImg}` }))) : (react_1.default.createElement(react_1.default.Fragment, null, imgComponent ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(exports.Img, { ...imgComponent, className: `fenext-select-option-img ${classNameOptionImg} ${imgComponent.className}` }))) : (react_1.default.createElement(react_1.default.Fragment, null)))),
@@ -7576,7 +7577,7 @@ const Notification = ({ className = "", type = RequestResultTypeProps.NORMAL, ch
     const { _t } = (0, exports.use_T)({ ...props });
     const { reset } = (0, exports.useNotification)({});
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: `fenext-notification fenext-notification-${type.toLowerCase()} ${className} ` },
+        react_1.default.createElement("div", { className: `fenext-notification fenext-notification-${type.toUpperCase()} ${className} ` },
             _t(children),
             react_1.default.createElement("div", { className: "fenext-notification-close", onClick: reset },
                 react_1.default.createElement(exports.SvgClose, null)))));
@@ -7882,7 +7883,7 @@ const AlertHook = ({ className = "", configHook = {}, ...props }) => {
         react_1.default.createElement(exports.Alert, { ...props, ...alert, onClose: onClearAlert })))));
 };
 exports.AlertHook = AlertHook;
-const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onShowHidden, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
+const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const checkboxItems = (0, react_1.useMemo)(() => items.map((item) => ({ ...item, __checkbox: false })), [items]);
     const [checkbox, setCheckbox] = (0, react_1.useState)(checkboxItems);
@@ -7984,40 +7985,21 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                         react_1.default.createElement("tr", { className: `fenext-table-content-table-thr ${classNameThr}` },
                             useCheckbox && (react_1.default.createElement("th", { className: `fenext-table-content-table-th ${classNameTh}` },
                                 react_1.default.createElement(exports.InputCheckbox, { onChange: onCheckedAll, value: checkbox.every((e) => e?.__checkbox ?? false), _t: _t, classNameLabel: "fenext-table-content-table-checkbox" }))),
-                            headerNotTr.map((h, i) => (react_1.default.createElement("th", { key: i, className: `fenext-table-content-table-th ${classNameTh} ${h?.className ?? ""}`, "data-col-id": h?.id, "data-col-text": h?.th },
-                                react_1.default.createElement(exports.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null, _t(h.th)) },
-                                    h?.columnOptions?.orderBy ? (react_1.default.createElement(react_1.default.Fragment, null,
-                                        react_1.default.createElement("div", { onClick: () => {
-                                                onOrderBy?.({
-                                                    id: h.id,
-                                                    order: "ASC",
-                                                });
-                                            }, className: `fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by` }, _t("Order ASC")),
-                                        react_1.default.createElement("div", { onClick: () => {
-                                                onOrderBy?.({
-                                                    id: h.id,
-                                                    order: "DESC",
-                                                });
-                                            }, className: `fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by` }, _t("Order DESC")))) : (react_1.default.createElement(react_1.default.Fragment, null)),
-                                    h?.columnOptions?.showHidden ? (react_1.default.createElement(react_1.default.Fragment, null,
-                                        react_1.default.createElement(exports.InputRadio, { name: `${h.th}-${i}-show-hidden`, _t: _t, items: [
-                                                {
-                                                    id: "show",
-                                                    label: "Show",
-                                                },
-                                                {
-                                                    id: "hidden",
-                                                    label: "Hidden",
-                                                },
-                                            ], defaultValue: {
-                                                id: "show",
-                                                label: "Show",
-                                            }, labelPosition: "right", onChange: (e) => {
-                                                onShowHidden?.({
-                                                    id: h.id,
-                                                    showHidden: e?.id == "show" ? "SHOW" : "HIDDEN",
-                                                });
-                                            } }))) : (react_1.default.createElement(react_1.default.Fragment, null)))))))),
+                            headerNotTr.map((h, i) => (react_1.default.createElement("th", { key: i, className: `fenext-table-content-table-th ${classNameTh} ${h?.className ?? ""}`, "data-col-id": h?.id, "data-col-text": h?.th }, Object.values(h?.columnOptions ?? {}).some((e) => e == true) ? (react_1.default.createElement(exports.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null, _t(h.th)), classNameBody: `
+                                                      fenext-table-content-table-th-dropdown-body  
+                                                    ` }, h?.columnOptions?.orderBy ? (react_1.default.createElement(react_1.default.Fragment, null,
+                                react_1.default.createElement("div", { onClick: () => {
+                                        onOrderBy?.({
+                                            id: h.id,
+                                            order: "ASC",
+                                        });
+                                    }, className: `fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by` }, _t("Order ASC")),
+                                react_1.default.createElement("div", { onClick: () => {
+                                        onOrderBy?.({
+                                            id: h.id,
+                                            order: "DESC",
+                                        });
+                                    }, className: `fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by` }, _t("Order DESC")))) : (react_1.default.createElement(react_1.default.Fragment, null)))) : (react_1.default.createElement(react_1.default.Fragment, null, _t(h.th)))))))),
                     react_1.default.createElement("tbody", { className: `fenext-table-content-table-tbody ${classNameTBody}` }, CONTENT))),
             pagination && showPagination && (react_1.default.createElement("div", { className: `fenext-table-content-pagination ${classNameContentPagination}` },
                 react_1.default.createElement(exports.Pagination, { ...pagination, disabled: loader, _t: _t }))))));
@@ -8096,27 +8078,27 @@ exports.CollapseMultiple = CollapseMultiple;
 const LavaLamp = ({ className = "", nItems = 20, styles = {
     width: "100%",
     height: "500px",
-    background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+    background: `linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-success) 100%)`,
 }, stylesElement = [
     {
         width: "150px",
         aspectRatio: "2/1.5",
         borderRadius: "30% 70% 70% 30% / 68% 30% 70% 32% ",
-        background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+        background: `linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-success) 100%)`,
         animationTimingFunction: "ease",
     },
     {
         width: "100px",
         aspectRatio: "1 / 1",
         borderRadius: "30% 70% 44% 56% / 23% 46% 54% 77% ",
-        background: `linear-gradient(75deg,var(--fenext-color-info) 0%,var(--fenext-color-indigo) 100%)`,
+        background: `linear-gradient(75deg,var(--fenext-color-primary) 0%,var(--fenext-color-secondary) 100%)`,
         animationTimingFunction: "ease-out",
     },
     {
         width: "100px",
         aspectRatio: "1 / 1",
         borderRadius: "87% 13% 65% 35% / 46% 46% 54% 54% ",
-        background: `linear-gradient(135deg,var(--fenext-color-cyan) 0%,var(--fenext-color-purple) 100%)`,
+        background: `linear-gradient(135deg,var(--fenext-color-primary) 0%,var(--fenext-color-secondary) 100%)`,
         animationTimingFunction: "linear",
     },
 ], ranges = {}, }) => {
