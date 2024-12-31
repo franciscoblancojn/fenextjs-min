@@ -1835,8 +1835,9 @@ class FenextjsDate {
             DATE.setDate(DATE.getDate() - 1);
         }
         const DATEMAX = new Date(D.getTime());
-        DATEMAX.setMonth(DATEMAX.getMonth() + 1);
         DATEMAX.setDate(1);
+        DATEMAX.setMonth(D.getMonth() + 1);
+        DATEMAX.setDate(DATEMAX.getDate() - 1);
         while (DATEMAX.getDay() != 6) {
             DATEMAX.setDate(DATEMAX.getDate() + 1);
         }
@@ -5017,6 +5018,7 @@ const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(ex
                     nMonthShow > 1 && (react_1.default.createElement(react_1.default.Fragment, null, new Array(nMonthShow - 1).fill(1).map((e, i) => {
                         const n = e * i + 1;
                         const d = new Date(date?.date ?? 0);
+                        d.setDate(1);
                         d.setMonth(d.getMonth() + n);
                         const dateN = new FenextjsDate({
                             defaultDate: d,
@@ -7884,7 +7886,7 @@ const AlertHook = ({ className = "", configHook = {}, ...props }) => {
         react_1.default.createElement(exports.Alert, { ...props, ...alert, onClose: onClearAlert })))));
 };
 exports.AlertHook = AlertHook;
-const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
+const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameTdLabelCollapse = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const checkboxItems = (0, react_1.useMemo)(() => items.map((item) => ({ ...item, __checkbox: false })), [items]);
     const [checkbox, setCheckbox] = (0, react_1.useState)(checkboxItems);
@@ -7915,8 +7917,8 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
     (0, react_1.useEffect)(() => {
         setCheckbox(checkboxItems);
     }, [checkboxItems]);
-    const headerNotTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr !== true), [header]);
-    const headerTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr === true), [header]);
+    const headerNotTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr !== true || e?.isCollapse), [header]);
+    const headerTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr === true || e?.isCollapse), [header]);
     const CONTENT = (0, react_1.useMemo)(() => {
         if (loader) {
             if (typeLoader == "spinner") {
@@ -7944,15 +7946,29 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                 react_1.default.createElement("tr", { key: i, className: `fenext-table-content-table-tr ${classNameTr}` },
                     useCheckbox && (react_1.default.createElement("td", { key: `${i}-checkbox`, className: `fenext-table-content-table-td ${classNameTd}` },
                         react_1.default.createElement(exports.InputCheckbox, { onChange: onCheckedItem(i), value: checkbox[i]?.__checkbox ?? false, classNameLabel: "fenext-table-content-table-checkbox" }))),
-                    headerNotTr.map((h, j) => (react_1.default.createElement("td", { key: `${i}-${j}`, className: `fenext-table-content-table-td ${classNameTd} ${h?.className ?? ""}`, style: {
+                    headerNotTr.map((h, j) => (react_1.default.createElement("td", { key: `${i}-${j}`, className: `
+                                    fenext-table-content-table-td 
+                                    fenext-table-content-table-td-${h.isCollapse ? "is-label-collapse" : ""}
+                                    ${classNameTd} 
+                                    ${h?.className ?? ""}
+                                `, style: {
                             ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
-                        }, "data-col-id": h?.id, "data-col-text": h?.thText ?? h?.th }, h?.parse?.(item) ?? item[h.id] ?? "")))),
+                        }, "data-col-id": h?.id, "data-col-text": h?.thText ?? h?.th }, h.isCollapse ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        react_1.default.createElement("label", { htmlFor: `table-${name}-${h?.id?.toString()}-${i}`, className: `fenext-table-content-table-td-label-collapse ${classNameTdLabelCollapse}` }, h?.collapseProps?.header))) : (react_1.default.createElement(react_1.default.Fragment, null, h?.parse?.(item) ?? item[h.id] ?? "")))))),
                 headerTr.map((new_tr, j) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("tr", { key: `${i}_tr_${j}`, className: `fenext-table-content-table-tr ${classNameTr} ${new_tr?.className ?? ""}` },
-                            react_1.default.createElement("td", { key: `${i}-${j}`, className: `fenext-table-content-table-td ${classNameTd}`, style: {
+                            react_1.default.createElement("td", { key: `${i}-${j}`, className: `
+                                            fenext-table-content-table-td 
+                                            fenext-table-content-table-td-${new_tr.isCollapse ? "is-collapse" : ""}
+                                            ${classNameTd}
+                                        `, style: {
                                     ["--fenext-table-head-th"]: `"${new_tr?.thText ?? new_tr?.th}"`,
-                                }, colSpan: 100, "data-col-id": new_tr?.id, "data-col-text": new_tr?.thText ?? new_tr?.th }, new_tr?.parse?.(item) ?? item[new_tr.id] ?? ""))));
+                                }, colSpan: 100, "data-col-id": new_tr?.id, "data-col-text": new_tr?.thText ?? new_tr?.th }, new_tr.isCollapse ? (react_1.default.createElement(react_1.default.Fragment, null,
+                                react_1.default.createElement(exports.Collapse, { ...new_tr.collapseProps, header: "", id: `table-${name}-${new_tr?.id?.toString()}-${i}`, name: `table-${name}-${new_tr?.id?.toString()}-${i}`, className: `
+                                                            ${new_tr.collapseProps?.className ?? ""}
+                                                            fenext-table-content-table-td-collapse
+                                                        ` }, new_tr?.parse?.(item) ?? item[new_tr.id] ?? ""))) : (react_1.default.createElement(react_1.default.Fragment, null, new_tr?.parse?.(item) ?? item[new_tr.id] ?? ""))))));
                 })));
         });
     }, [
