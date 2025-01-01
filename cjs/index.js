@@ -7957,7 +7957,13 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                         react_1.default.createElement("label", { htmlFor: `table-${name}-${h?.id?.toString()}-${i}`, className: `fenext-table-content-table-td-label-collapse ${classNameTdLabelCollapse}` }, h?.collapseProps?.header))) : (react_1.default.createElement(react_1.default.Fragment, null, h?.parse?.(item) ?? item[h.id] ?? "")))))),
                 headerTr.map((new_tr, j) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement("tr", { key: `${i}_tr_${j}`, className: `fenext-table-content-table-tr ${classNameTr} ${new_tr?.className ?? ""}` },
+                        react_1.default.createElement("tr", { key: `${i}_tr_${j}`, className: `
+                                        fenext-table-content-table-tr
+                                        fenext-table-content-table-tr-col-new-tr
+                                        fenext-table-content-table-tr-${new_tr.isCollapse ? "is-collapse" : ""}
+                                        ${classNameTr} 
+                                        ${new_tr?.className ?? ""}
+                                    ` },
                             react_1.default.createElement("td", { key: `${i}-${j}`, className: `
                                             fenext-table-content-table-td 
                                             fenext-table-content-table-td-${new_tr.isCollapse ? "is-collapse" : ""}
