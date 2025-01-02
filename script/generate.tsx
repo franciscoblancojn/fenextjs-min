@@ -24,6 +24,9 @@ const onCopyLib =  async ({ lib }: onCopyLibProps) => {
         if (e == "Fenextjs/index.tsx" && lib == "error") {
             return -1
         }
+        if (e == "_urlBase/index.tsx" && lib == "img-placeholder") {
+            return -1
+        }
         return 1
     })
 
