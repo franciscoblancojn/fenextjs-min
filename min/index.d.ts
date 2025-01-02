@@ -6,6 +6,16 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/storage";
 import { ParsedUrlQuery } from "querystring";
+export interface FenextExportCsvFileProps {
+    items: object[];
+    fileName: string;
+}
+export declare const FenextExportCsvFile: ({ fileName, items, }: FenextExportCsvFileProps) => void;
+export interface FenextExportJsonFileProps {
+    jsonData: object[];
+    fileName: string;
+}
+export declare function FenextExportJsonFile({ fileName, jsonData, }: FenextExportJsonFileProps): void;
 export declare enum Card_Enum {
     VISA = "VISA",
     MASTERCARD = "MASTERCARD",

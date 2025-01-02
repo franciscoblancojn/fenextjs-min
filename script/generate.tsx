@@ -50,6 +50,9 @@ const onCopyLib =  async ({ lib }: onCopyLibProps) => {
 const main = async () => {
     const listPromises = [
         onCopyLib({
+            lib: "export"
+        }),
+        onCopyLib({
             lib: "interface"
         }),
         onCopyLib({
