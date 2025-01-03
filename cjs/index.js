@@ -5124,6 +5124,7 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                             FullYear: true,
                         },
                     });
+                    COMPARE_DATE["=="] = selectDate != undefined && COMPARE_DATE["=="];
                     const COMPARE_DATE_RANGE_0 = date.onCompareDate({
                         date: d,
                         dateCompare: selectDateRange[0],
@@ -8370,6 +8371,7 @@ const DropDown = ({ className = "", classNameBody = "", classNameContentHeader =
         left: "inherit",
         right: "inherit",
         bottom: "inherit",
+        spaceY: "0",
     });
     const refDropDownHeader = (0, react_1.useRef)(null);
     const refDropDownBody = (0, react_1.useRef)(null);
@@ -8407,6 +8409,7 @@ const DropDown = ({ className = "", classNameBody = "", classNameContentHeader =
             bottom: !swForTop ? "inherit" : `${window.innerHeight - top}px`,
             left: swForLeft ? "inherit" : `${left}px`,
             right: !swForLeft ? "inherit" : `${window.innerWidth - right}px`,
+            spaceY: swForTop ? `${window.innerHeight - top}px` : `${bottom}px`,
         });
     };
     const onClickClose = (0, react_1.useCallback)((ev) => {
@@ -8449,6 +8452,7 @@ const DropDown = ({ className = "", classNameBody = "", classNameContentHeader =
                     ["--fenext-dropdown-left"]: tlrb.left,
                     ["--fenext-dropdown-right"]: tlrb.right,
                     ["--fenext-dropdown-bottom"]: tlrb.bottom,
+                    ["--fenext-dropdown-space-y"]: tlrb.spaceY,
                 } }, children))));
 };
 exports.DropDown = DropDown;
@@ -9414,7 +9418,7 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                     ${className}
                 ` },
             react_1.default.createElement(exports.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(exports.Text, { ...classNameTextValue },
+                    react_1.default.createElement(exports.Text, { ...classNameTextValue, className: `fenext-filter-date-text-value ${classNameTextValue?.className ?? ""}` },
                         _t(textValue),
                         " ",
                         data.type == "normal" && data.date != undefined && (react_1.default.createElement(react_1.default.Fragment, null, date.onFormat(formatDateOption, data.date))),
