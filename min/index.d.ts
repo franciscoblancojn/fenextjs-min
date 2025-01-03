@@ -2057,6 +2057,7 @@ export declare const Button: ({ className, classNameLoader, classNameInvert, cla
 export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
     useAlertHook?: boolean;
     alertHookProps?: AlertHookProps;
+    alert?: AlertComponentProps;
     loader?: boolean;
     menuLeft?: ReactNode;
     menuLeftActive?: boolean;
@@ -2073,17 +2074,18 @@ export interface LayoutGridMenuLeftClassProps extends LoaderClassProps {
 }
 export interface LayoutGridMenuLeftProps extends LayoutGridMenuLeftBaseProps, LayoutGridMenuLeftClassProps {
 }
-export declare const LayoutGridMenuLeft: ({ className, classNameLoader, classNameChildren, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, useAlertHook, alertHookProps, target, ...props }: LayoutGridMenuLeftProps) => React.JSX.Element;
+export declare const LayoutGridMenuLeft: ({ className, classNameLoader, classNameChildren, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, useAlertHook, alertHookProps, alert, target, ...props }: LayoutGridMenuLeftProps) => React.JSX.Element;
 export interface LayoutGridMenuTopLeftBaseProps extends LayoutGridMenuTopBaseProps, LayoutGridMenuLeftBaseProps {
 }
 export interface LayoutGridMenuTopLeftClassProps extends LayoutGridMenuTopClassProps, LayoutGridMenuLeftClassProps, LoaderClassProps {
 }
 export interface LayoutGridMenuTopLeftProps extends LayoutGridMenuTopLeftBaseProps, LayoutGridMenuTopLeftClassProps {
 }
-export declare const LayoutGridMenuTopLeft: ({ className, classNameLoader, classNameChildren, classNameMenuTop, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, menuTop, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, alertHookProps, useAlertHook, target, }: LayoutGridMenuTopLeftProps) => React.JSX.Element;
+export declare const LayoutGridMenuTopLeft: ({ className, classNameLoader, classNameChildren, classNameMenuTop, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, menuTop, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, alertHookProps, alert, useAlertHook, target, }: LayoutGridMenuTopLeftProps) => React.JSX.Element;
 export interface LayoutGridMenuTopBaseProps extends PropsWithChildren {
     useAlertHook?: boolean;
     alertHookProps?: AlertHookProps;
+    alert?: AlertComponentProps;
     loader?: boolean;
     menuTop?: ReactNode;
     usePageProgress?: boolean;
@@ -2095,7 +2097,7 @@ export interface LayoutGridMenuTopClassProps extends LoaderClassProps {
 }
 export interface LayoutGridMenuTopProps extends LayoutGridMenuTopBaseProps, LayoutGridMenuTopClassProps {
 }
-export declare const LayoutGridMenuTop: ({ className, classNameLoader, classNameChildren, classNameMenuTop, children, menuTop, loader, usePageProgress, useAlertHook, alertHookProps, ...props }: LayoutGridMenuTopProps) => React.JSX.Element;
+export declare const LayoutGridMenuTop: ({ className, classNameLoader, classNameChildren, classNameMenuTop, children, menuTop, loader, usePageProgress, useAlertHook, alertHookProps, alert, ...props }: LayoutGridMenuTopProps) => React.JSX.Element;
 export interface ContainerProps extends PropsWithChildren, _TProps {
     customSize?: number;
     usePaddingInline?: boolean;

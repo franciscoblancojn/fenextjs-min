@@ -4672,7 +4672,7 @@ const Button = ({ className = "", classNameLoader = "", classNameInvert = "", cl
             _t(children))));
 };
 exports.Button = Button;
-const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuLeft = "", classNameMenuLeftContent = "", children, menuLeft, loader = false, menuLeftActive = true, menuLeftMovilActive = false, useHeaderButtonMenu = false, usePageProgress = true, useAlertHook = true, alertHookProps = {}, target = "fenext-btn-menu-checkbox", ...props }) => {
+const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuLeft = "", classNameMenuLeftContent = "", children, menuLeft, loader = false, menuLeftActive = true, menuLeftMovilActive = false, useHeaderButtonMenu = false, usePageProgress = true, useAlertHook = true, alertHookProps = {}, alert = undefined, target = "fenext-btn-menu-checkbox", ...props }) => {
     const t = `[name="${target}"]:checked`;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-layout-grid fenext-layout-grid-ml 
@@ -4685,6 +4685,7 @@ const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChi
                 react_1.default.createElement("div", { className: `fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}` }, menuLeft)),
             react_1.default.createElement("div", { className: `fenext-layout-grid-ml-children ${classNameChildren}` },
                 usePageProgress && react_1.default.createElement(exports.PageProgress, null),
+                alert != undefined && (react_1.default.createElement(exports.Alert, { ...alert, className: `fenext-layout-grid-alert ${alert?.className ?? ""}` })),
                 useAlertHook && (react_1.default.createElement(exports.AlertHook, { ...alertHookProps, className: `fenext-layout-grid-alert ${alertHookProps?.className ?? ""}` })),
                 loader ? (react_1.default.createElement(exports.Loader, { classNameLoader: `${classNameLoader} fenext-layout-grid-loader` })) : (react_1.default.createElement(react_1.default.Fragment, null, children))),
             target != "fenext-btn-menu-checkbox" && (react_1.default.createElement(react_1.default.Fragment, null,
@@ -4708,18 +4709,19 @@ const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChi
                             `))))));
 };
 exports.LayoutGridMenuLeft = LayoutGridMenuLeft;
-const LayoutGridMenuTopLeft = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuTop = "", classNameMenuLeft = "", classNameMenuLeftContent = "", children, menuLeft, menuTop, loader = false, menuLeftActive = true, menuLeftMovilActive = false, useHeaderButtonMenu = false, usePageProgress = true, alertHookProps, useAlertHook = true, target = "fenext-btn-menu-checkbox", }) => {
+const LayoutGridMenuTopLeft = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuTop = "", classNameMenuLeft = "", classNameMenuLeftContent = "", children, menuLeft, menuTop, loader = false, menuLeftActive = true, menuLeftMovilActive = false, useHeaderButtonMenu = false, usePageProgress = true, alertHookProps, alert = undefined, useAlertHook = true, target = "fenext-btn-menu-checkbox", }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(exports.LayoutGridMenuTop, { className: `fenext-layout-grid fenext-layout-grid-mtl ${className}`, classNameMenuTop: classNameMenuTop, menuTop: menuTop, usePageProgress: false, useAlertHook: false },
-            react_1.default.createElement(exports.LayoutGridMenuLeft, { classNameLoader: classNameLoader, classNameChildren: classNameChildren, classNameMenuLeft: classNameMenuLeft, classNameMenuLeftContent: classNameMenuLeftContent, menuLeft: menuLeft, loader: loader, menuLeftActive: menuLeftActive, menuLeftMovilActive: menuLeftMovilActive, useHeaderButtonMenu: useHeaderButtonMenu, usePageProgress: usePageProgress, useAlertHook: useAlertHook, alertHookProps: alertHookProps, target: target }, children))));
+            react_1.default.createElement(exports.LayoutGridMenuLeft, { classNameLoader: classNameLoader, classNameChildren: classNameChildren, classNameMenuLeft: classNameMenuLeft, classNameMenuLeftContent: classNameMenuLeftContent, menuLeft: menuLeft, loader: loader, menuLeftActive: menuLeftActive, menuLeftMovilActive: menuLeftMovilActive, useHeaderButtonMenu: useHeaderButtonMenu, usePageProgress: usePageProgress, useAlertHook: useAlertHook, alertHookProps: alertHookProps, target: target, alert: alert }, children))));
 };
 exports.LayoutGridMenuTopLeft = LayoutGridMenuTopLeft;
-const LayoutGridMenuTop = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuTop = "", children, menuTop, loader = false, usePageProgress = true, useAlertHook = true, alertHookProps = {}, ...props }) => {
+const LayoutGridMenuTop = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuTop = "", children, menuTop, loader = false, usePageProgress = true, useAlertHook = true, alertHookProps = {}, alert = undefined, ...props }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-layout-grid fenext-layout-grid-mt ${className}`, ...props },
             react_1.default.createElement("div", { className: `fenext-layout-grid-mt-menu-top ${classNameMenuTop}` }, menuTop),
             react_1.default.createElement("div", { className: `fenext-layout-grid-mt-children ${classNameChildren}` },
                 usePageProgress && react_1.default.createElement(exports.PageProgress, null),
+                alert != undefined && (react_1.default.createElement(exports.Alert, { ...alert, className: `fenext-layout-grid-alert ${alert?.className ?? ""}` })),
                 useAlertHook && (react_1.default.createElement(exports.AlertHook, { ...alertHookProps, className: `fenext-layout-grid-alert ${alertHookProps?.className ?? ""}` })),
                 loader ? (react_1.default.createElement(exports.Loader, { classNameLoader: `${classNameLoader} fenext-layout-grid-loader` })) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
 };

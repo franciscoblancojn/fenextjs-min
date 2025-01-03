@@ -11281,6 +11281,10 @@ export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
    */
   alertHookProps?: AlertHookProps;
   /**
+   * props for alert hook.
+   */
+  alert?: AlertComponentProps;
+  /**
    * Indicates whether the page is currently in the loading state.
    */
   loader?: boolean;
@@ -11355,6 +11359,7 @@ export const LayoutGridMenuLeft = ({
   usePageProgress = true,
   useAlertHook = true,
   alertHookProps = {},
+  alert = undefined,
   target = "fenext-btn-menu-checkbox",
   ...props
 }: LayoutGridMenuLeftProps) => {
@@ -11386,6 +11391,12 @@ export const LayoutGridMenuLeft = ({
         </div>
         <div className={`fenext-layout-grid-ml-children ${classNameChildren}`}>
           {usePageProgress && <PageProgress />}
+          {alert != undefined && (
+            <Alert
+              {...alert}
+              className={`fenext-layout-grid-alert ${alert?.className ?? ""}`}
+            />
+          )}
           {useAlertHook && (
             <AlertHook
               {...alertHookProps}
@@ -11468,6 +11479,7 @@ export const LayoutGridMenuTopLeft = ({
   useHeaderButtonMenu = false,
   usePageProgress = true,
   alertHookProps,
+  alert = undefined,
   useAlertHook = true,
   target = "fenext-btn-menu-checkbox",
 }: LayoutGridMenuTopLeftProps) => {
@@ -11494,6 +11506,7 @@ export const LayoutGridMenuTopLeft = ({
           useAlertHook={useAlertHook}
           alertHookProps={alertHookProps}
           target={target}
+          alert={alert}
         >
           {children}
         </LayoutGridMenuLeft>
@@ -11514,6 +11527,10 @@ export interface LayoutGridMenuTopBaseProps extends PropsWithChildren {
    * props for alert hook.
    */
   alertHookProps?: AlertHookProps;
+  /**
+   * props for alert hook.
+   */
+  alert?: AlertComponentProps;
   /**
    * Indicates whether the page is currently in the loading state.
    */
@@ -11565,6 +11582,7 @@ export const LayoutGridMenuTop = ({
   usePageProgress = true,
   useAlertHook = true,
   alertHookProps = {},
+  alert = undefined,
   ...props
 }: LayoutGridMenuTopProps) => {
   return (
@@ -11578,6 +11596,12 @@ export const LayoutGridMenuTop = ({
         </div>
         <div className={`fenext-layout-grid-mt-children ${classNameChildren}`}>
           {usePageProgress && <PageProgress />}
+          {alert != undefined && (
+            <Alert
+              {...alert}
+              className={`fenext-layout-grid-alert ${alert?.className ?? ""}`}
+            />
+          )}
           {useAlertHook && (
             <AlertHook
               {...alertHookProps}
