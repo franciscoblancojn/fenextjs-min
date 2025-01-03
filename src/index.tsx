@@ -21974,6 +21974,7 @@ export const Table = <T,>({
                     key={`${i}-${j}`}
                     className={`
                                             fenext-table-content-table-td 
+                                            fenext-table-content-table-td-col-new-tr
                                             fenext-table-content-table-td-${new_tr.isCollapse ? "is-collapse" : ""}
                                             ${classNameTd}
                                         `}
