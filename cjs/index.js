@@ -5821,7 +5821,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
     ]);
     const { onLoadPos, onLoadChildren } = (0, exports.useSelectOptionsPos)({
         children: CHILDREN_SELECT,
-        target: selectRef?.current,
+        target: selectRef?.current?.querySelector?.("input.fenext-input-content-input"),
     });
     (0, react_1.useEffect)(() => {
         if (isFocus || forceShowOptionOnLoad) {
@@ -6942,8 +6942,7 @@ const InputSelectT = ({ defaultValue, value, options, onChange, onParse, ...prop
         react_1.default.createElement(exports.InputSelect, { ...props, defaultValue: defaultValue ? onParse(defaultValue) : undefined, value: value ? onParse(value) : undefined, options: options.map(onParse), onChangeData: onChange })));
 };
 exports.InputSelectT = InputSelectT;
-const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMultipleList = "", onChange, onChangeData, value = undefined, defaultValue = [], onChangeValidate, options = [], iconDelete = react_1.default.createElement(exports.SvgTrash, null), typeSelectMultipleStyle = "normal", CustomOptionsSelected = undefined, validatorData, useTOption, ...props }) => {
-    const [error, setError] = (0, react_1.useState)(undefined);
+const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMultipleList = "", onChange, onChangeData, value = undefined, defaultValue = [], options = [], iconDelete = react_1.default.createElement(exports.SvgTrash, null), typeSelectMultipleStyle = "normal", CustomOptionsSelected = undefined, validatorData, validator, useTOption, ...props }) => {
     const { data, setData, setDataFunction } = (0, exports.useData)(defaultValue, {
         onChangeDataAfter: (e) => {
             onChange?.(e);
@@ -6951,23 +6950,6 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
         },
     });
     const dataMemo = (0, react_1.useMemo)(() => value ?? data, [data, value]);
-    const validateOptions = async () => {
-        if (onChangeValidate) {
-            setError(undefined);
-            try {
-                await onChangeValidate(dataMemo);
-            }
-            catch (error) {
-                setError(new ErrorFenextjs({
-                    code: ErrorCode.ERROR,
-                    message: `${error.message}`,
-                }));
-            }
-        }
-    };
-    (0, react_1.useEffect)(() => {
-        validateOptions();
-    }, [dataMemo]);
     const onAddItemSelect = (0, react_1.useCallback)((newItem) => {
         if (newItem) {
             setDataFunction(() => {
@@ -6996,18 +6978,21 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
         data: dataMemo?.map((e) => e?.data),
         validator: validatorData,
     });
+    const { error } = (0, exports.useValidator)({
+        data: dataMemo,
+        validator: validator,
+    });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `
                     fenext-select-multiple
                     fenext-select-multiple-${typeSelectMultipleStyle}
                     ${classNameSelectMultiple}
                 ` },
-            react_1.default.createElement(exports.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, extraInLabel: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
-                        const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
-                        return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption }));
-                    })),
-                    props?.extraInLabel) }))));
+            react_1.default.createElement(exports.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, isChange: true }),
+            react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
+                const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
+                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption }));
+            })))));
 };
 exports.InputSelectMultiple = InputSelectMultiple;
 const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabelActive = "", classNameLabelInactive = "", classNameText = "", classNameContentRadio = "", classNameContentRadioActive = "", classNameContentRadioInactive = "", classNameRadio = "", classNameRadioActive = "", classNameRadioInactive = "", labelPosition = "right", name = "", onChange = (e) => {
@@ -7129,9 +7114,9 @@ const InputPassword = ({ classNameContentEye = "", ...props }) => {
         react_1.default.createElement(exports.InputText, { ...props, icon: ICON, type: type })));
 };
 exports.InputPassword = InputPassword;
-const InputSelectMultipleT = ({ defaultValue, value, options, onChange, onParse, ...props }) => {
+const InputSelectMultipleT = ({ defaultValue, value, options, onChange, onParse, validator, ...props }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(exports.InputSelectMultiple, { ...props, defaultValue: defaultValue ? defaultValue.map(onParse) : undefined, value: value ? value.map(onParse) : undefined, options: options.map(onParse), onChangeData: onChange })));
+        react_1.default.createElement(exports.InputSelectMultiple, { ...props, defaultValue: defaultValue ? defaultValue.map(onParse) : undefined, value: value ? value.map(onParse) : undefined, options: options.map(onParse), onChangeData: onChange, validatorData: validator })));
 };
 exports.InputSelectMultipleT = InputSelectMultipleT;
 const InputSelectCountry = ({ ...props }) => {
