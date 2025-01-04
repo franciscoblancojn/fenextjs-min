@@ -4889,7 +4889,7 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
             } })));
 };
 exports.InputNumber = InputNumber;
-const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", classNameError = "", iconLoader = react_1.default.createElement(exports.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = "off", useLoader = true, isChange: isChangeProps = undefined, onKeyDown, onWheel, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, showFocusInTarget = false, ...p }) => {
+const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameMaxLength = "", classNameLoaderValidate = "", classNameError = "", iconLoader = react_1.default.createElement(exports.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = "off", useLoader = true, isChange: isChangeProps = undefined, onKeyDown, onWheel, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, showFocusInTarget = false, ...p }) => {
     const { _t } = (0, exports.use_T)({ ...p });
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     const [statusInput, setStateInput] = (0, react_1.useState)("");
@@ -5022,7 +5022,7 @@ const InputText = ({ id = "", datalist = undefined, name = "", label = "", place
                 LOADER,
                 extraInContentInput,
                 type == "textarea" && maxLength && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("span", { className: "fenext-input-content-input-max-leght" },
+                    react_1.default.createElement("span", { className: `fenext-input-content-input-max-leght ${classNameMaxLength}` },
                         "(",
                         valueInput?.length ?? 0,
                         " / ",
