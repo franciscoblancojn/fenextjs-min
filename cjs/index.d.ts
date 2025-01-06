@@ -2182,6 +2182,11 @@ export interface BoxClassProps {
 export interface BoxProps extends BoxBaseProps, BoxClassProps {
 }
 export declare const Box: ({ className, children }: BoxProps) => React.JSX.Element;
+export interface ContentScrollLeftProps extends PropsWithChildren, _TProps {
+    className?: string;
+    classNameContent?: string;
+}
+export declare const ContentScrollLeft: ({ className, classNameContent, children, ...props }: ContentScrollLeftProps) => React.JSX.Element;
 export interface InputNumberProps extends Omit<InputTextProps, "defaultValue" | "onChange" | "onChangeValidate" | "value"> {
     value?: number | "";
     defaultValue?: number | "";
