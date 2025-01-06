@@ -2117,6 +2117,7 @@ export interface StepsCircleClassProps {
     classNameItemActive?: string;
     classNameItemActiveCircle?: string;
     classNameItemActiveContent?: string;
+    classNameProgressLine?: ProgressLineClassProps;
 }
 export interface StepsCircleProps extends StepsCircleClassProps {
     items?: StepsCircleItemProps[];
@@ -2124,7 +2125,7 @@ export interface StepsCircleProps extends StepsCircleClassProps {
     valueStep?: number;
     disabled?: boolean;
 }
-export declare const StepsCircle: ({ className, classNameDisabled, classNameItem, classNameItemCircle, classNameItemContent, classNameItemActive, classNameItemActiveCircle, classNameItemActiveContent, defaultStep, valueStep, disabled, items, }: StepsCircleProps) => React.JSX.Element;
+export declare const StepsCircle: ({ className, classNameDisabled, classNameItem, classNameItemCircle, classNameItemContent, classNameItemActive, classNameItemActiveCircle, classNameItemActiveContent, classNameProgressLine, defaultStep, valueStep, disabled, items, }: StepsCircleProps) => React.JSX.Element;
 export interface ButtonMenuBaseProps extends PropsWithChildren, _TProps {
     loader?: boolean;
     disabled?: boolean;
