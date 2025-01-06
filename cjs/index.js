@@ -4736,22 +4736,24 @@ const Container = ({ className = "", customSize = undefined, usePaddingInline = 
                 : {} }, _t(children))));
 };
 exports.Container = Container;
-const StepsCircle = ({ className = "", defaultStep = undefined, valueStep = undefined, disabled = false, items = [], }) => {
+const StepsCircle = ({ className = "", classNameDisabled = "", classNameItem = "", classNameItemCircle = "", classNameItemContent = "", classNameItemActive = "", classNameItemActiveCircle = "", classNameItemActiveContent = "", defaultStep = undefined, valueStep = undefined, disabled = false, items = [], }) => {
     const [step_, setStep] = (0, react_1.useState)(defaultStep ?? 0);
     const step = (0, react_1.useMemo)(() => valueStep ?? step_, [step_, valueStep]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `
                     fenext-steps-circle 
-                    fenext-steps-circle-${disabled ? "disabled" : ""}
+                    fenext-steps-circle-${disabled ? `disabled ${classNameDisabled}` : ""}
                     ${className} 
                 `, style: {
                 "--nItems": items?.length,
                 "--step": step,
             } }, items?.map((item, i) => {
+            const active = step >= i;
             return (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: `
                                     fenext-steps-circle-item
-                                    fenext-steps-circle-item-${step >= i ? "active" : ""}
+                                    fenext-steps-circle-item-${active ? `active ${classNameItemActive}` : ""}
+                                    ${classNameItem}
                                 `, onClick: () => {
                         if (disabled) {
                             return;
@@ -4759,8 +4761,8 @@ const StepsCircle = ({ className = "", defaultStep = undefined, valueStep = unde
                         item?.onClick?.();
                         setStep(i);
                     } },
-                    react_1.default.createElement("div", { className: `fenext-steps-circle-item-circle` }, i + 1),
-                    react_1.default.createElement("div", { className: "fenext-steps-circle-item-content" }, item?.children))));
+                    react_1.default.createElement("div", { className: `fenext-steps-circle-item-circle ${classNameItemCircle} ${active ? `${classNameItemActiveCircle}` : ""}` }, i + 1),
+                    react_1.default.createElement("div", { className: `fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}` }, item?.children))));
         }))));
 };
 exports.StepsCircle = StepsCircle;
