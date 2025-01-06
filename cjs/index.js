@@ -8718,17 +8718,14 @@ const ChronologicalList = ({ className = "", items, market = undefined, parseDat
         }))));
 };
 exports.ChronologicalList = ChronologicalList;
-const User = ({ className = "", classNameEmail = "", classNamePicture = "", classNameImg = "", classNameName = "", classNameLetter = "", classNameLoader = {}, user, loader = false, }) => {
+const User = ({ className = "", classNameEmail = "", classNamePicture = "", classNameImg = "", classNameName = "", classNameLoader = {}, user, loader = false, }) => {
     if (loader) {
         return (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(exports.LoaderUser, { ...classNameLoader })));
     }
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-user ${className} ` },
-            react_1.default.createElement(exports.Img, { src: "", ...user?.img, className: `fenext-user-picture ${classNamePicture}`, classNameImg: `fenext-user-img ${classNameImg}`, onErrorImg: (e) => {
-                    e.currentTarget.style.display = "none";
-                } }),
-            react_1.default.createElement("div", { className: `fenext-user-letter ${classNameLetter} ` }, user?.name?.[0]),
+            react_1.default.createElement(exports.Img, { src: "", ...user?.img, className: `fenext-user-picture ${classNamePicture}`, classNameImg: `fenext-user-img ${classNameImg}`, imgIf404: exports.FenextImgUserPlaceholder }),
             react_1.default.createElement("div", { className: `fenext-user-name ${classNameName} ` }, user?.name),
             react_1.default.createElement("div", { className: `fenext-user-email ${classNameEmail} ` }, user?.email))));
 };

@@ -24731,10 +24731,6 @@ export interface UserComponentProps {
    */
   classNameName?: string;
   /**
-   * The class name for letter the component.
-   */
-  classNameLetter?: string;
-  /**
    * The class name for email the component.
    */
   classNameEmail?: string;
@@ -24750,7 +24746,6 @@ export const User = ({
   classNamePicture = "",
   classNameImg = "",
   classNameName = "",
-  classNameLetter = "",
   classNameLoader = {},
   user,
   loader = false,
@@ -24770,13 +24765,8 @@ export const User = ({
           {...user?.img}
           className={`fenext-user-picture ${classNamePicture}`}
           classNameImg={`fenext-user-img ${classNameImg}`}
-          onErrorImg={(e) => {
-            e.currentTarget.style.display = "none";
-          }}
+          imgIf404={FenextImgUserPlaceholder}
         />
-        <div className={`fenext-user-letter ${classNameLetter} `}>
-          {user?.name?.[0]}
-        </div>
         <div className={`fenext-user-name ${classNameName} `}>{user?.name}</div>
         <div className={`fenext-user-email ${classNameEmail} `}>
           {user?.email}
