@@ -12366,6 +12366,10 @@ export type InputTextChangeEvent =
  */
 export interface InputTextClassProps {
   /**
+   * CSS class name for the input component.
+   */
+  className?: string;
+  /**
    * CSS class name for the input label.
    */
   classNameLabel?: string;
@@ -12540,11 +12544,6 @@ export interface InputTextBaseProps extends _TProps {
    * Boolean value indicating whether to display the input icon.
    */
   showIcon?: boolean;
-
-  /**
-   * CSS class name for the input component.
-   */
-  className?: string;
   /**
    * Text of Error of Input.
    */

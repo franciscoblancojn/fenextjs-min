@@ -2200,6 +2200,7 @@ export interface InputNumberProps extends Omit<InputTextProps, "defaultValue" | 
 export declare const InputNumber: ({ defaultValue, onChange, useBtnIncreaseDecrease, validator, value, disabledScroll, ...props }: InputNumberProps) => React.JSX.Element;
 export type InputTextChangeEvent = React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>;
 export interface InputTextClassProps {
+    className?: string;
     classNameLabel?: string;
     classNameLabelError?: string;
     classNameLabelOk?: string;
@@ -2238,7 +2239,6 @@ export interface InputTextBaseProps extends _TProps {
     extraInLabel?: ReactNode;
     disabled?: boolean;
     showIcon?: boolean;
-    className?: string;
     error?: ErrorFenextjs;
     errorWithIsChange?: boolean;
     optional?: boolean;
