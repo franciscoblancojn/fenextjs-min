@@ -1067,18 +1067,17 @@ export declare const useAlert: <T = any>({ name, }: useAlertProps) => {
     setAlert: (detail?: AlertProps<T> | undefined) => void;
     onClearAlert: () => void;
 };
-export interface useUserProps<Q = UserProps, R = any, E = any, T = RequestResultTypeProps> {
-    validateTokenUser?: RequestProps<Q, R, E, T>;
+export interface useUserProps<U = UserProps> {
     varName?: string;
-    onValidateUser?: (user: Q | null | undefined) => boolean;
+    onValidateUser?: (user: U | null | undefined) => boolean;
     urlRedirectInLogut?: string;
     onLogOut?: () => void;
 }
-export declare const useUser: <U = UserProps>({ validateTokenUser: validateTokenUserProps, varName, onValidateUser, urlRedirectInLogut, onLogOut: onLogOutProps, }: useUserProps<U, any, any, RequestResultTypeProps>) => {
+export declare const useUser: <U = UserProps>({ varName, onValidateUser, urlRedirectInLogut, onLogOut: onLogOutProps, }: useUserProps<U>) => {
     load: boolean;
     user: U | null | undefined;
     setUser: (newValue: any) => void;
-    onLogin: (data: U) => Promise<unknown>;
+    onLogin: (data: U) => unknown;
     onLogOut: () => void;
     isValidUser: boolean;
 };

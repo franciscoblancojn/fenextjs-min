@@ -15,7 +15,6 @@ const ReactDOM = tslib_1.__importStar(require("react-dom"));
 const react_dom_1 = require("react-dom");
 const router_1 = tslib_1.__importStar(require("next/router"));
 const link_1 = tslib_1.__importDefault(require("next/link"));
-const jwt_decode_1 = require("jwt-decode");
 const api_1 = require("@react-google-maps/api");
 const country_state_city_nextjs_1 = require("country-state-city-nextjs");
 const app_1 = tslib_1.__importDefault(require("firebase/compat/app"));
@@ -2265,49 +2264,7 @@ const useAlert = ({ name = "fenextjs-alert", }) => {
     };
 };
 exports.useAlert = useAlert;
-const useUser = ({ validateTokenUser: validateTokenUserProps, varName = "fenextjs-user", onValidateUser, urlRedirectInLogut, onLogOut: onLogOutProps, }) => {
-    const validateTokenUserDefault = async (user) => {
-        const { token } = user;
-        if (!token) {
-            throw {
-                type: RequestResultTypeProps.ERROR,
-                message: "User not Token",
-                error: {
-                    code: ErrorCode.USER_TOKEN_NOT_FOUND,
-                    message: "User not Token",
-                },
-            };
-        }
-        try {
-            const user_token = (0, jwt_decode_1.jwtDecode)(token);
-            const { id } = user_token;
-            if (id) {
-                return {
-                    type: RequestResultTypeProps.OK,
-                    message: "User Validate Ok",
-                };
-            }
-            throw {
-                type: RequestResultTypeProps.ERROR,
-                message: "Token Invalid",
-                error: {
-                    code: ErrorCode.USER_TOKEN_INVALID,
-                    message: "Token Invalid",
-                },
-            };
-        }
-        catch (error) {
-            throw {
-                type: RequestResultTypeProps.ERROR,
-                message: "Token Invalid",
-                error: {
-                    code: ErrorCode.USER_TOKEN_INVALID,
-                    message: "Token Invalid",
-                },
-            };
-        }
-    };
-    const validateTokenUser = (0, react_1.useCallback)(validateTokenUserProps ?? validateTokenUserDefault, [validateTokenUserProps, validateTokenUserDefault]);
+const useUser = ({ varName = "fenextjs-user", onValidateUser, urlRedirectInLogut, onLogOut: onLogOutProps, }) => {
     const { value: user, load, setLocalStorage: setUser, } = (0, exports.useLocalStorage)({
         name: varName,
         defaultValue: null,
@@ -2320,13 +2277,15 @@ const useUser = ({ validateTokenUser: validateTokenUserProps, varName = "fenextj
             }
         },
     });
-    const onLogin = async (data) => {
+    const onLogin = (data) => {
         try {
-            const result = await validateTokenUser(data);
-            if (result.type == RequestResultTypeProps.OK) {
-                setUser(data);
+            if (onValidateUser) {
+                if (!onValidateUser(data)) {
+                    throw new Error("Invalid User");
+                }
             }
-            return result;
+            setUser(data);
+            return true;
         }
         catch (error) {
             return error;
