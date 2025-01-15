@@ -899,6 +899,10 @@ export declare class FenextjsDate {
         max?: Date;
         date?: Date;
     }): boolean;
+    onGetDifDate({ date, dateCompare }: {
+        date?: Date;
+        dateCompare: Date;
+    }): Date;
     onCompareDate({ date, dateCompare: dateCompareProps, compare, }: {
         date?: Date;
         dateCompare: Date;
