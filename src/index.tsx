@@ -16176,14 +16176,9 @@ export interface InputPhoneClassProps {
  */
 export interface InputPhoneBaseProps
   extends Omit<
-      InputTextBaseProps,
-      "type" | "value" | "onChange" | "defaultValue" | "datalist" | "validator"
-    >,
-    useJsonStringProps<Partial<PhoneProps>> {
-  /**
-   * defaultCode select code.
-   */
-  defaultCode?: string;
+    InputTextBaseProps,
+    "type" | "value" | "onChange" | "defaultValue" | "datalist" | "validator"
+  > {
   /**
    * disabled select code.
    */
@@ -16198,6 +16193,18 @@ export interface InputPhoneBaseProps
   validator?: FenextjsValidatorClass<PhoneProps>;
 
   parseCountrys?: (data: CountryProps[]) => CountryProps[];
+  /**
+   * Default Value =
+   */
+  defaultValue?: Partial<PhoneProps>;
+  /**
+   * Value
+   */
+  value?: Partial<PhoneProps>;
+  /**
+   * onChange
+   */
+  onChange?: (data: Partial<PhoneProps>) => void;
 }
 
 /**
@@ -16234,39 +16241,22 @@ export const InputPhone = ({
   required = false,
   requiredText = "*",
 
-  defaultCode = "+57",
-  defaultValue: defaultValueProps = undefined,
-  value: valueProps = undefined,
+  defaultValue = {
+    code: "+57",
+  },
+  value = undefined,
   onChange: onChangeProps,
-  defaultValueJsonString,
-  valueJsonString,
-  onChangeJsonString,
-  parseJson_to_String,
-  parseString_to_Json,
   parseCountrys,
   ...props
 }: InputPhoneProps) => {
   const { _t } = use_T({ ...props });
-  const { value, defaultValue, onChange } = useJsonString<Partial<PhoneProps>>({
-    parseJson_to_String: parseJson_to_String ?? parsePhone_to_String,
-    parseString_to_Json: parseString_to_Json ?? parseString_to_Phone,
-    defaultValueJsonString,
-    valueJsonString,
-    onChangeJsonString,
-    value: valueProps,
-    defaultValue: {
-      code:
-        (defaultValueProps?.code ?? "") == ""
-          ? defaultCode
-          : defaultValueProps?.code,
-      number: defaultValueProps?.number ?? "",
-      tel: defaultValueProps?.tel ?? "",
-      code_country: defaultValueProps?.code_country ?? undefined,
-      country: defaultValueProps?.country ?? undefined,
-      img: defaultValueProps?.img ?? undefined,
-    },
-    onChange: onChangeProps,
-  });
+
+  const onChange = (v: Partial<PhoneProps>) => {
+    onChangeProps?.({
+      ...v,
+      tel: `${v.code ?? ""} ${v.number ?? ""}`,
+    });
+  };
 
   const [loadPhoneCodes, setlLoadPhoneCodes] = useState(false);
   const {
@@ -16277,18 +16267,12 @@ export const InputPhone = ({
   } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(
     value ?? defaultValue ?? {},
     {
-      onChangeDataMemoAfter: (v: Partial<PhoneProps>) => {
-        onChange({
-          ...v,
-          tel: `${v.code} ${v.number}`,
-        });
-      },
       memoDependencies: [value],
       onMemo: (d: Partial<PhoneProps>) => {
         const v = value ?? d;
         return {
           ...v,
-          tel: `${v.code} ${v.number}`,
+          tel: `${v.code ?? ""} ${v.number ?? ""}`,
         };
       },
     },
@@ -16374,7 +16358,7 @@ export const InputPhone = ({
                 onConcatData({
                   ...v,
                 });
-                onChange({
+                onChange?.({
                   ...data,
                   ...v,
                 });
@@ -16399,7 +16383,7 @@ export const InputPhone = ({
             type="text"
             onChange={(n) => {
               onChangeData("number")(n);
-              onChange({
+              onChange?.({
                 ...data,
                 number: n,
               });
@@ -17608,12 +17592,23 @@ export interface InputGoogleAutocompleteBaseProps
     Omit<
       InputTextBaseProps,
       "defaultValue" | "onChange" | "onChangeValidate" | "value" | "validator"
-    >,
-    useJsonStringProps<AddressGoogle | undefined> {
+    > {
   /**
    * FenextjsValidatorClass used for input validation.
    */
   validator?: FenextjsValidatorClass<AddressGoogle | undefined>;
+  /**
+   * Default Value =
+   */
+  defaultValue?: AddressGoogle;
+  /**
+   * Value
+   */
+  value?: AddressGoogle;
+  /**
+   * onChange
+   */
+  onChange?: (data?: AddressGoogle) => void;
 }
 
 /**
@@ -17630,34 +17625,14 @@ export interface InputGoogleAutocompleteProps
     InputGoogleAutocompleteClassProps {}
 
 export const InputGoogleAutocomplete = ({
-  defaultValueJsonString,
-  valueJsonString,
-  onChangeJsonString,
-
-  defaultValue: defaultValueProps = undefined,
-  value: valueProps = undefined,
-  onChange: onChangeProps,
-
-  parseJson_to_String,
-  parseString_to_Json,
+  defaultValue = undefined,
+  value = undefined,
+  onChange,
 
   className = "",
   validator,
   ...props
 }: InputGoogleAutocompleteProps) => {
-  const { defaultValue, value, onChange } = useJsonString<
-    AddressGoogle | undefined
-  >({
-    parseJson_to_String: parseJson_to_String ?? parseAddress_to_String,
-    parseString_to_Json: parseString_to_Json ?? parseString_to_Address,
-    defaultValueJsonString,
-    valueJsonString,
-    onChangeJsonString,
-    value: valueProps,
-    defaultValue: defaultValueProps,
-    onChange: onChangeProps,
-  });
-
   const [valueText, setValueText] = useState(
     value?.formatted_address ?? defaultValue?.formatted_address ?? "",
   );

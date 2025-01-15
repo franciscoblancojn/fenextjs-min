@@ -2546,16 +2546,18 @@ export interface InputPhoneClassProps {
     classNamePhoneNumber?: string;
     classNameError?: string;
 }
-export interface InputPhoneBaseProps extends Omit<InputTextBaseProps, "type" | "value" | "onChange" | "defaultValue" | "datalist" | "validator">, useJsonStringProps<Partial<PhoneProps>> {
-    defaultCode?: string;
+export interface InputPhoneBaseProps extends Omit<InputTextBaseProps, "type" | "value" | "onChange" | "defaultValue" | "datalist" | "validator"> {
     disabledSelectCode?: boolean;
     placeholderCode?: string;
     validator?: FenextjsValidatorClass<PhoneProps>;
     parseCountrys?: (data: CountryProps[]) => CountryProps[];
+    defaultValue?: Partial<PhoneProps>;
+    value?: Partial<PhoneProps>;
+    onChange?: (data: Partial<PhoneProps>) => void;
 }
 export interface InputPhoneProps extends InputPhoneBaseProps, InputPhoneClassProps {
 }
-export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, placeholderCode, placeholder, validator, optional, optionalText, required, requiredText, defaultCode, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, parseCountrys, ...props }: InputPhoneProps) => React.JSX.Element;
+export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, placeholderCode, placeholder, validator, optional, optionalText, required, requiredText, defaultValue, value, onChange: onChangeProps, parseCountrys, ...props }: InputPhoneProps) => React.JSX.Element;
 export type InputDateValueType = Date | undefined;
 export interface InputDateBaseProps extends Omit<InputTextBaseProps, "type" | "value" | "onChange" | "defaultValue"> {
     type?: TypeDate;
@@ -2667,14 +2669,17 @@ export interface InputGoogleMapsClassProps {
 export interface InputGoogleMapsProps extends InputGoogleMapsBaseProps, InputGoogleMapsClassProps {
 }
 export declare const InputGoogleMaps: ({ mapContainerStyle, markers, useLoadCenterWithMarker, useLoadFitBoundsWithMarker, useLoadDirectionsWithMarker, showDirectionsWaypoints, center, ...props }: InputGoogleMapsProps) => React.JSX.Element;
-export interface InputGoogleAutocompleteBaseProps extends Omit<GoogleAutocompleteProps, "children">, Omit<InputTextBaseProps, "defaultValue" | "onChange" | "onChangeValidate" | "value" | "validator">, useJsonStringProps<AddressGoogle | undefined> {
+export interface InputGoogleAutocompleteBaseProps extends Omit<GoogleAutocompleteProps, "children">, Omit<InputTextBaseProps, "defaultValue" | "onChange" | "onChangeValidate" | "value" | "validator"> {
     validator?: FenextjsValidatorClass<AddressGoogle | undefined>;
+    defaultValue?: AddressGoogle;
+    value?: AddressGoogle;
+    onChange?: (data?: AddressGoogle) => void;
 }
 export interface InputGoogleAutocompleteClassProps extends InputTextClassProps {
 }
 export interface InputGoogleAutocompleteProps extends InputGoogleAutocompleteBaseProps, InputGoogleAutocompleteClassProps {
 }
-export declare const InputGoogleAutocomplete: ({ defaultValueJsonString, valueJsonString, onChangeJsonString, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, parseJson_to_String, parseString_to_Json, className, validator, ...props }: InputGoogleAutocompleteProps) => React.JSX.Element;
+export declare const InputGoogleAutocomplete: ({ defaultValue, value, onChange, className, validator, ...props }: InputGoogleAutocompleteProps) => React.JSX.Element;
 export interface InputSelectTProps<T> extends Omit<InputSelectProps<T>, "defaultValue" | "value" | "options" | "onChange" | "onChangeData"> {
     defaultValue?: T;
     value?: T;

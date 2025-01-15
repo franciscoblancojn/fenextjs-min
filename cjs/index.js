@@ -6393,41 +6393,24 @@ const InputRate = ({ className = "", classNameContentStar = "", classNameStar = 
             react_1.default.createElement("div", { className: `fenext-input-rate-number ${classNameNumber}` }, start))));
 };
 exports.InputRate = InputRate;
-const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultCode = "+57", defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, parseCountrys, ...props }) => {
+const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultValue = {
+    code: "+57",
+}, value = undefined, onChange: onChangeProps, parseCountrys, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
-    const { value, defaultValue, onChange } = (0, exports.useJsonString)({
-        parseJson_to_String: parseJson_to_String ?? exports.parsePhone_to_String,
-        parseString_to_Json: parseString_to_Json ?? exports.parseString_to_Phone,
-        defaultValueJsonString,
-        valueJsonString,
-        onChangeJsonString,
-        value: valueProps,
-        defaultValue: {
-            code: (defaultValueProps?.code ?? "") == ""
-                ? defaultCode
-                : defaultValueProps?.code,
-            number: defaultValueProps?.number ?? "",
-            tel: defaultValueProps?.tel ?? "",
-            code_country: defaultValueProps?.code_country ?? undefined,
-            country: defaultValueProps?.country ?? undefined,
-            img: defaultValueProps?.img ?? undefined,
-        },
-        onChange: onChangeProps,
-    });
+    const onChange = (v) => {
+        onChangeProps?.({
+            ...v,
+            tel: `${v.code ?? ""} ${v.number ?? ""}`,
+        });
+    };
     const [loadPhoneCodes, setlLoadPhoneCodes] = (0, react_1.useState)(false);
     const { dataMemo: data, onChangeData, onConcatData, isChange, } = (0, exports.useData)(value ?? defaultValue ?? {}, {
-        onChangeDataMemoAfter: (v) => {
-            onChange({
-                ...v,
-                tel: `${v.code} ${v.number}`,
-            });
-        },
         memoDependencies: [value],
         onMemo: (d) => {
             const v = value ?? d;
             return {
                 ...v,
-                tel: `${v.code} ${v.number}`,
+                tel: `${v.code ?? ""} ${v.number ?? ""}`,
             };
         },
     });
@@ -6481,7 +6464,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                             onConcatData({
                                 ...v,
                             });
-                            onChange({
+                            onChange?.({
                                 ...data,
                                 ...v,
                             });
@@ -6493,7 +6476,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
                 react_1.default.createElement(exports.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: (n) => {
                         onChangeData("number")(n);
-                        onChange({
+                        onChange?.({
                             ...data,
                             number: n,
                         });
@@ -6895,17 +6878,7 @@ const InputGoogleMaps = ({ mapContainerStyle = {
                 } })))));
 };
 exports.InputGoogleMaps = InputGoogleMaps;
-const InputGoogleAutocomplete = ({ defaultValueJsonString, valueJsonString, onChangeJsonString, defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, parseJson_to_String, parseString_to_Json, className = "", validator, ...props }) => {
-    const { defaultValue, value, onChange } = (0, exports.useJsonString)({
-        parseJson_to_String: parseJson_to_String ?? exports.parseAddress_to_String,
-        parseString_to_Json: parseString_to_Json ?? exports.parseString_to_Address,
-        defaultValueJsonString,
-        valueJsonString,
-        onChangeJsonString,
-        value: valueProps,
-        defaultValue: defaultValueProps,
-        onChange: onChangeProps,
-    });
+const InputGoogleAutocomplete = ({ defaultValue = undefined, value = undefined, onChange, className = "", validator, ...props }) => {
     const [valueText, setValueText] = (0, react_1.useState)(value?.formatted_address ?? defaultValue?.formatted_address ?? "");
     const [error, setError] = (0, react_1.useState)(undefined);
     const { setData, isValidData } = (0, exports.useData)(defaultValue, {
