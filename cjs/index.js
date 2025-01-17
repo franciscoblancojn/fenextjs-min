@@ -7117,6 +7117,7 @@ const InputFile = ({ defaultValue = {
             updateProgress: data.setProgress,
         });
         return {
+            file: data?.file,
             fileData,
             base64: `${fileData ?? ""}`,
             text: data.nameFile,
