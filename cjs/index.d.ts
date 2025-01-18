@@ -1075,10 +1075,12 @@ export declare const useAlert: <T = any>({ name, }: useAlertProps) => {
 export interface useUserProps<U = UserProps> {
     varName?: string;
     onValidateUser?: (user: U | null | undefined) => boolean;
-    urlRedirectInLogut?: string;
+    urlRedirectInLogin?: string;
+    urlRedirectInLogout?: string;
     onLogOut?: () => void;
+    onLogin?: () => void;
 }
-export declare const useUser: <U = UserProps>({ varName, onValidateUser, urlRedirectInLogut, onLogOut: onLogOutProps, }: useUserProps<U>) => {
+export declare const useUser: <U = UserProps>({ varName, onValidateUser, urlRedirectInLogin, urlRedirectInLogout, onLogOut: onLogOutProps, onLogin: onLoginProps, }: useUserProps<U>) => {
     load: boolean;
     user: U | null | undefined;
     setUser: (newValue: any) => void;

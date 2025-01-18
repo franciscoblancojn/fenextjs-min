@@ -3954,9 +3954,13 @@ export interface useUserProps<U = UserProps> {
 
   onValidateUser?: (user: U | null | undefined) => boolean;
 
-  urlRedirectInLogut?: string;
+  urlRedirectInLogin?: string;
+
+  urlRedirectInLogout?: string;
 
   onLogOut?: () => void;
+
+  onLogin?: () => void;
 }
 
 /**
@@ -3969,8 +3973,10 @@ export interface useUserProps<U = UserProps> {
 export const useUser = <U = UserProps,>({
   varName = "fenextjs-user",
   onValidateUser,
-  urlRedirectInLogut,
+  urlRedirectInLogin,
+  urlRedirectInLogout,
   onLogOut: onLogOutProps,
+  onLogin: onLoginProps,
 }: useUserProps<U>) => {
   const {
     value: user,
@@ -4006,6 +4012,10 @@ export const useUser = <U = UserProps,>({
         }
       }
       setUser(data);
+      onLoginProps?.();
+      if (urlRedirectInLogin && typeof window != "undefined") {
+        window.location.href = urlRedirectInLogin;
+      }
       return true;
     } catch (error) {
       return error;
@@ -4017,8 +4027,8 @@ export const useUser = <U = UserProps,>({
   const onLogOut = () => {
     setUser(null);
     onLogOutProps?.();
-    if (urlRedirectInLogut && typeof window != "undefined") {
-      window.location.href = urlRedirectInLogut;
+    if (urlRedirectInLogout && typeof window != "undefined") {
+      window.location.href = urlRedirectInLogout;
     }
   };
 
