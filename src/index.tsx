@@ -5358,6 +5358,9 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
   const onSubmitData = useCallback(
     async (optionsSubmitData?: {
       data?: T;
+      overwrite?: {
+        onSubmitData?: useDataOptions<T, M, RT, RM, ET, EM>["onSubmitData"];
+      };
       onSaveData?: (p: { data: T; result: RT }) => T;
       useValidator?: boolean;
     }) => {
@@ -5371,12 +5374,15 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
         data: dataUse,
         isValid: isValidDataUse,
       });
-      if (options?.onSubmitData && isValidDataUse === true) {
+      const _onSubmitData =
+        optionsSubmitData?.overwrite?.onSubmitData ?? options?.onSubmitData;
+
+      if (_onSubmitData && isValidDataUse === true) {
         try {
           setDataError(undefined);
           setResultSubmitData(undefined);
           setLoaderSubmit(true);
-          const result = await options?.onSubmitData?.(dataUse);
+          const result = await _onSubmitData?.(dataUse);
           setResultSubmitData(result);
           options?.onAfterSubmitDataOk?.({ data: dataUse, result });
           if (options?.afterSubmitDataSetIsChangeFalse) {
@@ -5408,6 +5414,16 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
   const onSubmitDataMemo = useCallback(
     async (optionsSubmitDataMemo?: {
       dataMemo?: M;
+      overwrite?: {
+        onSubmitDataMemo?: useDataOptions<
+          T,
+          M,
+          RT,
+          RM,
+          ET,
+          EM
+        >["onSubmitDataMemo"];
+      };
       useValidatorMemo?: boolean;
     }) => {
       const dataUse = optionsSubmitDataMemo?.dataMemo ?? dataMemo;
@@ -5422,12 +5438,15 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
         dataMemo: dataUse,
         isValidDataMemo: isValidDataUse,
       });
-      if (options?.onSubmitDataMemo && isValidDataUse === true) {
+      const _onSubmitDataMemo =
+        optionsSubmitDataMemo?.overwrite?.onSubmitDataMemo ??
+        options?.onSubmitDataMemo;
+      if (_onSubmitDataMemo && isValidDataUse === true) {
         try {
           setDataErrorMemo(undefined);
           setResultSubmitDataMemo(undefined);
           setLoaderSubmitMemo(true);
-          const result = await options?.onSubmitDataMemo?.(dataUse);
+          const result = await _onSubmitDataMemo?.(dataUse);
           setResultSubmitDataMemo(result);
           options?.onAfterSubmitDataMemoOk?.({
             dataMemo: dataUse,
