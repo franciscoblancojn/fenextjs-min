@@ -7108,7 +7108,7 @@ const InputFile = ({ defaultValue = {
     (0, exports.env_log)(v, {
         name: "onChange File",
     });
-}, accept = [], children, clearAfterUpload = false, MAX_SIZE_FILE = 5000000, parseProgress = (e) => e, onChangeProgress, onChangeError, disabled = false, textMaxSizeFile = "File max size", ...props }) => {
+}, accept = [], children, clearAfterUpload = false, MAX_SIZE_FILE = 5000000, parseProgress = (e) => e, onChangeProgress, onChangeError, disabled = false, textMaxSizeFile = "File max size", capture, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const onUploadFile = async (data) => {
         if (props?.onUploadFile) {
@@ -7206,7 +7206,7 @@ const InputFile = ({ defaultValue = {
         react_1.default.createElement("div", { className: `fenext-input-file ${className}` },
             react_1.default.createElement("label", { className: `fenext-input-file-label ${classNameLabel}` },
                 react_1.default.createElement("div", { className: `fenext-input-file-content ${classNameContent}` }, children),
-                react_1.default.createElement("input", { ref: ref, type: "file", className: `fenext-input-file-input ${classNameInput}`, onChange: uploadFile, accept: accept.map((e) => `.${e}`).join(","), disabled: disabled })),
+                react_1.default.createElement("input", { ref: ref, type: "file", className: `fenext-input-file-input ${classNameInput}`, onChange: uploadFile, accept: accept.map((e) => `.${e}`).join(","), disabled: disabled, capture: capture })),
             progress > 0 && progress < 100 && parseProgress(progress),
             error && (react_1.default.createElement("div", { className: `fenext-error ${classNameError}` }, error.message)))));
 };

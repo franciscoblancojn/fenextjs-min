@@ -2839,10 +2839,11 @@ export interface InputFileBaseProps extends _TProps {
     parseProgress?: (progres: number) => any;
     disabled?: boolean;
     textMaxSizeFile?: string;
+    capture?: React.InputHTMLAttributes<HTMLInputElement>["capture"];
 }
 export interface InputFileProps extends InputFileBaseProps, InputFileClassProps, PropsWithChildren {
 }
-export declare const InputFile: ({ defaultValue, className, classNameLabel, classNameContent, classNameInput, classNameError, onChange, accept, children, clearAfterUpload, MAX_SIZE_FILE, parseProgress, onChangeProgress, onChangeError, disabled, textMaxSizeFile, ...props }: InputFileProps) => React.JSX.Element;
+export declare const InputFile: ({ defaultValue, className, classNameLabel, classNameContent, classNameInput, classNameError, onChange, accept, children, clearAfterUpload, MAX_SIZE_FILE, parseProgress, onChangeProgress, onChangeError, disabled, textMaxSizeFile, capture, ...props }: InputFileProps) => React.JSX.Element;
 export type InputDateRangeValueType = [InputDateValueType, InputDateValueType] | undefined;
 export interface InputDateRangeDataProps {
     valueMin?: Date;
