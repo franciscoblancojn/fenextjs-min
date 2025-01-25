@@ -5591,6 +5591,9 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
     loaderSubmit,
     loaderSubmitMemo,
 
+    setLoaderSubmit,
+    setLoaderSubmitMemo,
+
     resultSubmitData,
     resultSubmitDataMemo,
 

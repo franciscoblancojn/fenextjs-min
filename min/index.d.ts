@@ -1045,6 +1045,8 @@ export declare const useForm: <T, M = any>({ defaultValue, onChangeDisabled, onC
     } | undefined) => Promise<void | undefined>;
     loaderSubmit: boolean;
     loaderSubmitMemo: boolean;
+    setLoaderSubmit: React.Dispatch<React.SetStateAction<boolean>>;
+    setLoaderSubmitMemo: React.Dispatch<React.SetStateAction<boolean>>;
     resultSubmitData: void | undefined;
     resultSubmitDataMemo: void | undefined;
     dataError: any;
@@ -1365,6 +1367,8 @@ export declare const useData: <T, M = any, RT = void, RM = void, ET = any, EM = 
     } | undefined) => Promise<RM | undefined>;
     loaderSubmit: boolean;
     loaderSubmitMemo: boolean;
+    setLoaderSubmit: React.Dispatch<React.SetStateAction<boolean>>;
+    setLoaderSubmitMemo: React.Dispatch<React.SetStateAction<boolean>>;
     resultSubmitData: RT | undefined;
     resultSubmitDataMemo: RM | undefined;
     dataError: ET | undefined;
