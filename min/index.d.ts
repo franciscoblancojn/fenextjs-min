@@ -1925,8 +1925,9 @@ export interface ChatUserProps extends Partial<UserProps> {
     extraData?: ReactNode;
 }
 export declare const ChatUser: ({ name, img, role, imgProps, loader, extraData, }: ChatUserProps) => React.JSX.Element;
+export type TextTypeProps = "span" | "p" | "strong" | "small" | "em" | "b" | "del" | "i" | "mark" | "ins" | "sub" | "sup";
 export interface TextBaseProps extends PropsWithChildren, _TProps {
-    tag?: "p" | "strong" | "small" | "em" | "b" | "del" | "i" | "mark" | "ins" | "sub" | "sup";
+    tag?: TextTypeProps;
     loader?: boolean;
     nLineLoader?: number;
 }

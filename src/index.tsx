@@ -5178,12 +5178,12 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
       name: NAME_IS_CHANGE_ACTION,
     });
 
-  const NAME_SETDATA_ACTION = options?.useGlobalContext
-    ? `fenextjs-set-data-action-${options?.useGlobalContext}`
+  const NAME_DATA_ACTION = options?.useGlobalContext
+    ? `fenextjs-data-action-${options?.useGlobalContext}`
     : undefined;
   const { data: data_, setData: setDataD } = useStateGlobalContext<T>({
     defaultValue: defaultData,
-    name: NAME_SETDATA_ACTION,
+    name: NAME_DATA_ACTION,
   });
 
   const NAME_DATA_ERROR_ACTION = options?.useGlobalContext
@@ -10172,6 +10172,20 @@ export const ChatUser = ({
   );
 };
 
+export type TextTypeProps =
+  | "span"
+  | "p"
+  | "strong"
+  | "small"
+  | "em"
+  | "b"
+  | "del"
+  | "i"
+  | "mark"
+  | "ins"
+  | "sub"
+  | "sup";
+
 /**
  * Properties for the base Text component.
  */
@@ -10179,18 +10193,8 @@ export interface TextBaseProps extends PropsWithChildren, _TProps {
   /**
    * The class name for the component.
    */
-  tag?:
-    | "p"
-    | "strong"
-    | "small"
-    | "em"
-    | "b"
-    | "del"
-    | "i"
-    | "mark"
-    | "ins"
-    | "sub"
-    | "sup";
+  tag?: TextTypeProps;
+
   /**
    * The loader for the component.
    */
