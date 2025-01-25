@@ -9,6 +9,7 @@ import React, {
   useCallback,
   SyntheticEvent,
   AnchorHTMLAttributes,
+  SetStateAction,
 } from "react";
 import * as ReactDOM from "react-dom";
 import { createPortal } from "react-dom";
@@ -5024,6 +5025,50 @@ export const useLanguage = <Langs extends string[]>({
   };
 };
 
+export interface useStateGlobalContextProps<T> {
+  defaultValue: T;
+  name?: string;
+}
+
+export const useStateGlobalContext = <T,>({
+  name,
+  defaultValue,
+}: useStateGlobalContextProps<T>) => {
+  const [data, _setData] = useState<T>(defaultValue);
+  const { onAction } = useAction<T>({
+    name: `${name ?? ""}`,
+    onActionExecute: name
+      ? (e) => {
+          const w = (window ?? {}) as any;
+          w[name] = e;
+          _setData(e as T);
+        }
+      : undefined,
+  });
+  const setData = (f: SetStateAction<T>) => {
+    if (name) {
+      const n = typeof f == "function" ? (f as any)(data) : f;
+      onAction(n);
+    } else {
+      _setData(f);
+    }
+  };
+  const onLoadDataAction = () => {
+    if (name) {
+      const w = (window ?? {}) as any;
+      const e = w?.[name];
+      if (e != undefined) {
+        _setData(e as T);
+      }
+    }
+  };
+  useEffect(onLoadDataAction, []);
+  return {
+    data,
+    setData,
+  };
+};
+
 export interface useDataOptionsRefreshDataIfChangeDefaultDataOptions {
   active?: boolean;
   useReloadKeyData?: boolean;
@@ -5122,48 +5167,78 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
   options?: useDataOptions<T, M, RT, RM, ET, EM>,
 ) => {
   type keys = keyof T;
-  const [loaderSubmit, setLoaderSubmit] = useState(false);
-  const [loaderSubmitMemo, setLoaderSubmitMemo] = useState(false);
   const [keyData, setKeyData] = useState<number>(0);
-  const [isChange, setIsChange] = useState(false);
-  const [data_, setDataD] = useState<T>(defaultData);
-  const [dataError, setDataError] = useState<ET | undefined>(undefined);
-  const [dataErrorMemo, setDataErrorMemo] = useState<EM | undefined>(undefined);
-  const [resultSubmitData, setResultSubmitData] = useState<RT | undefined>(
-    undefined,
-  );
-  const [resultSubmitDataMemo, setResultSubmitDataMemo] = useState<
-    RM | undefined
-  >(undefined);
-  const data = useMemo<T>(() => options?.data ?? data_, [data_, options?.data]);
-  const NAME_DATA_ACTION = `fenextjs-data-action-${options?.useGlobalContext}`;
-  const { onAction } = useAction<T>({
-    name: NAME_DATA_ACTION,
-    onActionExecute: options?.useGlobalContext
-      ? (e) => {
-          const w = (window ?? {}) as any;
 
-          w[NAME_DATA_ACTION] = e;
+  const NAME_IS_CHANGE_ACTION = options?.useGlobalContext
+    ? `fenextjs-is-change-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: isChange, setData: setIsChange } =
+    useStateGlobalContext<boolean>({
+      defaultValue: false,
+      name: NAME_IS_CHANGE_ACTION,
+    });
 
-          setDataD(e as T);
-        }
-      : undefined,
+  const NAME_SETDATA_ACTION = options?.useGlobalContext
+    ? `fenextjs-set-data-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: data_, setData: setDataD } = useStateGlobalContext<T>({
+    defaultValue: defaultData,
+    name: NAME_SETDATA_ACTION,
   });
-  const setDataAction = (d: T) => {
-    if (options?.useGlobalContext) {
-      onAction(d);
-    }
-  };
-  const onLoadDataAction = () => {
-    if (options?.useGlobalContext) {
-      const w = (window ?? {}) as any;
-      const e = w?.[NAME_DATA_ACTION];
-      if (e != undefined) {
-        setDataD(e as T);
-      }
-    }
-  };
-  useEffect(onLoadDataAction, []);
+
+  const NAME_DATA_ERROR_ACTION = options?.useGlobalContext
+    ? `fenextjs-data-error-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: dataError, setData: setDataError } = useStateGlobalContext<
+    ET | undefined
+  >({ defaultValue: undefined, name: NAME_DATA_ERROR_ACTION });
+
+  const NAME_LOADER_SUBMIT_ACTION = options?.useGlobalContext
+    ? `fenextjs-loader-submit-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: loaderSubmit, setData: setLoaderSubmit } =
+    useStateGlobalContext<boolean>({
+      defaultValue: false,
+      name: NAME_LOADER_SUBMIT_ACTION,
+    });
+
+  const NAME_RESULT_SUBMIT_DATA_ACTION = options?.useGlobalContext
+    ? `fenextjs-result-submit-data-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: resultSubmitData, setData: setResultSubmitData } =
+    useStateGlobalContext<RT | undefined>({
+      defaultValue: undefined,
+      name: NAME_RESULT_SUBMIT_DATA_ACTION,
+    });
+
+  const NAME_DATA_ERROR_MEMO_ACTION = options?.useGlobalContext
+    ? `fenextjs-data-error-memo-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: dataErrorMemo, setData: setDataErrorMemo } =
+    useStateGlobalContext<EM | undefined>({
+      defaultValue: undefined,
+      name: NAME_DATA_ERROR_MEMO_ACTION,
+    });
+
+  const NAME_LOADER_SUBMIT_MEMO_ACTION = options?.useGlobalContext
+    ? `fenextjs-loader-submit-memo-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: loaderSubmitMemo, setData: setLoaderSubmitMemo } =
+    useStateGlobalContext<boolean>({
+      defaultValue: false,
+      name: NAME_LOADER_SUBMIT_MEMO_ACTION,
+    });
+
+  const NAME_RESULT_SUBMIT_DATA_MEMO_ACTION = options?.useGlobalContext
+    ? `fenextjs-result-submit-data-memo-action-${options?.useGlobalContext}`
+    : undefined;
+  const { data: resultSubmitDataMemo, setData: setResultSubmitDataMemo } =
+    useStateGlobalContext<RM | undefined>({
+      defaultValue: undefined,
+      name: NAME_RESULT_SUBMIT_DATA_MEMO_ACTION,
+    });
+
+  const data = useMemo<T>(() => options?.data ?? data_, [data_, options?.data]);
 
   /**
    * Update a keyData
@@ -5209,7 +5284,6 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
         if (_options?.parseDataBeforeOnChangeData) {
           nData = _options?.parseDataBeforeOnChangeData(id, nData) as any;
         }
-        setDataAction(nData);
         return nData;
       });
       setIsChange(true);
@@ -5244,7 +5318,6 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
       }
       options?.onChangeDataAfter?.(nData);
       options?.onDeleteDataAfter?.(nData);
-      setDataAction(nData);
       return nData;
     });
     setIsChange(true);
@@ -5262,7 +5335,6 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
       if (!(optionsData?.useOptionsOnChangeDataAfter === false)) {
         options?.onChangeDataAfter?.(n);
       }
-      setDataAction(n);
       return n;
     });
     if (!(optionsData?.useSetIsChange === false)) {
@@ -5280,7 +5352,6 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
     if (!(optionsData?.useOptionsOnChangeDataAfter === false)) {
       options?.onChangeDataAfter?.(nData);
     }
-    setDataAction(nData);
     setDataD(nData);
     if (!(optionsData?.useSetIsChange === false)) {
       setIsChange(true);
@@ -5296,7 +5367,6 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
       if (Array.isArray(pre)) {
         const nData = [...pre, ...(v as Array<T>)] as T;
         options?.onChangeDataAfter?.(nData);
-        setDataAction(nData);
         return nData;
       }
       if (typeof pre === "object") {
@@ -5305,13 +5375,11 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
           ...v,
         };
         options?.onChangeDataAfter?.(nData);
-        setDataAction(nData);
         return nData;
       }
       if (typeof pre === "string" || typeof pre === "number") {
         const nData = `${pre}${v}` as T;
         options?.onChangeDataAfter?.(nData);
-        setDataAction(nData);
         return nData;
       }
       return pre;
@@ -5324,7 +5392,6 @@ export const useData = <T, M = any, RT = void, RM = void, ET = any, EM = any>(
    */
   const onRestart = () => {
     setDataD(defaultData);
-    setDataAction(defaultData);
     setIsChange(false);
   };
 

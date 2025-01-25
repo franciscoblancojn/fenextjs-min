@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FV = exports.FenextjsValidator = exports.FenextjsValidatorClass = exports.ErrorTimeout = exports.ErrorMethodNotAllowed = exports.ErrorForbidden = exports.ErrorRequestTimeout = exports.ErrorDatabaseError = exports.ErrorServerError = exports.ErrorServiceUnavailable = exports.ErrorGoogleKeyInvalid = exports.ErrorGoogleKeyNotFound = exports.ErrorFileNotFound = exports.ErrorBadRequest = exports.ErrorInternalServerError = exports.ErrorNotAcceptable = exports.ErrorInputTooShort = exports.ErrorInputRequired = exports.ErrorInputPatternMismatch = exports.ErrorInputLength = exports.ErrorInputInvalid = exports.ErrorInputNotEqual = exports.ErrorInputValueTooLow = exports.ErrorInputTooLong = exports.ErrorInputOutOfRange = exports.ErrorInputValueTooHigh = exports.ErrorPageNotFound = exports.ErrorUnauthorized = exports.ErrorTooManyRequests = exports.ErrorNotImplemented = exports.ErrorUserTokenInvalid = exports.ErrorUserTokenNotFound = exports.ErrorNetworkError = exports.ErrorFenextjs = exports.Unit_Volumen = exports.Unit_Weight = exports.Unit_Distance = exports.BusinessStatus = exports.FileStatus = exports.UserRoleProps = exports.UserStatusProps = exports.UserTypeVerifyProps = exports.ThemeConst = exports.ErrorCode = exports.AlertType = exports.DaysEnum = exports.RequestResultTypeProps = exports.Card_Enum = exports.FenextExportJsonFile = exports.FenextExportCsvFile = void 0;
 exports.useDataValidator = exports.useJsonString = exports.FenextjsDate = exports.FenextjsDateCompareSymbol = exports.FenextjsDateCompare = exports.FenextFirebaseDataBase = exports.FenextFirebaseStorage = exports.FenextFirebase = exports._tValidate = exports.sleep = exports.stringifyCircular = exports.GetSpaceParent = exports.env_log = exports.cleanTextForTranslate = exports.getBase64ForImageDonwload = exports.CONFIG = exports.GetCardType = exports.generateRandomID = exports.parseUnitToText = exports.parseFile = exports.parseImgBase64Scale = exports.parseBase64ToImgData = exports.parseCSCString_to_CSC = exports.parseCSC_to_CSCString = exports.parseEnum_to_String = exports.parseEnum_to_V = exports.parseBufferToBase64 = exports.parseString_to_Address = exports.parseAddress_to_String = exports.parseMoney = exports.parseDateTimeFormat = exports.getTimeToText = exports.getTimeValue = exports.getISOWeek = exports.getWeekValue = exports.getMonthValue = exports.parseDateToText = exports.parseTextToDate = exports.parseDateYYYYMMDD = exports.parseString_to_Phone = exports.parsePhone_to_String = exports.parseString_to_State = exports.parseState_to_String = exports.parseNumberCount = exports.parseCsvToJson = exports.parseString_to_City = exports.parseCity_to_String = exports.parseString_to_Country = exports.parseCountry_to_String = exports.parseNumber = void 0;
-exports.SvgReddit = exports.SvgPaginationDown = exports.SvgEdit = exports.SvgCameraChange = exports.SvgCamera2 = exports.SvgCamera = exports.SvgJcb = exports.SvgFacebookF = exports.SvgInstagram = exports.SvgPaypal = exports.SvgSpotify = exports.SvgDinersClub = exports.SvgLaterIdentification = exports.SvgPayment = exports.SvgExclamation = exports.SvgCreditCard = exports.SvgFrontIdentification = exports.SvgSettings = exports.SvgBehance = exports.SvgOnlyFans = exports.SvgShareArrow = exports.SvgClose = exports.SvgMove = exports.useActionDropDown = exports.useTheme = exports.useDocumentEvent = exports.useDate = exports.useSessionStorage = exports.useData = exports.useLanguage = exports.useDataLayer = exports.use_T = exports.useQuery = exports.useRequestLite = exports.useRequestFunction = exports.useRequest = exports.useCountryStateCity = exports.useCSC = exports.useNotification = exports.useOnline = exports.useModal = exports.useUser = exports.useAlert = exports.usePrintIframe = exports.usePrintData = exports.useForm = exports.useValidator = exports.useHistory = exports.useAction = exports.useLocalStorage = void 0;
-exports.SvgCheckSearch = exports.SvgDownload = exports.SvgCancel = exports.SvgStripe = exports.SvgDribbble = exports.SvgCamsoda = exports.SvgCopyBox = exports.SvgCopy = exports.SvgEyeBar = exports.SvgEye = exports.SvgPadlock = exports.SvgDesktopLayer = exports.SvgDesktop = exports.SvgStremate = exports.SvgCams = exports.SvgAmazon = exports.SvgImgAvatar = exports.SvgEtsty = exports.SvgZelle = exports.SvgSave = exports.SvgBancolombia = exports.SvgColor = exports.SvgTwitch = exports.SvgPix = exports.SvgCryingUnicorn = exports.SvgCardDiscover = exports.SvgCardMasterCard = exports.SvgCardAmericanExpress = exports.SvgCardVisa = exports.SvgCardJCB = exports.SvgCardDinersClub = exports.SvgCardVisaElectron = exports.SvgListCheck = exports.SvgAdd = exports.SvgReload = exports.SvgUnicornWithMoney = exports.SvgClone = exports.SvgPinterest = exports.SvgArrowSelect = exports.SvgArrow = exports.SvgUpload2 = exports.SvgUpload = exports.SvgLocation = exports.SvgStart = exports.SvgVerified = exports.SvgTiktok = exports.SvgManyvids = exports.SvgFacebookBox = exports.SvgFacebook = exports.SvgBusiness = void 0;
-exports.SvgEbay = exports.SvgMovilLayer = exports.SvgMovil = exports.SvgUnicorn = exports.SvgDiscover = exports.SvgChaturbate = exports.SvgArrowGoBack = exports.SvgImg = exports.SvgDaviplata = exports.SvgYoutube = exports.SvgEmailBox = exports.SvgEmail = exports.SvgNumberDecrease = exports.SvgNoConfirm = exports.SvgShare = exports.SvgLink = exports.SvgLinkedinBox = exports.SvgLinkedin = exports.SvgPatreon = exports.SvgCheck2 = exports.SvgTheme = exports.SvgFont = exports.SvgSize = exports.SvgVideo = exports.SvgSteam = exports.SvgGoogle = exports.SvgTrash = exports.SvgEarringWatch = exports.SvgMercadoLibre = exports.SvgXBox = exports.SvgX = exports.SvgFantime = exports.SvgBongacams = exports.SvgBorder = exports.SvgMasterCard = exports.SvgPaginationPre = exports.SvgQr = exports.SvgPaginationNext = exports.SvgStack = exports.SvgSoundCloud = exports.SvgPlane = exports.SvgNumberIncrease = exports.SvgSnapchat = exports.SvgStripachat = exports.SvgNequi = exports.SvgVisa = exports.SvgClicks = exports.SvgArrowCollapse = exports.SvgBars = exports.SvgDate = void 0;
-exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = exports.SwichViewList = exports.Breadcrumb = exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.FenextImgPlaceholderUrlBase = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = exports.SvgWechat = exports.SvgEstadisticas = void 0;
-exports.InputCheckbox = exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = void 0;
-exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = void 0;
-exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterDate = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = void 0;
+exports.SvgPaginationDown = exports.SvgEdit = exports.SvgCameraChange = exports.SvgCamera2 = exports.SvgCamera = exports.SvgJcb = exports.SvgFacebookF = exports.SvgInstagram = exports.SvgPaypal = exports.SvgSpotify = exports.SvgDinersClub = exports.SvgLaterIdentification = exports.SvgPayment = exports.SvgExclamation = exports.SvgCreditCard = exports.SvgFrontIdentification = exports.SvgSettings = exports.SvgBehance = exports.SvgOnlyFans = exports.SvgShareArrow = exports.SvgClose = exports.SvgMove = exports.useActionDropDown = exports.useTheme = exports.useDocumentEvent = exports.useDate = exports.useSessionStorage = exports.useData = exports.useStateGlobalContext = exports.useLanguage = exports.useDataLayer = exports.use_T = exports.useQuery = exports.useRequestLite = exports.useRequestFunction = exports.useRequest = exports.useCountryStateCity = exports.useCSC = exports.useNotification = exports.useOnline = exports.useModal = exports.useUser = exports.useAlert = exports.usePrintIframe = exports.usePrintData = exports.useForm = exports.useValidator = exports.useHistory = exports.useAction = exports.useLocalStorage = void 0;
+exports.SvgDownload = exports.SvgCancel = exports.SvgStripe = exports.SvgDribbble = exports.SvgCamsoda = exports.SvgCopyBox = exports.SvgCopy = exports.SvgEyeBar = exports.SvgEye = exports.SvgPadlock = exports.SvgDesktopLayer = exports.SvgDesktop = exports.SvgStremate = exports.SvgCams = exports.SvgAmazon = exports.SvgImgAvatar = exports.SvgEtsty = exports.SvgZelle = exports.SvgSave = exports.SvgBancolombia = exports.SvgColor = exports.SvgTwitch = exports.SvgPix = exports.SvgCryingUnicorn = exports.SvgCardDiscover = exports.SvgCardMasterCard = exports.SvgCardAmericanExpress = exports.SvgCardVisa = exports.SvgCardJCB = exports.SvgCardDinersClub = exports.SvgCardVisaElectron = exports.SvgListCheck = exports.SvgAdd = exports.SvgReload = exports.SvgUnicornWithMoney = exports.SvgClone = exports.SvgPinterest = exports.SvgArrowSelect = exports.SvgArrow = exports.SvgUpload2 = exports.SvgUpload = exports.SvgLocation = exports.SvgStart = exports.SvgVerified = exports.SvgTiktok = exports.SvgManyvids = exports.SvgFacebookBox = exports.SvgFacebook = exports.SvgBusiness = exports.SvgReddit = void 0;
+exports.SvgMovilLayer = exports.SvgMovil = exports.SvgUnicorn = exports.SvgDiscover = exports.SvgChaturbate = exports.SvgArrowGoBack = exports.SvgImg = exports.SvgDaviplata = exports.SvgYoutube = exports.SvgEmailBox = exports.SvgEmail = exports.SvgNumberDecrease = exports.SvgNoConfirm = exports.SvgShare = exports.SvgLink = exports.SvgLinkedinBox = exports.SvgLinkedin = exports.SvgPatreon = exports.SvgCheck2 = exports.SvgTheme = exports.SvgFont = exports.SvgSize = exports.SvgVideo = exports.SvgSteam = exports.SvgGoogle = exports.SvgTrash = exports.SvgEarringWatch = exports.SvgMercadoLibre = exports.SvgXBox = exports.SvgX = exports.SvgFantime = exports.SvgBongacams = exports.SvgBorder = exports.SvgMasterCard = exports.SvgPaginationPre = exports.SvgQr = exports.SvgPaginationNext = exports.SvgStack = exports.SvgSoundCloud = exports.SvgPlane = exports.SvgNumberIncrease = exports.SvgSnapchat = exports.SvgStripachat = exports.SvgNequi = exports.SvgVisa = exports.SvgClicks = exports.SvgArrowCollapse = exports.SvgBars = exports.SvgDate = exports.SvgCheckSearch = void 0;
+exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = exports.SwichViewList = exports.Breadcrumb = exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.FenextImgPlaceholderUrlBase = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = exports.SvgWechat = exports.SvgEstadisticas = exports.SvgEbay = void 0;
+exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.LayoutGridMenuTop = void 0;
+exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = void 0;
+exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterDate = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const ReactDOM = tslib_1.__importStar(require("react-dom"));
@@ -2901,43 +2901,99 @@ const useLanguage = ({ langs, listTranductions, defaultLang, onNoFoundTranslate,
     };
 };
 exports.useLanguage = useLanguage;
-const useData = (defaultData, options) => {
-    const [loaderSubmit, setLoaderSubmit] = (0, react_1.useState)(false);
-    const [loaderSubmitMemo, setLoaderSubmitMemo] = (0, react_1.useState)(false);
-    const [keyData, setKeyData] = (0, react_1.useState)(0);
-    const [isChange, setIsChange] = (0, react_1.useState)(false);
-    const [data_, setDataD] = (0, react_1.useState)(defaultData);
-    const [dataError, setDataError] = (0, react_1.useState)(undefined);
-    const [dataErrorMemo, setDataErrorMemo] = (0, react_1.useState)(undefined);
-    const [resultSubmitData, setResultSubmitData] = (0, react_1.useState)(undefined);
-    const [resultSubmitDataMemo, setResultSubmitDataMemo] = (0, react_1.useState)(undefined);
-    const data = (0, react_1.useMemo)(() => options?.data ?? data_, [data_, options?.data]);
-    const NAME_DATA_ACTION = `fenextjs-data-action-${options?.useGlobalContext}`;
+const useStateGlobalContext = ({ name, defaultValue, }) => {
+    const [data, _setData] = (0, react_1.useState)(defaultValue);
     const { onAction } = (0, exports.useAction)({
-        name: NAME_DATA_ACTION,
-        onActionExecute: options?.useGlobalContext
+        name: `${name ?? ""}`,
+        onActionExecute: name
             ? (e) => {
                 const w = (window ?? {});
-                w[NAME_DATA_ACTION] = e;
-                setDataD(e);
+                w[name] = e;
+                _setData(e);
             }
             : undefined,
     });
-    const setDataAction = (d) => {
-        if (options?.useGlobalContext) {
-            onAction(d);
+    const setData = (f) => {
+        if (name) {
+            const n = typeof f == "function" ? f(data) : f;
+            onAction(n);
+        }
+        else {
+            _setData(f);
         }
     };
     const onLoadDataAction = () => {
-        if (options?.useGlobalContext) {
+        if (name) {
             const w = (window ?? {});
-            const e = w?.[NAME_DATA_ACTION];
+            const e = w?.[name];
             if (e != undefined) {
-                setDataD(e);
+                _setData(e);
             }
         }
     };
     (0, react_1.useEffect)(onLoadDataAction, []);
+    return {
+        data,
+        setData,
+    };
+};
+exports.useStateGlobalContext = useStateGlobalContext;
+const useData = (defaultData, options) => {
+    const [keyData, setKeyData] = (0, react_1.useState)(0);
+    const NAME_IS_CHANGE_ACTION = options?.useGlobalContext
+        ? `fenextjs-is-change-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: isChange, setData: setIsChange } = (0, exports.useStateGlobalContext)({
+        defaultValue: false,
+        name: NAME_IS_CHANGE_ACTION,
+    });
+    const NAME_SETDATA_ACTION = options?.useGlobalContext
+        ? `fenextjs-set-data-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: data_, setData: setDataD } = (0, exports.useStateGlobalContext)({
+        defaultValue: defaultData,
+        name: NAME_SETDATA_ACTION,
+    });
+    const NAME_DATA_ERROR_ACTION = options?.useGlobalContext
+        ? `fenextjs-data-error-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: dataError, setData: setDataError } = (0, exports.useStateGlobalContext)({ defaultValue: undefined, name: NAME_DATA_ERROR_ACTION });
+    const NAME_LOADER_SUBMIT_ACTION = options?.useGlobalContext
+        ? `fenextjs-loader-submit-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: loaderSubmit, setData: setLoaderSubmit } = (0, exports.useStateGlobalContext)({
+        defaultValue: false,
+        name: NAME_LOADER_SUBMIT_ACTION,
+    });
+    const NAME_RESULT_SUBMIT_DATA_ACTION = options?.useGlobalContext
+        ? `fenextjs-result-submit-data-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: resultSubmitData, setData: setResultSubmitData } = (0, exports.useStateGlobalContext)({
+        defaultValue: undefined,
+        name: NAME_RESULT_SUBMIT_DATA_ACTION,
+    });
+    const NAME_DATA_ERROR_MEMO_ACTION = options?.useGlobalContext
+        ? `fenextjs-data-error-memo-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: dataErrorMemo, setData: setDataErrorMemo } = (0, exports.useStateGlobalContext)({
+        defaultValue: undefined,
+        name: NAME_DATA_ERROR_MEMO_ACTION,
+    });
+    const NAME_LOADER_SUBMIT_MEMO_ACTION = options?.useGlobalContext
+        ? `fenextjs-loader-submit-memo-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: loaderSubmitMemo, setData: setLoaderSubmitMemo } = (0, exports.useStateGlobalContext)({
+        defaultValue: false,
+        name: NAME_LOADER_SUBMIT_MEMO_ACTION,
+    });
+    const NAME_RESULT_SUBMIT_DATA_MEMO_ACTION = options?.useGlobalContext
+        ? `fenextjs-result-submit-data-memo-action-${options?.useGlobalContext}`
+        : undefined;
+    const { data: resultSubmitDataMemo, setData: setResultSubmitDataMemo } = (0, exports.useStateGlobalContext)({
+        defaultValue: undefined,
+        name: NAME_RESULT_SUBMIT_DATA_MEMO_ACTION,
+    });
+    const data = (0, react_1.useMemo)(() => options?.data ?? data_, [data_, options?.data]);
     const onReloadKeyData = () => {
         setKeyData(new Date().getTime());
     };
@@ -2971,7 +3027,6 @@ const useData = (defaultData, options) => {
             if (_options?.parseDataBeforeOnChangeData) {
                 nData = _options?.parseDataBeforeOnChangeData(id, nData);
             }
-            setDataAction(nData);
             return nData;
         });
         setIsChange(true);
@@ -3000,7 +3055,6 @@ const useData = (defaultData, options) => {
             }
             options?.onChangeDataAfter?.(nData);
             options?.onDeleteDataAfter?.(nData);
-            setDataAction(nData);
             return nData;
         });
         setIsChange(true);
@@ -3011,7 +3065,6 @@ const useData = (defaultData, options) => {
             if (!(optionsData?.useOptionsOnChangeDataAfter === false)) {
                 options?.onChangeDataAfter?.(n);
             }
-            setDataAction(n);
             return n;
         });
         if (!(optionsData?.useSetIsChange === false)) {
@@ -3022,7 +3075,6 @@ const useData = (defaultData, options) => {
         if (!(optionsData?.useOptionsOnChangeDataAfter === false)) {
             options?.onChangeDataAfter?.(nData);
         }
-        setDataAction(nData);
         setDataD(nData);
         if (!(optionsData?.useSetIsChange === false)) {
             setIsChange(true);
@@ -3033,7 +3085,6 @@ const useData = (defaultData, options) => {
             if (Array.isArray(pre)) {
                 const nData = [...pre, ...v];
                 options?.onChangeDataAfter?.(nData);
-                setDataAction(nData);
                 return nData;
             }
             if (typeof pre === "object") {
@@ -3042,13 +3093,11 @@ const useData = (defaultData, options) => {
                     ...v,
                 };
                 options?.onChangeDataAfter?.(nData);
-                setDataAction(nData);
                 return nData;
             }
             if (typeof pre === "string" || typeof pre === "number") {
                 const nData = `${pre}${v}`;
                 options?.onChangeDataAfter?.(nData);
-                setDataAction(nData);
                 return nData;
             }
             return pre;
@@ -3057,7 +3106,6 @@ const useData = (defaultData, options) => {
     };
     const onRestart = () => {
         setDataD(defaultData);
-        setDataAction(defaultData);
         setIsChange(false);
     };
     const dataMemo = (0, react_1.useMemo)(() => {

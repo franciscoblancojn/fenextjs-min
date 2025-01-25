@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import React, { ReactNode, PropsWithChildren, CSSProperties, SyntheticEvent, AnchorHTMLAttributes } from "react";
+import React, { ReactNode, PropsWithChildren, CSSProperties, SyntheticEvent, AnchorHTMLAttributes, SetStateAction } from "react";
 import { LinkProps as LinkNextProps } from "next/link";
 import { AutocompleteProps as GoogleAutocompleteProps, LoadScriptProps, GoogleMapProps, MarkerProps } from "@react-google-maps/api";
 import firebase from "firebase/compat/app";
@@ -1011,7 +1011,7 @@ export declare const useForm: <T, M = any>({ defaultValue, onChangeDisabled, onC
     setData: (nData: T, optionsData?: setDataOptions) => void;
     setDataFunction: (f: (p: T) => T, optionsData?: setDataOptions) => void;
     dataMemo: M;
-    setIsChange: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsChange: (f: React.SetStateAction<boolean>) => void;
     onRestart: () => void;
     onConcatData: (v: T[] | Partial<T>) => void;
     keyData: number;
@@ -1045,16 +1045,16 @@ export declare const useForm: <T, M = any>({ defaultValue, onChangeDisabled, onC
     } | undefined) => Promise<void | undefined>;
     loaderSubmit: boolean;
     loaderSubmitMemo: boolean;
-    setLoaderSubmit: React.Dispatch<React.SetStateAction<boolean>>;
-    setLoaderSubmitMemo: React.Dispatch<React.SetStateAction<boolean>>;
+    setLoaderSubmit: (f: React.SetStateAction<boolean>) => void;
+    setLoaderSubmitMemo: (f: React.SetStateAction<boolean>) => void;
     resultSubmitData: void | undefined;
     resultSubmitDataMemo: void | undefined;
     dataError: any;
     dataErrorMemo: any;
-    setResultSubmitData: React.Dispatch<React.SetStateAction<void | undefined>>;
-    setResultSubmitDataMemo: React.Dispatch<React.SetStateAction<void | undefined>>;
-    setDataError: React.Dispatch<any>;
-    setDataErrorMemo: React.Dispatch<any>;
+    setResultSubmitData: (f: React.SetStateAction<void | undefined>) => void;
+    setResultSubmitDataMemo: (f: React.SetStateAction<void | undefined>) => void;
+    setDataError: (f: any) => void;
+    setDataErrorMemo: (f: any) => void;
 };
 export interface usePrintDataProps extends Pick<useLocalStorageProps, "parse"> {
 }
@@ -1266,6 +1266,14 @@ export declare const useLanguage: <Langs extends string[]>({ langs, listTranduct
     currentLang: Langs[number] | undefined;
     setCurrentLang: (newValue: any) => void;
 };
+export interface useStateGlobalContextProps<T> {
+    defaultValue: T;
+    name?: string;
+}
+export declare const useStateGlobalContext: <T>({ name, defaultValue, }: useStateGlobalContextProps<T>) => {
+    data: T;
+    setData: (f: React.SetStateAction<T>) => void;
+};
 export interface useDataOptionsRefreshDataIfChangeDefaultDataOptions {
     active?: boolean;
     useReloadKeyData?: boolean;
@@ -1333,7 +1341,7 @@ export declare const useData: <T, M = any, RT = void, RM = void, ET = any, EM = 
     setData: (nData: T, optionsData?: setDataOptions) => void;
     setDataFunction: (f: (p: T) => T, optionsData?: setDataOptions) => void;
     dataMemo: M;
-    setIsChange: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsChange: (f: React.SetStateAction<boolean>) => void;
     onRestart: () => void;
     onConcatData: (v: Partial<T> | T[]) => void;
     keyData: number;
@@ -1367,16 +1375,16 @@ export declare const useData: <T, M = any, RT = void, RM = void, ET = any, EM = 
     } | undefined) => Promise<RM | undefined>;
     loaderSubmit: boolean;
     loaderSubmitMemo: boolean;
-    setLoaderSubmit: React.Dispatch<React.SetStateAction<boolean>>;
-    setLoaderSubmitMemo: React.Dispatch<React.SetStateAction<boolean>>;
+    setLoaderSubmit: (f: React.SetStateAction<boolean>) => void;
+    setLoaderSubmitMemo: (f: React.SetStateAction<boolean>) => void;
     resultSubmitData: RT | undefined;
     resultSubmitDataMemo: RM | undefined;
     dataError: ET | undefined;
     dataErrorMemo: EM | undefined;
-    setResultSubmitData: React.Dispatch<React.SetStateAction<RT | undefined>>;
-    setResultSubmitDataMemo: React.Dispatch<React.SetStateAction<RM | undefined>>;
-    setDataError: React.Dispatch<React.SetStateAction<ET | undefined>>;
-    setDataErrorMemo: React.Dispatch<React.SetStateAction<EM | undefined>>;
+    setResultSubmitData: (f: React.SetStateAction<RT | undefined>) => void;
+    setResultSubmitDataMemo: (f: React.SetStateAction<RM | undefined>) => void;
+    setDataError: (f: React.SetStateAction<ET | undefined>) => void;
+    setDataErrorMemo: (f: React.SetStateAction<EM | undefined>) => void;
 };
 export interface useSessionStorageProps<T = any, O = any> {
     name: string;

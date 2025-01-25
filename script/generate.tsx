@@ -120,6 +120,7 @@ const main = async () => {
             useCallback,
             SyntheticEvent,
             AnchorHTMLAttributes,
+            SetStateAction,
         } from "react";
         import * as ReactDOM from "react-dom";
         import { createPortal } from "react-dom";
