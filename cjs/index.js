@@ -6447,7 +6447,7 @@ const InputRate = ({ className = "", classNameContentStar = "", classNameStar = 
             react_1.default.createElement("div", { className: `fenext-input-rate-number ${classNameNumber}` }, start))));
 };
 exports.InputRate = InputRate;
-const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultValue = {
+const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", maxLengthShowOptionsCodes, defaultValue = {
     code: "+57",
 }, value = undefined, onChange: onChangeProps, parseCountrys, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
@@ -6526,7 +6526,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                     }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), optional: false, showOptionIconImg: true, itemMaxLengthShowOptions: {
                         id: "fenext-item-max-length-show-options",
                         text: "...",
-                    } })),
+                    }, maxLengthShowOptions: maxLengthShowOptionsCodes })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
                 react_1.default.createElement(exports.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: (n) => {
                         onChangeData("number")(n);
