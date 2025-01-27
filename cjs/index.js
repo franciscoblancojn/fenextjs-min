@@ -4294,7 +4294,7 @@ exports.FenextImgUserPlaceholder = `${exports.FenextImgPlaceholderUrlBase}/user.
 exports.FenextImgPlaceholder = `${exports.FenextImgPlaceholderUrlBase}/placeholder.png`;
 const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(exports.Text, null, "There is not messages yet"),
-    react_1.default.createElement(exports.SvgTelegram, null))), chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages = false, btnLoadMoreMessages = {
+    react_1.default.createElement(exports.SvgTelegram, null))), customBack, chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages = false, btnLoadMoreMessages = {
     children: "Load more messages",
 }, fullPage = true, onScrollIfNewMessage = true, ...props }) => {
     const onActionAfterNewMessage = () => {
@@ -4322,7 +4322,7 @@ const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.F
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-chat fenext-chat-${fullPage ? "full-page" : ""}` },
             react_1.default.createElement("div", { className: "fenext-chat-contentTop" },
-                react_1.default.createElement(exports.Back, null),
+                customBack ?? react_1.default.createElement(exports.Back, null),
                 [chatUser].flat(2).map((e, i) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(exports.ChatUser, { key: i, ...e })));
