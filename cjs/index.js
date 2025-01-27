@@ -4322,7 +4322,7 @@ const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.F
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-chat fenext-chat-${fullPage ? "full-page" : ""}` },
             react_1.default.createElement("div", { className: "fenext-chat-contentTop" },
-                customBack ?? react_1.default.createElement(exports.Back, null),
+                customBack,
                 [chatUser].flat(2).map((e, i) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(exports.ChatUser, { key: i, ...e })));

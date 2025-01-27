@@ -9933,7 +9933,7 @@ export const Chat = ({
     <>
       <div className={`fenext-chat fenext-chat-${fullPage ? "full-page" : ""}`}>
         <div className="fenext-chat-contentTop">
-          {customBack ?? <Back />}
+          {customBack}
 
           {[chatUser].flat(2).map((e, i) => {
             return (
