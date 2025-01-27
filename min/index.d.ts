@@ -1667,6 +1667,9 @@ export declare const SvgStripachat: ({ className }: {
 export declare const SvgSnapchat: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
+export declare const SvgPaperClip: ({ className }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
 export declare const SvgNumberIncrease: ({ className, }: {
     className?: string | undefined;
 }) => React.JSX.Element;
@@ -1674,6 +1677,9 @@ export declare const SvgPlane: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgSoundCloud: ({ className }: {
+    className?: string | undefined;
+}) => React.JSX.Element;
+export declare const SvgSend: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
 export declare const SvgStack: ({ className }: {
@@ -1904,22 +1910,26 @@ export interface ChatMessageProps {
     right?: boolean;
     account?: Partial<UserProps>;
     message?: ReactNode;
+    file?: FileProps;
     createdAt?: Date;
     view?: boolean;
     imgProps?: Partial<ImgProps>;
 }
-export declare const ChatMessage: ({ message, createdAt, account, right, view, loader, imgProps, }: ChatMessageProps) => React.JSX.Element;
+export declare const ChatMessage: ({ message, file, createdAt, account, right, view, loader, imgProps, }: ChatMessageProps) => React.JSX.Element;
 export interface ChatFormSendMessageDataProps {
-    message: string;
+    message?: string;
+    file?: FileProps;
 }
 export interface ChatFormSendMessageProps extends _TProps {
-    onSubmit?: RequestProps<ChatFormSendMessageDataProps, RequestResultProps>;
+    onSubmit?: (data: ChatFormSendMessageDataProps) => Promise<void>;
     loader?: boolean;
     useSubmitInEnter?: boolean;
     btnChildren?: ReactNode;
+    btnFileChildren?: ReactNode;
+    InputFileProps?: Omit<InputFileProps, "onChange">;
     placeholderMessage?: string;
 }
-export declare const ChatFormSendMessage: ({ useSubmitInEnter, btnChildren, placeholderMessage, ...props }: ChatFormSendMessageProps) => React.JSX.Element;
+export declare const ChatFormSendMessage: ({ useSubmitInEnter, btnChildren, btnFileChildren, placeholderMessage, InputFileProps, ...props }: ChatFormSendMessageProps) => React.JSX.Element;
 export interface ChatUserProps extends Partial<UserProps> {
     loader?: boolean;
     imgProps?: Partial<ImgProps>;
