@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FV = exports.FenextjsValidator = exports.FenextjsValidatorClass = exports.ErrorTimeout = exports.ErrorMethodNotAllowed = exports.ErrorForbidden = exports.ErrorRequestTimeout = exports.ErrorDatabaseError = exports.ErrorServerError = exports.ErrorServiceUnavailable = exports.ErrorGoogleKeyInvalid = exports.ErrorGoogleKeyNotFound = exports.ErrorFileNotFound = exports.ErrorBadRequest = exports.ErrorInternalServerError = exports.ErrorNotAcceptable = exports.ErrorInputTooShort = exports.ErrorInputRequired = exports.ErrorInputPatternMismatch = exports.ErrorInputLength = exports.ErrorInputInvalid = exports.ErrorInputNotEqual = exports.ErrorInputValueTooLow = exports.ErrorInputTooLong = exports.ErrorInputOutOfRange = exports.ErrorInputValueTooHigh = exports.ErrorPageNotFound = exports.ErrorUnauthorized = exports.ErrorTooManyRequests = exports.ErrorNotImplemented = exports.ErrorUserTokenInvalid = exports.ErrorUserTokenNotFound = exports.ErrorNetworkError = exports.ErrorFenextjs = exports.Unit_Volumen = exports.Unit_Weight = exports.Unit_Distance = exports.BusinessStatus = exports.FileStatus = exports.UserRoleProps = exports.UserStatusProps = exports.UserTypeVerifyProps = exports.ThemeConst = exports.ErrorCode = exports.AlertType = exports.DaysEnum = exports.RequestResultTypeProps = exports.Card_Enum = exports.FenextExportJsonFile = exports.FenextExportCsvFile = void 0;
 exports.useDataValidator = exports.useJsonString = exports.FenextjsDate = exports.FenextjsDateCompareSymbol = exports.FenextjsDateCompare = exports.FenextFirebaseDataBase = exports.FenextFirebaseStorage = exports.FenextFirebase = exports._tValidate = exports.sleep = exports.stringifyCircular = exports.GetSpaceParent = exports.env_log = exports.cleanTextForTranslate = exports.getBase64ForImageDonwload = exports.CONFIG = exports.GetCardType = exports.generateRandomID = exports.parseUnitToText = exports.parseFile = exports.parseImgBase64Scale = exports.parseBase64ToImgData = exports.parseCSCString_to_CSC = exports.parseCSC_to_CSCString = exports.parseEnum_to_String = exports.parseEnum_to_V = exports.parseBufferToBase64 = exports.parseString_to_Address = exports.parseAddress_to_String = exports.parseMoney = exports.parseDateTimeFormat = exports.getTimeToText = exports.getTimeValue = exports.getISOWeek = exports.getWeekValue = exports.getMonthValue = exports.parseDateToText = exports.parseTextToDate = exports.parseDateYYYYMMDD = exports.parseString_to_Phone = exports.parsePhone_to_String = exports.parseString_to_State = exports.parseState_to_String = exports.parseNumberCount = exports.parseCsvToJson = exports.parseString_to_City = exports.parseCity_to_String = exports.parseString_to_Country = exports.parseCountry_to_String = exports.parseNumber = void 0;
-exports.SvgPaginationDown = exports.SvgEdit = exports.SvgCameraChange = exports.SvgCamera2 = exports.SvgCamera = exports.SvgJcb = exports.SvgFacebookF = exports.SvgInstagram = exports.SvgPaypal = exports.SvgSpotify = exports.SvgDinersClub = exports.SvgLaterIdentification = exports.SvgPayment = exports.SvgExclamation = exports.SvgCreditCard = exports.SvgFrontIdentification = exports.SvgSettings = exports.SvgBehance = exports.SvgOnlyFans = exports.SvgShareArrow = exports.SvgClose = exports.SvgMove = exports.useActionDropDown = exports.useTheme = exports.useDocumentEvent = exports.useDate = exports.useSessionStorage = exports.useData = exports.useStateGlobalContext = exports.useLanguage = exports.useDataLayer = exports.use_T = exports.useQuery = exports.useRequestLite = exports.useRequestFunction = exports.useRequest = exports.useCountryStateCity = exports.useCSC = exports.useNotification = exports.useOnline = exports.useModal = exports.useUser = exports.useAlert = exports.usePrintIframe = exports.usePrintData = exports.useForm = exports.useValidator = exports.useHistory = exports.useAction = exports.useLocalStorage = void 0;
-exports.SvgDownload = exports.SvgCancel = exports.SvgStripe = exports.SvgDribbble = exports.SvgCamsoda = exports.SvgCopyBox = exports.SvgCopy = exports.SvgEyeBar = exports.SvgEye = exports.SvgPadlock = exports.SvgDesktopLayer = exports.SvgDesktop = exports.SvgStremate = exports.SvgCams = exports.SvgAmazon = exports.SvgImgAvatar = exports.SvgEtsty = exports.SvgZelle = exports.SvgSave = exports.SvgBancolombia = exports.SvgColor = exports.SvgTwitch = exports.SvgPix = exports.SvgCryingUnicorn = exports.SvgCardDiscover = exports.SvgCardMasterCard = exports.SvgCardAmericanExpress = exports.SvgCardVisa = exports.SvgCardJCB = exports.SvgCardDinersClub = exports.SvgCardVisaElectron = exports.SvgListCheck = exports.SvgAdd = exports.SvgReload = exports.SvgUnicornWithMoney = exports.SvgClone = exports.SvgPinterest = exports.SvgArrowSelect = exports.SvgArrow = exports.SvgUpload2 = exports.SvgUpload = exports.SvgLocation = exports.SvgStart = exports.SvgVerified = exports.SvgTiktok = exports.SvgManyvids = exports.SvgFacebookBox = exports.SvgFacebook = exports.SvgBusiness = exports.SvgReddit = void 0;
-exports.SvgUnicorn = exports.SvgDiscover = exports.SvgChaturbate = exports.SvgArrowGoBack = exports.SvgImg = exports.SvgDaviplata = exports.SvgYoutube = exports.SvgEmailBox = exports.SvgEmail = exports.SvgNumberDecrease = exports.SvgNoConfirm = exports.SvgShare = exports.SvgLink = exports.SvgLinkedinBox = exports.SvgLinkedin = exports.SvgPatreon = exports.SvgCheck2 = exports.SvgTheme = exports.SvgFont = exports.SvgSize = exports.SvgVideo = exports.SvgSteam = exports.SvgGoogle = exports.SvgTrash = exports.SvgEarringWatch = exports.SvgMercadoLibre = exports.SvgXBox = exports.SvgX = exports.SvgFantime = exports.SvgBongacams = exports.SvgBorder = exports.SvgMasterCard = exports.SvgPaginationPre = exports.SvgQr = exports.SvgPaginationNext = exports.SvgStack = exports.SvgSend = exports.SvgSoundCloud = exports.SvgPlane = exports.SvgNumberIncrease = exports.SvgPaperClip = exports.SvgSnapchat = exports.SvgStripachat = exports.SvgNequi = exports.SvgVisa = exports.SvgClicks = exports.SvgArrowCollapse = exports.SvgBars = exports.SvgDate = exports.SvgCheckSearch = void 0;
-exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = exports.SwichViewList = exports.Breadcrumb = exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.FenextImgPlaceholderUrlBase = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = exports.SvgWechat = exports.SvgEstadisticas = exports.SvgEbay = exports.SvgMovilLayer = exports.SvgMovil = void 0;
-exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = void 0;
-exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = exports.InputDateRange = exports.InputFile = void 0;
-exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterDate = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = void 0;
+exports.SvgEdit = exports.SvgCameraChange = exports.SvgCamera2 = exports.SvgCamera = exports.SvgJcb = exports.SvgFacebookF = exports.SvgInstagram = exports.SvgPaypal = exports.SvgSpotify = exports.SvgDinersClub = exports.SvgLaterIdentification = exports.SvgPayment = exports.SvgExclamation = exports.SvgCreditCard = exports.SvgFrontIdentification = exports.SvgSettings = exports.SvgBehance = exports.SvgOnlyFans = exports.SvgShareArrow = exports.SvgClose = exports.SvgMove = exports.useActionDropDown = exports.useTheme = exports.useDocumentEvent = exports.useDate = exports.useSessionStorage = exports.useData = exports.usePagination = exports.useStateGlobalContext = exports.useLanguage = exports.useDataLayer = exports.use_T = exports.useQuery = exports.useRequestLite = exports.useRequestFunction = exports.useRequest = exports.useCountryStateCity = exports.useCSC = exports.useNotification = exports.useOnline = exports.useModal = exports.useUser = exports.useAlert = exports.usePrintIframe = exports.usePrintData = exports.useForm = exports.useValidator = exports.useHistory = exports.useAction = exports.useLocalStorage = void 0;
+exports.SvgCancel = exports.SvgStripe = exports.SvgDribbble = exports.SvgCamsoda = exports.SvgCopyBox = exports.SvgCopy = exports.SvgEyeBar = exports.SvgEye = exports.SvgPadlock = exports.SvgDesktopLayer = exports.SvgDesktop = exports.SvgStremate = exports.SvgCams = exports.SvgAmazon = exports.SvgImgAvatar = exports.SvgEtsty = exports.SvgZelle = exports.SvgSave = exports.SvgBancolombia = exports.SvgColor = exports.SvgTwitch = exports.SvgPix = exports.SvgCryingUnicorn = exports.SvgCardDiscover = exports.SvgCardMasterCard = exports.SvgCardAmericanExpress = exports.SvgCardVisa = exports.SvgCardJCB = exports.SvgCardDinersClub = exports.SvgCardVisaElectron = exports.SvgListCheck = exports.SvgAdd = exports.SvgReload = exports.SvgUnicornWithMoney = exports.SvgClone = exports.SvgPinterest = exports.SvgArrowSelect = exports.SvgArrow = exports.SvgUpload2 = exports.SvgUpload = exports.SvgLocation = exports.SvgStart = exports.SvgVerified = exports.SvgTiktok = exports.SvgManyvids = exports.SvgFacebookBox = exports.SvgFacebook = exports.SvgBusiness = exports.SvgReddit = exports.SvgPaginationDown = void 0;
+exports.SvgDiscover = exports.SvgChaturbate = exports.SvgArrowGoBack = exports.SvgImg = exports.SvgDaviplata = exports.SvgYoutube = exports.SvgEmailBox = exports.SvgEmail = exports.SvgNumberDecrease = exports.SvgNoConfirm = exports.SvgShare = exports.SvgLink = exports.SvgLinkedinBox = exports.SvgLinkedin = exports.SvgPatreon = exports.SvgCheck2 = exports.SvgTheme = exports.SvgFont = exports.SvgSize = exports.SvgVideo = exports.SvgSteam = exports.SvgGoogle = exports.SvgTrash = exports.SvgEarringWatch = exports.SvgMercadoLibre = exports.SvgXBox = exports.SvgX = exports.SvgFantime = exports.SvgBongacams = exports.SvgBorder = exports.SvgMasterCard = exports.SvgPaginationPre = exports.SvgQr = exports.SvgPaginationNext = exports.SvgStack = exports.SvgSend = exports.SvgSoundCloud = exports.SvgPlane = exports.SvgNumberIncrease = exports.SvgPaperClip = exports.SvgSnapchat = exports.SvgStripachat = exports.SvgNequi = exports.SvgVisa = exports.SvgClicks = exports.SvgArrowCollapse = exports.SvgBars = exports.SvgDate = exports.SvgCheckSearch = exports.SvgDownload = void 0;
+exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = exports.SwichViewList = exports.Breadcrumb = exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.FenextImgPlaceholderUrlBase = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = exports.SvgWechat = exports.SvgEstadisticas = exports.SvgEbay = exports.SvgMovilLayer = exports.SvgMovil = exports.SvgUnicorn = void 0;
+exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = void 0;
+exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.PaginationNPageDefaultOptions = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = void 0;
+exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterDate = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const ReactDOM = tslib_1.__importStar(require("react-dom"));
@@ -2938,6 +2938,17 @@ const useStateGlobalContext = ({ name, defaultValue, }) => {
     };
 };
 exports.useStateGlobalContext = useStateGlobalContext;
+const usePagination = ({ name, onChage }) => {
+    const { data, setData, onChangeData, setDataFunction } = (0, exports.useData)({
+        page: 0,
+        npage: 10,
+    }, {
+        useGlobalContext: `fenext-pagination-${name ?? ""}`,
+        onChangeDataAfter: onChage,
+    });
+    return { data, setData, onChangeData, setDataFunction };
+};
+exports.usePagination = usePagination;
 const useData = (defaultData, options) => {
     const [keyData, setKeyData] = (0, react_1.useState)(0);
     const NAME_IS_CHANGE_ACTION = options?.useGlobalContext
@@ -7843,13 +7854,18 @@ const ImgSlider = ({ className = "", classNameStep = "", classNamePictureImg = "
                     react_1.default.createElement(exports.SvgPaginationPre, null)), useDogs: true, ...props }))));
 };
 exports.ImgSlider = ImgSlider;
-const PaginationItemPage = ({ classNameContent = "", classNameUp = "", classNamePre = "", classNameCurrent = "", classNameCurrentItem = "", classNameNext = "", classNameDown = "", icons = {
+const PaginationItemPage = ({ classNameContent = "", classNameUp = "", classNamePre = "", classNameCurrent = "", classNameCurrentItem = "", classNameNext = "", classNameDown = "", paginationName, icons = {
     up: react_1.default.createElement(exports.SvgPaginationUp, null),
     pre: react_1.default.createElement(exports.SvgPaginationPre, null),
     next: react_1.default.createElement(exports.SvgPaginationNext, null),
     down: react_1.default.createElement(exports.SvgPaginationDown, null),
-}, defaultPage = 0, nItems, nItemsPage = 10, disabled = false, onChangePage, hiddenIfNItemsSmallerThanOrEqualNItemsPage = true, }) => {
-    const [page, setPage_] = (0, react_1.useState)(defaultPage);
+}, nItems, disabled = false, onChange, hiddenIfNItemsSmallerThanOrEqualNItemsPage = true, }) => {
+    const { onChangeData, data: { page = 0, npage: nItemsPage = 10 }, } = (0, exports.usePagination)({
+        name: paginationName,
+        onChage: (e) => {
+            onChange?.(e?.page ?? 0);
+        },
+    });
     const maxPage = (0, react_1.useMemo)(() => (nItemsPage == 0 ? 0 : Math.ceil(nItems / nItemsPage) - 1), [nItems, nItemsPage]);
     const minMaxValue = (v) => {
         return Math.max(0, Math.min(maxPage, v));
@@ -7859,8 +7875,7 @@ const PaginationItemPage = ({ classNameContent = "", classNameUp = "", className
             return;
         }
         const Value = minMaxValue(v);
-        setPage_(Value);
-        onChangePage?.(Value);
+        onChangeData("page")(Value);
     };
     const onSetPage = (e) => () => setPage(e);
     const addPage = (add) => () => {
@@ -7894,70 +7909,39 @@ const PaginationItemPage = ({ classNameContent = "", classNameUp = "", className
             react_1.default.createElement("div", { key: `fenext-pagination-item-page-down`, className: `fenext-pagination-item-page-current-item fenext-pagination-item-page-down ${classNameDown}`, onClick: onSetPage(maxPage) }, icons.down)))));
 };
 exports.PaginationItemPage = PaginationItemPage;
-const Pagination = ({ className = "", classNameItemPage = {}, classNameNPage = {}, showItemPage = true, showNPage = true, listNpage = [
-    {
-        id: "10",
-        text: "10",
-    },
-    {
-        id: "20",
-        text: "20",
-    },
-    {
-        id: "50",
-        text: "50",
-    },
-    {
-        id: "100",
-        text: "100",
-    },
-    {
-        id: "all",
-        text: "All",
-    },
-], ...props }) => {
+const Pagination = ({ className = "", PaginationItemPageProps, PaginationNPageProps = {}, showItemPage = true, showNPage = true, disabled = false, paginationName, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     const minPage = (0, react_1.useMemo)(() => {
         let m = Infinity;
-        listNpage?.forEach((e) => {
-            const n = parseInt(`${e?.id ?? ""}`);
+        (PaginationNPageProps?.options ?? exports.PaginationNPageDefaultOptions)?.forEach((e) => {
+            const n = parseInt(`${e ?? ""}`);
             if (n && !Number.isNaN(n)) {
                 m = Math.min(m, n);
             }
         });
         return m;
-    }, [listNpage]);
+    }, [PaginationNPageProps?.options]);
     return (react_1.default.createElement("div", { className: `fenext-pagination ${className}` },
-        react_1.default.createElement("div", { className: `fenext-pagination-content-item-page ${className}` }, showItemPage && (react_1.default.createElement(exports.PaginationItemPage, { ...classNameItemPage, ...props, _t: _t }))),
-        react_1.default.createElement("div", { className: `fenext-pagination-content-n-page ${className}` }, showNPage && minPage < (props?.nItems ?? minPage + 1) && (react_1.default.createElement(exports.PaginationNPage, { ...classNameNPage, ...props, listNpage: listNpage, defaultValue: props?.nItemsPage
-                ? listNpage.find((e) => `${e.id}` == `${props?.nItemsPage}`)
-                : undefined, _t: _t })))));
+        react_1.default.createElement("div", { className: `fenext-pagination-content-item-page ${className}` }, showItemPage && (react_1.default.createElement(exports.PaginationItemPage, { ...PaginationItemPageProps, _t: _t, disabled: disabled, paginationName: paginationName }))),
+        react_1.default.createElement("div", { className: `fenext-pagination-content-n-page ${className}` }, showNPage &&
+            minPage < (PaginationItemPageProps?.nItems ?? minPage + 1) && (react_1.default.createElement(exports.PaginationNPage, { ...PaginationNPageProps, ...props, _t: _t, disabled: disabled, paginationName: paginationName })))));
 };
 exports.Pagination = Pagination;
-const PaginationNPage = ({ className = "", defaultValue, listNpage = [
-    {
-        id: "10",
-        text: "10",
-    },
-    {
-        id: "20",
-        text: "20",
-    },
-    {
-        id: "50",
-        text: "50",
-    },
-    {
-        id: "100",
-        text: "100",
-    },
-    {
-        id: "all",
-        text: "All",
-    },
-], onChangeNPage, ...props }) => {
-    return (react_1.default.createElement("div", { className: `fenext-pagination-npage ${className}` },
-        react_1.default.createElement(exports.InputSelect, { ...props, useItemMaxLengthShowOptions: false, options: listNpage, onChange: onChangeNPage, isSelectChangeText: false, defaultValue: defaultValue ?? listNpage[0] })));
+exports.PaginationNPageDefaultOptions = [10, 20, 50, 100];
+const PaginationNPage = ({ className = "", options = exports.PaginationNPageDefaultOptions, onChange, paginationName, disabled, ...props }) => {
+    const { onChangeData, data: { npage = 10 }, } = (0, exports.usePagination)({
+        name: paginationName,
+        onChage: (e) => {
+            onChange?.(e?.npage ?? 10);
+        },
+    });
+    return (react_1.default.createElement(exports.InputSelectT, { ...props, className: `fenext-pagination-npage ${className}`, useItemMaxLengthShowOptions: false, options: options, onChange: onChangeData("page"), isSelectChangeText: false, value: npage, onParse: (e) => {
+            return {
+                id: e ?? "",
+                text: `${e}`,
+                data: e,
+            };
+        }, disabled: disabled }));
 };
 exports.PaginationNPage = PaginationNPage;
 const AlertHook = ({ className = "", configHook = {}, ...props }) => {
@@ -8007,7 +7991,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                         react_1.default.createElement("div", { className: `${classNameLoader}` },
                             react_1.default.createElement(exports.Loader, null)))));
             }
-            return new Array(Math.min(pagination?.nItemsPage ?? 10, 20))
+            return new Array(Math.min(pagination?.PaginationItemPageProps?.nItems ?? 10, 20))
                 .fill(1)
                 .map((item, i) => (react_1.default.createElement("tr", { key: i * item, className: `fenext-table-content-table-tr ${classNameTr}` },
                 useCheckbox && (react_1.default.createElement("td", { key: `${i}-checkbox`, className: `fenext-table-content-table-td ${classNameTd}` },

@@ -208,6 +208,11 @@ export enum DaysEnum {
   Sunday = "Sunday",
 }
 
+export interface PaginationDataProps {
+  page?: number;
+  npage?: number;
+}
+
 export enum AlertType {
   OK = "OK",
   ERROR = "ERROR",
@@ -5067,6 +5072,27 @@ export const useStateGlobalContext = <T,>({
     data,
     setData,
   };
+};
+
+export interface usePaginationProps {
+  name?: string;
+  onChage?: (data: PaginationDataProps) => void;
+}
+
+export const usePagination = ({ name, onChage }: usePaginationProps) => {
+  const { data, setData, onChangeData, setDataFunction } =
+    useData<PaginationDataProps>(
+      {
+        page: 0,
+        npage: 10,
+      },
+      {
+        useGlobalContext: `fenext-pagination-${name ?? ""}`,
+        onChangeDataAfter: onChage,
+      },
+    );
+
+  return { data, setData, onChangeData, setDataFunction };
 };
 
 export interface useDataOptionsRefreshDataIfChangeDefaultDataOptions {
@@ -21326,40 +21352,33 @@ export interface PaginationItemPageClassProps {
     /**
      * Custom icon for the "Go Up" button.
      */
-    up?: any;
+    up?: ReactNode;
 
     /**
      * Custom icon for the previous button.
      */
-    pre?: any;
+    pre?: ReactNode;
 
     /**
      * Custom icon for the next button.
      */
-    next?: any;
+    next?: ReactNode;
 
     /**
      * Custom icon for the "Go Down" button.
      */
-    down?: any;
+    down?: ReactNode;
   };
 }
 /**
  * The base props for the pagination component
  */
 export interface PaginationItemPageBaseProps extends _TProps {
-  /**
-   * The default page to show when the component is mounted
-   */
-  defaultPage?: number;
+  paginationName?: string;
   /**
    * The total number of items to paginate
    */
   nItems: number;
-  /**
-   * The number of items to display per page
-   */
-  nItemsPage?: number;
   /**
    * Whether the component is disabled
    */
@@ -21373,7 +21392,7 @@ export interface PaginationItemPageBaseProps extends _TProps {
    * A callback function that is called when the page changes
    * @param page - The new page number
    */
-  onChangePage?: (page: number) => void;
+  onChange?: (page: number) => void;
 }
 /**
  * Props for PaginationItemPage component
@@ -21390,6 +21409,7 @@ export const PaginationItemPage = ({
   classNameCurrentItem = "",
   classNameNext = "",
   classNameDown = "",
+  paginationName,
 
   icons = {
     up: <SvgPaginationUp />,
@@ -21398,16 +21418,21 @@ export const PaginationItemPage = ({
     down: <SvgPaginationDown />,
   },
 
-  defaultPage = 0,
-
   nItems,
-  nItemsPage = 10,
 
   disabled = false,
-  onChangePage,
+  onChange,
   hiddenIfNItemsSmallerThanOrEqualNItemsPage = true,
 }: PaginationItemPageProps) => {
-  const [page, setPage_] = useState(defaultPage);
+  const {
+    onChangeData,
+    data: { page = 0, npage: nItemsPage = 10 },
+  } = usePagination({
+    name: paginationName,
+    onChage: (e) => {
+      onChange?.(e?.page ?? 0);
+    },
+  });
 
   const maxPage = useMemo(
     () => (nItemsPage == 0 ? 0 : Math.ceil(nItems / nItemsPage) - 1),
@@ -21422,8 +21447,7 @@ export const PaginationItemPage = ({
       return;
     }
     const Value = minMaxValue(v);
-    setPage_(Value);
-    onChangePage?.(Value);
+    onChangeData("page")(Value);
   };
   const onSetPage = (e: number) => () => setPage(e);
 
@@ -21550,24 +21574,18 @@ export interface PaginationClassProps {
    * CSS class for the main container of the pagination.
    */
   className?: string;
-  /**
-   * Object with className of component classNameNPage.
-   */
-  classNameItemPage?: PaginationItemPageClassProps;
-  /**
-   * Object with className of component PaginationNPage.
-   */
-  classNameNPage?: PaginationNPageClassProps;
 }
 /**
  * The base props for the pagination component
  */
-export interface PaginationBaseProps
-  extends PaginationItemPageBaseProps,
-    PaginationNPageBaseProps,
-    _TProps {
+export interface PaginationBaseProps extends _TProps {
   showItemPage?: boolean;
   showNPage?: boolean;
+  disabled?: boolean;
+
+  PaginationItemPageProps: Omit<PaginationItemPageProps, "paginationName">;
+  PaginationNPageProps?: Omit<PaginationNPageProps, "paginationName">;
+  paginationName?: string;
 }
 /**
  * Props for Pagination component
@@ -21578,77 +21596,62 @@ export interface PaginationProps
 
 export const Pagination = ({
   className = "",
-  classNameItemPage = {},
-  classNameNPage = {},
+  PaginationItemPageProps,
+  PaginationNPageProps = {},
   showItemPage = true,
   showNPage = true,
-  listNpage = [
-    {
-      id: "10",
-      text: "10",
-    },
-    {
-      id: "20",
-      text: "20",
-    },
-    {
-      id: "50",
-      text: "50",
-    },
-    {
-      id: "100",
-      text: "100",
-    },
-    {
-      id: "all",
-      text: "All",
-    },
-  ],
-
+  disabled = false,
+  paginationName,
   ...props
 }: PaginationProps) => {
   const { _t } = use_T({ ...props });
   const minPage = useMemo(() => {
     let m = Infinity;
-    listNpage?.forEach((e) => {
-      const n = parseInt(`${e?.id ?? ""}`);
-      if (n && !Number.isNaN(n)) {
-        m = Math.min(m, n);
-      }
-    });
+    (PaginationNPageProps?.options ?? PaginationNPageDefaultOptions)?.forEach(
+      (e) => {
+        const n = parseInt(`${e ?? ""}`);
+        if (n && !Number.isNaN(n)) {
+          m = Math.min(m, n);
+        }
+      },
+    );
     return m;
-  }, [listNpage]);
+  }, [PaginationNPageProps?.options]);
 
   return (
     <div className={`fenext-pagination ${className}`}>
       <div className={`fenext-pagination-content-item-page ${className}`}>
         {showItemPage && (
-          <PaginationItemPage {...classNameItemPage} {...props} _t={_t} />
+          <PaginationItemPage
+            {...PaginationItemPageProps}
+            _t={_t}
+            disabled={disabled}
+            paginationName={paginationName}
+          />
         )}
       </div>
       <div className={`fenext-pagination-content-n-page ${className}`}>
-        {showNPage && minPage < (props?.nItems ?? minPage + 1) && (
-          <PaginationNPage
-            {...classNameNPage}
-            {...props}
-            listNpage={listNpage}
-            defaultValue={
-              props?.nItemsPage
-                ? listNpage.find((e) => `${e.id}` == `${props?.nItemsPage}`)
-                : undefined
-            }
-            _t={_t}
-          />
-        )}
+        {showNPage &&
+          minPage < (PaginationItemPageProps?.nItems ?? minPage + 1) && (
+            <PaginationNPage
+              {...PaginationNPageProps}
+              {...props}
+              _t={_t}
+              disabled={disabled}
+              paginationName={paginationName}
+            />
+          )}
       </div>
     </div>
   );
 };
 
+export const PaginationNPageDefaultOptions = [10, 20, 50, 100];
+
 /**
  * Class properties to customize the style of the pagination.
  */
-export interface PaginationNPageClassProps {
+export interface PaginationNPageClassProps extends InputSelectClassProps {
   /**
    * CSS class for the main container of the pagination.
    */
@@ -21657,19 +21660,19 @@ export interface PaginationNPageClassProps {
 /**
  * The base props for the pagination component
  */
-export interface PaginationNPageBaseProps
-  extends Omit<
-    InputSelectBaseProps,
-    "options" | "onChange" | "nItems" | "maxLengthShowOptions"
-  > {
+export interface PaginationNPageBaseProps extends _TProps {
   /**
    * List NPage for select.
    */
-  listNpage?: InputSelectBaseProps["options"];
+  options?: number[];
   /**
    * onChange of nPage.
    */
-  onChangeNPage?: InputSelectBaseProps["onChange"];
+  onChange?: (npage: number) => void;
+
+  paginationName?: string;
+
+  disabled?: boolean;
 }
 /**
  * Props for PaginationNPage component
@@ -21680,43 +21683,39 @@ export interface PaginationNPageProps
 
 export const PaginationNPage = ({
   className = "",
-  defaultValue,
-  listNpage = [
-    {
-      id: "10",
-      text: "10",
-    },
-    {
-      id: "20",
-      text: "20",
-    },
-    {
-      id: "50",
-      text: "50",
-    },
-    {
-      id: "100",
-      text: "100",
-    },
-    {
-      id: "all",
-      text: "All",
-    },
-  ],
-  onChangeNPage,
+  options = PaginationNPageDefaultOptions,
+  onChange,
+  paginationName,
+  disabled,
   ...props
 }: PaginationNPageProps) => {
+  const {
+    onChangeData,
+    data: { npage = 10 },
+  } = usePagination({
+    name: paginationName,
+    onChage: (e) => {
+      onChange?.(e?.npage ?? 10);
+    },
+  });
   return (
-    <div className={`fenext-pagination-npage ${className}`}>
-      <InputSelect
-        {...props}
-        useItemMaxLengthShowOptions={false}
-        options={listNpage}
-        onChange={onChangeNPage}
-        isSelectChangeText={false}
-        defaultValue={defaultValue ?? listNpage[0]}
-      />
-    </div>
+    <InputSelectT<number>
+      {...props}
+      className={`fenext-pagination-npage ${className}`}
+      useItemMaxLengthShowOptions={false}
+      options={options}
+      onChange={onChangeData("page")}
+      isSelectChangeText={false}
+      value={npage}
+      onParse={(e) => {
+        return {
+          id: e ?? "",
+          text: `${e}`,
+          data: e,
+        };
+      }}
+      disabled={disabled}
+    />
   );
 };
 
@@ -22035,7 +22034,9 @@ export const Table = <T,>({
           </tr>
         );
       }
-      return new Array(Math.min(pagination?.nItemsPage ?? 10, 20))
+      return new Array(
+        Math.min(pagination?.PaginationItemPageProps?.nItems ?? 10, 20),
+      )
         .fill(1)
         .map((item, i) => (
           <tr

@@ -62,6 +62,10 @@ export declare enum DaysEnum {
     Saturday = "Saturday",
     Sunday = "Sunday"
 }
+export interface PaginationDataProps {
+    page?: number;
+    npage?: number;
+}
 export declare enum AlertType {
     OK = "OK",
     ERROR = "ERROR",
@@ -1273,6 +1277,16 @@ export interface useStateGlobalContextProps<T> {
 export declare const useStateGlobalContext: <T>({ name, defaultValue, }: useStateGlobalContextProps<T>) => {
     data: T;
     setData: (f: React.SetStateAction<T>) => void;
+};
+export interface usePaginationProps {
+    name?: string;
+    onChage?: (data: PaginationDataProps) => void;
+}
+export declare const usePagination: ({ name, onChage }: usePaginationProps) => {
+    data: PaginationDataProps;
+    setData: (nData: PaginationDataProps, optionsData?: setDataOptions) => void;
+    onChangeData: (id: keyof PaginationDataProps) => (value: number | undefined, _options?: onChangeDataOptionsProps<PaginationDataProps> | undefined) => void;
+    setDataFunction: (f: (p: PaginationDataProps) => PaginationDataProps, optionsData?: setDataOptions) => void;
 };
 export interface useDataOptionsRefreshDataIfChangeDefaultDataOptions {
     active?: boolean;
@@ -3162,45 +3176,49 @@ export interface PaginationItemPageClassProps {
     classNameNext?: string;
     classNameDown?: string;
     icons?: {
-        up?: any;
-        pre?: any;
-        next?: any;
-        down?: any;
+        up?: ReactNode;
+        pre?: ReactNode;
+        next?: ReactNode;
+        down?: ReactNode;
     };
 }
 export interface PaginationItemPageBaseProps extends _TProps {
-    defaultPage?: number;
+    paginationName?: string;
     nItems: number;
-    nItemsPage?: number;
     disabled?: boolean;
     hiddenIfNItemsSmallerThanOrEqualNItemsPage?: boolean;
-    onChangePage?: (page: number) => void;
+    onChange?: (page: number) => void;
 }
 export interface PaginationItemPageProps extends PaginationItemPageClassProps, PaginationItemPageBaseProps {
 }
-export declare const PaginationItemPage: ({ classNameContent, classNameUp, classNamePre, classNameCurrent, classNameCurrentItem, classNameNext, classNameDown, icons, defaultPage, nItems, nItemsPage, disabled, onChangePage, hiddenIfNItemsSmallerThanOrEqualNItemsPage, }: PaginationItemPageProps) => React.JSX.Element;
+export declare const PaginationItemPage: ({ classNameContent, classNameUp, classNamePre, classNameCurrent, classNameCurrentItem, classNameNext, classNameDown, paginationName, icons, nItems, disabled, onChange, hiddenIfNItemsSmallerThanOrEqualNItemsPage, }: PaginationItemPageProps) => React.JSX.Element;
 export interface PaginationClassProps {
     className?: string;
-    classNameItemPage?: PaginationItemPageClassProps;
-    classNameNPage?: PaginationNPageClassProps;
 }
-export interface PaginationBaseProps extends PaginationItemPageBaseProps, PaginationNPageBaseProps, _TProps {
+export interface PaginationBaseProps extends _TProps {
     showItemPage?: boolean;
     showNPage?: boolean;
+    disabled?: boolean;
+    PaginationItemPageProps: Omit<PaginationItemPageProps, "paginationName">;
+    PaginationNPageProps?: Omit<PaginationNPageProps, "paginationName">;
+    paginationName?: string;
 }
 export interface PaginationProps extends PaginationClassProps, PaginationBaseProps {
 }
-export declare const Pagination: ({ className, classNameItemPage, classNameNPage, showItemPage, showNPage, listNpage, ...props }: PaginationProps) => React.JSX.Element;
-export interface PaginationNPageClassProps {
+export declare const Pagination: ({ className, PaginationItemPageProps, PaginationNPageProps, showItemPage, showNPage, disabled, paginationName, ...props }: PaginationProps) => React.JSX.Element;
+export declare const PaginationNPageDefaultOptions: number[];
+export interface PaginationNPageClassProps extends InputSelectClassProps {
     className?: string;
 }
-export interface PaginationNPageBaseProps extends Omit<InputSelectBaseProps, "options" | "onChange" | "nItems" | "maxLengthShowOptions"> {
-    listNpage?: InputSelectBaseProps["options"];
-    onChangeNPage?: InputSelectBaseProps["onChange"];
+export interface PaginationNPageBaseProps extends _TProps {
+    options?: number[];
+    onChange?: (npage: number) => void;
+    paginationName?: string;
+    disabled?: boolean;
 }
 export interface PaginationNPageProps extends PaginationNPageClassProps, PaginationNPageBaseProps {
 }
-export declare const PaginationNPage: ({ className, defaultValue, listNpage, onChangeNPage, ...props }: PaginationNPageProps) => React.JSX.Element;
+export declare const PaginationNPage: ({ className, options, onChange, paginationName, disabled, ...props }: PaginationNPageProps) => React.JSX.Element;
 export interface AlertHookProps extends _TProps {
     className?: string;
     configHook?: useAlertProps;
