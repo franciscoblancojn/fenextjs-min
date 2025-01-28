@@ -7991,9 +7991,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                         react_1.default.createElement("div", { className: `${classNameLoader}` },
                             react_1.default.createElement(exports.Loader, null)))));
             }
-            return new Array(Math.min(pagination?.PaginationItemPageProps?.nItems ?? 10, 20))
-                .fill(1)
-                .map((item, i) => (react_1.default.createElement("tr", { key: i * item, className: `fenext-table-content-table-tr ${classNameTr}` },
+            return new Array(10).fill(1).map((item, i) => (react_1.default.createElement("tr", { key: i * item, className: `fenext-table-content-table-tr ${classNameTr}` },
                 useCheckbox && (react_1.default.createElement("td", { key: `${i}-checkbox`, className: `fenext-table-content-table-td ${classNameTd}` },
                     react_1.default.createElement(exports.InputCheckbox, { value: false, classNameLabel: "fenext-table-content-table-checkbox" }))),
                 headerNotTr.map((h, j) => (react_1.default.createElement("td", { key: `${i}-${j}`, className: `fenext-table-content-table-td ${classNameTd}`, style: {

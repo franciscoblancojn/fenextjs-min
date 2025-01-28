@@ -22034,43 +22034,39 @@ export const Table = <T,>({
           </tr>
         );
       }
-      return new Array(
-        Math.min(pagination?.PaginationItemPageProps?.nItems ?? 10, 20),
-      )
-        .fill(1)
-        .map((item, i) => (
-          <tr
-            key={i * item}
-            className={`fenext-table-content-table-tr ${classNameTr}`}
-          >
-            {useCheckbox && (
-              <td
-                key={`${i}-checkbox`}
-                className={`fenext-table-content-table-td ${classNameTd}`}
-              >
-                <InputCheckbox
-                  value={false}
-                  classNameLabel="fenext-table-content-table-checkbox"
-                />
-              </td>
-            )}
-            {headerNotTr.map((h, j) => (
-              <td
-                key={`${i}-${j}`}
-                className={`fenext-table-content-table-td ${classNameTd}`}
-                style={
-                  {
-                    ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
-                  } as React.CSSProperties
-                }
-                data-col-id={h?.id}
-                data-col-text={h?.thText ?? h?.th}
-              >
-                <LoaderLine />
-              </td>
-            ))}
-          </tr>
-        ));
+      return new Array(10).fill(1).map((item, i) => (
+        <tr
+          key={i * item}
+          className={`fenext-table-content-table-tr ${classNameTr}`}
+        >
+          {useCheckbox && (
+            <td
+              key={`${i}-checkbox`}
+              className={`fenext-table-content-table-td ${classNameTd}`}
+            >
+              <InputCheckbox
+                value={false}
+                classNameLabel="fenext-table-content-table-checkbox"
+              />
+            </td>
+          )}
+          {headerNotTr.map((h, j) => (
+            <td
+              key={`${i}-${j}`}
+              className={`fenext-table-content-table-td ${classNameTd}`}
+              style={
+                {
+                  ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
+                } as React.CSSProperties
+              }
+              data-col-id={h?.id}
+              data-col-text={h?.thText ?? h?.th}
+            >
+              <LoaderLine />
+            </td>
+          ))}
+        </tr>
+      ));
     }
     if (items.length == 0) {
       return (
