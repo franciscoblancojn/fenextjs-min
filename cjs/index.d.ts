@@ -52,15 +52,11 @@ export interface PhoneProps extends PhoneCodeProps {
     number: string;
     tel?: string;
 }
-export type TypeDate = "date" | "month" | "week" | "time";
-export declare enum DaysEnum {
-    Monday = "Monday",
-    Tuesday = "Tuesday",
-    Wednesday = "Wednesday",
-    Thursday = "Thursday",
-    Friday = "Friday",
-    Saturday = "Saturday",
-    Sunday = "Sunday"
+export type DateDataTypeProps = "normal" | "range";
+export interface DateDataProps {
+    type?: DateDataTypeProps;
+    date?: Date;
+    dateRange?: Date[];
 }
 export interface PaginationDataProps {
     page?: number;
@@ -198,6 +194,16 @@ export interface ImgDataProps {
     srcMin575?: string;
     srcThumbnail_200?: string;
     srcThumbnail_100?: string;
+}
+export type TypeDate = "date" | "month" | "week" | "time";
+export declare enum DaysEnum {
+    Monday = "Monday",
+    Tuesday = "Tuesday",
+    Wednesday = "Wednesday",
+    Thursday = "Thursday",
+    Friday = "Friday",
+    Saturday = "Saturday",
+    Sunday = "Sunday"
 }
 export interface TimeZoneProps {
     zone: string;
@@ -418,6 +424,9 @@ export declare class Autocomplete extends MVCObject {
     setTypes(types: string[] | null): void;
 }
 export interface AutocompleteGoogle extends Autocomplete {
+}
+export interface SearchDataProps {
+    search?: string;
 }
 export declare enum Unit_Distance {
     MM = "MM",
@@ -1060,6 +1069,66 @@ export declare const useForm: <T, M = any>({ defaultValue, onChangeDisabled, onC
     setDataError: (f: any) => void;
     setDataErrorMemo: (f: any) => void;
 };
+export type useFilterDataProps<CF extends Record<string, any>> = SearchDataProps & DateDataProps & Partial<CF>;
+export interface useFilterProps<CF extends Record<string, any>> {
+    name?: string;
+    onChage?: (data: useFilterDataProps<CF>) => void;
+}
+export declare const useFilter: <CF extends Record<string, any> = any>({ name, onChage, }: useFilterProps<CF>) => {
+    data: useFilterDataProps<CF>;
+    onChangeData: (id: "search" | keyof CF | keyof DateDataProps) => (value: useFilterDataProps<CF>["search" | keyof CF | keyof DateDataProps], _options?: onChangeDataOptionsProps<useFilterDataProps<CF>> | undefined) => void;
+    onDeleteData: (id: "search" | keyof CF | keyof DateDataProps) => void;
+    isChange: boolean;
+    setData: (nData: useFilterDataProps<CF>, optionsData?: setDataOptions) => void;
+    setDataFunction: (f: (p: useFilterDataProps<CF>) => useFilterDataProps<CF>, optionsData?: setDataOptions) => void;
+    dataMemo: any;
+    setIsChange: (f: React.SetStateAction<boolean>) => void;
+    onRestart: () => void;
+    onConcatData: (v: Partial<useFilterDataProps<CF>> | useFilterDataProps<CF>[]) => void;
+    keyData: number;
+    setKeyData: React.Dispatch<React.SetStateAction<number>>;
+    onReloadKeyData: () => void;
+    validator: FenextjsValidatorClass<useFilterDataProps<CF>> | undefined;
+    validatorData: (useFilterDataProps<CF> extends infer T ? { [id in keyof T]?: FenextjsValidatorClass<any> | undefined; } : never) | undefined;
+    validatorMemo: FenextjsValidatorClass<any> | undefined;
+    validatorMemoData: {
+        [x: string]: FenextjsValidatorClass<any> | undefined;
+    } | undefined;
+    isValidData: true | ErrorFenextjs<any> | undefined;
+    isValidDataMemo: true | ErrorFenextjs<any> | undefined;
+    onValidateData: () => void;
+    onValidateDataMemo: () => void;
+    onSubmitData: (optionsSubmitData?: {
+        data?: useFilterDataProps<CF> | undefined;
+        overwrite?: {
+            onSubmitData?: ((data: useFilterDataProps<CF>) => void | Promise<void>) | undefined;
+        } | undefined;
+        onSaveData?: ((p: {
+            data: useFilterDataProps<CF>;
+            result: void;
+        }) => useFilterDataProps<CF>) | undefined;
+        useValidator?: boolean | undefined;
+    } | undefined) => Promise<void | undefined>;
+    onSubmitDataMemo: (optionsSubmitDataMemo?: {
+        dataMemo?: any;
+        overwrite?: {
+            onSubmitDataMemo?: ((data: any) => void | Promise<void>) | undefined;
+        } | undefined;
+        useValidatorMemo?: boolean | undefined;
+    } | undefined) => Promise<void | undefined>;
+    loaderSubmit: boolean;
+    loaderSubmitMemo: boolean;
+    setLoaderSubmit: (f: React.SetStateAction<boolean>) => void;
+    setLoaderSubmitMemo: (f: React.SetStateAction<boolean>) => void;
+    resultSubmitData: void | undefined;
+    resultSubmitDataMemo: void | undefined;
+    dataError: any;
+    dataErrorMemo: any;
+    setResultSubmitData: (f: React.SetStateAction<void | undefined>) => void;
+    setResultSubmitDataMemo: (f: React.SetStateAction<void | undefined>) => void;
+    setDataError: (f: any) => void;
+    setDataErrorMemo: (f: any) => void;
+};
 export interface usePrintDataProps extends Pick<useLocalStorageProps, "parse"> {
 }
 export declare const usePrintData: <T>({ parse }: usePrintDataProps) => {
@@ -1075,6 +1144,15 @@ export interface usePrintIframeProps<T> {
 export declare const usePrintIframe: <T>({ urlBase, url, data, delayForPrint, }: usePrintIframeProps<T>) => {
     loader: boolean;
     onPrint: () => void;
+};
+export interface onApiErrorData {
+    message: string;
+}
+export interface useApiErrorProps {
+    onActionExecute?: (data?: onApiErrorData) => void;
+}
+export declare const useApiError: ({ onActionExecute }: useApiErrorProps) => {
+    onApiError: (detail?: onApiErrorData | undefined) => void;
 };
 export interface useAlertProps {
     name?: string;
@@ -2354,7 +2432,7 @@ export interface InputCalendarMonthClassProps {
     classNameDateSelectRange?: string;
 }
 export interface InputCalendarMonthProps extends InputCalendarMonthClassProps, _TProps {
-    type?: "normal" | "range";
+    type?: DateDataTypeProps;
     date?: FenextjsDate;
     onPreMonth?: () => void;
     onNextMonth?: () => void;
@@ -3860,11 +3938,6 @@ export interface PageProgressClassProps {
 export interface PageProgressProps extends PageProgressBaseProps, PageProgressClassProps {
 }
 export declare const PageProgress: ({ className }: PageProgressProps) => React.JSX.Element;
-export interface FilterDateDataProps {
-    type?: InputCalendarMonthProps["type"];
-    date?: Date;
-    dateRange?: Date[];
-}
 export interface FilterDateClassProps {
     className?: string;
     classNameDropDown?: DropDownClassProps;
@@ -3879,8 +3952,8 @@ export interface FilterDateClassProps {
     classNameClear?: string;
 }
 export interface FilterDateProps extends FilterDateClassProps, _TProps {
-    defaultValue?: FilterDateDataProps;
-    onChange?: (data: FilterDateDataProps) => void;
+    defaultValue?: DateDataProps;
+    onChange?: (data: DateDataProps) => void;
     formatDateOption?: FenextjsDateFormatOptions;
     textValue?: string;
     textFilterByDate?: string;
@@ -3888,10 +3961,21 @@ export interface FilterDateProps extends FilterDateClassProps, _TProps {
     textBtnToday?: string;
     textBtnWeek?: string;
     iconTrash?: ReactNode;
-    extraListBtn?: ((data: ReturnType<typeof useData<FilterDateDataProps>>) => ReactNode)[];
+    extraListBtn?: ((data: ReturnType<typeof useData<DateDataProps>>) => ReactNode)[];
     nMonthShow?: number;
+    nameFilter?: string;
 }
-export declare const FilterDate: ({ onChange, defaultValue, formatDateOption, className, classNameDropDown, classNameCollapse, classNameBtnToday, classNameBtnWeek, classNameTextValue, classNameTextSwich, classNameInputSwich, classNameContentTop, classNameLabelSwich, classNameClear, textValue, textFilterByDate, textFilterByRange, textBtnToday, textBtnWeek, iconTrash, extraListBtn, nMonthShow, ...p }: FilterDateProps) => React.JSX.Element;
+export declare const FilterDate: ({ onChange, defaultValue, formatDateOption, className, classNameDropDown, classNameCollapse, classNameBtnToday, classNameBtnWeek, classNameTextValue, classNameTextSwich, classNameInputSwich, classNameContentTop, classNameLabelSwich, classNameClear, textValue, textFilterByDate, textFilterByRange, textBtnToday, textBtnWeek, iconTrash, extraListBtn, nMonthShow, nameFilter, ...p }: FilterDateProps) => React.JSX.Element;
+export interface FilterSearchClassProps {
+    className?: string;
+    classNameSearch?: InputSearchClassProps;
+}
+export interface FilterSearchProps extends FilterSearchClassProps, _TProps {
+    defaultValue?: SearchDataProps;
+    onChange?: (data: SearchDataProps) => void;
+    nameFilter?: string;
+}
+export declare const FilterSearch: ({ className, classNameSearch, onChange, defaultValue, nameFilter, ...p }: FilterSearchProps) => React.JSX.Element;
 export type ScheduleDayValueType = InputDateRangeValueType[];
 export interface ScheduleDayBaseProps extends Omit<InputDateRangeBaseProps, "value" | "onChange" | "defaultValue">, _TProps {
     defaultValue?: ScheduleDayValueType;

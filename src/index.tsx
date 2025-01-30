@@ -196,16 +196,12 @@ export interface PhoneProps extends PhoneCodeProps {
   tel?: string;
 }
 
-export type TypeDate = "date" | "month" | "week" | "time";
+export type DateDataTypeProps = "normal" | "range";
 
-export enum DaysEnum {
-  Monday = "Monday",
-  Tuesday = "Tuesday",
-  Wednesday = "Wednesday",
-  Thursday = "Thursday",
-  Friday = "Friday",
-  Saturday = "Saturday",
-  Sunday = "Sunday",
+export interface DateDataProps {
+  type?: DateDataTypeProps;
+  date?: Date;
+  dateRange?: Date[];
 }
 
 export interface PaginationDataProps {
@@ -403,6 +399,18 @@ export interface ImgDataProps {
    * Url of Img for Size 100x100px or up.
    */
   srcThumbnail_100?: string;
+}
+
+export type TypeDate = "date" | "month" | "week" | "time";
+
+export enum DaysEnum {
+  Monday = "Monday",
+  Tuesday = "Tuesday",
+  Wednesday = "Wednesday",
+  Thursday = "Thursday",
+  Friday = "Friday",
+  Saturday = "Saturday",
+  Sunday = "Sunday",
 }
 
 export interface TimeZoneProps {
@@ -646,6 +654,10 @@ export declare class Autocomplete extends MVCObject {
   setTypes(types: string[] | null): void;
 }
 export interface AutocompleteGoogle extends Autocomplete {}
+
+export interface SearchDataProps {
+  search?: string;
+}
 
 export enum Unit_Distance {
   MM = "MM",
@@ -3858,6 +3870,27 @@ export const useForm = <T, M = any>({
   };
 };
 
+export type useFilterDataProps<CF extends Record<string, any>> =
+  SearchDataProps & DateDataProps & Partial<CF>;
+
+export interface useFilterProps<CF extends Record<string, any>> {
+  name?: string;
+  onChage?: (data: useFilterDataProps<CF>) => void;
+}
+
+export const useFilter = <CF extends Record<string, any> = any>({
+  name,
+  onChage,
+}: useFilterProps<CF>) => {
+  return useData<useFilterDataProps<CF>>(
+    {},
+    {
+      useGlobalContext: `fenext-filter-${name ?? ""}`,
+      onChangeDataAfter: onChage,
+    },
+  );
+};
+
 export interface usePrintDataProps
   extends Pick<useLocalStorageProps, "parse"> {}
 
@@ -3925,6 +3958,22 @@ export const usePrintIframe = <T,>({
     loader,
     onPrint,
   };
+};
+
+export interface onApiErrorData {
+  message: string;
+}
+
+export interface useApiErrorProps {
+  onActionExecute?: (data?: onApiErrorData) => void;
+}
+
+export const useApiError = ({ onActionExecute }: useApiErrorProps) => {
+  const { onAction: onApiError } = useAction<onApiErrorData>({
+    name: "api-error",
+    onActionExecute,
+  });
+  return { onApiError };
 };
 
 export interface useAlertProps {
@@ -13304,7 +13353,7 @@ export interface InputCalendarMonthClassProps {
 export interface InputCalendarMonthProps
   extends InputCalendarMonthClassProps,
     _TProps {
-  type?: "normal" | "range";
+  type?: DateDataTypeProps;
 
   date?: FenextjsDate;
   onPreMonth?: () => void;
@@ -26908,11 +26957,6 @@ export const PageProgress = ({ className = "" }: PageProgressProps) => {
   );
 };
 
-export interface FilterDateDataProps {
-  type?: InputCalendarMonthProps["type"];
-  date?: Date;
-  dateRange?: Date[];
-}
 export interface FilterDateClassProps {
   className?: string;
   classNameDropDown?: DropDownClassProps;
@@ -26927,8 +26971,8 @@ export interface FilterDateClassProps {
   classNameClear?: string;
 }
 export interface FilterDateProps extends FilterDateClassProps, _TProps {
-  defaultValue?: FilterDateDataProps;
-  onChange?: (data: FilterDateDataProps) => void;
+  defaultValue?: DateDataProps;
+  onChange?: (data: DateDataProps) => void;
   formatDateOption?: FenextjsDateFormatOptions;
 
   textValue?: string;
@@ -26940,10 +26984,12 @@ export interface FilterDateProps extends FilterDateClassProps, _TProps {
   iconTrash?: ReactNode;
 
   extraListBtn?: ((
-    data: ReturnType<typeof useData<FilterDateDataProps>>,
+    data: ReturnType<typeof useData<DateDataProps>>,
   ) => ReactNode)[];
 
   nMonthShow?: number;
+
+  nameFilter?: string;
 }
 
 export const FilterDate = ({
@@ -26976,12 +27022,16 @@ export const FilterDate = ({
 
   nMonthShow = 2,
 
+  nameFilter,
   ...p
 }: FilterDateProps) => {
   const { _t } = use_T({ ...p });
+  const { onConcatData: onConcatDataFilter } = useFilter({
+    name: nameFilter,
+  });
   const date = useDate({});
   const { data, onChangeData, onConcatData, setData, ...HOOK } =
-    useData<FilterDateDataProps>(
+    useData<DateDataProps>(
       {
         type: "normal",
         ...defaultValue,
@@ -27011,6 +27061,7 @@ export const FilterDate = ({
               date.dateRange?.[1]?.getSeconds() - 10,
             );
           }
+          onConcatDataFilter(date);
           onChange?.(date);
         },
       },
@@ -27162,6 +27213,50 @@ export const FilterDate = ({
             {iconTrash}
           </div>
         )}
+      </div>
+    </>
+  );
+};
+
+export interface FilterSearchClassProps {
+  className?: string;
+  classNameSearch?: InputSearchClassProps;
+}
+export interface FilterSearchProps extends FilterSearchClassProps, _TProps {
+  defaultValue?: SearchDataProps;
+  onChange?: (data: SearchDataProps) => void;
+  nameFilter?: string;
+}
+
+export const FilterSearch = ({
+  className = "",
+  classNameSearch = {},
+
+  onChange,
+  defaultValue = {},
+  nameFilter,
+
+  ...p
+}: FilterSearchProps) => {
+  const { onChangeData } = useFilter({ name: nameFilter });
+
+  return (
+    <>
+      <div
+        className={`
+                    fenext-filter-search  
+                    ${className}
+                `}
+      >
+        <InputSearch
+          {...classNameSearch}
+          {...p}
+          defaultValue={defaultValue?.search}
+          onEnterSearch={(search) => {
+            onChangeData("search")(search);
+            onChange?.({ search });
+          }}
+        />
       </div>
     </>
   );
