@@ -8746,7 +8746,7 @@ const User = ({ className = "", classNameEmail = "", classNamePicture = "", clas
     }
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-user ${className} ` },
-            react_1.default.createElement(exports.Img, { src: "", ...user?.img, className: `fenext-user-picture ${classNamePicture}`, classNameImg: `fenext-user-img ${classNameImg}`, imgIf404: exports.FenextImgUserPlaceholder }),
+            react_1.default.createElement(exports.Img, { ...user?.img, src: user?.img?.src ?? exports.FenextImgUserPlaceholder, className: `fenext-user-picture ${classNamePicture}`, classNameImg: `fenext-user-img ${classNameImg}`, imgIf404: exports.FenextImgUserPlaceholder }),
             react_1.default.createElement("div", { className: `fenext-user-name ${classNameName} ` }, user?.name),
             react_1.default.createElement("div", { className: `fenext-user-email ${classNameEmail} ` }, user?.email))));
 };

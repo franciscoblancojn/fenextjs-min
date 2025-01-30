@@ -24936,8 +24936,8 @@ export const User = ({
     <>
       <div className={`fenext-user ${className} `}>
         <Img
-          src=""
           {...user?.img}
+          src={user?.img?.src ?? FenextImgUserPlaceholder}
           className={`fenext-user-picture ${classNamePicture}`}
           classNameImg={`fenext-user-img ${classNameImg}`}
           imgIf404={FenextImgUserPlaceholder}
