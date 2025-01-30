@@ -9358,7 +9358,11 @@ const DesignBoxPadding = ({ textPadding = "Padding", textPaddingBottom = "Bottom
 };
 exports.DesignBoxPadding = DesignBoxPadding;
 const Portal = ({ children, container }) => {
-    if (typeof window == "undefined") {
+    const [load, setLoad] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
+        setLoad(true);
+    }, []);
+    if (!load) {
         return react_1.default.createElement(react_1.default.Fragment, null);
     }
     return (0, react_dom_1.createPortal)(react_1.default.createElement(react_1.default.Fragment, null, children), container ?? document?.body);

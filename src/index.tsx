@@ -26849,7 +26849,12 @@ export interface PortalProps {
   children: ReactNode;
 }
 export const Portal = ({ children, container }: PortalProps) => {
-  if (typeof window == "undefined") {
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    setLoad(true);
+  }, []);
+
+  if (!load) {
     return <></>;
   }
   return createPortal(<>{children}</>, container ?? document?.body);
