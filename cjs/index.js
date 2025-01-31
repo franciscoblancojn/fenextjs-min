@@ -7944,13 +7944,18 @@ const Pagination = ({ className = "", PaginationItemPageProps, PaginationNPagePr
 exports.Pagination = Pagination;
 exports.PaginationNPageDefaultOptions = [10, 20, 50, 100];
 const PaginationNPage = ({ className = "", options = exports.PaginationNPageDefaultOptions, onChange, paginationName, disabled, ...props }) => {
-    const { onChangeData, data: { npage = 10 }, } = (0, exports.usePagination)({
+    const { setData, data: { npage = 10 }, } = (0, exports.usePagination)({
         name: paginationName,
         onChage: (e) => {
             onChange?.(e?.npage ?? 10);
         },
     });
-    return (react_1.default.createElement(exports.InputSelectT, { ...props, className: `fenext-pagination-npage ${className}`, useItemMaxLengthShowOptions: false, options: options, onChange: onChangeData("page"), isSelectChangeText: false, value: npage, onParse: (e) => {
+    return (react_1.default.createElement(exports.InputSelectT, { ...props, className: `fenext-pagination-npage ${className}`, useItemMaxLengthShowOptions: false, options: options, onChange: (e) => {
+            setData({
+                page: 0,
+                npage: e,
+            });
+        }, isSelectChangeText: false, value: npage, onParse: (e) => {
             return {
                 id: e ?? "",
                 text: `${e}`,
