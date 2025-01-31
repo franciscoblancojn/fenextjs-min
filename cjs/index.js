@@ -9418,7 +9418,7 @@ const PageProgress = ({ className = "" }) => {
 exports.PageProgress = PageProgress;
 const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, className = "", classNameDropDown = {}, classNameCollapse = {}, classNameBtnToday = {}, classNameBtnWeek = {}, classNameTextValue = {}, classNameTextSwich = {}, classNameInputSwich = {}, classNameContentTop = "", classNameLabelSwich = "", classNameClear = "", textValue = "Filtrar por fecha:", textFilterByDate = "Filtar por fecha", textFilterByRange = "Filtar por rango", textBtnToday = "Hoy", textBtnWeek = "Esta Semana", iconTrash = react_1.default.createElement(exports.SvgTrash, null), extraListBtn = [], nMonthShow = 2, nameFilter, ...p }) => {
     const { _t } = (0, exports.use_T)({ ...p });
-    const { onConcatData: onConcatDataFilter } = (0, exports.useFilter)({
+    const { onChangeData: onChangeDataFilter } = (0, exports.useFilter)({
         name: nameFilter,
     });
     const date = (0, exports.useDate)({});
@@ -9448,7 +9448,12 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                 date.dateRange?.[1].setDate(date.dateRange?.[1]?.getDate() + 1);
                 date.dateRange?.[1].setSeconds(date.dateRange?.[1]?.getSeconds() - 10);
             }
-            onConcatDataFilter(date);
+            if ((date.type == "range" &&
+                date.dateRange?.[0] &&
+                date.dateRange?.[1]) ||
+                (date.type == "normal" && date.date)) {
+                onChangeDataFilter("date")(date);
+            }
             onChange?.(date);
         },
     });

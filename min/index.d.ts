@@ -1069,15 +1069,17 @@ export declare const useForm: <T, M = any>({ defaultValue, onChangeDisabled, onC
     setDataError: (f: any) => void;
     setDataErrorMemo: (f: any) => void;
 };
-export type useFilterDataProps<CF extends Record<string, any>> = SearchDataProps & DateDataProps & Partial<CF>;
+export type useFilterDataProps<CF extends Record<string, any>> = SearchDataProps & Partial<CF> & {
+    date?: DateDataProps;
+};
 export interface useFilterProps<CF extends Record<string, any>> {
     name?: string;
     onChage?: (data: useFilterDataProps<CF>) => void;
 }
 export declare const useFilter: <CF extends Record<string, any> = any>({ name, onChage, }: useFilterProps<CF>) => {
     data: useFilterDataProps<CF>;
-    onChangeData: (id: "search" | keyof CF | keyof DateDataProps) => (value: useFilterDataProps<CF>["search" | keyof CF | keyof DateDataProps], _options?: onChangeDataOptionsProps<useFilterDataProps<CF>> | undefined) => void;
-    onDeleteData: (id: "search" | keyof CF | keyof DateDataProps) => void;
+    onChangeData: (id: "search" | "date" | keyof CF) => (value: useFilterDataProps<CF>["search" | "date" | keyof CF], _options?: onChangeDataOptionsProps<useFilterDataProps<CF>> | undefined) => void;
+    onDeleteData: (id: "search" | "date" | keyof CF) => void;
     isChange: boolean;
     setData: (nData: useFilterDataProps<CF>, optionsData?: setDataOptions) => void;
     setDataFunction: (f: (p: useFilterDataProps<CF>) => useFilterDataProps<CF>, optionsData?: setDataOptions) => void;
