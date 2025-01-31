@@ -21920,6 +21920,8 @@ export interface TableBaseProps<T> extends _TProps {
    * An array of data objects to display in the table.
    */
   items: T[];
+  nItems?: number;
+  error?: ErrorFenextjs;
 
   /**
    * The header configuration for the table.
@@ -22007,6 +22009,8 @@ export const Table = <T,>({
   name,
   items,
   header,
+  error,
+  nItems,
 
   pagination,
   showPagination = true,
@@ -22068,6 +22072,18 @@ export const Table = <T,>({
   );
 
   const CONTENT = useMemo(() => {
+    if (error) {
+      return (
+        <tr className={`fenext-table-content-table-tr ${classNameTr}`}>
+          <td
+            className={`fenext-table-content-table-td fenext-table-error ${classNameTd}`}
+            colSpan={999}
+          >
+            <ErrorComponent error={error} />
+          </td>
+        </tr>
+      );
+    }
     if (loader) {
       if (typeLoader == "spinner") {
         return (
@@ -22248,6 +22264,7 @@ export const Table = <T,>({
     typeLoader,
     notResult,
     headerTr,
+    error,
   ]);
 
   return (
@@ -22387,11 +22404,19 @@ export const Table = <T,>({
             </tbody>
           </table>
         </div>
-        {pagination && showPagination && (
+        {(nItems != undefined || pagination) && showPagination && (
           <div
             className={`fenext-table-content-pagination ${classNameContentPagination}`}
           >
-            <Pagination {...pagination} disabled={loader} _t={_t} />
+            <Pagination
+              {...pagination}
+              PaginationItemPageProps={{
+                nItems: nItems ?? 10,
+                ...pagination,
+              }}
+              disabled={loader}
+              _t={_t}
+            />
           </div>
         )}
       </div>

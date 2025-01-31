@@ -3333,6 +3333,8 @@ export type TableHeader<T> = {
 export interface TableBaseProps<T> extends _TProps {
     name: string;
     items: T[];
+    nItems?: number;
+    error?: ErrorFenextjs;
     header: TableHeader<T>;
     pagination?: PaginationProps;
     loader?: boolean;
@@ -3350,7 +3352,7 @@ export interface TableBaseProps<T> extends _TProps {
 }
 export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {
 }
-export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameTdLabelCollapse, classNameContentPagination, classNameLoader, name, items, header, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;
+export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameTdLabelCollapse, classNameContentPagination, classNameLoader, name, items, header, error, nItems, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;
 export interface AlertComponentProps extends _TProps, AlertProps {
     className?: string;
     iconClose?: ReactNode;
