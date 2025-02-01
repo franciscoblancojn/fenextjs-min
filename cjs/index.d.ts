@@ -1131,6 +1131,20 @@ export declare const useFilter: <CF extends Record<string, any> = any>({ name, o
     setDataError: (f: any) => void;
     setDataErrorMemo: (f: any) => void;
 };
+export declare const useRouter: () => {
+    asPath: string;
+    back: () => void;
+    forward: () => void;
+    isReady: boolean;
+    pathname: string;
+    push: (url: string) => void;
+    query: {
+        [k: string]: string;
+    };
+    reload: () => void;
+    replace: (url: string) => void;
+    route: string;
+};
 export interface usePrintDataProps extends Pick<useLocalStorageProps, "parse"> {
 }
 export declare const usePrintData: <T>({ parse }: usePrintDataProps) => {
@@ -1155,6 +1169,20 @@ export interface useApiErrorProps {
 }
 export declare const useApiError: ({ onActionExecute }: useApiErrorProps) => {
     onApiError: (detail?: onApiErrorData | undefined) => void;
+};
+export declare const useWindowRouter: () => {
+    asPath: string;
+    back: () => void;
+    forward: () => void;
+    isReady: boolean;
+    pathname: string;
+    push: (url: string) => void;
+    query: {
+        [k: string]: string;
+    };
+    reload: () => void;
+    replace: (url: string) => void;
+    route: string;
 };
 export interface useAlertProps {
     name?: string;

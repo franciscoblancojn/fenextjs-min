@@ -13,7 +13,7 @@ import React, {
 } from "react";
 import * as ReactDOM from "react-dom";
 import { createPortal } from "react-dom";
-import Router, { useRouter } from "next/router";
+import Router, { useRouter as useRouterNextjs } from "next/router";
 import LinkNext, { LinkProps as LinkNextProps } from "next/link";
 import {
   Autocomplete as GoogleAutocomplete,
@@ -3894,6 +3894,24 @@ export const useFilter = <CF extends Record<string, any> = any>({
   );
 };
 
+export const useRouter = () => {
+  const [router, setRouter] = useState(null);
+  const windowRouter = useWindowRouter();
+  useEffect(() => {
+    try {
+      import("next/router").then((module: any) => {
+        setRouter(module?.useRouter);
+      });
+    } catch (e) {
+      env_log(
+        "Next.js router no disponible, usando window.location como fallback",
+      );
+    }
+  }, []);
+
+  return router ?? windowRouter;
+};
+
 export interface usePrintDataProps
   extends Pick<useLocalStorageProps, "parse"> {}
 
@@ -3977,6 +3995,66 @@ export const useApiError = ({ onActionExecute }: useApiErrorProps) => {
     onActionExecute,
   });
   return { onApiError };
+};
+
+export const useWindowRouter = () => {
+  const [pathname, setPathname] = useState(window.location.pathname);
+  const [query, setQuery] = useState(
+    new URLSearchParams(window.location.search),
+  );
+  const [hash, setHash] = useState(window.location.hash);
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setPathname(window.location.pathname);
+      setQuery(new URLSearchParams(window.location.search));
+      setHash(window.location.hash);
+    };
+
+    window.addEventListener("popstate", handleLocationChange); // Cambios en el historial
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+    };
+  }, []);
+
+  const push = (url: string) => {
+    window.location.href = url;
+    setPathname(window.location.pathname);
+    setQuery(new URLSearchParams(window.location.search));
+    setHash(window.location.hash);
+  };
+
+  const replace = (url: string) => {
+    window.history.replaceState({}, "", url);
+    setPathname(window.location.pathname);
+    setQuery(new URLSearchParams(window.location.search));
+    setHash(window.location.hash);
+  };
+
+  const back = () => {
+    window.history.back();
+  };
+
+  const forward = () => {
+    window.history.forward();
+  };
+
+  const reload = () => {
+    window.location.reload();
+  };
+
+  return {
+    asPath: pathname + (query.toString() ? `?${query.toString()}` : "") + hash,
+    back,
+    forward,
+    isReady: true, // Siempre está listo en window.location
+    pathname,
+    push,
+    query: Object.fromEntries(query.entries()),
+    reload,
+    replace,
+    route: pathname,
+  };
 };
 
 export interface useAlertProps {
@@ -4808,7 +4886,7 @@ export const useQuery = <T = QueryDataDefault,>(props?: useQueryProps<T>) => {
   /**
    * The router instance from Next.js.
    */
-  const router = useRouter();
+  const router = useRouterNextjs();
   /**
    * The query parameters in the URL.
    */
