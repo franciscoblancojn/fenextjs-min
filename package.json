@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-min",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "description": "",
   "main": "./min/index.js",
   "module": "./min/index.js",

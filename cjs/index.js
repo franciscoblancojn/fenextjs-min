@@ -2103,7 +2103,7 @@ const useAction = ({ name, onActionExecute, env_log: env_log_boolean, }) => {
     };
 };
 exports.useAction = useAction;
-const useHistory = ({ name = "fenextjs-history" }) => {
+const useHistory = ({ name = "fenextjs-history", useNextRouter, }) => {
     const { setSessionStorage, value: paths, load, } = (0, exports.useSessionStorage)({
         name,
         parse: (e) => {
@@ -2121,7 +2121,7 @@ const useHistory = ({ name = "fenextjs-history" }) => {
         }
         setSessionStorage([...(paths ?? []), ...[n].flat(2)]);
     }, [paths]);
-    const router = (0, exports.useRouter)();
+    const router = (0, exports.useRouter)({ useNextRouter });
     (0, react_1.useEffect)(() => {
         if (load && !router.asPath.includes("[")) {
             onPushPath(router.asPath);
@@ -2219,19 +2219,22 @@ const useFilter = ({ name, onChage, }) => {
     });
 };
 exports.useFilter = useFilter;
-const useRouter = () => {
+const useRouter = ({ useNextRouter = true }) => {
     const [router, setRouter] = (0, react_1.useState)(null);
     const windowRouter = (0, exports.useWindowRouter)();
     (0, react_1.useEffect)(() => {
-        try {
-            Promise.resolve().then(() => tslib_1.__importStar(require("next/router"))).then((module) => {
-                setRouter(module?.useRouter);
-            });
+        if (useNextRouter &&
+            process?.env?.["NEXT_PUBLIC_DISABLED_NEXT_ROUTER"] !== "TRUE") {
+            try {
+                Promise.resolve().then(() => tslib_1.__importStar(require("next/router"))).then((module) => {
+                    setRouter(module?.useRouter);
+                });
+            }
+            catch (e) {
+                (0, exports.env_log)("Next.js router no disponible, usando window.location como fallback");
+            }
         }
-        catch (e) {
-            (0, exports.env_log)("Next.js router no disponible, usando window.location como fallback");
-        }
-    }, []);
+    }, [useNextRouter]);
     return router ?? windowRouter;
 };
 exports.useRouter = useRouter;
@@ -4944,9 +4947,9 @@ const Menu = ({ className = "", items = [], defaultShowSubMenu = false, iconArro
         react_1.default.createElement("div", { className: `fenext-menu ${className}` }, items?.map((item, i) => (react_1.default.createElement(exports.ItemMenu, { key: i, ...props, ...item, defaultActive: item.defaultActive ?? defaultShowSubMenu, iconArrow: item?.iconArrow ?? iconArrow, typeCollapse: item?.typeCollapse ?? typeCollapse }))))));
 };
 exports.Menu = Menu;
-const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(exports.SvgArrow, null), nameNumber = 1, typeCollapse, isLink = true, onClick, ...props }) => {
+const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(exports.SvgArrow, null), nameNumber = 1, typeCollapse, isLink = true, onClick, useNextRouter, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
-    const router = (0, exports.useRouter)();
+    const router = (0, exports.useRouter)({ useNextRouter });
     const urlInter = (0, react_1.useMemo)(() => {
         const nlLink = router?.asPath.split("/");
         const nlUrl = url.split("/");
@@ -8679,10 +8682,10 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
                 (currentStep != items.length - 1 || forceShowBtnNext) && (react_1.default.createElement(exports.Button, { className: `fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`, classNameDisabled: `${classNameBtnDisabled} ${classNameBtnNextDisabled}`, disabled: disabledBtnNext || currentStep === items.length - 1, onClick: onNext_, onClickDisabled: onNextDisabled, loader: loader, _t: _t }, btnNext))))));
 };
 exports.Steps = Steps;
-const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(exports.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, onValidateRuteBack, ...props }) => {
+const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(exports.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, onValidateRuteBack, useNextRouter, ...props }) => {
     const { onBack: onBackHistory } = (0, exports.useHistory)({});
     const { _t } = (0, exports.use_T)({ ...props });
-    const router = (0, exports.useRouter)();
+    const router = (0, exports.useRouter)({ useNextRouter });
     const onBack = () => {
         if (loader || disabled) {
             return;

@@ -3665,14 +3665,17 @@ export const useAction = <T = any,>({
   };
 };
 
-export interface useHistoryProps {
+export interface useHistoryProps extends useRouterProps {
   name?: string;
 }
 export interface useHistoryOnBackProps {
   onValidateRuteBack?: (path: string) => boolean;
 }
 
-export const useHistory = ({ name = "fenextjs-history" }: useHistoryProps) => {
+export const useHistory = ({
+  name = "fenextjs-history",
+  useNextRouter,
+}: useHistoryProps) => {
   const {
     setSessionStorage,
     value: paths,
@@ -3698,7 +3701,7 @@ export const useHistory = ({ name = "fenextjs-history" }: useHistoryProps) => {
     [paths],
   );
 
-  const router = useRouter();
+  const router = useRouter({ useNextRouter });
   useEffect(() => {
     if (load && !router.asPath.includes("[")) {
       onPushPath(router.asPath);
@@ -3894,20 +3897,29 @@ export const useFilter = <CF extends Record<string, any> = any>({
   );
 };
 
-export const useRouter = () => {
+export interface useRouterProps {
+  useNextRouter?: boolean;
+}
+
+export const useRouter = ({ useNextRouter = true }: useRouterProps) => {
   const [router, setRouter] = useState(null);
   const windowRouter = useWindowRouter();
   useEffect(() => {
-    try {
-      import("next/router").then((module: any) => {
-        setRouter(module?.useRouter);
-      });
-    } catch (e) {
-      env_log(
-        "Next.js router no disponible, usando window.location como fallback",
-      );
+    if (
+      useNextRouter &&
+      process?.env?.["NEXT_PUBLIC_DISABLED_NEXT_ROUTER"] !== "TRUE"
+    ) {
+      try {
+        import("next/router").then((module: any) => {
+          setRouter(module?.useRouter);
+        });
+      } catch (e) {
+        env_log(
+          "Next.js router no disponible, usando window.location como fallback",
+        );
+      }
     }
-  }, []);
+  }, [useNextRouter]);
 
   return router ?? windowRouter;
 };
@@ -12246,7 +12258,7 @@ export const Menu = ({
 /**
  * Properties for the base ItemMenu component.
  */
-export interface ItemMenuBaseProps extends _TProps {
+export interface ItemMenuBaseProps extends _TProps, useRouterProps {
   /**
    * Url of page in Menu Item.
    */
@@ -12334,10 +12346,11 @@ export const ItemMenu = ({
   typeCollapse,
   isLink = true,
   onClick,
+  useNextRouter,
   ...props
 }: ItemMenuProps) => {
   const { _t } = use_T({ ...props });
-  const router = useRouter();
+  const router = useRouter({ useNextRouter });
 
   const urlInter = useMemo(() => {
     const nlLink = router?.asPath.split("/");
@@ -24414,7 +24427,10 @@ export type BackTypeOnBack =
 /**
  * Properties for the base Back component.
  */
-export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
+export interface BackBaseProps
+  extends _TProps,
+    useHistoryOnBackProps,
+    useRouterProps {
   /**
    * Indicates whether the Back is currently in the loading state.
    */
@@ -24499,11 +24515,12 @@ export const Back = ({
   minLenght = 2,
   useHistoryMinLenght = false,
   onValidateRuteBack,
+  useNextRouter,
   ...props
 }: BackProps) => {
   const { onBack: onBackHistory } = useHistory({});
   const { _t } = use_T({ ...props });
-  const router = useRouter();
+  const router = useRouter({ useNextRouter });
   const onBack = () => {
     if (loader || disabled) {
       return;

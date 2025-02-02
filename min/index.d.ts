@@ -979,13 +979,13 @@ export interface useActionProps<T = any> {
 export declare const useAction: <T = any>({ name, onActionExecute, env_log: env_log_boolean, }: useActionProps<T>) => {
     onAction: (detail?: T | undefined) => void;
 };
-export interface useHistoryProps {
+export interface useHistoryProps extends useRouterProps {
     name?: string;
 }
 export interface useHistoryOnBackProps {
     onValidateRuteBack?: (path: string) => boolean;
 }
-export declare const useHistory: ({ name }: useHistoryProps) => {
+export declare const useHistory: ({ name, useNextRouter, }: useHistoryProps) => {
     paths: string[] | undefined;
     onBack: ({ onValidateRuteBack }: useHistoryOnBackProps) => void;
     currentPath: string | undefined;
@@ -1131,7 +1131,10 @@ export declare const useFilter: <CF extends Record<string, any> = any>({ name, o
     setDataError: (f: any) => void;
     setDataErrorMemo: (f: any) => void;
 };
-export declare const useRouter: () => {
+export interface useRouterProps {
+    useNextRouter?: boolean;
+}
+export declare const useRouter: ({ useNextRouter }: useRouterProps) => {
     asPath: string;
     back: () => void;
     forward: () => void;
@@ -2317,7 +2320,7 @@ export interface MenuClassProps {
 export interface MenuProps extends MenuBaseProps, MenuClassProps {
 }
 export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, typeCollapse, ...props }: MenuProps) => React.JSX.Element;
-export interface ItemMenuBaseProps extends _TProps {
+export interface ItemMenuBaseProps extends _TProps, useRouterProps {
     url: string;
     text: ReactNode;
     icon?: ReactNode;
@@ -2337,7 +2340,7 @@ export interface ItemMenuClassProps {
 }
 export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {
 }
-export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, ...props }: ItemMenuProps) => React.JSX.Element;
+export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, useNextRouter, ...props }: ItemMenuProps) => React.JSX.Element;
 export interface BoxBaseProps extends PropsWithChildren, _TProps {
 }
 export interface BoxClassProps {
@@ -3624,7 +3627,7 @@ export interface StepsProps extends StepsBaseProps, StepsClassProps {
 }
 export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnDisabled, classNameBtnNext, classNameBtnNextDisabled, classNameBtnPrev, classNameBtnPrevDisabled, classNameContentDog, classNameDog, classNameDogCurrent, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
 export type BackTypeOnBack = "fenextjs-history" | "history" | "router" | "link" | "none";
-export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
+export interface BackBaseProps extends _TProps, useHistoryOnBackProps, useRouterProps {
     loader?: boolean;
     disabled?: boolean;
     onClick?: (e?: any) => void;
@@ -3643,7 +3646,7 @@ export interface BackClassProps extends LoaderClassProps {
 }
 export interface BackProps extends BackBaseProps, BackClassProps {
 }
-export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, ...props }: BackProps) => React.JSX.Element;
+export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, useNextRouter, ...props }: BackProps) => React.JSX.Element;
 export interface ThemeProps extends _TProps {
     className?: string;
     classNameItem?: string;
