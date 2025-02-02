@@ -9619,6 +9619,9 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                     setData({
                         type: "normal",
                     });
+                    onChangeDataFilter("date")({
+                        type: "normal",
+                    });
                 } }, iconTrash)))));
 };
 exports.FilterDate = FilterDate;
@@ -9632,6 +9635,9 @@ const FilterSearch = ({ className = "", classNameSearch = {}, onChange, defaultV
             react_1.default.createElement(exports.InputSearch, { ...classNameSearch, ...p, defaultValue: defaultValue?.search, onEnterSearch: (search) => {
                     onChangeData("search")(search);
                     onChange?.({ search });
+                }, onClearSearch: () => {
+                    onChangeData("search")("");
+                    onChange?.({ search: "" });
                 } }))));
 };
 exports.FilterSearch = FilterSearch;

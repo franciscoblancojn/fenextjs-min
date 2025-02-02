@@ -27364,6 +27364,9 @@ export const FilterDate = ({
               setData({
                 type: "normal",
               });
+              onChangeDataFilter("date")({
+                type: "normal",
+              });
             }}
           >
             {iconTrash}
@@ -27411,6 +27414,10 @@ export const FilterSearch = ({
           onEnterSearch={(search) => {
             onChangeData("search")(search);
             onChange?.({ search });
+          }}
+          onClearSearch={() => {
+            onChangeData("search")("");
+            onChange?.({ search: "" });
           }}
         />
       </div>
