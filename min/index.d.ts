@@ -3637,6 +3637,7 @@ export interface BackBaseProps extends _TProps, useHistoryOnBackProps, useRouter
     link?: string;
     useHistoryMinLenght?: boolean;
     minLenght?: number;
+    useRouterCustom?: typeof useRouter;
 }
 export interface BackClassProps extends LoaderClassProps {
     className?: string;
@@ -3646,7 +3647,7 @@ export interface BackClassProps extends LoaderClassProps {
 }
 export interface BackProps extends BackBaseProps, BackClassProps {
 }
-export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, useNextRouter, ...props }: BackProps) => React.JSX.Element;
+export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, useNextRouter, useRouterCustom, ...props }: BackProps) => React.JSX.Element;
 export interface ThemeProps extends _TProps {
     className?: string;
     classNameItem?: string;

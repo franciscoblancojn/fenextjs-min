@@ -24488,6 +24488,8 @@ export interface BackBaseProps
    * @default 2
    */
   minLenght?: number;
+
+  useRouterCustom?: typeof useRouter;
 }
 
 /**
@@ -24535,11 +24537,12 @@ export const Back = ({
   useHistoryMinLenght = false,
   onValidateRuteBack,
   useNextRouter,
+  useRouterCustom = useRouter,
   ...props
 }: BackProps) => {
   const { onBack: onBackHistory } = useHistory({});
   const { _t } = use_T({ ...props });
-  const router = useRouter({ useNextRouter });
+  const router = useRouterCustom({ useNextRouter });
   const onBack = () => {
     if (loader || disabled) {
       return;

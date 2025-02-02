@@ -8699,10 +8699,10 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
                 (currentStep != items.length - 1 || forceShowBtnNext) && (react_1.default.createElement(exports.Button, { className: `fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`, classNameDisabled: `${classNameBtnDisabled} ${classNameBtnNextDisabled}`, disabled: disabledBtnNext || currentStep === items.length - 1, onClick: onNext_, onClickDisabled: onNextDisabled, loader: loader, _t: _t }, btnNext))))));
 };
 exports.Steps = Steps;
-const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(exports.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, onValidateRuteBack, useNextRouter, ...props }) => {
+const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(exports.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, onValidateRuteBack, useNextRouter, useRouterCustom = exports.useRouter, ...props }) => {
     const { onBack: onBackHistory } = (0, exports.useHistory)({});
     const { _t } = (0, exports.use_T)({ ...props });
-    const router = (0, exports.useRouter)({ useNextRouter });
+    const router = useRouterCustom({ useNextRouter });
     const onBack = () => {
         if (loader || disabled) {
             return;
