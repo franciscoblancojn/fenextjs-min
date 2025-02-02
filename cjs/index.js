@@ -2103,7 +2103,7 @@ const useAction = ({ name, onActionExecute, env_log: env_log_boolean, }) => {
     };
 };
 exports.useAction = useAction;
-const useHistory = ({ name = "fenextjs-history", useNextRouter, }) => {
+const useHistory = ({ name = "fenextjs-history", useNextRouter, useRouterCustom = exports.useRouter, }) => {
     const { setSessionStorage, value: paths, load, } = (0, exports.useSessionStorage)({
         name,
         parse: (e) => {
@@ -2121,7 +2121,7 @@ const useHistory = ({ name = "fenextjs-history", useNextRouter, }) => {
         }
         setSessionStorage([...(paths ?? []), ...[n].flat(2)]);
     }, [paths]);
-    const router = (0, exports.useRouter)({ useNextRouter });
+    const router = useRouterCustom({ useNextRouter });
     (0, react_1.useEffect)(() => {
         if (load && !router.asPath.includes("[")) {
             onPushPath(router.asPath);
@@ -4959,14 +4959,14 @@ const ButtonMenu = ({ className = "", classNameIcon = "", classNameIconBarClose 
                 react_1.default.createElement("div", { className: `fenext-btn-menu-content ${classNameContent}` }, _t(children)))))));
 };
 exports.ButtonMenu = ButtonMenu;
-const Menu = ({ className = "", items = [], defaultShowSubMenu = false, iconArrow = react_1.default.createElement(exports.SvgArrow, null), typeCollapse, ...props }) => {
+const Menu = ({ className = "", items = [], defaultShowSubMenu = false, iconArrow = react_1.default.createElement(exports.SvgArrow, null), typeCollapse, useRouterCustom = exports.useRouter, ...props }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: `fenext-menu ${className}` }, items?.map((item, i) => (react_1.default.createElement(exports.ItemMenu, { key: i, ...props, ...item, defaultActive: item.defaultActive ?? defaultShowSubMenu, iconArrow: item?.iconArrow ?? iconArrow, typeCollapse: item?.typeCollapse ?? typeCollapse }))))));
+        react_1.default.createElement("div", { className: `fenext-menu ${className}` }, items?.map((item, i) => (react_1.default.createElement(exports.ItemMenu, { key: i, ...props, ...item, defaultActive: item.defaultActive ?? defaultShowSubMenu, iconArrow: item?.iconArrow ?? iconArrow, typeCollapse: item?.typeCollapse ?? typeCollapse, useRouterCustom: useRouterCustom }))))));
 };
 exports.Menu = Menu;
-const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(exports.SvgArrow, null), nameNumber = 1, typeCollapse, isLink = true, onClick, useNextRouter, ...props }) => {
+const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(exports.SvgArrow, null), nameNumber = 1, typeCollapse, isLink = true, onClick, useNextRouter, useRouterCustom = exports.useRouter, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
-    const router = (0, exports.useRouter)({ useNextRouter });
+    const router = useRouterCustom({ useNextRouter });
     const urlInter = (0, react_1.useMemo)(() => {
         const nlLink = router?.asPath.split("/");
         const nlUrl = url.split("/");
@@ -8700,7 +8700,10 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
 };
 exports.Steps = Steps;
 const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(exports.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, onValidateRuteBack, useNextRouter, useRouterCustom = exports.useRouter, ...props }) => {
-    const { onBack: onBackHistory } = (0, exports.useHistory)({});
+    const { onBack: onBackHistory } = (0, exports.useHistory)({
+        useNextRouter,
+        useRouterCustom,
+    });
     const { _t } = (0, exports.use_T)({ ...props });
     const router = useRouterCustom({ useNextRouter });
     const onBack = () => {

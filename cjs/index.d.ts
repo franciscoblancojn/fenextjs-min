@@ -981,11 +981,12 @@ export declare const useAction: <T = any>({ name, onActionExecute, env_log: env_
 };
 export interface useHistoryProps extends useRouterProps {
     name?: string;
+    useRouterCustom?: typeof useRouter;
 }
 export interface useHistoryOnBackProps {
     onValidateRuteBack?: (path: string) => boolean;
 }
-export declare const useHistory: ({ name, useNextRouter, }: useHistoryProps) => {
+export declare const useHistory: ({ name, useNextRouter, useRouterCustom, }: useHistoryProps) => {
     paths: string[] | undefined;
     onBack: ({ onValidateRuteBack }: useHistoryOnBackProps) => void;
     currentPath: string | undefined;
@@ -2316,10 +2317,11 @@ export interface MenuBaseProps extends _TProps {
 export interface MenuClassProps {
     className?: string;
     defaultShowSubMenu?: boolean;
+    useRouterCustom?: typeof useRouter;
 }
 export interface MenuProps extends MenuBaseProps, MenuClassProps {
 }
-export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, typeCollapse, ...props }: MenuProps) => React.JSX.Element;
+export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, typeCollapse, useRouterCustom, ...props }: MenuProps) => React.JSX.Element;
 export interface ItemMenuBaseProps extends _TProps, useRouterProps {
     url: string;
     text: ReactNode;
@@ -2331,6 +2333,7 @@ export interface ItemMenuBaseProps extends _TProps, useRouterProps {
     typeCollapse?: "radio" | "checkbox";
     isLink?: boolean;
     onClick?: () => void;
+    useRouterCustom?: typeof useRouter;
 }
 export interface ItemMenuClassProps {
     className?: string;
@@ -2340,7 +2343,7 @@ export interface ItemMenuClassProps {
 }
 export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {
 }
-export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, useNextRouter, ...props }: ItemMenuProps) => React.JSX.Element;
+export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, useNextRouter, useRouterCustom, ...props }: ItemMenuProps) => React.JSX.Element;
 export interface BoxBaseProps extends PropsWithChildren, _TProps {
 }
 export interface BoxClassProps {

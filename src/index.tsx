@@ -3667,6 +3667,7 @@ export const useAction = <T = any,>({
 
 export interface useHistoryProps extends useRouterProps {
   name?: string;
+  useRouterCustom?: typeof useRouter;
 }
 export interface useHistoryOnBackProps {
   onValidateRuteBack?: (path: string) => boolean;
@@ -3675,6 +3676,7 @@ export interface useHistoryOnBackProps {
 export const useHistory = ({
   name = "fenextjs-history",
   useNextRouter,
+  useRouterCustom = useRouter,
 }: useHistoryProps) => {
   const {
     setSessionStorage,
@@ -3701,7 +3703,7 @@ export const useHistory = ({
     [paths],
   );
 
-  const router = useRouter({ useNextRouter });
+  const router = useRouterCustom({ useNextRouter });
   useEffect(() => {
     if (load && !router.asPath.includes("[")) {
       onPushPath(router.asPath);
@@ -12239,6 +12241,7 @@ export interface MenuClassProps {
    * @default false
    */
   defaultShowSubMenu?: boolean;
+  useRouterCustom?: typeof useRouter;
 }
 
 /**
@@ -12254,6 +12257,7 @@ export const Menu = ({
   defaultShowSubMenu = false,
   iconArrow = <SvgArrow />,
   typeCollapse,
+  useRouterCustom = useRouter,
   ...props
 }: MenuProps) => {
   return (
@@ -12267,6 +12271,7 @@ export const Menu = ({
             defaultActive={item.defaultActive ?? defaultShowSubMenu}
             iconArrow={item?.iconArrow ?? iconArrow}
             typeCollapse={item?.typeCollapse ?? typeCollapse}
+            useRouterCustom={useRouterCustom}
           />
         ))}
       </div>
@@ -12320,6 +12325,7 @@ export interface ItemMenuBaseProps extends _TProps, useRouterProps {
    * isLink.
    */
   onClick?: () => void;
+  useRouterCustom?: typeof useRouter;
 }
 
 /**
@@ -12366,10 +12372,11 @@ export const ItemMenu = ({
   isLink = true,
   onClick,
   useNextRouter,
+  useRouterCustom = useRouter,
   ...props
 }: ItemMenuProps) => {
   const { _t } = use_T({ ...props });
-  const router = useRouter({ useNextRouter });
+  const router = useRouterCustom({ useNextRouter });
 
   const urlInter = useMemo(() => {
     const nlLink = router?.asPath.split("/");
@@ -24540,7 +24547,10 @@ export const Back = ({
   useRouterCustom = useRouter,
   ...props
 }: BackProps) => {
-  const { onBack: onBackHistory } = useHistory({});
+  const { onBack: onBackHistory } = useHistory({
+    useNextRouter,
+    useRouterCustom,
+  });
   const { _t } = use_T({ ...props });
   const router = useRouterCustom({ useNextRouter });
   const onBack = () => {
