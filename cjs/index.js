@@ -9505,6 +9505,9 @@ const PageProgress = ({ className = "" }) => {
 exports.PageProgress = PageProgress;
 const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, className = "", classNameDropDown = {}, classNameCollapse = {}, classNameBtnToday = {}, classNameBtnWeek = {}, classNameTextValue = {}, classNameTextSwich = {}, classNameInputSwich = {}, classNameContentTop = "", classNameLabelSwich = "", classNameClear = "", textValue = "Filtrar por fecha:", textFilterByDate = "Filtar por fecha", textFilterByRange = "Filtar por rango", textBtnToday = "Hoy", textBtnWeek = "Esta Semana", iconTrash = react_1.default.createElement(exports.SvgTrash, null), extraListBtn = [], nMonthShow = 2, nameFilter, ...p }) => {
     const { _t } = (0, exports.use_T)({ ...p });
+    const { onChangeData: onChangeDataPagination } = (0, exports.usePagination)({
+        name: nameFilter,
+    });
     const { onChangeData: onChangeDataFilter } = (0, exports.useFilter)({
         name: nameFilter,
     });
@@ -9539,6 +9542,7 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                 date.dateRange?.[0] &&
                 date.dateRange?.[1]) ||
                 (date.type == "normal" && date.date)) {
+                onChangeDataPagination("page")(0);
                 onChangeDataFilter("date")(date);
             }
             onChange?.(date);
@@ -9622,10 +9626,14 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                     onChangeDataFilter("date")({
                         type: "normal",
                     });
+                    onChangeDataPagination("page")(0);
                 } }, iconTrash)))));
 };
 exports.FilterDate = FilterDate;
 const FilterSearch = ({ className = "", classNameSearch = {}, onChange, defaultValue = {}, nameFilter, ...p }) => {
+    const { onChangeData: onChangeDataPagination } = (0, exports.usePagination)({
+        name: nameFilter,
+    });
     const { onChangeData } = (0, exports.useFilter)({ name: nameFilter });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `
@@ -9633,9 +9641,11 @@ const FilterSearch = ({ className = "", classNameSearch = {}, onChange, defaultV
                     ${className}
                 ` },
             react_1.default.createElement(exports.InputSearch, { ...classNameSearch, ...p, defaultValue: defaultValue?.search, onEnterSearch: (search) => {
+                    onChangeDataPagination("page")(0);
                     onChangeData("search")(search);
                     onChange?.({ search });
                 }, onClearSearch: () => {
+                    onChangeDataPagination("page")(0);
                     onChangeData("search")("");
                     onChange?.({ search: "" });
                 } }))));

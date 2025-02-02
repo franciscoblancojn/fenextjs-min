@@ -27173,6 +27173,9 @@ export const FilterDate = ({
   ...p
 }: FilterDateProps) => {
   const { _t } = use_T({ ...p });
+  const { onChangeData: onChangeDataPagination } = usePagination({
+    name: nameFilter,
+  });
   const { onChangeData: onChangeDataFilter } = useFilter({
     name: nameFilter,
   });
@@ -27215,6 +27218,7 @@ export const FilterDate = ({
               date.dateRange?.[1]) ||
             (date.type == "normal" && date.date)
           ) {
+            onChangeDataPagination("page")(0);
             onChangeDataFilter("date")(date);
           }
 
@@ -27367,6 +27371,7 @@ export const FilterDate = ({
               onChangeDataFilter("date")({
                 type: "normal",
               });
+              onChangeDataPagination("page")(0);
             }}
           >
             {iconTrash}
@@ -27397,6 +27402,9 @@ export const FilterSearch = ({
 
   ...p
 }: FilterSearchProps) => {
+  const { onChangeData: onChangeDataPagination } = usePagination({
+    name: nameFilter,
+  });
   const { onChangeData } = useFilter({ name: nameFilter });
 
   return (
@@ -27412,10 +27420,12 @@ export const FilterSearch = ({
           {...p}
           defaultValue={defaultValue?.search}
           onEnterSearch={(search) => {
+            onChangeDataPagination("page")(0);
             onChangeData("search")(search);
             onChange?.({ search });
           }}
           onClearSearch={() => {
+            onChangeDataPagination("page")(0);
             onChangeData("search")("");
             onChange?.({ search: "" });
           }}
