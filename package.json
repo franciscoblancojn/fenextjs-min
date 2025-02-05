@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/franciscoblancojn/fenextjs-min#readme",
   "dependencies": {
+    "@tanstack/react-query": "5.59.16",
     "@react-google-maps/api": "2.19.3",
     "country-state-city-nextjs": "^10.0.0",
     "fenextjs-nextjs-dependencies": "3.0.0",

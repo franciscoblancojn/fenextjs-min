@@ -1,19 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FV = exports.FenextjsValidator = exports.FenextjsValidatorClass = exports.ErrorTimeout = exports.ErrorMethodNotAllowed = exports.ErrorForbidden = exports.ErrorRequestTimeout = exports.ErrorDatabaseError = exports.ErrorServerError = exports.ErrorServiceUnavailable = exports.ErrorGoogleKeyInvalid = exports.ErrorGoogleKeyNotFound = exports.ErrorFileNotFound = exports.ErrorBadRequest = exports.ErrorInternalServerError = exports.ErrorNotAcceptable = exports.ErrorInputTooShort = exports.ErrorInputRequired = exports.ErrorInputPatternMismatch = exports.ErrorInputLength = exports.ErrorInputInvalid = exports.ErrorInputNotEqual = exports.ErrorInputValueTooLow = exports.ErrorInputTooLong = exports.ErrorInputOutOfRange = exports.ErrorInputValueTooHigh = exports.ErrorPageNotFound = exports.ErrorUnauthorized = exports.ErrorTooManyRequests = exports.ErrorNotImplemented = exports.ErrorUserTokenInvalid = exports.ErrorUserTokenNotFound = exports.ErrorNetworkError = exports.ErrorFenextjs = exports.Unit_Volumen = exports.Unit_Weight = exports.Unit_Distance = exports.BusinessStatus = exports.FileStatus = exports.DaysEnum = exports.UserRoleProps = exports.UserStatusProps = exports.UserTypeVerifyProps = exports.ThemeConst = exports.ErrorCode = exports.AlertType = exports.RequestResultTypeProps = exports.Card_Enum = exports.FenextExportJsonFile = exports.FenextExportCsvFile = void 0;
-exports.useDataValidator = exports.useJsonString = exports.FenextjsDate = exports.FenextjsDateCompareSymbol = exports.FenextjsDateCompare = exports.FenextFirebaseDataBase = exports.FenextFirebaseStorage = exports.FenextFirebase = exports._tValidate = exports.sleep = exports.stringifyCircular = exports.GetSpaceParent = exports.env_log = exports.cleanTextForTranslate = exports.getBase64ForImageDonwload = exports.CONFIG = exports.GetCardType = exports.generateRandomID = exports.parseUnitToText = exports.parseFile = exports.parseImgBase64Scale = exports.parseBase64ToImgData = exports.parseCSCString_to_CSC = exports.parseCSC_to_CSCString = exports.parseEnum_to_String = exports.parseEnum_to_V = exports.parseBufferToBase64 = exports.parseString_to_Address = exports.parseAddress_to_String = exports.parseMoney = exports.parseDateTimeFormat = exports.getTimeToText = exports.getTimeValue = exports.getISOWeek = exports.getWeekValue = exports.getMonthValue = exports.parseDateToText = exports.parseTextToDate = exports.parseDateYYYYMMDD = exports.parseString_to_Phone = exports.parsePhone_to_String = exports.parseString_to_State = exports.parseState_to_String = exports.parseNumberCount = exports.parseCsvToJson = exports.parseString_to_City = exports.parseCity_to_String = exports.parseString_to_Country = exports.parseCountry_to_String = exports.parseNumber = void 0;
-exports.SvgJcb = exports.SvgFacebookF = exports.SvgInstagram = exports.SvgPaypal = exports.SvgSpotify = exports.SvgDinersClub = exports.SvgLaterIdentification = exports.SvgPayment = exports.SvgExclamation = exports.SvgCreditCard = exports.SvgFrontIdentification = exports.SvgSettings = exports.SvgBehance = exports.SvgOnlyFans = exports.SvgShareArrow = exports.SvgClose = exports.SvgMove = exports.useActionDropDown = exports.useTheme = exports.useDocumentEvent = exports.useDate = exports.useSessionStorage = exports.useData = exports.usePagination = exports.useStateGlobalContext = exports.useLanguage = exports.useDataLayer = exports.use_T = exports.useQuery = exports.useRequestLite = exports.useRequestFunction = exports.useRequest = exports.useCountryStateCity = exports.useCSC = exports.useNotification = exports.useOnline = exports.useModal = exports.useUser = exports.useAlert = exports.useWindowRouter = exports.useApiError = exports.usePrintIframe = exports.usePrintData = exports.useRouter = exports.useFilter = exports.useForm = exports.useValidator = exports.useHistory = exports.useAction = exports.useLocalStorage = void 0;
-exports.SvgCopyBox = exports.SvgCopy = exports.SvgEyeBar = exports.SvgEye = exports.SvgPadlock = exports.SvgDesktopLayer = exports.SvgDesktop = exports.SvgStremate = exports.SvgCams = exports.SvgAmazon = exports.SvgImgAvatar = exports.SvgEtsty = exports.SvgZelle = exports.SvgSave = exports.SvgBancolombia = exports.SvgColor = exports.SvgTwitch = exports.SvgPix = exports.SvgCryingUnicorn = exports.SvgCardDiscover = exports.SvgCardMasterCard = exports.SvgCardAmericanExpress = exports.SvgCardVisa = exports.SvgCardJCB = exports.SvgCardDinersClub = exports.SvgCardVisaElectron = exports.SvgListCheck = exports.SvgAdd = exports.SvgReload = exports.SvgUnicornWithMoney = exports.SvgClone = exports.SvgPinterest = exports.SvgArrowSelect = exports.SvgArrow = exports.SvgUpload2 = exports.SvgUpload = exports.SvgLocation = exports.SvgStart = exports.SvgVerified = exports.SvgTiktok = exports.SvgManyvids = exports.SvgFacebookBox = exports.SvgFacebook = exports.SvgBusiness = exports.SvgReddit = exports.SvgPaginationDown = exports.SvgEdit = exports.SvgCameraChange = exports.SvgCamera2 = exports.SvgCamera = void 0;
-exports.SvgDaviplata = exports.SvgYoutube = exports.SvgEmailBox = exports.SvgEmail = exports.SvgNumberDecrease = exports.SvgNoConfirm = exports.SvgShare = exports.SvgLink = exports.SvgLinkedinBox = exports.SvgLinkedin = exports.SvgPatreon = exports.SvgCheck2 = exports.SvgTheme = exports.SvgFont = exports.SvgSize = exports.SvgVideo = exports.SvgSteam = exports.SvgGoogle = exports.SvgTrash = exports.SvgEarringWatch = exports.SvgMercadoLibre = exports.SvgXBox = exports.SvgX = exports.SvgFantime = exports.SvgBongacams = exports.SvgBorder = exports.SvgMasterCard = exports.SvgPaginationPre = exports.SvgQr = exports.SvgPaginationNext = exports.SvgStack = exports.SvgSend = exports.SvgSoundCloud = exports.SvgPlane = exports.SvgNumberIncrease = exports.SvgPaperClip = exports.SvgSnapchat = exports.SvgStripachat = exports.SvgNequi = exports.SvgVisa = exports.SvgClicks = exports.SvgArrowCollapse = exports.SvgBars = exports.SvgDate = exports.SvgCheckSearch = exports.SvgDownload = exports.SvgCancel = exports.SvgStripe = exports.SvgDribbble = exports.SvgCamsoda = void 0;
-exports.SwichViewSelect = exports.SwichViewTable = exports.SwichViewList = exports.Breadcrumb = exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.FenextImgPlaceholderUrlBase = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = exports.SvgWechat = exports.SvgEstadisticas = exports.SvgEbay = exports.SvgMovilLayer = exports.SvgMovil = exports.SvgUnicorn = exports.SvgDiscover = exports.SvgChaturbate = exports.SvgArrowGoBack = exports.SvgImg = void 0;
-exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = void 0;
-exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.PaginationNPageDefaultOptions = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = void 0;
-exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterSearch = exports.FilterDate = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = void 0;
-exports.LoaderSpinner = void 0;
+exports.useJsonString = exports.FenextjsDate = exports.FenextjsDateCompareSymbol = exports.FenextjsDateCompare = exports.FenextFirebaseDataBase = exports.FenextFirebaseStorage = exports.FenextFirebase = exports._tValidate = exports.sleep = exports.stringifyCircular = exports.GetSpaceParent = exports.env_log = exports.cleanTextForTranslate = exports.getBase64ForImageDonwload = exports.CONFIG = exports.GetCardType = exports.generateRandomID = exports.parseUnitToText = exports.parseFile = exports.parseImgBase64Scale = exports.parseBase64ToImgData = exports.parseCSCString_to_CSC = exports.parseCSC_to_CSCString = exports.parseEnum_to_String = exports.parseEnum_to_V = exports.parseBufferToBase64 = exports.parseString_to_Address = exports.parseAddress_to_String = exports.parseMoney = exports.parseDateTimeFormat = exports.getTimeToText = exports.getTimeValue = exports.getISOWeek = exports.getWeekValue = exports.getMonthValue = exports.parseDateToText = exports.parseTextToDate = exports.parseDateYYYYMMDD = exports.parseString_to_Phone = exports.parsePhone_to_String = exports.parseString_to_State = exports.parseState_to_String = exports.parseNumberCount = exports.parseCsvToJson = exports.parseString_to_City = exports.parseCity_to_String = exports.parseInputToQuery = exports.parseString_to_Country = exports.parseCountry_to_String = exports.parseNumber = void 0;
+exports.SvgSpotify = exports.SvgDinersClub = exports.SvgLaterIdentification = exports.SvgPayment = exports.SvgExclamation = exports.SvgCreditCard = exports.SvgFrontIdentification = exports.SvgSettings = exports.SvgBehance = exports.SvgOnlyFans = exports.SvgShareArrow = exports.SvgClose = exports.SvgMove = exports.useActionDropDown = exports.useTheme = exports.useDocumentEvent = exports.useDate = exports.useSessionStorage = exports.useData = exports.usePagination = exports.useStateGlobalContext = exports.useLanguage = exports.useDataLayer = exports.use_T = exports.useApiMutation = exports.useQuery = exports.useRequestLite = exports.useRequestFunction = exports.useRequest = exports.useCountryStateCity = exports.useCSC = exports.useNotification = exports.useApiQuery = exports.useOnline = exports.useModal = exports.useUser = exports.useAlert = exports.useWindowRouter = exports.useApiError = exports.usePrintIframe = exports.usePrintData = exports.useRouter = exports.useFilter = exports.useForm = exports.useRefresh = exports.useValidator = exports.useHistory = exports.useAction = exports.useLocalStorage = exports.useDataValidator = void 0;
+exports.SvgPadlock = exports.SvgDesktopLayer = exports.SvgDesktop = exports.SvgStremate = exports.SvgCams = exports.SvgAmazon = exports.SvgImgAvatar = exports.SvgEtsty = exports.SvgZelle = exports.SvgSave = exports.SvgBancolombia = exports.SvgColor = exports.SvgTwitch = exports.SvgPix = exports.SvgCryingUnicorn = exports.SvgCardDiscover = exports.SvgCardMasterCard = exports.SvgCardAmericanExpress = exports.SvgCardVisa = exports.SvgCardJCB = exports.SvgCardDinersClub = exports.SvgCardVisaElectron = exports.SvgListCheck = exports.SvgAdd = exports.SvgReload = exports.SvgUnicornWithMoney = exports.SvgClone = exports.SvgPinterest = exports.SvgArrowSelect = exports.SvgArrow = exports.SvgUpload2 = exports.SvgUpload = exports.SvgLocation = exports.SvgStart = exports.SvgVerified = exports.SvgTiktok = exports.SvgManyvids = exports.SvgFacebookBox = exports.SvgFacebook = exports.SvgBusiness = exports.SvgReddit = exports.SvgPaginationDown = exports.SvgEdit = exports.SvgCameraChange = exports.SvgCamera2 = exports.SvgCamera = exports.SvgJcb = exports.SvgFacebookF = exports.SvgInstagram = exports.SvgPaypal = void 0;
+exports.SvgNumberDecrease = exports.SvgNoConfirm = exports.SvgShare = exports.SvgLink = exports.SvgLinkedinBox = exports.SvgLinkedin = exports.SvgPatreon = exports.SvgCheck2 = exports.SvgTheme = exports.SvgFont = exports.SvgSize = exports.SvgVideo = exports.SvgSteam = exports.SvgGoogle = exports.SvgTrash = exports.SvgEarringWatch = exports.SvgMercadoLibre = exports.SvgXBox = exports.SvgX = exports.SvgFantime = exports.SvgBongacams = exports.SvgBorder = exports.SvgMasterCard = exports.SvgPaginationPre = exports.SvgQr = exports.SvgPaginationNext = exports.SvgStack = exports.SvgSend = exports.SvgSoundCloud = exports.SvgPlane = exports.SvgNumberIncrease = exports.SvgPaperClip = exports.SvgSnapchat = exports.SvgStripachat = exports.SvgNequi = exports.SvgVisa = exports.SvgClicks = exports.SvgArrowCollapse = exports.SvgBars = exports.SvgDate = exports.SvgCheckSearch = exports.SvgDownload = exports.SvgCancel = exports.SvgStripe = exports.SvgDribbble = exports.SvgCamsoda = exports.SvgCopyBox = exports.SvgCopy = exports.SvgEyeBar = exports.SvgEye = void 0;
+exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.FenextImgPlaceholderUrlBase = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = exports.SvgWechat = exports.SvgEstadisticas = exports.SvgEbay = exports.SvgMovilLayer = exports.SvgMovil = exports.SvgUnicorn = exports.SvgDiscover = exports.SvgChaturbate = exports.SvgArrowGoBack = exports.SvgImg = exports.SvgDaviplata = exports.SvgYoutube = exports.SvgEmailBox = exports.SvgEmail = void 0;
+exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.QueryClientProvider = exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = exports.SwichViewList = exports.Breadcrumb = void 0;
+exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.PaginationNPageDefaultOptions = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = exports.InputGoogleAutocomplete = void 0;
+exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterSearch = exports.FilterDate = exports.PageProgress = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = exports.Share = void 0;
+exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const ReactDOM = tslib_1.__importStar(require("react-dom"));
 const react_dom_1 = require("react-dom");
+const react_query_1 = require("@tanstack/react-query");
 const router_1 = tslib_1.__importStar(require("next/router"));
 const link_1 = tslib_1.__importDefault(require("next/link"));
 const api_1 = require("@react-google-maps/api");
@@ -1084,6 +1085,36 @@ const parseString_to_Country = (data) => {
     }
 };
 exports.parseString_to_Country = parseString_to_Country;
+const parseInputToQuery = ({ input }) => {
+    const objInput = {};
+    Object.keys(input ?? {}).forEach((key) => {
+        const v = input?.[key];
+        if (v != undefined && v != null) {
+            if (key == "date") {
+                const dateValue = v;
+                if (dateValue?.type == "normal" && dateValue?.date) {
+                    objInput["date"] = dateValue?.date?.toISOString();
+                }
+                if (dateValue?.type == "range" &&
+                    dateValue?.dateRange &&
+                    dateValue?.dateRange?.[0] &&
+                    dateValue?.dateRange?.[1]) {
+                    objInput["date_start"] = dateValue?.dateRange?.[0]?.toISOString();
+                    objInput["date_end"] = dateValue?.dateRange?.[1]?.toISOString();
+                }
+            }
+            else if (key == "search" && v == "") {
+                return;
+            }
+            else {
+                objInput[key] = v;
+            }
+        }
+    });
+    const query = new URLSearchParams(objInput).toString();
+    return query;
+};
+exports.parseInputToQuery = parseInputToQuery;
 const parseCity_to_String = (data) => {
     if (data == undefined || data == null) {
         return undefined;
@@ -1639,12 +1670,12 @@ class FenextFirebase {
     config;
     app;
     database;
-    storega;
+    storage;
     constructor({ config }) {
         this.config = config;
         this.app = this.getApp();
         this.database = new FenextFirebaseDataBase({ app: this.app, config });
-        this.storega = new FenextFirebaseStorage({ app: this.app, config });
+        this.storage = new FenextFirebaseStorage({ app: this.app, config });
     }
     getConfig() {
         return this.config;
@@ -2170,6 +2201,25 @@ const useValidator = ({ data, validator }) => {
     };
 };
 exports.useValidator = useValidator;
+const useRefresh = ({ ...props }) => {
+    const { data, onConcatData } = (0, exports.useData)({}, {
+        ...props,
+        useGlobalContext: `useRefresh`,
+    });
+    const onRefresh = (ids) => {
+        const obj = {};
+        const time = new Date().getTime();
+        [ids].flat(2).forEach((k) => {
+            obj[`${k}`] = time;
+        });
+        onConcatData(obj);
+    };
+    return {
+        data: data,
+        onRefresh,
+    };
+};
+exports.useRefresh = useRefresh;
 const useForm = ({ defaultValue, onChangeDisabled, onChangeLoader, onSubmit, validator, onChangeError, ...Options }) => {
     const DATA = (0, exports.useData)(defaultValue, Options);
     const { data: loader, setData: setLoader } = (0, exports.useData)(false, {
@@ -2562,6 +2612,55 @@ const useOnline = ({ onOffline, onOnline } = {}) => {
     return { isOnline };
 };
 exports.useOnline = useOnline;
+const useApiQuery = ({ url, options, input, key, useUserToken = true, usedataFilter = true, usepagination = true, }) => {
+    const { user, load } = (0, exports.useUser)({});
+    const { data: dataFilter } = (0, exports.useFilter)({});
+    const { data: pagination } = (0, exports.usePagination)({});
+    const { onApiError } = (0, exports.useApiError)({});
+    const { data: { [key]: _key }, } = (0, exports.useRefresh)({});
+    const onQuery = async () => {
+        const query = (0, exports.parseInputToQuery)({
+            input: { ...dataFilter, ...input, ...pagination },
+        });
+        const response = await fetch(`${url}?${query}`, {
+            method: "GET",
+            ...options,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `${user?.token}`,
+                ...options?.headers,
+            },
+        });
+        const data = await response.json();
+        if (data?.error) {
+            onApiError(data);
+            throw data;
+        }
+        return data;
+    };
+    const onQueryNotLoadUser = async () => {
+        if (useUserToken == false) {
+            return await onQuery();
+        }
+        await (0, exports.sleep)(1000);
+        return {};
+    };
+    return (0, react_query_1.useQuery)({
+        queryKey: [key],
+        queryFn: load ? onQuery : onQueryNotLoadUser,
+        queryHash: key +
+            "-" +
+            JSON.stringify({
+                _key,
+                input,
+                user,
+                load,
+                ...(usedataFilter ? { dataFilter } : {}),
+                ...(usepagination ? { pagination } : {}),
+            }),
+    });
+};
+exports.useApiQuery = useApiQuery;
 const useNotification = ({ time = 2000 }) => {
     const [notification, setNotification] = (0, react_1.useState)(undefined);
     const { onAction } = (0, exports.useAction)({
@@ -2936,6 +3035,44 @@ const useQuery = (props) => {
     };
 };
 exports.useQuery = useQuery;
+const useApiMutation = ({ url, onSuccess, onError, options, key, parseBody = JSON.stringify, }) => {
+    const { user } = (0, exports.useUser)({});
+    const { onApiError } = (0, exports.useApiError)({});
+    const { onRefresh } = (0, exports.useRefresh)({});
+    const onMutation = async (input) => {
+        const response = await fetch(url, {
+            method: "POST",
+            ...options,
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `${user?.token}`,
+                ...options?.headers,
+            },
+            body: parseBody(input),
+        });
+        const data = await response.json();
+        if (data?.error) {
+            const err = {
+                ...data,
+                error: new ErrorFenextjs({
+                    message: data?.error?.message ?? data?.error ?? "",
+                }),
+            };
+            onApiError(err);
+            throw err;
+        }
+        return data;
+    };
+    return (0, react_query_1.useMutation)({
+        mutationFn: onMutation,
+        onSuccess: (data) => {
+            onRefresh([key]);
+            onSuccess?.(data);
+        },
+        onError,
+    });
+};
+exports.useApiMutation = useApiMutation;
 const use_T = ({ _t: _tProps, useT = true }) => {
     const _t = (0, react_1.useCallback)((message) => (0, exports._tValidate)(message, useT !== false ? _tProps : undefined), [_tProps, useT]);
     return {
@@ -4830,6 +4967,7 @@ const Button = ({ className = "", classNameLoader = "", classNameInvert = "", cl
                     fenext-btn-${invert ? `invert ${classNameInvert}` : ""}
                     fenext-btn-${disabled ? `disabled ${classNameDisabled}` : ""}
                     fenext-btn-size-${size}
+                    fenext-btn-${icon != "" ? "icon" : ""}
                     ${full ? "fenext-btn-size-full" : ""}
                     ${className}
                 `, disabled: loader },
@@ -4893,6 +5031,12 @@ const LayoutGridMenuTop = ({ className = "", classNameLoader = "", classNameChil
                 loader ? (react_1.default.createElement(exports.Loader, { classNameLoader: `${classNameLoader} fenext-layout-grid-loader` })) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
 };
 exports.LayoutGridMenuTop = LayoutGridMenuTop;
+const QueryClientProvider = ({ children }) => {
+    const queryClient = new react_query_1.QueryClient();
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(react_query_1.QueryClientProvider, { client: queryClient }, children)));
+};
+exports.QueryClientProvider = QueryClientProvider;
 const Container = ({ className = "", customSize = undefined, usePaddingInline = true, children, ...props }) => {
     const { _t } = (0, exports.use_T)({ ...props });
     return (react_1.default.createElement(react_1.default.Fragment, null,

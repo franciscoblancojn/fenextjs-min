@@ -13,6 +13,12 @@ import React, {
 } from "react";
 import * as ReactDOM from "react-dom";
 import { createPortal } from "react-dom";
+import {
+  useMutation,
+  useQuery as useQueryTanstack,
+  QueryClient,
+  QueryClientProvider as QueryClientProviderTanstack,
+} from "@tanstack/react-query";
 import Router, { useRouter as useRouterNextjs } from "next/router";
 import LinkNext, { LinkProps as LinkNextProps } from "next/link";
 import {
@@ -2127,6 +2133,42 @@ export const parseString_to_Country = (
   }
 };
 
+export interface parseInputToQueryProps {
+  input?: object;
+}
+
+export const parseInputToQuery = ({ input }: parseInputToQueryProps) => {
+  const objInput: any = {};
+  Object.keys(input ?? {}).forEach((key) => {
+    const v = (input as any)?.[key];
+    if (v != undefined && v != null) {
+      if (key == "date") {
+        const dateValue = v as DateDataProps;
+        if (dateValue?.type == "normal" && dateValue?.date) {
+          objInput["date"] = dateValue?.date?.toISOString();
+        }
+        if (
+          dateValue?.type == "range" &&
+          dateValue?.dateRange &&
+          dateValue?.dateRange?.[0] &&
+          dateValue?.dateRange?.[1]
+        ) {
+          objInput["date_start"] = dateValue?.dateRange?.[0]?.toISOString();
+          objInput["date_end"] = dateValue?.dateRange?.[1]?.toISOString();
+        }
+      } else if (key == "search" && v == "") {
+        return;
+      } else {
+        objInput[key] = v;
+      }
+    }
+  });
+  const query = new URLSearchParams(
+    objInput as Record<string, string>,
+  ).toString();
+  return query;
+};
+
 export const parseCity_to_String = (
   data: CityProps | undefined | null,
 ): string | undefined => {
@@ -2998,7 +3040,7 @@ export class FenextFirebase {
 
   public database: FenextFirebaseDataBase;
 
-  public storega: FenextFirebaseStorage;
+  public storage: FenextFirebaseStorage;
 
   constructor({ config }: FenextFirebaseConstructorProps) {
     this.config = config;
@@ -3006,7 +3048,7 @@ export class FenextFirebase {
 
     this.database = new FenextFirebaseDataBase({ app: this.app, config });
 
-    this.storega = new FenextFirebaseStorage({ app: this.app, config });
+    this.storage = new FenextFirebaseStorage({ app: this.app, config });
   }
 
   private getConfig() {
@@ -3806,6 +3848,34 @@ export const useValidator = <T,>({ data, validator }: useValidatorProps<T>) => {
   };
 };
 
+export interface useRefreshData {
+  [id: string]: number;
+}
+
+export interface useRefreshProps {}
+
+export const useRefresh = ({ ...props }: useRefreshProps) => {
+  const { data, onConcatData } = useData<useRefreshData>(
+    {},
+    {
+      ...props,
+      useGlobalContext: `useRefresh`,
+    },
+  );
+  const onRefresh = (ids: string | string[]) => {
+    const obj: useRefreshData = {};
+    const time = new Date().getTime();
+    [ids].flat(2).forEach((k) => {
+      obj[`${k}`] = time;
+    });
+    onConcatData(obj);
+  };
+  return {
+    data: data,
+    onRefresh,
+  };
+};
+
 export interface useFormProps<T, M = any> extends useDataOptions<T, M> {
   onSubmit?: RequestProps<T, RequestResultProps>;
   defaultValue?: T;
@@ -4391,6 +4461,91 @@ export const useOnline = ({ onOffline, onOnline }: useOnlineProps = {}) => {
   }, [handleOnline, handleOffline]);
 
   return { isOnline };
+};
+
+export interface IApiResult<T> {
+  message: string;
+  data: T;
+}
+
+export interface IApiError {
+  message: string;
+  error: ErrorFenextjs;
+}
+
+export type IApiRespond<T> = IApiResult<T> | IApiError;
+
+export interface useApiQueryProps<I> {
+  url: string;
+  options?: RequestInit;
+  input?: I;
+  key: string;
+  useUserToken?: boolean;
+  usedataFilter?: boolean;
+  usepagination?: boolean;
+}
+
+export const useApiQuery = <I, R>({
+  url,
+  options,
+  input,
+  key,
+  useUserToken = true,
+  usedataFilter = true,
+  usepagination = true,
+}: useApiQueryProps<I>) => {
+  const { user, load } = useUser({});
+  const { data: dataFilter } = useFilter({});
+  const { data: pagination } = usePagination({});
+  const { onApiError } = useApiError({});
+  const {
+    data: { [key]: _key },
+  } = useRefresh({});
+
+  const onQuery = async (): Promise<IApiResult<R>> => {
+    const query = parseInputToQuery({
+      input: { ...dataFilter, ...input, ...pagination },
+    });
+    const response = await fetch(`${url}?${query}`, {
+      method: "GET",
+      ...options,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `${user?.token}`,
+        ...options?.headers,
+      },
+    });
+    const data = await response.json();
+    if (data?.error) {
+      onApiError(data);
+      throw data;
+    }
+    return data;
+  };
+
+  const onQueryNotLoadUser = async () => {
+    if (useUserToken == false) {
+      return await onQuery();
+    }
+    await sleep(1000);
+    return {} as IApiResult<R>;
+  };
+
+  return useQueryTanstack<IApiResult<R>, IApiError>({
+    queryKey: [key],
+    queryFn: load ? onQuery : onQueryNotLoadUser,
+    queryHash:
+      key +
+      "-" +
+      JSON.stringify({
+        _key,
+        input,
+        user,
+        load,
+        ...(usedataFilter ? { dataFilter } : {}),
+        ...(usepagination ? { pagination } : {}),
+      }),
+  });
 };
 
 /**
@@ -5078,6 +5233,65 @@ export const useQuery = <T = QueryDataDefault,>(props?: useQueryProps<T>) => {
     onDeleteQuery,
     isChange,
   };
+};
+
+export interface useApiMutationCallbackProps<R> {
+  onSuccess?: (data: IApiResult<R>) => void;
+  onError?: (error: IApiError) => void;
+}
+export interface useApiMutationProps<I, R>
+  extends useApiMutationCallbackProps<R> {
+  url: string;
+  options?: RequestInit;
+  key: string;
+  parseBody?: (data: I) => BodyInit | null;
+}
+
+export const useApiMutation = <I, R>({
+  url,
+  onSuccess,
+  onError,
+  options,
+  key,
+  parseBody = JSON.stringify,
+}: useApiMutationProps<I, R>) => {
+  const { user } = useUser({});
+  const { onApiError } = useApiError({});
+  const { onRefresh } = useRefresh({});
+
+  const onMutation = async (input: I): Promise<IApiResult<R>> => {
+    const response = await fetch(url, {
+      method: "POST",
+      ...options,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `${user?.token}`,
+        ...options?.headers,
+      },
+      body: parseBody(input),
+    });
+    const data = await response.json();
+    if (data?.error) {
+      const err = {
+        ...data,
+        error: new ErrorFenextjs({
+          message: data?.error?.message ?? data?.error ?? "",
+        }),
+      };
+      onApiError(err);
+      throw err;
+    }
+    return data;
+  };
+
+  return useMutation<IApiResult<R>, IApiError, I>({
+    mutationFn: onMutation,
+    onSuccess: (data) => {
+      onRefresh([key]);
+      onSuccess?.(data);
+    },
+    onError,
+  });
 };
 
 export interface use_TProps extends _TProps {}
@@ -11562,6 +11776,7 @@ export const Button = ({
                     fenext-btn-${invert ? `invert ${classNameInvert}` : ""}
                     fenext-btn-${disabled ? `disabled ${classNameDisabled}` : ""}
                     fenext-btn-size-${size}
+                    fenext-btn-${icon != "" ? "icon" : ""}
                     ${full ? "fenext-btn-size-full" : ""}
                     ${className}
                 `}
@@ -11937,6 +12152,24 @@ export const LayoutGridMenuTop = ({
           )}
         </div>
       </div>
+    </>
+  );
+};
+
+/**
+ * Properties for the QueryClientProvider component.
+ */
+export interface QueryClientProviderProps {
+  children?: ReactNode;
+}
+
+export const QueryClientProvider = ({ children }: QueryClientProviderProps) => {
+  const queryClient = new QueryClient();
+  return (
+    <>
+      <QueryClientProviderTanstack client={queryClient}>
+        {children}
+      </QueryClientProviderTanstack>
     </>
   );
 };

@@ -124,6 +124,12 @@ const main = async () => {
         } from "react";
         import * as ReactDOM from "react-dom";
         import { createPortal } from "react-dom";
+        import {
+            useMutation,
+            useQuery as useQueryTanstack,
+            QueryClient,
+            QueryClientProvider as QueryClientProviderTanstack,
+        } from "@tanstack/react-query";
         import Router,{ useRouter as useRouterNextjs } from "next/router";
         import LinkNext, { LinkProps as LinkNextProps } from "next/link";
         import { 

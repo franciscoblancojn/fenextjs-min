@@ -697,6 +697,10 @@ export declare const FV: <T = any>(props?: FenextjsValidatorClassConstructorProp
 export declare const parseNumber: (n: number | string) => number;
 export declare const parseCountry_to_String: (data: CountryProps | undefined | null) => string | undefined;
 export declare const parseString_to_Country: (data: string | undefined | null) => CountryProps | undefined;
+export interface parseInputToQueryProps {
+    input?: object;
+}
+export declare const parseInputToQuery: ({ input }: parseInputToQueryProps) => string;
 export declare const parseCity_to_String: (data: CityProps | undefined | null) => string | undefined;
 export declare const parseString_to_City: (data: string | undefined | null) => CityProps | undefined;
 export declare const parseCsvToJson: (csv: string) => {
@@ -817,7 +821,7 @@ export declare class FenextFirebase {
     private config;
     private app;
     database: FenextFirebaseDataBase;
-    storega: FenextFirebaseStorage;
+    storage: FenextFirebaseStorage;
     constructor({ config }: FenextFirebaseConstructorProps);
     private getConfig;
     private getApp;
@@ -1000,6 +1004,15 @@ export declare const useValidator: <T>({ data, validator }: useValidatorProps<T>
     isValid: boolean;
     data: T;
     validator: FenextjsValidatorClass<T> | undefined;
+};
+export interface useRefreshData {
+    [id: string]: number;
+}
+export interface useRefreshProps {
+}
+export declare const useRefresh: ({ ...props }: useRefreshProps) => {
+    data: useRefreshData;
+    onRefresh: (ids: string | string[]) => void;
 };
 export interface useFormProps<T, M = any> extends useDataOptions<T, M> {
     onSubmit?: RequestProps<T, RequestResultProps>;
@@ -1240,6 +1253,25 @@ export interface useOnlineProps {
 export declare const useOnline: ({ onOffline, onOnline }?: useOnlineProps) => {
     isOnline: boolean;
 };
+export interface IApiResult<T> {
+    message: string;
+    data: T;
+}
+export interface IApiError {
+    message: string;
+    error: ErrorFenextjs;
+}
+export type IApiRespond<T> = IApiResult<T> | IApiError;
+export interface useApiQueryProps<I> {
+    url: string;
+    options?: RequestInit;
+    input?: I;
+    key: string;
+    useUserToken?: boolean;
+    usedataFilter?: boolean;
+    usepagination?: boolean;
+}
+export declare const useApiQuery: <I, R>({ url, options, input, key, useUserToken, usedataFilter, usepagination, }: useApiQueryProps<I>) => import("@tanstack/react-query/build/legacy/types").UseQueryResult<IApiResult<R>, IApiError>;
 export interface NotificationDataProps {
     type?: RequestResultTypeProps | keyof typeof RequestResultTypeProps;
     message: string;
@@ -1346,6 +1378,17 @@ export declare const useQuery: <T = QueryDataDefault>(props?: useQueryProps<T> |
     onDeleteQuery: (id: keyof T) => boolean;
     isChange: boolean;
 };
+export interface useApiMutationCallbackProps<R> {
+    onSuccess?: (data: IApiResult<R>) => void;
+    onError?: (error: IApiError) => void;
+}
+export interface useApiMutationProps<I, R> extends useApiMutationCallbackProps<R> {
+    url: string;
+    options?: RequestInit;
+    key: string;
+    parseBody?: (data: I) => BodyInit | null;
+}
+export declare const useApiMutation: <I, R>({ url, onSuccess, onError, options, key, parseBody, }: useApiMutationProps<I, R>) => import("@tanstack/react-query/build/legacy/types").UseMutationResult<IApiResult<R>, IApiError, I, unknown>;
 export interface use_TProps extends _TProps {
 }
 export declare const use_T: ({ _t: _tProps, useT }: use_TProps) => {
@@ -2266,6 +2309,10 @@ export interface LayoutGridMenuTopClassProps extends LoaderClassProps {
 export interface LayoutGridMenuTopProps extends LayoutGridMenuTopBaseProps, LayoutGridMenuTopClassProps {
 }
 export declare const LayoutGridMenuTop: ({ className, classNameLoader, classNameChildren, classNameMenuTop, children, menuTop, loader, usePageProgress, useAlertHook, alertHookProps, alert, ...props }: LayoutGridMenuTopProps) => React.JSX.Element;
+export interface QueryClientProviderProps {
+    children?: ReactNode;
+}
+export declare const QueryClientProvider: ({ children }: QueryClientProviderProps) => React.JSX.Element;
 export interface ContainerProps extends PropsWithChildren, _TProps {
     customSize?: number;
     usePaddingInline?: boolean;
