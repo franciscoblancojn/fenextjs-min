@@ -3419,7 +3419,7 @@ export interface TableBaseProps<T> extends _TProps {
     nItems?: number;
     error?: ErrorFenextjs;
     header: TableHeader<T>;
-    pagination?: PaginationProps;
+    pagination?: Omit<PaginationProps, "nItems">;
     loader?: boolean;
     typeLoader?: "spinner" | "line";
     useCheckbox?: boolean;
