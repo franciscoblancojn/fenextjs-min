@@ -22339,6 +22339,8 @@ export interface TableBaseProps<T> extends _TProps {
     "actionAllCheckbox" | "data"
   >;
   actionsCheckboxSelectAll?: ReactNode;
+
+  restartPaginationInRenderTable?: boolean;
 }
 /**
  * Represents the properties that can be passed to a table component.
@@ -22376,6 +22378,9 @@ export const Table = <T,>({
   typeLoader = "line",
   useCheckbox = true,
   onOrderBy,
+
+  restartPaginationInRenderTable = true,
+
   // onShowHidden,
   onChecked,
   notResult = <div>There is not results</div>,
@@ -22384,6 +22389,18 @@ export const Table = <T,>({
   ...props
 }: TableProps<T>) => {
   const { _t } = use_T({ ...props });
+  const { setData } = usePagination({
+    name: pagination?.paginationName,
+  });
+  useEffect(() => {
+    if (restartPaginationInRenderTable) {
+      setData({
+        npage: 10,
+        page: 0,
+      });
+    }
+  }, [restartPaginationInRenderTable]);
+
   const checkboxItems = useMemo(
     () => items.map((item: T) => ({ ...item, __checkbox: false })),
     [items],

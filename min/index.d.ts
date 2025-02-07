@@ -3432,10 +3432,11 @@ export interface TableBaseProps<T> extends _TProps {
     showPagination?: boolean;
     actionsCheckbox?: Omit<TableActionCheckboxProps<T>, "actionAllCheckbox" | "data">;
     actionsCheckboxSelectAll?: ReactNode;
+    restartPaginationInRenderTable?: boolean;
 }
 export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {
 }
-export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameTdLabelCollapse, classNameContentPagination, classNameLoader, name, items, header, error, nItems, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;
+export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameTdLabelCollapse, classNameContentPagination, classNameLoader, name, items, header, error, nItems, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, restartPaginationInRenderTable, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;
 export interface AlertComponentProps extends _TProps, AlertProps {
     className?: string;
     iconClose?: ReactNode;
