@@ -25295,7 +25295,7 @@ export const ChronologicalList = ({
                             <>
                               <div
                                 key={`${j}-${k}`}
-                                className={`fenext-chronological-list-item ${item?.className}`}
+                                className={`fenext-chronological-list-item ${item?.className ?? ""}`}
                               >
                                 <div
                                   className={`fenext-chronological-list-item-market`}
