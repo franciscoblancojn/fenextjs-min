@@ -1190,6 +1190,14 @@ export class FenextjsValidatorClass<T = any> {
     }
     return this.name;
   }
+  /**
+   * Método public para obtener el valor de data.
+   * @returns {T | undefined}
+   * @public
+   */
+  getData() {
+    return this.data;
+  }
 
   /**
    * Método para establecer el padre de la instancia actual de FenextjsValidatorClass.

@@ -559,6 +559,9 @@ class FenextjsValidatorClass {
         }
         return this.name;
     }
+    getData() {
+        return this.data;
+    }
     setParent(parent) {
         this.parent = parent;
         return this;

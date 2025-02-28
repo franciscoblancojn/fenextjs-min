@@ -641,6 +641,7 @@ export declare class FenextjsValidatorClass<T = any> {
     constructor(props?: FenextjsValidatorClassConstructorProps);
     setName(name: string): this;
     getName(): any;
+    getData(): T | undefined;
     setParent(parent: FenextjsValidatorClass): this;
     isEqual(d: T[] | T, msg?: string): this;
     onEqual(): this | undefined;
