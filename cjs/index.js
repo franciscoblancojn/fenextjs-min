@@ -967,7 +967,7 @@ class FenextjsValidatorClass {
         if (this.data == undefined) {
             return;
         }
-        const v = this.customValue(this.data);
+        const v = this.customValue(this.data, this?.parent);
         if (v != true) {
             this.onError(v.code, this.messageError?.isCustom ?? v.message);
             return;

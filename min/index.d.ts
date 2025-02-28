@@ -684,7 +684,7 @@ export declare class FenextjsValidatorClass<T = any> {
     onRegex(): void;
     isEmail(msg?: string): this;
     onEmail(): void;
-    isCustom(data: (data: T) => true | ErrorFenextjs, msg?: string): this;
+    isCustom(data: (data: T, parent?: FenextjsValidatorClass) => true | ErrorFenextjs, msg?: string): this;
     onCustom(): void;
     isOr(d: FenextjsValidatorClass[], msg?: string): this;
     onOr(): this | undefined;
