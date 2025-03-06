@@ -4952,7 +4952,7 @@ const Cols = ({ className = "", children, nCols = 2, breakInside = true, ...prop
     const { _t } = (0, exports.use_T)({ ...props });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-cols fenext-cols-${breakInside ? "break-inside" : ""} ${className} `, style: {
-                ["--nCols"]: nCols,
+                ["--fenext-cols-columns"]: nCols,
             } }, _t(children))));
 };
 exports.Cols = Cols;
