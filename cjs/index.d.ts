@@ -1,11 +1,8 @@
-/// <reference types="node" />
 import React, { ReactNode, PropsWithChildren, CSSProperties, SyntheticEvent, AnchorHTMLAttributes, SetStateAction } from "react";
-import { LinkProps as LinkNextProps } from "next/link";
 import { AutocompleteProps as GoogleAutocompleteProps, LoadScriptProps, GoogleMapProps, MarkerProps } from "@react-google-maps/api";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/storage";
-import { ParsedUrlQuery } from "querystring";
 export interface FenextExportCsvFileProps {
     items: object[];
     fileName: string;
@@ -984,14 +981,14 @@ export interface useActionProps<T = any> {
 export declare const useAction: <T = any>({ name, onActionExecute, env_log: env_log_boolean, }: useActionProps<T>) => {
     onAction: (detail?: T | undefined) => void;
 };
-export interface useHistoryProps extends useRouterProps {
+export interface useHistoryProps {
     name?: string;
     useRouterCustom?: typeof useRouter;
 }
 export interface useHistoryOnBackProps {
     onValidateRuteBack?: (path: string) => boolean;
 }
-export declare const useHistory: ({ name, useNextRouter, useRouterCustom, }: useHistoryProps) => {
+export declare const useHistory: ({ name, useRouterCustom, }: useHistoryProps) => {
     paths: string[] | undefined;
     onBack: ({ onValidateRuteBack }: useHistoryOnBackProps) => void;
     currentPath: string | undefined;
@@ -1146,10 +1143,7 @@ export declare const useFilter: <CF extends Record<string, any> = any>({ name, o
     setDataError: (f: any) => void;
     setDataErrorMemo: (f: any) => void;
 };
-export interface useRouterProps {
-    useNextRouter?: boolean;
-}
-export declare const useRouter: ({ useNextRouter }: useRouterProps) => {
+export declare const useRouter: () => {
     asPath: string;
     back: () => void;
     forward: () => void;
@@ -1187,20 +1181,6 @@ export interface useApiErrorProps {
 }
 export declare const useApiError: ({ onActionExecute }: useApiErrorProps) => {
     onApiError: (detail?: onApiErrorData | undefined) => void;
-};
-export declare const useWindowRouter: () => {
-    asPath: string;
-    back: () => void;
-    forward: () => void;
-    isReady: boolean;
-    pathname: string;
-    push: (url: string) => void;
-    query: {
-        [k: string]: string;
-    };
-    reload: () => void;
-    replace: (url: string) => void;
-    route: string;
 };
 export interface useAlertProps {
     name?: string;
@@ -1350,34 +1330,6 @@ export declare const useRequestLite: <FP, FR, FE = ErrorFenextjs<any>>({ f, onEr
     result: FR | undefined;
     onRequest: (props: FP) => Promise<FR | FE>;
     onClear: () => void;
-};
-export interface QueryDataDefault {
-    id?: string;
-    search?: string;
-    searchAddress?: string;
-    tab?: string;
-    page?: number;
-    npage?: number;
-    totalpage?: number;
-    allitems?: number;
-    start?: number;
-    end?: number;
-    order?: "asc" | "desc";
-    orderBy?: string;
-    exportBy?: string[];
-}
-export interface useQueryProps<T = QueryDataDefault> {
-    ignoreQuerys?: [id: keyof T];
-    parseQuery?: (data: ParsedUrlQuery) => T;
-}
-export declare const useQuery: <T = QueryDataDefault>(props?: useQueryProps<T> | undefined) => {
-    load: boolean;
-    query: T;
-    setQuery: (query: T) => boolean;
-    onConcatQuery: (newQuery: T) => boolean;
-    onChangeQuery: (id: keyof T) => (value: T[keyof T]) => boolean;
-    onDeleteQuery: (id: keyof T) => boolean;
-    isChange: boolean;
 };
 export interface useApiMutationCallbackProps<R> {
     onSuccess?: (data: IApiResult<R>) => void;
@@ -2370,7 +2322,7 @@ export interface MenuClassProps {
 export interface MenuProps extends MenuBaseProps, MenuClassProps {
 }
 export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, typeCollapse, useRouterCustom, ...props }: MenuProps) => React.JSX.Element;
-export interface ItemMenuBaseProps extends _TProps, useRouterProps {
+export interface ItemMenuBaseProps extends _TProps {
     url: string;
     text: ReactNode;
     icon?: ReactNode;
@@ -2391,7 +2343,7 @@ export interface ItemMenuClassProps {
 }
 export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {
 }
-export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, useNextRouter, useRouterCustom, ...props }: ItemMenuProps) => React.JSX.Element;
+export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, useRouterCustom, ...props }: ItemMenuProps) => React.JSX.Element;
 export interface BoxBaseProps extends PropsWithChildren, _TProps {
 }
 export interface BoxClassProps {
@@ -3679,7 +3631,7 @@ export interface StepsProps extends StepsBaseProps, StepsClassProps {
 }
 export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnDisabled, classNameBtnNext, classNameBtnNextDisabled, classNameBtnPrev, classNameBtnPrevDisabled, classNameContentDog, classNameDog, classNameDogCurrent, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
 export type BackTypeOnBack = "fenextjs-history" | "history" | "router" | "link" | "none";
-export interface BackBaseProps extends _TProps, useHistoryOnBackProps, useRouterProps {
+export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
     loader?: boolean;
     disabled?: boolean;
     onClick?: (e?: any) => void;
@@ -3699,14 +3651,14 @@ export interface BackClassProps extends LoaderClassProps {
 }
 export interface BackProps extends BackBaseProps, BackClassProps {
 }
-export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, useNextRouter, useRouterCustom, ...props }: BackProps) => React.JSX.Element;
+export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, useRouterCustom, ...props }: BackProps) => React.JSX.Element;
 export interface ThemeProps extends _TProps {
     className?: string;
     classNameItem?: string;
 }
 export declare const Theme: ({ className, classNameItem }: ThemeProps) => React.JSX.Element;
 export type LinkTypeOnLink = "history" | "router" | "link" | "none";
-export interface LinkBaseProps extends PropsWithChildren, LinkNextProps, Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "referrerPolicy" | "rel">, _TProps {
+export interface LinkBaseProps extends PropsWithChildren, Partial<AnchorHTMLAttributes<HTMLAnchorElement>>, _TProps {
 }
 export interface LinkClassProps {
     className?: string;

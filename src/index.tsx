@@ -19,8 +19,6 @@ import {
   QueryClient,
   QueryClientProvider as QueryClientProviderTanstack,
 } from "@tanstack/react-query";
-import Router, { useRouter as useRouterNextjs } from "next/router";
-import LinkNext, { LinkProps as LinkNextProps } from "next/link";
 import {
   Autocomplete as GoogleAutocomplete,
   AutocompleteProps as GoogleAutocompleteProps,
@@ -68,7 +66,6 @@ import {
   DatabaseReference,
 } from "firebase/database";
 import QrScanner from "qr-scanner";
-import { ParsedUrlQuery } from "querystring";
 
 export interface FenextExportCsvFileProps {
   items: object[];
@@ -2919,9 +2916,9 @@ export const GetCardType = (n: number | string): Card_Enum => {
 };
 
 export const CONFIG = {
-  EMPY: process.env["NEXT_PUBLIC_EMPY"] == "TRUE",
-  MODATA: process.env["NEXT_PUBLIC_MODATA"] == "TRUE",
-  LOG: process.env["NEXT_PUBLIC_LOG"] == "TRUE",
+  EMPY: process?.env?.["NEXT_PUBLIC_EMPY"] == "TRUE",
+  MODATA: process?.env?.["NEXT_PUBLIC_MODATA"] == "TRUE",
+  LOG: process?.env?.["NEXT_PUBLIC_LOG"] == "TRUE",
 };
 
 export interface getBase64ForImageDonwloadProps {
@@ -3719,7 +3716,7 @@ export const useAction = <T = any,>({
   };
 };
 
-export interface useHistoryProps extends useRouterProps {
+export interface useHistoryProps {
   name?: string;
   useRouterCustom?: typeof useRouter;
 }
@@ -3729,7 +3726,6 @@ export interface useHistoryOnBackProps {
 
 export const useHistory = ({
   name = "fenextjs-history",
-  useNextRouter,
   useRouterCustom = useRouter,
 }: useHistoryProps) => {
   const {
@@ -3757,7 +3753,7 @@ export const useHistory = ({
     [paths],
   );
 
-  const router = useRouterCustom({ useNextRouter });
+  const router = useRouterCustom();
   useEffect(() => {
     if (load && !router.asPath.includes("[")) {
       onPushPath(router.asPath);
@@ -3981,31 +3977,83 @@ export const useFilter = <CF extends Record<string, any> = any>({
   );
 };
 
-export interface useRouterProps {
-  useNextRouter?: boolean;
-}
+export const useRouter = () => {
+  const _w = {
+    location: {
+      pathname: "",
+      search: "",
+      hash: "",
+      href: "",
+      reload: () => {},
+    },
+    history: {
+      forward: () => {},
+      back: () => {},
+      replaceState: () => {},
+    },
+    addEventListener: () => {},
+    removeEventListener: () => {},
+  };
 
-export const useRouter = ({ useNextRouter = true }: useRouterProps) => {
-  const [router, setRouter] = useState(null);
-  const windowRouter = useWindowRouter();
+  const w = (typeof window == "undefined" ? _w : window) ?? _w;
+
+  const [pathname, setPathname] = useState(w?.location?.pathname ?? "");
+  const [query, setQuery] = useState(
+    new URLSearchParams(w?.location?.search ?? ""),
+  );
+  const [hash, setHash] = useState(w?.location?.hash ?? "");
+
   useEffect(() => {
-    if (
-      useNextRouter &&
-      process?.env?.["NEXT_PUBLIC_DISABLED_NEXT_ROUTER"] !== "TRUE"
-    ) {
-      try {
-        import("next/router").then((module: any) => {
-          setRouter(module?.useRouter);
-        });
-      } catch (e) {
-        env_log(
-          "Next.js router no disponible, usando window.location como fallback",
-        );
-      }
-    }
-  }, [useNextRouter]);
+    const handleLocationChange = () => {
+      setPathname(w?.location?.pathname ?? "");
+      setQuery(new URLSearchParams(w?.location?.search ?? ""));
+      setHash(w?.location?.hash ?? "");
+    };
 
-  return router ?? windowRouter;
+    w.addEventListener("popstate", handleLocationChange); // Cambios en el historial
+    return () => {
+      w.removeEventListener("popstate", handleLocationChange);
+    };
+  }, []);
+
+  const push = (url: string) => {
+    w.location.href = url;
+    setPathname(w?.location?.pathname ?? "");
+    setQuery(new URLSearchParams(w?.location?.search ?? ""));
+    setHash(w?.location?.hash ?? "");
+  };
+
+  const replace = (url: string) => {
+    w?.history?.replaceState({}, "", url);
+    setPathname(w?.location?.pathname ?? "");
+    setQuery(new URLSearchParams(w?.location?.search ?? ""));
+    setHash(w?.location?.hash ?? "");
+  };
+
+  const back = () => {
+    w?.history?.back();
+  };
+
+  const forward = () => {
+    w?.history?.forward();
+  };
+
+  const reload = () => {
+    w?.location?.reload();
+  };
+
+  return {
+    asPath: pathname + (query.toString() ? `?${query.toString()}` : "") + hash,
+    back,
+    forward,
+    isReady: true, // Siempre está listo en w.location
+    pathname,
+    push,
+    query: Object.fromEntries(query.entries()),
+    reload,
+    replace,
+    route: pathname,
+  };
 };
 
 export interface usePrintDataProps
@@ -4091,85 +4139,6 @@ export const useApiError = ({ onActionExecute }: useApiErrorProps) => {
     onActionExecute,
   });
   return { onApiError };
-};
-
-export const useWindowRouter = () => {
-  const _w = {
-    location: {
-      pathname: "",
-      search: "",
-      hash: "",
-      href: "",
-      reload: () => {},
-    },
-    history: {
-      forward: () => {},
-      back: () => {},
-      replaceState: () => {},
-    },
-    addEventListener: () => {},
-    removeEventListener: () => {},
-  };
-
-  const w = (typeof window == "undefined" ? _w : window) ?? _w;
-
-  const [pathname, setPathname] = useState(w?.location?.pathname ?? "");
-  const [query, setQuery] = useState(
-    new URLSearchParams(w?.location?.search ?? ""),
-  );
-  const [hash, setHash] = useState(w?.location?.hash ?? "");
-
-  useEffect(() => {
-    const handleLocationChange = () => {
-      setPathname(w?.location?.pathname ?? "");
-      setQuery(new URLSearchParams(w?.location?.search ?? ""));
-      setHash(w?.location?.hash ?? "");
-    };
-
-    w.addEventListener("popstate", handleLocationChange); // Cambios en el historial
-    return () => {
-      w.removeEventListener("popstate", handleLocationChange);
-    };
-  }, []);
-
-  const push = (url: string) => {
-    w.location.href = url;
-    setPathname(w?.location?.pathname ?? "");
-    setQuery(new URLSearchParams(w?.location?.search ?? ""));
-    setHash(w?.location?.hash ?? "");
-  };
-
-  const replace = (url: string) => {
-    w?.history?.replaceState({}, "", url);
-    setPathname(w?.location?.pathname ?? "");
-    setQuery(new URLSearchParams(w?.location?.search ?? ""));
-    setHash(w?.location?.hash ?? "");
-  };
-
-  const back = () => {
-    w?.history?.back();
-  };
-
-  const forward = () => {
-    w?.history?.forward();
-  };
-
-  const reload = () => {
-    w?.location?.reload();
-  };
-
-  return {
-    asPath: pathname + (query.toString() ? `?${query.toString()}` : "") + hash,
-    back,
-    forward,
-    isReady: true, // Siempre está listo en w.location
-    pathname,
-    push,
-    query: Object.fromEntries(query.entries()),
-    reload,
-    replace,
-    route: pathname,
-  };
 };
 
 export interface useAlertProps {
@@ -5041,209 +5010,6 @@ export const useRequestLite = <FP, FR, FE = ErrorFenextjs>({
     result,
     onRequest,
     onClear,
-  };
-};
-
-/**
- * Query parameters for useQuery hook
- */
-
-export interface QueryDataDefault {
-  id?: string;
-  search?: string;
-  searchAddress?: string;
-  tab?: string;
-  page?: number;
-  npage?: number;
-  totalpage?: number;
-  allitems?: number;
-  start?: number;
-  end?: number;
-  order?: "asc" | "desc";
-  orderBy?: string;
-  exportBy?: string[];
-}
-
-export interface useQueryProps<T = QueryDataDefault> {
-  ignoreQuerys?: [id: keyof T];
-  parseQuery?: (data: ParsedUrlQuery) => T;
-}
-
-/**
- * A hook that provides access to the query parameters in the URL.
- */
-export const useQuery = <T = QueryDataDefault,>(props?: useQueryProps<T>) => {
-  const tomorrow = useMemo(() => {
-    const tomorrow = new Date();
-    tomorrow.setHours(tomorrow.getHours() + 24);
-    return tomorrow;
-  }, []);
-
-  /**
-   * Whether the query has been changed.
-   */
-  const [isChange, setIsChange] = useState(false);
-  /**
-   * The router instance from Next.js.
-   */
-  const router = useRouterNextjs();
-  /**
-   * The query parameters in the URL.
-   */
-  const query: T = useMemo(() => {
-    if (!(router?.isReady ?? false)) {
-      return {} as T;
-    }
-    const q: any = router?.query ?? {};
-
-    const parseQuery =
-      props?.parseQuery ??
-      ((q) => {
-        const {
-          id = undefined,
-          search = "",
-          searchAddress = "",
-          tab = "all",
-          page = "0",
-          npage = "10",
-          totalpage = "100",
-          allitems = "1000",
-          start = undefined,
-          end = undefined,
-          order = undefined,
-          orderBy = undefined,
-        } = q as any;
-
-        const r: T = {
-          ...q,
-          id,
-          search,
-          searchAddress,
-          tab,
-          page: parseInt(page),
-          npage: parseInt(npage),
-          totalpage: parseInt(totalpage),
-          allitems: parseInt(allitems),
-          start: start ? parseInt(start) : 0,
-          end: end ? parseInt(end) : tomorrow?.getTime(),
-          order,
-          orderBy,
-          exportBy: [q?.export ?? []].flat(2),
-        } as T;
-        return r;
-      });
-
-    const r = parseQuery(q);
-
-    (props?.ignoreQuerys ?? []).map((e: keyof T) => {
-      delete r[e];
-    });
-    return r;
-  }, [router?.query, router?.isReady, props?.ignoreQuerys, props?.parseQuery]);
-
-  /**
-   * Sets the query parameters in the URL.
-   *
-   * @param query - The query parameters to set.
-   */
-  const setQuery = useCallback(
-    (query: T) => {
-      if (!(router?.isReady ?? false)) {
-        return false;
-      }
-      const queryParse: {
-        [id: string]: string;
-      } = {};
-      Object.keys(query as any).forEach((key) => {
-        const v = `${(query as any)?.[key] ?? ""}`;
-        if (v != "") {
-          queryParse[key] = v;
-        }
-      });
-      router?.push?.(
-        {
-          pathname: router.pathname,
-          query: queryParse,
-        },
-        undefined,
-        { scroll: false },
-      );
-      setIsChange(true);
-      return true;
-    },
-    [router?.isReady, router?.query, router?.pathname],
-  );
-  /**
-   * Sets the query parameters in the URL.
-   *
-   * @param query - The query parameters to set.
-   */
-  const onConcatQuery = useCallback(
-    (newQuery: T) => {
-      const nQuery = {
-        ...query,
-        ...newQuery,
-      };
-      return setQuery(nQuery);
-    },
-    [query],
-  );
-  /**
-   * A function that returns an event handler that sets a query parameter.
-   *
-   * @param id - The key of the query parameter to set.
-   */
-  const onChangeQuery = useCallback(
-    (id: keyof T) => (value: (typeof query)[keyof T]) => {
-      if (!(router?.isReady ?? false)) {
-        return false;
-      }
-      router?.push?.(
-        {
-          pathname: router.pathname,
-          query: {
-            ...(router?.query ?? {}),
-            [id]: value,
-          } as any,
-        },
-        undefined,
-        { scroll: false },
-      );
-      setIsChange(true);
-      return true;
-    },
-    [router?.isReady, router?.query, router?.pathname],
-  );
-
-  const onDeleteQuery = useCallback(
-    (id: keyof T) => {
-      if (!(router?.isReady ?? false)) {
-        return false;
-      }
-      const q = { ...(router?.query ?? {}) } as any;
-      delete q[id];
-      router?.push?.(
-        {
-          pathname: router.pathname,
-          query: { ...q },
-        },
-        undefined,
-        { scroll: false },
-      );
-      setIsChange(true);
-      return true;
-    },
-    [router?.isReady, router?.query, router?.pathname],
-  );
-
-  return {
-    load: router?.isReady ?? false,
-    query,
-    setQuery,
-    onConcatQuery,
-    onChangeQuery,
-    onDeleteQuery,
-    isChange,
   };
 };
 
@@ -12527,7 +12293,7 @@ export const Menu = ({
 /**
  * Properties for the base ItemMenu component.
  */
-export interface ItemMenuBaseProps extends _TProps, useRouterProps {
+export interface ItemMenuBaseProps extends _TProps {
   /**
    * Url of page in Menu Item.
    */
@@ -12616,12 +12382,11 @@ export const ItemMenu = ({
   typeCollapse,
   isLink = true,
   onClick,
-  useNextRouter,
   useRouterCustom = useRouter,
   ...props
 }: ItemMenuProps) => {
   const { _t } = use_T({ ...props });
-  const router = useRouterCustom({ useNextRouter });
+  const router = useRouterCustom();
 
   const urlInter = useMemo(() => {
     const nlLink = router?.asPath.split("/");
@@ -24715,10 +24480,7 @@ export type BackTypeOnBack =
 /**
  * Properties for the base Back component.
  */
-export interface BackBaseProps
-  extends _TProps,
-    useHistoryOnBackProps,
-    useRouterProps {
+export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
   /**
    * Indicates whether the Back is currently in the loading state.
    */
@@ -24805,16 +24567,14 @@ export const Back = ({
   minLenght = 2,
   useHistoryMinLenght = false,
   onValidateRuteBack,
-  useNextRouter,
   useRouterCustom = useRouter,
   ...props
 }: BackProps) => {
   const { onBack: onBackHistory } = useHistory({
-    useNextRouter,
     useRouterCustom,
   });
   const { _t } = use_T({ ...props });
-  const router = useRouterCustom({ useNextRouter });
+  const router = useRouterCustom();
   const onBack = () => {
     if (loader || disabled) {
       return;
@@ -24915,11 +24675,7 @@ export type LinkTypeOnLink = "history" | "router" | "link" | "none";
  */
 export interface LinkBaseProps
   extends PropsWithChildren,
-    LinkNextProps,
-    Pick<
-      AnchorHTMLAttributes<HTMLAnchorElement>,
-      "target" | "referrerPolicy" | "rel"
-    >,
+    Partial<AnchorHTMLAttributes<HTMLAnchorElement>>,
     _TProps {}
 
 /**
@@ -24947,9 +24703,9 @@ export const Link = ({
   const { _t } = use_T({ ...props });
   return (
     <>
-      <LinkNext {...props} className={`fenext-link ${className}`}>
+      <a {...props} className={`fenext-link ${className}`}>
         <>{_t(children)}</>
-      </LinkNext>
+      </a>
     </>
   );
 };
@@ -27427,15 +27183,39 @@ export const PageProgress = ({ className = "" }: PageProgressProps) => {
     setStatusBar("start");
   };
 
-  Router?.events?.on?.("routeChangeStart", onStart);
-  Router?.events?.on?.("routeChangeComplete", onDone);
-  Router?.events?.on?.("routeChangeError", onDone);
+  useEffect(() => {
+    const handleStart = () => onStart();
+    const handleDone = () => onDone();
+
+    // Interceptar cambios en la URL
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    history.pushState = function (...args) {
+      handleStart();
+      originalPushState.apply(this, args);
+      handleDone();
+    };
+
+    history.replaceState = function (...args) {
+      handleStart();
+      originalReplaceState.apply(this, args);
+      handleDone();
+    };
+
+    window.addEventListener("popstate", handleDone);
+
+    return () => {
+      history.pushState = originalPushState;
+      history.replaceState = originalReplaceState;
+      window.removeEventListener("popstate", handleDone);
+    };
+  }, []);
+
   return (
-    <>
-      <div
-        className={`fenext-page-progress fenext-page-progress-${statusBar} ${className} `}
-      ></div>
-    </>
+    <div
+      className={`fenext-page-progress fenext-page-progress-${statusBar} ${className}`}
+    ></div>
   );
 };
 

@@ -130,8 +130,6 @@ const main = async () => {
             QueryClient,
             QueryClientProvider as QueryClientProviderTanstack,
         } from "@tanstack/react-query";
-        import Router,{ useRouter as useRouterNextjs } from "next/router";
-        import LinkNext, { LinkProps as LinkNextProps } from "next/link";
         import { 
             Autocomplete as GoogleAutocomplete, 
             AutocompleteProps as GoogleAutocompleteProps,
@@ -179,7 +177,6 @@ const main = async () => {
             DatabaseReference,
         } from "firebase/database";
         import QrScanner from "qr-scanner";
-        import { ParsedUrlQuery } from "querystring";
     `
 
     CODE = CODE_TOP + CODE
