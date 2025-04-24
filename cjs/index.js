@@ -6752,15 +6752,14 @@ const InputDate = ({ classNameInputDate = "", type = "date", defaultValue = unde
             DATALIST))), iconPos: iconPos, icon: react_1.default.createElement("span", { className: `fenext-input-date-icon ` }, icon), validator: undefined, error: errorFenext, isChange: isChange }));
 };
 exports.InputDate = InputDate;
-const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSelectButtonsGroupList = "", onChange, onChangeData, value = undefined, defaultValue = [], options = [], CustomOptionsSelected = undefined, validatorData, validator, useTOption, classNameLabel, classNameError, label, disabled, optional = false, optionalText = "(optional)", required = false, requiredText = "*", isMultiple = false, _t: _tProps, useT, }) => {
+const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSelectButtonsGroupList = "", onChange, value = undefined, defaultValue = [], options = [], CustomOptionsSelected = undefined, validator, useTOption, classNameLabel, classNameError, label, disabled, optional = false, optionalText = "(optional)", required = false, requiredText = "*", isMultiple = false, _t: _tProps, useT, onParse, }) => {
     const { _t } = (0, exports.use_T)({ _t: _tProps, useT });
-    const { data, setData, setDataFunction } = (0, exports.useData)(defaultValue, {
+    const { data, setData, setDataFunction } = (0, exports.useData)(defaultValue?.map(onParse), {
         onChangeDataAfter: (e) => {
-            onChange?.(e);
-            onChangeData?.(e?.map((e) => e.data));
+            onChange?.(e?.map((e) => e.data));
         },
     });
-    const dataMemo = (0, react_1.useMemo)(() => value ?? data, [data, value]);
+    const dataMemo = (0, react_1.useMemo)(() => (value ? value?.map(onParse) : data), [data, value]);
     const onAddItemSelect = (0, react_1.useCallback)((newItem) => {
         if (newItem) {
             if (isMultiple == false) {
@@ -6776,12 +6775,8 @@ const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSe
             });
         }
     }, [dataMemo]);
-    const { error: errorFenextVD } = (0, exports.useValidator)({
-        data: dataMemo?.map((e) => e?.data),
-        validator: validatorData,
-    });
     const { error } = (0, exports.useValidator)({
-        data: dataMemo,
+        data: dataMemo?.map((e) => e.data),
         validator: validator,
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -6797,11 +6792,12 @@ const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSe
                     react_1.default.createElement("small", { className: "fenext-input-optional" }, _t(optionalText)))),
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
-            react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectButtonsGroupList} ` }, options.map((option) => {
+            react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectButtonsGroupList} ` }, options.map((o) => {
+                const option = onParse(o);
                 const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
                 return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", selected: dataMemo?.find((e) => e.id == option.id) !== undefined, onClick: onAddItemSelect, disabled: disabled ?? option?.disabled, useT: useTOption }));
             })),
-            (errorFenextVD || error) && (react_1.default.createElement(exports.ErrorComponent, { error: errorFenextVD ?? error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
+            error && (react_1.default.createElement(exports.ErrorComponent, { error: error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputSelectButtonsGroup = InputSelectButtonsGroup;
 const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country = {
