@@ -6,10 +6,10 @@ exports.SvgInstagram = exports.SvgPaypal = exports.SvgSpotify = exports.SvgDiner
 exports.SvgEyeBar = exports.SvgEye = exports.SvgPadlock = exports.SvgDesktopLayer = exports.SvgDesktop = exports.SvgStremate = exports.SvgCams = exports.SvgAmazon = exports.SvgImgAvatar = exports.SvgEtsty = exports.SvgZelle = exports.SvgSave = exports.SvgBancolombia = exports.SvgColor = exports.SvgTwitch = exports.SvgPix = exports.SvgCryingUnicorn = exports.SvgCardDiscover = exports.SvgCardMasterCard = exports.SvgCardAmericanExpress = exports.SvgCardVisa = exports.SvgCardJCB = exports.SvgCardDinersClub = exports.SvgCardVisaElectron = exports.SvgListCheck = exports.SvgAdd = exports.SvgReload = exports.SvgUnicornWithMoney = exports.SvgClone = exports.SvgPinterest = exports.SvgArrowSelect = exports.SvgArrow = exports.SvgUpload2 = exports.SvgUpload = exports.SvgLocation = exports.SvgStart = exports.SvgVerified = exports.SvgTiktok = exports.SvgManyvids = exports.SvgFacebookBox = exports.SvgFacebook = exports.SvgBusiness = exports.SvgReddit = exports.SvgPaginationDown = exports.SvgEdit = exports.SvgCameraChange = exports.SvgCamera2 = exports.SvgCamera = exports.SvgJcb = exports.SvgFacebookF = void 0;
 exports.SvgEmailBox = exports.SvgEmail = exports.SvgNumberDecrease = exports.SvgNoConfirm = exports.SvgShare = exports.SvgLink = exports.SvgLinkedinBox = exports.SvgLinkedin = exports.SvgPatreon = exports.SvgCheck2 = exports.SvgTheme = exports.SvgFont = exports.SvgSize = exports.SvgVideo = exports.SvgSteam = exports.SvgGoogle = exports.SvgTrash = exports.SvgEarringWatch = exports.SvgMercadoLibre = exports.SvgXBox = exports.SvgX = exports.SvgFantime = exports.SvgBongacams = exports.SvgBorder = exports.SvgMasterCard = exports.SvgPaginationPre = exports.SvgQr = exports.SvgPaginationNext = exports.SvgStack = exports.SvgSend = exports.SvgSoundCloud = exports.SvgPlane = exports.SvgNumberIncrease = exports.SvgPaperClip = exports.SvgSnapchat = exports.SvgStripachat = exports.SvgNequi = exports.SvgVisa = exports.SvgClicks = exports.SvgArrowCollapse = exports.SvgBars = exports.SvgDate = exports.SvgCheckSearch = exports.SvgDownload = exports.SvgCancel = exports.SvgStripe = exports.SvgDribbble = exports.SvgCamsoda = exports.SvgCopyBox = exports.SvgCopy = void 0;
 exports.SwichViewList = exports.Breadcrumb = exports.Title = exports.ContentShow = exports.Text = exports.ChatUser = exports.ChatFormSendMessage = exports.ChatMessage = exports.Chat = exports.FenextImgPlaceholder = exports.FenextImgUserPlaceholder = exports.FenextImgPlaceholderUrlBase = exports.SvgCashapp = exports.SvgLoader = exports.SvgSearch = exports.SvgViewSelectBox = exports.SvgViewSelectNormal = exports.SvgViewSelectList = exports.SvgViewTableList = exports.SvgViewTableBox = exports.SvgBrush = exports.SvgBolt = exports.SvgWhatsappBox = exports.SvgWhatsapp = exports.SvgArrowPre = exports.SvgExit = exports.SvgManageAddresses = exports.SvgPaginationUp = exports.SvgUserAccount3 = exports.SvgUserAccount2 = exports.SvgUserAccount = exports.SvgTelegram = exports.SvgCheck = exports.SvgSaveCheck = exports.SvgTwitterBox = exports.SvgTwitter = exports.SvgCrown = exports.SvgArrowNext = exports.SvgWechat = exports.SvgEstadisticas = exports.SvgEbay = exports.SvgMovilLayer = exports.SvgMovil = exports.SvgUnicorn = exports.SvgDiscover = exports.SvgChaturbate = exports.SvgArrowGoBack = exports.SvgImg = exports.SvgDaviplata = exports.SvgYoutube = void 0;
-exports.InputSelectT = exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.QueryClientProvider = exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = void 0;
-exports.ContentLoading = exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.PaginationNPageDefaultOptions = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = void 0;
-exports.ProgressLine = exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterSearch = exports.FilterDate = exports.PageProgress = exports.GridCols = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = void 0;
-exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = void 0;
+exports.InputGoogleAutocomplete = exports.InputGoogleMaps = exports.InputGoogleLoadScript = exports.InputRange = exports.InputFileStatus = exports.InputSelectCountryMultiple = exports.InputSelectCSC = exports.InputSelectButtonsGroup = exports.InputDate = exports.InputPhone = exports.InputRate = exports.InputNumberCount = exports.TimeZoneList = exports.InputSelectTimeZone = exports.InputColor = exports.useSelectOptionsPos = exports.InputSelect = exports.InputSelectCity = exports.InputCardCCV = exports.InputCardExpDate = exports.InputCardNumber = exports.InputCardNumberIcons = exports.InputSelectOption = exports.InputScannerTextQr = exports.InputScannerQr = exports.InputUpload = exports.InputGallery = exports.InputSelectNumber = exports.InputCalendarMonth = exports.InputCalendar = exports.InputText = exports.InputNumber = exports.ContentScrollLeft = exports.Box = exports.ItemMenu = exports.Menu = exports.ButtonMenu = exports.StepsCircle = exports.Container = exports.QueryClientProvider = exports.LayoutGridMenuTop = exports.LayoutGridMenuTopLeft = exports.LayoutGridMenuLeft = exports.Button = exports.Cols = exports.MediaPage = exports.MediaInput = exports.TableActionCheckbox = exports.SwichViewSelect = exports.SwichViewTable = void 0;
+exports.Share = exports.Link = exports.Theme = exports.Back = exports.Steps = exports.PrintPage = exports.PrintIframe = exports.DropDown = exports.Tab = exports.parseTabCount = exports.TwoColSticky = exports.Tooltip = exports.Form = exports.ErrorComponent = exports.LavaLamp = exports.CollapseMultiple = exports.Collapse = exports.Alert = exports.Table = exports.AlertHook = exports.PaginationNPage = exports.PaginationNPageDefaultOptions = exports.Pagination = exports.PaginationItemPage = exports.ImgSlider = exports.ImgGallery = exports.Slider = exports.Copy = exports.Notification = exports.NotificationPop = exports.Counter = exports.InputUnitWeight = exports.InputUnitDistance = exports.InputUnitBase = exports.InputUnitVolumen = exports.InputSelectState = exports.InputSearch = exports.InputSwich = exports.InputCheckbox = exports.InputDateRange = exports.InputFile = exports.InputSelectCountry = exports.InputSelectMultipleT = exports.InputPassword = exports.InputTextSelect = exports.InputCode = exports.InputImg = exports.InputRadio = exports.InputSelectMultiple = exports.InputSelectT = void 0;
+exports.ProgressCircle = exports.Modal = exports.ModalBase = exports.Template = exports.ScheduleWeekly = exports.ScheduleDay = exports.FilterSearch = exports.FilterDate = exports.PageProgress = exports.GridCols = exports.Portal = exports.DesignBoxPadding = exports.DesignBoxMargin = exports.DesignBoxBackground = exports.DesignBoxBorder = exports.DesignBoxGap = exports.DesignBoxBorderRadius = exports.DesignBoxHeight = exports.DesignBoxAlign = exports.ConstDesignBoxGapsUnit = exports.ConstDesignBoxAlignItemsUnit = exports.ConstDesignBoxJustifyContentUnit = exports.ConstDesignBoxHeightUnit = exports.ConstDesignBoxWidthUnit = exports.ConstDesignBoxBorderStylesUnit = exports.ConstDesignBoxBorderRadiusUnit = exports.ConstDesignBoxBorderUnit = exports.ConstDesignBoxPaddingUnit = exports.ConstDesignBoxMarginUnit = exports.DesignBoxBorderStyle = exports.DesignBoxBorderColor = exports.parseDesignBoxValueProps_to_CSSProperties = exports.DesignBoxWidth = exports.DesignBox = exports.ConstDesignTypographyWordSpacingUnit = exports.ConstDesignTypographyLetterSpacingUnit = exports.ConstDesignTypographyLineHeightUnit = exports.ConstDesignTypographyDecorationUnit = exports.ConstDesignTypographyStyleUnit = exports.ConstDesignTypographyTransformUnit = exports.ConstDesignTypographyWeightUnit = exports.ConstDesignTypographyTextAlignUnit = exports.ConstDesignTypographyFontSizeUnit = exports.parseDesignTypographyValueProps_to_CSSProperties = exports.DesignTypography = exports.Img = exports.User = exports.ChronologicalList = exports.GridGallery = exports.ContentLoading = void 0;
+exports.LoaderSpinner = exports.LoaderUser = exports.LoaderLine = exports.Loader = exports.Chronometer = exports.ProgressLine = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const ReactDOM = tslib_1.__importStar(require("react-dom"));
@@ -5615,7 +5615,7 @@ const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", clas
                     });
                 }
             }, disabled: disabled, selected: selected, value: text },
-            type == "multiple" && (react_1.default.createElement(exports.InputCheckbox, { classNameLabel: "fenext-select-option-checkbox", value: true })),
+            type == "multiple" && (react_1.default.createElement(exports.InputCheckbox, { classNameLabel: "fenext-select-option-checkbox", value: selected })),
             img ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("img", { src: img, alt: text, className: `fenext-select-option-img ${classNameOptionImg}` }))) : (react_1.default.createElement(react_1.default.Fragment, null, imgComponent ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(exports.Img, { ...imgComponent, className: `fenext-select-option-img ${classNameOptionImg} ${imgComponent.className}` }))) : (react_1.default.createElement(react_1.default.Fragment, null)))),
@@ -6099,7 +6099,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
                             react_1.default.createElement("div", { className: `fenext-select-multiple-list ` },
                                 react_1.default.createElement(exports.InputSelectOption, { ...dataMemo?.option, type: "multiple", onDelete: () => {
                                         onClear();
-                                    }, iconDelete: iconDelete, disabled: props?.disabled, useT: useTOption, classNameOption: `${classNameOption} ${dataMemo?.option?.classNameOption}` })))),
+                                    }, iconDelete: iconDelete, disabled: props?.disabled, useT: useTOption, classNameOption: `${classNameOption} ${dataMemo?.option?.classNameOption}`, selected: true })))),
                         props?.extraInLabel) })),
             typeSelect == "div" &&
                 (typeSelectStyle == "normal" || typeSelectStyle == "normal-out") &&
@@ -6752,6 +6752,58 @@ const InputDate = ({ classNameInputDate = "", type = "date", defaultValue = unde
             DATALIST))), iconPos: iconPos, icon: react_1.default.createElement("span", { className: `fenext-input-date-icon ` }, icon), validator: undefined, error: errorFenext, isChange: isChange }));
 };
 exports.InputDate = InputDate;
+const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSelectButtonsGroupList = "", onChange, onChangeData, value = undefined, defaultValue = [], options = [], CustomOptionsSelected = undefined, validatorData, validator, useTOption, classNameLabel, classNameError, label, disabled, optional = false, optionalText = "(optional)", required = false, requiredText = "*", isMultiple = false, _t: _tProps, useT, }) => {
+    const { _t } = (0, exports.use_T)({ _t: _tProps, useT });
+    const { data, setData, setDataFunction } = (0, exports.useData)(defaultValue, {
+        onChangeDataAfter: (e) => {
+            onChange?.(e);
+            onChangeData?.(e?.map((e) => e.data));
+        },
+    });
+    const dataMemo = (0, react_1.useMemo)(() => value ?? data, [data, value]);
+    const onAddItemSelect = (0, react_1.useCallback)((newItem) => {
+        if (newItem) {
+            if (isMultiple == false) {
+                setData([newItem]);
+                return;
+            }
+            setDataFunction(() => {
+                const old = [...dataMemo];
+                if (old.find((e) => e.id == newItem.id)) {
+                    return old.filter((e) => e.id != newItem.id);
+                }
+                return [...old, newItem];
+            });
+        }
+    }, [dataMemo]);
+    const { error: errorFenextVD } = (0, exports.useValidator)({
+        data: dataMemo?.map((e) => e?.data),
+        validator: validatorData,
+    });
+    const { error } = (0, exports.useValidator)({
+        data: dataMemo,
+        validator: validator,
+    });
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: `
+                    fenext-select-buttons-group
+                    fenext-select-multiple
+                    fenext-select-multiple-checkbox
+                    ${classNameSelectButtonsGroup}
+                ` },
+            react_1.default.createElement("div", { className: `fenext-input-label ${classNameLabel}` },
+                _t(label),
+                optional && (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement("small", { className: "fenext-input-optional" }, _t(optionalText)))),
+                required && (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
+            react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectButtonsGroupList} ` }, options.map((option) => {
+                const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
+                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", selected: dataMemo?.find((e) => e.id == option.id) !== undefined, onClick: onAddItemSelect, disabled: disabled ?? option?.disabled, useT: useTOption }));
+            })),
+            (errorFenextVD || error) && (react_1.default.createElement(exports.ErrorComponent, { error: errorFenextVD ?? error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
+};
+exports.InputSelectButtonsGroup = InputSelectButtonsGroup;
 const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country = {
     label: "Country",
     placeholder: "Country",
@@ -7165,7 +7217,7 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
             react_1.default.createElement(exports.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, isChange: true }),
             react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
                 const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
-                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption }));
+                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption, selected: true }));
             })))));
 };
 exports.InputSelectMultiple = InputSelectMultiple;
