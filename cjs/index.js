@@ -4926,7 +4926,8 @@ const Container = ({ className = "", customSize = undefined, usePaddingInline = 
                 : {} }, _t(children))));
 };
 exports.Container = Container;
-const StepsCircle = ({ className = "", classNameDisabled = "", classNameItem = "", classNameItemCircle = "", classNameItemContent = "", classNameItemActive = "", classNameItemActiveCircle = "", classNameItemActiveContent = "", classNameProgressLine = {}, defaultStep = undefined, valueStep = undefined, disabled = false, items = [], }) => {
+const StepsCircle = ({ className = "", classNameDisabled = "", classNameItem = "", classNameItemCircle = "", classNameItemContent = "", classNameItemActive = "", classNameItemActiveCircle = "", classNameItemActiveContent = "", classNameProgressLine = {}, defaultStep = undefined, valueStep = undefined, disabled = false, items = [], ...props }) => {
+    const { _t } = (0, exports.use_T)({ ...props });
     const [step_, setStep] = (0, react_1.useState)(defaultStep ?? 0);
     const step = (0, react_1.useMemo)(() => valueStep ?? step_, [step_, valueStep]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -4954,7 +4955,7 @@ const StepsCircle = ({ className = "", classNameDisabled = "", classNameItem = "
                             setStep(i);
                         } },
                         react_1.default.createElement("div", { className: `fenext-steps-circle-item-circle ${classNameItemCircle} ${active ? `${classNameItemActiveCircle}` : ""}` }, i + 1),
-                        react_1.default.createElement("div", { className: `fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}` }, item?.children))));
+                        react_1.default.createElement("div", { className: `fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}` }, _t(item?.children)))));
             }))));
 };
 exports.StepsCircle = StepsCircle;

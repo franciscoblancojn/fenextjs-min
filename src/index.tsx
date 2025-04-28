@@ -12024,7 +12024,7 @@ export interface StepsCircleClassProps {
 /**
  * Properties for the class of the StepsCircle component.
  */
-export interface StepsCircleProps extends StepsCircleClassProps {
+export interface StepsCircleProps extends StepsCircleClassProps, _TProps {
   items?: StepsCircleItemProps[];
 
   defaultStep?: number;
@@ -12047,7 +12047,9 @@ export const StepsCircle = ({
   valueStep = undefined,
   disabled = false,
   items = [],
+  ...props
 }: StepsCircleProps) => {
+  const { _t } = use_T({ ...props });
   const [step_, setStep] = useState(defaultStep ?? 0);
 
   const step = useMemo(() => valueStep ?? step_, [step_, valueStep]);
@@ -12100,7 +12102,7 @@ export const StepsCircle = ({
                 <div
                   className={`fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}`}
                 >
-                  {item?.children}
+                  {_t(item?.children)}
                 </div>
               </div>
             </>
