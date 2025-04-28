@@ -3366,7 +3366,7 @@ export type TableHeader<T> = {
     id: keyof T;
     th: ReactNode;
     thText?: string;
-    parse?: (data: T) => any;
+    parse?: (data: T, i?: number) => any;
     columnOptions?: {
         orderBy?: boolean;
     };

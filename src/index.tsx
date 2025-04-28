@@ -22191,7 +22191,7 @@ export type TableHeader<T> = {
    * @param data The data object for the row.
    * @returns The transformed value to display in the table cell.
    */
-  parse?: (data: T) => any;
+  parse?: (data: T, i?: number) => any;
   /**
    * The columnOptions for table.
    */
@@ -22518,7 +22518,7 @@ export const Table = <T,>({
                     </label>
                   </>
                 ) : (
-                  <>{h?.parse?.(item) ?? item[h.id] ?? ""}</>
+                  <>{h?.parse?.(item, i) ?? item[h.id] ?? ""}</>
                 )}
               </td>
             ))}
@@ -22565,11 +22565,11 @@ export const Table = <T,>({
                                                             fenext-table-content-table-td-collapse
                                                         `}
                         >
-                          {new_tr?.parse?.(item) ?? item[new_tr.id] ?? ""}
+                          {new_tr?.parse?.(item, i) ?? item[new_tr.id] ?? ""}
                         </Collapse>
                       </>
                     ) : (
-                      <>{new_tr?.parse?.(item) ?? item[new_tr.id] ?? ""}</>
+                      <>{new_tr?.parse?.(item, i) ?? item[new_tr.id] ?? ""}</>
                     )}
                   </td>
                 </tr>

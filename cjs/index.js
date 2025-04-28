@@ -8211,7 +8211,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                 `, style: {
                             ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
                         }, "data-col-id": h?.id, "data-col-text": h?.thText ?? h?.th }, h.isCollapse ? (react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement("label", { htmlFor: `table-${name}-${h?.id?.toString()}-${i}`, className: `fenext-table-content-table-td-label-collapse ${classNameTdLabelCollapse}` }, h?.collapseProps?.header))) : (react_1.default.createElement(react_1.default.Fragment, null, h?.parse?.(item) ?? item[h.id] ?? "")))))),
+                        react_1.default.createElement("label", { htmlFor: `table-${name}-${h?.id?.toString()}-${i}`, className: `fenext-table-content-table-td-label-collapse ${classNameTdLabelCollapse}` }, h?.collapseProps?.header))) : (react_1.default.createElement(react_1.default.Fragment, null, h?.parse?.(item, i) ?? item[h.id] ?? "")))))),
                 headerTr.map((new_tr, j) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("tr", { key: `${i}_tr_${j}`, className: `
@@ -8232,7 +8232,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                 react_1.default.createElement(exports.Collapse, { ...new_tr.collapseProps, header: "", id: `table-${name}-${new_tr?.id?.toString()}-${i}`, name: `table-${name}-${new_tr?.id?.toString()}-${i}`, className: `
                                                             ${new_tr.collapseProps?.className ?? ""}
                                                             fenext-table-content-table-td-collapse
-                                                        ` }, new_tr?.parse?.(item) ?? item[new_tr.id] ?? ""))) : (react_1.default.createElement(react_1.default.Fragment, null, new_tr?.parse?.(item) ?? item[new_tr.id] ?? ""))))));
+                                                        ` }, new_tr?.parse?.(item, i) ?? item[new_tr.id] ?? ""))) : (react_1.default.createElement(react_1.default.Fragment, null, new_tr?.parse?.(item, i) ?? item[new_tr.id] ?? ""))))));
                 })));
         });
     }, [
