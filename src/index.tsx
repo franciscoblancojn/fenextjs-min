@@ -2330,7 +2330,7 @@ export const parseString_to_Phone = (
   try {
     return JSON.parse(`${data ?? ""}`);
   } catch {
-    const num = `${data}`.replace(/[^1-9-+ ]/g, "");
+    const num = `${data}`.replace(/[^0-9-+ ]/g, "");
     const n = num.split(/[ -]/g).filter((e) => e != "");
     const number = n?.pop() ?? "";
     const code = n?.join("-");
@@ -4487,12 +4487,21 @@ export const useApiQuery = <I, R>({
     const query = parseInputToQuery({
       input: { ...dataFilter, ...input, ...pagination },
     });
+    let FenextUser: string | undefined = undefined;
+    if (user) {
+      try {
+        FenextUser = JSON.stringify(user);
+      } catch {
+        FenextUser = undefined;
+      }
+    }
     const response = await fetch(`${url}?${query}`, {
       method: "GET",
       ...options,
       headers: {
         "Content-Type": "application/json",
         Authorization: `${user?.token}`,
+        ...(FenextUser ? { FenextUser } : {}),
         ...options?.headers,
       },
     });
@@ -4558,20 +4567,25 @@ export interface useNotificationProps {
  * @param time - Optional duration in milliseconds for the notification to be displayed
  * @returns An object with methods to manage notifications
  */
-export const useNotification = ({ time = 2000 }: useNotificationProps) => {
-  const [notification, setNotification] = useState<
-    NotificationDataProps | undefined
-  >(undefined);
-  const { onAction } = useAction<NotificationDataProps>({
+export const useNotification = ({ time = 4000 }: useNotificationProps) => {
+  const [notification, setNotification] = useState<NotificationDataProps[]>([]);
+  const { onAction } = useAction<NotificationDataProps[]>({
     name: "fenextjs-notification",
-    onActionExecute: setNotification,
+    onActionExecute: (e) => {
+      if (e) {
+        setNotification((a) => [...a, ...e]);
+        setTimeout(() => {
+          setNotification((a) => [...a].slice(e.length));
+        }, time);
+      }
+    },
   });
 
   /**
    * Resets the notification to its default state
    */
   const reset = () => {
-    onAction(undefined);
+    onAction([]);
   };
 
   /**
@@ -4579,15 +4593,12 @@ export const useNotification = ({ time = 2000 }: useNotificationProps) => {
    * @param props - Notification properties
    */
   const pop = (props: NotificationDataProps, options?: NotificationOptions) => {
-    onAction(props);
+    onAction([props]);
     window.Notification.requestPermission().then((permission) => {
       if (permission == "granted") {
         new window.Notification(props.message, options);
       }
     });
-    setTimeout(() => {
-      reset();
-    }, time);
   };
 
   return {
@@ -5038,12 +5049,21 @@ export const useApiMutation = <I, R>({
   const { onRefresh } = useRefresh({});
 
   const onMutation = async (input: I): Promise<IApiResult<R>> => {
+    let FenextUser: string | undefined = undefined;
+    if (user) {
+      try {
+        FenextUser = JSON.stringify(user);
+      } catch {
+        FenextUser = undefined;
+      }
+    }
     const response = await fetch(url, {
       method: "POST",
       ...options,
       headers: {
         "Content-Type": "application/json",
         Authorization: `${user?.token}`,
+        ...(FenextUser ? { FenextUser } : {}),
         ...options?.headers,
       },
       body: parseBody(input),
@@ -14098,7 +14118,9 @@ export const InputUpload = ({
                   <>{customPreview(data)}</>
                 ) : (
                   <TAGPREVIEW
-                    src={data.fileData}
+                    src={
+                      data?.url && data?.url != "" ? data?.url : data.fileData
+                    }
                     className={`fenext-input-upload-preview ${classNamePreview}`}
                   />
                 )}
@@ -20982,6 +21004,7 @@ export const Counter = ({
   );
 };
 
+// } from "./a";
 /**
  * Properties for the base NotificationPop component.
  */
@@ -21015,7 +21038,7 @@ export const NotificationPop = ({
   classNamePop = "",
   className = "",
   typePop = "down",
-  time = 2000,
+  time = 4000,
   ...props
 }: NotificationPopProps) => {
   const { notification, reset } = useNotification({ time });
@@ -21027,23 +21050,32 @@ export const NotificationPop = ({
 
   return (
     <>
-      {notification && (
-        <div
-          className={`
+      <div
+        className={`
                         fenext-notification-pop
                         fenext-notification-pop-${typePop}
-                        fenext-notification-pop-${notification?.message != "" ? "active" : ""}
                         ${classNamePop}
                     `}
-        >
-          <Notification
-            {...props}
-            className={className}
-            type={notification?.type}
-            children={notification?.message}
-          />
-        </div>
-      )}
+        style={
+          {
+            ["--time"]: `${time}ms`,
+          } as CSSProperties
+        }
+      >
+        {(notification ?? []).map((e, i) => {
+          return (
+            <>
+              <Notification
+                key={i}
+                {...props}
+                className={className}
+                type={e?.type}
+                children={e?.message}
+              />
+            </>
+          );
+        })}
+      </div>
     </>
   );
 };

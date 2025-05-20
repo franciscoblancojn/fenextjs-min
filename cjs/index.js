@@ -1248,7 +1248,7 @@ const parseString_to_Phone = (data) => {
         return JSON.parse(`${data ?? ""}`);
     }
     catch {
-        const num = `${data}`.replace(/[^1-9-+ ]/g, "");
+        const num = `${data}`.replace(/[^0-9-+ ]/g, "");
         const n = num.split(/[ -]/g).filter((e) => e != "");
         const number = n?.pop() ?? "";
         const code = n?.join("-");
@@ -2604,12 +2604,22 @@ const useApiQuery = ({ url, options, input, key, useUserToken = true, usedataFil
         const query = (0, exports.parseInputToQuery)({
             input: { ...dataFilter, ...input, ...pagination },
         });
+        let FenextUser = undefined;
+        if (user) {
+            try {
+                FenextUser = JSON.stringify(user);
+            }
+            catch {
+                FenextUser = undefined;
+            }
+        }
         const response = await fetch(`${url}?${query}`, {
             method: "GET",
             ...options,
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `${user?.token}`,
+                ...(FenextUser ? { FenextUser } : {}),
                 ...options?.headers,
             },
         });
@@ -2643,25 +2653,29 @@ const useApiQuery = ({ url, options, input, key, useUserToken = true, usedataFil
     });
 };
 exports.useApiQuery = useApiQuery;
-const useNotification = ({ time = 2000 }) => {
-    const [notification, setNotification] = (0, react_1.useState)(undefined);
+const useNotification = ({ time = 4000 }) => {
+    const [notification, setNotification] = (0, react_1.useState)([]);
     const { onAction } = (0, exports.useAction)({
         name: "fenextjs-notification",
-        onActionExecute: setNotification,
+        onActionExecute: (e) => {
+            if (e) {
+                setNotification((a) => [...a, ...e]);
+                setTimeout(() => {
+                    setNotification((a) => [...a].slice(e.length));
+                }, time);
+            }
+        },
     });
     const reset = () => {
-        onAction(undefined);
+        onAction([]);
     };
     const pop = (props, options) => {
-        onAction(props);
+        onAction([props]);
         window.Notification.requestPermission().then((permission) => {
             if (permission == "granted") {
                 new window.Notification(props.message, options);
             }
         });
-        setTimeout(() => {
-            reset();
-        }, time);
     };
     return {
         notification,
@@ -2919,12 +2933,22 @@ const useApiMutation = ({ url, onSuccess, onError, options, key, parseBody = JSO
     const { onApiError } = (0, exports.useApiError)({});
     const { onRefresh } = (0, exports.useRefresh)({});
     const onMutation = async (input) => {
+        let FenextUser = undefined;
+        if (user) {
+            try {
+                FenextUser = JSON.stringify(user);
+            }
+            catch {
+                FenextUser = undefined;
+            }
+        }
         const response = await fetch(url, {
             method: "POST",
             ...options,
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `${user?.token}`,
+                ...(FenextUser ? { FenextUser } : {}),
                 ...options?.headers,
             },
             body: parseBody(input),
@@ -5493,7 +5517,7 @@ const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon =
                 textFile && (react_1.default.createElement(exports.Text, { ...classNameText, className: `fenext-input-upload-text ${classNameText.className}` }, _t(textFile))),
                 react_1.default.createElement("div", { className: `fenext-input-upload-content-icon ${classNameContentIcon}` }, loader ? iconLoader : iconFile),
                 react_1.default.createElement(exports.Collapse, { header: react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement(exports.Text, { ...classNameText, className: `fenext-input-upload-text ${classNameText.className}` }, _t(textPreview))) }, customPreview ? (react_1.default.createElement(react_1.default.Fragment, null, customPreview(data))) : (react_1.default.createElement(TAGPREVIEW, { src: data.fileData, className: `fenext-input-upload-preview ${classNamePreview}` }))),
+                        react_1.default.createElement(exports.Text, { ...classNameText, className: `fenext-input-upload-text ${classNameText.className}` }, _t(textPreview))) }, customPreview ? (react_1.default.createElement(react_1.default.Fragment, null, customPreview(data))) : (react_1.default.createElement(TAGPREVIEW, { src: data?.url && data?.url != "" ? data?.url : data.fileData, className: `fenext-input-upload-preview ${classNamePreview}` }))),
                 !props.disabled && (react_1.default.createElement("div", { className: `fenext-input-upload-remove ${classNameRemove}`, onClick: () => {
                         setData({
                             fileData: "",
@@ -7825,20 +7849,24 @@ const Counter = ({ className = "", classNameNumber = "", classNameText = "", num
                 react_1.default.createElement("span", { className: `fenext-counter-number-abs ` }, parseNumber(formatNumber(numberShow)))))));
 };
 exports.Counter = Counter;
-const NotificationPop = ({ classNamePop = "", className = "", typePop = "down", time = 2000, ...props }) => {
+const NotificationPop = ({ classNamePop = "", className = "", typePop = "down", time = 4000, ...props }) => {
     const { notification, reset } = (0, exports.useNotification)({ time });
     (0, react_1.useEffect)(() => {
         setTimeout(() => {
             reset();
         }, time);
     }, []);
-    return (react_1.default.createElement(react_1.default.Fragment, null, notification && (react_1.default.createElement("div", { className: `
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: `
                         fenext-notification-pop
                         fenext-notification-pop-${typePop}
-                        fenext-notification-pop-${notification?.message != "" ? "active" : ""}
                         ${classNamePop}
-                    ` },
-        react_1.default.createElement(exports.Notification, { ...props, className: className, type: notification?.type, children: notification?.message })))));
+                    `, style: {
+                ["--time"]: `${time}ms`,
+            } }, (notification ?? []).map((e, i) => {
+            return (react_1.default.createElement(react_1.default.Fragment, null,
+                react_1.default.createElement(exports.Notification, { key: i, ...props, className: className, type: e?.type, children: e?.message })));
+        }))));
 };
 exports.NotificationPop = NotificationPop;
 const Notification = ({ className = "", type = RequestResultTypeProps.NORMAL, children, ...props }) => {

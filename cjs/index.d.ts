@@ -1261,7 +1261,7 @@ export interface useNotificationProps {
     time?: number;
 }
 export declare const useNotification: ({ time }: useNotificationProps) => {
-    notification: NotificationDataProps | undefined;
+    notification: NotificationDataProps[];
     pop: (props: NotificationDataProps, options?: NotificationOptions) => void;
     reset: () => void;
 };
