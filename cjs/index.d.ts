@@ -2964,14 +2964,16 @@ export interface InputTextSelectBaseProps extends Omit<InputTextBaseProps, "type
 export interface InputTextSelectProps extends InputTextSelectBaseProps, InputTextSelectClassProps {
 }
 export declare const InputTextSelect: ({ label, placeholderSelect, placeholderText, defaultValue, value: valueProps, onChange, validator, posSelect, errorWithIsChange, error, classNameError, ...props }: InputTextSelectProps) => React.JSX.Element;
-export interface InputPasswordBaseProps extends Omit<InputTextBaseProps, "type"> {
+export interface InputPasswordBaseProps extends Omit<InputTextBaseProps, "type" | "icon"> {
+    iconEye?: React.ReactNode;
+    iconEyeBar?: React.ReactNode;
 }
 export interface InputPasswordClassProps extends InputTextClassProps {
     classNameContentEye?: string;
 }
 export interface InputPasswordProps extends InputPasswordBaseProps, InputPasswordClassProps {
 }
-export declare const InputPassword: ({ classNameContentEye, ...props }: InputPasswordProps) => React.JSX.Element;
+export declare const InputPassword: ({ classNameContentEye, iconEye, iconEyeBar, ...props }: InputPasswordProps) => React.JSX.Element;
 export interface InputSelectMultipleTProps<T> extends Omit<InputSelectMultipleProps<T>, "defaultValue" | "value" | "options" | "onChange" | "validator" | "validatorData"> {
     defaultValue?: T[];
     value?: T[];

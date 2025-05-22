@@ -19104,7 +19104,10 @@ export const InputTextSelect = ({
  * Interface for the base props of an input password component.
  */
 export interface InputPasswordBaseProps
-  extends Omit<InputTextBaseProps, "type"> {}
+  extends Omit<InputTextBaseProps, "type" | "icon"> {
+  iconEye?: React.ReactNode;
+  iconEyeBar?: React.ReactNode;
+}
 
 /**
  * Interface for the class props of an input password component.
@@ -19122,6 +19125,8 @@ export interface InputPasswordProps
 
 export const InputPassword = ({
   classNameContentEye = "",
+  iconEye,
+  iconEyeBar,
   ...props
 }: InputPasswordProps) => {
   const [type, setType] = useState<"text" | "password">("password");
@@ -19134,7 +19139,9 @@ export const InputPassword = ({
         onClick={toggleTypePassword}
         className={`fenext-input-password-icon ${classNameContentEye}`}
       >
-        {type == "password" ? <SvgEye /> : <SvgEyeBar />}
+        {type == "password"
+          ? iconEye ?? <SvgEye />
+          : iconEyeBar ?? <SvgEyeBar />}
       </span>
     );
   }, [type]);

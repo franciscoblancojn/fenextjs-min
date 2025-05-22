@@ -7349,13 +7349,15 @@ const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultVal
             errorInput && (react_1.default.createElement(exports.ErrorComponent, { error: errorInput, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputTextSelect = InputTextSelect;
-const InputPassword = ({ classNameContentEye = "", ...props }) => {
+const InputPassword = ({ classNameContentEye = "", iconEye, iconEyeBar, ...props }) => {
     const [type, setType] = (0, react_1.useState)("password");
     const toggleTypePassword = () => {
         setType(type == "password" ? "text" : "password");
     };
     const ICON = (0, react_1.useMemo)(() => {
-        return (react_1.default.createElement("span", { onClick: toggleTypePassword, className: `fenext-input-password-icon ${classNameContentEye}` }, type == "password" ? react_1.default.createElement(exports.SvgEye, null) : react_1.default.createElement(exports.SvgEyeBar, null)));
+        return (react_1.default.createElement("span", { onClick: toggleTypePassword, className: `fenext-input-password-icon ${classNameContentEye}` }, type == "password"
+            ? iconEye ?? react_1.default.createElement(exports.SvgEye, null)
+            : iconEyeBar ?? react_1.default.createElement(exports.SvgEyeBar, null)));
     }, [type]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(exports.InputText, { ...props, icon: ICON, type: type })));
