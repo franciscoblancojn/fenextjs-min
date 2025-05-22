@@ -22246,6 +22246,7 @@ export type TableHeader<T> = {
    * The className of de column;
    */
   className?: string;
+  hidden?: boolean;
 }[];
 
 /**
@@ -22422,11 +22423,17 @@ export const Table = <T,>({
   }, [checkboxItems]);
 
   const headerNotTr = useMemo(
-    () => header.filter((e) => e.colNewTr !== true || e?.isCollapse),
+    () =>
+      header.filter(
+        (e) => (e.colNewTr !== true || e?.isCollapse) && e.hidden != true,
+      ),
     [header],
   );
   const headerTr = useMemo(
-    () => header.filter((e) => e.colNewTr === true || e?.isCollapse),
+    () =>
+      header.filter(
+        (e) => (e.colNewTr === true || e?.isCollapse) && e.hidden != true,
+      ),
     [header],
   );
 

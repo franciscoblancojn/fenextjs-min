@@ -8199,8 +8199,8 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
     (0, react_1.useEffect)(() => {
         setCheckbox(checkboxItems);
     }, [checkboxItems]);
-    const headerNotTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr !== true || e?.isCollapse), [header]);
-    const headerTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr === true || e?.isCollapse), [header]);
+    const headerNotTr = (0, react_1.useMemo)(() => header.filter((e) => (e.colNewTr !== true || e?.isCollapse) && e.hidden != true), [header]);
+    const headerTr = (0, react_1.useMemo)(() => header.filter((e) => (e.colNewTr === true || e?.isCollapse) && e.hidden != true), [header]);
     const CONTENT = (0, react_1.useMemo)(() => {
         if (error) {
             return (react_1.default.createElement("tr", { className: `fenext-table-content-table-tr ${classNameTr}` },

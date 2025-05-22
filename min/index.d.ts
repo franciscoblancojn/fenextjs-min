@@ -3375,6 +3375,7 @@ export type TableHeader<T> = {
     isCollapse?: boolean;
     collapseProps?: Omit<CollapseProps, "children">;
     className?: string;
+    hidden?: boolean;
 }[];
 export interface TableBaseProps<T> extends _TProps {
     name: string;
