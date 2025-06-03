@@ -18444,25 +18444,30 @@ export const InputSelectMultiple = <T = any,>({
           showOptionIconImg={false}
           useTOption={useTOption}
           isChange={true}
+          extraInLabel={
+            <>
+              <div
+                className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
+              >
+                {dataMemo.map((option) => {
+                  const OptionTag =
+                    CustomOptionsSelected ?? InputSelectOption<T>;
+                  return (
+                    <OptionTag
+                      {...option}
+                      type={"multiple"}
+                      onDelete={onRemoveItemSelect}
+                      iconDelete={option?.iconDelete ?? iconDelete}
+                      disabled={props?.disabled ?? option?.disabled}
+                      useT={useTOption}
+                      selected={true}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          }
         />
-        <div
-          className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
-        >
-          {dataMemo.map((option) => {
-            const OptionTag = CustomOptionsSelected ?? InputSelectOption<T>;
-            return (
-              <OptionTag
-                {...option}
-                type={"multiple"}
-                onDelete={onRemoveItemSelect}
-                iconDelete={option?.iconDelete ?? iconDelete}
-                disabled={props?.disabled ?? option?.disabled}
-                useT={useTOption}
-                selected={true}
-              />
-            );
-          })}
-        </div>
       </div>
     </>
   );

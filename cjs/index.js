@@ -7235,11 +7235,11 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
                     fenext-select-multiple-${typeSelectMultipleStyle}
                     ${classNameSelectMultiple}
                 ` },
-            react_1.default.createElement(exports.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, isChange: true }),
-            react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
-                const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
-                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption, selected: true }));
-            })))));
+            react_1.default.createElement(exports.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, isChange: true, extraInLabel: react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
+                        const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
+                        return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption, selected: true }));
+                    }))) }))));
 };
 exports.InputSelectMultiple = InputSelectMultiple;
 const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabelActive = "", classNameLabelInactive = "", classNameText = "", classNameContentRadio = "", classNameContentRadioActive = "", classNameContentRadioInactive = "", classNameRadio = "", classNameRadioActive = "", classNameRadioInactive = "", labelPosition = "right", name = "", onChange = (e) => {
