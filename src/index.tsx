@@ -17129,6 +17129,7 @@ export const InputSelectButtonsGroup = <T = any,>({
                 onClick={onAddItemSelect}
                 disabled={disabled ?? option?.disabled}
                 useT={useTOption}
+                _t={_t}
               />
             );
           })}

@@ -6820,7 +6820,7 @@ const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSe
             react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectButtonsGroupList} ` }, options.map((o) => {
                 const option = onParse(o);
                 const OptionTag = CustomOptionsSelected ?? (exports.InputSelectOption);
-                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", selected: dataMemo?.find((e) => e.id == option.id) !== undefined, onClick: onAddItemSelect, disabled: disabled ?? option?.disabled, useT: useTOption }));
+                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", selected: dataMemo?.find((e) => e.id == option.id) !== undefined, onClick: onAddItemSelect, disabled: disabled ?? option?.disabled, useT: useTOption, _t: _t }));
             })),
             error && (react_1.default.createElement(exports.ErrorComponent, { error: error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
