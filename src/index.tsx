@@ -16739,6 +16739,7 @@ export const InputPhone = ({
               text: "...",
             }}
             maxLengthShowOptions={maxLengthShowOptionsCodes}
+            useTOption={false}
           />
         </div>
         <div className={`fenext-input-phone-text ${classNamePhoneNumber}`}>

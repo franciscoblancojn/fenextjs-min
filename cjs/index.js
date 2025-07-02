@@ -6687,7 +6687,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                     }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), optional: false, showOptionIconImg: true, itemMaxLengthShowOptions: {
                         id: "fenext-item-max-length-show-options",
                         text: "...",
-                    }, maxLengthShowOptions: maxLengthShowOptionsCodes })),
+                    }, maxLengthShowOptions: maxLengthShowOptionsCodes, useTOption: false })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
                 react_1.default.createElement(exports.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: (n) => {
                         onChangeData("number")(n);
