@@ -7498,7 +7498,7 @@ const InputFile = ({ defaultValue = {
                 react_1.default.createElement("div", { className: `fenext-input-file-content ${classNameContent}` }, children),
                 react_1.default.createElement("input", { ref: ref, type: "file", className: `fenext-input-file-input ${classNameInput}`, onChange: uploadFile, accept: accept.map((e) => `.${e}`).join(","), disabled: disabled, capture: capture })),
             progress > 0 && progress < 100 && parseProgress(progress),
-            error && (react_1.default.createElement("div", { className: `fenext-error ${classNameError}` }, error.message)))));
+            error && (react_1.default.createElement("div", { className: `fenext-error ${classNameError}` }, _t(error.message))))));
 };
 exports.InputFile = InputFile;
 const InputDateRange = ({ classNameInputDateRange = "", classNameInputDateRangeContentInputDate = "", classNameLabel = "", label, min, max, defaultValue = undefined, value = undefined, onChange, optional = false, optionalText = "(optional)", required = false, requiredText = "*", propsStart = {}, propsEnd = {}, ...props }) => {

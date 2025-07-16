@@ -19541,7 +19541,7 @@ export const InputFile = ({
         {progress > 0 && progress < 100 && parseProgress(progress)}
         {error && (
           <div className={`fenext-error ${classNameError}`}>
-            {error.message}
+            {_t(error.message)}
           </div>
         )}
       </div>
