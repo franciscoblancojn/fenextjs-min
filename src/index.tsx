@@ -14883,6 +14883,7 @@ export interface InputSelectBaseProps<T = any>
     | "onEnter"
     | "onChangeValidate"
   > {
+  idSelectOptions?: string;
   /**
    * Options of select.
    */
@@ -15051,6 +15052,7 @@ export const InputSelect = <T = any,>({
   classNameSelect = "",
   classNameList = "",
   classNameOption = "",
+  idSelectOptions,
 
   error = undefined,
   options: optionsProps = [],
@@ -15513,6 +15515,7 @@ export const InputSelect = <T = any,>({
   ]);
 
   const { onLoadPos, onLoadChildren } = useSelectOptionsPos({
+    idSelectOptions,
     children: CHILDREN_SELECT,
     target: selectRef?.current?.querySelector?.(
       "input.fenext-input-content-input",
@@ -15698,18 +15701,20 @@ export const InputSelect = <T = any,>({
 };
 
 export interface useSelectOptionsPosProps {
+  idSelectOptions?: string;
   children?: ReactNode;
   target?: HTMLElement | null | undefined;
 }
 
 export const useSelectOptionsPos = ({
+  idSelectOptions,
   children,
   target,
 }: useSelectOptionsPosProps) => {
   const [ref, setRef] = useState<HTMLElement | undefined>(undefined);
 
   const onLoadRef = () => {
-    const ID = "fenext-select";
+    const ID = `fenext-select${idSelectOptions ? `-${idSelectOptions}` : ""}`;
     let ele = document.getElementById(ID);
     if (!ele) {
       ele = document.createElement("div");

@@ -2601,6 +2601,7 @@ export interface InputSelectClassProps extends InputTextClassProps, InputSelectO
 export interface InputSelectItemOptionBaseProps<T = any> extends Omit<InputSelectOptionProps<T>, "type" | "onDelete"> {
 }
 export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, "value" | "type" | "defaultValue" | "value" | "onChange" | "onBlur" | "onEnter" | "onChangeValidate"> {
+    idSelectOptions?: string;
     options: InputSelectItemOptionBaseProps<T>[];
     filterOptions?: (data: InputSelectItemOptionBaseProps<T>[]) => InputSelectItemOptionBaseProps<T>[];
     showOptions?: "hover" | "focus" | "focus-hover";
@@ -2645,12 +2646,13 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, classNameOption, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useSearch, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, classNameOption, idSelectOptions, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useSearch, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
 export interface useSelectOptionsPosProps {
+    idSelectOptions?: string;
     children?: ReactNode;
     target?: HTMLElement | null | undefined;
 }
-export declare const useSelectOptionsPos: ({ children, target, }: useSelectOptionsPosProps) => {
+export declare const useSelectOptionsPos: ({ idSelectOptions, children, target, }: useSelectOptionsPosProps) => {
     ref: HTMLElement | undefined;
     onLoadPos: () => void;
     onLoadChildren: () => void;

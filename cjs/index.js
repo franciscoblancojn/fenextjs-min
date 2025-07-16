@@ -5785,7 +5785,7 @@ const InputSelectCity = ({ country = undefined, state = undefined, ...props }) =
             }, loader: loader, useLoader: true })));
 };
 exports.InputSelectCity = InputSelectCity;
-const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(exports.SvgArrow, null), iconSearch = react_1.default.createElement(exports.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(exports.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useSearch = true, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
+const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption = "", idSelectOptions, error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(exports.SvgArrow, null), iconSearch = react_1.default.createElement(exports.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(exports.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useSearch = true, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
     id: "fenext-item-max-length-show-options",
     text: "There are more elements ...",
 }, showOptionIconImg = true, validatorData, useTOption, forceShowOptionOnLoad = false, iconDelete = react_1.default.createElement(exports.SvgTrash, null), ...props }) => {
@@ -6046,6 +6046,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
         selectRef,
     ]);
     const { onLoadPos, onLoadChildren } = (0, exports.useSelectOptionsPos)({
+        idSelectOptions,
         children: CHILDREN_SELECT,
         target: selectRef?.current?.querySelector?.("input.fenext-input-content-input"),
     });
@@ -6131,10 +6132,10 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
                 !useSwichtypeSelectStyle ? (react_1.default.createElement(react_1.default.Fragment, null)) : (react_1.default.createElement(react_1.default.Fragment, null, TAGLIST)))));
 };
 exports.InputSelect = InputSelect;
-const useSelectOptionsPos = ({ children, target, }) => {
+const useSelectOptionsPos = ({ idSelectOptions, children, target, }) => {
     const [ref, setRef] = (0, react_1.useState)(undefined);
     const onLoadRef = () => {
-        const ID = "fenext-select";
+        const ID = `fenext-select${idSelectOptions ? `-${idSelectOptions}` : ""}`;
         let ele = document.getElementById(ID);
         if (!ele) {
             ele = document.createElement("div");
