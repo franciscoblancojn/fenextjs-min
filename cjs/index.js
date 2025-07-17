@@ -5785,7 +5785,7 @@ const InputSelectCity = ({ country = undefined, state = undefined, ...props }) =
             }, loader: loader, useLoader: true })));
 };
 exports.InputSelectCity = InputSelectCity;
-const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption = "", idSelectOptions, error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(exports.SvgArrow, null), iconSearch = react_1.default.createElement(exports.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(exports.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useSearch = true, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
+const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption = "", idSelectOptions, error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(exports.SvgArrow, null), iconSearch = react_1.default.createElement(exports.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(exports.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useSearch = true, useNowrap = false, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
     id: "fenext-item-max-length-show-options",
     text: "There are more elements ...",
 }, showOptionIconImg = true, validatorData, useTOption, forceShowOptionOnLoad = false, iconDelete = react_1.default.createElement(exports.SvgTrash, null), ...props }) => {
@@ -5975,7 +5975,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
     const TAGLIST = (0, react_1.useMemo)(() => {
         const TAG = typeSelect;
         return (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(TAG, { id: props?.datalist, className: `fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`, onChange: (e) => {
+            react_1.default.createElement(TAG, { id: props?.datalist, className: `fenext-select-list-options fenext-select-list-options-type-${typeSelect} ${useNowrap ? "fenext-select-list-options-use-nowrap" : ""} ${classNameList}`, onChange: (e) => {
                     onChangeText_(e?.target?.value);
                 }, key: props.loader ? "loader" : "load" },
                 create && typeSelect == "div" ? (react_1.default.createElement(react_1.default.Fragment, null,
@@ -6662,11 +6662,15 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
             react_1.default.createElement("div", { className: `fenext-input-phone-code ${classNamePhoneCode}` },
-                react_1.default.createElement(exports.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, options: phones, onParse: (e) => {
+                react_1.default.createElement(exports.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, useNowrap: true, options: phones, onParse: (e) => {
                         return {
                             id: e?.code_phone ?? "",
-                            text: e?.code_phone ?? "",
+                            text: `${e?.code_phone ?? ""}`,
                             data: e,
+                            children: (react_1.default.createElement(react_1.default.Fragment, null,
+                                react_1.default.createElement("div", { className: "fenext-input-phone-option-country" },
+                                    react_1.default.createElement("span", { className: "fenext-input-phone-option-country-code" }, e?.code_phone),
+                                    react_1.default.createElement("span", { className: "fenext-input-phone-option-country-text" }, e?.text)))),
                             img: e ? `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}` : undefined,
                         };
                     }, disabled: !loadPhoneCodes || disabled || disabledSelectCode, defaultValue: getCountryPhone(defaultValue), value: getCountryPhone(value), onChange: (e) => {

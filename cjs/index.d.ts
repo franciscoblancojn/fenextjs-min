@@ -2638,6 +2638,7 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
     forceShowOptionOnLoad?: boolean;
     iconDelete?: ReactNode;
     useSearch?: boolean;
+    useNowrap?: boolean;
 }
 export interface InputSelectProps<T = any> extends InputSelectBaseProps<T>, InputSelectClassProps {
 }
@@ -2646,7 +2647,7 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, classNameOption, idSelectOptions, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useSearch, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, classNameOption, idSelectOptions, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, useSearch, useNowrap, useItemMaxLengthShowOptions, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;
 export interface useSelectOptionsPosProps {
     idSelectOptions?: string;
     children?: ReactNode;

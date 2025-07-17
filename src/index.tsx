@@ -15034,6 +15034,10 @@ export interface InputSelectBaseProps<T = any>
    * Use component to search when user types on text field.
    */
   useSearch?: boolean;
+  /**
+   *
+   */
+  useNowrap?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -15086,6 +15090,7 @@ export const InputSelect = <T = any,>({
   converterInSearchWithMaxLenght = false,
   nItems = undefined,
   useSearch = true,
+  useNowrap = false,
 
   useItemMaxLengthShowOptions = true,
   maxLengthShowOptions = 20,
@@ -15334,7 +15339,7 @@ export const InputSelect = <T = any,>({
       <>
         <TAG
           id={props?.datalist}
-          className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`}
+          className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect} ${useNowrap ? "fenext-select-list-options-use-nowrap" : ""} ${classNameList}`}
           onChange={(e) => {
             onChangeText_(e?.target?.value);
           }}
@@ -16704,12 +16709,25 @@ export const InputPhone = ({
             key={`${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`}
             placeholder={placeholderCode}
             _t={_t}
+            useNowrap={true}
             options={phones}
             onParse={(e) => {
               return {
                 id: e?.code_phone ?? "",
-                text: e?.code_phone ?? "",
+                text: `${e?.code_phone ?? ""}`,
                 data: e,
+                children: (
+                  <>
+                    <div className="fenext-input-phone-option-country">
+                      <span className="fenext-input-phone-option-country-code">
+                        {e?.code_phone}
+                      </span>
+                      <span className="fenext-input-phone-option-country-text">
+                        {e?.text}
+                      </span>
+                    </div>
+                  </>
+                ),
                 img: e ? `${getRuteCountryImg(e)}` : undefined,
               };
             }}
