@@ -2006,9 +2006,9 @@ export declare const SvgLoader: ({ className }: {
 export declare const SvgCashapp: ({ className }: {
     className?: string | undefined;
 }) => React.JSX.Element;
-export declare const FenextImgPlaceholderUrlBase: string;
-export declare const FenextImgUserPlaceholder: string;
-export declare const FenextImgPlaceholder: string;
+export declare const FenextImgPlaceholderUrlBase = "https://fenextjs-img-placeholder.vercel.app";
+export declare const FenextImgUserPlaceholder = "https://fenextjs-img-placeholder.vercel.app/user.png";
+export declare const FenextImgPlaceholder = "https://fenextjs-img-placeholder.vercel.app/placeholder.png";
 export interface ChatProps {
     loader?: boolean;
     useAccountOwner?: boolean;
