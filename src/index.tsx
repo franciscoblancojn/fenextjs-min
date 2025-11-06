@@ -3034,10 +3034,14 @@ export const sleep = async (time = 1000) => {
 };
 
 export const _tValidate = (d: any, _t?: _TFunciton) => {
-  if (typeof d == "string" && _t) {
-    return _t?.(d);
+  try {
+    if (typeof d == "string" && _t) {
+      return _t?.(d);
+    }
+    return d;
+  } catch {
+    return d;
   }
-  return d;
 };
 
 export interface FenextFirebaseConstructorProps {
@@ -14431,6 +14435,7 @@ export interface InputSelectOptionBaseProps<T = any>
    * @default <Trash />
    */
   iconDelete?: ReactNode;
+  useIdForValue?: boolean;
 }
 /**
  * Props interface for the InputSelectOption component. Extends both InputSelectOptionBaseProps and InputSelectOptionClassProps interfaces.
@@ -14459,6 +14464,7 @@ export const InputSelectOption = <T = any,>({
   isBtn = false,
   data,
   iconDelete = <SvgTrash />,
+  useIdForValue = false,
   ...props
 }: InputSelectOptionProps<T>) => {
   const { _t } = use_T({ ...props });
@@ -14493,7 +14499,7 @@ export const InputSelectOption = <T = any,>({
         }}
         disabled={disabled}
         selected={selected}
-        value={text}
+        value={useIdForValue ? id : text}
       >
         {type == "multiple" && (
           <InputCheckbox
@@ -14923,6 +14929,10 @@ export interface InputSelectBaseProps<T = any>
    */
   useTOption?: boolean;
   /**
+   * useIdForValue.
+   */
+  useIdForValue?: boolean;
+  /**
    * Value Options of select.
    */
   value?: InputSelectItemOptionBaseProps<T>;
@@ -15103,6 +15113,8 @@ export const InputSelect = <T = any,>({
   useTOption,
   forceShowOptionOnLoad = false,
   iconDelete = <SvgTrash />,
+  name,
+  useIdForValue = false,
   ...props
 }: InputSelectProps<T>) => {
   const { _t } = use_T({ ...props });
@@ -15339,6 +15351,7 @@ export const InputSelect = <T = any,>({
       <>
         <TAG
           id={props?.datalist}
+          name={name}
           className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect} ${useNowrap ? "fenext-select-list-options-use-nowrap" : ""} ${classNameList}`}
           onChange={(e) => {
             onChangeText_(e?.target?.value);
@@ -15356,6 +15369,7 @@ export const InputSelect = <T = any,>({
                 isBtn={true}
                 onClick={create?.onClick ?? onCreate}
                 classNameOption={`${classNameOption} ${create?.classNameOption}`}
+                useIdForValue={useIdForValue}
               />
             </>
           ) : (
@@ -15370,6 +15384,7 @@ export const InputSelect = <T = any,>({
                 children={selected?.children ?? undefined}
                 _t={_t}
                 useT={useTOption}
+                useIdForValue={useIdForValue}
               />
             </>
           ) : (
@@ -15391,6 +15406,7 @@ export const InputSelect = <T = any,>({
                 type={typeSelect == "div" ? "div" : "option"}
                 _t={_t}
                 useT={useTOption}
+                useIdForValue={useIdForValue}
               />
             );
           })}
@@ -15449,6 +15465,7 @@ export const InputSelect = <T = any,>({
     props.loader,
     loaderOption,
     selectRef,
+    useIdForValue,
   ]);
 
   const [isFocus, setIsFocus] = useState(false);
