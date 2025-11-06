@@ -21,6 +21,9 @@ const onCopyLib =  async ({ lib }: onCopyLibProps) => {
     }
 
     PATH_LIST = PATH_LIST.sort(e => {
+        if (e == "process.env/index.tsx" && lib == "functions") {
+            return -1
+        }
         if (e == "Fenextjs/index.tsx" && lib == "error") {
             return -1
         }

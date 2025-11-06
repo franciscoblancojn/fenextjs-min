@@ -2087,6 +2087,14 @@ export const FenextjsValidator = <T = any,>(
 
 export const FV = FenextjsValidator;
 
+export const getProcessEnv = (key: string) => {
+  try {
+    return process?.env?.[key];
+  } catch {
+    return null;
+  }
+};
+
 /**
  * Parses a string or number to a formatted number.
  *
@@ -2916,9 +2924,9 @@ export const GetCardType = (n: number | string): Card_Enum => {
 };
 
 export const CONFIG = {
-  EMPY: process?.env?.["NEXT_PUBLIC_EMPY"] == "TRUE",
-  MODATA: process?.env?.["NEXT_PUBLIC_MODATA"] == "TRUE",
-  LOG: process?.env?.["NEXT_PUBLIC_LOG"] == "TRUE",
+  EMPY: getProcessEnv("NEXT_PUBLIC_EMPY") == "TRUE",
+  MODATA: getProcessEnv("NEXT_PUBLIC_MODATA") == "TRUE",
+  LOG: getProcessEnv("NEXT_PUBLIC_LOG") == "TRUE",
 };
 
 export interface getBase64ForImageDonwloadProps {
@@ -17975,7 +17983,7 @@ export interface InputGoogleLoadScriptProps
     InputGoogleLoadScriptClassProps {}
 
 export const InputGoogleLoadScript = ({
-  googleMapsApiKey = process.env["NEXT_PUBLIC_GOOGLE_KEY"],
+  googleMapsApiKey = undefined,
   children,
   className = "",
   _t,
@@ -17988,7 +17996,9 @@ export const InputGoogleLoadScript = ({
     <div className={`fenext-input-google-load-script ${className}`}>
       <LoadScript
         {...props}
-        googleMapsApiKey={googleMapsApiKey ?? ""}
+        googleMapsApiKey={
+          googleMapsApiKey ?? getProcessEnv("NEXT_PUBLIC_GOOGLE_KEY") ?? ""
+        }
         libraries={["places", "geometry", "marker"]}
         onError={() => {
           setError(new ErrorGoogleKeyInvalid());
