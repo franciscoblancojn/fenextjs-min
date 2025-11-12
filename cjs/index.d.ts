@@ -2059,6 +2059,13 @@ export interface ChatUserProps extends Partial<UserProps> {
     extraData?: ReactNode;
 }
 export declare const ChatUser: ({ name, img, role, imgProps, loader, extraData, }: ChatUserProps) => React.JSX.Element;
+export type BadgeType = "pendding" | "loader" | "completed" | "error" | "processed";
+export interface BadgeProps extends _TProps {
+    className?: string;
+    children: ReactNode;
+    type: BadgeType;
+}
+export declare const Badge: ({ className, children, type, ...props }: BadgeProps) => React.JSX.Element;
 export type TextTypeProps = "span" | "p" | "strong" | "small" | "em" | "b" | "del" | "i" | "mark" | "ins" | "sub" | "sup";
 export interface TextBaseProps extends PropsWithChildren, _TProps {
     tag?: TextTypeProps;
